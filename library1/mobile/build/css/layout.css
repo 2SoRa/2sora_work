@@ -131,7 +131,7 @@
     .back, .close {margin-left:5vw; height:6.53vh;}
 
     /* Book - border radius, bxsh */
-    .book { width:27.055vw; height:100%;  overflow: hidden; border: 1px solid #c9c9c9; border-radius:10px; box-shadow: 2px 3px 5px rgba(0,0,0,0.3); }
+    .book { width:27.055vw; height:100%;  overflow: hidden; border: 1px solid #c9c9c9; border-radius:10px; box-shadow: 2px 3px 5px rgba(0,0,0,0.3); display: inline-block; }
     .book .book-cover {width:100%;}
     .book .recommend {position: absolute; top: 0; right: 1vw;}
 
