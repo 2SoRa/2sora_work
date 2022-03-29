@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/chart.css">
+    <link rel="stylesheet" href="../../build/css/barchart2.css">
+    <link rel="stylesheet" href="../../build/css/piechart.css">
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/layout.css">
+    <link rel="stylesheet" href="../../build/css/report.css">
+    <link rel="stylesheet" href="../../build/css/record.css">
+    <script src="../../build/js/jquery.js"></script>
+    <title>Book Report</title>
+</head>
+<style>
+    .chart_wrap {width:100%; display:flex;}
+    .chart_wrap li{width:33%; height:220px; color:#666; font-size:12px; padding-bottom:10px;}
+    .chart_wrap canvas{border-bottom:1px solid #ededed;}
+    .chart_wrap li p{border:1px solid #dfdfdf; background-color:#f9f9f9; border-radius:20px; width:83px; padding:5px 5px; margin:10px auto;}
+    .chart_wrap li:nth-child(2) p{width:109px;}
+    /* .chart_wrap canvas{width:100px; height:200px;} */
+</style>
+<body>
+    <div class="container report">
+        <button class="close"><img src="../../build/images/layout/close.png" alt="close"></button>
+        <!-- contents area -->
+        <div class="contents-area gradient-bottom">
+            <div class="contents-wrap">
+                <div class="title">
+                   <p class="series-title">e-future Classic Readers</p>
+                   <p class="book-title">The Wolf and the Seven Children</p>
+                </div>
+                <div class="book-wrap">
+                    <div class="book"><img src="../../build/images/contents/LSR001.jpg" alt="LSR001"></div>
+                    <ul class="book-info">
+                       <li>
+                           <p>Date</p> <p class="bdr-50">2020.07.29</p>
+                        </li>
+                        <li>
+                           <p>Genre</p> <p class="bdr-50">Classic</p>
+                        </li>
+                        <li>      
+                            <p>Level</p> <p class="bdr-50">K</p>
+                        </li>
+                        <li>   
+                            <p>CEFR</p> <p class="bdr-50">B2/C1</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="progress-area">
+                    <div class="progressbar progress01" data-perc="100">
+                        <div class="flag"><p>My Score</p></div>
+                        <div class="horizbar" style="width:25%;"><span></span></div>
+                        <div class="labelsprite"><span>80%</span></div>
+                    </div>
+                    <div class="progressbar progress02" data-perc="100">
+                        <div class="flag"><p>Class Avg.</p></div>
+                        <div class="horizbar color2" style="width:25%;"><span></span></div>
+                        <div class="labelsprite"><span>80%</span></div>
+                    </div>
+                    <div class="progressbar progress03" data-perc="100">
+                        <div class="flag"><p>Global Avg.</p></div>
+                        <div class="horizbar color3" style="width:25%;"><span></span></div>
+                        <div class="labelsprite"><span>80%</span></div>
+                    </div>
+                </div>
+                <div class="sub-area">
+                    <div class="chart-wrap">
+                        <p class="sub-title">Score by skill area</p>
+                        <ul class="chart_wrap">
+                            <li><canvas id="myChart"></canvas><p>Vocabulary</p></li>
+                            <!-- <li><canvas id="myChart2"></canvas><p>Comprehension</p></li>
+                            <li><canvas id="myChart3"></canvas><p>Total</p></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub-area">
+                    <div class="chart-wrap">
+                        <p class="sub-title">Score by Read Aloud</p>
+                        <ul>
+                            <li><canvas id="myChart4"></canvas></li>
+                        <!-- <p class="chart-label bdr-50">Total</p> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub-area">
+                    <div>
+                        <p class="sub-title">Teacher's Comment</p>
+                        <ul class="teachers-comment">
+                            <li class="grade"><img src="../../build/images/layout/grade01.jpg" alt="excellent"></li>
+                            <li class="text-box">
+                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../build/js/jquery.chart.js"></script>
+<script>
+	$(function() {
+		$('.bar-chart').cssCharts({type:"bar"});
+	});
+</script>
+<script>
+    $(function() {
+        $('.progressbar').each(function(){
+            var t = $(this);
+                var dataperc = t.attr('data-perc'),
+                    barperc = Math.round(dataperc*1);
+            t.find('.horizbar').animate({width:barperc}, dataperc*5);
+            
+            function perc() {
+                var length = t.find('.horizbar').css('width'),
+                    perc = Math.round(parseInt(length)/1),
+                    labelpos = (parseInt(length)-10);
+                    // labelpos = (100 - perc);
+                    console.log('labelpos');
+                t.find('.labelsprite').css('left', labelpos);
+            }
+            perc();
+            setInterval(perc, 0); 
+        });
+    });
+</script>
+<!-- Chart all-->
+
+<!-- Chart js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+<!-- Chart js plugin -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@1.1.2"></script>
+
+    <!--차트 묶음-->
+<script>
+    Chart.defaults.global.defaultFontFamily = "'Noto Sans KR', sans-serif";
+    Chart.defaults.global.defaultFontColor = '#b6b6b6';
+    Chart.defaults.global.legend.display = false;
+
+var ctx = document.getElementById("myChart").getContext('2d');
+    ctx.canvas.height = 450;
+    
+    const gradient1 = ctx.createLinearGradient(0, 0, 0, 150);
+    const gradient2 = ctx.createLinearGradient(0, 0, 0, 150);
+    const gradient3 = ctx.createLinearGradient(0, 0, 0, 150);
+        gradient1.addColorStop(0.5, '#16cbef'),
+        gradient1.addColorStop(1, '#2698ee'),
+        gradient2.addColorStop(0.5, '#a5e58f'),
+        gradient2.addColorStop(1, '#39ce39'),
+        gradient3.addColorStop(0.5, '#f08888'),
+        gradient3.addColorStop(1, '#ed3232')
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Mine", "Class", "Average"],
+        datasets: [{
+            label:'Vocabulary',
+            data: [52, 60, 80],
+            backgroundColor: [
+               gradient1,
+               gradient2,
+               gradient3
+            ],
+            borderWidth: 0,
+            borderRadius: 10,
+        },{
+        labels: ["Mine", "Class", "Average"],
+        datasets: [{
+            label:'Comprehension',
+            data: [12, 30, 10],
+            backgroundColor: [
+                '#049dee',
+                '#d9e000',
+                '#999eee'
+            ],
+            borderWidth: 0
+        }]
+        },{
+        labels: ["Mine", "Class", "Average"],
+        datasets: [{
+            label:'Total',
+            data: [12, 30, 80],
+            backgroundColor: [
+                '#049dee',
+                '#d9e000',
+                '#999eee'
+            ],
+            borderWidth: 0
+        }]
+    },
+],
+    },
+options: {
+         title:{
+            display:false,
+        },
+        scales: {
+            xAxes:[{
+                barPercentage: 0.4,    
+                // categoryPercentage:0.5,
+                argumentField: "state",
+                display: false, // hide x-axis value   
+            }],
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    maintainAspectRatio: false,
+                    min: 0,
+                    max: 100,
+                    stepSize: 25,
+                    fontColor:'#666',
+                },
+                display:false,
+            }],
+        }
+    }
+});
+var ctx2 = document.getElementById("myChart2").getContext('2d');
+     ctx2.canvas.height = 450;
+var myChart2 = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels: ["Mine", "Class", "Average"],
+        datasets: [{
+            label:'Comprehension',
+            data: [12, 30, 3],
+            backgroundColor: [
+                '#049dee',
+                '#d9e000',
+                '#999eee'
+            ],
+            borderWidth: 0
+        }]
+    },
+    options: {
+         title:{
+            display:false,
+        },
+        scales: {
+            xAxes:[{
+                barPercentage: 0.4,          
+                display: false, // hide x-axis value                
+            }],
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    maintainAspectRatio: false,
+                    min: 0,
+                    max: 100,
+                    stepSize: 25,
+                    fontColor:'#666',
+                    display: false, // hide x-axis value           
+                },
+                display:false
+            }]
+        }
+    }
+});
+var ctx3 = document.getElementById("myChart3").getContext('2d');
+    ctx3.canvas.height = 450;
+
+var myChart3 = new Chart(ctx3, {
+    type: 'bar',
+    data: 
+    options: {
+         title:{
+            display:false,
+        },
+        scales: {
+            xAxes:[{
+                barPercentage: 0.4,
+                display: false, // hide x-axis value                          
+            }],
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    maintainAspectRatio: false,
+                    min: 0,
+                    max: 100,
+                    stepSize: 25,
+                    fontColor:'#666',
+                    display: false, // hide x-axis value           
+
+                },
+                display:false
+            }]
+        }
+    }
+});
+</script>
+<script>
+    Chart.defaults.global.defaultFontColor = '#ffffff';
+
+var ctx4 = document.getElementById("myChart4").getContext("2d");
+    ctx4.canvas.height = 100;
+    ctx4.canvas.width = 350;
+var chart = new Chart(ctx4, {
+  type: "horizontalBar", // chart type
+  data: {
+    labels: ["Mine", "Class","Avg."],
+    datasets: [{
+        data: [100, 74, 10],
+        backgroundColor: [
+                'rgba(106, 205, 13, 0.9)',
+                'rgba(220, 58, 58, 0.9)',
+                'rgba(28, 136, 208, 0.9)'
+            ],
+        borderColor: [
+                'rgba(106, 205, 13, 1)',
+                'rgba(220, 58, 58, 1)',
+                'rgba(28, 136, 208, 1)'
+            ],
+        datalabels:{
+            color:'#fff',
+            margin: '10px',
+        }
+        
+    }]
+  }, //data setting
+
+  options: {
+    responsive: false, // (true/false) responsive divice width
+    legend: false,
+    scales: {
+      xAxes: [{
+        ticks: {
+          display: false, // hide x-axis value
+          min: 0,
+            max: 100,
+            stepSize: 10,
+        },
+        display:false,
+      }],
+      yAxes: [{
+        scaleLabel: {
+          display: false // show label name
+        },
+        ticks: {
+           display: false, // show y value text
+           fontSize: 10,
+           padding: 0,
+           fontColor: "#666",
+        },
+        barPercentage: 0.5 ,// bar thickness
+        display:false
+       }]
+    },
+    layout: {
+      padding: {
+        left: 0,
+        right: 10,
+        top: 0,
+        bottom: 0
+      }
+    },
+    tooltips: {
+      enabled: false // show or hide tooltip
+    },
+    hover: {
+      animationDuration: 0
+    },
+    animation: {
+      duration: 0, // when load page, first show anmation speed
+      onComplete: function() {
+        var chartInstance = this.chart,
+          ctx = chartInstance.ctx4;
+        ctx.font = Chart.helpers.fontString(
+          Chart.defaults.global.defaultFontSize,
+          Chart.defaults.global.defaultFontStyle,
+          Chart.defaults.global.defaultFontFamily
+        );
+        ctx.textAlign = "left";
+        ctx.textBaseline = "bottom";
+        ctx.color="#fff";
+        this.data.datasets.forEach(function(dataset, i) {
+          var meta = chartInstance.controller.getDatasetMeta(i);
+          meta.data.forEach(function(bar, index) {
+            var data = dataset.data[index];
+            ctx.fillText(data, bar._model.x - 30, bar._model.y + 6);
+            ctx.fillStyle = 'rgb(255, 255, 255)';
+          });
+        });
+      }
+    }
+  }
+});
+
+</script>
+
+</html>

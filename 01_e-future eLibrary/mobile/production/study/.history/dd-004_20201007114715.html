@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/study-layout.css">
+    <script src="../../build/js/jquery.js"></script>
+    
+    <title>DD-004</title>
+</head>
+<body>
+    <div class="container dd004">
+        <div class="top-nav">
+            <div class="study-progress"><div></div></div>
+            <div class="title">
+                <p>Choose the missing letter.</p>
+                <button class="close"><img src="../../build/images/layout/close.png" alt="close"></button>
+            </div>
+        </div>
+        <div class="contents-area gradient-bottom">
+            <!-- Question Image -->
+            <div class="q-img q-img-square01"><img src="../../build/images/contents/q-img03.jpg" alt="question image"></div>
+            
+            <!-- Question Sentence -->
+            <div class="q-text"  style="display:none;">
+                The king was
+                <span class="drop-box">Drag item here!</span>
+                , but he prepared the water anyway.
+            </div>
+
+            <!-- Word -->
+            <!-- Drop Zone -->
+            <div class="drop-wrap" >
+               <span class="drop-box">Drag item here!</span>
+               <span class="drop-box">Drag item here!</span>
+               <span class="drop-box">Drag item here!</span>
+               <span class="drop-box">Drag item here!</span>
+               <span class="drop-box">Drag item here!</span>
+               <span class="drop-box">Drag item here!</span>
+               <span class="drop-box">Drag item here!</span>
+               <span class="drop-box">Drag item here!</span>
+               <span class="drop-box">Drag item here!</span>
+               <span class="drop-box">Drag item here!</span>
+               <span class="drop-box">Drag item here!</span>
+               <span class="drop-box">Drag item here!</span>
+            </div>
+
+            <!-- Drag Zone -->
+            <div class="drag-wrap" >
+               <span class="drag-item">s</span>
+               <span class="drag-item">e</span>
+               <span class="drag-item">q</span>
+               <span class="drag-item">d</span>
+               <span class="drag-item">x</span>
+               <span class="drag-item">g</span>
+               <span class="drag-item">b</span>
+               <span class="drag-item">z</span>
+               <span class="drag-item">t</span>
+            </div>
+
+            <!-- Check Button -->
+            <button class="check-btn gradient-default">Check</button>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $('.answer-list li').on("click",function(){
+            $(this).toggleClass("active");
+            $(this).siblings().removeClass("active");
+            $('.check-btn').removeClass('gradient-default').addClass('gradient-right');
+        });
+    });
+</script>
+<script>
+    // drop-box 개수가 12개 초과시 가운데 해제
+    $(document).ready(function(){
+        var ele = $(".drop-wrap .drop-box").length;
+        console.log(ele); 
+            if( ele > 12 ){ $(".drop-wrap").css("align-content","initial");
+        }else{$(".drop-wrap").css("align-content","center"); 
+        }
+    });
+</script>
+<!-- 넓이에 따른 margin 조정 -->
+<script>
+    $(window).ready(function (){
+        var win_size = window.outerWidth;
+        
+        if(win_size <= 375){
+            $('.drop-wrap .drop-box').css("margin","1.2vw 0.32vw");
+        }else if(win_size >= 480){
+            $('.drop-wrap .drop-box').css("margin","1.2vw 0.5vw");
+        }
+        else{
+            $('.drop-wrap .drop-box').css("margin","1.2vw 0.83vw");
+        }
+    });
+</script>
+</html>

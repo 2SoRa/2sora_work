@@ -1,0 +1,14 @@
+/*상단 메뉴*/
+#header .menubox .logo { height: 97px; position: relative; top: 0; margin:0;}
+#header .menubox .logo img{ position: absolute;top: 0;bottom: 0;margin: auto; max-height:80px;}
+/*#header .menubox .logo { margin: 35px 0 0 10px; }*/
+#header .util .top_wrap .admin_site .e-future img{vertical-align: text-bottom; margin-right:3px;}
+#header .util .top_wrap .admin_site .e-future a {color:#7f7f7f; font:700 11px 'Noto Sans KR', sans-serif; line-height: 40px; margin-left:130px;}
+#header .util .top_wrap .admin_site .e-future {padding-right:8px; border-right:1px solid #484848;}
+#header .util .loginbox li.name {margin:12px 3px;}
+#header .util .loginbox li.logout {background-color: #346472;}
+#header .util .loginbox li.myinfo {
+    background-color: #96704b;}
+#header .util .loginbox li.myinfo a{color:#feffff;}
+#header .util .loginbox li.myinfo:hover a{color:#feffff;}
+

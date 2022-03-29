@@ -1,0 +1,72 @@
+<div id="footer">
+	<div class="quicklink">
+		<div class="cs">
+			<p>고객센터<span style="color:orange;">02.3400.0533</span></p>
+		</div>
+		<ul>
+			<li><a class="btn_policy" href="#policy">이용약관</a></li>
+			<li><a class="btn_personal" href="#personal">개인정보보호정책</a></li>
+			<li><a class="btn_email" href="#emailgathering">이메일무단수집거부</a></li>
+			<li><a class="btn_cs" href="#cs">고객지원</a></li>
+		</ul>
+	</div>
+	<div class="copyright">
+		<div class="logo"><img src="../images/common/footer_logo.png" alt="eSmart Campus"></div>
+		<div class="information">
+			<ul><li>서울 송파구 백제고분로 91 LK빌딩 4 ~ 6F</li> <li> TEL.02.3400.0509</li> <li> FAX.02.591.7626</li> </ul>
+			<ul><li>사업자등록번호 : 214-86-47520</li> <li>통신판매업신고 제 송파 0283호</li>  <li> 인정보관리책임자: 현용희</li> <li> 대표이사 : 황경호</li></ul> 
+			<div class="copy">Copyright © e-future All right reserved.</div>
+		</div>
+	</div>
+</div>
+<? include "../../inc/popup.html" ?>
+</body>
+</html>
+<script type="text/javascript" src="/web/jquery/jquery.colorbox.js"></script>
+<script>
+	$( function() {
+	var jbOffset = $( '.jbMenu' ).offset();
+		$( window ).scroll( function() {
+		if ( $( document ).scrollTop() > jbOffset.top ) {
+			$( '.jbMenu' ).addClass( 'jbFixed' );
+		}
+		else {
+			$( '.jbMenu' ).removeClass( 'jbFixed' );
+			}
+		});
+	});
+$(function(){
+	$('#select_container').jqTransform();
+	});
+	$(document).ready(function($){
+		$(".btn_policy").colorbox({inline:true, width:"640"});
+	});
+	$(document).ready(function(){
+		$(".btn_personal").colorbox({inline:true, width:"640"});
+	});
+	$(document).ready(function(){
+		$(".btn_email").colorbox({inline:true, width:"540"});
+	});
+	$(document).ready(function(){
+		$(".btn_cs").colorbox({inline:true, width:"540"});
+	});
+</script>
+<!--================나라 선택===================================-->
+<script>
+    $(function(){
+        var selected = $('.selected').html();
+        $('.show_country').click(function(){
+            $('.country ul').slideToggle();
+        });
+        
+        var allli = $('.country ul li');
+        $('.country ul li').click(function(){
+                allli.removeClass('selected');
+                $(this).addClass('selected');
+                
+                $('.country ul').slideUp();
+                $('.show_country p').html($(this).html());
+           
+        });
+    });
+</script>

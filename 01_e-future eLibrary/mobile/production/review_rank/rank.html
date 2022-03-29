@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/chart.css">
+    <link rel="stylesheet" href="../../build/css/barchart.css">
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/layout.css">
+    <link rel="stylesheet" href="../../build/css/review_rank.css">
+    <script src="../../build/js/jquery.js"></script>
+    
+    <title>Rank</title>
+</head>
+<body>
+    <div class="container rank">
+        <!-- top navigation -->
+        <div class="top-nav gradient-right">
+            <button class="back"><img src="../../build/images/layout/close-white.png" alt="close"></button>
+            <p class="title">Rank</p>
+            <button class="icon-user"><img src="../../build/images/layout/user.png" alt="user-icon"></button>
+            <div class="top-nav-user">
+                    <button>Profile</button>
+                    <button>Logout</button>
+            </div>
+        </div>
+        <!-- contents area -->
+        <div class="contents-area ">
+            <div class="gradient-right">
+                <div class="top-menu-list">
+                    <select name="" id="" class="bdr-50">
+                        <option value="2020.07">2020.07</option>
+                        <option value="2020.06">2020.06</option>
+                        <option value="2020.05">2020.05</option>
+                        <option value="2020.04">2020.04</option>
+                        <option value="2020.03">2020.03</option>
+                        <option value="2020.02">2020.02</option>
+                        <option value="2020.01">2020.01</option>
+                        <option value="2019.12">2019.12</option>
+                    </select>
+                    <div class="period">
+                        <p class="monthly">Monthly</p>
+                        <!-- Rounded switch -->
+                        <label class="switch">
+                          <input type="checkbox">
+                          <span class="slider bdr-50"></span>
+                        </label>
+                        <p class="all active">All</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contents-wrap">
+                <div class="reading-info">
+                    <p>Reading : <span>5</span> Books</p>
+                    <p>Point : <span>75</span> Point</p>
+                </div>
+                <div class="rank-view gradient-bottom">
+                    <div class="count"><p>25</p></div>
+                    <ul class="rank-img">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <table class="ranking">
+                    <colgroup>
+                        <col class="col1"><col class="col2"><col class="col3"><col class="col4">
+                    </colgroup>
+                    <tr>
+                        <th><img src="../../build/images/layout/gold.png" alt="gold"></th>
+                        <td class="name">hongildong</td>
+                        <td><span>25</span> Books</td>
+                        <td><span>375</span> Point</td>
+                    </tr>
+                    <tr>
+                        <th><img src="../../build/images/layout/silver.png" alt="silver"></th>
+                        <td class="name">hongildong</td>
+                        <td><span>25</span> Books</td>
+                        <td><span>375</span> Point</td>
+                    </tr>
+                    <tr>
+                        <th><img src="../../build/images/layout/bronze.png" alt="bronze"></th>
+                        <td class="name">hongildong</td>
+                        <td><span>25</span> Books</td>
+                        <td><span>375</span> Point</td>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <td class="name">hongildong</td>
+                        <td><span>25</span> Books</td>
+                        <td><span>375</span> Point</td>
+                    </tr>
+                    <tr>
+                        <th>5</th>
+                        <td class="name">hongildong</td>
+                        <td><span>25</span> Books</td>
+                        <td><span>375</span> Point</td>
+                    </tr>
+                </table>
+                <!-- button Click >> +5 -->
+                <button class="more">+ More Rank</button>
+            </div>
+            
+        </div>
+        <!-- bottom navigation -->
+        <div class="bottom-nav">
+            <ul class="nav-list">
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-books.png" alt="Books">
+                        <p>Books</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-report.png" alt="Report">
+                        <p>Report</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-review.png" alt="Review">
+                        <p>Review</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-rank-on.png" alt="Rank">
+                        <p class="btn-on">Rank</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+            $(".icon-user").on("click", function() {
+               $('.top-nav-user').slideToggle();
+            });
+    });
+</script>
+<script>
+    var toggleSwitch = document.querySelector('input[type="checkbox"]');
+    var op1 = document.querySelector('.monthly');
+    var op2 = document.querySelector('.all');
+        
+        function checkActive(){
+            op1.classList.toggle('active');
+            op2.classList.toggle('active');
+        }
+    $(toggleSwitch).on("click",function(){
+        checkActive();
+    });
+</script>
+</html>

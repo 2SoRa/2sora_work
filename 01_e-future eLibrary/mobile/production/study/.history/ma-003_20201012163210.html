@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/study-layout.css">
+    <script src="../../build/js/jquery.js"></script>
+ 
+    
+    <title>MA-003</title>
+</head>
+<body>
+    <div class="container ma003">
+        <div class="top-nav">
+            <div class="study-progress"><div></div></div>
+            <div class="title">
+                <p>Choose the correct word.</p>
+                <button class="close"><img src="../../build/images/layout/close.png" alt="close"></button>
+            </div>
+        </div>
+        <div class="contents-area">
+            <!-- Background MA003-->
+            <div class="q-word">
+                mattress
+            </div>
+            <ul class="answer-list">
+               <li>
+                   <div class="question">
+                       <img src="../../build/images/contents/q-img01.jpg" alt="question">
+                       <div class="cover"></div>
+                   </div>
+               </li> 
+               <li>
+                   <div class="question">
+                       <img src="../../build/images/contents/q-img01.jpg" alt="question">
+                       <div class="cover"></div>
+                   </div>
+               </li> 
+               <li>
+                   <div class="question">
+                       <img src="../../build/images/contents/q-img01.jpg" alt="question">
+                       <div class="cover"></div>
+                   </div>
+               </li> 
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    $(function(){
+        $('.cover').delay(500).animate({'top':'-15vh'},500,function(){
+            $(this).delay(1000).animate({'top':'-2.7vh'},500);
+        });
+        $('.cover').click(function(){
+            $(this).animate({'top':'-15vh'},500);
+            $(this).parents('li').siblings().children().children(".cover").animate({'top':'-2.7vh'},500);
+        });
+    });
+</script>
+</html>

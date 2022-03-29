@@ -1,0 +1,29 @@
+.content .questiontype02 {width:100%; height:calc(100vh - 258px);  text-align:center; padding-top:10px;  }
+.content .questiontype02 .linecard {  display:inline-block;   }
+.content .questiontype02 .linecard .col01 {width:100%; margin-top:50px;}
+.content .questiontype02 .linecard .col01 .qbox { display:inline-block;height:140px; margin-right:5px; width:260px; position:relative;  }
+.content .questiontype02 .linecard .col01 .qnumber {float:left; height:140px;  padding-top:25px;  width:80px; text-align:left;margin-left:10px; }
+.content .questiontype02 .linecard .col01 .qnumber_t {height:100px;  padding-top:25px;  width:260px;text-align:center;}
+.content .questiontype02 .linecard .col01 .cardframe {float:left;   height:140px; background:url(../../images/popup/frame.png) no-repeat; width:121px; padding:10px 10px;}
+.content .questiontype02 .linecard .col01 .tbox  {width:260px; line-height:24px; height:70px;  text-align:center;  display: table; vertical-align:middle; padding-top:5px; clear:both;}
+.content .questiontype02 .linecard .col01 .tbox p { display: table-cell;  height:70px;   border:3px solid #e4e4e4; border-radius:5px; font:700 16px 'Open Sans', sans-serif;    text-align:center;  vertical-align:middle; padding:5px 10px;  }
+.content .questiontype02 .linecard .col01 .dots {height:20px; width:260px; margin-top:5px; text-align:center; clear:both;}
+.content .questiontype02 .linecard .col01 .redtxt {color:#f45151;}
+.content .questiontype02 .linecard .col01 .greentxt {color:#63bf00;}
+.content .questiontype02 .linecard .col01 .bluetxt {color:#028df9;}
+.content .questiontype02 .linecard .col02 {width:100%;  height:100px;  }
+.content .questiontype02 .linecard .col02_i {width:100%;  height:100px;  }
+#a_linebox {top:140px;}
+.content .questiontype02 .linecard .col03 { width:100%;  margin-top:50px;}
+.content .questiontype02 .linecard .col03 .abox { display:inline-block;height:140px; margin-right:5px;  }
+.content .questiontype02 .linecard .col03 .abox .dots {height:20px; width:260px; text-align:center;margin-bottom:5px;}
+.content .questiontype02 .linecard .col03 .abox .tbox  {width:260px;  display:inline-block;  display: table;}
+.content .questiontype02 .linecard .col03 .abox .tbox p { display: table-cell;  border:3px solid #e4e4e4; border-radius:5px;  font:700 16px 'Open Sans', sans-serif;  line-height:24px; height:70px;  vertical-align:middle; }
+.content .questiontype02 .linecard .col03 .cardframe {height:140px; background:url(../../images/popup/frame.png) no-repeat; width:121px; padding:10px 10px;margin-left:70px;}
+
+
+
+
+
+
+

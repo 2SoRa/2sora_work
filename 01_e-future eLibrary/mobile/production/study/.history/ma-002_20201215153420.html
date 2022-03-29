@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/study-layout.css">
+    <script src="../../build/js/jquery.js"></script>
+    
+    <title>MA-002</title>
+</head>
+<style>
+
+</style>
+<body>
+    <div class="container-study ma002">
+        <div class="top-nav">
+            <div class="study-progress"><div></div></div>
+            <div class="title">
+                <p>Choose the correct word.</p>
+                <button class="close"><img src="../../build/images/layout/close.png" alt="close"></button>
+            </div>
+        </div>
+        <div class="contents-area">
+            <!-- Background MA002-->
+                <div class="slide-frame">
+                    <div class="show-slide">
+                     <ul class="slide-wrap">
+                         <li><img src="../../build/images/contents/card_crown.png" alt=""></li>
+                         <li><img src="../../build/images/contents/card_seal.png" alt=""></li>
+                         <li><img src="../../build/images/contents/card_bird.png" alt=""></li>
+                         <li><img src="../../build/images/contents/card_crown.png" alt=""></li>
+                         <li><img src="../../build/images/contents/card_seal.png" alt=""></li>
+                     </ul>
+                    </div>
+                 </div>
+                 <div class="q-word">
+                     mattress
+                 </div>
+        </div>
+    </div>
+</body>
+<script>
+      count = 0;
+    $(function(){
+        var move = setInterval(function(){
+            
+            if(count<=-400){
+                count = 0;
+                $('.slide-wrap').css({'left':'0'});
+            }
+            count = count - 100;
+            $('.slide-wrap').stop().animate({'left':count+'%'},1000);
+        },2000);
+        
+         $('.slide-wrap li').mouseover(function(){
+             clearInterval(move) ;
+         }).mouseout(function(){
+             move = setInterval(function(){
+            
+                if(count<=-400){
+                    count = 0;
+                    $('.slide-wrap').css({'left':'0'});
+                }
+                count = count - 100;
+                $('.slide-wrap').stop().animate({'left':count+'%'},1000);
+            },2000);
+         });
+    });
+</script>
+</html>

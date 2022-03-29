@@ -1,0 +1,100 @@
+input[type=radio]:not(old) {  width : 28px;  margin:0;  padding:0;  opacity : 0;}
+input[type=radio]:not(old):checked{  width : 28px;  margin:0;  padding:0;  opacity : 0;}
+input[type=radio]:not(old) + label{  display: inline-block;  background   : url('../../images/common/checks03.png') no-repeat 0 18px;  }
+input[type=radio]:not(old):checked + label{ display: inline-block;   background-position : 0 -30px; }
+	
+/*Type CC*/
+.content .questiontype01 {width:100%; height:calc(100vh - 200px);  text-align:center; padding-top:20px; }
+.content .questiontype01 .picard {display:inline-block;  width:100%;height:230px; margin-top:20px;}
+.content .questiontype01 .qnumber {   position: absolute; left:50px;}
+/*.content .questiontype01 .qcard {height:250px;font:700 26px 'Open Sans', sans-serif;   line-height:250px;}*/
+.content .questiontype01 .qcard {height:250px; font:700 26px 'Open Sans', sans-serif;  display:flex; align-items:center; justify-content:center; padding:45px;}
+.content .questiontype01 .qcard .qimg {height:230px;}
+.content .questiontype01 .qaudio {margin-top:83px;}
+.content .questiontype01 .audio {  position:relative;  top:100px; left:40px; }
+.content .questiontype01 .answerboxred {width:80%; text-align:left;   height:51px;  margin-top:10px;  background-color:#ffffff; margin-left:10%; border:1px solid #ccc;   }
+.content .questiontype01 .answerboxblue {width:80%; text-align:left;   height:51px;  margin-top:10px;  background-color:#ffffff; margin-left:10%; border:1px solid #ccc;  }
+.content .questiontype01 .answerboxgreen {width:80%; text-align:left;   height:51px;  margin-top:10px;  background-color:#ffffff; margin-left:10%; border:1px solid #ccc;  }
+.content .questiontype01 .answerboxgray {width:80%; text-align:left;   height:51px;  margin-top:10px;  background-color:#ffffff; margin-left:10%; border:1px solid #ccc;  }
+.content .questiontype01 .answerboxred  .inputbox { width:100%; float:left; height:45px;  padding-left:30px; }
+.content .questiontype01 .answerboxblue  .inputbox {   width:100%; float:left; height:45px;padding-left:30px;   }
+.content .questiontype01 .answerboxgreen  .inputbox {   width:100%; float:left; height:45px;padding-left:30px;   }
+.content .questiontype01 .answerboxgray  .inputbox {   width:100%; float:left; height:45px;padding-left:30px;   }
+.content .questiontype01 .answerboxred label {color:#666; font:700 22px 'Open Sans', sans-serif;   line-height:45px;  }
+.content .questiontype01 .answerboxblue label {color:#666; font:700 22px 'Open Sans', sans-serif;   line-height:45px; }
+.content .questiontype01 .answerboxgreen label {color:#666; font:700 22px 'Open Sans', sans-serif;   line-height:45px; }
+.content .questiontype01 .answerboxgray label {color:#666; font:700 22px 'Open Sans', sans-serif;   line-height:45px; }
+
+.content .questiontype01 .answerboxgray label table tr td {color:#666; font:700 22px 'Open Sans', sans-serif;   height:45px;width:100%;line-height:110%; }
+
+.content .questiontype01 .answerboxred label.labeltext {padding-left:60px; width:95%; height:50px; }
+.content .questiontype01 .answerboxblue label.labeltext {padding-left:60px; width:95%; height:50px; }
+.content .questiontype01 .answerboxgreen label.labeltext {padding-left:60px; width:95%; height:50px; }
+.content .questiontype01 .answerboxgray label.labeltext {padding-left:60px; width:95%; height:50px; }
+
+.answerboxred_hor input[type=radio]:not(old) + label{  display: inline-block;  margin-left : -28px;   background   : url('../../images/common/checks03.png') no-repeat 0 15px; height:46px;}
+.answerboxred_hor input[type=radio]:not(old):checked + label{ display: inline-block;   background-position : 0 -31px;  height:46px;}
+
+.content .questiontype01 .answerboxred_hor {width:35%; text-align:left;   height:160px;  margin-top:25px;  background-color:#ffffff; margin-left:14%; margin-right:1%; border:3px solid #ccc; float:left; border-radius:10px;}
+.content .questiontype01 .answerboxred_hor  .inputbox { width:100%; float:left; height:146px;  padding-left:15px;}
+.content .questiontype01 .answerboxred_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxred_hor label span { font:700 60px 'Open Sans', sans-serif;   line-height:150px; width:100%; text-align:center;margin-left:115px;}
+.content .questiontype01 .answerboxred_hor label .labelimg {margin-left:50px;height:145px;margin-top:5px;}
+.content .questiontype01 .answerboxred_hor label .labelaudio {margin-left:110px;height:74px; margin-top:38px;}
+
+.content .questiontype01 .answerboxblue_hor {width:35%; text-align:left;   height:160px;  margin-top:25px;  background-color:#ffffff; margin-right:15%; border:3px solid #ccc;  float:left; border-radius:10px;}
+.content .questiontype01 .answerboxblue_hor  .inputbox { width:100%; float:left; height:146px;padding-left:15px;   }
+.content .questiontype01 .answerboxblue_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxblue_hor label span { font:700 60px 'Open Sans', sans-serif;   line-height:150px; width:100%; text-align:center;margin-left:115px;}
+.content .questiontype01 .answerboxblue_hor label .labelimg {margin-left:50px;height:145px;margin-top:5px;}
+.content .questiontype01 .answerboxblue_hor label .labelaudio {margin-left:110px;height:74px; margin-top:38px;}
+
+.content .questiontype01 .answerboxgray1, .content .questiontype01 .answerboxgray2 {width:80%; text-align:left;   height:66px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc; }
+.content .questiontype01 .answerboxgray1_hor {width:35%; text-align:left;   height:160px;  margin-top:50px;  background-color:#ffffff; margin-left:14%; margin-right:1%; border:3px solid #ccc; float:left; border-radius:10px;}
+.content .questiontype01 .answerboxgray1_hor  .inputbox { width:100%; float:left; height:146px;  padding-left:15px;}
+.content .questiontype01 .answerboxgray1_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxgray1_hor label span { font:700 60px 'Open Sans', sans-serif;   line-height:150px; width:100%; text-align:center;margin-left:115px;}
+.content .questiontype01 .answerboxgray1 label.labeltext {
+    padding-left: 60px;
+    width: 95%;
+    height: 60px;
+}
+.content .questiontype01 .answerboxgray1_hor label .labelimg {margin-left:50px;height:145px;margin-top:5px;}
+.content .questiontype01 .answerboxgray1_hor label .labelaudio {margin-left:110px;height:74px; margin-top:38px;}
+.content .questiontype01 .answerboxgray1 label table tr td {
+    color: #666;
+    font: 700 24px 'Open Sans', sans-serif;
+    height: 60px;
+    width: 100%;
+    line-height: 110%;
+}
+
+.content .questiontype01 .answerboxgray2_hor {width:35%; text-align:left;   height:160px;  margin-top:50px;  background-color:#ffffff; margin-right:15%; border:3px solid #ccc;  float:left; border-radius:10px;}
+.content .questiontype01 .answerboxgray2_hor  .inputbox { width:100%; float:left; height:146px;padding-left:15px;   }
+.content .questiontype01 .answerboxgray2_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxgray2_hor label span { font:700 60px 'Open Sans', sans-serif;   line-height:150px; width:100%; text-align:center;margin-left:115px;}
+.content .questiontype01 .answerboxgray2_hor label .labelimg {margin-left:50px;height:145px;margin-top:5px;}
+.content .questiontype01 .answerboxgray2_hor label .labelaudio {margin-left:110px;height:74px; margin-top:38px;}
+
+.content .questiontype01 .answerboxgray2 label.labeltext {
+    padding-left: 60px;
+    width: 95%;
+    height: 60px;
+}
+.content .questiontype01 .answerboxgray2 label table tr td {
+    color: #666;
+    font: 700 24px 'Open Sans', sans-serif;
+    height: 60px;
+    width: 100%;
+    line-height: 110%;
+}
+
+
+
+
+
+
+
+
+
+

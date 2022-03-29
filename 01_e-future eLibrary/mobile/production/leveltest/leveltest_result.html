@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/chart.css">
+    <!-- <link rel="stylesheet" href="../../build/css/barchart.css"> -->
+    <link rel="stylesheet" href="../../build/css/piechart.css">
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/layout.css">
+    <link rel="stylesheet" href="../../build/css/level_test.css">
+    <script src="../../build/js/jquery.js"></script>
+    <title>Level Test</title>
+</head>
+<style>
+    .contents-area.gradient-bottom .contents-wrap.level-result {padding-top:0;}
+    .testresult-title { font-size:6.3vw; color:#2699ee; }
+    .testresult-title+.leveltest-text { color:#666666; margin:2vh 0 5vh; }
+    .leveltest-text { margin: 2.5vh auto 6vh; color:#999999; font-size:3.87vw; }
+    .leveltest-text strong { color:#333333; }
+
+    /* donut chart */
+    .chartarea { margin: 6.5vh auto; }
+
+</style>
+<body>
+    <div class="container">
+        <div class="top-nav">
+        </div>
+        <!-- contents area -->
+        <div class="contents-area gradient-bottom">
+            <div class="contents-wrap level-result">
+                <h2 class="testresult-title">Level Test Result</h2>
+                <p class="leveltest-text"><strong>[hongildong]</strong> level is</p>
+
+                <div class="chartarea">
+                    <div class="chart donut">
+                        <div class="donut-chart fill" data-percent="0.9" data-title="Lv."></div>
+                    </div>
+                </div>
+
+                <p class="leveltest-text"> You can start reading at this level.</p>
+                
+                <div class="progressbar small_progress" data-perc="100">
+                    <div class="horizbar color4" style="width:25%;"><span></span></div>
+                    <div class="labelsprite"><span></span></div>
+                    <div class="level">
+                        <p>K</p>
+                        <p>12</p>
+                    </div>
+                </div>
+
+                <button class="btn btn01 gradient-left">Go to Books</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../build/js/jquery.chart.js"></script>
+<script>
+    $(function() {
+        $('.bar-chart').cssCharts({type:"bar"});
+        $('.donut-chart').cssCharts({type:"donut"}).trigger('show-donut-chart');
+     });
+</script>
+<script>
+    $(function() {
+        $('.progressbar').each(function(){
+            var t = $(this);
+                var dataperc = t.attr('data-perc'),
+                    barperc = Math.round(dataperc*1);
+            t.find('.horizbar').animate({width:barperc}, dataperc*5);
+            
+            function perc() {
+                var length = t.find('.horizbar').css('width'),
+                    perc = Math.round(parseInt(length)/1),
+                    labelpos = (parseInt(length)-15);
+                    // labelpos = (100 - perc);
+                    console.log('labelpos');
+                t.find('.labelsprite').css('left', labelpos);
+            }
+            perc();
+            setInterval(perc, 0); 
+        });
+    });
+</script>
+</html>

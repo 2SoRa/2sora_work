@@ -1,0 +1,23 @@
+.modal-overlay {       
+	background-color 	: black;
+	background-image	: none;
+	opacity	: 0.1;
+	z-index	: 104000;
+	position	: fixed;
+	top		: 0;
+	left		: 0;
+	width	: 100%;
+	height 	: 100%
+}
+   	
+.modal-popup {
+	display : none;
+   	position: absolute;
+   	left	: 0px;
+   	top		: 0px;
+   	width	: 0px;
+   	height	: auto;
+   	background : #fff;
+   	z-index	: 105000;
+   	padding	: 2px;
+}

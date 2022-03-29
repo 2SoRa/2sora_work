@@ -1,0 +1,71 @@
+
+    .bg {
+        background:url(/common/study/GT-005/images/bg-gt005.png) 0 0 no-repeat; 
+        overflow: hidden;
+    }
+    .question {
+        width:320px; 
+        height:120px; 
+        background-color: #fff; 
+        margin:25px auto; 
+        text-align: center; 
+        font-size:40px; 
+        line-height: 120px; 
+        font-weight:700; 
+        border-radius:10px; 
+        box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.2);
+    }
+    .q_img {
+        position: absolute; 
+        left: 0; right: 0; top: 20px;
+        margin: auto; 
+        cursor:pointer;
+    }
+    .q_imgg { border: 3px solid #0a6f2e;}
+    .q_imgo { border: 3px solid #8f3f08;}
+
+    .ball {
+        width:115px; 
+        height:115px; 
+        position: absolute; 
+        top:580px;;
+        /*bottom: 20px; */
+        left: 0;right: 0; 
+        margin: auto; 
+        border-radius:100px; 
+        box-shadow:3px 3px 2px 0 rgba(0,0,0,0.2);
+        background:url('/common/study/GT-005/images/ball.png') -1px -2px no-repeat;
+    }
+    .goal {
+        width:400px;
+        height:258px; 
+        position: absolute;
+        top: 175px; 
+    }
+    .green {
+        background: url('/common/study/GT-005/images/green.png') 0 0 no-repeat; 
+        left: 50px; 
+        box-shadow: 3px 3px 10px 0 rgba(0,0,0,0.2);
+    }
+    .orange {
+        background:url('/common/study/GT-005/images/orange.png') 0 0 no-repeat; 
+        right: 50px; 
+        box-shadow: 3px 3px 10px 0 rgba(0,0,0,0.2);
+    }
+    .basket {
+        width:131px; 
+        height:134px; 
+        position: absolute; 
+        left: 0;right: 3px; top: 167px;
+        margin: auto;
+        z-index: 10000;
+    }
+    .bar {
+        width:21px; height:307px; 
+        background:url('/common/study/GT-005/images/bar.png') 0 0 no-repeat; 
+        position: absolute;
+        top: 400px;
+        bottom: -10px;
+    }
+    .bar1 { left:240px;  }
+    .bar2 { right:240px; }

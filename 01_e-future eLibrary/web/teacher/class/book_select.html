@@ -1,0 +1,68 @@
+<!-- /v1/head.sub.php-->
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="../../css/colorbox.css">
+	<link rel="stylesheet" type="text/css" href="../../css/layout.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../../jquery/image-picker.js" type="text/javascript"></script>
+	<title>eSmart Library</title>
+</head>
+<body>
+<div>
+	<div id="cs" class="poparea popup15" >
+		<div class="title tp09">추천 도서 선택</div>
+        <div style="text-align:right; float:right; margin-top:-38px;"><a href=""><img src="../../images/common/popup_close.gif" alt="close"></a></div>
+		<div class="ppsearch">
+			<select class="select_type01 mgr3">
+				<option value="">전체레벨</option>
+				<option value="">제목</option>
+			</select>
+			<input type="text" name="search" id="search" title="검색" class="inputsearch02"  ><a href=".html" class="btn_search02">검색</a>
+		</div>
+		<div class="popupbook mgb20">
+			<form>
+				<select  multiple="multiple"  class="image-picker show-html" >
+					<option data-img-src='../../images/temp/txtbook01.gif' value='1'>thumbnail01</option>
+					<option data-img-src='../../images/temp/txtbook01.gif' value='2'>thumbnail01</option>
+					<option data-img-src='../../images/temp/txtbook01.gif' value='3'>thumbnail01</option>
+					<option data-img-src='../../images/temp/txtbook01.gif' value='4'>thumbnail01</option>
+					<option data-img-src='../../images/temp/txtbook01.gif' value='5'>thumbnail01</option>
+					<option data-img-src='../../images/temp/txtbook01.gif' value='6'>thumbnail01</option>
+					<option data-img-src='../../images/temp/txtbook01.gif' value='7'>thumbnail01</option>
+					<option data-img-src='../../images/temp/txtbook01.gif' value='8'>thumbnail01</option>
+					<option data-img-src='../../images/temp/txtbook01.gif' value='9'>thumbnail01</option>
+					<option data-img-src='../../images/temp/txtbook01.gif' value='10'>thumbnail01</option>
+					<option data-img-src='../../images/temp/txtbook01.gif' value='11'>thumbnail01</option>
+				</select>
+			</form>	
+		</div>
+
+
+		<div  class="btnarea"><a class="button01 btn_gray mgr10" href="">취소</a> <a class="button01 btn_red" href="">선택완료</a></div>
+
+	</div>
+</div>
+<script type="text/javascript">
+
+	jQuery("select.image-picker").imagepicker({
+		hide_select:true,
+	});
+	jQuery("select.image-picker.show-labels").imagepicker({
+		hide_select:false,
+		show_label: true,
+	});
+	jQuery("select.image-picker.limit_callback").imagepicker({
+		limit_reached:function(){alert('Alert')},
+		hide_select:false
+	});
+	var container = jQuery("select.image-picker.masonry").next("ul.thumbnails");
+		container.imagesLoaded(function(){
+		container.masonry({
+		itemSelector: "li",
+	});
+	});
+</script>

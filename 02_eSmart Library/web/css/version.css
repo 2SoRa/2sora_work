@@ -1,0 +1,10 @@
+.wrapper {margin:0 auto; width:800px; text-align:center; padding-top:285px; background:#fff url(../images/main/icon_monitor.jpg) no-repeat center top 70px;  }
+.wrapper p{font:400 20px 'Noto Sans KR', sans-serif; line-height:28px; color:#333333;  margin-bottom:14px; letter-spacing:-0.5px; }
+.wrapper .row {position:relative; width:100%; padding-bottom:35px; border-bottom:1px solid #dbdbdb; margin-bottom:50px; }
+.wrapper .rowend {position:relative; width:100%; padding-bottom:35px;margin-bottom:100px; }
+.wrapper p.phonenumber {font-size:30px; }
+
+.bluetxt {color:#0090c3;font-weight:600;  }
+.redtxt {color:#e04d2b; font-weight:600; }
+.imgicon {position:relative; top:-6px; }
+.engtxt {font-family: 'Open Sans', sans-serif; font-weight:600; position:relative; top:-2px; }

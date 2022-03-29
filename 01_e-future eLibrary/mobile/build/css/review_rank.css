@@ -1,0 +1,67 @@
+/* List */
+    .modify { margin-right:1vw; line-height:3vw; }
+
+/* Review */
+    .review .book-wrap { width:80vw; height:38vw; display:flex; margin: 3.5vh auto 3.5vh; justify-content:space-between; align-items: center; }
+
+    .review .review-area textarea { padding: 4vw 5vw;}
+    .review .review-area input[type="text"]::placeholder, .review .review-area textarea::placeholder { color:#666666; }
+
+    .review button.btn01 { margin-top:4vh; padding:0 15vw; }
+
+
+/* Rank */
+    /* select bar */
+    .rank .top-menu-list > select.bdr-50  {
+        width:56%;
+        background:#ffffff url('/common/app/images/layout/select-arrow.png') no-repeat 93% 50%; background-size: 12%;
+        color:#20aaef;
+        text-align-last: center; font-size:3.87vw; font-weight: 500;
+        margin-right: 4%;
+        padding-right: 7%;
+    }
+    /* Rank-Table page */
+    .rank .contents-area { display:flex; flex-direction: column; justify-content: space-between; }
+    .rank .contents-area .gradient-right {  padding: 1vh 2.58vh 1.1vh; }
+    .rank .contents-area .gradient-right .top-menu-list { display:flex; }
+    .period { width:40%; display:flex; align-items: center; justify-content: space-around; font-size:3.39vw; color:#ffffff; }
+
+    /* switch Button */
+    .switch { position: relative; display: inline-block; width: 12.8vw; height: 6.3vw; }
+    /* Hide default */
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ffffff;
+    -webkit-transition: .4s; 
+    transition: .4s;  }
+    .slider:before { position: absolute; content: "";  background:linear-gradient(to bottom, #16cbef, #2598ee); 
+        width: 4.834vw; height: 4.834vw; left: 1vw; bottom: 0.7vw;
+    -webkit-transition: .4s; transition: .4s; border-radius: 50%; }
+    input:checked + .slider { background-color: #ffffff; }
+    input:focus + .slider { box-shadow: 0 0 1px #2196F3; }
+    input:checked + .slider:before {
+    -webkit-transform: translateX(6vw);
+    -ms-transform: translateX(6vw);
+    transform: translateX(6vw);
+    }
+    /* text on,off opacity */
+    .period p.active { opacity: 0.5; }
+
+    /* Ranking view */
+    .rank .contents-wrap { padding:0; }
+    .rank-view { width:100%; height:31.65vh; text-align: center; padding: 4vh 0; border-bottom:1px solid #d4e3e5; }
+    .rank .count { width: 11vh; height:11vh; border-radius: 50%; border:9px solid #d3ebf1; font-size:7.75vw; color:#249dee; font-weight:700; display:table;  margin:auto; text-align:center; padding:0;}
+    .rank .count p { display:table-cell; vertical-align: middle; }
+    
+    /* ranking-chart-img */
+    .rank-img { width:38.65vw; height:10.74vh; margin:1vh auto; display:flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end;}
+    .rank-img li { width:11.6vw; height:100%; background:linear-gradient(to bottom, #16cbef, #2598ee); border-radius:9%; }
+    .rank-img li:first-child {  height:8.2vh; }
+    .rank-img li:last-child {  height:5.98vh; }
+
+    /* Ranking Table  */
+    .ranking { width:100%;  background-color:#ffffff; font-size:3.39vw; color:#666666;  border-collapse: collapse;   }
+    .ranking .col1 { width:13%; }
+    .ranking .col2 { width:42%; }
+    .ranking tr { width:100%; height: 6.05vh;  padding:0 2vh; text-align:center; }
+    .ranking tr th, .ranking tr td { border-bottom: 1px solid #e5e5e5; font-weight:400; }
+    .ranking tr td.name { text-align:left; }

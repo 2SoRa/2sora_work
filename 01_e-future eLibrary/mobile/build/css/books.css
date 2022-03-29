@@ -1,0 +1,134 @@
+/* book list */
+.books .contents-area::-webkit-scrollbar {  display:none; }
+.books .contents-area .gradient-right {padding: 1vh 2.58vh 2.5vh; }
+
+/* select box */
+.books .ddcommon { position:relative; display:-moz-inline-stack; zoom:1; display:inline-block; *display:inline; cursor:default; outline:none; font-size:3.87vw; margin-top:1.5vh;  }
+.books .ddcommon input.text{color:#7e7e7e;padding:0 0 0 0; position:absolute; background:#fff; display:block; width:100%; height:100%; left:2px; top:0; border:none; border-radius:50px; }
+.books .dd{border:none;}
+.books .dd .divider{border:none; right:24px;}
+.books .dd .ddTitle{ background-color:#ffffff; border-radius:50px; background:#ffffff url('/common/app/images/layout/select-arrow.png') no-repeat 93% 50%; background-size:8%; }
+.books .dd .ddTitle .ddTitleText{padding:0 3vh; height: 5.71vh; line-height:5.4vh; color:#666666; }
+.books .dd .ddTitle .ddTitleText img{padding-right:5px;  width:19.085vw; position: absolute; left:30vw; top:0; bottom:0; margin:auto; }
+.books .dd .ddChild li{padding:0.6vh 3vh; background-color:#fff; border:none;  }
+.books .dd .ddChild li .ddlabel {color:#666666;}
+.books .dd .ddChild li img{padding:0 6px 0 0;  width:19.085vw; position: absolute; left:30vw; }
+.books .dd .ddChild li.selected{background-color:#ade1f5;}
+.books .dd .ddChild li.selected .ddlabel{color:#ffffff;}
+/* -------------------------------------------------------- */
+
+.book-list { width:100%; margin:auto; display:flex; flex-wrap:wrap; padding: 0 1vh; }
+.book-list > li { height:35.05vw; margin: 2.85vh 2.4vw; position:relative; }
+.book-list > li.mg-0 { margin-top:0; }
+
+.book-list .reading-progress { width: 100%; background-color:#e3e3e3; height:3px; margin-top: 1vh; position: relative;}
+.book-list .reading-progress span {display:inline-block; width:20%; height:100%; background-color: #2698ee; position: absolute; left: 0;}
+
+.reading-completed {width:99%; height:99%; background-color:rgba(255,255,255,0.5); position: absolute; top: 0; left: 0; border-radius: 10px;}
+.reading-completed img {position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin:auto;}
+
+
+/* book information */
+.details .contents-wrap {padding:0; margin-top:-1vh;}
+.details .contents-area.gradient-bottom {height:100%;}
+.details .contents-area {overflow: hidden;}
+
+
+/* book slide (book list) */
+.details .book-list {width:100%;}
+.details .book-slide {
+    width:100%; padding:5.8vh 0 15vh;
+    overflow-x: auto;
+    display:flex;
+    align-items: center;
+    white-space:nowrap;
+    justify-content: space-between;
+    -ms-overflow-style:none;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+}
+.details .book-slide::-webkit-scrollbar { display: none !important;}
+.details .book-slide > div {
+    width:29.35vh; height:38.73vh;
+    flex: 0 0 auto; margin:0 4vh;
+    position:relative;
+    scroll-snap-align: center;
+    }
+.details .book-slide > div:first-child {margin-left:23.5vw;}
+.details .book { width:100%; height:100%;  overflow: hidden; border: 1px solid #c9c9c9; border-radius:10px; box-shadow: 2px 3px 5px rgba(0,0,0,0.3); }
+.details .book .book-cover {width:100%;}
+.details .book .recommend {width:5vh; position: absolute; top: 0; right: 2vh;}
+
+/* book reading progress */
+.details .book-list .reading-progress { width: 100%; background-color:#e3e3e3; height:3px; margin-top: 2vh; position: relative;}
+.details .book-list .reading-progress span {display:inline-block; width:20%; height:100%; background-color: #2698ee; position: absolute; left: 0;}
+
+/* level & CEFR */
+.book-info {font-size:4.35vw; color:#666666; margin-top:3.4vh; }
+.book-info span {font-size:3.87vw; color:#fffefe; display:inline-block; width:11.6vw; background-color:#57c86e; margin-left:1vw;}
+.book-info li:last-child span { background-color:#c86a57; margin-top:0.5vh;}
+
+/* Test button Read, Practice, Check Up, Record */
+.details .contents-wrap .btn-area { margin:4.7vh auto; position: relative;}
+.details .contents-wrap .btn-area button.btn01 { width:34.55vw; height: 6.25vh; margin:1vh 1vw; padding:0; font-size:3.9vw; letter-spacing: 1px; }
+
+/* Read >> Already read book button */
+.details .already-read { width:100%; height:28.448vh; border-top:2px solid #cadbde; background-color:#ffffff; padding:2vh 0; position: absolute; bottom: 0vh;}
+.details .already-read p { font-size:3.87vw; color:#666666; margin-bottom:1vh;}
+.details .contents-wrap .already-read button { width:83.1vw; height: 6.25vh; margin:1vh 1vw; padding:0; font-size:3.9vw; letter-spacing: 0.5px;}
+/* Learn Report // Practice Result */
+.result .contents-wrap { padding:0 1.15vh; }
+.score-area {width:55.6vw; height:40vh; background:url('/common/app/images/layout/score.png')center center no-repeat; position: relative; background-size:contain; margin:auto;}
+.score {font-size:10.45vw; color:#249cee; font-weight:700; text-align: center; line-height:32vh; }
+
+.result .progressbar { width:91vw; background-color:#d3ebf1; margin:2vh auto; }
+.result .progressbar:before { width:85.75vw; left: 2vw; }
+.result .progressbar .horizbar { left:2.5vw; }
+.result .labelsprite {background: url('/common/app/images/layout/chartlabel.png') 0 0 no-repeat; text-align:center; font-size:2.66vw; font-size:11px; color:#666666; width:10vw; height:5vh; top:-2.2vh; }
+.result .labelsprite span {top: 0; height:fit-content; display:inline-block; overflow:visible; width:8.7vw; width:8.7vw;}
+.result .labelsprite span:before {display:none;}
+
+.result-p .complete-message { margin:7vh 0 1vh;}
+.complete-message { color:#666666; font-size:3.87vw;}
+.complete-message h3 { font-size:4.9vw; font-weight:500; color:#249cee; }
+.result-p .btn-area {margin-top :9.5vh;}
+/* .btn-area > button { width:34.55vw; height: 6.25vh; margin:0 1vw; padding:0; font-size:3.9vw; letter-spacing: 1px; } */
+.contents-wrap .btn-area button.btn01 { width:34.55vw; height: 6.25vh; margin:0 1vw; padding:0; font-size:3.9vw; letter-spacing: 1px; }
+
+/* Check Up Report // Check Up Result  */
+/* Check Up Donut Chart */
+.result .chartarea {margin:5vh;}
+.result .chart.donut {width:23.915vh; height:23.915vh;}
+.result .chart.donut {line-height: 4.5vh; }
+.result .chart.donut span {font-size:5.8vw; }
+
+/* Answer Table // O , X */
+.answer-table li { width:17.15vw; height:16.91vw; background-color:#ffffff; border-radius:8px; border:1px solid #c9c9c9; box-shadow: 2px 2px 2px rgba(0,0,0,0.1); overflow: hidden; display:inline-block; margin:1vh 0.5vw 1.5vh;}
+.answer-table li p {border-bottom:1px solid #c9c9c9; background-color:#f2f2f2;  color:#7b7b7b; font-size:2.9vw; height:2.718vh; font-weight:700;}
+.answer-table li div { width:100%; height:11.5vw; display:flex; justify-content: center; align-items: center; }
+/* .answer-table li img {height: 8.455vw; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto;} */
+.answer-table li img { max-width:100%; max-height:100%; }
+
+.result-c .complete-message { margin: 2.8vh auto 5vh; }
+
+
+/*  Complete  */
+
+#canvas{ position: absolute; top: 0; left:0; display:block; z-index: 1; }
+.complete .contents-area { height:100%; }
+.complete .contents-wrap { padding:9.5vh 0 8vh; }
+
+.end-reading { margin:7.5vh 0 4.5vh;}
+.complete-book {
+    /* width:43.48vw; */
+    width:24.457vh;
+    border:10px solid #d3ebf1; border-radius:25px; box-shadow: 1px 1px 10px rgba(0,0,0,0.1); margin:auto; }
+.complete-book img { width: 100%; border-radius: 15px; }
+.end-reading > img { width:69.568vw; width:39.132vh; margin-top:-5vh; }
+
+.point { width:28.505vw; height:5vh; border: 2px solid #ffffff; background-color:#57c86e; color:#ffffff; text-align:justify; padding:0 1vw; box-shadow: 1px 3px 5px rgba(0,0,0,0.3); margin:auto; font-size:3.87vw; }
+.point span { color:#ffffff; display:inline-block; width:5.556vw; height:5.556vw; line-height:5.556vw; border-radius:50px; background-color:#2ea00f; vertical-align: middle; text-align:center; }
+.point p { display:inline-block; vertical-align: middle; line-height:4.5vh; margin-left:2vw; }
+
+.complete .btn-area { position: absolute; left:0; right:0; bottom:9vh;  margin:auto;  z-index: 99; }
+.complete .btn-area button { background-color:#ffffff; color:#333333; font-weight:700; letter-spacing: 0; border-color:#989898;}

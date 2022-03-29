@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/chart.css">
+    <link rel="stylesheet" href="../../build/css/barchart.css">
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/layout.css">
+    <script src="../../build/js/jquery.js"></script>
+    <title>Profile</title>
+</head>
+<body>
+    <div class="container">
+        <!-- top navigation -->
+        <div class="top-nav gradient-right">
+            <button class="back"><img src="../../build/images/layout/back.png" alt="back"></button>
+            <p class="title">Profile</p>
+            <button class="icon-user"><img src="../../build/images/layout/user.png" alt="user-icon"></button>
+            <div class="top-nav-user">
+                    <button>Profile</button>
+                    <button>Logout</button>
+            </div>
+        </div>
+        <!-- contents area -->
+        <div class="contents-area">
+            <div class="gradient-right profile">
+                <ul class="top-menu-list">
+                    <li class="bdr-50">
+                        <p class="profile-info">ID</p>
+                        <p class="user-info">hongildong</p>
+                    </li>
+                    <li class="bdr-50">
+                        <p class="profile-info">Password</p>
+                        <p class="user-info user-info-btn">
+                            <button class="btn bdr-50">Change</button>
+                        </p>
+                    </li>
+                    <li class="bdr-50">
+                        <p class="profile-info">Name</p>
+                        <input type="text" name="" id="" class="user-info" placeholder="hongildong" >
+                    </li>
+                    <li class="bdr-50">
+                        <p class="profile-info">School</p>
+                        <input type="text" name="" id="" class="user-info" placeholder="e-future" >
+                    </li>
+                </ul>
+                <button class="btn btn01 gradient-left">Update</button>
+            </div>
+            <div class="contents-wrap">
+                <div class="chart-area">
+                    <div class="my-level-wrap">
+                        <p class="sub-title">My Level</p>
+                        <p class="my-level-view bdr-50">Lv.04</p>
+                        <!-- progress -->
+                        <div class="my-level-progress">
+                                <div class="progressbar small_progress" data-perc="20">
+                                    <div class="horizbar color4" style="width: 25%;"><span></span></div>
+                                    <div class="labelsprite" style="right:75%;"><span></span></div>
+                                    <div class="level">
+                                        <p>K</p>
+                                        <p>12</p>
+                                    </div>
+                                </div>
+                        </div>
+                        <!-- progress end -->
+                    </div>
+                    <div class="chart-wrap">
+                        <p class="sub-title">Monthly Reading</p>
+                        <div class="monthly-chart">
+                            <div class="chartbg ">
+                                <div class="chart bar">
+                                    <ul class="bar-chart" data-bars="[5],[3],[10],[20],[4],[12]" data-max="" data-unit="" data-width=""> </ul>
+                                </div>
+                            </div>
+                            <ul class="chart-label">
+                                <li>20.01</li>
+                                <li>20.02</li>
+                                <li>20.03</li>
+                                <li>20.04</li>
+                                <li>20.05</li>
+                                <li>20.06</li>
+                            </ul>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bottom navigation -->
+        <div class="bottom-nav">
+            <ul class="nav-list">
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-books.png" alt="Books">
+                        <p>Books</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-report.png" alt="Report">
+                        <p>Report</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-review.png" alt="Review">
+                        <p>Review</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-rank.png" alt="Rank">
+                        <p>Rank</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="change-pw" style="display:none;">
+            <div>
+                <p class="sub-title">Change Password</p>
+                <input type="password" name="" id="" class="bdr-50" placeholder="Enter your desired password">
+                <div class="btn-area">
+                    <button class="btn-gray btn01">Close</button>
+                    <button class="btn-blue btn01">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $(".icon-user").on("click", function() {
+           $('.top-nav-user').slideToggle();
+        });
+        $('.user-info-btn button').on("click",function(){
+            $('.change-pw').show();
+        });
+        $('.btn-gray').on("click",function(){
+            $('.change-pw').hide();
+        });
+    });
+</script>
+<script src="../../build/js/jquery.chart.js"></script>
+<script>
+	$(function() {
+		$('.bar-chart').cssCharts({type:"bar"});
+	});
+</script>
+</html>

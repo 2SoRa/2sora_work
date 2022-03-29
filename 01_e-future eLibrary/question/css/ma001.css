@@ -1,0 +1,126 @@
+    .bg {background:url('../images/bg-ma001.png') 0 0 no-repeat;  }
+/* 카드 설정  */
+   .card{
+        position: relative;
+        width: 200px;
+        height: 250px;
+        text-align: center;
+        border-radius:180px;
+        perspective: 800px;
+       margin-left:20px;
+/*       overflow: hidden;*/
+        
+        visibility:hidden;
+        -webkit-visibility:hidden;
+        -moz-visibility:hidden;
+        -ms-visibility:hidden;
+        -o-visibility:hidden;
+    }
+
+    .card_front, .card_back {
+        width:600px;
+        height:244px;
+        top:0px;
+        left:-76px;
+        overflow:hidden;
+        transform-origin:32% 50%; 
+        position: absolute;
+        align-items: center;
+        cursor: pointer;
+        border-radius:500px;
+        padding:0 -50px;
+                
+        transition:all 0.5s ease;
+        -moz-transition:all 0.5s ease;
+        -webkit-transition:all 0.5s ease;
+        -ms-transition:all 0.5s ease;
+        -o-transition:all 0.5s ease;  
+            
+        visibility:hidden;
+        -webkit-visibility:hidden;
+        -moz-visibility:hidden;
+        -ms-visibility:hidden;
+        -o-visibility:hidden;
+    }
+
+
+    .wrap  {
+        width:100%;
+        position: relative;
+        margin:0 -18%;
+        float:left;
+        transform:rotateZ(120deg);
+        overflow: hidden;
+        border: 1px solid red;
+        
+        visibility:hidden;
+        -webkit-visibility:hidden;
+        -moz-visibility:hidden;
+        -ms-visibility:hidden;
+        -o-visibility:hidden;
+    }
+    .inner {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        transform:rotateZ(-60deg);
+    }
+    .inner-inner, .inner-inner2 {
+        position: relative;
+        margin: auto;
+        visibility: visible;
+        width: 100%;
+        transform:rotateZ(-60deg);
+        height:240px;
+        line-height:240px;
+        overflow: hidden;
+        text-align:center;
+        cursor: pointer;
+    }   
+    .inner-inner>img{
+        position:absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        margin:auto;
+    }
+    .inner-inner2 {
+        background:url('../images/card2.png') 2px 2px no-repeat;
+        background-size: 50%;
+        background-position: 50% 50%;
+    } 
+
+/*카드 돌리기*/
+.turn1 {
+    transform : rotateY(180deg);
+    -webkit-transform : rotateY(180deg);
+    -moz-transform : rotateY(180deg);
+    -ms-transform : rotateY(180deg);
+    -o-transform : rotateY(180deg);
+    opacity:0;
+}
+.turn2 {
+    transform : rotateY(-180deg);
+    -webkit-transform : rotateY(-180deg);
+    -moz-transform : rotateY(-180deg);
+    -ms-transform : rotateY(-180deg);
+    -o-transform : rotateY(-180deg);
+    opacity:0;
+}
+.turn3 {
+    transform : rotateY(0deg);
+    -webkit-transform : rotateY(0deg);
+    -moz-transform : rotateY(0deg);
+    -ms-transform : rotateY(0deg);
+    -o-transform : rotateY(0deg);
+    opacity:1;
+}
+/*  카드 위치  */
+    .card1 { top:   27px;  left:  23px; }
+    .card2 { top:  45px;  left:  23px; }
+    .card3 { top: -339px;  left: 255px; }
+    .card4 { top: -321px;  left: 255px; }
+    .card5 { top: -973px;  left: 487px; }
+    .card6 { top: -954px;  left: 487px; }
+    .card7 { top:-1339px;  left: 719px; }
+    .card8 { top:-1321px;  left: 719px; }

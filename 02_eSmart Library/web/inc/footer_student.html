@@ -1,0 +1,101 @@
+<link rel="stylesheet" type="text/css" href="/web/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="/web/css/gnb_student.css">
+	<link rel="stylesheet" type="text/css" href="/web/css/student.css">
+	<link rel="stylesheet" type="text/css" href="/web/css/chart.css">
+	<link rel="stylesheet" type="text/css" href="/web/css/common.css">
+	<link rel="stylesheet" type="text/css" href="/web/css/colorbox.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="/web/jquery/image-picker.js" type="text/javascript"></script>
+	<script src="/web/jquery/jquery.jqtransform.js" type="text/javascript"></script>
+	<script src="/web/jquery/script.js" type="text/javascript"></script><!--shape-->
+	<script src="/web/jquery/plugins.js" type="text/javascript"></script><!--shape-->
+	<link href="/web/images/common/efuture.ico" rel="icon">
+	
+<div id="footer">
+	<div class="quicklink">
+		<div class="cs">
+			<p>고객센터<span>02.3400.0533</span></p>
+		</div>
+		<ul>
+			<li><a class="btn_policy" href="#policy">이용약관</a></li>
+			<li><a class="btn_personal" href="#personal">개인정보보호정책</a></li>
+			<li><a class="btn_email" href="#emailgathering">이메일무단수집거부</a></li>
+		</ul>
+	</div>
+	<div class="copyright">
+		<div class="logo"><img src="../images/common/logo_bottom.png" alt="eSmart Campus"></div>
+		<div class="information">
+			<ul><li>서울 송파구 백제고분로 91 LK빌딩 4 ~ 6F</li> <li> TEL.02.3400.0509</li> <li> FAX.02.591.7626</li> </ul>
+			<ul><li>사업자등록번호 : 214-86-47520</li> <li>통신판매업신고 제 송파 0283호</li>  <li>개인정보관리책임자: 현용희</li> <li> 대표이사 : 황경호</li></ul> 
+			<div class="copy">Copyright © e-future All right reserved.</div>
+		</div>
+	</div>
+</div>
+
+<? include "../../inc/popup.html" ?>
+</body>
+</html>
+<script type="text/javascript" src="/web/jquery/jquery.colorbox.js"></script>
+<script>
+	$( document ).ready( function() {
+	var jbOffset = $( '.jbMenu' ).offset();
+		$( window ).scroll( function() {
+		if ( $( document ).scrollTop() > jbOffset.top ) {
+			$( '.jbMenu' ).addClass( 'jbFixed' );
+		}
+		else {
+			$( '.jbMenu' ).removeClass( 'jbFixed' );
+			}
+		});
+	});
+jQuery(function(){
+	jQuery('#select_container').jqTransform();
+	});
+	jQuery(document).ready(function($){
+		jQuery(".btn_policy").colorbox({inline:true, width:"640"});
+	});
+	jQuery(document).ready(function(){
+		jQuery(".btn_personal").colorbox({inline:true, width:"640"});
+	});
+	jQuery(document).ready(function(){
+		jQuery(".btn_email").colorbox({inline:true, width:"540"});
+	});
+	jQuery(document).ready(function(){
+		jQuery(".btn_cs").colorbox({inline:true, width:"540"});
+	});
+</script>
+<script type="text/javascript">
+<!--
+function popup(url) 
+{
+ params  = 'width='+screen.width;
+ params += ', height='+screen.height;
+ params += ', top=0, left=0'
+ params += ', fullscreen=yes';
+
+ newwin=window.open(url,'windowname4', params);
+ if (window.focus) {newwin.focus()}
+ return false;
+}
+// -->
+</script>
+<!--================나라 선택===================================-->
+<script>
+    $(function(){
+        var selected = $('.selected').html();
+        $('.show_country').click(function(){
+            $('.country ul').slideToggle();
+        });
+        
+        var allli = $('.country ul li');
+        $('.country ul li').click(function(){
+                allli.removeClass('selected');
+                $(this).addClass('selected');
+                
+                $('.country ul').slideUp();
+                $('.show_country p').html($(this).html());
+           
+        });
+    });
+</script>

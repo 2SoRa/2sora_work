@@ -1,0 +1,156 @@
+/* Font */
+    /* Nanum Gothic 나눔고딕 */
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 800;
+    src: url(../../vendors/fonts/nanum-ghotic-extrabold/NanumGothicExtraBold.eot); /* IE 호환성 보기 */
+         url(../../vendors/fonts/nanum-ghotic-extrabold/NanumGothic-ExtraBold.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+         url(../../vendors/fonts/nanum-ghotic-extrabold/NanumGothicExtraBold.woff) format('woff'), /* 모던 브라우저 */
+         url(../../vendors/fonts/nanum-ghotic-extrabold/nanumgothic-extrabold-webfont.otf) format('OpenTypeFont');
+  }
+    /* NotoSans KR 본고딕 */
+  /* Thin */
+  @font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 100;
+    src: url(../../vendors/fonts/NotoSans-KR-Thin/NotoSansKR-Thin.eot); /* IE 호환성 보기 */
+         url(../../vendors/fonts/NotoSans-KR-Thin/NotoSansKR-Thin.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+         url(../../vendors/fonts/NotoSans-KR-Thin/NotoSansKR-Thin.woff) format('woff'), /* 모던 브라우저 */
+         url(../../vendors/fonts/NotoSans-KR-Thin/NotoSansKR-Thin.otf) format('OpenTypeFont');
+  }
+  /* Light */
+  @font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    src: url(../../vendors/fonts/NotoSans-KR-Light/NotoSansKR-Light.eot); /* IE 호환성 보기 */
+         url(../../vendors/fonts/NotoSans-KR-Light/NotoSansKR-Light.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+         url(../../vendors/fonts/NotoSans-KR-Light/NotoSansKR-Light.woff) format('woff'), /* 모던 브라우저 */
+         url(../../vendors/fonts/NotoSans-KR-Light/NotoSansKR-Light.otf) format('OpenTypeFont');
+  }
+  /* DemiLight */
+  @font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 350;
+    src: url(../../vendors/fonts/NotoSans-KR-Demilight/NotoSansKR-Demilight.eot); /* IE 호환성 보기 */
+         url(../../vendors/fonts/NotoSans-KR-Demilight/NotoSansKR-Demilight.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+         url(../../vendors/fonts/NotoSans-KR-Demilight/NotoSansKR-Demilight.woff) format('woff'), /* 모던 브라우저 */
+         url(../../vendors/fonts/NotoSans-KR-Demilight/NotoSansKR-Demilight.otf) format('OpenTypeFont');
+  }
+  /* Regular */
+  @font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../../vendors/fonts/NotoSans-KR-Regular/NotoSansKR-Regular.eot); /* IE 호환성 보기 */
+         url(../../vendors/fonts/NotoSans-KR-Regular/NotoSansKR-Regular.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+         url(../../vendors/fonts/NotoSans-KR-Regular/NotoSansKR-Regular.woff) format('woff'), /* 모던 브라우저 */
+         url(../../vendors/fonts/NotoSans-KR-Regular/NotoSansKR-Regular.otf) format('OpenTypeFont');
+  }
+  /* Medium */
+  @font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    src: url(../../vendors/fonts/NotoSans-KR-Medium/NotoSansKR-Medium.eot); /* IE 호환성 보기 */
+         url(../../vendors/fonts/NotoSans-KR-Medium/NotoSansKR-Medium.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+         url(../../vendors/fonts/NotoSans-KR-Medium/NotoSansKR-Medium.woff) format('woff'), /* 모던 브라우저 */
+         url(../../vendors/fonts/NotoSans-KR-Medium/NotoSansKR-Medium.otf) format('OpenTypeFont');
+  }
+  /* Bold */
+  @font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../../vendors/fonts/NotoSans-KR-Bold/NotoSansKR-Bold.eot); /* IE 호환성 보기 */
+         url(../../vendors/fonts/NotoSans-KR-Bold/NotoSansKR-Bold.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+         url(../../vendors/fonts/NotoSans-KR-Bold/NotoSansKR-Bold.woff) format('woff'), /* 모던 브라우저 */
+         url(../../vendors/fonts/NotoSans-KR-Bold/NotoSansKR-Bold.otf) format('OpenTypeFont');
+  }
+  /* Black */
+  @font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 900;
+    src: url(../../vendors/fonts/NotoSans-KR-Black/NotoSansKR-Black.eot); /* IE 호환성 보기 */
+         url(../../vendors/fonts/NotoSans-KR-Black/NotoSansKR-Black.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+         url(../../vendors/fonts/NotoSans-KR-Black/NotoSansKR-Black.woff) format('woff'), /* 모던 브라우저 */
+         url(../../vendors/fonts/NotoSans-KR-Black/NotoSansKR-Black.otf) format('OpenTypeFont');
+  }
+
+  * {list-style:none; margin:0; padding:0; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; vertical-align: middle;}
+  a {text-decoration:none; color:inherit;}
+  
+  html, body, .container, .container-study { width:100%; height:100%; }
+  span, strong { vertical-align: baseline; }
+  /* p, span {display:inline-block;} */
+
+  /* contents-area */
+  .contents-area { overflow-y: auto;}
+
+  /* button */
+  button {border:none; background:none; font-family: inherit; cursor: pointer;}
+  button:focus, input[type="text"]:focus, select:focus {outline:none;}
+
+  .btn { 
+    padding:0 8.73vw; border:none; 
+    display:inline-block;
+    vertical-align:middle;
+    text-align:center;
+    cursor:pointer;
+    border:2px solid transparent;
+  }
+  
+  .btn01 { 
+    color:#ffffff;
+    border-radius:50px;
+    border:2px solid #ffffff;
+    padding: 0 8vw;
+  }
+
+  .btn-dark {background-color:#717171;}
+  .btn-gray {background-color:#d0d0d0;}
+  .btn-blue {background-color:#1fadee;}
+
+  /* border */
+  .bd-3 { border-width: 3px; }
+
+  /* border-radius */
+  .bdr-50 {border-radius:50px;}
+
+  /* margin */
+  .mg-0 {margin:0;}
+  .contents-area.mgt-1 { margin-top:-1vh; height:94.47vh;}
+
+  /* gradient */
+  .gradient-default {background:linear-gradient(to right, #cfcfcf, #979797);}
+  .gradient-right { background:linear-gradient(to right, #16cbef, #2598ee); }
+  .gradient-right-org {background:linear-gradient(to right, #f08638, #ee4726);}
+  .gradient-right-grn {background:linear-gradient(to right, #44dd7b, #0bb15d);}
+  .gradient-left { background:linear-gradient(to left, #16cbef, #2598ee); }
+
+  .gradient-bottom { background:linear-gradient(to bottom, #ffffff 10%, #ddf9ff); }
+
+  /* input[type="text"] */
+  input[type=text] { border:none; background-color:#ffffff; }
+
+  /* select */
+  select {
+    background:#ffffff url('../../build/images/layout/select-arrow1.png') no-repeat 95% 50%;
+    border:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+
+  /* float */
+  .fll {float:left;}
+  .flr {float:right;}
+
+  

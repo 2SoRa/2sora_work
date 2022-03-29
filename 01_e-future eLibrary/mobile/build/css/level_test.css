@@ -1,0 +1,20 @@
+/* Level Test */
+
+    /* level Test Question */
+    .leveltest { padding: 5vh 1.77vw 3vh; font-size:4.35vw; color:#ffffff; font-weight:450; }
+
+    .contents-wrap .leveltest-wrap { padding:0.5vh 1.7vw; }
+    .contents-wrap .leveltest-wrap li { 
+        width:44.2vw; 
+        /* height:5.7vh; line-height:5.7vh;  */
+        height:11.5vw; line-height:11vw; 
+        border:1px solid #d9d9d9;  
+        text-align: center;
+        font-size:3.87vw; color:#666666;
+        display: inline-block; 
+        margin:1.77vh 1.1vw;
+        background-color:#ffffff;
+    }
+    .contents-wrap .leveltest-wrap li.leveltest-active {background-color:#1fadee; color:#ffffff;}
+
+    

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/study-layout.css">
+    <script src="../../build/js/jquery.js"></script>
+    
+    
+    <title>GT-004</title>
+</head>
+<style>
+    .container { overflow:hidden; }
+</style>
+<body>
+    <div class="container gt004">
+        <div class="top-nav">
+            <div class="study-progress"><div></div></div>
+            <div class="title">
+                <p>Choose the correct word.</p>
+                <button class="close"><img src="../../build/images/layout/close.png" alt="close"></button>
+            </div>
+        </div>
+        <div class="contents-area">
+            <!-- Background GT004-->
+            <div class="choice" >
+                <div class="choice-car">
+                        <button class="car-left"><img src="../../build/images/layout/car-left.png" alt="car-left"></button>
+                        <button class="car-right"><img src="../../build/images/layout/car-right.png" alt="car-right"></button>
+                </div>
+                <div class="or">or</div>
+                <div class="start-wrap">
+                    <button class="start">Start</button>
+                </div>
+            </div>
+    <!--        Ready-->
+            <div class="ready" style="display:none;">
+                <ul class="light">
+                    <li class="light-red"><img src="../../build/images/layout/light-red.png" alt="light-red"></li>
+                    <li class="light-yellow"><img src="../../build/images/layout/light-yellow.png" alt="light-yellow"></li>
+                    <li class="light-green"><img src="../../build/images/layout/light-green.png" alt="light-green"></li>
+                </ul>
+            </div>
+            <div class="q-wrap" style="display:none;">
+                <div class="question"><img src="../../build/images/layout/exam_ant.png" alt="question image"></div>
+                <div class="answer-list">
+                    <button>B b</button>
+                    <button>Elephant</button>
+                    <button>Aa</button>
+                </div>
+            </div>
+            <div class="car-wrap" style="display:none;">
+                <div class="car car-blue">
+                    <img src="../../build/images/layout/car-blue.png" alt="blue car" class="body">
+                    <img src="../../build/images/layout/tire1.png" alt="tire" class="tire1">
+                    <img src="../../build/images/layout/tire1.png" alt="tire" class="tire2">
+                </div>
+                <div class="car car-orange">
+                    <img src="../../build/images/layout/car-orange.png" alt="orange car" class="body">
+                    <img src="../../build/images/layout/tire1.png" alt="tire" class="tire1">
+                    <img src="../../build/images/layout/tire1.png" alt="tire" class="tire2">
+                </div>
+                <div class="car car-yellow">
+                    <img src="../../build/images/layout/car-yellow.png" alt="yellow car" class="body">
+                    <img src="../../build/images/layout/tire2.png" alt="tire" class="tire1">
+                    <img src="../../build/images/layout/tire2.png" alt="tire" class="tire2">
+                </div>
+                <div class="car car-green">
+                    <img src="../../build/images/layout/car-green.png" alt="green car" class="body">
+                    <img src="../../build/images/layout/tire2.png" alt="tire" class="tire1">
+                    <img src="../../build/images/layout/tire2.png" alt="tire" class="tire2">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $('.answer-list li').on("click",function(){
+            $(this).toggleClass("active");
+            $(this).siblings().removeClass("active");
+        });
+    });
+</script>
+<script>
+    $(function(){
+//    차 선택 노란차 클릭
+    $('.car-left').click(function(){
+        $(this).css({'box-shadow':'0 2px 0 0 #1a8b85, 0 6px 0 0 #ddddc4','margin-top':'6px'});
+        $(this).siblings().css({'box-shadow':'0 4px 0 0 #d39133, 0 8px 0 0 #ddddc4','margin-top':'0'});
+    });
+    
+//    차 선택 빨간차 클릭
+     $('.car-right').click(function(){
+        $(this).css({'box-shadow':'0 2px 0 0 #d39133, 0 6px 0 0 #ddddc4','margin-top':'6px'});
+        $(this).siblings().css({'box-shadow':'0 4px 0 0 #1a8b85, 0 8px 0 0 #ddddc4','margin-top':'0'});
+    });
+    
+//    스타트 버튼 누른 후 화면 전환
+    $('.start').click(function(){
+        $('.choice').fadeOut();
+        $('.ready').delay(1000).fadeIn();
+        $('.car-wrap').delay(1000).fadeIn();
+    });
+    
+//    신호등 불 변경 후 화면전환  
+    $('.light-red').delay(2000).animate({'opacity':'0.3'},500,function(){
+        $('.light-yellow').animate({'opacity':'1'},500,function(){
+            $(this).delay(1000).animate({'opacity':'0.3'},500,function(){
+                $('.light-green').animate({'opacity':'1'},500,function(){
+                    $('.ready').delay(1500).fadeOut();
+                    $('.q-wrap').delay(1500).fadeIn();
+                });
+            });
+        });
+    });
+ });
+</script>
+</html>

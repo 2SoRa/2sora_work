@@ -1,0 +1,60 @@
+#header .menubox .logo {
+    width: 225px; height: 70px; 
+}
+#header .menubox .logo img{max-height:65px;}
+.top_wrap {
+    width: 1250px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    right: 20px;
+}
+.util .loginbox {
+    float: right;
+    display: block;
+}
+.util .top_wrap .loginbox li {
+    height:40px; box-sizing: border-box;
+}
+.util .loginbox li.name {
+    color: #8a8a8a;
+    line-height: 15px;
+    margin-right:5px;
+    font-size:13px;
+}
+.util .loginbox li.name span{
+    color: #fff;
+}
+.util .loginbox li.logout {
+    background-color: #3d8093; 
+    border: 1px solid #346472;
+}
+.util .loginbox li.logout a, .util .loginbox li.myinfo a{
+    color:#feffff; 
+    font-size: 12px;
+    font-weight: 500;
+}
+.util .loginbox li.myinfo{
+    background-color: #b18153;
+    border:1px solid #96704b; 
+}
+.jbMenu .submenu {
+    width:1000px;
+}
+.jbMenu .submenu ul {
+    width:1200px;
+    margin: auto;
+}
+.jbMenu .submenu ul li {
+    padding:0 70px;
+}
+
+.jbMenu .submenu ul li a{
+    font-size:17px;
+    line-height: 10px;
+}
+
+@media (min-width: 1281px){
+    .top_wrap {
+    }
+}

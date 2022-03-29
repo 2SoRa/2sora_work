@@ -1,0 +1,196 @@
+/* Main Login */
+    /* login page */
+    .container.main { display:table; }
+    /* login zone */
+    .login-wrap { text-align:center; display: table-cell; }
+
+    /* e-future Library logo+title */
+    h1.site-logo { height:inherit; font-size:7.8vw; font-weight:800; color:#ffffff; letter-spacing: -0.8px; }
+    h1.site-logo img { width:36vw; }
+    h1.site-logo p { display:inline-block; font-family:'Nanum Gothic', sans-serif; }
+
+    /* login user */
+    div.login-user {  font-size:5.8vw; color:#004789; margin:3vh 0 4vh; }
+    div.login-user div { width:9.5vw; height:1.5vh; border-top:2px solid #004789; margin:auto;}
+
+    /* login information write */
+    .login-write { text-align:center; }
+    .login-write li { margin:1.4vh 0; }
+    .login-write li select, .login-write li input[type=text] { width:65vw; height:11.6vw; padding:0 4.1vw; color:#c3c3c3; font-size: 3.9vw; }
+    .login-write li select, .login-write li input[type=password] { width:65vw; height:11.6vw; padding:0 4.1vw; color:#c3c3c3; font-size: 3.9vw; }
+    .login-write li input[type=text]::placeholder { color:#c3c3c3; font-weight: 400; }
+
+    /* login button */
+    .btn.bd-3 { border:3px solid #ffffff; width:65vw; height:14.75vw; color:#ffffff; font-size:5.8vw; font-weight: 500;  background-color:transparent; }
+
+
+/* Basic UI */
+    /* top-nav */
+    .top-nav { font-weight:500; font-size: 4.9vw; position: relative; height:6.53vh; color:#ffffff; line-height:6.53vh;
+        /* height:11.7vw; line-height:11.7vw;  */
+        display:flex; justify-content:space-between;
+    }
+    .top-nav button {width:14vw; margin-left:0; }
+    /* .top-nav .back img {width:1.5vh;} */
+    .top-nav .icon-user img {width:2.8vh;}
+
+    /* user-info */
+    .top-nav-user {position: absolute; top: 6.53vh; right: 0; z-index: 9999; display:none;}
+    .top-nav-user button { display:block; width:15.3vw; height:4.4vh; color:#ffffff; background-color:#6a6a6a; font-weight:350; font-size: 3.4vw; }
+    .top-nav-user button:first-child { color:#333333; background-color:#e0e0e0; }
+
+    /* contents area */
+    .contents-area {width:100%; height:85.04vh;}
+
+    /* bottom nav */
+    .bottom-nav { background-color:#ffffff; height:8.43vh; border-top: 2px solid #cccccc;  width:100%; position:fixed; bottom:0; z-index:90000000; }
+    .bottom-nav .nav-list { height:100%; display:flex; justify-content: space-around; align-items: center;  text-align:center;  }
+    .bottom-nav .nav-list li { width:25%; }
+    .bottom-nav .nav-list li img { height:5.8vw; }
+    .bottom-nav .nav-list li p { font-family: 'Nanum Gothic', sans-serif; color:#666666; font-size:2.8vw;
+        /* margin-top:-1vh; */
+    }
+    .bottom-nav .nav-list li p.btn-on {color:#2698ee; font-weight:600; }
+
+
+
+/* profile */
+
+    .contents-area .gradient-right {  position:relative; padding:1vh 2.58vh 1vh;}
+    .contents-area .gradient-right.profile { padding:1vh 2.58vh 4.5vh; }
+
+    /* list - pforile> id, pw, name, school // books> select */
+    .top-menu-list > .bdr-50, .select > ul { width:100%; height:10.15vw; background-color:#ffffff; margin:2.5vw 0; padding:0 2.67vw; font-size: 3.87vw; color:#666666; overflow:hidden; }
+    /* .select {overflow: hidden;} */
+
+    /* change btn line */
+    .profile .top-menu-list li:nth-child(2) { padding-right:0.89vw; }
+
+    .top-menu-list li .profile-info { width:30%; line-height:10.15vw; display:inline-block; color:#c3c3c3; font-size:3.85vw; }
+    .top-menu-list li .user-info{ width:68%; border:none; display:inline-block; text-align:right; color: #666666; font-size:3.87vw; }
+    .top-menu-list li input[type="text"].user-info { height:100%;}
+    .top-menu-list li .user-info-btn button { height:8.22vw; background-color:#1fadee; color:#ffffff; padding:0 3.6vw; font-size:3.4vw; font-weight:500; }
+
+    .gradient-right .btn01.gradient-left { height:6.25vh; padding:0 9vw; font-size:4.35vw; font-weight:700; position: absolute; bottom:-3vh; left:0; right:0; margin:auto; box-shadow: 1px 2px 5px rgba(0,0,0,0.2); }
+
+    /* Change Password */
+    .change-pw { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color:rgba(0,0,0,0.4); z-index: 99;}
+    .change-pw > div { width:90.83vw; height:44.22vw; margin:auto; background-color:#ffffff; position: absolute; top: 0; bottom: 0; left:0; right:0; border-radius:10px; padding:2.31vh; border:1px solid #dfdfdf; }
+    .change-pw input[type="password"] { width:95.9%; height:10.15vw; padding:0 3vh; border:1px solid #d9d9d9; margin: 3vh auto; }
+    .change-pw input[type="password"]::placeholder { color:#c3c3c3; font-size:3.87vw; font-weight:400;  }
+    .change-pw input[type="password"]:focus { outline:none; }
+    .change-pw .btn-area { width:65%; display:flex; justify-content: space-between; margin:auto;}
+    .change-pw .btn-area button { width:45.52%; height:8.2vw; border:none; text-align:center; padding:0; }
+
+    /* level & reading chart */
+    .contents-wrap { padding:4.5vh 0 1vh; background-color:#f9f9f9; padding:4vh 0 1vh; }
+    .chart-area, .sub-area  { width:90.85vw; margin:auto; }
+    /* My Level & Monthly Reading area*/
+    .chart-area > div, .sub-area > div { width:90.85vw;  border:1px solid #dfdfdf; background-color:#ffffff; border-radius:10px; padding:1.23vh 4.12vw; margin:3vh 0; }
+
+    .sub-title { font-size:4.35vw; width:64.67vw;
+         /* display:inline-block; */
+        float:left; color:#333333; text-align:left; }
+    .my-level-view {  width: 15.95vw; height:4.62vh; line-height:4.62vh; display:inline-block; background-color:#1fadee; font-size: 3.4vw; color:#ffffff; text-align:center; font-weight:700; }
+
+    .my-level-progress { margin:3.5vh 0 1vh;}
+    .level>p { font-size:3vw; position: absolute; top: -1.5vh; font-weight: 500; color: #666666; }
+    .level>p:nth-child(2) { right:0; }
+
+    .monthly-chart { margin-top: 5vh; }
+    .monthly-chart .bar-chart li span:before {font-size: 3.5vw; color:#666666; font-weight:400;}
+    .monthly-chart .chart-label {width:100%; display:flex; justify-content: space-around; font-size:3vw; color:#666666; font-weight:400; text-align:center; margin:2vh 0 1vh;}
+    .monthly-chart .chart-label li {width:7.35vw;}
+
+    .monthly-chart .chart-label li:last-child {margin-right:1vw;}
+    .monthly-chart .chart-label li:first-child {margin-left:1vw;}
+
+    /* Select Level & Series */
+    .select{position: relative;}
+    .select > ul li { width:100%; padding: 5px 10px; border-bottom:1px solid #d9d9d9;}
+    .select > ul li:not(.init) { display: none; background: #ffffff; position: relative; z-index: 99;}
+    .select ul:first-child {z-index: 1; }
+    .select li.init { cursor: pointer;
+         line-height: 5.7vh;
+         padding:0; border:none; }
+    .select-btn {position: absolute; right:6vw; top: 0; bottom: 0; margin:auto;}
+
+
+
+    /*  Background Color gradient */
+    .contents-area.gradient-bottom { height:93.47vh; background:linear-gradient(to bottom, #ffffff 10%, #ddf9ff); }
+    .contents-area::-webkit-scrollbar { display: none !important;}
+    .contents-area.gradient-bottom .contents-wrap { background:none; text-align: center;}
+
+    /* title */
+    .title .series-title {font-size:2.9vw; color:#a8a7a7; font-weight:400;}
+    .title .book-title {font-size:4.9vw; color:#666666; font-weight:400;}
+
+    /* Button setting */
+    .contents-wrap button.btn01 { height:6.25vh; padding:0 9.22vw; font-size:4.35vw; font-weight:450; margin:8.5vh auto 0; box-shadow: 1px 2px 5px rgba(0,0,0,0.2); }
+    .back, .close {margin-left:5vw; height:6.53vh;}
+
+    /* Book - border radius, bxsh */
+    .book { width:27.055vw; height:100%;  overflow: hidden; border: 1px solid #c9c9c9; border-radius:10px; box-shadow: 2px 3px 5px rgba(0,0,0,0.3); }
+    .book .book-cover {width:100%;}
+    .book .recommend {position: absolute; top: 0; right: 1vw;}
+
+    /* Book Reading info */
+    .reading-info { padding: 0 2vh; height:5.58vh; border-bottom:1px solid #cccccc; background-color:#ffffff; display:flex; justify-content: space-between; align-items: center; }
+    .reading-info p { font-size:3.39vw; color:#666666; line-height:5vh; }
+
+/* book-review list */
+    /*.list .title { border-bottom: 1px solid #cccccc; padding:1.3vh 2vh;  }*/
+    .list .title { width:60%; display:inline-block; }
+    .list .title .book-title { font-size:3.39vw; }
+
+    /* Review Title */
+    .list .review-list > li { padding: 1.3vh 2vh; vertical-align: middle; border-bottom:1px solid #e5e5e5; }
+    .list .review-list li div.uswer-wrap { height:5vw; }
+    .list .review-list li div.uswer-wrap > img { width:3.63vw; display:inline-block; margin-right:1vw; }
+    .list .review-list li div .user-name { color:#999999; display:inline-block; }
+    .list .review-list li div .star { width:30%; display:flex; }
+    .list .review-list li div .star img { width:5.55vw; }
+    .list .review-list li p.review-title { clear: both; color:#666666; margin:1vh 0 0.5vh; }
+
+    /* Review Contents */
+    .list .review-list > li:last-child { background-color:#f9f9f9; padding-bottom:4vh; display:none; }
+    .list .review-list > li:last-child p.date { width:100%; font-size:2.9vw; color:#999999; text-align:right; }
+    .list .review-list > li:last-child p.review-text { color:#666666; line-height:7vw;}
+
+   .more { width:100%; background-color:#ddfaff; font-size:3.87vw; color:#1082d8; text-align:center; padding:1.57vh 0;  border-bottom:1px solid #e5e5e5; }
+
+/* book-review write */
+    .review .review-area { width:91%; margin:auto;}
+    .review .review-area input[type="text"] { width:100%; height:9vw; border:1px solid #dfdfdf; padding:5vw; font-size:3.87vw;  }
+    .review .review-area textarea { width:100%; height:59.67vw; border:1px solid #dfdfdf; padding:5vw; font-size:3.87vw; outline:none; border-radius:20px; margin-top:2vh;}
+
+/* review Write (Write page) */
+    .review .book-wrap .book {width:27.055vw; height:35.51vw; float:none; }
+    .review .book-wrap .book img {width:100%;}
+
+    .review .book-info { width:45vw; float:none; margin:-1vh 0 0 ;  text-align:left; }
+    .review .book-info .book-title { font-size: 3.39vw; }
+
+/* Review (book review)  */
+    .review {  text-align:center; padding:0;  }
+    /* star rating */
+    .rating { overflow: hidden; vertical-align: bottom; display: inline-block;  height:8vw; margin:2vw 0 0 -5vw; }
+    .rating > input{ width:0vw; opacity: 0; }
+    .rating > label{ position: relative; display: block; float: right; background: url('/common/app/images/layout/star.png') center center no-repeat;  width:8vw; height: 8vw; }
+    .rating > label:before{ display: block; opacity: 0; content: ''; width:8vw; height: 8vw; background: url('/common/app/images/layout/star-on.png') center center no-repeat; transition: opacity 0.2s linear;}
+
+    .rating > label:hover:before,
+    .rating > label:hover ~ label:before,
+    .rating:not(:hover) > :checked ~ label:before{
+            opacity: 1;
+    }
+
+
+/* Horizontal mode */
+    .alert { width:100%; height:100%; display: table; text-align:center;  }
+    .alert .alert-wrap { display: table-cell; }
+    .alert .alert-wrap .icon { width:10vw; margin: -5vw auto 3vw; }
+    .alert .alert-wrap .icon img { width:100%; }
+    .alert .alert-wrap .text { font-size: 4.3vw; font-weight:bold; color:#2698ee; }
+    .alert .alert-wrap .text span { color:#f16363; }

@@ -1,0 +1,109 @@
+    .bg {
+        background-image:url('/common/study/GT-001/images/bg-gt001.png');
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+    }
+/*    구름 공통*/
+    .cloude {
+        width:122px;
+        height:100px;
+        background-color:yellow;
+        position: absolute;
+    }
+/*    구름 각각*/
+    .cloude1 {
+        background:url('/common/study/GT-001/images/cloude.png') 0 0 no-repeat;
+        bottom: 150px;
+        left: 630px;
+    }
+    .cloude2 {
+        background:url('/common/study/GT-001/images/cloude2.png') 0 0 no-repeat;
+        bottom: 120px;
+        left: 830px;
+    }
+    .cloude3 {
+        background:url('/common/study/GT-001/images/cloude3.png') 0 0 no-repeat;
+        bottom: 50px;
+        left: 700px;
+    }
+/*    문제 화면*/
+    .question_wrap {
+        width:371px;
+        height:185px;
+        border-radius:0 0 10px 10px;
+        border: 3px solid #ff9900;
+        border-top: 0px;
+        background-color:#fff;
+        margin: auto;
+        position:absolute;
+        left: 0;right: 0;
+        top: 0;
+    }
+    .question_wrap>div {
+        width:50%;
+        float:left;
+        text-align: center;
+        line-height:185px;
+        font-size:30px;
+        color:#ff9900;
+        font-weight:700;
+    }
+/*    문제이미지*/
+    .question img{
+        vertical-align: middle;
+    }
+/*    문제 돌 묶음*/
+    .stone_wrap {
+        width: 750px;
+        position: absolute;
+        top: 300px;
+        left: 0;right: 0;
+        margin: auto;
+    }
+    .stone_wrap>li:nth-child(2) {
+        margin: 0 50px;
+    }
+    .stone_wrap>li {
+        cursor: pointer;
+    }
+/*    문제 돌 각각*/
+    .stone {
+        width: 215px;
+        height: 111px;
+        float:left;
+        font-size:24px;
+        line-height:111px;
+        text-align: center;
+        color: #fff;
+        font-weight:700;
+        background: url('/common/study/GT-001/images/stone.png') 0 0 no-repeat;
+    }
+/*    점프 돌*/
+    .jump_stone {
+        position: absolute;
+        top:497px;
+        left: 0; right: 0;
+        margin: auto;
+    }
+/*    새*/
+    .bird {
+        overflow: hidden;
+        position: absolute;
+        top: -70px;
+        left: 0;right: 0;
+        margin: auto;
+        background:url('/common/study/GT-001/images/bird3.png') 0 0 no-repeat;
+        width:123px;
+        height:78px;
+    }
+    .jump {
+        position: absolute;
+        top:-50px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+/*    게임 방법*/
+    .view {
+        background:url('/common/study/GT-001/images/view0.png') 0 0 no-repeat;
+    }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/chart.css">
+    <link rel="stylesheet" href="../../build/css/barchart.css">
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/layout.css">
+    <link rel="stylesheet" href="../../build/css/review_rank.css">
+    <script src="../../build/js/jquery.js"></script>
+    
+    <title>Review</title>
+</head>
+<body>
+    <div class="container">
+        <!-- top navigation -->
+        <div class="top-nav gradient-right">
+            <button class="back"><img src="../../build/images/layout/close-white.png" alt="close"></button>
+            <p class="title">Review</p>
+            <button class="icon-user"><img src="../../build/images/layout/user.png" alt="user-icon"></button>
+            <div class="top-nav-user">
+                    <button>Profile</button>
+                    <button>Logout</button>
+            </div>
+        </div>
+        <!-- contents area -->
+        <div class="contents-area  review contents-wrap">
+            <div class="book-wrap">
+                <div class="book"><img src="../../build/images/contents/LSR001.jpg" alt="LSR001"></div>
+                <div class="book-info">
+                    <div class="title">
+                        <p class="series-title">e-future Classic Readers</p>
+                        <p class="book-title">The Wolf and the Seven Children</p>
+                    </div>
+                    <span class="rating">
+                        <input type="radio" name="" id="star5"><label for="star5"></label>
+                        <input type="radio" name="" id="star4"><label for="star4"></label>
+                        <input type="radio" name="" id="star3"><label for="star3"></label>
+                        <input type="radio" name="" id="star2"><label for="star2"></label>
+                        <input type="radio" name="" id="star1"><label for="star1"></label>
+                    </span>
+                </div>
+            </div>
+            <div class="review-area">
+                <input type="text" name="" id="" class="bdr-50" placeholder="Title">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Comments"></textarea>
+            </div>
+            
+            <button class="btn btn01 gradient-left">Modify</button>
+        </div>
+        <!-- bottom navigation -->
+        <div class="bottom-nav">
+            <ul class="nav-list">
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-books.png" alt="Books">
+                        <p>Books</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-report.png" alt="Report">
+                        <p>Report</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-review-on.png" alt="Review">
+                        <p class="btn-on">Review</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-rank.png" alt="Rank">
+                        <p>Rank</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+            $(".icon-user").on("click", function() {
+               $('.top-nav-user').slideToggle();
+            });
+    });
+</script>
+</html>

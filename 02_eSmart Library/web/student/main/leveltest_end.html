@@ -1,0 +1,75 @@
+<!-- /v1/head.sub.php-->
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="../../css/colorbox.css">
+	<link rel="stylesheet" type="text/css" href="../../css/barchart.css">
+	<link rel="stylesheet" type="text/css" href="../../css/chart.css">
+	<link rel="stylesheet" type="text/css" href="../../css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../css/leveltest.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../../jquery/script.js" type="text/javascript"></script><!--shape-->
+	<title>eSmart Library</title>
+</head>
+<body>
+<div>
+	<div id="withdraw" class="poparea popup14" >
+		<div class="title tp04">레벨테스트
+		<img src="../../images/common/popup_close.gif" alt="close" class="floatright"></div>
+		<p class="subtitle floatleft">Level Test Result</p> <button class="button02 btn_book">Books 페이지로 가기</button>
+		<div class="colorline"></div>
+	    <div class="title03">
+            
+             <div class="chartbody ">
+               <div>
+                <img src="../../images/sub/pop_blt01.png" alt=""><p><span class="my_name">홍길동</span>학생의 레벨은</p>
+            </div>
+                <div class="progressbar small_progress" data-perc="100">
+                    <div class="horizbar color4"><span></span></div>
+                    <div class="labelsprite"><span></span></div>
+                    <div class="level">
+                        <p>K</p>
+                        <p>12</p>
+                    </div>
+                </div>
+                <div class="chart_right floatright">
+                    <p>Lv</p><span>Starter 입니다.</span>
+                </div>
+            </div>
+            <div class="level_footer">Books 페이지에서 독서를 시작할 수 있습니다.</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
+<script>
+    $(function(){
+        $('input[type="checkbox"]').on('change',function(){
+            $(this).prop('checked') ? $(this).parent().addClass('click') : $(this).parent().removeClass('click');
+        });
+    });
+</script>
+<script>
+$(function() {
+	$('.progressbar').each(function(){
+		var t = $(this);
+		var dataperc = t.attr('data-perc'),
+				barperc = Math.round(dataperc*3.08);
+		t.find('.horizbar').animate({width:barperc}, dataperc*15);
+		
+		function perc() {
+			var length = t.find('.horizbar').css('width'),
+				perc = Math.round(parseInt(length)/3.08),
+				labelpos = (parseInt(length)-3);
+			t.find('.labelsprite').css('left', labelpos);
+			t.find('.perc').text(perc+'%');
+		}
+		perc();
+		setInterval(perc, 0); 
+	});
+});
+</script>

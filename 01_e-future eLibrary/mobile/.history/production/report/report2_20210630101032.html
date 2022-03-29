@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/chart.css">
+    <link rel="stylesheet" href="../../build/css/barchart2.css">
+    <link rel="stylesheet" href="../../build/css/piechart.css">
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/layout.css">
+    <link rel="stylesheet" href="../../build/css/report2.css">
+    <script src="../../build/js/jquery.js"></script>
+    <title>Book Report</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <div class="container report">
+        <button class="close"><img src="../../build/images/layout/close.png" alt="close"></button>
+        <!-- contents area -->
+        <div class="contents-area gradient-bottom">
+            <div class="contents-wrap">
+                <div class="title">
+                   <p class="series-title">e-future Classic Readers</p>
+                   <p class="book-title">The Wolf and the Seven Children</p>
+                </div>
+                <div class="book-wrap">
+                    <div class="book"><img src="../../build/images/contents/LSR001.jpg" alt="LSR001"></div>
+                    <ul class="book-info">
+                       <li>
+                           <p>Date</p> <p class="bdr-50">2020.07.29</p>
+                        </li>
+                        <li>
+                           <p>Genre</p> <p class="bdr-50">Classic</p>
+                        </li>
+                        <li>      
+                            <p>Level</p> <p class="bdr-50">K</p>
+                        </li>
+                        <li>   
+                            <p>CEFR</p> <p class="bdr-50">B2/C1</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="progress-area">
+                    <div class="progressbar progress01" data-perc="100">
+                        <div class="flag"><p>My Score</p></div>
+                        <div class="horizbar" style="width:25%;"><span></span></div>
+                        <div class="labelsprite"><span>80%</span></div>
+                    </div>
+                    <div class="progressbar progress02" data-perc="100">
+                        <div class="flag"><p>Class Avg.</p></div>
+                        <div class="horizbar color2" style="width:25%;"><span></span></div>
+                        <div class="labelsprite"><span>80%</span></div>
+                    </div>
+                    <div class="progressbar progress03" data-perc="100">
+                        <div class="flag"><p>Global Avg.</p></div>
+                        <div class="horizbar color3" style="width:25%;"><span></span></div>
+                        <div class="labelsprite"><span>80%</span></div>
+                    </div>
+                </div>
+                <div class="sub-area">
+                    <div class="chart-wrap">
+                        <p class="sub-title">Score by skill area</p>
+                        <ul class="report-chart">
+                            <li>
+                                <div class="chartbg ">
+                                    <div class="chart bar">
+                                        <ul class="bar-chart" data-bars="[5],[3],[10]" data-max="" data-unit="" data-width=""> </ul>
+                                    </div>
+                                </div>
+                                <p class="chart-label bdr-50">Vocabulary</p>
+                            </li>
+                            <li>
+                                <div class="chartbg ">
+                                    <div class="chart bar">
+                                        <ul class="bar-chart" data-bars="[5],[3],[10]" data-max="" data-unit="" data-width=""> </ul>
+                                    </div>
+                                </div>
+                                <p class="chart-label bdr-50">Comprehension</p>
+                            </li>
+                            <li>
+                                <div class="chartbg ">
+                                    <div class="chart bar">
+                                        <ul class="bar-chart" data-bars="[5],[3],[10]" data-max="" data-unit="" data-width=""> </ul>
+                                    </div>
+                                </div>
+                                <p class="chart-label bdr-50">Total</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub-area">
+                    <div class="chart-wrap">
+                        <p class="sub-title">Score by Read Aloud</p>
+                        <div class="chartbg">
+                            <div class="chart bar">
+                                <ul class="bar-chart" data-bars="[10],[5],[8]" data-max="" data-unit="" data-width=""> </ul>
+                            </div>
+                        </div>
+                        <!-- <p class="chart-label bdr-50">Total</p> -->
+                    </div>
+                </div>
+                <div class="sub-area">
+                    <div>
+                        <p class="sub-title">Teacher's Comment</p>
+                        <ul class="teachers-comment">
+                            <li class="grade"><img src="../../build/images/layout/grade01.jpg" alt="excellent"></li>
+                            <li class="text-box">
+                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../build/js/jquery.chart.js"></script>
+<script>
+	$(function() {
+		$('.bar-chart').cssCharts({type:"bar"});
+	});
+</script>
+<script>
+    $(function() {
+        $('.progressbar').each(function(){
+            var t = $(this);
+                var dataperc = t.attr('data-perc'),
+                    barperc = Math.round(dataperc*1);
+            t.find('.horizbar').animate({width:barperc}, dataperc*5);
+            
+            function perc() {
+                var length = t.find('.horizbar').css('width'),
+                    perc = Math.round(parseInt(length)/1),
+                    labelpos = (parseInt(length)-10);
+                    // labelpos = (100 - perc);
+                    console.log('labelpos');
+                t.find('.labelsprite').css('left', labelpos);
+            }
+            perc();
+            setInterval(perc, 0); 
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,69 @@
+.requirement {float:right; color:#ff0000; font-size:14px; margin-bottom:10px; margin-right:5px; background:url(../images/common/blt_red.gif) left 1px top 5px no-repeat; padding-left:12px; }
+.bdright {border-right:1px solid #d7d7d7; }
+.mtit {font:400 20px 'Noto Sans KR'; color:#333333; letter-spacing:-0.5px; }
+
+.mtit01 {font:400 20px 'Noto Sans KR'; color:#333333; letter-spacing:-0.5px; }
+.mtit02 {font:400 20px 'Noto Sans KR'; color:#fff; letter-spacing:-0.5px; }
+.booktit {padding:18px 0 0 25px; font:400 20px 'Noto Sans KR'; color:#333333; letter-spacing:-0.5px; }
+
+.vab {vertical-align:bottom; }
+
+.wd70p {width:70%;}
+.wd80p {width:80%;}
+.wd85p {width:85%;}
+
+.cntwid160 {width:160px; }
+.cntwid200 {width:200px; }
+.cntwid220 {width:220px; }
+.cntwid240 {width:240px; }
+.cntwid310 {width:310px; }
+.cntwid320 {width:320px; }
+.cntwid360 {width:360px; }
+.cntwid370 {width:370px; }
+.cntwid430 {width:430px; }
+.cntwid500 {width:500px; }
+.cntwid520 {width:520px; }
+.cntwid600 {width:600px; }
+.cntwid650 {width:650px; }
+.cntwid660 {width:660px; }
+.cntwid710 {width:710px; }
+.cntwid730 {width:730px; }
+.cntwid960 {width:960px; }
+.cntwid980 {width:980px; }
+
+.cnthgt228 {height:228px;}
+.cnthgt416 {height:416px;}
+.cnthgt440 {height:440px;}
+.cnthgt480 {height:480px;}
+.cnthgt500 {height:500px;}
+.cnthgt580 {height:580px;}
+.cnthgt604 {height:604px;}
+.cnthgt620 {height:620px;}
+.cnthgt660 {height:660px;}
+.cnthgt720 {height:720px;}
+.cnthgt780 {height:760px;}
+.cnthgt780 {height:780px;}
+
+.tac {text-align:center; }
+
+@media (min-width:1281px) {
+    .mgl20 {margin-left:80px; }
+    .cntwid160 {width:160px; }
+    .cntwid200 {width:230px; }
+    .cntwid220 {width:250px; }
+    .cntwid240 {width:270px; }
+    .cntwid310 {width:310px; }
+    .cntwid320 {width:320px; }
+    .cntwid360 {width:420px; }
+    .cntwid370 {width:490px; }
+    .cntwid430 {width:520px; }
+    .cntwid500 {width:540px; }
+    .cntwid520 {width:560px; }
+    .cntwid600 {width:690px; }
+    .cntwid650 {width:770px; }
+    .cntwid660 {width:780px; }
+    .cntwid710 {width:800px; }
+    .cntwid730 {width:820px; }
+    .cntwid960 {width:1080px; }
+    .cntwid980 {width:1100px; }
+}

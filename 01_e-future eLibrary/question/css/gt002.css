@@ -1,0 +1,130 @@
+    .bg {
+        background:url('../images/bg-gt002.png') 0 0 no-repeat;
+        overflow:hidden;
+    }    
+
+
+/*   문제 레일    */
+    .rail {
+        width:680px;
+        height:145px;
+        position: absolute;
+        left:383px;
+        top: 276px;
+        background:url('../images/rail.png') 0 0 no-repeat;
+    }
+
+.line_wrap {
+    width:660px;
+    height:36px;
+    position: absolute;
+    right: -36px;
+    transform:skewX(-62deg);
+    overflow:hidden;    
+}
+.line {
+    position: absolute;
+    width:680px;
+    height:36px;
+    background:url('../images/line.png') 0px 0px repeat;
+    transform:skewX(62deg);
+    left: -30px;
+}
+
+/* 박스 전체 묶음 */
+    .q_wrap {
+        position: absolute;
+        top: -100px;
+        left: 100%;
+        width:100%;
+        height: 135px;
+        overflow: hidden;
+    }
+/* 박스 하나 */
+    .q_box {
+        width:150px;
+        height:135px;
+        position: relative;
+        background:url('../images/box.png') 0 0 no-repeat;
+        float:left;
+        margin:0 10px;
+    }
+/*박스 내 이미지 공간*/
+    .question {
+        width:135px;
+        height:95px;
+        position: absolute;
+        bottom: 5px; top: 30px;
+        left: 5px; right: 5px;
+        margin:auto;
+        background-color:#fff;
+    }
+/*문제 이미지*/
+    .question img {
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0;right: 0;
+        margin: auto;
+    }
+
+/* 톱니바퀴 전체 묶음*/
+    .gear_wrap {
+        width: 100%;
+        height:35px;
+        position: absolute;
+        left: 0;top: -44px;bottom: 0; margin: auto;
+    }
+/* 톱니바퀴 하나 */
+    .gear{
+        width:35px;
+        float:left;
+        margin: 0 25px;
+        transform-origin:50% 50%;
+        text-align: center;
+    }
+    .geat_wrap li:last-child {
+        margin-right:0;
+    }
+
+/* 정답박스 배경 */
+    .a_box {
+        position: absolute;
+        bottom: 0; left: 0;
+        width:530px;
+        height:215px;
+        background:url('../images/q_box.png') 0 0 no-repeat;
+    }
+/* 정답 박스 묶음 */
+    .a_box ul {
+        width:452px;
+        height:110px;
+        margin:60px 40px;
+    }
+/* 정답박스 하나 */
+    .a_box li {
+        width:150px;
+        height:110px;
+        background-color:#5fbbc6;
+        float:left;
+        color:#fff;
+        font-weight:700;
+        font-size:24px;
+        text-align: center;
+        line-height:110px;
+        cursor:pointer;
+    }
+    .a_box li:nth-child(2) {
+        margin: 0 1px;
+    }
+    
+/* 로봇 */
+    .robot {
+        position: absolute;
+        bottom: 0;
+        right:77px;
+    }
+
+/* 게임 방법 */
+    .view {
+        background: url('../images/view.png') 0 0 no-repeat;
+    }

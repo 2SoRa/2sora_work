@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../build/css/chart.css">
+    <link rel="stylesheet" href="../../build/css/barchart.css">
+    <link rel="stylesheet" href="../../build/css/dd.css">
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/layout.css">
+    <link rel="stylesheet" href="../../build/css/books.css">
+
+    <!-- JS -->
+    <script src="../../build/js/jquery.js"></script>
+    <script src="../../build/js/jquery.dd.js"></script>
+    
+    <title>Book List</title>
+</head>
+<style>
+</style>
+<body>
+    <div class="container books">
+        <!-- top navigation -->
+        <div class="top-nav gradient-right">
+            <button class="back"><img src="../../build/images/layout/back.png" alt="back"></button>
+            <p class="title">Books</p>
+            <button class="icon-user"><img src="../../build/images/layout/user.png" alt="user-icon"></button>
+            <div class="top-nav-user">
+                    <button>Profile</button>
+                    <button>Logout</button>
+            </div>
+        </div>
+        <!-- contents area -->
+        <div class="contents-area">
+            <div class="gradient-right">
+                <div class="top-menu-list">
+                    <select name="" id="level" class="bdr-50 custom_dd">
+                        <option value="LevelK">Level K</option>
+                        <option value="LevelStarter">Level Starter</option>
+                        <option value="Level1" data-icon="../../build/images/layout/level.png">Level 1</option>
+                        <option value="Level2" data-image="../../build/images/layout/level.png">Level 2</option>
+                        <option value="Level3">Level 3</option>
+                        <option value="Level4">Level 4</option>
+                        <option value="Level5">Level 5</option>
+                        <option value="Level6">Level 6</option>
+                        <option value="Level7">Level 7</option>
+                        <option value="Level8">Level 8</option>
+                        <option value="Level9">Level 9</option>
+                        <option value="Level10">Level 10</option>
+                        <option value="Level11">Level 11</option>
+                    </select>
+                    <select name="" id="series" class="bdr-50">
+                        <option value="AllSeries">All Series</option>
+                        <option value="e-future Classic Readers">e-future Classic Readers</option>
+                        <option value="Art Classic Stories">Art Classic Stories</option>
+                        <option value="eGCR Magic Adventures">eGCR Magic Adventures</option>
+                        <option value="eGCR School Adventures">eGCR School Adventures</option>
+                        <option value="eGCR Vera the Alien Hunter">eGCR Vera the Alien Hunter</option>
+                        <option value="e-future Phonics Fun Readers">e-future Phonics Fun Readers</option>
+                        <option value="e-future PYP Readers">e-future PYP Readers</option>
+                        <option value="Little Sprout Readers">Little Sprout Readers</option>
+                        <option value="My First Classic Readers">My First Classic Readers</option>
+                    </select>
+                </div>
+            </div>
+            <div class="contents-wrap">
+               <ul class="book-list">
+                    <li class="mg-0">
+                       <div class="book"><img class="book-cover" src="../../build/images/contents/LSR001.jpg" alt="LSR001"><img class="recommend" src="../../build/images/layout/recommend.png" alt="book recommend"></div>
+                       <div class="reading-progress"><span></span></div>
+                    </li>
+                    <li class="mg-0">
+                        <div class="book"><img class="book-cover" src="../../build/images/contents/LSR001.jpg" alt="LSR001"><img class="recommend" src="../../build/images/layout/recommend.png" alt="book recommend"></div>
+                        <div class="reading-progress"><span></span></div>
+                    </li>
+                    <li class="mg-0">
+                         <div class="book"><img class="book-cover" src="../../build/images/contents/LSR001.jpg" alt="LSR001"></div>
+                    </li>
+                    <li>
+                          <div class="book"><img class="book-cover" src="../../build/images/contents/LSR001.jpg" alt="LSR001"></div>
+                    </li>
+                    <li>
+                           <div class="book"><img class="book-cover" src="../../build/images/contents/LSR001.jpg" alt="LSR001"></div>
+                    </li>
+                    <li>
+                            <div class="book">
+                                <img class="book-cover" src="../../build/images/contents/LSR001.jpg" alt="LSR001">
+                                <div class="reading-completed">
+                                    <img src="../../build/images/layout/check.png" alt="reading-check">
+                                </div>
+                            </div>
+                    </li>
+                    <li>
+                        <div class="book">
+                            <img class="book-cover" src="../../build/images/contents/LSR001.jpg" alt="LSR001">
+                            <div class="reading-completed">
+                                <img src="../../build/images/layout/check.png" alt="reading-check">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="book">
+                            <img class="book-cover" src="../../build/images/contents/LSR001.jpg" alt="LSR001">
+                            <div class="reading-completed">
+                                <img src="../../build/images/layout/check.png" alt="reading-check">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="book">
+                            <img class="book-cover" src="../../build/images/contents/LSR001.jpg" alt="LSR001">
+                            <div class="reading-completed">
+                                <img src="../../build/images/layout/check.png" alt="reading-check">
+                            </div>
+                        </div>
+                    </li>
+               </ul>
+            </div>
+        </div>
+        <!-- bottom navigation -->
+        <div class="bottom-nav">
+            <ul class="nav-list">
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-books-on.png" alt="Books on">
+                        <p class="btn-on">Books</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-report.png" alt="Report">
+                        <p>Report</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-review.png" alt="Review">
+                        <p>Review</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-rank.png" alt="Rank">
+                        <p>Rank</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+
+<!-- Level Series -->
+<script>
+    $(document).ready(function(){
+            $(".icon-user").on("click", function() {
+               $('.top-nav-user').slideToggle();
+            });
+        $(function(){
+            $('#level, #series').msDropDown();
+            if($("#"+ childid).is (":visible")){
+                close();
+                return false;
+            }
+            close();
+        });
+
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        //create msDropdown
+        var oDropdown = $("#element").msDropdown().data("dd");
+        //or by jsondata
+        var jsonData = [                          
+                {image:'../images/msdropdown/icons/Amex-56.png', description:'My life. My card...', value:'amex', text:'Amex'},
+                {image:'../images/msdropdown/icons/Discover-56.png', description:'It pays to Discover...', value:'Discover', text:'Discover'},
+                {image:'../images/msdropdown/icons/Mastercard-56.png', title:'For everything else...', description:'For everything else...', value:'Mastercard', text:'Mastercard'},
+                {image:'../images/msdropdown/icons/Cash-56.png', description:'Sorry not available...', value:'cash', text:'Cash on devlivery', disabled:true},
+                {image:'../images/msdropdown/icons/Visa-56.png', description:'All you need...', value:'Visa', text:'Visa'},
+                {image:'../images/msdropdown/icons/Paypal-56.png', description:'Pay and get paid...', value:'Paypal', text:'Paypal'}
+            ];
+    });
+</script>
+</html>

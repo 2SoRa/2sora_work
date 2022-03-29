@@ -1,0 +1,490 @@
+
+#content {background-color: #fffaef;}
+/* e-library */
+#content .booklist ul li.booklayer {padding: 10px 10px 0; border-bottom:none; }
+#content .booklist ul li>div.btn_wrap {text-align:left;}
+#content .booklist ul li>div.btn_wrap .worksheet, #content .booklist ul li>div.btn_wrap .vocab { margin-top:5px;}
+
+/* 도서정보 */
+ul.btn_wrap {width:85%; display:flex; justify-content:space-between;}
+ul.btn_wrap li.button02 { flex-basis:auto; margin:0 5px; flex-grow:1;}
+
+/*클릭했을때*/
+#content .box_class .stlist li.active1 {background-color: #fb8512;}
+#content .box_class .stlist li.active1 a span.eng{color: #fff;}
+#content .box_class .stlist li a span.eng{ color:#eaeaea;}
+#content .box_class .stlist li .arrow { float:right; 
+margin: 10px 0; display:none;}
+
+
+/* 공지사항 */
+
+.notice_wrap, .ranking_wrap, .cs_wrap {border: 1px solid #d7d7d7;}
+#content .sub02 .notice_wrap {
+    background-color: #fff; 
+    padding:22px 15px; 
+    width:100%; 
+    height:186px;
+}
+#content .sub02 .notice_wrap p {float:left;}
+#content .sub02 .notice_wrap button { 
+    float:right; 
+    padding:5px; 
+    border-radius:4px; 
+    font-size:12px; 
+    letter-spacing: -0.5px; 
+    font-weight:500;
+}
+#content .sub02 .notice_wrap button img { vertical-align: text-bottom; margin-right:4px;}
+#content .sub02 .notice_wrap .notice {
+    background-color: #f8f8f8; 
+    border:1px solid #d7d7d7; 
+    border-top:2px solid #000; 
+    padding:10px; 
+    width: 100%; 
+    height:93px; 
+    font-size:14px; 
+    color:#4b4b4b; 
+    overflow-y:auto;
+}
+/* Homework */
+
+#content .sub02 .box_content {
+    width: 700px;
+    min-height:591px;
+    padding:20px 15px;
+    border: 1px solid #d7d7d7;
+}
+#content .sub02 .box_content .topbar { 
+    width: 100%; 
+    padding:10px;
+}
+.topbar p {
+    float:left;
+    line-height:35px;
+}
+.topbar .date{ 
+    width: 88px; 
+    height: 36px; 
+    padding:2px; 
+    background-color: #faf1bf; 
+    color:#333333;
+    float:left;
+    margin:0 1.5px;
+    font:400 13px 'Nanum Gothic';
+    text-align: center;
+}
+.topbar .inputsearch, .select_type01{ 
+    border-right: 1px solid #d7d7d7; 
+    margin: 0 1.5px; 
+    width:128px; height:36px;
+    padding-right:40px;
+    float:left;
+}
+.select_type03{ 
+    border-right: 1px solid #d7d7d7; 
+    margin: 0 1.5px; 
+    width:114px; height:36px;
+    padding-right:40px;
+    float:left;
+}
+.topbar .search {
+    width:86px; height:36px;
+    background-color: #f9f9f9;
+    color:#666666;
+    font-weight:500;
+    border: 1px solid #d7d7d7;
+    border-radius:3px;
+    float:left;
+    margin:0 1.5px;
+}
+
+/*독서랭킹 & homework 테이블*/
+ .ranking {table-layout: fixed;}
+ .ranking.student {table-layout: auto;}
+#content .sub02 .ranking_wrap {
+    float:left;
+    width: 100%;
+    height: 256px;
+    background-color: #fff;
+    margin:10px 0 10px;
+    padding:20px 15px;
+}
+/*#content .sub02 .ranking_wrap .mtit01 {float:left;}*/
+#content .sub02 .ranking_wrap button{ 
+    float:right; 
+    padding:4px 8px; 
+    font-size:14px; 
+    letter-spacing: -0.5px; 
+    font-weight:500;
+    cursor:pointer;
+}
+
+/*원격지원*/
+#content .sub02 .cs_wrap {float:left;}
+#content .sub02 .cs_wrap img{width:100%;}
+
+/*button 색깔*/
+ .student tbody tr td .btn_red {background-color:#ff4949; color:#fff;  border:1px solid #ee3d3d; }
+.student tbody tr td .btn_red:hover {background-color:#ff6868; border:1px solid #ee3d3d; text-decoration:none;  }
+.student tbody tr td .btn_dblue {background-color:#0caef1; color:#fff;  border:1px solid #07a1e1; }
+.student tbody tr td .btn_dblue:hover {background-color:#32c0fb; border:1px solid #1cb4f3; text-decoration:none;  }
+.student tbody tr td .btn_orange {background-color:#fb8614; color:#fff;  border:1px solid #d09517;  }
+.student tbody tr td .btn_orange:hover {text-decoration:none;  }
+
+/*Teacher zone*/
+#content .sub02 .t_zone {
+    height:810px; 
+    background-color: #283142;
+}
+#content .t_zone {width: 210px;}
+#content .box_content.s_manage {height: 810px; width:760px; padding:30px; position: relative;}
+/*#content .box_content.s_manage  .ranking{ }*/
+#content .box_content.s_manage  .ranking thead tr th{ height:43px; }
+#content .box_content.s_manage .ranking tbody tr td.no{ width:7%;}
+, #content .box_content.s_manage  .ranking tbody tr td.study_date{width: 8%;}
+#content .box_content.s_manage  .ranking tbody tr td.name { width:30%; text-align: left; padding: 0 10px;}
+#content .box_content.s_manage  .ranking thead tr th:last-child{ width:13%; }
+#content .box_content.s_manage  .ranking tbody tr td{color:#333333;font-weight: 400; font-size:14px; height:40px; padding:0;}{}
+/*#content .box_content.s_manage  .ranking tbody tr td.name{ text-align:left; padding:0 15px;}*/
+
+#content .box_content.s_manage .ranking tbody tr td:first-child, #content .box_content.s_manage  .ranking tbody tr td.study_date{ font-size:12px; line-height: 16px;}
+
+/*학생 숙제 버튼 k_student_homework*/
+.homework_btn {width: 50%; background-color: yellow;}
+.homework_btn li{
+    float:left; 
+    width:120px; 
+    border: 1px solid #c5c5c5; 
+    font-size:13px;
+    text-align: center;
+    font-weight:500;
+    height:34px; line-height: 34px; 
+    background-color: #dcdcdc;
+    color:#fff; 
+    border-radius:3px 3px 0 0; 
+}
+.homework_btn li:first-child {margin:0 4px;}
+.homework_btn li.click {border: 1px solid #525252; background-color: #525252;}
+
+/* popup */
+.poparea {height: auto;}
+.popup07 #notice {
+    color:#525252;
+    font:400 14px 'Noto Sans KR',sans-serif;
+    width:450px;
+    height:100px;
+    display:block;
+    margin:35px auto;
+    padding:15px 20px;
+}
+.popup07 .button01 {
+    width:100px; 
+    height:32px; 
+    margin:0 auto; 
+    display:block;
+}
+
+.popup10 .close {
+    width: 80px; 
+    height:30px;
+    position: absolute; 
+    left: 0; right: 0; 
+    margin: auto;
+}
+
+/* k_student_elibrary */
+.poparea.student {
+/*    height: 724px;*/
+    position: relative;}
+.student_btn {width: 100%; margin:20px 0 10px; float:left;}
+.student_btn li button {
+    float:left; 
+    width: 145px;
+    height: 50px; 
+    border: 1px solid #c5c5c5; 
+    color: #fff; 
+    background-color: #dcdcdc;
+    margin:0 2px;
+    font-size:16px;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.student_btn li button.btn_orange {background-color: #fba303; border: 1px solid #d98000;}
+
+/*popup table*/
+.poparea.student .ranking {float:left; table-layout: auto;}
+.poparea .ranking th{font-weight:500;}
+.poparea .ranking thead{border-top: 2px solid #525252;}
+.poparea .ranking thead th:first-child {width:5%;}
+.poparea .ranking thead th:nth-child(2) {width:40%;}
+.poparea .ranking thead th.bgc_f {width:18%; padding: 10px; background-color: #fff;}
+
+.poparea .ranking tbody tr td {text-align: center; padding:6px 2px; height:70px;}
+.poparea .ranking tbody tr td.btn_wrap {width:150px;}
+.poparea .ranking tbody td:nth-child(2) {text-align: left;}
+.poparea .ranking tbody td .title {font-size:12px; border: none; font-weight:700; color:#009dd1;}
+.poparea .ranking tbody td .serise {font-size:11px; color:#999999; font-weight:700;}
+.poparea .ranking tbody td.study_date {font-size:12px;}
+.poparea .ranking.homework th:nth-child(2){ width:37%; }
+.homework tbody tr td:nth-child(3) {font-weight:500; text-align: left;}
+
+
+/* popup k_student_profile */
+.profile_table {width: 100%; border-top: 2px solid #525252; font-size:13px; float:left;}
+.profile_table tr{border-bottom: 1px solid #e3e3e3;}
+.profile_table tr th {width:160px; text-align: center; background-color: #f8f8f8; color:#555555; font-weight:500; }
+.profile_table tr td {padding:5px 10px;  font-weight:500; height:40px;}
+.profile_table tbody tr:nth-child(10) {height:73px;}
+.profile_table tr td div{width: 100%; 
+/*    height: 50%; */
+    float:left; 
+/*    margin-top:2px;*/
+}
+.profile_table tbody tr td p { color: #555555; float:left; line-height: 30px;}
+.profile_table tbody tr td span { color: #cccccc; float:left; line-height: 30px; margin-left:5px;}
+.profile_button {width:105px; height:30px; letter-spacing:-1.5px; margin-left:3px; float:left; background-color:#f9f9f9; color: #666666;font-weight: 600; border: 1px solid #d2d2d2;}
+
+/*input text 설정*/
+.profile_table input[type="text"]{width:110px; height:30px; margin:0 2px; float:left; font-family:'Naum Gothic'; letter-spacing: -0.5px;}
+.profile_table input[type="text"].essential, 
+.profile_table input[type="password"].essential  {width:250px; height:30px; background-color: #fff4e9; margin:0 2px;}
+.profile_table input[type="text"].gray {background-color: #efefef;}
+.profile_table input[type="text"].more_address {width:99.5%; margin: 2px 0 0 2px; float:left; height:30px;}
+.profile_table input[type="text"].more_address2 {width:99.5%;  margin-top: 2px;}
+.coupon .profile_table input[type="text"].essential {width:180px; height: 30px; margin:0; font:400 13px 'Nanum Gothic';}
+
+/*select box 설정*/
+.profile_table select {height:30px; color:#666666; padding:0 40px 0 8px; font-weight:400; width:116px;}
+.profile_table select.level_select{text-align-last: center;}
+.profile_table select.email {width: 140px;}
+
+/*popup pagebox*/
+.student .pagebox2 {left: 0; bottom: 2%;}
+
+/*k_coupon_buy*/
+.coupon .profile_table tbody tr td span.pay {color:#ff4949; font-size:16px; font-weight:700; line-height:29px;}
+.coupon .profile_table tbody tr td select {width:116px; height:30px; padding:2px  45px 0 5px; margin-bottom:2px;}
+.coupon .profile_table tbody tr td select {width: auto; margin:0 70px 2px 0;}
+.coupon .profile_table {float:none;}
+.coupon .profile_table tbody tr td{height: 50px;}
+.coupon .profile_table tbody tr:last-child td {height:90px;}
+
+.radio_wrap {color:#555555;}
+.buy {width: 178px; height:34px;display:block; margin:25px auto 4px; border-radius:3px; font-size:16px; font-weight: 500;}
+
+/* k_coupon_manage */
+.w_popup>div:nth-child(n+2){border: 1px solid #d7d7d7; float:left; padding:10px; position: relative; height: 562px; background-color: #f4f4f4;}
+
+.popup14>div:nth-child(2), .popup14>div:last-child{border: 1px solid #d7d7d7; float:left; padding:10px; position: relative; height: 562px; background-color: #f4f4f4;}
+
+    /* 학생 선택 */
+.coupon .student_choice {width:219px; border: 1px solid #d7d7d7; float:left;  padding:10px;}
+.student_choice { width:296px; margin-right:9px; position: relative; height: 562px; background-color: #f4f4f4;}
+.student_choice select, .step2 select { width:184px; height:30px; font-family:'Nanum Gothic';}
+.student_choice>div.table_wrap { float:left; margin:10px auto; height:421px; overflow-y: scroll;}
+.poparea .student_choice .ranking thead, .poparea .coupon_list .ranking thead {border-left:none; border-right:none;}
+.poparea .student_choice .ranking thead tr th:first-child { width:15%;}
+.poparea .student_choice .ranking thead tr th:nth-child(2), .poparea .student_choice .ranking thead tr th:last-child{ width:28%;}
+.poparea .student_choice .ranking tbody tr td{ 
+    text-align: center; 
+    height:40px; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color:#555555;
+    background-color: #fff;
+}
+.student_choice .coupon_btn {
+    position: absolute; 
+    bottom: 10px;left: 0;right: 0; 
+    margin: auto; 
+    background-color: #ff4949; 
+    color:#fff;
+    border: 1px solid #ee3d3d; 
+    width:272px; height:34px; 
+    border-radius:2px; 
+    font-size:13px;
+    font-weight:600; 
+} 
+
+    /* 쿠폰 관리 */
+.coupon_list {width:574px; border: 1px solid #d7d7d7; float:left; padding:10px; position: relative; height: 562px; background-color: #f4f4f4;}
+.coupon_list .ranking.homework {margin-top:10px;}
+.coupon_list .ranking.homework thead th:first-child {width:8%;}
+.coupon_list .ranking.homework thead th:nth-child(2) {width:28%;}
+.coupon_list .ranking.homework thead th:last-child {width:15%;}
+.coupon_list .ranking.homework tbody tr td {color:#555555; height:40px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.coupon_extra {width:100%; background-color: #faf1bf; border: 1px solid #d9d9d9; text-align: center; font-size:13px; line-height:28px; height: 30px; font-weight:500; letter-spacing: -0.5px;}
+.coupon_extra span {font-size:15px; color:#ff4949;}
+
+.coupon_list .pagebox2{left:0; bottom: 40px;}
+.coupon_list .notice {position: absolute; bottom: 10px; font-size:13px; color:#a27d74; font-weight:500; left:10px;}
+
+/* 할당취소 */
+.coupon_list .coupon_btn {
+    width:62px; height:22px;
+    border-radius:2px;
+}
+
+/* homework 삭제 */
+.popup13 .topbar {border: 1px solid #dde5e7; float:left; margin-bottom:20px; padding:10px; background-color: #f4f4f4;}
+.popup13 .topbar .inputsearch {width:153px;}
+.popup13 .topbar .select_type01:nth-child(5) {margin-left:7px;}
+.coupon .table_wrap {width: 100%; height:290px; overflow-y: scroll; margin: 10px auto;}
+/*checkbox*/
+.coupon .table_wrap .ranking thead tr th:first-child {width:8%;}
+/* class */
+.coupon .table_wrap .ranking thead tr th:nth-child(2){width:10%;}
+/* name */
+.coupon .table_wrap .ranking thead tr th:nth-child(3), .coupon .table_wrap .ranking thead tr th:last-child {width:18%; }
+/* homework */
+.coupon .table_wrap .ranking thead tr th:nth-child(4){width:40%; }
+/* homework 기간*/
+.coupon .table_wrap .ranking thead tr th:nth-child(5) {width:25%;}
+
+
+.coupon .table_wrap .ranking tbody tr td {height:40px; color:#777777; padding: 0; background-color: #fff;}
+.coupon .table_wrap .ranking tbody tr td:nth-child(2) {text-align: center;}
+.coupon .table_wrap .ranking tbody tr td:nth-child(4) {text-align: left;}
+.coupon .table_wrap .ranking tbody tr td.date {font-size:12px;} 
+.coupon .table_wrap .ranking tbody tr td.name { line-height:16px; font-weight:400;} 
+.coupon .table_wrap .ranking tbody tr td.name .id { font-size:11px;} 
+.coupon .table_wrap .ranking tbody tr td .serise { font-weight: 400;} 
+.coupon .table_wrap .ranking tbody tr td .title { font-weight: 400; font-size:13px; color:#fb6c03;}
+.coupon .buy {margin-top:10px; width:155px; font-size:13px;}
+
+.discription01 {width: 100%; min-height:50px; padding:5px; margin-top:20px;}
+/*.discwrapper {height:78px;}*/
+.talk_bubble {float:left; width:35px; height:35px; margin-top:5px;}
+.discbox {line-height: 40px; font-size:14px;}
+.discbox span {color:#ff4949;}
+.month_info2 { margin: 0 auto;}
+/*homework 관리*/
+.coupon .student_choice .table_wrap {height:465px;}
+ /*step 2*/
+.choice_wrap {width:295px; float:left;}
+.step2 {width:295px; height:414px; float:left; border: 1px solid #d7d7d7; padding:10px; background-color: #f4f4f4;}
+.step2 .table_wrap {height:315px; text-align: center; margin:10px auto; float:left;}
+.step2 .table_wrap dl:first-child {border-top: 2px solid #525252;}
+.step2 .table_wrap dl dt {border-bottom: 1px solid #e3e3e3; height:40px; line-height: 40px; color:#555555; font-size:13px; font-weight:400; background-color: #fff;}
+.step2 .table_wrap dl dd {
+    display:none;
+    font-size:12px;
+    color:#fb6c03;
+    line-height:30px;
+    border-bottom:1px dotted #b2ada1;
+    background-color: #fff8e6;
+    font-weight:500;
+}
+.step2 .table_wrap dl:first-child dd {display:block;}
+.step2 .table_wrap dl dd:last-child {border-bottom:1px solid #e3e3e3;}
+
+.book_choice {
+    width:295px; 
+    height:139px;
+    margin-top:10px; 
+    float:left; border: 1px solid #d7d7d7;
+    padding:10px 17px;
+    background-color: #f4f4f4;
+}
+.book_choice img {width: 80px; float:left; 
+    box-shadow: 0 0 4px 1px rgba(0,0,0,0.4);}
+.book_choice p {float:left; font-size:11px; margin:10px 0 0 20px; width:159px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;}
+.book_choice .serise {color:#666666; font-weight:500;}
+.book_choice p span.title {color:#666666; font-weight:500; border-bottom: none; font-size:14px; color:#009dd1;}
+.book_choice button {margin:32px 0px 10px 20px; width:158px; height:28px; border-radius:3px; font-weight:600;}
+
+/* step3 기간 설정*/
+.step3 {
+    float:left;
+    width:346px;
+    background-color: #f4f4f4;
+    padding:10px;
+    border:1px solid #d7d7d7;
+}
+.step3>div:nth-child(2) {width:80%; margin: auto;}
+.step3>div:nth-child(2) p{float:left; line-height: 30px; margin:0 3px;}
+.step3 .date {
+    width: 88px;
+    height: 30px;
+    padding: 2px;
+    background-color: #faf1bf;
+    color: rgba(51,51,51,0.76);
+    float: left;
+    text-align: center;
+    font:300 13px 'Nanum Gothic';
+    letter-spacing: -0.5px;
+}
+.step3 .btn_orange {width:62px; height:30px; margin-left: 5px; font-size:13px;}
+.coupon .step3 .table_wrap {height:412px;}
+.coupon .step3 .table_wrap .ranking.homework {table-layout: fixed;}
+.coupon .step3 .table_wrap .ranking.homework .col1 {width:4%;}
+.coupon .step3 .table_wrap .ranking.homework .col2 {width:18%;}
+.coupon .step3 .table_wrap .ranking.homework .col3 {width:22%;}
+.coupon .step3 .table_wrap .ranking.homework thead {border-left: none; border-right: none;}
+.coupon .step3 .table_wrap .ranking.homework tbody tr td:nth-child(2) {text-align: left; padding:0 5px;  overflow:hidden; text-overflow: ellipsis; white-space: nowrap;}
+.coupon .step3 .table_wrap .ranking.homework tbody tr td .x {background-color:#fb5050; color:#fff; border:1px solid #ff0000;}
+/* .coupon .step3 .table_wrap .ranking.homework thead tr th, .coupon .step3 .table_wrap .ranking.homework tbody tr td { width: 50%;} 
+.coupon .step3 .table_wrap .ranking.homework tbody tr td:first-child {text-align: left; padding:0 5px;  overflow:hidden; text-overflow: ellipsis; white-space: nowrap;} */
+.coupon .step3 .table_wrap .ranking.homework .serise {font-size:10px;}
+.coupon .step3 .table_wrap .ranking.homework .title {font-size:12px; color:#009dd1; font-weight:500; white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;}
+
+.date_set input {width:67px; height:30px;
+color:rgba(51,51,51,0.76); padding:2px; line-height: 26px; float:left; text-align: center; 
+font:400 11px 'Nanum Gothic'; letter-spacing: -0.5px;}
+.date_set p {float:left; line-height: 30px; margin: 0 3px;}
+
+.step3 .homework_btn {width: 326px; height: 34px; background-color: #ff4949; border: 1px solid #ee3d3d; color: #fff; border-radius:3px; letter-spacing: -0.5px; font-weight:600;}
+
+
+/*k_class_manage*/
+.class .ranking {float:none;}
+.class .ranking thead { border-left:none; border-right:none;}
+.class .ranking thead tr th{ height:50px;}
+.class .ranking thead tr th:first-child { width:6%;}
+.class .ranking thead tr th input{width:250px; height:30px; float:left; background-color: #fff4e9;}
+.class .button01.btn_red {width:106px; height:34px; margin: 16.5px auto; display: block; border-radius:3px;}
+
+.class .table_wrap {height:210px; overflow-y: scroll;}
+.class .table_wrap .ranking thead tr th:first-child { width:25%; text-align: center;}
+.class .table_wrap .ranking thead tr th{height: 40px; }
+.class .table_wrap .ranking tbody tr td{ height:40px; text-align: center; color:#555555; font-weight:500;}
+.class .table_wrap .ranking tbody tr td button{ height:28px; width:106px; border-radius:3px; margin:0 1.5px;}
+
+/* 학생 일괄등록 */
+.class .discription01 {height:160px; font-family:'Nanum Gothic';}
+.class .discwrapper {height: 149px; padding:18px 13px;}
+.class .discwrapper .titbox01 {font-size: 16px; width:160px; font-weight:500;}
+.class .discwrapper .discbox {margin-top:-5px;}
+.class .discwrapper p {line-height:18px; margin-bottom:9px; color:#444444;}
+.class .discwrapper p span {float:none; top:auto; color:#0bbae5; margin-right:5px; font-family:'Nanum Gothic';}
+.class .discwrapper p span.red {margin-left:60px; font-size:12px; color:#ff0000; font-weight:400; line-height: 12px;}
+
+.class .button05 {display:block; margin:25px auto 45px; background-color: #464646; color: #fff; border-radius: 3px; letter-spacing: 0.5px; font-weight:500; border: 1px solid #494949; width: 206px; height:50px;}
+.class .ranking .btn_red {width: 106px; height:34px; float:left; border-radius:2px; font-family:'Noto Sans KR',sans-serif;}
+
+/* 학생 등록 */
+.profile>p {float:right; color:#ff4949; margin: 10px 0 3px;}
+.profile .profile_table .button03 {height:30px; width:105px; background-color: #f9f9f9; border: 1px solid #d2d2d2; font-size:13px; font-weight: 500; color: #666666;}
+.profile .profile_table tbody tr th {line-height:30px;}
+.profile .profile_table tbody tr th img {margin-right:5px;}
+
+/*portfolio*/
+.student .question_img { margin: 30px auto; text-align:center;}
+.student .question_img img{width:60%; }
+
+.sentence { border:1px solid #ddd;  padding:15px 20px; font-size: 22px; border-radius:5px; color:#555; background-color: #f8f8f8;}
+
+.listen {float:right; margin-top:15px; padding:10px 20px; font-size: 13px; font-weight: 700; border-radius:3px; }

@@ -1,0 +1,51 @@
+
+/*Type DD*/
+.content .questiontype03 {width:90%; height:577px;  text-align:center; padding-top:20px; margin:0 auto; }
+.content .questiontype03 .qnumber {position:absolute;left:80px;}
+
+.content .questiontype03 .picard {width:100%;  display: table; margin-bottom:15px;}
+.content .questiontype03 .picard .imgcell {display:table-cell;height:280px;vertical-align:middle;}
+.content .questiontype03 .picard .imgcell .qimg {}
+
+.content .questiontype03 .answercell {width:100%; display:table;}
+.content .questiontype03 .answerbox {width:100%; background-color:#fff; text-align:left;  border:3px dotted #ccc; padding:10px 10px; border-radius:15px; margin-bottom:10px; font:700 22px 'Open Sans', sans-serif; height:110px;display:table-cell;vertical-align:middle;}
+.content .questiontype03 .answerbox span {border:3px solid #13de9a; border-style: dotted;  padding:10px 10px; border-radius:10px; background-color:#fff; font:500 12px 'Open Sans', sans-serif;  color:#666;line-height:20px;display:inline-block; margin:3px 3px;}
+.content .questiontype03 .answerbox span img {height:70px;}
+
+.content .questiontype03 .txtcard {width:100%; background-color:#eee; text-align:left;  border:3px solid #ccc; border-style: dotted; padding:10px 10px; border-radius:15px; margin-top:10px; }
+.content .questiontype03 .txtcard span {border:3px solid #13de9a; padding:5px 10px; border-radius:10px; background-color:#fff; display:inline-block; font:700 24px 'Open Sans', sans-serif; margin:5px;}
+.content .questiontype03 .txtcard span img {height:90px;}
+
+.dragboxOn img { height:90px; }
+.dragboxOff img { height:90px; }
+
+/*Type CC*/
+input[type=radio]:not(old) + label{  display: inline-block;  margin-left : -28px;   background   : url('../../images/common/checks03.png') no-repeat 0 12px;  }
+input[type=radio]:not(old):checked + label{ display: inline-block;   background-position : 0 -34px; }
+	
+/*Type CC*/
+.content .questiontype01 {width:100%;  height:577px;   text-align:center; padding-top:20px; }
+.content .questiontype01 .picard {display:inline-block;  width:100%; }
+.content .questiontype01 .picard .imgcell{margin-top:13px; }
+.content .questiontype01 .qnumber {   position: absolute; left:50px;}
+/*.content .questiontype01 .qcard {height:250px;font:700 26px 'Open Sans', sans-serif;   line-height:250px;}*/
+.content .questiontype01 .qcard {height:250px;font:700 26px 'Open Sans', sans-serif;   height:250px; display:flex;align-items:center; justify-content:center;}
+.content .questiontype01 .qcard .qimg {height:280px; display:table-cell; vertical-align: middle;}
+.content .questiontype01 .qaudio {margin-top:83px;}
+.content .questiontype01 .audio {  position:relative;  top:100px; left:40px; }
+
+.content .questiontype01 .answerboxgray label table tr td {color:#666; font:700 22px 'Open Sans', sans-serif;   height:45px;width:100%;line-height:110%; }
+
+.content .questiontype01 .answerboxgray1_hor {width:35%; text-align:left;   height:160px;  margin-top:80px;  background-color:#f4f4f4; margin-left:14%; margin-right:1%; border:3px solid #ccc; float:left; border-radius:10px;}
+.content .questiontype01 .answerboxgray1_hor  .inputbox { width:100%; float:left; height:146px;  padding-left:15px;}
+.content .questiontype01 .answerboxgray1_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxgray1_hor label span { font:700 60px 'Open Sans', sans-serif;   line-height:150px; width:100%; text-align:center;margin-left:115px;}
+.content .questiontype01 .answerboxgray1_hor label .labelimg {margin-left:50px;height:145px;margin-top:5px;}
+.content .questiontype01 .answerboxgray1_hor label .labelaudio {margin-left:110px;height:74px; margin-top:38px;}
+
+.content .questiontype01 .answerboxgray2_hor {width:35%; text-align:left;   height:160px;  margin-top:80px;  background-color:#f4f4f4; margin-right:15%; border:3px solid #ccc;  float:left; border-radius:10px;}
+.content .questiontype01 .answerboxgray2_hor  .inputbox { width:100%; float:left; height:146px;padding-left:15px;   }
+.content .questiontype01 .answerboxgray2_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxgray2_hor label span { font:700 60px 'Open Sans', sans-serif;   line-height:150px; width:100%; text-align:center;margin-left:115px;}
+.content .questiontype01 .answerboxgray2_hor label .labelimg {margin-left:50px;height:145px;margin-top:5px;}
+.content .questiontype01 .answerboxgray2_hor label .labelaudio {margin-left:110px;height:74px; margin-top:38px;}

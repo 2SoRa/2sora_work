@@ -1,0 +1,188 @@
+    .bg {
+        background:url('../images/bg-gt004.png') 0 0 no-repeat;
+    }
+/*    차 선택*/
+    .choice {
+        width:720px;
+        height:400px;
+        background:url('../images/choice.png') 0 0 no-repeat;
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0;right: 0;
+        margin: auto;
+    }
+    .choice_car {
+        width:555px;
+        height:150px;
+        margin:100px auto;
+    }
+    .c_car {
+        width:270px;
+        height:150px;
+        border-radius:40px;
+        float:left;   
+        transition: 0.2s ease;
+    }
+    .car_l {
+        margin-right: 15px;
+        background-color:#2abab2;
+        box-shadow: 0 6px 0 0 #1a8b85, 0 15px 0 0 #ddddc4;
+    }
+    .car_r {
+        background-color: #ffd539;
+        box-shadow: 0 6px 0 0 #d39133, 0 15px 0 0 #ddddc4;
+    }
+    .or {
+        width:70px;
+        height:70px;
+        border-radius:80px;
+        background-color:#dfcdbc;
+        text-align: center;
+        line-height:65px;
+        color:#582055;
+        position: absolute;
+        left: 0;right: 0;
+        margin: auto;
+        top: 0;bottom: 180px;
+        box-shadow:0 2px 0 0 #9c8f83;
+    }
+    .start_wrap {
+        width:225px;
+        height:70px;
+        border-radius:20px;
+        box-shadow:0 10px 0 0 #ddddc4;
+        position: absolute;
+        bottom: 40px;
+        left: 0;right: 20px;
+        margin: auto;
+    }
+    .start {
+        width:240px;
+        height:70px;
+        border-radius:20px;
+        background-color:#fd3822;
+        box-shadow: 0 6px 0 0 #a72313;
+    }
+    .start:active {
+        box-shadow: 0 2px 0 0 #a72313;
+        margin-top: 4px;
+    }
+
+/*게임 메인 화면 & 자동차*/
+/*    신호등*/
+    .light{
+        width:291px;
+        height:114px;
+        position: absolute;
+        top: 100px;;
+        left: 0;right: 0;
+        margin: auto;
+        background:url('../images/light.png') 0 0 no-repeat;
+    }
+/*    신호등 공통*/
+    .light li {
+        width:75px;
+        height:75px;
+        position: absolute;
+        top: 18px;
+        transition:1s ease;
+    }
+/*    신호등 각각*/
+    .r_light { left: 20px; opacity:1; }
+    .y_light { left : 109px; opacity:0.3; }
+    .g_light { right: 20px; opacity:0.3; }
+    
+/*    자동차 묶음*/
+    .car_wrap {
+        width:100%;
+        height:300px;
+        position: absolute;
+        bottom: 0;
+    }
+/*    자동차 공통*/
+    .car {
+        position: absolute;
+        left: 80px;
+    }
+/*    자동차 각각*/
+    .b_car {}
+    .o_car { left : 500px;}
+    .y_car { top : 120px;}
+    .g_car { left : 500px; top : 120px;}
+    
+/*    자동차 바퀴 공통*/
+    .tire1, .tire2, .tire1-1, .tire2-2 {
+        position: absolute;
+        bottom: 11px;
+    }
+/*    자동차 바퀴 각각*/
+    .tire1 {
+        left: 24px;
+    }
+    .tire1-1 {
+        left: 22.5px;
+    }
+    .tire2 {
+        right: 25px;
+    }
+    .tire2-2 {
+        right: 25.5px;
+    }
+/*    문제 창*/
+    .q_wrap{
+        width:575px;
+        height:295px;
+        border-radius:20px;
+        background-color:#f6f6da;
+        box-shadow: 0 5px 0 0 rgba(0,0,0,0.2);
+        position: absolute;
+        top: 69px;
+        left: 10px;right: 0;
+        margin: auto;
+    }
+/*    문제 이미지*/
+    .question {
+        width:245px;
+        height:245px;
+        border-radius:20px;
+        border: 5px solid #2abab2;
+        background-color:#fff;
+        margin:20px 0 20px 25px;
+        box-shadow:0 5px 0 0 #d1d1ba;
+        float:left;
+        position: relative;
+        overflow: hidden;
+    }
+    .question img {
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0;right: 0;
+        margin: auto;
+    }
+    
+/*    정답 버튼 묶음*/
+    .a_wrap {
+        width:245px;
+        height:245px;
+        float:right;
+        margin:20px 25px 20px 0;
+    }
+/*    정답 버튼 공통*/
+    .answer {
+        width:245px;
+        height:73px;
+        position: absolute;
+        border-radius:10px;
+        letter-spacing: 2px;
+        font-size:32px;
+        line-height:35px;
+    }
+/*    정답 버튼 각각*/
+    .answer1 {top: 20px; background-color:#fea52f; box-shadow:0 5px 0 0 #d39133, 0 11px 0 0 #d1d1ba;}
+    .answer2 { top:0; bottom: 4px; margin: auto; background-color:#19b9ee; box-shadow:0 5px 0 0 #1493bc, 0 11px 0 0 #d1d1ba;}
+    .answer3 { background-color:#26d77f; box-shadow:0 5px 0 0 #1cad63, 0 11px 0 0 #d1d1ba; bottom: 25px;}
+    
+/*   정답 버튼 클릭시*/
+    .answer1:active { top:24px; box-shadow:0 2px 0 0 #d39133, 0 6px 0 0 #d1d1ba;}
+    .answer2:active { top:4px; bottom: 4px; margin: auto; box-shadow:0 2px 0 0 #1493bc, 0 6px 0 0 #d1d1ba;}
+    .answer3:active {box-shadow:0 2px 0 0 #1cad63, 0 6px 0 0 #d1d1ba; bottom: 21px;}

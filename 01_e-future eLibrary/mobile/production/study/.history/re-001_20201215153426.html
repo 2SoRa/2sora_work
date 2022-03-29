@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/study-layout.css">
+    <script src="../../build/js/jquery.js"></script>
+    
+    <title>RE-001</title>
+</head>
+<body>
+    <div class="container-study re001">
+        <!-- top navigation -->
+        <div class="top-nav">
+            <div class="study-progress"><div></div></div>
+            <div class="title">
+                <p>Match the words with the pictures.</p>
+                <button class="close"><img src="../../build/images/layout/close.png" alt="close"></button>
+            </div>
+        </div>
+        <!-- contents area -->
+        <div class="contents-area gradient-bottom">
+                <div class="page bdr-50">
+                    <p><span>1</span>/<span>3</span></p>
+                </div>
+                <div class="question">
+                    <div class="q-img">
+                        <img src="../../build/images/contents/portfolio.jpg" alt="question-image">
+                    </div>
+                    <div class="q-text">
+                        <p>They all got excited and talked about what kind of treasure it might lead to.</p>
+                    </div>
+                </div>
+                <!-- Record time -->
+                <div class="time-progress"></div>
+                <div class="btn-wrap">
+                    <!-- Listen -->
+                    <button class="speaker"><img src="../../build/images/layout/speaker.png" alt="speaker"></button>
+                    <!-- Record -->
+                    <button class="record"><img src="../../build/images/layout/record.png" alt="record"></button>
+                </div>
+            </div>
+        <!-- bottom navigation -->
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $('.speaker').on("click", function(){
+            $(this).css('display','none');
+            $('.record').css('display','initial');
+            $('.time-progress').css('display','block');
+        });
+    });
+</script>
+</html>

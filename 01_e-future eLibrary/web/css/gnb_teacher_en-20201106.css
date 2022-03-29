@@ -1,0 +1,100 @@
+#header{width:100%; height:110px; margin:0 auto;  z-index:10; position:relative;  background-color:#fff;  }
+#header .menubox {margin:0 auto; width:980px; background-color:#fff;  height:70px;   }
+#header .menubox .logo {float:left; margin:3px 0 0 10px; padding-right:10px;}
+#header .menubox .stit {float:left; margin-top:25px; background:url('../images/common/blt01.png') 0 2px no-repeat; padding-left:25px;}
+
+#header .menubox .mmenu {float:right;}
+#header .menubox .mmenu li { float:left; padding:25px; display:inline;  background:url(../images/common/blt02.png) 0 30px  no-repeat; color:#fff;   } 
+#header .menubox .mmenu li:first-child { background:none; } 
+#header .menubox .mmenu>li:last-child { padding-right:0; } 
+#header .menubox .mmenu li a {display:block;  text-decoration: none; color:#c1c1c1;  font-size:15px;}
+#header .menubox .mmenu li a:hover {color:#fba303;}
+
+.util {height:40px; float:left; width:100%;  background-color:#3d3d3d;  z-index:99; position:relative; overflow: hidden; }
+
+.util .loginbox {float:right; margin-right:30px; display:block ; }
+.util .loginbox li {  float:left; margin:0; padding:0 1em; border-left:1px solid rgba(255,255,255,0.2);  cursor: pointer;}
+.util .loginbox li a { font-size:11px; line-height:40px; color:rgba(255,255,255,0.5); text-decoration:none;}
+.util .loginbox li.name {margin:12px 20px; color:#8a8a8a; font-size:12px; border:none; }
+.util .loginbox li.name span { color:#ffffff;  font-weight:bold; }
+.util .loginbox li.logout {background-color:#376474;}
+.util .loginbox li.myinfo {background-color:#956f4a;}
+.util .loginbox li.logout:hover {background-color:#1a91a7;}
+.util .loginbox li.myinfo:hover {background-color:#b18963;}
+.util .loginbox li.logout:hover a, .util .loginbox li.myinfo:hover a {color:rgba(255,255,255,0.7);}
+
+/*10.18변경*/
+.util .loginbox .country {
+    width:110px;
+    border-right:1px solid rgba(255,255,255,0.1);
+    padding:0;
+}
+.util .loginbox li.country div.show_country {
+    width:110px;
+    height:40px;
+    background-color: #fff;
+    font-size:13px; 
+    color:#333;
+}
+.show_country .bottom_arrow{
+    position:absolute;
+    width:30px;
+    top:5px;
+    right:30px;
+}
+
+.country ul {
+    width:100%;
+    display:none;
+}
+
+.util .loginbox li.country ul li, .util .loginbox li.country .show_country{
+    width:100%;
+    background-color:#fff;
+    font-size:13px;
+}
+.country ul li> a> img, .show_country p> a> img {
+    vertical-align: middle;
+    margin:0 5px;
+}
+.util .loginbox li.country ul li>a, .util .loginbox li.country .show_country a {
+    color:#000;
+    line-height:35px;
+}
+.util .loginbox li.country ul li:hover {
+    background-color:#333;
+}
+
+.util .loginbox li.country ul li:hover a {
+    color:#fff;
+}
+
+.input-list {  list-style: none;  padding: 0; }
+.input-list li {  padding: 0;  width: 130px;  float: left;   }
+.input-list02 {  list-style: none;  padding: 0 17px 0 0; float:right;  }
+.input-list02 li {  padding: 0;  width: 150px;   }
+
+#select_container{width:171px; margin:0 3px 0 0; padding:0; float:left;  float:right; }
+
+.jbMenu {  text-align: center; width: 100%;background-color:#fba303; position:relative;  height:47px; border-bottom:1px solid #cd8a06;  border-top:2px solid #cd8a06;   }
+.jbMenu .submenu {width:1000px; margin:0 auto;  padding:11px 0 0 30px ;  }
+.jbMenu .submenu ul { width:900px; margin:auto; height:55px;}
+.jbMenu .submenu li {float:left; padding:0 50px; display:inline;  background: url(../images/common/blt.png) 0 3px  no-repeat; color:#fff;   overflow:hidden;   font:500 14px 'Noto Sans KR', sans-serif;  }
+.jbMenu .submenu li a {color:#fff; }
+.jbMenu .submenu li a:hover, .jbMenu .submenu li a.active {text-decoration:none; }
+.jbMenu .submenu li:first-child {background:none; }
+.jbMenu .submenu:after {content:'';display:block;clear:both}
+
+.jbFixed {position: fixed; top: 0px; height:47px; border-bottom:1px solid #d6d6d6;  z-index:100;}
+
+#smenutab {width:100%; border-bottom:1px solid #e0e0e0; }
+#smenutab .menubar {width:980px;  margin:0 auto;  background-color:#660000; height:100px; }
+#smenutab .menubar ul {width:980px; margin:0 auto; height:40px;  padding:20px 0 0 0; background-color:#3b3b3b; }
+#smenutab .menubar ul li {float:left; width:25%; text-align:center; font:bold 16px Nanum Gothic; display:block;  }
+#smenutab .menubar ul li a {color:#fff; }
+
+@media (min-width:1281px) {
+.jbMenu .submenu {width:1100px; margin:auto;}
+    .jbMenu .submenu ul { height:55px; width:1100px; margin:auto;}
+.jbMenu .submenu ul li {float:left; padding:0 68px; }
+}

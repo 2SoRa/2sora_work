@@ -1,0 +1,115 @@
+/* main */
+
+#mainVisualArea {background-image: url('../images/main/slidebg1.jpg');}
+#mainVisualArea .loginarea {top:90px;}
+#mainVisualArea .loginarea .loginbox {
+    padding:22px 0 50px;
+    background-color:rgba(33,33,33,0.4);
+    border-left:1px inset rgba(4,4,4,0.2);
+    border-top:1px inset rgba(4,4,4,0.2);
+    border-right:1px inset rgba(4,4,4,0.2);
+}
+#mainVisualArea .loginarea .loginbtn{
+    background-color: rgba(33,33,33,0.5);
+    border-left:1px inset rgba(4,4,4,0.2);
+    border-bottom:1px inset rgba(4,4,4,0.2);
+    border-right:1px inset rgba(4,4,4,0.2);
+}
+#mainVisualArea .loginarea .loginbox .titeng {
+    color:#dadada;
+}
+
+.bx-controls-direction {
+        width:98%;
+        position: absolute;
+        left: 0;right: 0;
+        margin:auto;
+    }
+
+#mainVisualArea #mainVisualList li.visual1 { 
+    background-image:url('../images/main/slide1.jpg'); 
+    width:100%; 
+    float:left;
+}
+#mainVisualArea #mainVisualList li.visual2 { 
+    background-image:url('../images/main/slide2.jpg'); 
+    width:100%;
+    float:left;
+}
+#mainVisualArea #mainVisualList li.visual3 { 
+    background-image:url('../images/main/slide3.jpg'); 
+    width:100%;
+    float:left;
+}
+#mainVisualArea .bx-wrapper {
+    width:1287px; 
+    margin:auto; 
+}
+/* 메인 글귀 박스 */
+ #mainVisualArea #mainVisualList .vbox {top: 0;left: 8%; bottom: 0; margin:auto; height:410px; width:700px;}
+
+/*main title contents*/
+#mainVisualArea #mainVisualList .main_title {
+    font-size:38.86px;  font-weight:500;
+}
+#mainVisualArea #mainVisualList .visual1 .main_title {color:#dfff0a; text-shadow: 0px 0px 7px rgba(0,0,0,0.5); letter-spacing: -2px;}
+#mainVisualArea #mainVisualList .visual2 .main_title {color:#ff4f0a; margin-top:-10px;}
+
+#mainVisualArea #mainVisualList .visual3 .main_title {color:#284abb;}
+
+
+#mainVisualArea #mainVisualList .main_title2 {
+    color:#000;
+    font-weight:500;
+}
+#mainVisualArea #mainVisualList .visual1 .main_title2 {letter-spacing: -1px;}
+
+/* main icon */
+#mainVisualArea #mainVisualList .main_icon {
+    width:100%;
+    float:left;
+    margin:25px 0;
+}
+#mainVisualArea #mainVisualList .visual2 .main_icon{ margin:5px 0 15px;}
+
+#mainVisualArea #mainVisualList .main_icon li {
+    width:110px; 
+    height:135px; 
+    float:left; 
+    text-align: center; 
+    margin:0 30px;
+    color:#000;
+    font-size:15.45px;
+}
+#mainVisualArea #mainVisualList .main_icon li:nth-child(2) {margin:0 5px;}
+
+
+#mainVisualArea #mainVisualList .main_contents{
+    color:#000;
+    font-weight:500;
+    line-height: 30px;
+    letter-spacing: -1px;
+}
+
+#contentsbody .k_csarea{ background-color:#13c1ec; }
+#contentsbody .k_remotearea {background-color:#fbb703;}
+
+
+.login_notice {
+    padding:20px;
+    color:#fff;
+    font-size:25px;
+    font-weight: 500;
+    line-height: 40px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+.manual_list a {color:rgba(255,255,255,0.9); padding:0 4px; line-height: 45px;}
+
+@media (min-width: 1367px){
+    .main_title {font-size:38.86px;}
+    .main_title2 {font-size:30px;}
+    .main_contents {font-size:20px;}
+    #mainVisualArea #mainVisualList .vbox {top: 0;left: 10%;bottom: 0; margin:auto; height:420px; width:700px;}
+    
+    #mainVisualArea .loginarea {left:62%; top: 95px;}
+}

@@ -1,0 +1,43 @@
+.wrapper {position: relative;}
+.questiontype01 {width:100%; height:577px; padding-top: 20px; }
+
+.content .questiontype01 .picard {display:inline-block;  width:100%; }
+
+.content .questiontype01 .qaudio {margin-top:43px;}
+.content .questiontype01 .answerbox {
+	width:90%; 
+	min-height: 130px; 
+	text-align:left; 
+	display:inline-block; 
+	border:3px dotted #ccc;  
+	background-color:#fff; 
+	border-radius:10px; 
+	margin:45px auto;
+	
+	display: flex;
+   align-items: center;
+   justify-content: center;	
+}
+.content .questiontype01 .answerbox p {width:100%; font:700 28px 'Open Sans', sans-serif; color:#333; padding:10px 20px; }
+.content .questiontype01 .answerbox span {display: inline-block;}
+.content .questiontype01 .answerbox input{font-size:24px;  padding:5px 10px; border: 2px solid #049ef6; width:50px; margin: 5px 0; border-radius:10px; text-align:center;}
+.content .questiontype01 .box006 {margin-top:80px; border:2px #c2bfb7 dotted; border-radius:15px; padding:25px 40px 25px 20px; width:90%; margin-left:5%;}
+}
+
+
+/*keyboard*/
+.keyboard ul {height:63px;}
+.keyboard ul li:first-child { margin-left:0;}
+.keyboard ul li:last-child {margin-right:0;}
+.keyboard ul li {width:92px; height:60px; display:inline-block; font-size:30px; line-height:55px; box-shadow: 0 2px 0px 0px rgba(0,0,0,0.2); border: 1px solid #e6e7ea; border-radius:10px; background-color: #fff; cursor: pointer;}
+.keyboard {float:left; width:100%; height:225px; background-color:#d1d4da; position: absolute; /*bottom: 0*/}
+.keyboard a {text-decoration: none; color:#000;}
+
+.key1, .key2, .key3 {width:auto; margin:10px auto;}
+
+.keyboard .key3 .long {width:118px; vertical-align: top; margin:0 20px;}
+.keyboard .key3 .long2 {width:118px; vertical-align: top; margin:0 20px; background-color: #abb3be; border-color: #abb1be;}
+.long img {margin:16px 0;}
+.long2 img {margin:10px 0;}
+.bordercolor {background-color: #b5b0c2; border-color: #b2b7bd;}
+.upper {text-transform: uppercase;}

@@ -1,0 +1,27 @@
+/*Type DD*/
+.content .questiontype03 {width:80%; height:calc(100vh - 247px);  text-align:center; margin:10px auto; }
+.content .questiontype03 .qnumber {position:absolute; left:80px;}
+
+.content .questiontype03 .picard {width:100%;  display: table; margin:15px auto; font:700 26px 'Open Sans', sans-serif;  align-items:center; justify-content:center; padding:0 45px; }
+.content .questiontype03 .picard .imgcell {display:table-cell; height:250px; vertical-align:middle;}
+.content .questiontype03 .picard .imgcell .qimg {height:100%;}
+
+.content .questiontype03 .answercell {width:100%; display:table; margin:15px auto;}
+.content .questiontype03 .answerbox {width:100%; background-color:#fff; text-align:left;  border:3px dotted #ccc; padding:10px 10px; border-radius:15px; margin-bottom:10px; font:700 20px 'Open Sans', sans-serif; height:100px;display:table-cell;vertical-align:middle;}
+.content .questiontype03 .answerbox span {border:3px solid #13de9a; border-style: dotted;  padding:10px 10px; border-radius:10px; background-color:#fff; font:500 12px 'Open Sans', sans-serif;  color:#666;line-height:20px;display:inline-block; margin:3px 3px;}
+.content .questiontype03 .answerbox span img {height:70px;}
+.content .questiontype03 .answerbox span.txtcard span {margin:0 !important;}
+
+.content .questiontype03 .txtcard {width:100%; background-color:#eee; text-align:left;  border:3px solid #ccc; border-style: dotted; padding:10px 10px; border-radius:15px;}
+.content .questiontype03 .txtcard span {border:3px solid #13de9a; padding:5px 10px; border-radius:10px; background-color:#fff; display:inline-block; font:700 20px 'Open Sans', sans-serif; margin:5px;}
+
+.dragboxOn img { height:70px; }
+.dragboxOff img { height:70px; }
+
+}
+
+
+
+
+
+

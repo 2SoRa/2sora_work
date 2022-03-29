@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/study-layout.css">
+    <script src="../../build/js/jquery.js"></script>
+  
+    <title>GT-005</title>
+</head>
+<body>
+    <div class="container-study gt005">
+        <div class="top-nav">
+            <div class="study-progress"><div></div></div>
+            <div class="title">
+                <p>Choose the correct word.</p>
+                <button class="close"><img src="../../build/images/layout/close.png" alt="close"></button>
+            </div>
+        </div>
+        <div class="contents-area">
+            <!-- Background GT005-->
+            <div class="backboard" ><p class="q-word">sleep</p></div>
+            <ul class="answer-list">
+               <li>
+                  <img src="../../build/images/contents/q-img.jpg" alt="q-img">
+               </li> 
+               <li>
+                <img src="../../build/images/contents/q-img.jpg" alt="q-img">
+               </li>
+            </ul>
+            <div class="ball">
+                <div class="shadow"></div>
+                <img src="../../build/images/layout/ball.png" alt="ball">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $('.answer-list li').on("click",function(){
+            $(this).toggleClass("active");
+            $(this).siblings().removeClass("active");
+        });
+    });
+</script>
+</html>

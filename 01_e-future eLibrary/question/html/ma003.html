@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MA-003</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ma003.css">
+    <script src = "https://code.jquery.com/jquery-2.1.4.min.js" ></script>
+</head>
+<body>
+    <div class="bg">
+       <p class="question">lion</p>
+       <div class="table">
+           <div class="vase"><img src="../images/vase.png" alt=""></div>
+           <ul>
+               <li class="wrap wrap1">
+                   <div class="dish"></div>
+                   <img src="../images/lion2.png" class="q_img">
+                   <div class="cover"></div>
+               </li>
+               <li class="wrap wrap2">
+                   <div class="dish"></div>
+                   <img src="../images/lion2.png" class="q_img">
+                   <div class="cover"></div>
+               </li>
+               <li class="wrap wrap3">
+                   <div class="dish"></div>
+                   <img src="../images/lion2.png" class="q_img">
+                   <div class="cover"></div>
+               </li>
+           </ul>
+           
+           <div class="juice"><img src="../images/juice.png" alt=""></div>
+           <div class="fork"><img src="../images/fork.png" alt=""></div>
+       </div>
+    </div>
+</body>
+<script>
+    $(function(){
+        $('.cover').delay(500).animate({'top':'-195px'},500,function(){
+            $(this).delay(1000).animate({'top':'-40px'},500);
+        });
+        $('.cover').click(function(){
+            $(this).animate({'top':'-195px'},500);
+        });
+    });
+</script>
+</html>

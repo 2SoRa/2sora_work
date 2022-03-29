@@ -1,0 +1,42 @@
+@media (min-height:940px) {
+/*Type WW*/
+
+.content .questiontype05 {width:100%; height:calc(100vh - 312px);  text-align:center; padding-top:80px;}
+.content .questiontype05 .qnumber {position: absolute; left:140px;}
+.content .questiontype05 .answerbox {width:90%; text-align:left;display:inline-block;  background-color:#eee; border-radius:10px; margin-left:10%;}
+.content .questiontype05 .answerbox p {width:100%; font:700 28px 'Open Sans', sans-serif; color:#333; padding:10px 20px; }
+.content .questiontype05 .answerbox input{font-size:24px;  padding:5px 10px;  margin-left:10px; margin-right:10px;}
+.content .questiontype05 .box006 {margin-top:80px; border:2px #c2bfb7 dotted; border-radius:15px; padding:25px 40px 25px 20px; width:90%; margin-left:5%;}
+}
+
+
+
+@media (min-height:821px) and (max-height:939px) {
+/*Type WW*/
+.content .questiontype05 {width:100%; height:calc(100vh - 312px);  text-align:center; padding-top:50px;}
+.content .questiontype05 .qnumber {position: absolute; left:110px;}
+.content .questiontype05 .answerbox {width:90%; text-align:left;display:inline-block;  background-color:#eee; border-radius:10px; margin-left:10%;}
+.content .questiontype05 .answerbox p {width:100%; font:700 28px 'Open Sans', sans-serif; color:#333; padding:10px 20px; }
+.content .questiontype05 .answerbox input{font-size:24px;  padding:5px 10px;  margin-left:10px; margin-right:10px;}
+.content .questiontype05 .box006 {margin-top:70px; border:2px #c2bfb7 dotted; border-radius:15px; padding:25px 40px 25px 20px; width:90%; margin-left:5%;}
+}
+
+
+@media (max-height:820px) {
+/*Type WW*/
+.content .questiontype05 {width:100%; height:calc(100vh - 262px);  text-align:center; padding-top:20px;}
+.content .questiontype05 .qnumber {position: absolute; left:60px;}
+.content .questiontype05 .answerbox {width:90%; text-align:left; display:inline-block;  background-color:#eee; border-radius:10px;margin-left:10%;}
+.content .questiontype05 .answerbox p {width:100%; font:600 26px 'Open Sans', sans-serif; color:#333; padding:10px 20px; }
+.content .questiontype05 .answerbox input{font-size:24px;  padding:5px 10px; margin-left:10px; margin-right:10px;}
+
+.content .questiontype05 .box006 {margin-top:60px; border:2px #c2bfb7 dotted; border-radius:15px; padding:15px 40px 15px 20px;}
+
+
+}
+
+
+
+
+
+

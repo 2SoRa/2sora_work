@@ -1,0 +1,272 @@
+input[type=radio]:not(old) {  width : 28px;  margin:0;  padding:0;  opacity : 0;}
+input[type=radio]:not(old):checked{  width : 28px;  margin:0;  padding:0;  opacity : 0;}
+input[type=radio]:not(old) + label{  display: inline-block;  margin-left : -28px;   background   : url('../../images/common/checks03.png') no-repeat 0 20px;  }
+input[type=radio]:not(old):checked + label{ display: inline-block;   background-position : 0 -26px; }
+
+@media (min-height:940px) {
+/*Type CC*/
+.content .questiontype01 {width:100%; height:calc(100vh - 262px);  text-align:center; padding-top:60px; }
+.content .questiontype01 .picard {display:inline-block;  width:100%; height:350px;}
+.content .questiontype01 .qnumber {   position: absolute; left:100px;}
+.content .questiontype01 .qcard {height:350px;font:700 26px 'Open Sans', sans-serif;   line-height:350px;}
+.content .questiontype01 .qcard .qimg {height:100%;}
+.content .questiontype01 .qaudio {margin-top:133px;}
+.content .questiontype01 .audio {  position:relative;  top:150px; left:30px; }
+.content .questiontype01 .answerboxred {width:80%; text-align:left;   height:66px;  margin-top:60px;  background-color:#fcefef; margin-left:10%; border:1px solid #f5dada;   }
+.content .questiontype01 .answerboxblue {width:80%; text-align:left;   height:66px;  margin-top:10px;  background-color:#ecf2fe; margin-left:10%; border:1px solid #cfdcf6;  }
+.content .questiontype01 .answerboxgreen {width:80%; text-align:left;   height:66px;  margin-top:10px;  background-color:#ecfeef; margin-left:10%; border:1px solid #bee5be;  }
+.content .questiontype01 .answerboxgray {width:80%; text-align:left;   height:66px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc;  }
+
+.content .questiontype01 .answerboxred  .inputbox { width:100%; float:left; height:60px;  padding-left:30px; }
+.content .questiontype01 .answerboxblue  .inputbox {   width:100%; float:left; height:60px;padding-left:30px;   }
+.content .questiontype01 .answerboxgreen  .inputbox {   width:100%; float:left; height:60px;padding-left:30px;   }
+.content .questiontype01 .answerboxgray  .inputbox {   width:100%; float:left; height:60px;padding-left:30px;   }
+
+.content .questiontype01 .answerboxred label {color:#ff1f1f; font:700 28px 'Open Sans', sans-serif;   line-height:60px;  }
+.content .questiontype01 .answerboxblue label {color:#1355d9; font:700 28px 'Open Sans', sans-serif;   line-height:60px; }
+.content .questiontype01 .answerboxgreen label {color:#18a01b; font:700 28px 'Open Sans', sans-serif;   line-height:60px; }
+.content .questiontype01 .answerboxgray label {color:#666; font:700 28px 'Open Sans', sans-serif;   line-height:60px; }
+
+.content .questiontype01 .answerboxgray label table tr td {color:#666; font:700 28px 'Open Sans', sans-serif; height:60px;width:100%;line-height:110%; }
+
+.content .questiontype01 .answerboxred label.labeltext {padding-left:60px; width:95%; height:60px; }
+.content .questiontype01 .answerboxblue label.labeltext {padding-left:60px; width:95%; height:60px; }
+.content .questiontype01 .answerboxgreen label.labeltext {padding-left:60px; width:95%; height:60px; }
+.content .questiontype01 .answerboxgray label.labeltext {padding-left:60px; width:95%; height:60px; }
+
+.answerboxred_hor input[type=radio]:not(old) + label{  display: inline-block;  margin-left : -28px;   background   : url('../../images/common/checks03.png') no-repeat 0 15px; height:46px;}
+.answerboxred_hor input[type=radio]:not(old):checked + label{ display: inline-block;   background-position : 0 -31px;  height:46px;}
+
+.content .questiontype01 .answerboxred_hor {width:35%; text-align:left;   height:215px;  margin-top:30px;  background-color:#fcefef; margin-left:14%; margin-right:1%; border:3px solid #f5dada; float:left; border-radius:10px;}
+.content .questiontype01 .answerboxred_hor  .inputbox { width:100%; float:left; height:200px;  padding-left:15px;}
+.content .questiontype01 .answerboxred_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxred_hor label span { font:700 70px 'Open Sans', sans-serif;   line-height:200px; width:100%; text-align:center;margin-left:170px;}
+.content .questiontype01 .answerboxred_hor label .labelimg {margin-left:70px;height:200px;margin-top:5px;}
+.content .questiontype01 .answerboxred_hor label .labelaudio {margin-left:170px;height:84px; margin-top:60px;}
+
+.content .questiontype01 .answerboxblue_hor {width:35%; text-align:left;   height:215px;  margin-top:30px;  background-color:#ecf2fe; margin-right:15%; border:3px solid #cfdcf6;  float:left; border-radius:10px;}
+.content .questiontype01 .answerboxblue_hor  .inputbox { width:100%; float:left; height:200px;padding-left:15px;   }
+.content .questiontype01 .answerboxblue_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxblue_hor label span { font:700 70px 'Open Sans', sans-serif;   line-height:200px; width:100%; text-align:center;margin-left:170px;}
+.content .questiontype01 .answerboxblue_hor label .labelimg {margin-left:70px;height:200px;margin-top:5px;}
+.content .questiontype01 .answerboxblue_hor label .labelaudio {margin-left:170px;height:84px; margin-top:60px;}
+
+.content .questiontype01 .answerboxgray1_hor {width:35%; text-align:left;   height:215px;  margin-top:30px;  background-color:#f4f4f4; margin-left:14%; margin-right:1%; border:3px solid #ccc; float:left; border-radius:10px;}
+.content .questiontype01 .answerboxgray1_hor  .inputbox { width:100%; float:left; height:200px;  padding-left:15px;}
+.content .questiontype01 .answerboxgray1_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxgray1_hor label span { font:700 70px 'Open Sans', sans-serif;   line-height:200px; width:100%; text-align:center;margin-left:170px;}
+.content .questiontype01 .answerboxgray1_hor label .labelimg {margin-left:70px;height:200px;margin-top:5px;}
+.content .questiontype01 .answerboxgray1_hor label .labelaudio {margin-left:170px;height:84px; margin-top:60px;}
+
+.content .questiontype01 .answerboxgray2_hor {width:35%; text-align:left;   height:215px;  margin-top:30px;  background-color:#f4f4f4; margin-right:14%; border:3px solid #ccc;  float:left; border-radius:10px;}
+.content .questiontype01 .answerboxgray2_hor  .inputbox { width:100%; float:left; height:200px;padding-left:15px;   }
+.content .questiontype01 .answerboxgray2_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxgray2_hor label span { font:700 70px 'Open Sans', sans-serif;   line-height:200px; width:100%; text-align:center;margin-left:170px;}
+.content .questiontype01 .answerboxgray2_hor label .labelimg {margin-left:70px;height:200px;margin-top:5px;}
+.content .questiontype01 .answerboxgray2_hor label .labelaudio {margin-left:170px;height:84px; margin-top:60px;}
+
+}
+
+
+
+@media (min-height:821px) and (max-height:939px) {
+/*Type CC*/
+.content .questiontype01 {width:100%; height:calc(100vh - 262px);  text-align:center; padding-top:50px; }
+.content .questiontype01 .picard {display:inline-block;  width:100%;height:300px;}
+.content .questiontype01 .qnumber {   position: absolute; left:50px;}
+.content .questiontype01 .qcard {height:300px;font:700 26px 'Open Sans', sans-serif;   line-height:300px;}
+.content .questiontype01 .qcard .qimg {height:100%;}
+.content .questiontype01 .qaudio {margin-top:108px;}
+.content .questiontype01 .audio {  position:relative;  top:110px; left:30px; }
+.content .questiontype01 .answerboxred {width:80%; text-align:left;   height:66px;  margin-top:50px;  background-color:#fcefef; margin-left:10%; border:1px solid #f5dada;   }
+.content .questiontype01 .answerboxblue {width:80%; text-align:left;   height:66px;  margin-top:10px;  background-color:#ecf2fe; margin-left:10%; border:1px solid #cfdcf6;  }
+.content .questiontype01 .answerboxgreen {width:80%; text-align:left;   height:66px;  margin-top:10px;  background-color:#ecfeef; margin-left:10%; border:1px solid #bee5be;  }
+.content .questiontype01 .answerboxgray {width:80%; text-align:left;   height:66px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc;  }
+
+.content .questiontype01 .answerboxred  .inputbox { width:100%; float:left; height:60px;  padding-left:30px; }
+.content .questiontype01 .answerboxblue  .inputbox {   width:100%; float:left; height:60px;padding-left:30px;   }
+.content .questiontype01 .answerboxgreen  .inputbox {   width:100%; float:left; height:60px;padding-left:30px;   }
+.content .questiontype01 .answerboxgray  .inputbox {   width:100%; float:left; height:60px;padding-left:30px;   }
+
+.content .questiontype01 .answerboxred label {color:#ff1f1f; font:700 26px 'Open Sans', sans-serif;   line-height:60px;  }
+.content .questiontype01 .answerboxblue label {color:#1355d9; font:700 26px 'Open Sans', sans-serif;   line-height:60px; }
+.content .questiontype01 .answerboxgreen label {color:#18a01b; font:700 26px 'Open Sans', sans-serif;   line-height:60px; }
+.content .questiontype01 .answerboxgray label {color:#666; font:700 26px 'Open Sans', sans-serif;   line-height:60px; }
+
+.content .questiontype01 .answerboxgray label table tr td {color:#666; font:700 26px 'Open Sans', sans-serif;  height:60px;width:100%;line-height:110%; }
+
+.content .questiontype01 .answerboxred label.labeltext {padding-left:60px; width:95%; height:60px; }
+.content .questiontype01 .answerboxblue label.labeltext {padding-left:60px; width:95%; height:60px; }
+.content .questiontype01 .answerboxgreen label.labeltext {padding-left:60px; width:95%; height:60px; }
+.content .questiontype01 .answerboxgray label.labeltext {padding-left:60px; width:95%; height:60px; }
+
+.answerboxred_hor input[type=radio]:not(old) + label{  display: inline-block;  margin-left : -28px;   background   : url('../../images/common/checks03.png') no-repeat 0 15px; height:46px;}
+.answerboxred_hor input[type=radio]:not(old):checked + label{ display: inline-block;   background-position : 0 -31px;  height:46px;}
+
+.content .questiontype01 .answerboxred_hor {width:40%; text-align:left;   height:190px;  margin-top:30px;  background-color:#fcefef; margin-left:9%; margin-right:1%; border:3px solid #f5dada; float:left; border-radius:10px;}
+.content .questiontype01 .answerboxred_hor  .inputbox { width:100%; float:left; height:175px;  padding-left:15px;}
+.content .questiontype01 .answerboxred_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxred_hor label span { font:700 70px 'Open Sans', sans-serif;   line-height:180px; width:100%; text-align:center;margin-left:150px;}
+.content .questiontype01 .answerboxred_hor label .labelimg {margin-left:50px;height:175px; margin-top:5px;}
+.content .questiontype01 .answerboxred_hor label .labelaudio {margin-left:120px;height:84px; margin-top:48px;}
+
+.content .questiontype01 .answerboxblue_hor {width:40%; text-align:left;   height:190px;  margin-top:30px;  background-color:#ecf2fe; margin-right:10%; border:3px solid #cfdcf6;  float:left; border-radius:10px;}
+.content .questiontype01 .answerboxblue_hor  .inputbox { width:100%; float:left; height:175px;padding-left:15px;   }
+.content .questiontype01 .answerboxblue_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxblue_hor label span { font:700 70px 'Open Sans', sans-serif;   line-height:180px; width:100%; text-align:center;margin-left:150px;}
+.content .questiontype01 .answerboxblue_hor label .labelimg {margin-left:50px;height:175px; margin-top:5px;}
+.content .questiontype01 .answerboxblue_hor label .labelaudio {margin-left:120px;height:84px; margin-top:48px;}
+
+.content .questiontype01 .answerboxgray1_hor {width:40%; text-align:left;   height:190px;  margin-top:30px;  background-color:#f4f4f4; margin-left:9%; margin-right:1%; border:3px solid #ccc; float:left; border-radius:10px;}
+.content .questiontype01 .answerboxgray1_hor  .inputbox { width:100%; float:left; height:175px;  padding-left:15px;}
+.content .questiontype01 .answerboxgray1_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxgray1_hor label span { font:700 70px 'Open Sans', sans-serif;   line-height:180px; width:100%; text-align:center;margin-left:150px;}
+.content .questiontype01 .answerboxgray1_hor label .labelimg {margin-left:50px;height:175px; margin-top:5px;}
+.content .questiontype01 .answerboxgray1_hor label .labelaudio {margin-left:120px;height:84px; margin-top:48px;}
+
+.content .questiontype01 .answerboxgray2_hor {width:40%; text-align:left;   height:190px;  margin-top:30px;  background-color:#f4f4f4; margin-right:10%; border:3px solid #ccc;  float:left; border-radius:10px;}
+.content .questiontype01 .answerboxgray2_hor  .inputbox { width:100%; float:left; height:175px;padding-left:15px;   }
+.content .questiontype01 .answerboxgray2_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxgray2_hor label span { font:700 70px 'Open Sans', sans-serif;   line-height:180px; width:100%; text-align:center;margin-left:150px;}
+.content .questiontype01 .answerboxgray2_hor label .labelimg {margin-left:50px;height:175px; margin-top:5px;}
+.content .questiontype01 .answerboxgray2_hor label .labelaudio {margin-left:120px;height:84px; margin-top:48px;}
+
+}
+
+@media (min-height:769px) and (max-height:820px) {
+input[type=radio]:not(old) + label{  display: inline-block;  margin-left : -28px;   background   : url('../../images/common/checks03.png') no-repeat 0 15px;  }
+input[type=radio]:not(old):checked + label{ display: inline-block;   background-position : 0 -31px; }
+	
+/*Type CC*/
+.content .questiontype01 {width:100%; height:calc(100vh - 262px);  text-align:center; padding-top:20px; }
+.content .questiontype01 .picard {display:inline-block;  width:100%;height:250px;}
+.content .questiontype01 .qnumber {   position: absolute; left:50px;}
+.content .questiontype01 .qcard {height:250px;font:700 26px 'Open Sans', sans-serif;   line-height:250px;}
+.content .questiontype01 .qcard .qimg {height:250px;}
+.content .questiontype01 .qaudio {margin-top:83px;}
+.content .questiontype01 .audio {  position:relative;  top:100px; left:40px; }
+.content .questiontype01 .answerboxred {width:80%; text-align:left;   height:56px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc;   }
+.content .questiontype01 .answerboxblue {width:80%; text-align:left;   height:56px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc;  }
+.content .questiontype01 .answerboxgreen {width:80%; text-align:left;   height:56px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc;  }
+.content .questiontype01 .answerboxgray {width:80%; text-align:left;   height:56px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc;  }
+.content .questiontype01 .answerboxred  .inputbox { width:100%; float:left; height:50px;  padding-left:30px; }
+.content .questiontype01 .answerboxblue  .inputbox {   width:100%; float:left; height:50px;padding-left:30px;   }
+.content .questiontype01 .answerboxgreen  .inputbox {   width:100%; float:left; height:50px;padding-left:30px;   }
+.content .questiontype01 .answerboxgray  .inputbox {   width:100%; float:left; height:50px;padding-left:30px;   }
+.content .questiontype01 .answerboxred label {color:#666; font:700 26px 'Open Sans', sans-serif;   line-height:50px;  }
+.content .questiontype01 .answerboxblue label {color:#666; font:700 26px 'Open Sans', sans-serif;   line-height:50px; }
+.content .questiontype01 .answerboxgreen label {color:#666; font:700 26px 'Open Sans', sans-serif;   line-height:50px; }
+.content .questiontype01 .answerboxgray label {color:#666; font:700 26px 'Open Sans', sans-serif;   line-height:50px; }
+
+.content .questiontype01 .answerboxgray label table tr td {color:#666; font:700 26px 'Open Sans', sans-serif;   height:50px;width:100%;line-height:110%; }
+
+.content .questiontype01 .answerboxred label.labeltext {padding-left:60px; width:95%; height:60px; }
+.content .questiontype01 .answerboxblue label.labeltext {padding-left:60px; width:95%; height:60px; }
+.content .questiontype01 .answerboxgreen label.labeltext {padding-left:60px; width:95%; height:60px; }
+.content .questiontype01 .answerboxgray label.labeltext {padding-left:60px; width:95%; height:60px; }
+
+.answerboxred_hor input[type=radio]:not(old) + label{  display: inline-block;  margin-left : -28px;   background   : url('../../images/common/checks03.png') no-repeat 0 15px; height:46px;}
+.answerboxred_hor input[type=radio]:not(old):checked + label{ display: inline-block;   background-position : 0 -31px;  height:46px;}
+
+.content .questiontype01 .answerboxred_hor {width:35%; text-align:left;   height:160px;  margin-top:25px;  background-color:#f4f4f4; margin-left:14%; margin-right:1%; border:3px solid #ccc; float:left; border-radius:10px;}
+.content .questiontype01 .answerboxred_hor  .inputbox { width:100%; float:left; height:146px;  padding-left:15px;}
+.content .questiontype01 .answerboxred_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxred_hor label span { font:700 60px 'Open Sans', sans-serif;   line-height:150px; width:100%; text-align:center;margin-left:115px;}
+.content .questiontype01 .answerboxred_hor label .labelimg {margin-left:50px;height:145px;margin-top:5px;}
+.content .questiontype01 .answerboxred_hor label .labelaudio {margin-left:110px;height:74px; margin-top:38px;}
+
+.content .questiontype01 .answerboxblue_hor {width:35%; text-align:left;   height:160px;  margin-top:25px;  background-color:#f4f4f4; margin-right:15%; border:3px solid #ccc;  float:left; border-radius:10px;}
+.content .questiontype01 .answerboxblue_hor  .inputbox { width:100%; float:left; height:146px;padding-left:15px;   }
+.content .questiontype01 .answerboxblue_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxblue_hor label span { font:700 60px 'Open Sans', sans-serif;   line-height:150px; width:100%; text-align:center;margin-left:115px;}
+.content .questiontype01 .answerboxblue_hor label .labelimg {margin-left:50px;height:145px;margin-top:5px;}
+.content .questiontype01 .answerboxblue_hor label .labelaudio {margin-left:110px;height:74px; margin-top:38px;}
+
+.content .questiontype01 .answerboxgray1_hor {width:35%; text-align:left;   height:160px;  margin-top:25px;  background-color:#f4f4f4; margin-left:14%; margin-right:1%; border:3px solid #ccc; float:left; border-radius:10px;}
+.content .questiontype01 .answerboxgray1_hor  .inputbox { width:100%; float:left; height:146px;  padding-left:15px;}
+.content .questiontype01 .answerboxgray1_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxgray1_hor label span { font:700 60px 'Open Sans', sans-serif;   line-height:150px; width:100%; text-align:center;margin-left:115px;}
+.content .questiontype01 .answerboxgray1_hor label .labelimg {margin-left:50px;height:145px;margin-top:5px;}
+.content .questiontype01 .answerboxgray1_hor label .labelaudio {margin-left:110px;height:74px; margin-top:38px;}
+
+.content .questiontype01 .answerboxgray2_hor {width:35%; text-align:left;   height:160px;  margin-top:25px;  background-color:#f4f4f4; margin-right:15%; border:3px solid #ccc;  float:left; border-radius:10px;}
+.content .questiontype01 .answerboxgray2_hor  .inputbox { width:100%; float:left; height:146px;padding-left:15px;   }
+.content .questiontype01 .answerboxgray2_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxgray2_hor label span { font:700 60px 'Open Sans', sans-serif;   line-height:150px; width:100%; text-align:center;margin-left:115px;}
+.content .questiontype01 .answerboxgray2_hor label .labelimg {margin-left:50px;height:145px;margin-top:5px;}
+.content .questiontype01 .answerboxgray2_hor label .labelaudio {margin-left:110px;height:74px; margin-top:38px;}
+	
+}
+
+
+@media (max-height:768px) {
+input[type=radio]:not(old) + label{  display: inline-block;  margin-left : -28px;   background   : url('../../images/common/checks03.png') no-repeat 0 12px;  }
+input[type=radio]:not(old):checked + label{ display: inline-block;   background-position : 0 -34px; }
+	
+/*Type CC*/
+.content .questiontype01 {width:100%; height:calc(100vh - 262px);  text-align:center; padding-top:20px; }
+.content .questiontype01 .picard {display:inline-block;  width:100%;height:200px;}
+.content .questiontype01 .qnumber {   position: absolute; left:50px;}
+.content .questiontype01 .qcard {height:250px;font:700 26px 'Open Sans', sans-serif;   line-height:250px;}
+.content .questiontype01 .qcard .qimg {height:200px;}
+.content .questiontype01 .qaudio {margin-top:83px;}
+.content .questiontype01 .audio {  position:relative;  top:100px; left:40px; }
+.content .questiontype01 .answerboxred {width:80%; text-align:left;   height:51px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc;   }
+.content .questiontype01 .answerboxblue {width:80%; text-align:left;   height:51px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc;  }
+.content .questiontype01 .answerboxgreen {width:80%; text-align:left;   height:51px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc;  }
+.content .questiontype01 .answerboxgray {width:80%; text-align:left;   height:51px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc;  }
+.content .questiontype01 .answerboxred  .inputbox { width:100%; float:left; height:45px;  padding-left:30px; }
+.content .questiontype01 .answerboxblue  .inputbox {   width:100%; float:left; height:45px;padding-left:30px;   }
+.content .questiontype01 .answerboxgreen  .inputbox {   width:100%; float:left; height:45px;padding-left:30px;   }
+.content .questiontype01 .answerboxgray  .inputbox {   width:100%; float:left; height:45px;padding-left:30px;   }
+.content .questiontype01 .answerboxred label {color:#666; font:700 22px 'Open Sans', sans-serif;   line-height:45px;  }
+.content .questiontype01 .answerboxblue label {color:#666; font:700 22px 'Open Sans', sans-serif;   line-height:45px; }
+.content .questiontype01 .answerboxgreen label {color:#666; font:700 22px 'Open Sans', sans-serif;   line-height:45px; }
+.content .questiontype01 .answerboxgray label {color:#666; font:700 22px 'Open Sans', sans-serif;   line-height:45px; }
+
+.content .questiontype01 .answerboxgray label table tr td {color:#666; font:700 22px 'Open Sans', sans-serif;   height:45px;width:100%;line-height:110%; }
+
+.content .questiontype01 .answerboxred label.labeltext {padding-left:60px; width:95%; height:50px; }
+.content .questiontype01 .answerboxblue label.labeltext {padding-left:60px; width:95%; height:50px; }
+.content .questiontype01 .answerboxgreen label.labeltext {padding-left:60px; width:95%; height:50px; }
+.content .questiontype01 .answerboxgray label.labeltext {padding-left:60px; width:95%; height:50px; }
+
+.answerboxred_hor input[type=radio]:not(old) + label{  display: inline-block;  margin-left : -28px;   background   : url('../../images/common/checks03.png') no-repeat 0 15px; height:46px;}
+.answerboxred_hor input[type=radio]:not(old):checked + label{ display: inline-block;   background-position : 0 -31px;  height:46px;}
+
+.content .questiontype01 .answerboxred_hor {width:35%; text-align:left;   height:160px;  margin-top:25px;  background-color:#f4f4f4; margin-left:14%; margin-right:1%; border:3px solid #ccc; float:left; border-radius:10px;}
+.content .questiontype01 .answerboxred_hor  .inputbox { width:100%; float:left; height:146px;  padding-left:15px;}
+.content .questiontype01 .answerboxred_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxred_hor label span { font:700 60px 'Open Sans', sans-serif;   line-height:150px; width:100%; text-align:center;margin-left:115px;}
+.content .questiontype01 .answerboxred_hor label .labelimg {margin-left:50px;height:145px;margin-top:5px;}
+.content .questiontype01 .answerboxred_hor label .labelaudio {margin-left:110px;height:74px; margin-top:38px;}
+
+.content .questiontype01 .answerboxblue_hor {width:35%; text-align:left;   height:160px;  margin-top:25px;  background-color:#f4f4f4; margin-right:15%; border:3px solid #ccc;  float:left; border-radius:10px;}
+.content .questiontype01 .answerboxblue_hor  .inputbox { width:100%; float:left; height:146px;padding-left:15px;   }
+.content .questiontype01 .answerboxblue_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxblue_hor label span { font:700 60px 'Open Sans', sans-serif;   line-height:150px; width:100%; text-align:center;margin-left:115px;}
+.content .questiontype01 .answerboxblue_hor label .labelimg {margin-left:50px;height:145px;margin-top:5px;}
+.content .questiontype01 .answerboxblue_hor label .labelaudio {margin-left:110px;height:74px; margin-top:38px;}
+
+.content .questiontype01 .answerboxgray1_hor {width:35%; text-align:left;   height:160px;  margin-top:25px;  background-color:#f4f4f4; margin-left:14%; margin-right:1%; border:3px solid #ccc; float:left; border-radius:10px;}
+.content .questiontype01 .answerboxgray1_hor  .inputbox { width:100%; float:left; height:146px;  padding-left:15px;}
+.content .questiontype01 .answerboxgray1_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxgray1_hor label span { font:700 60px 'Open Sans', sans-serif;   line-height:150px; width:100%; text-align:center;margin-left:115px;}
+.content .questiontype01 .answerboxgray1_hor label .labelimg {margin-left:50px;height:145px;margin-top:5px;}
+.content .questiontype01 .answerboxgray1_hor label .labelaudio {margin-left:110px;height:74px; margin-top:38px;}
+
+.content .questiontype01 .answerboxgray2_hor {width:35%; text-align:left;   height:160px;  margin-top:25px;  background-color:#f4f4f4; margin-right:15%; border:3px solid #ccc;  float:left; border-radius:10px;}
+.content .questiontype01 .answerboxgray2_hor  .inputbox { width:100%; float:left; height:146px;padding-left:15px;   }
+.content .questiontype01 .answerboxgray2_hor label {height:50px; text-align:center;}
+.content .questiontype01 .answerboxgray2_hor label span { font:700 60px 'Open Sans', sans-serif;   line-height:150px; width:100%; text-align:center;margin-left:115px;}
+.content .questiontype01 .answerboxgray2_hor label .labelimg {margin-left:50px;height:145px;margin-top:5px;}
+.content .questiontype01 .answerboxgray2_hor label .labelaudio {margin-left:110px;height:74px; margin-top:38px;}
+
+
+}
+
+
+
+
+
+

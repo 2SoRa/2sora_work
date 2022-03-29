@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/chart.css">
+    <link rel="stylesheet" href="../../build/css/barchart.css">
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/layout.css">
+    <link rel="stylesheet" href="../../build/css/report.css">
+    <script src="../../build/js/jquery.js"></script>
+    
+    <title>Review List</title>
+</head>
+<style>
+</style>
+<body>
+    <div class="container report">
+        <!-- top navigation -->
+        <div class="top-nav gradient-right">
+            <button class="back"><img src="../../build/images/layout/close-white.png" alt="close"></button>
+            <p class="title">Review</p>
+            <button class="write"><img src="../../build/images/layout/write.png" alt="write"></button>
+        </div>
+        <!-- contents area -->
+        <div class="contents-area list">
+            <div class="title">
+                <p class="series-title">e-future Classic Readers</p>
+                <p class="book-title">The Wolf and the Seven Children</p>
+            </div>
+            <ul class="review-list">
+                <li>
+                    <div class="user-wrap">
+                        <img src="../../build/images/layout/user-small.png" alt="user" >
+                        <p class="user-name">hongildong</p>
+                        <ul class="star flr">
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                        </ul>
+                    </div>
+                    <p class="review-title">제목이 여기 들어감</p>
+                </li>
+                <li>
+                    <p class="date">2020.07.28</p>
+                    <p class="review-text">제목을 누르면 아래로 열려서<br>글이보여</p>
+                </li>
+            </ul>
+            <ul class="review-list">
+                <li>
+                    <div class="user-wrap">
+                        <img src="../../build/images/layout/user-small.png" alt="user" >
+                        <p class="user-name">hongildong</p>
+                        <ul class="star flr">
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                        </ul>
+                    </div>
+                    <p class="review-title">제목이 여기 들어감</p>
+                </li>
+                <li>
+                    <p class="date">2020.07.28</p>
+                    <p class="review-text">제목을 누르면 아래로 열려서<br>글이보여</p>
+                </li>
+            </ul>
+            <ul class="review-list">
+                <li>
+                    <div class="user-wrap">
+                        <img src="../../build/images/layout/user-small.png" alt="user" >
+                        <p class="user-name">hongildong</p>
+                        <ul class="star flr">
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                            <li><img src="../../build/images/layout/star01.png" alt="star-on"></li>
+                        </ul>
+                    </div>
+                    <p class="review-title">제목이 여기 들어감</p>
+                </li>
+                <li>
+                    <p class="date">2020.07.28</p>
+                    <p class="review-text">제목을 누르면 아래로 열려서<br>글이보여</p>
+                </li>
+            </ul>
+            <button class="more">+ More Review</button>
+        </div>
+        <!-- bottom navigation -->
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $('.review-list>li:first-child').on("click",function(){
+            $(this).siblings().slideToggle();
+        });
+    });
+</script>
+</html>

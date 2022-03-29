@@ -1,0 +1,171 @@
+<!-- /v1/head.sub.php-->
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="../../css/colorbox.css">
+	<link rel="stylesheet" type="text/css" href="../../css/teacher.css">
+	<link rel="stylesheet" type="text/css" href="../../css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../css/chart.css">
+<!--	국내 css-->
+	<link rel="stylesheet" type="text/css" href="../../css/k_layout.css">
+	<link rel="stylesheet" type="text/css" href="../../css/k_teacher.css">
+<!--	국내 css-->
+	<link rel="stylesheet" href="../../css/barchart.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../../jquery/image-picker.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
+    <!--star rating-->
+	<script src="../../jquery/script.js" type="text/javascript"></script><!--shape-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+	<title>coupon 관리</title>
+</head>
+<body>
+<div>
+	<div class="poparea popup16 w_popup ">
+		<div class="title tp14 mgb20">Coupon 관리</div>
+        <div class="student_choice">
+            <p class="mtit01 mgb15">학생 선택</p>
+            <select name="" id="" class="floatleft select_type01">
+                <option value="Class 선택">Class 선택</option>
+            </select>
+            <div class="table_wrap">
+            <table class="ranking">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox"><label for=""></label></th>
+                        <th>Class</th>
+                        <th>Name</th>
+                        <th>쿠폰잔여일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"><label for=""></label></td>
+                        <td>Class A</td>
+                        <td>홍길동A</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"><label for=""></label></td>
+                        <td>Class A</td>
+                        <td>홍길동A</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"><label for=""></label></td>
+                        <td>Class A</td>
+                        <td>홍길동A</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"><label for=""></label></td>
+                        <td>Class A</td>
+                        <td>홍길동A</td>
+                        <td>25</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <button class="coupon_btn">Coupon 부여</button>
+        </div>
+        <div class="coupon_list">
+            <p class="mtit01 mgb15">Coupon List</p>
+            <div class="coupon_extra">사용 가능 Coupon 수 : <span class="">20</span></div>
+            <table class="ranking homework">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>쿠폰번호</th>
+                        <th>사용자</th>
+                        <th>구입일</th>
+                        <th>사용일</th>
+                        <th>할당취소</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>8</td>
+                        <td>AB12-CD34-EF56-GH78</td>
+                        <td>홍길동A</td>
+                        <td>2019-03-18</td>
+                        <td>2019-03-22</td>
+                        <td><button class="btn_orange coupon_btn">취소</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pagebox2">
+				<div class="paging">
+					<a class="btn first" href=""></a>
+					<a class="btn prev" href=""></a>
+					<a class="num"  href="#">1</a>
+					<a class="on num" href="#">2</a>
+					<a class="num"  href="#">3</a>
+					<a class="btn next" href=""></a>
+					<a class="btn end" href=""></a>
+				</div>
+			</div>
+       <p class="floatleft notice">* 쿠폰 사용 24시간 내에만 할당취소가 가능합니다.</p>
+        </div>
+	</div>
+</div>
+</body>
+</html>

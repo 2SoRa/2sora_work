@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta name="keywords" content="">
+	<meta name="description" content="nework">
+	<meta http-equiv="X-UA-compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="stylesheet" type="text/css" href="../css/fullscreen_layout.css">
+	<link rel="stylesheet" type="text/css" href="../css/fullscreen.css">
+	<link rel="stylesheet" type="text/css" href="../css/piechart.css">
+	<link rel="stylesheet" type="text/css" href="../css/student.css">
+	<link rel="stylesheet" type="text/css" href="../css/record.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../jquery/jquery.chart.js"></script>
+	<link href="../images/common/efuture.ico" rel="icon">
+	<title>Portfolio</title>
+</head>
+<body>
+
+<!--Contents 영역 시작-->
+<div id="wrapper">
+	
+	<div class="content portfolio">
+		<p class="txttitle">Portfolio</p>
+		<!-- 학습영역 시작 --><div id="study_contents">
+            <p class="txtype01">Read Aloud Score</p>
+		<div class="chartarea">
+			<div class="chart">
+				<div class="donut-chart fill" data-percent="0.89" data-title="POINT"></div>
+			</div>
+		</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sentence</th>
+                    <th>Score</th>
+                    <th>Listen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="re-content">
+                        <p class="re-num">1</p>
+                        <p><span class="re-blue">Come</span> <span class="re-orange">talk</span> <span class="re-blue">with me</span>, <span class="re-red">Ant</span>.</p>
+                    </td>
+                    <td class="re-score">
+                        <p>97</p>
+                    </td>
+                    <td class="re-listen">
+                        <button><img src="../images/popup/listen2.png" alt="listen"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="re-content">
+                        <p class="re-num">1</p>
+                        <p><span class="re-blue">Come</span> <span class="re-orange">talk</span> <span class="re-blue">with me</span>, <span class="re-red">Ant</span>.</p>
+                    </td>
+                    <td class="re-score">
+                        <p>97</p>
+                    </td>
+                    <td class="re-listen">
+                        <button><img src="../images/popup/listen2.png" alt="listen"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="re-content">
+                        <p class="re-num">1</p>
+                        <p><span class="re-blue">Come</span> <span class="re-orange">talk</span> <span class="re-blue">with me</span>, <span class="re-red">Ant</span>.</p>
+                    </td>
+                    <td class="re-score">
+                        <p>97</p>
+                    </td>
+                    <td class="re-listen">
+                        <button><img src="../images/popup/listen2.png" alt="listen"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="re-content">
+                        <p class="re-num">1</p>
+                        <p><span class="re-blue">By 1948, car phones were</span> <span class="re-orange">used</span> <span class="re-blue">by about five thousand people, and the car phones got</span> <span class="re-red">smaller</span> <span class="re-blue">and lighter</span>.</p>
+                    </td>
+                    <td class="re-score">
+                        <p>97</p>
+                    </td>
+                    <td class="re-listen">
+                        <button><img src="../images/popup/listen2.png" alt="listen"></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <ul class="re-feedback">
+            <li class="fb-blue">Excellent</li>
+            <li class="fb-orange">Good</li>
+            <li class="fb-red">Not Bad</li>
+        </ul>
+    </div>
+</div>
+
+</div>
+<!--Contents 영역 끝-->
+</body>
+<script>
+    $(function(){
+        $('#answer1, #answer2').click(function(){
+            $('.btnarea').css('display','block');
+        });
+    });
+</script>
+
+<script>
+  $(function() {
+      $('.bar-chart').cssCharts({type:"bar"});
+      $('.donut-chart').cssCharts({type:"donut"}).trigger('show-donut-chart');
+      $('.line-chart').cssCharts({type:"line"});
+  });
+</script>
+</html>

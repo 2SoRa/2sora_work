@@ -1,0 +1,121 @@
+input[type=radio]:not(old) {  width : 28px;  margin:0;  padding:0;  opacity : 0;}
+input[type=radio]:not(old):checked{  width : 28px;  margin:0;  padding:0;  opacity : 0;}
+input[type=radio]:not(old) + label{  display: inline-block;  margin-left : -28px;   background   : url('../../images/common/checks03.png') no-repeat 0 20px;  }
+input[type=radio]:not(old):checked + label{ display: inline-block;   background-position : 0 -26px; }
+
+@media (min-height:940px) {
+/*Type CC*/
+.content .questiontype01 {width:100%; height:calc(100vh - 262px);  text-align:center; padding-top:60px; }
+.content .questiontype01 .picard {display:inline-block;  width:100%; height:350px;}
+.content .questiontype01 .qnumber {   position: absolute; left:80px;}
+.content .questiontype01 .answerboxred {width:80%; text-align:left;   height:66px;  margin-top:60px;  background-color:#fcefef; margin-left:10%; border:1px solid #f5dada;   }
+.content .questiontype01 .answerboxblue {width:80%; text-align:left;   height:66px;  margin-top:10px;  background-color:#ecf2fe; margin-left:10%; border:1px solid #cfdcf6;  }
+.content .questiontype01 .answerboxgray {width:80%; text-align:left;   height:66px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc;  }
+
+.content .questiontype01 .answerboxred  .inputbox { width:100%; float:left; height:60px;  padding-left:30px; }
+.content .questiontype01 .answerboxblue  .inputbox {   width:100%; float:left; height:60px;padding-left:30px;   }
+.content .questiontype01 .answerboxgray  .inputbox {   width:100%; float:left; height:60px;padding-left:30px;   }
+
+.content .questiontype01 .answerboxred label {color:#ff1f1f; font:700 26px 'Open Sans', sans-serif;   line-height:60px;  }
+.content .questiontype01 .answerboxblue label {color:#1355d9; font:700 26px 'Open Sans', sans-serif;   line-height:60px; }
+.content .questiontype01 .answerboxgray label {color:#666; font:700 26px 'Open Sans', sans-serif;   line-height:60px; }
+
+.content .questiontype01 .answerboxred label.labeltext {padding-left:60px; }
+.content .questiontype01 .answerboxblue label.labeltext {padding-left:60px; }
+.content .questiontype01 .answerboxgray label.labeltext {padding-left:60px; }
+
+.content .questiontype01 .box003 {margin-top:60px; border:2px #c2bfb7 dotted; border-radius:15px; padding:10px 40px 20px 20px;}
+.w90{width:90% !important;}
+
+}
+
+
+
+@media (min-height:821px) and (max-height:939px) {
+/*Type CC*/
+.content .questiontype01 {width:100%; height:calc(100vh - 262px);  text-align:center; padding-top:50px; }
+.content .questiontype01 .picard {display:inline-block;  width:100%;height:300px;}
+.content .questiontype01 .qnumber {   position: absolute; left:50px;}
+.content .questiontype01 .answerboxred {width:80%; text-align:left;   height:66px;  margin-top:50px;  background-color:#fcefef; margin-left:10%; border:1px solid #f5dada;   }
+.content .questiontype01 .answerboxblue {width:80%; text-align:left;   height:66px;  margin-top:10px;  background-color:#ecf2fe; margin-left:10%; border:1px solid #cfdcf6;  }
+.content .questiontype01 .answerboxgray {width:80%; text-align:left;   height:66px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc;  }
+
+.content .questiontype01 .answerboxred  .inputbox { width:100%; float:left; height:60px;  padding-left:30px; }
+.content .questiontype01 .answerboxblue  .inputbox {   width:100%; float:left; height:60px;padding-left:30px;   }
+.content .questiontype01 .answerboxgray  .inputbox {   width:100%; float:left; height:60px;padding-left:30px;   }
+
+.content .questiontype01 .answerboxred label {color:#ff1f1f; font:700 26px 'Open Sans', sans-serif;   line-height:60px;  }
+.content .questiontype01 .answerboxblue label {color:#1355d9; font:700 26px 'Open Sans', sans-serif;   line-height:60px; }
+.content .questiontype01 .answerboxgray label {color:#666; font:700 26px 'Open Sans', sans-serif;   line-height:60px; }
+
+.content .questiontype01 .answerboxred label.labeltext {padding-left:60px; }
+.content .questiontype01 .answerboxblue label.labeltext {padding-left:60px; }
+.content .questiontype01 .answerboxgray label.labeltext {padding-left:60px; }
+
+.content .questiontype01 .box003 {margin-top:60px; border:2px #c2bfb7 dotted; border-radius:15px; padding:10px 40px 20px 20px;}
+.w90{width:90% !important;}
+
+}
+
+@media (min-height:769px) and (max-height:820px) {
+input[type=radio]:not(old) + label{  display: inline-block;  margin-left : -28px;   background   : url('../../images/common/checks03.png') no-repeat 0 15px;  }
+input[type=radio]:not(old):checked + label{ display: inline-block;   background-position : 0 -31px; }
+	
+/*Type CC*/
+.content .questiontype01 {width:100%; height:calc(100vh - 262px);  text-align:center; padding-top:20px; }
+.content .questiontype01 .picard {display:inline-block;  width:100%;height:250px;}
+.content .questiontype01 .qnumber {   position: absolute; left:50px;}
+.content .questiontype01 .answerboxred {width:80%; text-align:left;   height:56px;  margin-top:10px;  background-color:#fcefef; margin-left:10%; border:1px solid #f5dada;   }
+.content .questiontype01 .answerboxblue {width:80%; text-align:left;   height:56px;  margin-top:10px;  background-color:#ecf2fe; margin-left:10%; border:1px solid #cfdcf6;  }
+.content .questiontype01 .answerboxgray {width:80%; text-align:left;   height:56px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc;  }
+
+.content .questiontype01 .answerboxred  .inputbox { width:100%; float:left; height:50px;  padding-left:30px; }
+.content .questiontype01 .answerboxblue  .inputbox {   width:100%; float:left; height:50px;padding-left:30px;   }
+.content .questiontype01 .answerboxgray  .inputbox {   width:100%; float:left; height:50px;padding-left:30px;   }
+
+.content .questiontype01 .answerboxred label {color:#ff1f1f; font:700 26px 'Open Sans', sans-serif;   line-height:50px;  }
+.content .questiontype01 .answerboxblue label {color:#1355d9; font:700 26px 'Open Sans', sans-serif;   line-height:50px; }
+.content .questiontype01 .answerboxgray label {color:#666; font:700 26px 'Open Sans', sans-serif;   line-height:50px; }
+
+.content .questiontype01 .answerboxred label.labeltext {padding-left:60px; }
+.content .questiontype01 .answerboxblue label.labeltext {padding-left:60px; }
+.content .questiontype01 .answerboxgray label.labeltext {padding-left:60px; }
+
+.content .questiontype01 .box003 {margin-top:60px; border:2px #c2bfb7 dotted; border-radius:15px; padding:10px 40px 10px 20px;}
+.w90{width:90% !important;}	
+}
+
+@media (max-height:768px) {
+input[type=radio]:not(old) + label{  display: inline-block;  margin-left : -28px;   background   : url('../../images/common/checks03.png') no-repeat 0 15px;  }
+input[type=radio]:not(old):checked + label{ display: inline-block;   background-position : 0 -31px; }
+	
+/*Type CC*/
+.content .questiontype01 {width:100%; height:calc(100vh - 262px);  text-align:center; padding-top:20px; }
+.content .questiontype01 .picard {display:inline-block;  width:100%;height:250px;}
+.content .questiontype01 .qnumber {   position: absolute; left:50px;}
+.content .questiontype01 .answerboxred {width:80%; text-align:left;   height:56px;  margin-top:10px;  background-color:#fcefef; margin-left:10%; border:1px solid #f5dada;   }
+.content .questiontype01 .answerboxblue {width:80%; text-align:left;   height:56px;  margin-top:10px;  background-color:#ecf2fe; margin-left:10%; border:1px solid #cfdcf6;  }
+.content .questiontype01 .answerboxgray {width:80%; text-align:left;   height:56px;  margin-top:10px;  background-color:#f4f4f4; margin-left:10%; border:1px solid #ccc;  }
+
+.content .questiontype01 .answerboxred  .inputbox { width:100%; float:left; height:50px;  padding-left:30px; }
+.content .questiontype01 .answerboxblue  .inputbox {   width:100%; float:left; height:50px;padding-left:30px;   }
+.content .questiontype01 .answerboxgray  .inputbox {   width:100%; float:left; height:50px;padding-left:30px;   }
+
+.content .questiontype01 .answerboxred label {color:#ff1f1f; font:700 24px 'Open Sans', sans-serif;   line-height:50px;  }
+.content .questiontype01 .answerboxblue label {color:#1355d9; font:700 24px 'Open Sans', sans-serif;   line-height:50px; }
+.content .questiontype01 .answerboxgray label {color:#666; font:700 24px 'Open Sans', sans-serif;   line-height:50px; }
+
+.content .questiontype01 .answerboxred label.labeltext {padding-left:60px; }
+.content .questiontype01 .answerboxblue label.labeltext {padding-left:60px; }
+.content .questiontype01 .answerboxgray label.labeltext {padding-left:60px; }
+
+.content .questiontype01 .box003 {margin-top:30px; border:2px #c2bfb7 dotted; border-radius:15px; padding:10px 40px 10px 20px;}
+.w90{width:90% !important;}
+
+}
+
+
+
+
+
+

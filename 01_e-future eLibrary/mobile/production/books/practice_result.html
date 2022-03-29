@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/chart.css">
+    <!-- <link rel="stylesheet" href="../../build/css/barchart.css"> -->
+    <link rel="stylesheet" href="../../build/css/piechart.css">
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/layout.css">
+    <link rel="stylesheet" href="../../build/css/books.css">
+    <script src="../../build/js/jquery.js"></script>
+    <title>Practice Result</title>
+</head>
+<body>
+    <div class="container result result-p">
+        <button class="close"><img src="../../build/images/layout/close.png" alt="close"></button>
+        <!-- contents area -->
+        <div class="contents-area gradient-bottom">
+            <div class="contents-wrap">
+                <div class="title">
+                   <p class="series-title">e-future Classic Readers</p>
+                   <p class="book-title">The Wolf and the Seven Children</p>
+                </div>
+                <div class="score-area">
+                    <p class="score">100</p>
+                </div>
+                <div class="progressbar small_progress" data-perc="100">
+                    <div class="horizbar color4" style="width:25%;"><span></span></div>
+                    <div class="labelsprite"><span>80%</span></div>
+                </div>
+
+                <div class="complete-message">
+                    <h3>Practice Complete!!</h3>
+                    <p>You can redo the practice activities.</p>
+                </div>
+                <div class="btn-area">
+                    <button class="btn01 bdr-50 gradient-right-org">Check Up</button>
+                    <button class="btn01 bdr-50 gradient-default">Redo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../build/js/jquery.chart.js"></script>
+<script>
+    $(function() {
+        $('.bar-chart').cssCharts({type:"bar"});
+     });
+</script>
+<script>
+    $(function() {
+        $('.progressbar').each(function(){
+            var t = $(this);
+                var dataperc = t.attr('data-perc'),
+                    barperc = Math.round(dataperc*1);
+            t.find('.horizbar').animate({width:barperc}, dataperc*5);
+            
+            function perc() {
+                var length = t.find('.horizbar').css('width'),
+                    perc = Math.round(parseInt(length)/1),
+                    labelpos = (parseInt(length)-10);
+                    // labelpos = (100 - perc);
+                    console.log('labelpos');
+                t.find('.labelsprite').css('left', labelpos);
+            }
+            perc();
+            setInterval(perc, 0); 
+        });
+    });
+</script>
+</html>

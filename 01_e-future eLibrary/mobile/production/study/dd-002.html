@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/study-layout.css">
+    <script src="../../build/js/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    
+    <title>DD-002</title>
+</head>
+<body>
+    <div class="container-study dd002">
+        <div class="top-nav">
+            <div class="study-progress"><div></div></div>
+            <div class="title">
+                <p>Choose the missing letter.</p>
+                <button class="close"><img src="../../build/images/layout/close.png" alt="close"></button>
+            </div>
+        </div>
+        <div class="contents-area gradient-bottom">
+            <!-- Question Image -->
+            <div class="q-img q-img-square" ><img src="../../build/images/contents/q-img03.jpg" alt="question image"></div>
+
+            <!-- Drop Zone -->
+            <div class="drop-wrap" >
+               <span class="drop-box">Drag item here!</span>
+            </div>
+
+            <!-- Drag Zone -->
+            <div class="drag-wrap" >
+               <span class="drag-item">s</span>
+               <span class="drag-item">e</span>
+               <span class="drag-item">q</span>
+               <span class="drag-item">d</span>
+               <span class="drag-item">x</span>
+               <span class="drag-item">g</span>
+               <span class="drag-item">b</span>
+               <span class="drag-item">z</span>
+               <span class="drag-item">t</span>
+            </div>
+
+            <!-- Check Button -->
+            <button class="check-btn gradient-default">Check</button>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $('.answer-list li').on("click",function(){
+            $(this).toggleClass("active");
+            $(this).siblings().removeClass("active");
+            $('.check-btn').removeClass('gradient-default').addClass('gradient-right');
+        });
+        
+        $('.drag-item').draggable({
+            cursor:'grabbing',
+            snapTolerance:80,
+            snap: ".drop-box",
+            snapMode: "inner" 
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,168 @@
+#headerWrap {margin:0 auto;  width:100%; text-align:center; background-image: url('../img03/pt01.jpg'); height:122px; }
+
+#mainVisualArea{ position:relative; height:600px; }
+#mainVisualArea .loginarea {position:absolute; top:120px; left:63%; z-index:100;   animation-duration: 0.5s;   animation-name: slidein;  }
+#mainVisualArea .loginarea .loginbox { width:320px; background-color:rgba(0, 0, 0, 0.3);   text-align:center; border-radius:5px 5px 0 0;  padding:43px 0; border-left:1px solid rgba(0, 0, 0, 0.5); border-top:1px solid rgba(0, 0, 0, 0.5); border-right:1px solid rgba(0, 0, 0, 0.5); }
+#mainVisualArea .loginarea .loginbox2 { width:320px; background-color:rgba(0, 0, 0, 0.3);   text-align:center; border-radius:5px 5px 0 0;  padding:29px 0; border-left:1px solid rgba(0, 0, 0, 0.5); border-top:1px solid rgba(0, 0, 0, 0.5); border-right:1px solid rgba(0, 0, 0, 0.5); }
+#mainVisualArea .loginarea .loginbtn { width:320px; background-color:rgba(0, 0, 0, 0.5);   text-align:center; border-radius:0 00 5px 5px;  padding:24px 0; border-left:1px solid rgba(0, 0, 0, 0.5);  border-right:1px solid rgba(0, 0, 0, 0.5); border-bottom:1px solid rgba(0, 0, 0, 0.5);  }
+#mainVisualArea .loginarea .loginbtn a {color:#fff; font:400 17px 'Noto Sans KR', sans-serif; padding-left:15px; background:url('../images/main/blt04.png') 4px 5px no-repeat;}
+#mainVisualArea .loginarea .loginbtn a:first-child {background:none; }
+#mainVisualArea .loginarea .loginbtn a:hover {text-decoration:none; color:#ffd111; }
+
+#mainVisualArea .loginarea .loginbox .title {color:#fff; font:500 32px 'Noto Sans KR', sans-serif;}
+#mainVisualArea .loginarea .loginbox .title span {color:#28caa1; }
+.title>img {
+    margin-top:13px;
+    margin-right:10px;
+}
+#mainVisualArea .loginarea .loginbox .titeng {color:#959595; font:600 16px 'Open Sans', sans-serif; margin-bottom:20px; }
+#mainVisualArea .loginarea .loginbox .inpubox {margin-bottom:10px; }
+#mainVisualArea .loginarea .loginbox .inpubox p {margin-bottom:3px; }
+#mainVisualArea .loginarea .loginbox .inpubox p.welcome {text-align:center; color:#ccc;font:500 18px 'Noto Sans KR', sans-serif; margin-bottom:30px;  }
+#mainVisualArea .loginarea .loginbox .inpubox p.welcome span {color:#fff; font-size:22px;   }
+.main_button {color:#fff; font-size:22px; width:280px; height:58px;border-radius:3px; border: none;  box-shadow: inset 2px 2px 0 0 rgba(255,255,255,0.2); font:500 22px 'Noto Sans KR', sans-serif; cursor:pointer;}
+.mypage{
+        background-color:#09bed6;
+    }
+.btn_logout {
+    background-color: #0cb583;
+}
+.btn_teacher {
+    background-color: #fba303;
+}
+.util .loginbox li.name {margin:12px 20px; color:#8a8a8a; font-size:12px; }
+.util .loginbox li.name span { color:#ffffff;  font-weight:bold; }
+
+#mainVisualArea .bx-wrapper{height:600px;	position:relative;	top:0;	left:0;}
+#mainVisualArea #mainVisualList li{width:1920px;	height:600px;  width:100%; float:left; }
+#mainVisualArea #mainVisualList li.visual1{	background:url('../images/main/slide1.png') center 0 no-repeat;}
+#mainVisualArea #mainVisualList li.visual2{	background:url('../images/main/slide1.png') center 0 no-repeat;}
+#mainVisualArea #mainVisualList li.visual3{	background:url('../images/main/slide1.png') center 0 no-repeat;}
+#mainVisualArea #mainVisualList li.visual4{	background:url('../images/main/slide1.png') center 0 no-repeat;}
+
+#mainVisualArea .bx-prev{z-index:110;	background:url('../images/main/arrow_left.png') 0 0 no-repeat;	width:32px;	height:57px;	text-indent:-99999999px;	overflow:hidden; float:left;}
+#mainVisualArea .bx-next{z-index:110;	background:url('../images/main/arrow_right.png') 0 0 no-repeat;	width:32px;	height:57px;	text-indent:-99999999px;	overflow:hidden; float:right;}
+#mainVisualArea .bx-pager{	position:absolute;	top:500px;	left:0;	width:100%;	text-align:center;  display:none; }
+
+#mainVisualArea #mainVisualList  .vbox { margin:auto; color:#fff;width:1050px; height:450px; position: absolute; top: 35%; left: 10%; }
+#mainVisualArea  #mainVisualList .vbox img {position:relative; display:inline-block; }
+#mainVisualArea  #mainVisualList .vbox  .btnbox { float:left;  height:600px; width:100%;  }
+#mainVisualArea  #mainVisualList .vbox  .btnbox ul.iconbox {margin-top:30px; }
+#mainVisualArea  #mainVisualList .vbox  .btnbox ul.iconbox li {float:left; width:120px;  text-align:center; }
+#mainVisualArea  #mainVisualList .vbox  .btnbox ul.iconbox li p {margin-top:15px; text-align:center; font:400 13px 'Noto Sans KR', sans-serif; line-height:16px;  }
+
+@keyframes slidein {  from {  margin-top: -200px;   }  to {    margin-top: 0;     }}
+
+#contentsbody {width:100%; height:224px;  background-color:#fff;   }
+#contentsbody .ctarea {width:980px;  margin:0 auto; }
+
+#contentsbody .noticearea{ width:460px; height:224px; background-color:#f8fafb; float:left; padding:30px;  }
+#contentsbody .noticearea .title {color:#2b2b2b; font:600 18px 'Noto Sans KR', sans-serif; margin-bottom:20px; }
+#contentsbody .noticearea .title img {vertical-align:top; }
+#contentsbody .noticearea .title span { float:right; position:relative; top:6px; }
+#contentsbody .noticearea li {width:100%; font-size:14px; font-weight: bold; margin-bottom:14px;  }
+#contentsbody .noticearea li a {color:#3d3d3d; }
+#contentsbody .noticearea li span {float:right; color:#969696; font-weight:normal; }
+#contentsbody .csarea{ width:275px; height:224px; background-color:#02bf87; float:left; padding:25px 20px; }
+
+#contentsbody .remotearea{ width:245px; height:224px; background-color:#fba303; float:left; padding:30px; }
+#contentsbody .remotearea .title {color:#605733; font:600 18px 'Noto Sans KR', sans-serif;}
+#contentsbody .remotearea .btnbox {width:100%;  margin-top:30px; text-align: center; }
+#contentsbody .remotearea .btnbox .btn_service {padding:8px 15px; border:2px solid rgba(108, 72, 9, 0.3); font:600 14px 'Noto Sans KR', sans-serif;}
+#contentsbody .remotearea .btnbox a.btn_service {color:rgba(108,53,9,0.8); }
+
+#contentsbody .title {color:#222; font:600 18px 'Noto Sans KR', sans-serif; margin-bottom:20px; }
+#contentsbody .disc {padding:1px 0 0 50px; font:400 13px 'Noto Sans KR', sans-serif; color:#6c4609; }
+#footerWrap {margin:0 auto;  width:100%; text-align:center;  height:214px; float:left; border-top:1px solid #e5e5e5;   }
+
+
+/*슬라이드 초록색 타이틀*/
+.main_title {
+    font:400 35px 'Noto Sans KR',sans-serif;
+    color:#29f3b7;
+}
+/*슬라이드 하얀색 타이틀*/
+.main_title2 {
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:33px;
+    color:#fff;
+}
+/*슬라이드 내용*/
+.main_contents{
+    width:650px;
+    font-size:19px;
+    margin-top:40px;
+    color:#d9fff4;
+    font-weight:400;
+    line-height:33px;
+}
+/*left right 버튼 묶음*/
+.bx-controls-direction {
+    width:92%;
+    height:60px;
+    position: absolute;
+    top: 300px;
+    left: 10px;right: 0px;
+    margin: auto;
+}
+/*매뉴얼 다운로드*/
+.manual {
+    margin: auto;
+    width:100%;
+    height:100%;
+}
+.manual_list {
+    border: 2px solid rgba(255,255,255,0.5);
+    color:rgba(255,255,255,0.9);
+    width:100%;
+    margin-bottom:15px;
+    text-align: center;
+    float:left;
+    height:50px;
+    padding:0 10px;
+    cursor:pointer;
+}
+.manual_list div, .manual_list p {
+    vertical-align: middle;
+    float:left;
+    text-align: center;
+    padding:0 4px;
+}
+.manual_list div {
+    width:20%;
+    margin:5px 3px 5px 0;
+}
+.manual_list p {
+    line-height:45px;
+    width:78%;
+}
+.manual_img {
+    margin-top:5px;
+}
+/*원격지원 서비스 이미지*/
+.remotearea img {
+    float:left;
+    margin-top:10px;
+    opacity:0.6;
+}
+
+@media (min-width:1367px) {
+   #mainVisualArea .loginarea {
+       position:absolute; top:95px; left:58%; z-index:100;   animation-duration: 0.5s;   animation-name: slidein;
+    }
+    #mainVisualArea #mainVisualList  .vbox {
+         margin: auto;  color:#fff; width:1100px; height:450px; position: absolute; top: 28%; left: 20%;
+    }
+   .bx-controls-direction {
+        width:65%;
+        height:60px;
+        position: absolute;
+        top: 260px;
+        left: 0;right: 50px;
+        margin: auto;
+    }
+    .main_title {font-size:42px;}
+    .main_title2 {font-size:40px;}
+    .main_contents { font-size: 26px;}
+    
+}

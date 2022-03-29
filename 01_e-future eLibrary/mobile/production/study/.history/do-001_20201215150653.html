@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/study-layout.css">
+    <script src="../../build/js/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    
+    <title>DO-001</title>
+</head>
+<body>
+    <div class="container-study do001">
+        <div class="top-nav">
+            <div class="study-progress"><div></div></div>
+            <div class="title">
+                <p>Choose the missing letter.</p>
+                <button class="close"><img src="../../build/images/layout/close.png" alt="close"></button>
+            </div>
+        </div>
+        <div class="contents-area gradient-bottom">
+            <!-- Background DD001-->
+            <div class="background">
+                <!-- Train -->
+                <div class="rail">
+                    <div class="train-zone">
+                        <div class="train">
+                            <p class="train-number">1</p>
+                            <span class="drop-box"></span>
+                        </div>
+                        <div class="chain">
+                        </div>
+                        <div class="train">
+                            <p class="train-number">1</p>
+                            <span class="drop-box"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rail">
+                    <div class="train-zone">
+                        <div class="train">
+                            <p class="train-number">3</p>
+                            <span class="drop-box">
+                            </span>
+                        </div>
+                        <div class="chain">
+                        </div>
+                        <div class="train">
+                            <p class="train-number">4</p>
+                            <span class="drop-box"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drag Zone -->
+            <div class="drag-wrap" >
+                <span class="drag-item">
+                    <img class="card-f" src="../../build/images/contents/card-front.png" alt="card">
+                    <p class="card-b" style="display: none;"> He puts a pea under her mattresses.</p>
+                </span>
+                <span class="drag-item">
+                    <img class="card-f" src="../../build/images/contents/card-front.png" alt="card" style="display: none;">
+                    <p class="card-b"> He puts a pea under her mattresses.</p>
+                </span>
+                <span class="drag-item">
+                    <img class="card-f" src="../../build/images/contents/card-front.png" alt="card">
+                    <p class="card-b" style="display: none;"> He puts a pea under her mattresses.</p>
+                </span>
+                <span class="drag-item">
+                    <img class="card-f" src="../../build/images/contents/card-front.png" alt="card">
+                    <p class="card-b" style="display: none;"> He puts a pea under her mattresses.</p>
+                </span>
+             </div>
+
+            <!-- Check Button -->
+            <button class="check-btn gradient-default">Check</button>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $('.answer-list li').on("click",function(){
+                $(this).toggleClass("active");
+                $(this).siblings().removeClass("active");
+                $('.check-btn').removeClass('gradient-default').addClass('gradient-right');
+        });
+        $('.card-f').on("click",function(){
+            $(this).hide();
+            $(this).siblings().show();
+        });
+        $('.card-b').on("click",function(){
+            $(this).hide();
+            $(this).siblings().show();
+        });
+        
+        $('.drag-item').draggable({
+            cursor:'grabbing',
+            snapTolerance:80,
+            snap: ".drop-box",
+            snapMode: "inner" 
+        });
+        $('.drop-box').droppable({
+            accept: ".drag-item"
+        });
+    });
+</script>
+</html>

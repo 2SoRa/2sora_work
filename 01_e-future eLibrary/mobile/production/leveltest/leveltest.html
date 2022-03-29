@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/chart.css">
+    <link rel="stylesheet" href="../../build/css/barchart.css">
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/layout.css">
+    <link rel="stylesheet" href="../../build/css/level_test.css">
+    <script src="../../build/js/jquery.js"></script>
+    <title>Level Test</title>
+</head>
+<body>
+    <div class="container">
+        <!-- top navigation -->
+        <div class="top-nav gradient-right">
+            <button class="back"><img src="../../build/images/layout/back.png" alt="back"></button>
+            <p class="title">Level Test</p>
+            <button class="icon-user"><img src="../../build/images/layout/user.png" alt="user-icon"></button>
+            <div class="top-nav-user">
+                    <button>Profile</button>
+                    <button>Logout</button>
+            </div>
+        </div>
+        <!-- contents area -->
+        <div class="contents-area gradient-bottom">
+            <div class="gradient-right">
+               <p class="leveltest">
+                   How many words you know?<br> Please choose all.
+               </p>
+            </div>
+            <div class="contents-wrap">
+                <ul class="leveltest-wrap">
+                    <li class="bdr-50">expensive</li>
+                    <li class="bdr-50">habit</li>
+                    <li class="bdr-50">expensive</li>
+                    <li class="bdr-50">habit</li>
+                    <li class="bdr-50">expensive</li>
+                    <li class="bdr-50">habit</li>
+                    <li class="bdr-50">expensive</li>
+                    <li class="bdr-50">habit</li>
+                    <li class="bdr-50">expensive</li>
+                    <li class="bdr-50">habit</li>
+                </ul>
+                <button class="btn btn01 gradient-left">Submit</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $(".icon-user").on("click", function() {
+            $('.top-nav-user').slideToggle();
+        });
+        $('.leveltest-wrap li').on("click",function(){
+                $(this).toggleClass("leveltest-active");
+        });
+    });
+</script>
+</html>

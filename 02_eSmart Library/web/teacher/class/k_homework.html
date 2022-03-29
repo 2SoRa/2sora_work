@@ -1,0 +1,395 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta name="keywords" content="eSmart Campus, eFuture, 이퓨쳐, 이스마트 캠퍼스">
+	<meta name="description" content="nework">
+	<meta http-equiv="X-UA-compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="stylesheet" type="text/css" href="../../css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../css/gnb_teacher.css">
+	<link rel="stylesheet" type="text/css" href="../../css/teacher.css">
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<!--	국내용 css-->
+	<link rel="stylesheet" type="text/css" href="../../css/k_gnb_teacher.css">
+	<link rel="stylesheet" type="text/css" href="../../css/k_layout.css">
+	<link rel="stylesheet" type="text/css" href="../../css/k_teacher.css">
+<!--    국내용 css 끝-->
+	<link rel="stylesheet" type="text/css" href="../../css/colorbox.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../../jquery/image-picker.js" type="text/javascript"></script>
+	<script src="../../jquery/jquery.jqtransform.js" type="text/javascript"></script>
+	<script src="../../jquery/script.js" type="text/javascript"></script><!--shape-->
+	<script src="../../jquery/plugins.js" type="text/javascript"></script><!--shape-->
+	<link href="../../images/common/efuture.ico" rel="icon">
+	<title>e-future e-Library</title>
+	
+</head>
+<body>
+
+<div id="header">
+	<div class="util">
+        <div class="top_wrap">
+            <ul class="loginbox">
+                <li class="name kor"><span>홍길동</span> 선생님 안녕하세요!!</li>
+                <li class="logout"><a href="#">로그아웃</a></li>
+                <li class="myinfo"><a href="#">회원정보</a></li>
+            </ul>
+		</div>
+	</div>
+	<div class="menubox">
+		<div class="logo"><a href=""><img src="../../images/common/logo1.png" alt="e-future e-library"></a></div>
+		<div class="stit"><a href=""><img src="../../images/sub/teacher.png" alt="선생님용 관리시스템"></a></div>
+	</div>
+</div>
+<div class="jbMenu">
+	<div class="submenu">
+		<ul>
+			<li><a href="">e-Library</a></li>
+			<li><a href="">Homework</a></li>
+			<li><a href="">Teacher Zone</a></li>
+			<li><a href="">Customer Service</a></li>
+		</ul>
+	</div>
+</div>
+<!--header teacher 끝-->
+<? include "../../inc/header_teacher.html" ?>
+
+<div id="content">
+	<div class="titarea">
+		<p>Homework<br><span></span></p>
+		<div class="location">홈 > Homework</div>
+	</div>
+
+	<div class="sub02">
+		<div class="cntwid240 box_class mgr10 ">
+			<div class="notice_wrap">
+			    <p class="mtit01 mgb25">Notice</p>
+                <button class="btn_orange"><img src="../../images/sub/set.png" alt="">Message 설정하기</button>
+                <p class="notice">이퓨쳐 공부장 3/11일(월)<br> Homework 없습니다.</p>
+			</div>
+			
+			<div class="ranking_wrap">
+			    <p class="mtit01 mgb25">2월 독서랭킹 <span><a class="button06 btn_white floatright" id="btn-more" href="">+ 더보기</a></span></p>
+			    <table class="ranking">
+                    <thead>
+                        <tr>
+                            <th>랭킹</th>
+                            <th>학급</th>
+                            <th>학생</th>
+                            <th>독서량</th>
+                            <th>포인트</th>
+                         </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="../../images/sub/gold.png" alt=""></td>
+                            <td class="class">ClassA2</td>
+                            <td class="name">홍길동dfsddddddddddddddddddddd</td>
+                            <td>10권</td>
+                            <td>1,500</td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../images/sub/silver.png" alt=""></td>
+                            <td class="class">중급반</td>
+                            <td class="name">유관순</td>
+                            <td>7권</td>
+                            <td>950</td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../images/sub/bronze.png" alt=""></td>
+                            <td class="class">중급반</td>
+                            <td class="name">이순신</td>
+                            <td>5권</td>
+                            <td>800</td>
+                        </tr>
+                    </tbody>
+			    </table>
+			</div>
+			    <a href=""  class="cs_wrap">
+			        <img src="../../images/sub/remote.jpg" alt="">
+			    </a>
+		</div>
+
+		<div class="box_content ">
+			<p class="mtit01 mgb25">Homework 확인</p>
+			<div class="topbar">
+			    <select class="select_type03 floatleft">
+				    <option value="">Class 선택</option>
+			    </select>
+			    <input type="text" class="date" value="2019-03-15">
+			    <p>~</p>
+			    <input type="text" class="date" value="2019-03-22">
+			     <select class="select_type03 mgr3 floatleft">
+				    <option value="">학생이름</option>
+			    </select>
+			    <input type="text" class="inputsearch">
+			    <button class="search">검색</button>
+			</div>
+           <div class="homework_wrap">
+            <table class="ranking homework">
+                    <thead>
+                        <tr>
+                            <th>학급</th>
+                            <th>학생</th>
+                            <th style="width:20%;">Homework</th>
+                            <th>학습기간</th>
+                            <th>Read</th>
+                            <th>Learn</th>
+                            <th>Check Up</th>
+                            <th>Report</th>
+                         </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="class">ClassA2</td>
+                            <td class="name">홍길동dfsddddddddddddddddddddd</td>
+                            <td>
+                                <span class="serise">e-future Classic Readers</span><br>
+                                <span class="title">The Princess and the Pea (Starter)</span>
+                            </td>
+                            <td class="study_date">2019.03.18~<br>2019.03.25</td>
+                            <td>
+                                <span class="page">19p / 19p</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td>
+                                <span class="complete">완료</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td>
+                                <span class="complete">86점</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td class="btn_wrap">
+                                <button class="button">Report</button>
+                                <button class="button">정,오답</button>
+                                <button class="button ">Portfolio</button>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td class="class">ClassA2</td>
+                            <td class="name">홍길동dfsddddddddddddddddddddd</td>
+                            <td>
+                                <span class="serise">e-future Classic Readers</span><br>
+                                <span class="title">The Princess and the Pea (Starter)</span>
+                            </td>
+                            <td class="study_date">2019.03.18~<br>2019.03.25</td>
+                            <td>
+                                <span class="page">19p / 19p</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td>
+                                <span class="complete">완료</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td>
+                                <span class="incomplete" >미완료</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td class="btn_wrap">
+                                <button class="button">Report</button>
+                                <button class="button">정,오답</button>
+                                <button class="button ">Portfolio</button>
+                            </td>
+                        </tr> <tr>
+                            <td class="class">ClassA2</td>
+                            <td class="name">홍길동dfsddddddddddddddddddddd</td>
+                            <td>
+                                <span class="serise">e-future Classic Readers</span><br>
+                                <span class="title">The Princess and the Pea (Starter)</span>
+                            </td>
+                            <td class="study_date">2019.03.18~<br>2019.03.25</td>
+                            <td>
+                                <span class="page">19p / 19p</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td>
+                                <span class="complete">완료</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td>
+                                <span class="complete">86점</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td class="btn_wrap">
+                                <button class="button">Report</button>
+                                <button class="button">정,오답</button>
+                                <button class="button ">Portfolio</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="class">ClassA2</td>
+                            <td class="name">홍길동dfsddddddddddddddddddddd</td>
+                            <td>
+                                <span class="serise">e-future Classic Readers</span><br>
+                                <span class="title">The Princess and the Pea (Starter)</span>
+                            </td>
+                            <td class="study_date">2019.03.18~<br>2019.03.25</td>
+                            <td>
+                                <span class="page">19p / 19p</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td>
+                                <span class="complete">완료</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td>
+                                <span class="complete">86점</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td class="btn_wrap">
+                                <button class="button">Report</button>
+                                <button class="button">정,오답</button>
+                                <button class="button ">Portfolio</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="class">ClassA2</td>
+                            <td class="name">홍길동dfsddddddddddddddddddddd</td>
+                            <td>
+                                <span class="serise">e-future Classic Readers</span><br>
+                                <span class="title">The Princess and the Pea (Starter)</span>
+                            </td>
+                            <td class="study_date">2019.03.18~<br>2019.03.25</td>
+                            <td>
+                                <span class="page">19p / 19p</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td>
+                                <span class="complete">완료</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td>
+                                <span class="complete">86점</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td class="btn_wrap">
+                                <button class="button btn_red">Report</button>
+                                <button class="button btn_dblue">정,오답</button>
+                                <button class="button  btn_orange">Portfolio</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="class">ClassA2</td>
+                            <td class="name">홍길동dfsddddddddddddddddddddd</td>
+                            <td>
+                                <span class="serise">e-future Classic Readers</span><br>
+                                <span class="title">The Princess and the Pea (Starter)</span>
+                            </td>
+                            <td class="study_date">2019.03.18~<br>2019.03.25</td>
+                            <td>
+                                <span class="page">19p / 19p</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td>
+                                <span class="complete">완료</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td>
+                                <span class="complete">86점</span><br>
+                                <span class="complete_date">2018.09.11</span>
+                            </td>
+                            <td class="btn_wrap">
+                                <button class="button btn_red">Report</button>
+                                <button class="button btn_dblue">정,오답</button>
+                                <button class="button  btn_orange">Portfolio</button>
+                            </td>
+                        </tr> 
+ 
+                    </tbody>
+			    </table>
+			    </div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<? include "../../inc/footer_teacher.html" ?>
+
+<div id="popupbox21">
+	<div id="delete_box" class="poparea popup07" >
+		<div class="title tp05">학생 삭제</div>
+		<table class="poptbl01">
+		<tr>
+			<th>대상학생</th>
+			<td class="blt"><img src="../../images/common/blt12.gif" alt="구분선"></td>
+			<td>강감찬<span class="eng">[darkshare]</span></td>
+		</tr>
+		</table>
+		<div class="cntext">
+		학생 삭제 시 해당 학생의 반 학습 기록이 모두 삭제됩니다.<br>
+		또한 삭제된 학습 기록은 복구되지 않습니다.<br>
+		이점 참고하시기 바랍니다
+		</div>
+		<div  class="btnarea"><a class="btn btn_gray" href="">닫기</a> <a class="btn btn_red" href="">삭제</a></div>
+	</div>
+</div>
+<div id="popupbox32">
+	<div id="add_box" class="poparea popup08" >
+		<div class="title tp06">학생 추가</div>
+
+		<div class="ppsearch">
+			<select class="select_type01 mgr3">
+				<option value="">이름</option>
+				<option value="">제목</option>
+			</select><input type="text" name="search" id="searchStudent" title="검색" class="ppsearchinput"  ><a href=".html" class="btn_search02">검색</a>
+		</div>
+
+		<ul class="studentlist">
+			<li><input id="adlist1" type="checkbox"  value="1" ><label for="adlist1">이순신 <span>(efuturtur)</span></label></li>
+			<li><input id="adlist2" type="checkbox"  value="1" ><label for="adlist2">이순신 <span>(efuturturetur01)</span></label></li>
+			<li><input id="adlist3" type="checkbox"  value="1" ><label for="adlist3">이순신 <span>(efut)</span></label></li>
+			<li><input id="adlist4" type="checkbox"  value="1" ><label for="adlist4">이순신 <span>(efuturturetur01)</span></label></li>
+			<li><input id="adlist5" type="checkbox"  value="1" ><label for="adlist5">이순신 <span>(efuturturetur01)</span></label></li>
+			<li><input id="adlist6" type="checkbox"  value="1" ><label for="adlist6">이순신 <span>(efuturturetur01)</span></label></li>
+			<li><input id="adlist7" type="checkbox"  value="1" ><label for="adlist7">이순신 <span>(efuturturetur01)</span></label></li>
+			<li><input id="adlist8" type="checkbox"  value="1" ><label for="adlist8">이순신 <span>(efuturturetur01)</span></label></li>
+			<li><input id="adlist9" type="checkbox"  value="1" ><label for="adlist9">이순신 <span>(efuturturetur01)</span></label></li>
+			<li><input id="adlist10" type="checkbox"  value="1" ><label for="adlist10">이순신 <span>(efuturturetur01)</span></label></li>
+			<li><input id="adlist11" type="checkbox"  value="1" ><label for="adlist11">이순신 <span>(efuturturetur01)</span></label></li>
+			<li><input id="adlist12" type="checkbox"  value="1" ><label for="adlist12">이순신 <span>(efuturturetur01)</span></label></li>
+			<li><input id="adlist13" type="checkbox"  value="1" ><label for="adlist13">이순신 <span>(efuturturetur01)</span></label></li>
+		</ul>
+		<div  class="btnarea"><a class="btn btn_gray" href="">닫기</a> <a class="btn btn_red" href="">탈퇴</a></div>
+	</div>
+</div>
+<script>
+jQuery(function(){
+	jQuery('#select_container').jqTransform();
+	});
+	jQuery(document).ready(function($){
+		jQuery(".delete_btn").colorbox({inline:true, width:"540"});
+	});
+	jQuery(document).ready(function($){
+		jQuery(".add_btn").colorbox({inline:true, width:"540"});
+	});
+  
+</script>
+
+<? include "../../inc/footer_teacher.html" ?>
+
+<!--Footer Teacher-->
+
+
+<div id="k_footer">
+	<div class="quicklink">
+		<div class="cs">
+			<p>고객센터<span style="color:orange;">02.3400.0533</span></p>
+		</div>
+		<ul>
+			<li><a class="btn_policy" href="#policy">이용약관</a></li>
+			<li><a class="btn_personal" href="#personal">개인정보보호정책</a></li>
+			<li><a class="btn_email" href="#emailgathering">이메일무단수집거부</a></li>
+		</ul>
+	</div>
+	<div class="copyright">
+		<div class="logo"><img src="../../images/common/footer_logo.png" alt="eSmart Library"></div>
+		<div class="information">
+			<ul><li>서울 송파구 백제고분로 91 LK빌딩 4 ~ 6F</li> <li> TEL.02.3400.0509</li> <li> FAX.02.591.7626</li> </ul>
+			<ul><li>사업자등록번호 : 214-86-47520</li> <li>통신판매업신고 제 송파 0283호</li>  <li> 인정보관리책임자: 현용희</li> <li> 대표이사 : 황경호</li></ul> 
+			<div class="copy">Copyright © e-future All right reserved.</div>
+		</div>
+	</div>
+</div>

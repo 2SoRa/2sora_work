@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/chart.css">
+    <!-- <link rel="stylesheet" href="../../build/css/barchart.css"> -->
+    <link rel="stylesheet" href="../../build/css/piechart.css">
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/layout.css">
+    <link rel="stylesheet" href="../../build/css/report.css">
+    <link rel="stylesheet" href="../../build/css/level_test.css">
+    <script src="../../build/js/jquery.js"></script>
+    
+    <title>Portfolio2</title>
+</head>
+<style>
+    .portfolio-title{text-align: center; margin-bottom:2vh; font-size:20px; color:#666666;}
+
+    .portfolio2 .portfolio-wrap{padding: 4vh 2vh 2vh;}
+    .portfolio2 .chartarea{}
+        .portfolio2 .chart.donut{width:22vh; height:22vh;}
+        .portfolio2 .chart.donut h2{font-size:8.3vw; top:23%;}
+        .portfolio2 .chart.donut h2 span{font-size: 6vw; line-height:20px;}
+        .portfolio2 .donut-chart h2 span, .donut-chart h2 p{display: block;}
+    .portfolio2 .re-feedback{display: flex; color:#fff; width: fit-content; font-size:14px; margin:4.5vh 0 0;}
+        .re-feedback li{margin:0 3px; padding:0px 5px 2px 5px;}
+        .re-feedback .fb-blue{background-color:#007eff;}
+        .re-feedback .fb-orange{background-color:#ff9600;}
+        .re-feedback .fb-red{background-color:#ff0000;}
+
+    .portfolio2 .re-list{border-top:2px solid #525252; padding:2vh 1vh;}
+    .portfolio2 .re-list li{border-bottom:1px solid #d7d7d7;}
+        .portfolio2 .re-content{}
+        /* 공통사항 - inline-block fontweight-bold */
+        .portfolio2 .re-content p{display: inline-block; font-size:16px; font-weight:bold;}
+        .portfolio2 .re-content p.re-num{width:22px; line-height:23px; font-size:14px; background-color:#a5a5a5; color:#fff; border-radius:20px; text-align:center;}
+        /* 공통사항 */
+            .re-content .re-blue{color:#007eff;}
+            .re-content .re-orange{color:#ff9600;}
+            .re-content .re-red{color:#ff0000;}
+        .portfolio2 .re-score{  display: inline-block;}
+    
+</style>
+<body>
+    <div class="container report">
+        <!-- top navigation -->
+        <div class="top-nav gradient-right">
+            <button class="back"><img src="../../build/images/layout/close-white.png" alt="close"></button>
+            <p class="title">Portfolio</p>
+            <button class="icon-user"></button>
+        </div>
+        <!-- contents area -->
+        <div class="contents-area">
+            <div class="portfolio2">
+                <div class="portfolio-wrap">
+                    <p class="portfolio-title">Read Aloud Score</p>
+                    <div class="chartarea">
+                        <div class="chart donut">
+                            <div class="donut-chart fill" data-percent="0.25" data-title="%"></div>
+                        </div>
+                    </div>
+                    <ul class="re-feedback">
+                        <li class="fb-blue">Excellent</li>
+                        <li class="fb-orange">Good</li>
+                        <li class="fb-red">Not Bad</li>
+                    </ul>
+                </div>
+
+                <ul class="re-list">
+                    <li>
+                        <div class="re-content">
+                            <p class="re-num">1</p> 
+                            <p><span class="re-blue">Come</span> <span class="re-orange">talk</span> <span class="re-blue">with me</span>, <span class="re-red">Ant</span>.</p>
+                        </div>
+                        <div class="re-score">
+                            <p>Score</p>
+                            <div>97</div>
+                            <button><img src="" alt="listen"></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- bottom navigation -->
+    </div>
+</body>
+<script src="../../build/js/jquery.chart.js"></script>
+<script>
+    $(function() {
+        $('.donut-chart').cssCharts({type:"donut"}).trigger('show-donut-chart');
+     });
+</script>
+</html>

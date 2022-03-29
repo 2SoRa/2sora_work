@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta name="keywords" content="eSmart Campus, eFuture, 이퓨쳐, 이스마트 캠퍼스">
+	<meta name="description" content="nework">
+	<meta http-equiv="X-UA-compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="stylesheet" type="text/css" href="../../css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../css/barchart.css">
+	<link rel="stylesheet" type="text/css" href="../../css/chart.css">
+	<link rel="stylesheet" type="text/css" href="../../css/gnb_student.css">
+	<link rel="stylesheet" type="text/css" href="../../css/student.css">
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<!--	국내용 css-->
+	<link rel="stylesheet" type="text/css" href="../../css/k_layout.css">
+	<link rel="stylesheet" type="text/css" href="../../css/k_gnb_student.css">
+	<link rel="stylesheet" type="text/css" href="../../css/k_student.css">
+
+	<link rel="stylesheet" type="text/css" href="../../css/colorbox.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../../jquery/image-picker.js" type="text/javascript"></script>
+	<script src="../../jquery/jquery.jqtransform.js" type="text/javascript"></script>
+	<script src="../../jquery/script.js" type="text/javascript"></script><!--shape-->
+	<script src="../../jquery/plugins.js" type="text/javascript"></script><!--shape-->
+	<link href="../../images/common/efuture.ico" rel="icon">
+	<title>eSmart Library</title>
+	
+</head>
+<body>
+
+<div id="header">
+	<div class="util">
+        <div class="top_wrap">
+		<ul class="loginbox">
+			<li class="name kor"><span>강감찬</span> 학생 안녕하세요!!</li>
+			<li class="logout"><a href="#">로그아웃</a></li>
+			<li class="myinfo"><a href="#">회원정보</a></li>
+		</ul>
+		</div>
+	</div>
+	<div class="menubox">
+		<div class="logo"><a href=""><img src="../../images/common/logo.png" alt="eSmart Campus"></a></div>
+		<div class="stit"><a href=""><img src="../../images/sub/student.png" alt="my page"></a></div>
+	</div>
+</div>
+<div class="jbMenu">
+	<div class="submenu">
+		<ul>
+			<li><a href="">e-Library</a></li>
+			<li><a href="">My Homework</a></li>
+			<li><a href="">My Books</a></li>
+			<li><a href="">My Point</a></li>
+			<li><a href="">Customer Service</a></li>
+		</ul>
+	</div>
+</div>
+<!--Student Header 끝-->
+<div id="content">
+	<div class="titarea">
+		<p>My Homework<br><span></span></p>
+		<div class="location">홈 > My Homework</div>
+	</div>
+
+	<div class="sub01">
+		<div class="box_contents01" >
+			<div class="discription01 mgb30">
+				<div class="discwrapper">
+					<ul class="my_report">
+						<li>이달의 숙제완료 : <span>2</span> Books</li>
+				        <li>이달의 포인트 : <span>215</span> Point</li>
+						<li>누적 숙제완료 : <span>2</span> Books</li>
+				        <li>누적 포인트 : <span>215</span> Point</li>
+              
+						<!-- <li><spring:message code="student.myreport.month_homework" text="이달의 숙제완료"/> : <span id="reading_cnt">0</span> Books</li>
+						<li><spring:message code="student.myreport.month_point" text="이달의 포인트"/> : <span id="reading_point">0</span> Point</li>
+						<li><spring:message code="student.myreport.total_point" text="누적 포인트"/> : <span id="total_reading_point">0</span> Point</li>
+						<li><spring:message code="student.myreport.total_homework" text="누적 숙제완료"/> : <span id="total_reading_cnt">0</span> Books</li> -->
+					</ul>
+				</div>
+
+			</div>
+        
+		    <div class="homework_btn">
+               <div class="discription01">
+                    <a href="#" id="workDateY" onclick="moveHomework('1','Y');return false;" class="discwrapper">
+                        <div class="discbox">
+                        오늘 Homework
+                        </div>
+                    </a>
+                </div>
+                <div class="discription01">
+                    <a href="#" id="workDateN" onclick="moveHomework('1','N');return false;" class="discwrapper">
+                        <div class="discbox">
+                        지난 Homework
+                        </div>
+                    </a>
+                </div>
+		    </div>
+		    
+		    <table class="homework">
+				    <thead>
+				        <tr>
+				            <th>No</th>
+				            <th>Homework</th>
+				            <th>학습기간</th>
+				            <th>Read</th>
+				            <th>Learn</th>
+				            <th>Check Up</th>
+                            <th>Record</th>
+				            <th>Report</th>
+				        </tr>
+				    </thead>
+				    <tr id="no_homework_list" style="display:none;">
+                    	<td colspan="8" class="not_read"> <spring:message code="student.homework.no_worklist" text="등록된 일정이 없습니다."/></td>
+                	</tr>
+				    <tbody id="tbl_homework_body">
+				      
+				        <tr>
+				            <td class="number">2</td>
+				            <td class="readers">
+                                <span class="serise">e-future Classic Readers</span><br>
+                                <span class="title">The Princess and the Pea The<br>the Pea (Starter)</span>
+				            </td>
+				            <td class="study_date">2019.03.18~<br>2019.03.25</td>
+				            <td>
+				                <button class="continue">Read</button>
+				            </td>
+				            <td>
+				                <button class="continue">Learn</button>
+				            </td>
+				            <td>
+                               <button class="continue">Check Up</button>
+						   </td>
+						   <td>
+							   <button class="continue">Record</button>
+						   </td>
+                            <td class="btn_wrap">
+                            </td>
+				        </tr>
+				    
+				   
+				    </tbody>
+				</table>
+		    	
+		    	<div class="pagebox2" style="left:0; bottom:0;">
+			    	<div class="paging" id="box_content">
+                         
+                        <a class="btn first" href=""></a>
+                        <a class="btn prev" href=""></a>
+                        <a class="num"  href="#">1</a>
+                        <a class="on num" href="#">2</a>
+                        <a class="num"  href="#">3</a>
+                        <a class="btn next" href=""></a>
+                        <a class="btn end" href=""></a>
+                       
+				    </div>
+		    	</div>
+	    </div>
+	</div>
+</div>
+
+</div>
+
+<!--Footer Teacher-->
+
+
+<div id="k_footer">
+	<div class="quicklink">
+		<div class="cs">
+			<p>고객센터<span style="color:orange;">02.3400.0533</span></p>
+		</div>
+		<ul>
+			<li><a class="btn_policy" href="#policy">이용약관</a></li>
+			<li><a class="btn_personal" href="#personal">개인정보보호정책</a></li>
+			<li><a class="btn_email" href="#emailgathering">이메일무단수집거부</a></li>
+		</ul>
+	</div>
+	<div class="copyright">
+		<div class="logo"><img src="../../images/common/footer_logo.png" alt="eSmart Library"></div>
+		<div class="information">
+			<ul><li>서울 송파구 백제고분로 91 LK빌딩 4 ~ 6F</li> <li> TEL.02.3400.0509</li> <li> FAX.02.591.7626</li> </ul>
+			<ul><li>사업자등록번호 : 214-86-47520</li> <li>통신판매업신고 제 송파 0283호</li>  <li> 인정보관리책임자: 현용희</li> <li> 대표이사 : 황경호</li></ul> 
+			<div class="copy">Copyright © e-future All right reserved.</div>
+		</div>
+	</div>
+</div>
+
+<? include "../../inc/popup.html" ?>
+</body>
+</html>
+<script type="text/javascript" src="../jquery/jquery.colorbox.js"></script>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/chart.css">
+    <!-- <link rel="stylesheet" href="../../build/css/barchart.css"> -->
+    <link rel="stylesheet" href="../../build/css/piechart.css">
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/layout.css">
+    <link rel="stylesheet" href="../../build/css/books_original.css">
+    <script src="../../build/js/jquery.js"></script>
+    <title>상세보기</title>
+</head>
+<body>
+    <div class="container details">
+        <!-- contents area -->
+        <div class="contents-area gradient-bottom">
+            <button class="back"><img src="../../build/images/layout/back-black.png" alt="back"></button>
+            <div class="contents-wrap">
+               <div class="title">
+                   <p class="series-title">e-future Classic Readers</p>
+                   <p class="book-title">The Wolf and the Seven Children</p>
+               </div>
+               <div class="book-list">
+                    <ul class="book-slide">
+                        <li>
+                            <div class="book"><img class="book-cover" src="../../build/images/contents/LSR001.jpg" alt="LSR001"><img class="recommend" src="../../build/images/layout/recommend.png" alt="book recommend"></div>
+                            <div class="reading-progress"><span></span></div>
+                        </li>
+                        <li>
+                            <div class="book"><img class="book-cover" src="../../build/images/contents/LSR001.jpg" alt="LSR001"><img class="recommend" src="../../build/images/layout/recommend.png" alt="book recommend"></div>
+                            <div class="reading-progress"><span></span></div>
+                        </li>
+                        <li>
+                            <div class="book"><img class="book-cover" src="../../build/images/contents/LSR001.jpg" alt="LSR001"><img class="recommend" src="../../build/images/layout/recommend.png" alt="book recommend"></div>
+                            <div class="reading-progress"><span></span></div>
+                        </li>
+                        <li>
+                            <div class="book"><img class="book-cover" src="../../build/images/contents/LSR001.jpg" alt="LSR001"><img class="recommend" src="../../build/images/layout/recommend.png" alt="book recommend"></div>
+                            <div class="reading-progress"><span></span></div>
+                        </li>
+                        <li>
+                            <div class="book"><img class="book-cover" src="../../build/images/contents/LSR001.jpg" alt="LSR001"><img class="recommend" src="../../build/images/layout/recommend.png" alt="book recommend"></div>
+                            <div class="reading-progress"><span></span></div>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="book-info">
+                    <li>Level <span class="bdr-50">K</span></li>
+                    <li>CEFR <span class="bdr-50">A1</span></li>
+                </ul>
+                <div class="btn-area" >
+                    <button class="btn01 bdr-50 gradient-right read">Read</button>
+                    <button class="btn01 bdr-50 gradient-default">Practice</button>
+                    <button class="btn01 bdr-50 gradient-default">Check Up</button>
+                    <button class="btn01 bdr-50 gradient-default">Record</button>
+                </div>
+                <div class="already-read" style="display:none;">
+                    <p>A report already exists for this book.<br>
+                        Would you like to read the book again?</p>
+                    <button class="btn01 bdr-50 gradient-default">Read from 1st page.</button>
+                    <button class="btn01 bdr-50 gradient-right">Continue Reading</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $(".read").on("click",function(){
+            $(".already-read").slideToggle();
+        });
+    });
+</script>
+</html>

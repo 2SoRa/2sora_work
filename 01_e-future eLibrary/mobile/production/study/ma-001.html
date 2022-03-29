@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/study-layout.css">
+    <script src="../../build/js/jquery.js"></script>
+    
+    <title>MA-001</title>
+</head>
+<body>
+    <div class="container-study ma001">
+        <div class="top-nav">
+            <div class="study-progress"><div></div></div>
+            <div class="title">
+                <p>Match the words with the pictures.</p>
+                <button class="close"><img src="../../build/images/layout/close.png" alt="close"></button>
+            </div>
+        </div>
+        <div class="contents-area">
+            <!-- Background MA001-->
+            <div class="card card1">
+                <div class="card_back turn2">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner2"></div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="card_front turn3">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner"><img src="../../build/images/contents/card_bird.png" alt=""></div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card2">
+            <div class="card_back turn2">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner2"></div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="card_front turn3">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner"><img src="../../build/images/contents/card_seal.png" alt=""></div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card3">
+                <div class="card_back turn2">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner2"></div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="card_front turn3">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner">Seal</div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card4">
+                <div class="card_back turn2">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner2"></div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="card_front turn3">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner">Bird</div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card5">
+                <div class="card_back turn2">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner2"></div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="card_front turn3">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner">Moon</div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card6">
+                <div class="card_back turn2">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner2"></div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="card_front turn3">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner"><img src="../../build/images/contents/card_crown.png" alt=""></div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card7">
+                <div class="card_back turn2">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner2"></div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="card_front turn3">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner">Crown</div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card8">
+                <div class="card_back turn2">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner2"></div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="card_front turn3">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div class="inner-inner"><img src="../images/card_moon.png" alt=""></div>   
+                        </div>
+                    </div>
+                </div>
+         </div>
+    </div>
+</body>
+<!-- Card 뒤집기 -->
+<script>
+    $(function(){
+        // $('.card_back').click(function(){
+        //     $(this).removeClass('turn3').addClass('turn2');
+        //     $(this).siblings('.card_front').removeClass('turn1').addClass('turn3');
+        // });
+    
+        $('.card_front').click(function(){
+                $(this).find('.inner-inner').animate({'backgroundColor':'rgba(255,255,255,0.7)'},300).animate({'backgroundColor':'rgba(0,0,0,0)'},300,function(){
+                    $(this).parents('.card_front').removeClass('turn3').addClass('turn1'); $(this).parents('.card_front').siblings('.card_back').removeClass('turn2').addClass('turn3');
+                });
+
+});});
+
+</script>
+
+<!-- 화면 사이즈에 따라 위치 조정 -->
+<script>
+    $(window).ready(function (){
+        var user_ratio = window.screen.width / window.screen.height;
+            user_ratio = user_ratio.toFixed(3);
+        var iphone = 9/19.5 ;
+            iphone = iphone.toFixed(3);
+        var galaxy = 9/21 ;
+            galaxy = galaxy.toFixed(3);
+        var standard = 9/16 ;
+            standard = standard.toFixed(3);
+
+        if(user_ratio == iphone) {
+            $('.card1, .card2').css('top',"9vw");
+            $('.card3, .card4').css('top',"42.5vw");
+            $('.card5, .card6').css('top',"76vw");
+            $('.card7, .card8').css('top',"109.5vw");
+        }else if(user_ratio == galaxy) {
+            $('.card1, .card2').css('top',"7.5vw");
+            $('.card3, .card4').css('top',"41.5vw");
+            $('.card5, .card6').css('top',"74.5vw");
+            $('.card7, .card8').css('top',"108vw");
+        }else if(user_ratio == standard) {
+            $('.card1, .card2').css('top',"21.5vw");
+            $('.card3, .card4').css('top',"55vw");
+            $('.card5, .card6').css('top',"88.5vw");
+            $('.card7, .card8').css('top',"122vw");
+        }
+    });
+</script>
+</html>

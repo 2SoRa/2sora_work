@@ -1,0 +1,55 @@
+
+    
+    .portfolio-title{text-align: center; margin-bottom:2vh; font-size:20px; color:#666666;}
+
+    .portfolio2 .portfolio-wrap{padding: 4vh 2vh 2vh;}
+    /* .portfolio2 .chartarea{} */
+        .portfolio2 .chart.donut{width:22vh; height:22vh;}
+        .portfolio2 .chart.donut h2{font-size:8.3vw; top:23%;}
+        .portfolio2 .chart.donut h2 span{font-size: 6vw; line-height:20px;}
+        .portfolio2 .donut-chart h2 span, .donut-chart h2 p{display: block;}
+    .portfolio2 .re-feedback{display: flex; color:#fff; width: fit-content; font-size:14px; margin:4.5vh 0 0;}
+        .re-feedback li{margin:0 3px; padding:0px 5px 2px 5px;}
+        .re-feedback .fb-blue{background-color:#007eff;}
+        .re-feedback .fb-orange{background-color:#ff9600;}
+        .re-feedback .fb-red{background-color:#ff0000;}
+
+    .portfolio2 .re-list{border-top:2px solid #525252; height:53vh; overflow-y:auto;}
+    .portfolio2 .re-list li{border-bottom:1px solid #d7d7d7; padding:2vh 2vh 2vh 1vh;}
+        /* .portfolio2 .re-content{} */
+        /* 공통사항 - inline-block fontweight-bold */
+        .portfolio2 .re-content p{width:92%; display: inline-block; font-size:16px; font-weight:bold; vertical-align:top; white-space:break-spaces;}
+        .portfolio2 .re-content p.re-num{width:22px; line-height:23px; font-size:14px; background-color:#a5a5a5; color:#fff; border-radius:20px; text-align:center;}
+        /* 공통사항 */
+            .re-content .re-blue{color:#007eff;}
+            .re-content .re-orange{color:#ff9600;}
+            .re-content .re-red{color:#ff0000;}
+        .portfolio2 .re-score{display: flex; width:100%; justify-content:flex-end; color:#46bf3d; font-size:3vw; font-weight: medium; line-height:27px;}
+            .portfolio2 .re-score div{width:53px; border:1px solid #46bf3d; border-radius:15px; text-align: center; margin:0 2vw; background-color:#fff;}
+            .portfolio2 .re-score button{border:1px solid #1c7be6; border-radius:20px; width:27px; height:27px;}
+            .portfolio2 .re-score button img{width:90%;}
+
+
+    .container-result{width: 100%; height:100%;  background-color:rgba(0,0,0,0.4); position:relative;}
+
+    .result-wrap{width:90%; background-color:#fff; margin:auto; height:50vh; position:absolute; left:0; right:0; top:0; bottom:15vh; border-radius:20px;}
+    .result-wrap .stamp{position:absolute; width:fit-content; top:-8vh; left:0; right:0; margin:auto;}
+
+    .re-content{margin:3vh 0; padding:7vh 5vw 0; border-top:2px solid #666666; border-bottom:2px solid #666666; background-color:#ededed;}
+    .re-content .re-feedback{display: flex; color:#fff; width: fit-content; font-size:14px;}
+        .re-content .re-feedback li{margin:0 3px; padding:0px 5px 2px 5px;}
+        .re-content .re-feedback .fb-blue{background-color:#007eff;}
+        .re-content .re-feedback .fb-orange{background-color:#ff9600;}
+        .re-content .re-feedback .fb-red{background-color:#ff0000;}
+    .re-content p{font-size:20px; font-weight:bold; display: table-cell; align-items: center; height:25vh;}
+        .re-content .re-blue{color:#007eff;}
+        .re-content .re-orange{color:#ff9600;}
+        .re-content .re-red{color:#ff0000;}
+
+    .container-result .btnarea{text-align:center; display: flex; justify-content: space-evenly;}
+    .container-result .btnarea a{display:inline-block; width:30%; line-height:34px; text-align: center; padding:0; box-shadow:2px 3px 8px rgba(0,0,0,0.3); font-size:13px; letter-spacing:0.5px;}
+    
+    @media screen and (max-width:360px){
+        .re-content{padding:8vh 5vw 0; }
+        .re-content p{height:24vh;}
+    }

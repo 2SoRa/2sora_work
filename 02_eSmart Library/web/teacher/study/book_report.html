@@ -1,0 +1,308 @@
+<!-- /v1/head.sub.php-->
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="../../css/colorbox.css">
+	<link rel="stylesheet" type="text/css" href="../../css/teacher.css">
+	<link rel="stylesheet" type="text/css" href="../../css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../css/chart.css">
+	<link rel="stylesheet" href="../../css/barchart.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../../jquery/image-picker.js" type="text/javascript"></script>
+	<script src="../../jquery/script.js" type="text/javascript"></script><!--shape-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+	<title>book report</title>
+</head>
+<body>
+<div>
+	<div id="scorebox" class="poparea reportbox" >
+		<div class="title tp04">Book Report</div>
+		<a href="" class="btn_bk2 button04 floatright" style="margin:-40px 60px 0 0;" alt="print button">Print</a>
+		
+		<table class="poptbl02 mgb30">
+			<tr>
+				<th>Name</th><td class="name">홍길동</td>
+				<th>Date</th><td class="date">2018.08.20</td>
+			</tr>
+			<tr>
+				<th>Class</th><td>초급반</td>
+				<th>Teacher</th><td>Teacher001</td>
+			</tr>
+			<tr>
+				<th>Level</th><td>Lv.1</td>
+				<th>Total Point</th><td>325</td>
+			</tr>
+		</table>
+<div class="bookinfo_wrap">
+   <div class="book_img"><img src="../../images/temp/txtbook01.gif" alt="book"></div>
+   <div class="book_info">
+       <p class="book_title"><span>e-future Classic Readers</span><br>The Princess and the Pea</p>
+       <p class="point_round">15<br><span>point</span></p>
+   
+   </div>
+       <table class="poptbl04">
+			<tr>
+				<th>Author</th><td>Aesop</td>
+				<th>Genre</th><td>Classic</td>
+			</tr>
+			<tr>
+				<th>Book Level</th><td>Starter</td>
+				<th>CEFR</th><td>A1</td>
+			</tr>
+			<tr>
+				<th>Head Word</th><td>200</td>
+				<th>Word Count</th><td>152</td>
+			</tr>
+		</table>
+    
+</div>
+		<div class="chartbody mgb5">
+			<div class="ttibox">내점수</div>
+			<div class="scoresbar" data-perc="70">
+				<div class="horizbar"><span></span></div>
+				<div class="label"><span></span></div>
+			</div>
+		</div>
+		<div class="chartbody mgb5">
+			<div class="ttibox">반 평균</div>
+			<div class="scoresbar" data-perc="40">
+				<div class="horizbar color3"><span></span></div>
+				<div class="label"><span></span></div>
+			</div>
+		</div>
+		<div class="chartbody mgb30">
+			<div class="ttibox">전체 평균</div>
+			<div class="scoresbar" data-perc="100">
+				<div class="horizbar color4"><span></span></div>
+				<div class="label"><span></span></div>
+			</div>
+		</div>
+		
+		<div class="mgb30" >
+    <p class="titletype01">영역별 Score</p>
+        <div style="width:100%; height:220px;">
+		    <div class="chart_wrap">
+                <canvas id="myChart"></canvas>
+                <canvas id="myChart2" ></canvas>
+                <canvas id="myChart3" ></canvas>
+            </div>
+        </div>
+		</div>
+		<div class="teacher_comment">
+		    <p class="titletype01 floatleft">Teacher’s Comment </p>
+		    <a class="btn_comment">Comment 수정</a>
+		</div>
+		<div class="gradebody floatleft">
+			<form >
+				<select  class="image-picker show-html">
+					<option data-img-src='../../images/sub/grade01.jpg' value='1'>thumbnail01</option>
+					<option data-img-src='../../images/sub/grade02.jpg' value='2'>thumbnail01</option>
+					<option data-img-src='../../images/sub/grade03.jpg' value='3'>thumbnail01</option>
+				</select>
+			</form>	
+		</div>
+		<div class="tchcomment ">
+		<textarea placeholder="Comment를 입력해주세요.."></textarea>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+	jQuery("select.image-picker").imagepicker({
+		hide_select:true,
+	});
+	jQuery("select.image-picker.show-labels").imagepicker({
+		hide_select:false,
+		show_label: true,
+	});
+	jQuery("select.image-picker.limit_callback").imagepicker({
+		limit_reached:function(){alert('We are full!')},
+		hide_select:false
+	});
+	var container = jQuery("select.image-picker.masonry").next("ul.thumbnails");
+		container.imagesLoaded(function(){
+		container.masonry({
+		itemSelector: "li",
+	});
+	});
+</script>
+
+<script>
+$(function() {
+	$('.scoresbar').each(function(){
+		var t = $(this);
+		var dataperc = t.attr('data-perc'),
+				barperc = Math.round(dataperc*5.74);
+		t.find('.horizbar').animate({width:barperc}, dataperc*25);
+		t.find('.label').append('<div class="perc"></div>');
+		
+		function perc() {
+			var length = t.find('.horizbar').css('width'),
+				perc = Math.round(parseInt(length)/5.74),
+				labelpos = (parseInt(length)-2);
+			t.find('.label').css('left', labelpos);
+			t.find('.perc').text(perc+'%');
+		}
+		perc();
+		setInterval(perc, 0); 
+	});
+});
+</script>
+<!--차트 묶음-->
+<script>
+    Chart.defaults.global.defaultFontFamily = "'Noto Sans KR', sans-serif";
+    Chart.defaults.global.defaultFontColor = '#b6b6b6';
+var ctx = document.getElementById("myChart").getContext('2d');
+    Chart.defaults.global.legend.display = false;
+    ctx.canvas.height = 230;
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Mine", "Class", "Average"],
+        datasets: [{
+            label:'Vocabulary',
+            data: [52, 60, 80],
+            backgroundColor: [
+                'rgba(106, 205, 13, 0.9)',
+                'rgba(220, 58, 58, 0.9)',
+                'rgba(28, 136, 208, 0.9)'
+            ],
+            borderColor: [
+                'rgba(106, 205, 13, 1)',
+                'rgba(220, 58, 58, 1)',
+                'rgba(28, 136, 208, 1)'
+                
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+         title:{
+            display:true,
+            text : 'Vocabulary',
+            position: 'bottom',
+            fontSize : 18,
+            fontColor:'#666'
+        },
+        scales: {
+            xAxes:[{
+                barPercentage: 0.4               
+            }],
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    maintainAspectRatio: false,
+                    min: 0,
+                    max: 100,
+                    stepSize: 25,
+                    fontColor:'#666'
+                }
+            }]
+        }
+    }
+});
+
+var ctx2 = document.getElementById("myChart2").getContext('2d');
+     ctx2.canvas.height = 230;
+var myChart2 = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels: ["Mine", "Class", "Average"],
+        datasets: [{
+            label:'Comprehension',
+            data: [12, 30, 3],
+            backgroundColor: [
+                'rgba(106, 205, 13, 0.9)',
+                'rgba(220, 58, 58, 0.9)',
+                'rgba(28, 136, 208, 0.9)'
+            ],
+            borderColor: [
+                'rgba(106, 205, 13, 1)',
+                'rgba(220, 58, 58, 1)',
+                'rgba(28, 136, 208, 1)'
+                
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+         title:{
+            display:true,
+            text : 'Comprehension',
+            position: 'bottom',
+            fontSize : 18,
+            fontColor:'#666'
+        },
+        scales: {
+            xAxes:[{
+                barPercentage: 0.4               
+            }],
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    maintainAspectRatio: false,
+                    min: 0,
+                    max: 100,
+                    stepSize: 25,
+                    fontColor:'#666'
+                }
+            }]
+        }
+    }
+});
+
+var ctx3 = document.getElementById("myChart3").getContext('2d');
+    ctx3.canvas.height = 230;
+var myChart3 = new Chart(ctx3, {
+    type: 'bar',
+    data: {
+        labels: ["Mine", "Class", "Average"],
+        datasets: [{
+            label:'Total',
+            data: [12, 30, 3],
+            backgroundColor: [
+                'rgba(106, 205, 13, 0.9)',
+                'rgba(220, 58, 58, 0.9)',
+                'rgba(28, 136, 208, 0.9)'
+            ],
+            borderColor: [
+                'rgba(106, 205, 13, 1)',
+                'rgba(220, 58, 58, 1)',
+                'rgba(28, 136, 208, 1)'
+                
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+         title:{
+            display:true,
+            text : 'Total',
+            position: 'bottom',
+            fontSize : 18,
+            fontColor:'#666'
+        },
+        scales: {
+            xAxes:[{
+                barPercentage: 0.4               
+            }],
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    maintainAspectRatio: false,
+                    min: 0,
+                    max: 100,
+                    stepSize: 25,
+                    fontColor:'#666'
+
+                }
+            }]
+        }
+    }
+});
+</script>

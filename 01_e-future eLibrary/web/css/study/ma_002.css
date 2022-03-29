@@ -1,0 +1,71 @@
+  .bg{
+        background: url('/common/study/MA-002/images/bg-ma002.png') 0 0 no-repeat;
+    }
+    .slide_frame {
+        width:527px;
+        height:433px;
+        background:url('/common/study/MA-002/images/frame.png') 0 0 no-repeat;
+        margin:auto;
+        position: absolute;
+        left: 90px;right: 0;
+        top: 45px;
+    }
+    .show_slide {
+        width:480px;
+        margin:76px 18px;
+        height:318px;
+        background-color:#fff;
+        overflow: hidden;
+        position: relative;
+    }
+    .slide_wrap {
+        width:500%;
+        height:318px;
+        position: absolute;
+        left:0;
+    }
+    .slide_wrap>li {
+        width:20%;
+        height:100%;
+        float:left;
+        overflow:hidden;
+        background-color: #fff;
+        position: relative;
+        cursor: pointer;
+    }
+    .slide_wrap>li img{
+/*        margin:-30px 50px;*/
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0;right: 0;
+        margin:auto;
+    }
+    .question{
+        background:url('/common/study/MA-002/images/q_text.png') 0 0 no-repeat;
+        width:525px;
+        height:100px;
+        line-height:80px;
+        font-weight:700;
+        position: absolute;
+        top:490px;
+        left: 85px; right: 0;
+        margin:auto;
+        text-align:center;
+        border-radius:2px;
+        border:2px solid inset rgba(0,0,0,0.1);
+    }
+
+    .show_slide .roll {
+        position : absolute;
+        width : 480px;
+        height : 318px;
+        top : 0px;
+        left : 0px;
+    }
+    .show_slide > div img{
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0;right: 0;
+        margin:auto;
+    }
+    

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/study-layout.css">
+    <script src="../../build/js/jquery.js"></script>
+    
+    <title>KE-001</title>
+</head>
+<body>
+    <div class="container ke001">
+        <div class="top-nav">
+            <div class="study-progress"><div></div></div>
+            <div class="title">
+                <p>Choose the missing letter.</p>
+                <button class="close"><img src="../../build/images/layout/close.png" alt="close"></button>
+            </div>
+        </div>
+        <div class="contents-area gradient-bottom">
+            <!-- Speaker Button -->
+            <button class="speaker"><img src="../../build/images/layout/speaker.png" alt="speaker"></button>
+
+            <div class="answer-box">
+                <p>
+                    Aksionov's wife had a bad
+                    <input type="text" class="answerbox0">
+                    <input type="text" class="answerbox0">
+                    <input type="text" class="answerbox0">
+                    <input type="text" class="answerbox0">
+                    in which Aksionov's hair turned
+                    <input type="text" class="answerbox0">
+                    <input type="text" class="answerbox0">
+                    <input type="text" class="answerbox0">
+                    <input type="text" class="answerbox0">
+                    <input type="text" class="answerbox0">
+                    .
+                </p>
+            </div>
+			<div class="keyboard">
+			    <ul class="key1">
+			        <li>q</li>
+			        <li>w</li>
+			        <li>e</li>
+			        <li>r</li>
+			        <li>t</li>
+			        <li>y</li>
+			        <li>u</li>
+			        <li>i</li>
+			        <li>o</li>
+			        <li>p</li>
+			    </ul>
+                <ul class="key2">
+			        <li>a</li>
+			        <li>s</li>
+			        <li>d</li>
+			        <li>f</li>
+			        <li>g</li>
+			        <li>h</li>
+			        <li>j</li>
+			        <li>k</li>
+			        <li>l</li>
+			    </ul>
+                <ul class="key3">
+                    <li class="long"></li>
+			        <li>z</li>
+			        <li>x</li>
+			        <li>c</li>
+			        <li>v</li>
+			        <li>b</li>
+			        <li>n</li>
+			        <li>m</li>
+			        <li class="long2"><img src="../../build/images/layout/delete.png" alt="Delete Key"></li>
+			    </ul>
+			</div>
+
+            <!-- Check Button -->
+            <button class="check-btn gradient-default">Check</button>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $('.answer-list li').on("click",function(){
+                $(this).toggleClass("active");
+                $(this).siblings().removeClass("active");
+                $('.check-btn').removeClass('gradient-default').addClass('gradient-right');
+        });
+        $('.long').on("click",function(){
+            $(this).children().toggleClass("active");
+        });
+    });
+</script>
+<script>
+    $(function(){
+        $('.keyboard li').click(function(){
+            $(this).css({'background-color':'#b5b9c2','border-color':'#b2b7bd'});
+            $(this).parents().siblings().children('li').css({'background-color':'#fff','border-color':'#e6e7ea'});
+            $(this).siblings().css({'background-color':'#fff','border-color':'#e6e7ea'});
+            $('.long2').css({'background-color': '#abb3be', 'border-color': '#abb1be'});
+        });
+        $('.keyboard .long').click(function(){
+            $('.keyboard li').toggleClass('upper');
+            $(this).toggleClass('active');
+        });
+    });
+</script>
+</html>

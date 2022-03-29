@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/chart.css">
+    <!-- <link rel="stylesheet" href="../../build/css/barchart.css"> -->
+    <link rel="stylesheet" href="../../build/css/piechart.css">
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/layout.css">
+    <link rel="stylesheet" href="../../build/css/books.css">
+    <script src="../../build/js/jquery.js"></script>
+    <title>Check Up Result</title>
+</head>
+<style>
+</style>
+<body>
+    <div class="container result result-c">
+        <button class="close"><img src="../../build/images/layout/close.png" alt="close"></button>
+        <!-- contents area -->
+        <div class="contents-area gradient-bottom">
+            <div class="contents-wrap">
+                <div class="title">
+                   <p class="series-title">e-future Classic Readers</p>
+                   <p class="book-title">The Wolf and the Seven Children</p>
+                </div>
+                
+                <div class="chartarea">
+                    <div class="chart donut">
+                        <div class="donut-chart fill" data-percent="1.0" data-title=""></div>
+                    </div>
+                </div>
+
+                <ul class="answer-table">
+                    <li>
+                        <p>01</p>
+                        <div><img src="../../build/images/layout/o.png" alt="o"></div>
+                    </li>
+                    <li>
+                        <p>02</p>
+                        <div><img src="../../build/images/layout/x.png" alt="x"></div>
+                    </li>
+                    <li>
+                        <p>03</p>
+                        <div><img src="../../build/images/layout/o.png" alt="o"></div>
+                    </li>
+                    <li>
+                        <p>04</p>
+                        <div><img src="../../build/images/layout/o.png" alt="o"></div>
+                    </li>
+                    <li>
+                        <p>05</p>
+                        <div><img src="../../build/images/layout/o.png" alt="o"></div>
+                    </li>
+                    <li>
+                        <p>06</p>
+                        <div><img src="../../build/images/layout/o.png" alt="o"></div>
+                    </li>
+                    <li>
+                        <p>07</p>
+                        <div><img src="../../build/images/layout/o.png" alt="o"></div>
+                    </li>
+                    <li>
+                        <p>08</p>
+                        <div><img src="../../build/images/layout/o.png" alt="o"></div>
+                    </li>
+                    <li>
+                        <p>09</p>
+                        <div><img src="../../build/images/layout/o.png" alt="o"></div>
+                    </li>
+                    <li>
+                        <p>10</p>
+                        <div><img src="../../build/images/layout/o.png" alt="o"></div>
+                    </li>
+                </ul>
+
+                <div class="complete-message">
+                    <h3>Check Up Complete!!</h3>
+                    <p>You can redo the practice activities.</p>
+                </div>
+                <div class="btn-area">
+                    <button class="btn01 bdr-50 gradient-right-grn">Record</button>
+                    <button class="btn01 bdr-50 gradient-default">Redo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../build/js/jquery.chart.js"></script>
+<script>
+    $(function() {
+        $('.donut-chart').cssCharts({type:"donut"}).trigger('show-donut-chart');
+     });
+</script>
+</html>

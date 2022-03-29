@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../build/css/chart.css">
+    <link rel="stylesheet" href="../../build/css/barchart.css">
+    <link rel="stylesheet" href="../../build/css/common.css">
+    <link rel="stylesheet" href="../../build/css/layout.css">
+    <link rel="stylesheet" href="../../build/css/report.css">
+    <script src="../../build/js/jquery.js"></script>
+    
+    <title>Report List</title>
+</head>
+<body>
+    <div class="container report report01">
+        <!-- top navigation -->
+        <div class="top-nav gradient-right">
+            <button class="back"><img src="../../build/images/layout/back.png" alt="back"></button>
+            <p class="title">Report</p>
+            <button class="icon-user"><img src="../../build/images/layout/user.png" alt="user-icon"></button>
+            <div class="top-nav-user">
+                    <button>Profile</button>
+                    <button>Logout</button>
+            </div>
+        </div>
+        <!-- contents area -->
+        <div class="contents-area">
+            <div class="gradient-right">
+                <div class="top-menu-list">
+                   <select name="" id="" class="bdr-50">
+                       <option value="2020.07">2020.07</option>
+                       <option value="2020.06">2020.06</option>
+                       <option value="2020.05">2020.05</option>
+                       <option value="2020.04">2020.04</option>
+                       <option value="2020.03">2020.03</option>
+                       <option value="2020.02">2020.02</option>
+                       <option value="2020.01">2020.01</option>
+                       <option value="2019.12">2019.12</option>
+                   </select>
+                </div> 
+            </div>
+            <div class="contents-wrap">
+               <div class="reading-info">
+                   <p>Reading : <span>5</span> Books</p>
+                   <p>Point : <span>75</span> Point</p>
+               </div>
+               <ul class="report-list">
+                   <li>
+                        <div class="book"><img src="../../build/images/contents/LSR001.jpg" alt=""></div>
+                        <ul class="read-info">
+                            <li>
+                                <p ><span>14</span>/<span>14</span></p>
+                                <p class="date">| 2020.07.29</p>
+                            </li>
+                            <li>
+                                <p><span class="color">Learn</span> <span>1</span> Attempt</p>
+                                <p class="date">| 2020.07.29</p>
+                            </li>
+                            <li class="report-btn">
+                                <button class="gradient-right-org bdr-50 btn01">Report</button>
+                                <button class="gradient-right-grn bdr-50 btn01">Portfolio</button>
+                                <button class="gradient-right bdr-50 btn01">Review</button>
+                            </li>
+                        </ul>
+                   </li>
+                   <li>
+                        <div class="book"><img src="../../build/images/contents/LSR001.jpg" alt=""></div>
+                        <ul class="read-info">
+                            <li>
+                                <p ><span>14</span>/<span>14</span></p>
+                                <p class="date">| 2020.07.29</p>
+                            </li>
+                            <li>
+                                <p><span class="color">Learn</span> <span>1</span> Attempt</p>
+                                <p class="date">| 2020.07.29</p>
+                            </li>
+                            <li class="report-btn">
+                                <button class="btn-dark bdr-50 btn01">Check Up</button>
+                                <button class="btn-gray bdr-50 btn01">Record</button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                         <div class="book"><img src="../../build/images/contents/LSR001.jpg" alt=""></div>
+                         <ul class="read-info">
+                             <li>
+                                 <p ><span>14</span>/<span>14</span></p>
+                                 <p class="date">| 2020.07.29</p>
+                             </li>
+                             <li class="report-btn">
+                                 <button class="btn-dark bdr-50 btn01">Learn</button>
+                                 <button class="btn-gray bdr-50 btn01">Check Up</button>
+                                 <button class="btn-gray bdr-50 btn01">Record</button>
+                             </li>
+                         </ul>
+                    </li>
+                    <li>
+                         <div class="book"><img src="../../build/images/contents/LSR001.jpg" alt=""></div>
+                         <ul class="read-info">
+                             <li>
+                                 <p ><span>14</span>/<span>14</span></p>
+                                 <p class="date">| 2020.07.29</p>
+                             </li>
+                             <li>
+                                 <p><span class="color">Learn</span> <span>1</span> Attempt</p>
+                                 <p class="date">| 2020.07.29</p>
+                             </li>
+                             <li class="report-btn">
+                                 <button class="btn-dark bdr-50 btn01">Report</button>
+                             </li>
+                         </ul>
+                     </li>
+               </ul>
+            </div>
+        </div>
+        <!-- bottom navigation -->
+        <div class="bottom-nav">
+            <ul class="nav-list">
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-books.png" alt="Books">
+                        <p>Books</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-report-on.png" alt="Report on">
+                        <p class="btn-on">Report</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-review.png" alt="Review">
+                        <p>Review</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../build/images/layout/icon-rank.png" alt="Rank">
+                        <p>Rank</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+            $(".icon-user").on("click", function() {
+               $('.top-nav-user').slideToggle();
+            });
+    });
+</script>
+<script>
+    $(function(){
+        $(".select ul").on("click", ".init", function() {
+            $(this).closest(".select ul").children('li:not(.init)').toggle();
+        });
+
+        var allOptions = $(".select ul").children('li:not(.init)');
+        $(".select ul").on("click", "li:not(.init)", function() {
+            allOptions.removeClass('selected');
+            $(this).addClass('selected');
+            $(".select ul").children('.init').html($(this).html());
+            allOptions.toggle();
+        });
+        
+    });
+</script>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta name="keywords" content="eSmart Library, eFuture, 이퓨쳐, 이스마트 라이브러리">
+	<meta name="description" content="nework">
+	<meta http-equiv="X-UA-compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="stylesheet" type="text/css" href="../../css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../css/gnb_esc.css">
+	<link rel="stylesheet" type="text/css" href="../../css/esc.css">
+	<link rel="stylesheet" type="text/css" href="../../css/colorbox.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery/common.js"></script>
+	<script type="text/javascript" src="../../jquery/jquery.colorbox.js"></script>
+	<script type="text/javascript" src="../../jquery/jquery.bxslider.min.js"></script>
+	<script type="text/javascript" src="../../jquery/slides.js"></script>
+	<script type="text/javascript" src="../../jquery/jquery.jqtransform.js"></script>
+	<script type="text/javascript" src="../../jquery/script.js"></script><!--shape-->
+	<script type="text/javascript" src="../../jquery/plugins.js"></script><!--shape-->
+	<link href="../../images/common/efuture.ico" rel="icon">
+	
+	
+	<title>eSmart Library</title>
+</head>
+<body>
+<div id="header">
+	<div class="util">
+       <div class="top_wrap">
+    	
+		<ul class="loginbox">
+			<li class="name kor"><span>강감찬</span> 학생 안녕하세요!!</li>
+			<li class="logout"><a href="#">로그아웃</a></li>
+			<li class="myinfo"><a href="#">회원정보</a></li>
+			<li class="country">
+                    <div class="show_country">
+                            <p><a href=""><img src="../../images/sub/kr.png" alt="">Korean</a></p>
+                            <img class ="bottom_arrow" src="../../images/common/select_arrow.png" alt="">
+                    </div>
+                    <ul>
+                        <li data-value="value 1"><a href=""><img src="../../images/sub/kr.png" alt="">Korean</a></li>
+                        <li data-value="value 2"><a href=""><img src="../../images/sub/us.png" alt="">English</a></li>
+                        <li data-value="value 3"><a href=""><img src="../../images/sub/cn.png" alt="">Chinese</a></li>
+                        <li data-value="value 4"><a href=""><img src="../../images/sub/jp.png" alt="">Japanese</a></li>
+                    </ul>
+            </li>
+		</ul>
+	</div>
+	</div>
+	<div class="menubox">
+		<div class="logo"><a href=""><img src="../../images/common/logo.png" alt="eSmart Campus"></a></div>
+		<ul class="mmenu">
+			<li class="m01"><a href="">프로그램 소개</a></li>
+			<li class="m02"><a href="">도서 소개</a></li>
+			<li class="m03"><a href="">체험하기</a></li>
+			<li class="m04"><a class="on" href="">고객센터</a></li>
+		</ul>
+	</div>
+	</div>
+	
+
+<div id="content">
+   <div class="titarea">
+		<p>회원정보 수정<br><span></span></p>
+		<div class="location">홈 <span>></span> <span>회원정보</span> <span>></span> <span>회원정보 수정</span></div>
+	</div>
+    <div class="sub">
+        <form name ="mainForm" id = "mainForm">
+            <table class="tbl_write01 mgb30">
+                <caption>학생 정보입력</caption>
+                <input type ="hidden" name ="student_seq" id ="student_seq" value = "140986">
+                <tr>
+                    <th><span class="blt_red">아이디</span></th>
+                    <input type="hidden" name="userid" id="userid" value="이소라">
+                    <td class="name">이소라</td>
+                </tr>
+                <tr>
+                    <th><span class="blt_red">비밀번호</span></th>
+                    <td>
+                        <input type="button" class="btn_zipcode" id = "pwdChange" value="비밀번호 변경">
+                        <div style="display: none;">
+                            <div id="pwdChangeContent" class="poparea popup03">
+                                <div class="title tp01">비밀번호 변경</div>
+                                <p class="txt01">사용하실 비밀번호를 입력해주세요.</p>
+                                <div>
+                                    <input type="password" name="password" id="password" value="이소라">
+                                    <a href="#" class="btn_idsearch01" id="pwdChangeBtn">변경</a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th><span class="blt_red">이름</span></th>
+                    <td><input type="text" name="name" id="name" title="이름입력" value = "이소라"  class="wdt30p bgyellow"> </td>
+                </tr>
+                <tr>
+                    <th><span class="blt_red">이메일</span></th>
+                    <td>
+                        <input type = "hidden" name ="s_email" id ="s_email"  value = "111@naver.com" />
+                        <input type="text" name="emailAddr" id="emailAddr" title="이메일주소" value="이소라"  class="wdt20p  bgyellow" >
+                        <span class="eng email">@</span>
+                        <input type="text" name="emailDomain" id="emailDomain" title="이메일도메인" value ="naver.com" class="wdt20p bggray"   readonly="readonly">
+                        <select class="select_type01" id ="selEmail">
+                            <option value="">선택해주세요</option>
+                            <option value="daum.net">daum.net</option>
+                            <option value="naver.com">naver.com</option>
+                            <option value="nate.com">nate.com</option>
+                            <option value="hotmail.com">hotmail.com</option>
+                            <option value="hanmail.net">hanmail.net</option>
+                            <option value="selfEmail">직접입력</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>학교</th>
+                    <td>
+                        <input type ="hidden" name ="school" id ="school" value = "">
+                        
+                        <input type="text" name="schoolName" id="schoolName" title="학교명"  class="wdt20p bgyellow" value = "">
+                        <select class="select_type01" id = "grade">
+                            <option value="">학년</option>
+                            
+                                <option value="1" >1학년</option>
+                            
+                                <option value="2" >2학년</option>
+                            
+                                <option value="3" >3학년</option>
+                            
+                                <option value="4" >4학년</option>
+                            
+                                <option value="5" >5학년</option>
+                            
+                                <option value="6" >6학년</option>
+                            
+                                <option value="7" >7학년</option>
+                            
+                                <option value="8" >8학년</option>
+                            
+                                <option value="9" >9학년</option>
+                            
+                                <option value="10" >10학년</option>
+                            
+                                <option value="11" >11학년</option>
+                            
+                                <option value="12" >12학년</option>
+                            
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div class="btnbox  mgb20">
+            <div class="btnleft">
+                <a  href="#" class="button01 btn_dgray">취소</a>
+            </div>
+            <div class="btnright">
+                <a href="#" onclick="deleteFn();return false;" class="button01 btn_red">회원탈퇴</a>
+                <a href="#" onClick="checkForm();return false;" class="button01 btn_blue">수정하기</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+	<div class="quicklink">
+		<div class="cs">
+			<p>고객센터<span>02.3400.0533</span></p>
+		</div>
+		<ul>
+			<li><a class="btn_policy" href="/privacy/pop/policy">이용약관</a></li>
+			<li><a class="btn_personal" href = "/privacy/pop/personal">개인정보보호정책</a></li>
+			<li><a class="btn_email" href="/privacy/pop/email">이메일무단수집거부</a></li>
+			<li><a class="btn_cs" href="/customer/pop/cs">고객지원</a></li>
+		</ul>
+	</div>
+	<div class="copyright">
+		<div class="logo"><img src="../../images/common/footer_logo.png" alt="eSmart Campus"></div>
+		<div class="information">
+			<ul><li>서울 송파구 백제고분로 91 LK빌딩 4 ~ 6F</li> <li> TEL.02.3400.0533</li> <li> FAX.02.591.7626</li> </ul>
+			<ul><li>사업자등록번호 : 214-86-47520</li> <li>통신판매업신고 제 송파 0283호</li>  <li> 개인정보관리책임자: 현용희</li> <li> 대표이사 : 황경호</li></ul>
+			<div class="copy">Copyright © e-future All rights reserved.</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div id="modalProgress" title="" style="display:none;">
+  <div style="width:100%;text-align:center;padding-top:10px;">
+		<img src="../../images/loading.gif" style="vertical-align:middle;">  <br>
+		<div style="padding-top:8px;font-size:10pt;">
+			데이터를 처리중입니다.<br>
+			잠시만 기다려 주세요.
+		</div>
+	</div>
+</div>
+   
+<div id="modalLoginProgress" title="" style="display:none;">
+  <div style="width:100%;text-align:center;padding-top:10px;">
+		<img src="../../images/loading2.gif" style="vertical-align:middle;">  <br>
+		<div style="padding-top:8px;font-size:10pt;">
+			로그인 처리중입니다.<br>
+			잠시만 기다려 주세요.
+		</div>
+		<!--
+		<img src="../../images/common/loading.gif"> <br>
+		Loading...
+		-->
+	</div>
+</div>
+
+<div id="modalFileProgress" title="" style="display:none;">
+  <div style="width:100%;text-align:center;padding-top:10px;">
+		<img src="../../images/loading.gif" style="vertical-align:middle;">  <br>
+		<div style="padding-top:8px;font-size:10pt;">
+			파일을 업로드중입니다.<br>
+			잠시만 기다려 주세요.
+		</div>
+	</div>
+</div>
+
+
+
+</body>
+</html>
+
+<style>
+.ui-widget-overlay.custom-overlay
+{
+    background-color: black;
+    background-image: none;
+    opacity: 0.1;
+    z-index: 104000;    
+}
+</style>
+
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script type = "text/javascript" src = "/resources/js../../daum_post.js"></script>
+<script type = "text/javascript" src="/resources/js/student/memberInfo/update.js"></script>
+<script>
+    $(function(){
+        emailSelectedOpt('naver.com', 'selEmail');
+        selectedOpt('','grade');
+    });
+</script>
+
+<script type="text/javascript" src="/resources/js/login/member_login.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8367270-7', 'esmartcampus.co.kr');
+  ga('send', 'pageview');
+
+</script>

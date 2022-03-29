@@ -1,0 +1,161 @@
+<!-- /v1/head.sub.php-->
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="../../css/colorbox.css">
+	<link rel="stylesheet" type="text/css" href="../../css/teacher.css">
+	<link rel="stylesheet" type="text/css" href="../../css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../css/chart.css">
+<!--	국내 css-->
+	<link rel="stylesheet" type="text/css" href="../../css/k_layout.css">
+	<link rel="stylesheet" type="text/css" href="../../css/k_teacher.css">
+<!--	국내 css-->
+	<link rel="stylesheet" href="../../css/barchart.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../../jquery/image-picker.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
+    <!--star rating-->
+	<script src="../../jquery/script.js" type="text/javascript"></script><!--shape-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+	<title>homework</title>
+</head>
+<body>
+<div>
+	<div class="poparea popup13 student">
+		<div class="title tp13"><span>홍길동(hongildong)</span></div>
+        <ul class="student_btn">
+            <li>
+                <button>Profile</button>
+            </li>
+            <li>
+                <button class="btn_orange">Homework</button>
+            </li>
+            <li>
+                <button>e-Library</button>
+            </li>
+        </ul>
+        <ul class="homework_btn">
+            <li class="click"><a>오늘 Homework</a></li>
+            <li><a>지난 Homework</a></li>
+        </ul>
+       <table class="ranking homework">
+           <thead>
+               <tr>
+                   <th>No</th>
+                   <th>시리즈명/도서명(레벨)</th>
+                   <th>학습기간</th>
+                   <th>Read</th>
+                   <th>Learn</th>
+                   <th>Check Up</th>
+                   <th style="width:18%;">Report</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr>
+                   <td>2</td>
+                   <td>
+                       <span class="serise">e-future Classic Readers</span><br>
+                        <span class="title">The Princess and the Pea The Princess and the Pea (Starter)</span>
+                    </td>
+                   <td class="study_date">2018.09.10~<br>2018.09.11</td>
+                   <td><span class="page">19p/19p</span><br><span class="complete_date">2018.09.11</span></td>
+                   <td>
+                   <span class="complete">완료</span><br>
+                   <span class="complete_date">2018.09.11</span></td>
+                   <td>
+                   <span class="complete">86점</span><br>
+                   <span class="complete_date">2018.09.11</span></td>
+                   <td class="btn_wrap">
+                        <button class="button btn_red">Report</button>
+                        <button class="button btn_dblue">정,오답</button>
+                        <button class="button btn_orange">Portfolio</button>
+                    </td>
+               </tr>
+               <tr>
+                   <td>1</td>
+                   <td>
+                       <span class="serise">e-future Classic Readers</span><br>
+                                      <span class="title">The Princess and the Pea The Princess and the Pea (Starter)</span>
+                    </td>
+                   <td class="study_date">2018.09.10~<br>2018.09.11</td>
+                   <td><span class="page">19p/19p</span><br><span class="complete_date">2018.09.11</span></td>
+                   <td>
+                   <span class="incomplete">미완료</span><br>
+                   <span class="complete_date">2018.09.11</span></td>
+                   <td>
+                   <span class="incomplete">미완료</span><br>
+                   <span class="complete_date">2018.09.11</span></td>
+                   <td class="btn_wrap">
+                                <button class="button">Report</button>
+                                <button class="button">정,오답</button>
+                                <button class="button">Portfolio</button>
+                    </td>
+               </tr>
+               <tr>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+               </tr>
+               <tr>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+               </tr>
+               <tr>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+               </tr>
+               <tr>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+               </tr>
+           </tbody>
+       </table>
+		 <div class="pagebox2">
+				<div class="paging">
+					<a class="btn first" href=""></a>
+					<a class="btn prev" href=""></a>
+					<a class="num"  href="#">1</a>
+					<a class="on num" href="#">2</a>
+					<a class="num"  href="#">3</a>
+					<a class="btn next" href=""></a>
+					<a class="btn end" href=""></a>
+				</div>
+			</div>
+	</div>
+</div>
+</body>
+<script>
+$(function(){
+    $('.student_btn li button').click(function(){
+        $(this).addClass('btn_orange');
+        $(this).parents().siblings().children('button').removeClass('btn_orange');
+    });
+    $('.homework_btn li').click(function(){
+        $(this).addClass('click');
+        $(this).siblings().removeClass('click');
+    });
+});
+</script>
+</html>

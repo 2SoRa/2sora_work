@@ -1,0 +1,21 @@
+.content .questiontype03 {width:100%; height:577px;  text-align:center;  margin:auto; padding-top:40px;}
+
+.content .questiontype03 .picard {display:inline-block;}
+.content .questiontype03 .picard .col01 {width:100%; height: 350px;}
+.content .questiontype03 .picard .col01 .qbox { float:left; height:350px; position:relative; margin: 0; width:100% }
+.content .questiontype03 .picard .col01:first-child {margin-left: 0;}
+.content .questiontype03 .picard .col01:last-child {margin-right: 0;}
+.content .questiontype03 .picard .col01 .cardframe {height:130px; background:url(../../images/popup/frame.png) no-repeat; width:121px; display: inline-block; margin-bottom: 20px; font-size:40px;
+    line-height:121px;
+    text-align: center; font-weight:900;}
+.content .questiontype03 .picard .col01 .answerbox {border:3px dotted #13de9a; padding:10px 10px; border-radius:10px; background-color:#fff; font:500 15px 'Open Sans', sans-serif;  color:#666; margin:0 auto; width:200px;  text-align: center;
+    height:198px;
+    line-height:160px;
+    /*line-height:68px;*/
+}
+
+.content .questiontype03 .txtcard {width:90%; background-color:#eee; text-align:left;  border:3px dotted #ccc; padding:10px 10px; border-radius:15px; margin:30px 5%; min-height: 102px;}
+.content .questiontype03 .txtcard span img {height:100px;}
+
+.dragboxOn img { height:60px; }
+.dragboxOff img { height:60px; }
