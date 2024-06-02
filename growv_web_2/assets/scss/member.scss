@@ -1,0 +1,607 @@
+@charset "UTF-8";
+@import "./common/variables";
+@import "./common/mixin";
+
+/*
+불필요한 css, 중복 스타일 제거 완료
+nature TODO : find-id, find-password 공통 스타일만 추가로 더 정리하기
+*/
+.member {
+  .page_wrap {
+    position: relative;
+    overflow-x: hidden;
+    min-height:calc(100vh - 234px);
+  }
+  .logo {
+    margin-top:120px;
+    margin-bottom:50px;
+    a {
+      display:block;
+      width:55.556vw;
+      height:11.111vw;
+      max-width:160px; // 스터디 : 310
+      max-height:70px;
+      margin:0 auto;
+      background: no-repeat 0 0 url("../img/common/logo_superv_160.svg");
+      background-size:contain;
+    }
+  }
+  .inner-box {
+    > article {
+      > label {display:inline;}
+    }
+  }
+  .pop_wrap {
+    min-height: calc(100vh - 227px);
+    background-color:#fff;
+  }
+  .button-section {
+    text-align: center;
+  }
+}
+
+.login {
+  .page_wrap {
+    padding-bottom:100px;
+  }
+
+  /* 로그인, 아이디 찾기, 비밀번호 찾기 공통 요소 스타일  */
+  .input-wrap {width:100%;}
+  .login_info {
+    margin-bottom:30px;
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+    span,
+    strong {
+      font-weight:inherit;
+      color:#8b51e2;
+    }
+  }
+  .tab {
+    display:flex;
+    width:100%;
+    height:50px;
+    margin-bottom:30px;
+    align-items:center;
+    text-align:center;
+    div {
+      width: 50%;
+      height: 100%;
+      font-size: 18px;
+      a {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        color: #8f8f8f;
+        line-height: 50px;
+        box-sizing: border-box;
+        border: 1px solid #ececec;
+        border-bottom-color:#424242;
+        border-radius:8px 8px 0 0;
+      }
+      &.active {
+        a {
+          color: #292929;
+          border-color: #424242;
+          border-bottom:0;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .other-button-section {
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+    > span {
+      display:block;
+      position:relative;
+      margin:0 20px;
+      font-size: 14px;
+      letter-spacing: -0.45px;
+      text-align: center;
+      color: #303030;
+      &:first-child {
+        &:before {display:none;}
+      }
+      &:before {
+        display:block;
+        content:'';
+        position:absolute;
+        width:1px; height:12px;
+        top:50%; left:-20px; margin-top:-6px;
+        background-color:#c4c8d0;
+      }
+      a {
+        color: #303030;
+      }
+    }
+  }
+  .custom-button.btn-big {
+    margin-top:40px;
+  }
+
+  // 로그인
+  .login-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .contents {
+      position: relative;
+
+      .character {
+        position: absolute;
+        &.left {
+          display:none;
+          width:180px; height:180px;
+          top:0; left:-200px;
+        }
+        &.right {
+          display:none;
+          width:190px; height:190px;
+          top:-50px; right:-200px;
+        }
+      }
+      .login-form {
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        width:440px;
+        h1 {
+          width: 100%;
+          text-align: center;
+          font-size: 20px;
+          margin-bottom: 20px;
+          font-weight: bold;
+          span {
+            color: $color-active-purple;
+          }
+        }
+        .item {
+          position:relative;
+          width: 100%;
+          input {
+            width:100%;
+          }
+          &.checkbox {
+            display:flex;
+            margin-top:2px;
+            label {
+              font-size: 14px;
+              color: #424242;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+    .custom-error {
+      margin: 4px 0 0 12px;
+    }
+  }
+  .contents {
+    .find-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+  }
+
+  // 아이디 찾기
+  .find-id {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #303030;
+    .contents {
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      width:440px;
+      .find-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .item-group {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+          > .item input {
+            width:100%;
+          }
+        }
+      }
+      .find-result-box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .title {
+          font-size: 22px;
+          font-weight: bold;
+          line-height: 1.23;
+          letter-spacing: -0.55px;
+          > .name {
+            font-size: 24px;
+          }
+        }
+        .inner-box {
+          width: 100%;
+          border-radius:$border-rd;
+          background-color:#f7f7f7;
+          padding: 30px;
+          box-sizing:border-box;
+          display:flex;
+          flex-direction:column;
+          gap:12px;
+          > div {
+            width: 100%;
+            display: flex;
+            justify-content:flex-start;
+            &:first-child {
+              padding-bottom: 12px;
+              justify-content: flex-start;
+              font-size: 16px;
+              font-weight: bold;
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
+            > span {
+              display:block;
+              font-size: 16px;
+              font-weight: 500;
+              line-height: 1.2;
+              letter-spacing: -0.5px;
+              text-align: left;
+              &:first-child {
+                width:percentage(80/440);
+              }
+              &.email {
+                color:$color-active-purple;
+                font-weight:bold;
+              }
+              &.date {}
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 비밀번호 찾기
+  .find-password {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #303030;
+    .contents {
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      width:440px;
+      .find-form {
+        .item-group {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .item {
+            input {
+              width: 100%;
+              /* 휴대폰 번호, 인증번호의 경우 예외처리 */
+              &.contact,
+              &.authcode {
+                &:focus {border:1px solid #424242;}
+              }
+            }
+            .flex-box {
+              display:flex;
+              justify-content:space-between;
+              gap:10px;
+              width:100%;
+            }
+          }
+        }
+      }
+    }
+    .tab {
+      div {
+        &:first-child {
+          a { border-right: none; }
+        }
+        &.active {
+          a { border-left: 1px solid #424242; }
+        }
+      }
+    }
+    .flex-box {
+      button {
+        width:96px;
+        min-width:96px;
+        height:$input-h;
+        border-radius:$border-rd;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+    .find-result-box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      div {width: 100%;}
+      .title {
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1.23;
+        letter-spacing: -0.55px;
+      }
+      .inner-box {
+        width:100%;
+        border-radius:$border-rd;
+        background-color:#f7f7f7;
+        padding:40px 30px;
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+        box-sizing:border-box;
+        > div {
+          width:100%;
+          display:flex;
+          justify-content:space-between;
+          > span {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            text-align: left;
+            &.email,
+            &.date {
+              max-width: 300px;
+              color: #8b51e2;
+              text-align: right;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+    .password-reset-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      input {
+        width:100%;
+      }
+    }
+  }
+}
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  .member {
+    .logo {
+      margin-top:84px;
+      margin-bottom:50px;
+      a {
+        width:106px; height:46px;
+      }
+    }
+    .custom-button {
+      margin:0 auto;
+      &.input-button {
+        width:96px;
+      }
+    }
+  }
+
+  .login {
+    .page_wrap{
+      padding-bottom:80px;
+    }
+    .login_info {
+      margin-bottom:20px;
+      font-size:16px;
+    }
+    .tab {
+      height:42px;
+      margin-bottom:40px;
+      div {
+        a {
+          font-size: 16px;
+          border: none;
+          border-bottom: 1px solid #dbdbdb;
+        }
+        &:first-child,
+        &:last-child {
+          a {
+            border-radius: 0;
+            line-height:42px;
+          }
+        }
+        &:last-child.active {
+          a { border-left: none;}
+        }
+        &.active {
+          a {border-bottom:2px solid #292929;}
+        }
+      }
+    }
+    .input-wrap {
+      .input-clear-button {
+        .input-wrap {
+          .input-password-show-button {
+            top: 12px;
+            right: 10px;
+          }
+        }
+      }
+    }
+    .other-button-section {
+      span {
+        margin:0 12px;
+        &:before {left:-12px;}
+      }
+    }
+
+    .login-section {
+      .contents {
+        margin:0 auto;
+        width:100%;  //calc(100% - 32px);
+        max-width:472px;  // 440 + 32(좌우여백)
+        padding: 0 16px;
+        height: auto;
+        overflow: hidden;
+        .character{
+          &.left {
+            display: none;
+          }
+          &.right {
+            display: none;
+          }
+        }
+        .login-form {
+          width:100%;
+          gap:8px;
+          h1 {
+            word-break: keep-all;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+          }
+          .item {
+            &.checkbox {margin-top:4px;
+              label {font-size: 14px;}
+            }
+          }
+        }
+      }
+
+      .custom-button {
+        margin-top:30px;
+      }
+      .custom-error {
+        margin: 1.11vw 0 0 3.33vw;
+      }
+    }
+    .find-id {
+      .contents {
+        border:0;
+        margin:0 auto;
+        width: 100%;
+        max-width:472px;  // 440 + 32(좌우여백)
+        padding: 0 16px;
+        height: auto;
+        overflow: hidden;
+        box-sizing: border-box;
+        .find-form {
+          .title {
+            font-size: 16px;
+          }
+          .item-group {
+            width: 100%;
+            .item {
+              input {width: 100%;}
+            }
+          }
+
+        }
+        .find-result-box{
+          height: auto;
+          overflow: hidden;
+          .title {
+            text-align: center;
+            font-size: 16px;
+            .name {
+              font-size: 16px;
+            }
+          }
+          .inner-box{
+            margin-top: 0;
+            padding: 30px 35px;
+            > div {
+              width: 100%;
+              > span {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .find-password {
+      .contents {
+        border: 0;
+        margin: 0 auto;
+        width: 100%;
+        max-width:472px;  // 440 + 32(좌우여백)
+        padding: 0 16px;
+        height: auto;
+        overflow: hidden;
+        box-sizing: border-box;
+        .find-form {
+          .title {
+            font-size: 16px;
+          }
+          .item-group {
+            width: 100%;
+            .item {
+              input {
+                width:100%;
+                &.contact,
+                &.authcode {
+                  width:100%;
+                }
+              }
+              .flex-box {
+                gap:4px;
+              }
+            }
+          }
+        }
+        .find-result-box {
+          .title {
+            font-size: 16px;
+            text-align: center;
+          }
+          .inner-box {
+            margin-top: 0;
+            padding: 30px 35px;
+            > div {
+              width: 100%;
+              > span {
+                font-size: 14px;
+                &.email,
+                &.date {
+                  max-width: 260px;
+                  font-size: 15px;
+                }
+              }
+            }
+          }
+          .password-reset-form {
+            width: 100%;
+            > div {
+              width: 100%;
+            }
+            input {width:100%;}
+          }
+          .custom-button {
+            margin-top: 20px;
+          }
+        }
+      }
+      .flex-box {
+        button {font-size:14px;}
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+.promotion {
+  padding-bottom:0;
+  .inner-wrap {
+    .floating {
+      a, picture { max-width:820px; margin: auto; }
+    }
+
+    .info-list-wrap {
+      margin:0 auto;
+      padding:0 40px;
+    }
+    .info-list-tit {
+      display:block;
+      margin-bottom:8px;
+      font-size:16px;
+      font-weight:600;
+      line-height:1.4375;
+      font-style:normal;
+      color:#535353;
+    }
+    .info-list {
+      font-size:14px;
+      line-height:1;
+      letter-spacing:-0.14px;
+      color:#535353;
+      li {
+        margin-top:8px;
+        &:first-child {margin-top:0;}
+      }
+    }
+  }
+  .pic-area {
+    max-width:1260px;
+  }
+
+  .sec-kv {
+    height:auto;
+    background-color:#fff0de;
+    picture {max-width:1200px;}
+  }
+
+  .sec-1 {background-color:#efe9f8;
+    .content-title {
+      background-color:#8b51e2;
+      //picture {width:408px;}
+    }
+    .content-body {padding-top:50px;}
+    .pic-area {
+      max-width:1240px;
+    }
+  }
+
+  .sec-2 {
+    .content-body {
+      padding:0;
+    }
+    .area-1 {
+      max-width:1120px;
+    }
+    .area-2 {
+      max-width:1620px;
+      background-color:#421683;
+    }
+    .area-3 {
+      max-width:1220px;
+    }
+    .area-4 {
+      padding:70px 0 110px;
+      background-color:#e5d5fe;
+      picture,
+      .info-list-wrap {max-width:890px;}
+    }
+  }
+}
+
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  .promotion {
+    // 플로팅 버튼 위치 예외처리
+    .floating {
+      &.left-side-m {
+        bottom:vw-cal-md(90px);  // 하단 fixed banner 높이값
+      }
+    }
+
+    .inner-wrap {
+      .slider-area {
+        &.mobile {
+          display:block;
+          position:relative;
+          left:0;
+          pointer-events:auto;
+        }
+      }
+      .content-title {
+        display:block;
+        width:100%;
+        height:auto;
+        picture {
+          display:flex; width:100%; height:auto;
+          img {width:100%; height:auto;}
+        }
+      }
+    }
+
+    // 섹션 및 요소 스타일
+    .sec-1 {
+      .content-body {
+        padding:0;
+      }
+    }
+
+    .sec-2 {
+      .area-2 {
+        picture {max-width:100%; left:0; transform:translate3d(0,0,0);}
+      }
+    }
+  }
+}

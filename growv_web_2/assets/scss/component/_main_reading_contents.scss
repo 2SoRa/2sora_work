@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+// 스타일 우선 순위를 위해 common 공통 클래스 함꼐 선언
+.sec-reading-common {
+  &.sec-reading-kor,
+  &.sec-reading-eng {
+    .goto-btn-wrap {
+      width:vw-cal-lg(600px);
+      max-width:600px; height:auto;
+      margin:50px auto 60px;
+    }
+    .btns-wrap.type-tab {
+      position:relative;
+      width:100%; height:auto;
+      padding:40px 0 0;
+      overflow:hidden;
+
+      .btns-tab-area {
+        position:relative;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        width:80%; // 타블렛 대응용 예외처리
+        max-width:1000px;
+        margin:0 auto;
+
+        &:before {
+          display:block;
+          content:'';
+          position:absolute;
+          width:100vw; height:2px;
+          left:50%; right:0; bottom:0;
+          background-color:$color-kor-active;
+          transform:translate3d(-50%,0,0);
+          pointer-events:none;
+          z-index:1;
+        }
+        a {
+          display:block; position:relative; width:50%;
+          &:after {
+            display:block;
+            content:'';
+            position:absolute;
+            width:auto; height:2px;
+            left:percentage(3/170); right:percentage(3/170); bottom:-1px;
+            background-color:#fff;
+            opacity:0;
+          }
+          &.active {
+            z-index:1;
+            &:after {opacity:1;}
+          }
+        }
+        img {
+          width:100%;
+        }
+      }
+    }
+    .gif-wrap {
+      .gif-item {position:relative;}
+    }
+    .gif-wrap.gif-type-reading-lang {
+      display:flex;
+      justify-content:center;
+      position:relative;
+      width:percentage(920/1220);
+      gap:40px 1%; //percentage(12/1200);
+      .gif-item {
+        width:49.5%;
+        max-width:454px;
+        z-index:1;
+      }
+      .obj-item {
+        position:absolute;
+        width:percentage(834/920); height:auto;
+        top:50%; left:50%;
+        transform:translate3d(-50%,-50%,0);
+      }
+    }
+  }
+
+  // 한글 독서
+  &.sec-reading-kor {
+    .content-title {
+      .btns-wrap.type-tab {
+        &:before {background-color:$color-kor-active;}
+      }
+    }
+  }
+
+  // 영어 원서 리딩
+  &.sec-reading-eng {
+    .content-title {
+      .btns-wrap.type-tab {
+        .btns-tab-area {
+          &:before {background-color:$color-eng-active;}
+        }
+      }
+    }
+  }
+
+  /*반응형 max 992px lg*/
+  @media (max-width: $media-lg) {
+    &.sec-reading-kor,
+    &.sec-reading-eng {
+      .btns-wrap.type-tab {
+        padding-top:percentage(20/360);
+        .btns-tab-area {
+          width:100%;
+          padding:0 percentage(10/360);
+          &:before {height:vw-cal-md(2px);}
+        }
+      }
+      .swiper-content {
+        .swiper {
+          height:auto; max-height:100%;
+          .swiper-slide {
+            background-color:transparent;
+          }
+        }
+        .swiper-pagination {
+          position:relative;
+          top:auto;
+          margin-top:vw-cal-md(20px);
+        }
+      }
+      .goto-btn-wrap {
+        position:absolute;
+        width:100%; max-width:100%;
+        //width:percentage(328/360);
+        left:50%; bottom:0;
+        padding:0 percentage(16/360);
+        margin:percentage(40/360) 0;
+        transform:translate3d(-50%,0,0);
+      }
+    }
+    &.sec-reading-kor {
+    }
+    &.sec-reading-eng {
+    }
+  }
+}

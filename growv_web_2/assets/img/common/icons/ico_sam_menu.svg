@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g style="fill:#fff;stroke:#dbdbdb">
+        <rect width="24" height="24" rx="2" style="stroke:none"/>
+        <rect x=".5" y=".5" width="23" height="23" rx="1.5" style="fill:none"/>
+    </g>
+    <path data-name="선 1600" transform="translate(5 8)" style="stroke:#292929;stroke-width:1.5px;fill:none" d="M0 0h14"/>
+    <path data-name="선 1601" transform="translate(5 12)" style="stroke:#292929;stroke-width:1.5px;fill:none" d="M0 0h14"/>
+    <path data-name="선 1602" transform="translate(5 16)" style="stroke:#292929;stroke-width:1.5px;fill:none" d="M0 0h14"/>
+</svg>

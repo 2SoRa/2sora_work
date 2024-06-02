@@ -1,0 +1,105 @@
+<!-- popup : mall(도서몰 이벤트) expire popup day 00:00 for mobile -->
+<div class="popup-area pop-expire-mall" id="popExpireMall">
+    <div class="pop-dim"></div>
+    <div class="popup-wrap">
+        <div class="inner-wrap">
+            <div class="popup-header box-shadow-none-md">
+                <button type="button" class="btn-close" onclick="fnCloseExpirePopMall('popExpireMall');"><!-- 닫기 버튼 --></button>
+            </div>
+            <div class="popup">
+                <img src="/assets/img/popup/pop_mall_week_event_m.png">
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn-goto-mall" onclick="common.hrefFunction('/pages/event/event-week.html');"
+                       title="도서몰 이벤트 보러가기"><!-- 이벤트 보러 가기 링크--> </a>
+                </div>
+            </div>
+        </div>
+        <div class="popup-footer">
+<!--            <div class="check-input">-->
+<!--                <input type="checkbox" name="expireDayTime" id="checkExpireMall">-->
+<!--                <label for="checkExpireMall">7일간 다시 보지 않기</label>-->
+<!--            </div>-->
+            <div class="check-input">
+                <input type="checkbox" name="expireDayTime" id="checkExpireMall">
+                <label for="checkExpireMall">오늘 하루 안보기</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var popExpireMall = $('#popExpireMall');
+    var isPopExpireMall;
+    var isPopExpireMallCloseCheck;
+    var isMobileCheck;
+    var isClosePopExpireMall = false;
+
+    $(document).ready(function() {
+        getMobileCheck();
+
+        // id = 쿠키 이름 동일하게 설정
+        var popupMall = setExpire.getCookie('popExpireMall');
+        if(!popupMall) {
+            // console.log('해당 name으로 설정된 쿠키 없음');
+            isPopExpireMall = true;
+            if(isMobileCheck) {
+                openExpirePopMall('popExpireMall');
+            } else {
+                closeExpirePopMall('popExpireMall');
+            }
+        }
+    });
+
+    $(window).resize(function(){
+        getMobileCheck();
+    });
+
+    function getMobileCheck() {
+        if($(window).width() >= 992) {  // pc
+            if(!isMobileCheck) return;
+            // mobile => pc 로 전환될 때만 실
+            isMobileCheck = false;
+            // if(popExpireMall.hasClass('active')) {
+                closeExpirePopMall('popExpireMall');
+            // }
+        } else {            // mobile
+            if(isMobileCheck) return;
+            // pc => mobile 로 전환될 때만 실행
+            isMobileCheck = true;
+            if(!isClosePopExpireMall && isPopExpireMall) { // && !popExpireMall.hasClass('active')
+                // 닫기 버튼을 누르지 않았을 경우, 쿠키값이 존재하지 않을 경우
+                openExpirePopMall('popExpireMall');
+            }
+        }
+    }
+
+    function openExpirePopMall(thisId) {
+        // console.log('팝업 활성화, 오픈 ===> ', thisId);
+
+        $("#"+thisId).addClass('active');
+        $("body").css("overflow","hidden");
+        $("body").addClass("disabled");
+    }
+
+    function closeExpirePopMall(thisId) {
+        // console.log(' mobile! expire popup close');
+        $("#"+thisId).removeClass("active");
+        $("body").css("overflow","auto");
+        $("body").removeClass("disabled");
+
+    }
+    function fnCloseExpirePopMall(thisId) {
+        isClosePopExpireMall = true;
+        isPopExpireMallCloseCheck = true;
+        // console.log(' mobile! expire popup close');
+        closeExpirePopMall(thisId);
+
+        var chkExpire = $("#"+thisId).find('#checkExpireMall');
+        if(chkExpire.is(':checked')) {
+            console.log('체크박스 true, 쿠키 설정 ===> ', thisId);
+            isPopExpireMall = false;
+            setExpire.setCookie00(thisId, "done", 1);
+            // setExpire.setCookie00(thisId, "done", 7);
+        }
+    }
+</script>

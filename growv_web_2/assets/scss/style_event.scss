@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/* 공통(필수) scss import */
+@import "./common/import_common";
+@import "./libs/import_libs";
+@import "./layout/import_layout";
+@import "./component/import_component";
+@import "./pages/popup/import_popup";
+
+/* 이벤트 페이지 스타일 */
+@import "./pages/event/event_review";          // 후기
+@import "./pages/event/event_recommand";       // 친구 추천
+@import "./pages/event/event_kyobo";           // 교보
+@import "./pages/event/event_mall";            // 쇼핑몰 진입
+@import "./pages/event/event_lotte_card";      // 롯데카드 제휴
+@import "./pages/event/event_week";            // 전집판매 - 주간

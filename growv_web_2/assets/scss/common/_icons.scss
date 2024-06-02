@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+.ico {
+  display: inline-block;
+  background-repeat:no-repeat;
+  background-position:50% 50%;
+  background-size:contain;
+}
+.logo {
+  display:block;
+  background-repeat:no-repeat;
+  background-position:50% 50%;
+  background-size:contain;
+}
+// <> 화살표 아이콘
+.ico-arrow-r-w {
+  display:block;
+  width:5px; height:10px;
+  background: no-repeat 50% 50% url("../../assets/img/common/icons/ico_btn_arrow_r_w.svg");
+  background-size:contain;
+}
+.ico-arrow-r-blue {
+  display:block;
+  width:30px; height:38px;
+  background: no-repeat 50% 50% url("../../assets/img/common/icons/ico_swipe_arrow_r_blue.svg");
+  background-size:contain;
+}
+.ico-arrow-r-gray {
+  display:block;
+  width:30px; height:38px;
+  background: no-repeat 50% 50% url("../../assets/img/common/icons/ico_swipe_arrow_r_gray.svg");
+  background-size:contain;
+}
+.ico-link-arrow-r {
+  width: 18px; height: 18px;
+  background-image: url("../../assets/img/common/icon_arrow_r_18.svg");
+}
+// 팝업 닫기 버튼
+.ico-close-gy {
+  display:block;
+  position:absolute;
+  width:28px; height:28px;
+  background: no-repeat 0 0 url("../../assets/img/common/icons/ico_closegy.svg");
+  background-size:100% 100%;
+}
+// 썸네일 삭제 버튼
+.ico-close-w {
+  display:block;
+  position:absolute;
+  width:12px; height:12px;
+  background: no-repeat 0 0 url("../../assets/img/common/icons/ico_close_w.svg");
+  background-size:100% 100%;
+}
+.ico-play {
+  display:block;
+  position:absolute;
+  width:percentage(27/80); height:percentage(35/80);
+  top:percentage(23/80); left:percentage(31/80);
+  background: no-repeat 0 0 url("../../assets/img/common/ico_play.svg");
+  background-size:100% 100%;
+}
+
+.ico-bb-msg {
+  display:block;
+  width:26px; height:13px;
+  background: no-repeat 0 0 url("../../assets/img/common/icons/ico_bb_msg.svg");
+  background-size:100% 100%;
+}
+.ico-superV {
+  display:block;
+  width:36px; height:36px;
+  background: no-repeat 0 0 url("../../assets/img/common/icons/ico_superv.svg");
+  background-size:100% 100%;
+}
+.ico-nodata {
+  width:30px; height:30px;
+  background-image: url("../../assets/img/common/icon_nodata.svg");
+}
+.ico-cart {
+  width:24px; height:24px;
+  background-image: url("../../assets/img/common/icon_cart.svg");
+}
+.ico-cart-40 {
+  width:40px; height:40px;
+  background-image: url("../../assets/img/common/icons/icon_cart_40.svg");
+}
+.ico-like {
+  width:24px; height:24px;
+  background-image: url("../../assets/img/common/icons/icon_like.svg");
+}
+.ico-like-40 {
+  width:40px; height:40px;
+  background-image: url("../../assets/img/common/icons/icon_like_40.svg");
+}
+.ico-mypage-40 {
+  width:40px; height:40px;
+  background-image: url("../../assets/img/common/icons/icon_mypage_40.svg");
+}
+.ico-mypoint {
+  width:24px; height:24px;
+  background-image: url("../../assets/img/common/icons/icon_my_point.svg");
+}
+.ico-delivery {
+  width:24px; height:24px;
+  background-image: url("../../assets/img/common/icons/icon_delivery.svg");
+}
+.ico-coupon {
+  width:24px; height:24px;
+  background-image: url("../../assets/img/common/icons/ico_coupon.svg");
+}
+.ico-sam-menu {
+  width:24px; height:24px;
+  background-image: url("../../assets/img/common/icons/ico_sam_menu.svg");
+}
+
+// logo
+.logo-kyobo {
+  width:42px; height:12px;
+  background-image: url("../../assets/img/common/icons/logo_kyobo.svg");
+}
+.logo-sam {
+  width:38px; height:14px;
+  margin-bottom:-1px;
+  background-image: url("../../assets/img/common/icons/logo_sam.png");
+}
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+}

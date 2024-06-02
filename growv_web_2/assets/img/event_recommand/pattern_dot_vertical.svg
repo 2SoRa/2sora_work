@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2" height="330" viewBox="0 0 2 330">
+    <defs>
+        <clipPath id="qbgeydxnta">
+            <path style="fill:none" d="M0 0h2v330H0z"/>
+        </clipPath>
+    </defs>
+    <g style="clip-path:url(#qbgeydxnta)">
+        <rect data-name="사각형 25" width="2" height="8" rx="1" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 16)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 32)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 48)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 64)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 80)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 96)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 112)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 128)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 144)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 160)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 176)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 192)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 208)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 224)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 240)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 256)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 272)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 288)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 304)" style="fill:#d3d3dd"/>
+        <rect data-name="사각형 25" width="2" height="8" rx="1" transform="translate(0 320)" style="fill:#d3d3dd"/>
+    </g>
+</svg>

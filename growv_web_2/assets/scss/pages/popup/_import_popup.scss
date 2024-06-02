@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+/* 팝업 기본 베이스는 layout/_popup.scss */
+/*
+  popup_promotion : old 버전, 유투브 팝업, promotion 페이지 내의 댓글, 후기 이벤트 팝업
+  popup_join : 회원가입 페이지 내 이용약관, 개인정보처리방침, 개인정보의 마케팅 및 광고 활용 동의 팝업
+  popup_child_register : 자녀 추가 (무료 체험 신청 페이지)
+  popup_pay : 결제창 (무료 체험 신청 페이지)
+  popup_buy_request : 상담 신청 (멤버십 페이지)
+  popup_review : 리뷰 상세 보기 팝업 (후기 이벤트)
+  popup_comment : 댓글 등록 팝업 (교보 이벤트)
+  popup_coupon : SAM 이용권 팝업
+*/
+@import "popup_child_register";
+@import "popup_pay";
+//@import "popup_promotion";
+//@import "popup_join";
+@import "popup_terms";
+@import "popup_buy_request";
+@import "popup_review";
+@import "popup_comment";
+@import "popup_coupon";
+
+// 한시적 오픈
+/*
+  popup_expire_mall : 도서몰 이벤트 팝업 (7일간 다시 보지 않기)
+*/
+@import "popup_expire_mall";

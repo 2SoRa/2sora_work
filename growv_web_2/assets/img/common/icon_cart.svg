@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <path style="opacity:.3;fill:none" d="M0 0h24v24H0z"/>
+    <g transform="translate(3 2)">
+        <path d="M18.313 15.032H6.5L4.361 4.783h14.976a1.6 1.6 0 0 1 1.528 2.078z" transform="translate(-1.939 -1.158)" style="stroke:#424242;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+        <path data-name="l" d="M6.1 14.617 3.215.744H.547" transform="translate(-1.547 -.744)" style="stroke:#424242;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+        <circle cx="1.601" cy="1.601" r="1.601" transform="translate(4.557 16.541)" style="stroke:#424242;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+        <circle data-name="t" cx="1.601" cy="1.601" r="1.601" transform="translate(13.172 16.541)" style="stroke:#424242;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+    </g>
+</svg>

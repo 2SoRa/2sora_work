@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+// 스타일 우선 순위 때문에 dimlayer_z 선언
+.dimlayer_z.pop-agree {
+  .fullpop_item {
+    max-width:564px;
+
+    .fullpop_titlow {
+      justify-content:center;
+      padding:30px;
+      background-color:#fff;
+
+      &:after {
+        display:block;
+        position:absolute;
+        content:'';
+        width:calc(100% - 60px); height:1px;
+        left:50%; bottom:0; transform:translate3d(-50%,-50%,0);
+        background-color:#c2c2c2;
+      }
+
+      .title-text {
+        color:#292929;
+      }
+      .btn_layerclose {
+        position:absolute;
+        right:30px;
+        top:50%; transform:translate3d(0,-50%,0);
+      }
+    }
+
+    .fullpop_contlow {
+      width:100%;
+      padding:20px 30px;
+      margin:0;
+      box-sizing: border-box;
+
+      * {
+        word-break: keep-all;
+      }
+
+      dt {
+        margin-top: 30px;
+        margin-bottom: 0;
+        font-size: 1.4rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+
+        &:first-child {margin-top:0;}
+        .mtit {
+          margin-top: 0;
+          margin-bottom: 0;
+          font-size: 1.4rem;
+          font-weight: 700;
+          letter-spacing: -0.5px;
+        }
+        .stit {
+          font-size: 1.4rem;
+          line-height:1.57;
+          letter-spacing: -0.4px;
+          text-align: left;
+          font-weight: bold;
+          margin-top: 15px;
+        }
+      }
+      dd {
+        margin-top: 10px;
+        font-size: 1.4rem;
+        line-height:1.57;
+        letter-spacing: -0.4px;
+        text-align: left;
+      }
+    }
+
+
+    .tbl-item-wrap {
+      max-width: 100%;
+      overflow: auto;
+    }
+    table {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+      //table-layout: fixed;
+      table-layout: auto;
+      border: 0;
+      border-collapse: collapse;
+      th {
+        height: 40px;
+        border: 1px solid #CCCCCC;
+        background: #fff;
+        font-size: 1.4rem;
+        line-height:1.57;
+        text-align: center;
+        color: #303030;
+      }
+      td {
+        height: 40px;
+        padding: 5px;
+        border: 1px solid #CCCCCC;
+        background: #fff;
+        font-size: 1.4rem;
+        line-height:1.57;
+        //text-align: left;
+        color: #303030;
+      }
+      .ac {
+        text-align: center;
+      }
+    }
+    ul {
+      li {
+        font-size:1.4rem; //1.2rem
+        line-height:1.57;
+      }
+    }
+  }
+}
+
+
+// 약관 동의 별 커스텀
+#agree-01 .fullpop_contlow table td,
+#agree-03 .fullpop_contlow table td {
+  word-break: break-word;
+}
+#agree-02 .fullpop_contlow table td {
+  word-break: keep-all;
+}
+
+
+@media (max-width:$media-lg) {
+  .dimlayer_z.pop-agree {
+    .fullpop_item {
+      width: 100%;
+      height: 100%;
+      max-width:100%;
+      border-radius: 0;
+      min-height: 100vh;
+      background-color: #fff;
+      .fullpop_titlow {
+        height:6rem;
+        padding:0 1.6rem;
+        box-shadow:0 1px 8px rgba(0,0,0,0.1);
+        z-index:1;
+        &:after {display:none;}
+        .title-text {font-size:1.8rem;}
+        .btn_layerclose {
+          right:1.6rem;
+        }
+      }
+      .fullpop_contlow {
+        width:100%;
+        padding:4rem 1.6rem;
+        height:calc(100% - 6rem);
+        .fullpop_contlow_in {height:100%;}
+        dt {
+          .mtit,
+          .stit {
+            font-weight: 700;
+            letter-spacing: -0.5px;
+          }
+        }
+        dd {
+          margin-top:0;
+        }
+      }
+
+      table {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        table-layout: auto;
+        border: 0;
+        border-collapse: collapse;
+      }
+    }
+  }
+
+  // 약관 동의 별 커스텀
+  #agree-01 .fullpop_contlow table td,
+  #agree-03 .fullpop_contlow table td {
+    word-break: break-word;
+  }
+  #agree-02 .fullpop_contlow table td {
+    word-break: keep-all;
+  }
+  #agree-01 .fullpop_contlow dl dd .tbl-item-wrap {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    overflow-x: auto;
+  }
+}

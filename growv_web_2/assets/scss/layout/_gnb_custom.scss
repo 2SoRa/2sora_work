@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+header {min-height:102px;}
+.hd_wrap {
+  height:auto;
+  max-height:156px;
+}
+// 찜, 전용몰 마이페이지, 장바구니 영역추가
+.hd_point {
+  .hd_point_r {
+    .brand_top_cart {
+      margin: 0rem 1rem 0rem .2rem;
+      .btn-hd-round {
+        padding: 0 16px 0 14px;
+        .ico-cart {
+          min-width: 24px;
+          margin-right: .8rem;
+        }
+      }
+    }
+  }
+}
+
+// sub gnb none (무료체험신청, 신청폼, 신청완료 페이지)
+.sub-gnb-none {
+  .hd_wrap {
+    border-bottom:#EBEBEB 1px solid;
+  }
+  .h_menu {box-shadow:none; border-bottom:#EBEBEB 1px solid;}
+  header {
+    .hd_menu {display:none;}
+  }
+}
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  // header display
+  header {
+    min-height:0;
+    .h_menu.main {display:block;}
+    .h_menu.sub {display:none;}
+  }
+  .page-payment {
+    header {
+      .h_menu.main {display:none;}
+      .h_menu.sub {display:block;}
+    }
+  }
+
+  // element custom
+  .h_menu {
+    .container {
+      justify-content:center;
+    }
+    .h_btn {
+      position:absolute;
+      left:1.6rem;
+    }
+    .h_l_icon {
+      position: absolute;
+      left: 4.8rem;
+    }
+    .h_r_icon {
+      position:absolute;
+      right:1.6rem;
+    }
+  }
+  .m_hd_menu {
+    height:100vh;
+    padding-bottom:0;
+
+    .container {padding-bottom:12rem;} //16rem
+    .txt-name {
+      font-weight:inherit;
+      color:$color-active-purple;
+    }
+    a {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+
+/*반응형 max 767px md*/
+@media (max-width: $media-md) {
+}

@@ -1,0 +1,387 @@
+@charset "UTF-8";
+
+/*
+event-lotte-card 롯데카드 이벤트 페이지 스타일
+슈퍼리딩, 슈퍼브이 동일한 레이아웃, 스타일 구조를 갖고 있어 리딩에서 작업 후 컴파일된 css 브이에서 커스텀 (최대한 기존 클래스에 의존하지 않는 형태로 작업)
+*/
+
+.event-lotte-card {
+  .container-fluid {padding-bottom:0;
+    .inner-wrap {
+      position:relative;
+      overflow:hidden;
+    }
+  }
+  .sec {
+    display:block;
+    position:relative;
+    width:100%;
+    transform:none;
+    &.has-triangle {
+      &:after {
+        display:block;
+        content:'';
+        position:absolute;
+        width:0; height:0;
+        top:0; left:50%;
+        border-style:solid;
+        border-width:18px 20px 0 20px;
+        border-color:#FF4532 transparent transparent transparent;
+        transform:translate3d(-50%,0,0);
+      }
+    }
+  }
+  .content-body {
+    width:100%;
+    max-width:1200px;
+    padding:0;
+    margin:0 auto;
+
+    .content-area-half-lg {
+      width:50%;
+    }
+    picture {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width:100%; height:auto;
+      margin: auto;
+    }
+  }
+
+  .sec-kv {
+    position:relative;
+    background-color:pink;
+    &:before {
+      display:block;
+      content:'';
+      position:absolute;
+      width:100%; height:100%;
+      top:0; left:50%;
+      transform:translate3d(-50%,0,0);
+      background-repeat:no-repeat;
+      background-position:center bottom;
+      background-size:cover;
+      background-image: url("../../assets/img/event_lotte_card/kv_bg.png");
+    }
+    .content-body {
+      position:relative;
+      padding:0;
+    }
+    .kv-img-wrap {
+      position:relative;
+    }
+  }
+
+  .sec-1 {background-color:#2c2852;
+    .content-body {
+      max-width:100%;
+      color:#fff;
+    }
+    .info-list-wrap {
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      width:100%;
+      padding:50px 0;
+      &:before {
+        display:block;
+        content:'';
+        position:absolute;
+        width:percentage(656/1920); height:100%;
+        top:0; left:0; bottom:0;
+        background-color:#39365b;
+      }
+      > li {
+        position:relative;
+        margin-top:16px;
+        &:first-child {margin-top:0;}
+      }
+    }
+    .info-list {
+      display:flex;
+      justify-content:space-between;
+      align-items:start;
+      flex-wrap:wrap;
+      font-size:20px;
+      line-height:1.4;
+      letter-spacing:-0.36px;
+      font-weight:500;
+      color:#fff;
+      dt {
+        display:flex;
+        justify-content:flex-end;
+        position:relative;
+        width:percentage(656/1920);
+        box-sizing:border-box;
+        .dt-tit {
+          display:block;
+          width:100%;
+          max-width:160px;
+          padding-right:30px;
+          i.pc {display:inline; font-style:normal;}
+        }
+        opacity:0.6;
+      }
+      dd {
+        width:percentage(1264/1920);
+        padding-left:30px;
+        box-sizing:border-box;
+      }
+      small {
+        display:block;
+        margin-top:10px;
+        font-size:14px;
+        line-height:1;
+        color:#fff;
+        opacity:0.6;
+      }
+    }
+  }
+
+  .sec-2 {
+    padding-bottom:30px;
+    &.has-triangle {
+      &:after {border-color:#2c2852 transparent transparent transparent;}
+    }
+    .content-body {
+      display:flex;
+      .content-area-half-lg {
+        &.area-r {padding-top:70px;}
+      }
+    }
+    .btn-card-view {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      width:240px; height:56px;
+      margin-top:30px;
+      border-radius:4px;
+      background-color:#2c2852;
+      font-size:18px;
+      line-height:1;
+      letter-spacing:-0.72px;
+      font-weight:$font-bold;;
+      color:#fff;
+    }
+  }
+
+  .sec-3 {
+    padding-bottom:100px;
+    background-color:#fff2ed;
+    &.has-triangle {
+      &:after {border-color:#fff transparent transparent transparent;}
+    }
+    .area-1 {
+      .txt-desc {
+        display:block;
+        margin-top:30px;
+        font-size:14px;
+        line-height:1.2;
+        text-align:center;
+        color:#8f8f8f;
+      }
+      .btn-event-enter {
+        display:block;
+        width:percentage(750/1200); height:auto;
+        margin:63px auto 0;
+        img {width:100%;}
+      }
+    }
+    .area-2 {
+      width:percentage(1120/1200);
+      max-width:1120px;
+      padding:40px 60px;
+      margin:80px auto 0;
+      border-radius:8px;
+      background-color:rgba(255, 255, 255, 0.48);
+      box-sizing:border-box;
+
+      .dot-list-tit {
+        display:block;
+        margin-bottom:13px;
+        font-size:16px;
+        letter-spacing:-0.32px;
+        font-weight:$font-bold;
+      }
+      .dot-list {
+        display:block;
+        color:#8f8f8f;
+        li {
+          display:block;
+          position:relative;
+          padding-left:7px;
+          margin:5px 0;
+          font-size:12px;
+          line-height:1.5;
+          letter-spacing:-0.24px;
+
+          &:before {
+            display:block;
+            content:'';
+            position:absolute;
+            width:3px; height:3px;
+            top:7px; left:0;
+            border-radius:50%;
+            background-color: #8f8f8f;
+          }
+
+          &.has-bot-line {
+            text-decoration:underline;
+          }
+
+          &.txt-em {
+            margin-top:16px;
+            font-weight:$font-bold;
+            color:#424242;
+            &:before {background-color:#424242;}
+          }
+        }
+      }
+      .hyphen-list {
+        li {padding-left:0;
+          &:before {display:none;}
+        }
+      }
+
+      .em-list {
+        margin-top:4px;
+        font-weight:$font-bold;
+        color:#424242;
+        font-size:12px;
+        line-height:1.5;
+        letter-spacing:-0.24px;
+        li {margin:4px 0;}
+        & + .dot-list {margin-top:16px;}
+      }
+    }
+  }
+}
+
+@media (max-width: $media-lg) {
+  .event-lotte-card {
+    .sec {padding:0 16px; box-sizing:border-box;
+      &.has-triangle {
+        &:after {
+          border-width:20px 20px 0 20px;
+        }
+      }
+    }
+    .content-body {
+      .content-area-half-lg {
+        width:100%;
+      }
+      picture {
+        img {width:100%; height:auto;}
+      }
+    }
+
+    .sec-kv {padding:0;
+      &:before { display:none;}
+      .content-body {
+        position:relative;
+        padding:0;
+      }
+      .kv-img-wrap {
+        position:relative;
+      }
+    }
+
+    .sec-1 {background-color:#2c2852;
+      .content-body {
+        color:#fff;
+      }
+      .info-list-wrap {
+        padding:vw-cal-md(36px) 0;
+        &:before {
+          display:none;
+        }
+        > li {
+          margin-top:vw-cal-md(10px);
+          &:first-child {margin-top:0;}
+        }
+      }
+      .info-list {
+        padding:0;
+        font-size:vw-cal-md(14px);
+
+        dt {
+          width:27.4%;
+          .dt-tit {max-width:100%; padding-left:0;}
+        }
+        dd {width:72.6%; padding-left:0;}
+        small {
+          margin-top:vw-cal-md(4px);
+          font-size:vw-cal-md(12px);
+        }
+      }
+    }
+
+    .sec-2 {padding:0 0 vw-cal-md(40px);
+      .content-body {
+        display:block;
+        .content-area-half-lg {
+          &.area-r {padding-top:0;}
+        }
+      }
+      .btn-card-view {
+        width:percentage(328/360); height:vw-cal-md(48px);
+        margin:vw-cal-md(24px) auto 0;
+        border-radius:vw-cal-md(4px);
+        font-size:vw-cal-md(16px);
+        letter-spacing:-0.64px;
+      }
+    }
+
+    .sec-3 {padding:0;
+      .area-1 {
+        .txt-desc {
+          padding:0 percentage(16/360);
+          margin-top:vw-cal-md(16px);
+          font-size:vw-cal-md(12px);
+          line-height:1.33;
+        }
+        .btn-event-enter {
+          width:percentage(352/360); height:auto;
+          margin-top:vw-cal-md(34px);
+        }
+      }
+      .area-2 {
+        width:100%;
+        padding:vw-cal-md(30px 16px);
+        margin-top:vw-cal-md(40px);
+        border-radius:0;
+
+        .dot-list-tit {
+          margin-bottom:vw-cal-md(8px);
+          font-size:vw-cal-md(12px);
+          letter-spacing:-0.24px;
+        }
+        .dot-list {
+          li {
+            margin:vw-cal-md(5px) 0;
+            font-size:vw-cal-md(12px);
+            line-height:1.33;
+
+            &:before {
+              width:3px; height:3px;
+              top:vw-cal-md(7px);
+            }
+            &.txt-em {
+              margin-top:vw-cal-md(18px);
+            }
+          }
+        }
+        .em-list {
+          margin-top:vw-cal-md(4px);
+          font-size:vw-cal-md(12px);
+          line-height:1.33;
+          li {margin-top:vw-cal-md(4px);}
+          & + .dot-list {margin-top:vw-cal-md(18px);}
+        }
+      }
+    }
+  }
+}

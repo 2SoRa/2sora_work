@@ -1,0 +1,386 @@
+@charset "UTF-8";
+
+/* 무료체험 신청 페이지 (form) */
+.event-free-experi {
+  //width: 100%;
+  //max-width: 700px;
+  //height: max-content;
+  //margin: auto;
+  //padding-bottom:0;
+  //border-color: #DEDEDE;
+
+  .inner-wrap {
+    width: 100%;
+    max-width: 700px;
+    height: max-content;
+    margin: auto;
+    padding: 40px 0 0 0;
+    border-color: #DEDEDE;
+  }
+
+  /* 제목 */
+  .title {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    line-height:1.56;
+    color: #292929;
+
+    span {
+      padding: 6px 8px;
+      background-color: #8B51E2;
+      border-radius: 4px;
+      letter-spacing: -0.64px;
+      color: #FFFFFF;
+    }
+  }
+
+  /* 폼 영역 */
+  .form-area {
+    gap: 30px;
+  }
+
+  fieldset {
+    display: flex;
+    flex-direction: column;
+
+    .form-title {
+      width: 100%;
+      margin-bottom: 12px;
+      font-size: 16px;
+      color: #292929;
+      font-weight: bold;
+      line-height: 1.13;
+    }
+  }
+
+  .flex {
+    display:flex;
+
+    &.dir-col {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    // 자녀 정보
+    &.child-info {
+      gap: 8px;
+      margin: 10px 0 0;
+
+      .h-48 {
+        width: 169px;
+      }
+    }
+
+    &:has(.form-title) {
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    > .form-title {
+      width: fit-content;
+      margin-right: 8px;
+      margin-bottom:0;
+      font-weight: bold;
+    }
+    .info {
+      text-indent: 0;
+      margin-top: 0;
+    }
+  }
+
+  /* 인풋 + 버튼 형식 */
+  .input-button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 8px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    input {
+      //width: calc(100% - 124px);
+      width:100%;
+      position: relative;
+    }
+    > div {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      input {width: 100%;}
+    }
+  }
+
+  /* 안내 문구 */
+  .info {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #8B51E2;
+    text-indent: 16px;
+
+    &.gray {color: #A8A8A8;}
+  }
+
+  .cert-count {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    right: 16px;
+    bottom: 0;
+    margin: auto;
+    font-size: 12px;
+    color: #FF5050;
+    font-weight: bold;
+  }
+
+  /* 밸리데이션 안내 문구 */
+  .vali {
+    font-size: 12px;
+    color: #8B51E2;
+    text-indent: 16px;
+    &:before {
+      display: none;
+      content: '';
+      margin-top: 4px;
+      letter-spacing: -0.24px;
+      font-size: 12px;
+      text-indent: 0;
+    }
+    &.sendOk:before {display: inline-block; content: attr(sendOk);}
+    &.certOk:before {display: inline-block; content: attr(certOk);}
+    &.certFail:before {  display: inline-block; content: attr(certFail); color: #FF5050;}
+  }
+
+  /* 라디오 - 태블릿 선택 */
+  .radio-group{
+    &.sibling {
+      display: flex;
+      gap: 30px;
+    }
+    &.square {
+      display: flex;
+      width: 100%;
+      max-width: max-content;
+      justify-content: stretch;
+      flex-wrap: nowrap;
+      gap: 8px;
+
+      label {
+        font-weight: bold;
+      }
+      .flex {
+        width: 346px;
+        height: 132px;
+        padding: 19px 0;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        border: 1px solid #DBDBDB;
+        border-radius: 4px;
+
+        img {max-width: 117px;}
+      }
+    }
+  }
+
+  /* 상담시간 선택 */
+  .counsel {
+    gap: 30px;
+    padding-bottom: 10px;
+  }
+
+  /* 개인정보 수집 및 이용 동의 */
+  .agreement {
+    display: flex;
+    padding-top: 40px;
+    justify-content: center;
+    border-top: 1px solid #DBDBDB;
+    font-size: 16px;
+    span {
+      display: inline-block;
+      color: #8B51E2;
+      margin-right: 2px;
+    }
+    a {
+      width: 18px;
+      height: 18px;
+      margin-left: 8px;
+    }
+  }
+
+  .btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto 0;
+  }
+
+  /*반응형 max 992px lg*/
+  @media (max-width: $media-lg) {
+
+    .inner-wrap {
+      max-width: 100%;
+      padding: 40px 0 0;
+    }
+
+    /* 제목 */
+    .title {
+      margin-bottom: 45px;
+      font-size: 22px;
+      span {
+        padding: 5px;
+      }
+    }
+    .form-area {
+      gap: 30px;
+    }
+    .flex {
+      &.dir-col {
+        gap: 8px;
+      }
+
+      &.child-info {
+        margin: 8px 0 4px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .h-48 {
+          width: 31.7%;
+          flex: 1;
+          color: inherit;
+          &:last-child {
+            width: 100%;
+            flex-basis: auto;
+          }
+        }
+      }
+
+      &:has(.info) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .info {
+        margin: 0 0 16px;
+        font-size: 14px;
+        line-height: 1.43;
+      }
+    }
+
+    /* 폼 영역 타이틀 */
+    fieldset {
+      padding: 0 16px;
+
+      .form-title {
+        margin-bottom: 16px;
+      }
+      > .flex {
+        flex-direction: column;
+        gap: 16px;
+        &.child-info {
+          flex-direction: row;
+        }
+        .form-title {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    /* 자녀 정보 */
+    select {
+      padding: 8px;
+      background-image: url("https://cdnfiles.superv.com/reading_img/icon_bottom_arrow@3x.png");
+      background-repeat: no-repeat;
+      background-position: center right 8px;
+      background-size: 18px 18px;
+      background-color: #FFFFFF;
+    }
+
+    /* 인풋 + 버튼 형식 */
+    .input-button {
+      gap: 4px;
+      margin-bottom: 8px;
+      input {
+        //width: calc(100% - 98px);
+        width:100%;
+      }
+    }
+
+    /* 안내문구 */
+    .info {
+      font-size: 12px;
+    }
+
+    /* 형제 선택 */
+    .radio-group {
+      &.sibling {
+        gap: 10px;
+
+        .radio-input {
+          width: 48%;
+        }
+      }
+
+      /* 태블릿 선택 */
+      &.square {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        justify-content: stretch;
+        flex-wrap: nowrap;
+        gap: 8px;
+
+        label {
+          font-weight: bold;
+        }
+        .flex {
+          /*width: 156px; height: 200px;*/
+          width: 50%;
+          height: 200px;
+          padding: 0 0 20px;
+          flex-direction: column;
+          gap: 0;
+          border: 1px solid #DBDBDB;
+          border-radius: 4px;
+          img {
+            max-width: 156px;
+          }
+          &:last-child img {
+            margin-top: 3px;
+          }
+        }
+      }
+    }
+
+    /* 상담시간 선택 */
+    .counsel {
+      flex-direction: column;
+      gap: 16px;
+      padding-bottom: 10px;
+    }
+    .mobile.line {
+      position: absolute;
+      width: 100%;
+      height: 10px;
+      right: -5%;
+      bottom: -30px;
+      left: -5%;
+      background-color: #F5F5F5;
+      margin: auto;
+    }
+
+    /* 개인정보 수집 및 이용 동의 */
+    .agreement {
+      padding: 30px 0;
+      border-top: none;
+      font-weight: bold;
+      img { margin-left: 6px; }
+    }
+    .btn-wrap {
+      width: 100%; position: sticky; margin-top:0; bottom: -3px;
+      .btn { width: 100%; border-radius: 0; }
+      .btn.btn-big {width:100%;}
+    }
+  }
+}

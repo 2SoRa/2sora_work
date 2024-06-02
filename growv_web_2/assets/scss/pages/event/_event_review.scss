@@ -1,0 +1,237 @@
+@charset "UTF-8";
+
+.event-vscan-review {
+  .container-fluid {
+    background-color:#ffeadb;
+  }
+  .sec-kv {
+    z-index:1;
+  }
+  .sec-1 {
+    margin-top:-142px;
+    padding:205px 0 80px;
+    background: rgb(251,226,226);
+    background: linear-gradient(180deg, rgba(251,226,226,1) 0%, rgba(251,226,226,1) 49%, rgba(255,80,80,1) 55%);
+    &:before {
+      display:block;
+      content:'';
+      position:absolute;
+      width:percentage(3000/1920);
+      height:vw-cal-lg(1000px);
+      max-height:1000px;
+      //padding-top:percentage(1000/1920);
+      top:0; left:50%;
+      transform:translate3d(-50%,0,0);
+      background:no-repeat center 10% url("../../assets/img/event_vscan_review/sec_1_bg.png");
+      background-size:cover;
+      z-index:-1;
+    }
+    .content-title {
+      height:auto;
+      flex-direction:column;
+      .title-info-period {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:24px;
+        position:relative;
+        width:500px; height:49px;
+        padding:0 10px; // 0 27px
+        border-radius:24.5px;
+        background-color:#ffec83;
+        font-size:20px;
+        line-height:1.2;
+        font-weight:600;
+        color:#ff5050;
+
+        strong {
+          position:relative;
+          font-weight:700;
+          padding-left:13px;
+          &:before {
+            display:block;
+            position:absolute;
+            content:'';
+            top:50%; left:0;
+            width:6px; height:6px;
+            margin-top:-3px;
+            border-radius:50%;
+            background-color:#ff5353;
+          }
+        }
+      }
+      .title-info-gift {
+        margin-top:12px;
+        font-size:18px;
+        font-weight:600;
+        color:#fff;
+      }
+    }
+    .content-body {
+      width:100%;
+      max-width:1120px;
+      margin-top:20px;
+      padding:0;
+      .round-box-wrap {
+        position:relative;
+        width:100%;
+        //max-height:820px;
+        border-radius:20px;
+        background-color:#fff;
+        box-shadow:0 8px 20px 0 rgba(0, 0, 0, 0.12);
+      }
+
+      .btn-img-gift-area {
+        position:relative;
+        width:percentage(1200/1120);
+        height:auto;
+        margin-left:-40px;
+        .btn-tag-copy {
+          position:absolute;
+          width:160px;
+          right:percentage(60/1200);
+          bottom:65px;
+          z-index:1;
+        }
+      }
+      .btn-wrap {
+        position:relative;
+        margin-top:30px;
+        text-align:center;
+        z-index:10;
+        .btn.btn-big {
+          width:percentage(720/1120);
+          //width:720px;
+          height:auto;
+          padding:0;
+          background:none;
+          &:disabled {background:none !important;}
+        }
+      }
+      .info-list {
+        position:relative;
+        width:100%;
+        margin-top:-45px;
+        padding:75px percentage(243/1120) 60px;
+        border-bottom-left-radius:20px;
+        border-bottom-right-radius:20px;
+        font-weight:600;
+        color:#9b9b9b;
+        overflow:hidden;
+        &:before {
+          display:block;
+          content:'';
+          position:absolute;
+          width:100%; height:100%;
+          top:0; left:0;
+          background-color:#f5f5f5;
+        }
+        li {
+          position:relative;
+          margin-top:0;
+          font-size:14px;
+          line-height:1.57;
+          letter-spacing:-0.28px;
+        }
+      }
+    }
+  }
+  .sec-2 {
+    background-color:#fff;
+    //padding:80px 0;
+  }
+}
+
+@media (max-width: $media-lg) {
+  .event-vscan-review {
+    .sec-kv {
+      z-index:0;
+    }
+    .sec-1 {
+      margin-top:-15%;
+      padding:0;
+      background:none;
+      &:before {display:none;}
+      .content-title {
+        position:absolute;
+        width:100%;
+        top:vw-cal-md(55px); left:0; right:0;
+        padding:0 16px;
+        z-index:1;
+        .title-info-period {
+          width:100%; height:vw-cal-md(44px);
+          gap:vw-cal-md(11px);
+          //padding:vw-cal-md(0px 15px);
+          border-radius:vw-cal-md(22px);
+          font-size:vw-cal-md(14px);
+          letter-spacing:-0.6px;
+          strong {padding-left:0;
+            &:before {display:none;}
+          }
+        }
+        .title-info-gift {
+          margin-top:vw-cal-md(8px);
+          font-size:vw-cal-md(14px);
+        }
+      }
+      .content-body {
+        margin-top:0;
+        .round-box-wrap {
+          //background:none;
+          padding-bottom:vw-cal-md(40px);
+          border-radius:0;
+          box-shadow:none;
+          // #ff5353
+          background:no-repeat center bottom url("../../assets/img/event_vscan_review/sec_1_bg_2_m.png");
+          background-size:100% auto;
+        }
+        .btn-img-gift-area {
+          width:100%;
+          margin:0;
+          .btn-tag-copy {
+            width:percentage(100/360);
+            right:percentage(16/360); bottom:0;
+            margin-bottom:percentage(178/360);
+          }
+        }
+        .btn-info-list-area {
+          width:percentage(320/360);
+          margin:vw-cal-md(-10px) auto 0;
+          padding:vw-cal-md(20px) 0 0;
+          background-size:100% auto;
+          border-bottom-left-radius: 20px;
+          border-bottom-right-radius: 20px;
+          background-color:#fff;
+          box-shadow:0 8px 20px 0 rgba(0, 0, 0, 0.12);
+          overflow:hidden;
+        }
+        .btn-wrap {
+          margin:0;
+          padding:0 percentage(16/320);
+          .btn.btn-big {
+            width:100%;
+          }
+        }
+        .info-list {
+          padding:vw-cal-md(50px) percentage(16/320) vw-cal-md(36px);
+          margin-top:vw-cal-md(-29px);
+
+          li {
+            &:first-child {margin-top:0;}
+            padding-left:vw-cal-md(8px);
+            margin-top:vw-cal-md(2px);
+            font-size:vw-cal-md(12px);
+            line-height:1.5;
+            letter-spacing:-0.24px;
+            text-indent:vw-cal-md(-8px);
+          }
+        }
+      }
+    }
+    .sec-2 {
+      //padding:vw-cal-md(40px 0px);
+    }
+  }
+}
+
+

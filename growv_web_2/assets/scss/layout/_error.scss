@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+
+/* 404 */
+.not-found-page {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  height:800px;
+  min-height:100vh;
+  padding:80px;
+  text-align:center;
+  box-sizing:border-box;
+  .top-logo {
+    margin:0 auto; //0 auto 100px
+    a {
+      display:block;
+      width:160px;
+      height:70px;
+      background: no-repeat 0 0 url("../img/common/logo_superv_160.svg");
+      background-size:contain;
+    }
+  }
+  .error-item {
+    margin:auto 0;
+    .error-item-img {
+      width:160px;
+      margin:0 auto;
+    }
+    .error-item-txt {
+      margin-top:30px;
+      font-size:1.8rem;
+      line-height:1.66;
+    }
+  }
+}
+
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  .not-found-page {
+    height:vw-cal-md(400px);
+    padding:vw-cal-md(84px) 0;
+    .top-logo {
+      margin-bottom:vw-cal-md(50px);
+      a {
+        width:vw-cal-md(106px);
+        height:vw-cal-md(46px);
+      }
+    }
+    .error-item {
+      .error-item-img {
+        width:vw-cal-md(86px);
+        height:vw-cal-md(100px);
+      }
+      .error-item-txt {
+        margin-top:vw-cal-md(20px);
+        font-size:1.6rem;
+        line-height:1.5;
+      }
+    }
+  }
+}

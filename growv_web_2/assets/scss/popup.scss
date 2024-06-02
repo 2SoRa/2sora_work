@@ -1,0 +1,224 @@
+@charset "UTF-8";
+@import "./common/variables";
+
+/*
+fullpopup 스타일의 잔해
+payment 결제 팝업 스타일 더 정리하기
+*/
+.fullpop_dim {
+  display:block;
+  width:100%; height:100%;
+  position:fixed;
+  top:0; left:0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.68);
+}
+.pop_dim {
+  display:block;
+  width:100%; height:100%;
+  position:fixed;
+  top:0; left:0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.68);
+}
+.fullpop_item {
+  box-sizing: border-box;
+  z-index: 20;
+  max-width: 800px;
+  margin: 30px auto;
+  max-height: calc(100% - 60px);
+  position: relative;
+  flex-direction: column;
+  box-shadow: 2px 2px 14px 2px rgba(64, 64, 64, 0.3);
+  border-radius: 30px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &.wtype2 {
+    max-width: 520px;
+  }
+  &.wtype3 {
+    max-width: 630px;
+  }
+
+}
+.fullpop_titlow {
+  flex: 0;
+  background: #fff;
+  border-radius: 30px 30px 0 0;
+  padding: 10px;
+  position: relative;
+
+  .btn_layerclose {
+    position:absolute;
+    width:24px;
+    height:24px;
+    right:30px;
+    background: 0 0 url("../img/common/icons/ico_close_gy.svg") no-repeat;
+    background-size:100% 100%;
+  }
+
+  &.type2 {
+    .fullpop_title_fxwrap {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .fullpop_title {
+      font-size: 19px;
+    }
+  }
+  &.dtype2 {
+    .fullpop_title_fxwrap {
+      background-color:transparent;width:100%;
+    }
+    .fullpop_title {
+      color: #fff;
+    }
+  }
+}
+.fullpop_title {
+  font-size: 22px;
+  color: #fff;
+  font-family: "GmarketSansBold";
+  line-height: 1.2;
+  position: relative;
+  top: 2px;
+}
+.fullpop_tsub {
+  font-family: "GmarketSansMedium";
+}
+.fullpop_contlow {
+  border-top: 0;
+  border-radius: 0;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+  overflow: overlay;
+  flex: 1;
+}
+.fullpop_contlow_in,
+.pop_contents_item {
+  padding: 24px 50px 70px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+// 스크롤 커스텀 스타일
+.fullpop_contlow,
+.fullpop_contlow_in {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
+}
+
+#payPop {
+  .fullpop_item {
+    max-width: 700px;
+    height: 580px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+    .modal-body {
+      padding: 0 35px;
+    }
+  }
+  .fullpop_titlow {
+    display: none;
+  }
+  > .fullpop_item{
+    .fullpop_contlow {
+      height: 580px;
+      padding: 0;
+    }
+  }
+}
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  .dimlayer_z {
+    > .fullpop_item {
+      .fullpop_titlow{padding:0 20px;}
+    }
+  }
+  .fullpop_titlow,
+  .fullpop_contlow,
+  .fullpop_item {
+    border-radius: 0;
+  }
+  .fullpop_item {
+    padding: 0;
+    margin: 0;
+    max-height: 100% !important;
+    height: auto;
+    width: calc( 100% - 40px );    border-radius: 12px;
+    max-width: 100% !important;
+  }
+
+  .fullpop_titlow {
+    padding: 0;
+
+    .btn_layerclose {
+      right:1.6rem;
+    }
+    &.dtype2 {
+      .fullpop_title_fxwrap{padding:4px 30px 0 30px;text-align:center;}
+    }
+  }
+  .fullpop_title {
+    font-size: 16px !important;
+    top: 0px;
+  }
+
+  /* 12.02 결제 팝업 관련 스타일 수정 모바일  -이소라 */
+  #payPop {
+    .fullpop_item {
+      max-width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      border-radius: 0;
+      width: 100%;
+      .modal-body {
+        padding: 0;
+      }
+    }
+    .fullpop_titlow {
+      display: none;
+    }
+    > .fullpop_item {
+      .fullpop_contlow {
+        height: 100vh;
+        padding: 0;
+      }
+    }
+  }
+}
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  @supports (-webkit-appearance:none) and (stroke-color: transparent) {
+    .pop_wrap {min-height: -webkit-fill-available;}
+  }
+}

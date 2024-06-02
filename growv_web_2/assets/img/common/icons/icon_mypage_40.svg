@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <clipPath id="b8z4beisba">
+            <path transform="translate(1690 134)" style="stroke:#424242;fill:#fff;opacity:.3" d="M0 0h28v28H0z"/>
+        </clipPath>
+    </defs>
+    <path data-name="G" style="fill:none" d="M0 0h40v40H0z"/>
+    <g transform="translate(-1684 -128)" style="clip-path:url(#b8z4beisba)">
+        <circle cx="5" cy="5" r="5" transform="translate(1699 138)" style="stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none;stroke:#424242"/>
+        <path d="M25 22c0-5.523-4.924-10-11-10S3 16.477 3 22" transform="translate(1690 136)" style="stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none;stroke:#424242"/>
+    </g>
+</svg>

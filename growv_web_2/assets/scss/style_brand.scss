@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* 공통(필수) scss import */
+@import "./common/import_common";
+@import "./libs/import_libs";
+@import "./layout/import_layout";
+@import "./component/import_component";
+@import "./pages/popup/import_popup";
+
+/* 메인, 멤버십, 유아 독서 프로그램, 영어 원서 리딩, 개인정보처리방침, 이용약관 */
+@import "./pages/main";
+@import "./pages/membership";
+@import "./pages/reading_program";
+@import "./pages/eng_reading";
+@import "./pages/terms_policy";
+
+/* 무료 체험 안내(메인, 제휴 랜딩) 페이지 */
+@import "./pages/promotion";
+@import "./pages/promotion_landing";
+
+/* 무료 체험 신청 페이지(폼), 완료 페이지 */
+@import "./pages/free_experience";
+@import "./pages/free_experience_complete";

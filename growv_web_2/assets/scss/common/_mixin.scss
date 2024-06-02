@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+// usage :  width: vw-cal-md(50px);
+@function vw-cal-lg($value-px){
+  // $calc : calc($px / $min-width-pc) * 100vw;
+  $value : null;
+
+  @if(length($value-px) == 1) { // 기본값 vw
+    $value : calc($value-px / $width-xl) * 100vw;
+  } @else if(length($value-px) > 1) {
+    @each $px in $value-px {
+      @if(type-of($px) == string) {
+        $value : append($value, auto);
+      } @else {
+        $value : append($value, calc($px / $width-xl) * 100vw);
+      }
+    }
+  }
+  @return $value;
+}
+
+@function vw-cal-md($value-px){
+  // $calc : calc($px / $min-width-pc) * 100vw;
+  $value : null;
+
+  @if(length($value-px) == 1) { // 기본값 vw
+    $value : calc($value-px / $psd-mo-width) * 100vw;
+  } @else if(length($value-px) > 1) {
+    @each $px in $value-px {
+      @if(type-of($px) == string) {
+        $value : append($value, auto);
+      } @else {
+        $value : append($value, calc($px / $psd-mo-width) * 100vw);
+      }
+    }
+  }
+  @return $value;
+}
+
+// width, max-width setting only for pc
+@mixin per-max-width-lg($value-px) {              // 1000px (number)
+  $length : str-length(#{$value-px});             // 6 (number)
+  $end : $length - 2;                             // 4 (number)
+  $get-px : str-slice(#{$value-px}, 1, $end);     // 1000 (string)
+
+  $widthPer : #{($value-px/$psd-pc-width  * 100%)};
+  $widthPx : $value-px;
+
+  @media (min-width: $media-lg) {
+    width:$widthPer;
+    max-width: $widthPx;
+  }
+}
+
+// placeholder
+// usage : @include placeholder {color:green;}
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}

@@ -1,0 +1,380 @@
+@charset "UTF-8";
+
+// 공통 팝업 fixed 영역
+.include-area-popup {
+  position:fixed;
+  top:0; left:0;
+  z-index:$depth-2-popup;
+}
+
+.popup {background-color:#fff;}
+
+// 팝업 공통 스타일 : 스크롤 영역
+.popup-scroll-area {
+  position:relative;
+  height:fit-content;
+  max-height:$pop-content-max-h;
+  overflow-y:auto;
+}
+
+// 팝업 공통 스타일
+.popup-area {
+  display: none;
+  position: fixed;
+  align-items:center;
+  justify-content:center;
+  width: 100%; height: 100%;
+  min-height:340px;
+  top:0; left:0;
+  overflow: hidden;
+  z-index: 250; // top_btn 보다 상위 뎁스로 수정
+
+  .pop-dim {
+    position: fixed;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+  }
+
+  // 활성화 show
+  &.active,
+  &.active .pop-dim,
+  &.show,
+  &.show .pop-dim {
+    //display:block;
+    display:flex;
+  }
+
+  .btn-wrap {
+    display:flex;
+    justify-content:center;
+    margin:13px 0 0;
+
+    .btn-regist {
+      width:186px;
+    }
+  }
+}
+.popup-wrap {
+  position: absolute;
+  //width:564px; max-width: max-content;
+  width:100%; max-width:564px;
+  height:auto; //height: max-content;
+  max-height:$pop-wrap-max-h;
+  margin: auto;;
+  border-radius: 30px;
+  overflow: hidden;
+  z-index: 10;
+  box-sizing: border-box;
+  background-color:#fff;
+
+  // .pop-scroll-area 를 포함하는 경우 하단 흰색 마스크 박스 추가
+  &.has-bot-mask {
+    &:after {
+      display:block;
+      content:'';
+      width:100%; height:20px; //40px
+      position:absolute;
+      left:0; right:0; bottom:0;
+      background-color:#fff;
+    }
+  }
+
+  // 팝업 헤더
+  .popup-header {
+    display:flex;
+    position:relative;
+    //height:68px;
+    height:80px;
+    padding:32px $popup-pd-lr 23px;
+    align-items:center;
+    //justify-content:center;
+    background-color: #fff;
+
+    h1{
+      display:block;
+      width:100%;
+      font-size:22px;
+      font-weight:700;
+      //color:#303030;
+      color:#424242;
+      text-align:left;
+      letter-spacing:-0.88px;
+    }
+
+    .close,
+    .btn-close {
+      position:absolute;
+      width:28px;
+      height:28px;
+      top:31px; right:32px;
+      background: 0 0 url("../img/common/icons/ico_close_gy.svg") no-repeat;
+      background-size:contain;
+      opacity:1;
+    }
+
+    // 라인 장식 요소
+    &.has-bot-line {
+      //height:68px;
+      &:after {
+        display: inline-block;
+        content: '';
+        width:calc(100% - $popup-pd-lr-2x);
+        height:1px;
+        position: absolute;
+        bottom: 0; left:50%;
+        background-color:#c2c2c2;
+        transform:translate3d(-50%,0,0);
+      }
+    }
+  }
+
+  // 팝업 스크롤 영역
+  .popup,
+  .popup-scroll-area {
+    width:100%;
+    padding:24px $popup-pd-lr;
+  }
+  .popup-scroll-area {
+    &::-webkit-scrollbar {
+      position:absolute;
+      width:2px;
+      right:16px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color:$color-scroll-thumb;
+    }
+    &::-webkit-scrollbar-track {
+      background-color:$color-scroll-track;
+    }
+
+    // 팝업스크롤 영역 내 팝업 존재 시
+    > .popup {padding:0;}
+  }
+
+  // 팝업 내 개인 정보 수집 및 위탁 제공 동의 영역
+  .privacy {
+    legend { font-size: 0; }
+    .form-area {
+      display: inline-block;
+      width: 100%;
+    }
+    p {
+      margin-bottom: 12px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #303030;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px;
+      //border-radius: 10px;
+      border-radius:4px;
+      background-color: #ffffff;
+      border: 1px solid #CECECE;
+      line-height: 1.29;
+      font-size: 14px;
+      letter-spacing: -0.18px;
+      color: #343434;
+      span { color: #343434; }
+    }
+    .color-em {color:$color-active-purple;}
+  }
+  .check-input {
+    margin: 12px 0 27px;
+    label {
+      padding-bottom:0;
+      font-size: 16px;
+      line-height:1.5;
+    }
+    &.all {
+      padding-bottom: 30px;
+      margin: 0  0 30px;
+      border-bottom: 1px solid #DEDEDE;
+      font-weight: bold;
+    }
+  }
+
+  // 여백이 포함된 영역 내 너비 100프로 컨텐츠
+  .pop-con-size-full {
+    width:calc(100% + $popup-pd-lr-2x) !important;
+    margin-left: $popup-pd-lr * -1 !important;
+    margin-right: $popup-pd-lr * -1 !important;
+  }
+}
+
+// 비디오 팝업
+.pop-video {
+  .popup-wrap {
+    width: 100%;
+    max-width: 40%;
+    //max-height: fit-content;
+    border-radius: 0;
+    background-color:transparent;
+    .popup-header {
+      height:40px;
+      padding:0;
+      border:none;
+      background-color:transparent;
+      font-size:0;
+      .close,
+      .btn-close {
+        width:32px; height:32px;
+        top:0; right:0;
+        background-image:url("../../assets/img/common/icons/ico_close_w.svg");
+        img {width:100%;}
+      }
+    }
+    .popup-content {
+      background: #292929; //#71777c;
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.1818181818%;
+    }
+
+    // video & youtube
+    #media,
+    iframe {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      left: 0;
+    }
+  }
+
+}
+
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  // 팝업 스크롤 영역
+  .popup-scroll-area {
+    height: max-content;
+    max-height: calc(100% - 56px);
+  }
+
+  .popup-area {
+
+    .btn-wrap {
+      margin:0;
+
+      .btn-regist {
+        width:100%;
+        height:56px;
+      }
+    }
+  }
+
+  // 팝업 스타일
+  .popup-wrap {
+    position: absolute;
+    max-width: 100%;
+    height:auto; //height: 100%;
+    max-height: 100%;
+    margin: auto;
+    border-radius: 0;
+    overflow: hidden;
+
+
+    // 모바일 전용 너비, 높이 풀사이즈 팝업
+    &.size-full-md {
+      width:100% !important;
+      height:100% !important;
+    }
+
+    // .pop-scroll-area 를 포함하는 경우 하단 흰색 마스크 박스 추가
+    &.has-bot-mask {
+      &:after {
+        height:vw-cal-md(24px);
+        max-height:30px;
+      }
+    }
+
+    .popup-header {
+      display:flex;
+      //height:56px;
+      align-items:center;
+      justify-content:center;
+      background-color:#FFFFFF;
+      position:relative;
+
+      // 쇼핑몰(boot, boot_custom) 스타일과 맞춤
+      height:6rem;
+      padding:0 1.6rem;
+      box-shadow:0 1px 8px rgba(0, 0, 0, 0.1);
+      z-index:1;
+      h1{
+        font-size:18px;
+        text-align:center;
+      }
+      .close,
+      .btn-close {
+        width:24px; height:24px;
+        top:1.6rem; right:1.6rem;
+      }
+
+      // line
+      &.has-bot-line {
+        height:6rem;
+        padding:0 1.6rem;
+        box-shadow:0 1px 8px rgba(0, 0, 0, 0.1);
+        z-index:1;
+
+        &:after {
+          display:none;
+          border:none;
+        }
+      }
+    }
+
+    // 팝업, 팝업스크롤 영역 단독 사용 시
+    .popup,
+    .popup-scroll-area {
+      width:100%;
+      padding:30px $popup-pd-lr-md;
+      //padding:0;
+    }
+
+    .popup-scroll-area {
+      &::-webkit-scrollbar {
+        display:none;
+      }
+      // 팝업스크롤 영역 내 팝업 존재 시
+      > .popup {padding:0;}
+    }
+
+    // 여백이 포함된 영역 내 너비 100프로 컨텐츠
+    .pop-con-size-full {
+      width:calc(100% + $popup-pd-lr-md-2x) !important;
+      margin-left: $popup-pd-lr-md * -1 !important;
+      margin-right: $popup-pd-lr-md * -1 !important;
+    }
+  }
+
+  // 비디오 팝업  (기존 popup-wrap.play)
+  .pop-video {
+    .popup-wrap {
+      max-width:100%; //height:fit-content; max-height:fit-content;
+      .youtube-play {
+        width: 100%;
+        height: 200px;
+        left: 0;
+      }
+      .popup-header {
+        height:vw-cal-md(30px);
+        background-color: transparent;
+        .close,
+        .btn-close {
+          width:vw-cal-md(24px); height:vw-cal-md(24px);
+          top:5px; right:5px;
+        }
+      }
+    }
+  }
+}

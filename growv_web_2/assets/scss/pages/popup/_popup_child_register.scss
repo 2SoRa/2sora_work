@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+.pop-child-register {
+  .popup-wrap {
+    border-radius:16px;
+    .popup-scroll-area {
+      padding:20px 32px 40px 32px;
+    }
+  }
+
+  // input group
+  .inline_flex_group.mb_break,
+  .inline_mb_group.mb_break {
+    > * {
+      margin-bottom:0;
+    }
+  }
+  .inline_flex_group {
+    input.form_input {
+      width: 58px;
+    }
+    select.form_select {
+      width: 80px;
+      &:first-child {min-width:200px;}
+    }
+  }
+  .inline_mb_group {
+    flex: 0 0 60%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  // 팝업 내 요소
+  .text {
+    margin-bottom: 30px;
+    font-size:14px;
+    line-height:1;
+    font-weight:normal;
+    color:#757575;
+  }
+  dl {
+    dt {
+      margin-bottom:16px;
+      font-size:18px;
+      font-weight:700;
+      line-height:1;
+    }
+    dd {
+      margin-bottom:30px;
+      &:last-child {margin-bottom:0;}
+    }
+  }
+  .custom-button {
+    width:186px;
+    height:$input-h;
+    margin-top:30px;
+    font-size:16px;
+  }
+
+  /*반응형 max 992px lg*/
+  @media (max-width: $media-lg) {
+    .popup-wrap {
+      border-radius:0;
+      .popup-scroll-area {
+        padding:38px 16px;
+      }
+    }
+    .inline_flex_group {
+      /* 자녀 생년월일 */
+      input.form_input {
+        width: 100%;
+      }
+      select.form_select {
+        width: 106px;
+        &:first-child {
+          width: 108px;
+          min-width:0;
+        }
+      }
+    }
+    .inline_mb_group {
+      flex:auto;
+    }
+
+    .text {
+      font-size:14px;
+      margin-bottom:20px;
+    }
+    dl {
+      dt {
+        margin-bottom:10px;
+        font-size:16px;
+      }
+      dd {
+        margin-bottom:30px;
+        &:last-child {margin-bottom:0;}
+      }
+    }
+    .custom-button {
+      width:100%;
+      max-width:100%;
+    }
+  }
+}

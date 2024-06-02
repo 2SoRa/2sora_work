@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <clipPath id="2t1e6qjn4a">
+            <path transform="translate(1690 134)" style="stroke:#424242;fill:#fff;opacity:.3" d="M0 0h28v28H0z"/>
+        </clipPath>
+    </defs>
+    <path data-name="G" style="opacity:.999;fill:none" d="M0 0h40v40H0z"/>
+    <g transform="translate(-1684 -128)" style="clip-path:url(#2t1e6qjn4a)">
+        <path d="M19.909 16.2H6.74L4.361 4.783H21.05a1.784 1.784 0 0 1 1.7 2.316z" transform="translate(1691.453 136.256)" style="stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none;stroke:#424242"/>
+        <path d="M6.74 16.2 3.52.744H.547" transform="translate(1691.453 136.256)" style="stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none;stroke:#424242"/>
+        <circle cx="1.784" cy="1.784" r="1.784" transform="translate(1698.193 155.433)" style="stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none;stroke:#424242"/>
+        <circle data-name="o" cx="1.784" cy="1.784" r="1.784" transform="translate(1707.794 155.433)" style="stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none;stroke:#424242"/>
+    </g>
+</svg>

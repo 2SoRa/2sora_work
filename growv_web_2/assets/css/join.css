@@ -1,0 +1,730 @@
+@charset "UTF-8";
+/*
+  기존 슈퍼브이 구조, 스타일 커스텀
+  공통으로 사용되는 (아이디,비번찾기, 결제, 장바구니쪽) 인풋 스타일 조화가 필요하여 모바일도 고정픽셀로 변경
+*/
+.signup .sec-signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signup .has-bot-line {
+  position: relative;
+  padding-bottom: 30px;
+}
+.signup .has-bot-line:after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #dedede;
+}
+.signup .step {
+  width: 440px;
+  margin: 0 auto 50px;
+}
+.signup .contents {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 50px;
+  box-sizing: border-box;
+  border: 1px solid #DEDEDE;
+  border-radius: 30px;
+}
+.signup .contents .title {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.signup article:last-child {
+  margin-bottom: 0 !important;
+}
+.signup button.custom-button {
+  width: 440px;
+  max-width: 440px;
+  font-size: 20px;
+  margin: 40px auto 100px;
+}
+.signup button.custom-button.mo {
+  width: 100%;
+}
+
+/* 간편가입 약관동의 */
+.signup-01 .intro {
+  width: 89.7435897436%;
+  max-width: 700px;
+  margin: 0 auto 42px;
+}
+.signup-01 .intro img {
+  width: 100%;
+}
+.signup-01 .contents .title {
+  margin-bottom: 30px;
+}
+.signup-01 .contents .title .ico-notice {
+  width: 24px;
+  height: 24px;
+  background: url("../img/superv/icon/ico_notice.svg") no-repeat;
+  margin-right: 8px;
+}
+.signup-01 .contents .inner-box {
+  width: 600px;
+  text-align: left;
+  color: #303030;
+  /* 동의 항목 */
+}
+.signup-01 .contents .inner-box .all-wrap {
+  margin-bottom: 30px;
+}
+.signup-01 .contents .inner-box article {
+  width: 100%;
+  margin-bottom: 30px;
+  position: relative;
+  /* 항목 설명 */
+}
+.signup-01 .contents .inner-box article > label {
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: bold;
+}
+.signup-01 .contents .inner-box article > label.all {
+  font-size: 18px;
+}
+.signup-01 .contents .inner-box article > label > span {
+  color: #8b51e2;
+}
+.signup-01 .contents .inner-box article .icon_more {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+.signup-01 .contents .inner-box article .description {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 11px 0 0 32px;
+  color: #424242;
+}
+
+/* 간편가입 정보입력 */
+.signup-02 > .contents > form > .title {
+  font-size: 18px;
+  line-height: 0.67;
+  display: flex;
+  margin-bottom: 26px;
+}
+.signup-02 > .contents > form > .title > span {
+  margin-left: 6px;
+}
+.signup-02 > .contents > form article {
+  margin-bottom: 16px;
+}
+.signup-02 > .contents > form article div {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.signup-02 > .contents > form article div label {
+  font-size: 14px;
+  line-height: 0.86;
+  color: #303030;
+  font-weight: bold;
+  min-width: 64px;
+}
+.signup-02 > .contents > form article div label ~ div {
+  width: 500px;
+}
+.signup-02 > .contents > form article div input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #CECECE;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin: 0;
+  color: #303030;
+  font-size: 14px;
+  /*text-indent: 20px;*/
+}
+.signup-02 > .contents > form article div input.item.disabled {
+  /*color: #909090;*/
+  background-color: #F6F6F6;
+  color: #757575;
+  font-size: 14px;
+  pointer-events: none;
+}
+.signup-02 > .contents > form article div input.item.disabled::-ms-value {
+  color: #757575;
+}
+.signup-02 > .contents > form article div select {
+  width: 100%;
+  min-width: 110px;
+  border: 1px solid #CECECE;
+  font-size: 14px;
+  height: 48px;
+  padding: 0 32px 0 16px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-size: 18px 18px;
+  background-position: top 15px right 8px;
+  background-image: url("../img/common/icon_arrow_d_18.svg");
+  line-height: 28px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.signup-02 > .contents > form article div select::-ms-value {
+  background: none;
+  color: #2b2b2b;
+}
+.signup-02 > .contents > form article div select::-ms-expand {
+  display: none;
+}
+.signup-02 > .contents > form article div select.ready {
+  color: #999;
+}
+.signup-02 > .contents > form article div select.disabled {
+  background-color: #f7f7f7;
+  color: #999999;
+  opacity: 1;
+}
+.signup-02 > .contents > form article div select .disabled {
+  color: #B2B2B2;
+}
+.signup-02 > .contents > form article div .item {
+  width: 500px;
+  height: 48px;
+  display: flex;
+  gap: 4px;
+}
+.signup-02 > .contents > form > .button-section {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.signup-02 > .contents > form > .button-section > .btn {
+  width: 276px;
+  height: 60px;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.signup-02 > .contents > form > .button-section > .btn.cancel {
+  background-color: #828282;
+}
+.signup-02 > .contents > form > .button-section > .btn.register {
+  background-color: #8b51e2;
+}
+.signup-02 > .contents span.custom-error {
+  width: 100%;
+  padding: 4px 15px 0 112px;
+}
+.signup-02 > .contents span.custom-error.confirm {
+  color: #8b51e2;
+}
+.signup-02 > .contents span.custom-error.hide {
+  display: none;
+}
+.signup-02 > .contents button:disabled {
+  background-color: #d8d8d8 !important;
+  pointer-events: none;
+}
+.signup-02 > .contents .flex-column {
+  width: 500px;
+  flex-direction: column;
+}
+.signup-02 > .contents .flex-column input {
+  margin-bottom: 8px;
+}
+.signup-02 > .contents .flex-column input:last-child {
+  margin-bottom: 0;
+}
+.signup-02 > .contents .flex-column input.child-age {
+  width: 158px;
+}
+.signup-02 > .contents .certify .disabled {
+  pointer-events: none;
+  color: #d8d8d8;
+}
+.signup-02 > .contents .certify > .phone-item {
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.signup-02 > .contents .certify > .phone-item > div {
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+.signup-02 > .contents .certify > .phone-item > div:first-child {
+  margin-top: 0;
+}
+.signup-02 > .contents .certify > .phone-item > div .inline_flex_group {
+  width: 100%;
+}
+.signup-02 > .contents .certify > .phone-item > div .inline_flex_group .btn_inline_box {
+  min-width: 100px;
+  height: 48px;
+  background-color: #8b51e2;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+}
+.signup-02 > .contents .certify > .phone-item > div .inline_flex_group .btn_inline_box:disabled {
+  background-color: #d8d8d8;
+}
+.signup-02 > .contents .certify > .phone-item > div .form_inline_box {
+  width: 100%;
+  position: relative;
+  border: none;
+  margin: 0;
+}
+.signup-02 > .contents .certify > .phone-item .custom-error {
+  padding: 4px 15px 0 12px;
+}
+.signup-02 > .contents .certify .check_emp_text {
+  color: #ff5050;
+  font-size: 14px;
+  font-weight: 500;
+  right: 0;
+}
+.signup-02 > .contents .certify .btn_form_reset {
+  display: block;
+}
+.signup-02 > .contents .certify span.error {
+  margin-left: 0;
+}
+.signup-02 > .contents .certify.address input {
+  color: #303030;
+}
+.signup-02 > .contents .form_inline_box {
+  position: relative;
+}
+.signup-02 > .contents .form_inline_control_group {
+  width: fit-content;
+  position: absolute;
+  right: 10px;
+}
+.signup-02 > .contents input::placeholder {
+  color: #b2b2b2;
+}
+.signup-02 > .contents input:disabled {
+  background-color: #f6f6f6;
+  pointer-events: none;
+  color: #757575;
+}
+.signup-02 > .contents input:disabled::placeholder {
+  color: #909090 !important;
+}
+
+/* 간편가입 가입완료 */
+.signup-03 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 회원 - 회원재체험 - 가입완료후 바로가기 */
+}
+.signup-03 .intro {
+  max-width: 700px;
+}
+.signup-03 .intro img {
+  display: block;
+}
+.signup-03 > .contents {
+  width: 440px;
+  padding: 40px 30px;
+  background-color: #f2f9ff;
+  border: 1px solid #d9eeff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.signup-03 > .contents > div {
+  /*padding: 0 86px;*/
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 21px;
+}
+.signup-03 > .contents > div:last-child {
+  margin-bottom: 0;
+}
+.signup-03 > .contents > div > span {
+  font-size: 20px;
+  color: #292929;
+}
+.signup-03 > .contents > div > span.email, .signup-03 > .contents > div > span.child-name {
+  max-width: 300px;
+  font-weight: bold;
+  color: #8b51e2;
+}
+.signup-03 > .link_wrap {
+  display: flex;
+  gap: 8px;
+  margin: 40px auto 0;
+}
+.signup-03 > .link_wrap a {
+  display: inline-block;
+  width: 216px;
+  height: 160px;
+}
+
+/*반응형 max 992px lg*/
+@media (max-width: 991.98px) {
+  input[type=text]:read-only {
+    background-color: #f6f6f6 !important;
+  }
+  .signup .container {
+    margin: 0;
+  }
+  .signup .container .contents {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .signup .contents .title {
+    text-align: center;
+    font-size: 16px;
+  }
+  .signup .line {
+    width: 100%;
+    border-bottom: 1px solid #DEDEDE;
+  }
+  .signup button.custom-button {
+    font-size: 18px;
+    margin: 30px auto 80px;
+  }
+}
+.sec-signup-m .has-bot-line {
+  padding-bottom: 24px;
+}
+.sec-signup-m .step {
+  width: 270px;
+  height: fit-content;
+  margin-bottom: 50px;
+}
+.sec-signup-m .step img {
+  width: 100%;
+}
+
+.m-signup-01 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.m-signup-01 .step {
+  margin-bottom: 8px;
+}
+.m-signup-01 > .container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.m-signup-01 > .container .intro {
+  width: 100%;
+  margin-bottom: 21px;
+}
+.m-signup-01 > .container .intro img {
+  position: relative;
+  width: calc(100% + 32px);
+  max-width: 480px;
+  left: 50%;
+  margin: 0 auto;
+  transform: translate3d(-50%, 0, 0);
+}
+.m-signup-01 > .container .contents {
+  padding: 16px;
+}
+.m-signup-01 > .container .contents .title {
+  font-size: 16px;
+  line-height: 1.25;
+  margin: 0 auto 24px;
+  justify-content: center;
+}
+.m-signup-01 > .container .contents .title > .accent {
+  color: #8b51e2;
+}
+.m-signup-01 > .container .contents > div article {
+  position: relative;
+  margin-bottom: 24px;
+}
+.m-signup-01 > .container .contents > div article > label {
+  font-size: 16px;
+  line-height: 1.47;
+  font-weight: 700;
+  letter-spacing: -0.9px;
+}
+.m-signup-01 > .container .contents > div article > label.all {
+  font-weight: bold;
+}
+.m-signup-01 > .container .contents > div article > label > span {
+  color: #8b51e2;
+}
+.m-signup-01 > .container .contents > div article .icon_more {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 4px;
+  right: 0;
+  cursor: pointer;
+}
+.m-signup-01 article {
+  width: 100%;
+  padding: 0;
+}
+.m-signup-01 article .description {
+  width: 100%;
+  height: fit-content;
+  word-break: keep-all;
+  padding: 16px;
+  margin-top: 10px;
+  background-color: #F7F7F7;
+  font-size: 12px;
+  line-height: 1.33;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+.m-signup-01 .contents .all-wrap {
+  width: 100%;
+  margin: 0 0 24px;
+  background-color: #FFFFFF;
+}
+.m-signup-01 .contents .agree-wrap {
+  width: 100%;
+}
+.m-signup-01 .contents .agree-wrap article {
+  margin-bottom: 24px;
+}
+
+.m-signup-02 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.m-signup-02 > .container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.m-signup-02 > .container > .contents {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 0;
+  padding: 0;
+  border: none;
+}
+.m-signup-02 > .container > .contents .title {
+  font-size: 16px;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+.m-signup-02 > .container > .contents .title img {
+  width: 18px;
+  margin-right: 4px;
+}
+.m-signup-02 > .container > .contents > form {
+  width: 100%;
+}
+.m-signup-02 > .container > .contents > form article {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  gap: 0;
+}
+.m-signup-02 > .container > .contents > form article > label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #292929;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.3125;
+  letter-spacing: -0.65px;
+}
+.m-signup-02 > .container > .contents > form article > .item {
+  display: flex;
+  gap: 4px;
+}
+.m-signup-02 > .container > .contents > form article > input.child-name {
+  font-weight: bold;
+  background-color: #f6f6f6;
+}
+.m-signup-02 > .container > .contents > form article > .child-age {
+  text-align: center;
+  font-weight: bold;
+  min-width: 100%;
+}
+.m-signup-02 > .container > .contents > form article > .child-age:read-only {
+  background-color: #f6f6f6;
+}
+.m-signup-02 > .container > .contents .inline_block_row .btn_inline_box {
+  width: 94px;
+  min-width: 94px;
+  height: 48px;
+  background-color: #8b51e2;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 0;
+}
+.m-signup-02 > .container > .contents .inline_block_row .btn_inline_box:disabled {
+  pointer-events: none;
+  background-color: #d8d8d8 !important;
+}
+.m-signup-02 > .container > .contents .inline_flex_group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.m-signup-02 > .container > .contents .form_inline_box {
+  width: 100%;
+  position: relative;
+  border: none;
+}
+.m-signup-02 > .container > .contents .form_inline_control_group {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  color: #ff5050;
+  font-weight: bold;
+}
+.m-signup-02 > .container > .contents .phone-item input {
+  width: 100%;
+  border: 1px solid #CECECE;
+  color: #303030;
+}
+.m-signup-02 > .container > .contents .phone-item input::placeholder {
+  color: #b2b2b2;
+}
+.m-signup-02 > .container > .contents .custom-select,
+.m-signup-02 > .container > .contents .h-48 {
+  height: 48px;
+}
+.m-signup-02 > .container > .contents input {
+  width: 100%;
+  height: 48px;
+  font-size: 14px;
+  color: #424242;
+}
+.m-signup-02 > .container > .contents input:disabled {
+  color: #757575 !important;
+}
+.m-signup-02 > .container > .contents input:disabled::placeholder {
+  color: #909090;
+  border-color: #CECECE !important;
+}
+.m-signup-02 .check_emp_text {
+  color: #ff5050;
+  font-size: 14px;
+  font-weight: 500;
+  right: 0;
+}
+.m-signup-02 .custom-input:read-only {
+  background-color: #f6f6f6;
+}
+.m-signup-02 .flex-column input {
+  margin-bottom: 8px;
+}
+.m-signup-02 .flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+}
+.m-signup-02 .flex-row select {
+  flex: 1;
+}
+.m-signup-02 .flex-row select:nth-child(3) {
+  margin-right: 0;
+}
+.m-signup-02 span.custom-error {
+  width: 100%;
+  margin-top: 9px;
+  font-size: 12px;
+  line-height: 1.66;
+  text-indent: 16px;
+}
+
+.m-signup-03 {
+  color: #303030;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.m-signup-03 > .container {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.m-signup-03 > .container .intro {
+  width: 360px;
+  max-width: 100%;
+}
+.m-signup-03 > .container .intro .text .title {
+  font-size: 6vw;
+  margin-bottom: 2.1vw;
+}
+.m-signup-03 > .container .intro img {
+  width: 100%;
+}
+.m-signup-03 > .container > .contents {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0;
+  padding: 26px;
+  border: 1px solid #d9eeff;
+  border-radius: 10px;
+  background-color: #f2f9ff;
+}
+.m-signup-03 > .container > .contents > div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 22px;
+}
+.m-signup-03 > .container > .contents > div:last-child {
+  margin-bottom: 0;
+}
+.m-signup-03 > .container > .contents > div > span {
+  font-size: 14px;
+  width: fit-content;
+  display: inline-block;
+}
+.m-signup-03 > .container > .contents > div > span.email, .m-signup-03 > .container > .contents > div > span.child-name {
+  font-size: 15px;
+  font-weight: bold;
+  color: #8b51e2;
+}
+.m-signup-03 > .container > .link_wrap {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  margin: 30px auto 0;
+}
+.m-signup-03 > .container > .link_wrap a {
+  display: inline-block;
+  width: 160px;
+  height: 118px;
+}

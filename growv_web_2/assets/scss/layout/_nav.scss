@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+// 사이드 네비게이션 요소 스타일 (모바일 전용)
+.event-area-wrap {
+  button,
+  a {
+    img {width:100%; height:auto; margin:0;}
+  }
+
+  // 이벤트 버튼이면서 사이드 네비게이션 닫기 기능을 포함한 버튼
+  .btn-close-nav {
+    padding:0; margin:0;
+  }
+
+  // 사이드 네비 내 버튼, 텍스트 요소가 포함되어 있는 컴포넌트형 배너 (도서몰 배너)
+  .bn-comp-wrap {
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    width:100%; height:vw-cal-md(100px);
+    padding:vw-cal-md(14px 10px 10px);
+    border-radius:8px;
+    border:solid 1px #e0e0e0;
+    background-color:#fff;
+
+    em {
+      width:100%;
+      margin-bottom:vw-cal-md(11px);
+      //font-size:vw-cal-md(18px);
+      font-size:max(4vw, 18px);
+      line-height:1.11;
+      letter-spacing:-0.72px;
+      font-weight:700;
+      text-align:center;
+      flex:0 0 1;
+      .txt-em {
+        font-weight:900; color:$color-active-purple;
+      }
+    }
+    .btn-lib-kor,
+    .btn-lib-eng {width:percentage(150/308);}
+    img {width:100%;}
+  }
+  // 사이드 네비 내 여러개 버튼 묶음 - 버튼 회색 배경 & 아이콘+텍스트 (전용몰 마이페이지)
+  .bn-btn-wrap {
+    display: flex;
+    width: 100%; height: fit-content;
+    gap: .8rem;
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      padding: 16px;
+      gap: .6rem;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    &.gray {
+      a {
+        background-color: #F7F7F7;
+        color: #303030;
+      }
+    }
+  }
+
+  // 배너 영역 공통
+  .event-area {
+    .area-tit {
+      display: flex; /* 전용몰 마이페이지 화살표 위치 안맞아서 Flex로 변경*/
+      //display:block;
+      font-weight:$font-bold;
+      font-size:1.6rem;
+      padding:1rem 0;
+      align-items: center;
+    }
+    .rounded-md {
+      margin-bottom:0.5rem;
+      &:last-child {margin-bottom:0;}
+    }
+    // 전용몰 마이페이지 영역
+    &.mypage-area {
+      .area-tit {
+        padding-top: 0;
+        .ico-link-arrow-r { margin-left: .4rem; }
+      }
+    }
+  }
+}
+.app-download-box {
+  .btn-app-download{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+    width:100%;
+    height:vw-cal-md(60px); // 모바일의 X0.75
+    padding:vw-cal-md(12px 11px);
+    //padding:1.6rem 1.5rem;
+    color:#fff;
+  }
+  .icon-app {
+    //width:4.8rem; height:4.8rem;      // 이벤트 배너랑 리사이징 기준 맞추기 위해 재정의
+    width:percentage(48/298);
+    //margin-right:2rem;
+    img {width:100%; height:auto;}
+  }
+  .con-left {
+    display:flex;
+    align-items:center;
+    //flex-wrap:wrap;
+    text-align:left;
+
+    span {
+      font-size:vw-cal-md(10px); //모바일의 X0.75
+    }
+    .banner-tit {
+      padding-left:2rem;
+      strong,
+      em {font-weight:600;}
+    }
+  }
+  .icon-app-download {
+    position:absolute;
+    right:0; top:0;
+  }
+}
+.icon-app-download {
+  display:block;
+  position:relative;
+  //width:5.6rem;
+  // 이벤트 배너 추가되면서 기준 맞추기
+  width:vw-cal-md(42px);  // 모바일의 X0.75
+  height:100%;
+  padding: 0 1.6px;
+
+  &:after {
+    display:block;
+    content:'';
+    position:absolute;
+    //width:2.4rem; height:2.4rem;
+    width:vw-cal-md(20px); height:vw-cal-md(20px);  // 모바일의 X0.75
+    left:50%; top:50%;
+    transform:translate3d(-50%,-50%,0);
+    background: url("../img/common/icon_download_w.svg") no-repeat 0 0;
+    background-size:100% 100%;
+  }
+}
+
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  nav {
+    position:sticky;
+    top:0;
+    z-index:103;
+  }
+}
+
+/*반응형 max 767px md*/
+@media (max-width: $media-md) {
+  .app-download-box {
+    .btn-app-download {
+      height:vw-cal-md(80px);
+      //padding:1.6rem 1.5rem;
+      padding:vw-cal-md(16px 15px);
+    }
+    .icon-app {
+      width:vw-cal-md(48px); height:vw-cal-md(48px);
+    }
+    .con-left {
+      span {
+        font-size:vw-cal-md(14px);
+      }
+    }
+  }
+  .icon-app-download {
+    width:vw-cal-md(56px);
+    //width:5.6rem;
+    &:after {
+      width:vw-cal-md(24px); height:vw-cal-md(24px);
+    }
+  }
+}

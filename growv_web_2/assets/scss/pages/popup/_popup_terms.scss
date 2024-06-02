@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+// 약관, 개인정보 처리방침, 마케팅 활용 동의 팝업
+// 팝업의 공통 최대 높이값은 535px
+.pop-terms {
+  .popup-scroll-area {
+    min-height:455px;
+    max-height:455px; // 535 - $pop-header-h
+  }
+
+  .terms-cont-wrap {
+    //padding:20px 0;
+    padding:0;
+
+    dl {
+      dd {
+        table {
+          min-width:100%;
+          table-layout: auto;
+        }
+      }
+    }
+    .mtit {color:#303030;}
+  }
+
+
+  @media (max-width: $media-lg) {
+    .popup-scroll-area {
+      height: max-content;
+      max-height: calc(100% - 56px);
+    }
+  }
+}

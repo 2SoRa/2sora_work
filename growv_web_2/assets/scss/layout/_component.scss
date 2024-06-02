@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+/*
+  컴포넌트 구성을 위한 독립적인 요소 스타일 (ex. 뱃지, 메세지, 페이지네이션, 좌우버튼 등)
+*/
+
+// 뱃지
+.badge-exclusive {
+  position:absolute;
+  width:vw-cal-lg(170px); height:vw-cal-lg(170px);
+  max-width:170px; max-height:170px;
+  top:-18px; left:-121px;
+  z-index:2;
+  img {width:100%; height:auto;}
+}
+
+// 메세지 알럿 : 친구코드메세지
+.msg-wrap {
+  width:100%;
+  margin-bottom:30px;
+
+  .msg-recommand {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    padding:7px 0;
+    border-radius:4px;
+    background-color: #f8f4ff;
+    color:$color-active-purple;
+    font-size:14px; font-weight:700; line-height:1;
+    text-align:center;
+    .ico-bb-msg {
+      margin-right:2px;
+    }
+  }
+}
+
+// 컬러 박스
+.purple-box {
+  background:#8b51e2;
+  color:#fff;
+}
+
+// pagination, indicator
+.list-pagination {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:30px auto;
+  font-size:20px;
+
+  $pagingHeight:46px;
+  button, a {
+    width:80px;
+    height:$pagingHeight;
+  }
+  .prev {
+    background: no-repeat center center url("/assets/img/common/btn_list_prev.png");
+    background-size: 100%;
+  }
+  .next {
+    background: no-repeat center center url("/assets/img/common/btn_list_next.png");
+    background-size: 100%;
+  }
+  p {
+    display:flex;
+    gap:4px;
+    justify-content:center;
+    align-items:center;
+    min-width:120px;
+    height:$pagingHeight;
+    padding:0 40px;
+    text-align:center;
+    letter-spacing:-0.9px;
+    span {
+      &.current {
+        font-weight: 700;
+      }
+      color: inherit;
+    }
+  }
+}
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  .badge-exclusive {
+    width:vw-cal-md(80px);
+    height:vw-cal-md(80px);
+    top:vw-cal-md(-21px);
+    left:auto; right:0;
+
+    & + .sub-round-tit {
+      width:vw-cal-md(175px) !important;
+    }
+  }
+
+  .msg-wrap {
+    padding:0 16px;
+  }
+
+  .list-pagination {
+    justify-content:space-between;
+    font-size:vw-cal-md(14px);
+
+    $pagingHeight : 40px;
+    .prev {
+      background-image:url("/assets/img/common/btn_list_prev_m.png");
+    }
+    .next {
+      background-image:url("/assets/img/common/btn_list_next_m.png");
+    }
+    button, a {
+      width:vw-cal-md(60px);
+      height:vw-cal-md($pagingHeight);
+    }
+    p {height:vw-cal-md($pagingHeight);}
+  }
+}

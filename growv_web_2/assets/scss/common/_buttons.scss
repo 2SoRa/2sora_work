@@ -1,0 +1,359 @@
+@charset "UTF-8";
+
+button {
+  color : $color-text-default;
+  &:disabled {
+    background-color: #DBDBDB !important;
+  }
+}
+
+// 컨텐츠 영역 내 버튼 기본 스타일
+.container,
+.container-fluid,
+.popup-area {
+  .btn {
+    min-width: 116px; height:$btn-default-h;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    &.btn-big {
+      width:$btn-big-w; height:$btn-big-h;
+      font-size: 20px;
+    }
+    &.purple {
+      color: #FFFFFF;
+      background-color: #8b51e2;
+    }
+  }
+  // 부트스트랩 스타일 오버라이딩 재설정용
+  .btn-normalize {
+    min-width:0;
+    height:3.2rem;
+    &.btn-sm {font-size:1.4rem; font-weight:400;}
+  }
+}
+
+// 샘플 영상 보기 버튼, 플로팅 버튼
+.btn-sample {
+  display:block;
+  width:18vw;
+  max-width:284px;
+  margin:0 auto;
+}
+
+// 모션을 포함한 재생 버튼
+.btn-main-play {
+  position: absolute;
+  width:vw-cal-lg(68px); height:vw-cal-lg(68px);
+  max-width:68px; max-height:68px;
+  top:50%; left:50%;
+
+  .shape {
+    display:block;
+    position:relative;
+    width:100%; height:100%;
+    background-color:#f4481f;
+    border-radius:50%;
+    border: solid 1px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 8px 0 rgba(154, 111, 15, 0.28);
+
+    .ico-play {
+      // icon custom style
+    }
+  }
+}
+
+// 버튼 영역 width, height 별도 지정 필요
+.btn-play{
+  position:absolute;
+  width:100px; height:100px;
+  top:0; left:0;
+}
+
+// 플로팅 버튼
+.floating {
+  position:fixed;
+  right:0; bottom:-6px; left:0;
+  text-align:center;
+  z-index:$depth-1-floating;
+  a {display: block; margin: auto; max-width: 800px;}
+  picture {display: block; width: 100%; margin: auto;}
+
+  // 하단 무료체험,프로모션 페이지 배너 커스텀
+  &.floating-bn-wrap {
+    .inner-wrap {
+      position:relative;
+      max-width:1240px;
+      margin:0 auto;
+      line-height:0;
+      a {
+        position:absolute;
+        max-width:100%;
+        height:100%;
+        bottom:0;
+        z-index:$depth-1-floating;
+      }
+    }
+    .btn-event-go {
+      width:32.1%;
+      left:1.5%;
+    }
+    .btn-pm-go {
+      width:64.6%;
+      right:1.5%;
+    }
+    picture {
+      width:100%;
+    }
+  }
+
+  // 우측 사이드 플로팅 버튼
+  &.right-side {
+    width:120px;
+    left:auto; right:20px; bottom:160px;
+    .inner-wrap {
+      a {
+        display:block;
+        position:relative;
+        width:100%;
+        margin:10px 0;
+        &:first-child {margin-top:0;}
+        &:last-child {margin-bottom:0;}
+      }
+    }
+
+    // 플로팅 버튼 내 버튼, 텍스트 요소가 포함되어 있는 컴포넌트형 배너
+    .bn-comp-wrap {
+      padding:18px 10px;
+      margin-bottom:14px;
+      border-radius:18px;
+      border:solid 1px rgba(0, 0, 0, 0.12);
+      background-color:#fff;
+      text-align:center;
+      box-shadow:inset 0 -4px 0 0 rgba(0, 0, 0, 0.15);
+      em {
+        margin-bottom:3px;
+        font-size:18px;
+        line-height:32px;
+        letter-spacing:-0.72px;
+        color:$color-active-purple;
+        font-weight:700;
+        .txt-em {font-size:30px; letter-spacing:-0.6px; font-weight:900;}
+      }
+      strong {
+        &:before {
+          display:block;
+          content:'';
+          width:84px; height:6px;
+          margin:0 auto 4px;
+          background: no-repeat center center url("/assets/img/banner/btn_library_objline.png");
+          background-size:contain;
+        }
+        font-size:16.5px; line-height:20px; letter-spacing:-0.66px;
+        font-weight:700;
+        .txt-em {font-size:18px; letter-spacing:-0.72px; font-weight:900;}
+      }
+      a {margin:4px 0;}
+    }
+  }
+}
+
+// GNB 라운드 버튼
+.btn-hd-round {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-width:110px; height:40px;
+  padding:0 16px;
+  border:1px solid #dbdbdb;
+  border-radius:20px;
+  background-color:#fff;
+  font-size:14px;
+  color:#424242;
+  .ico:first-child {margin-right: 4px;}
+  .logo {margin-left:1px; margin-right:1px;}
+}
+
+// 장바구니 버튼
+.brand_top_cart {width:110px;}
+.brand_use_coupon {width:178px;}
+
+// 로그인, 아이디 찾기 내 눈알 아이콘 버튼
+.btn-eye{
+  position:absolute;
+  width:24px; height:24px;
+  top:0; bottom:0;
+  right:12px;
+  margin:auto;
+  border:0;
+  overflow:hidden;
+
+  &:before,
+  &:after {
+    display:block;
+    content:'';
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0;
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+    background-size: 100%;
+  }
+
+  &:before {background-image:url("../img/common/icons/ico_eye_off.svg");}
+  &:after {background-image:url("../img/common/icons/ico_eye_on.svg"); opacity:0;}
+
+  &.on {
+    &:before {opacity:0;}
+    &:after {opacity:1;}
+  }
+}
+
+// 최상단 풀 배너
+.top-banner-fluid {
+  position:relative;
+  width:100%; height:70px;
+  overflow:hidden;
+  img {
+    position:relative;
+    width:auto; height:100%;
+    margin:0 auto;
+
+    // 240102 모바일 배너 이미지 사이즈 및 위치 예외 처리
+    max-width:inherit;
+    left:50%; top:0;
+    margin:0;
+    transform:translate3d(-50%,0,0);
+  }
+
+  .bn-bg-wrap {
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0; right:0; bottom:0;
+    img {
+      width:100%; height:100%;
+      object-fit:fill;
+      object-position:center center;
+    }
+  }
+}
+
+// 컨텐츠 영역 하단 풀 배너
+.bot-banner-fluid {
+  position:relative;
+  width:100%; height:70px;
+  overflow:hidden;
+
+  img {
+    position:relative;
+    width:auto !important; height:100% !important;
+    max-width:inherit;
+    left:50%; top:0;
+    margin:0;
+    transform:translate3d(-50%,0,0);
+  }
+
+  .bn-bg-wrap {
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0; right:0; bottom:0;
+    background: linear-gradient(to right,  #fceaed 0%,#fce5e5 100%);
+    img {
+      width:100%; height:100%;
+      object-fit:fill;
+      object-position:center center;
+    }
+  }
+}
+
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  .sec {
+    .btn {
+      &.btn-big {
+        width:100%;
+      }
+    }
+  }
+
+  .btn-sample {
+    display: block;
+    width:vw-cal-md(170px);
+    height:auto;
+    margin:auto;
+  }
+
+  .btn-main-play {
+    position:absolute !important;
+    width:vw-cal-md(45px); height:vw-cal-md(45px);
+    max-width:100%; max-height:100%;
+  }
+
+  .floating {
+    a, picture {max-width: 100%;}
+
+    // 하단 무료체험,프로모션 페이지 배너 커스텀
+    &.floating-bn-wrap {
+      display:block;
+      position:fixed;
+      bottom:-1px;
+      .inner-wrap {
+        a {height:78%;}
+      }
+      .btn-event-go {
+        width:30.4%; left:0;
+      }
+      .btn-pm-go {
+        width:69.6%; right:0;
+      }
+    }
+
+    // 모바일 좌측 하단
+    &.left-side-m {
+      width:vw-cal-md(96px);
+      right:auto; left:0;
+      bottom:vw-cal-md(100px);  // 하단 fixed banner 높이값
+
+      .inner-wrap {
+        a, button {
+          margin:vw-cal-md(6px 0px);
+          &:last-child {margin-bottom:0;}
+        }
+      }
+    }
+  }
+
+  // 장바구니 버튼
+  .brand_top_cart {
+    position:relative;
+    width:auto;
+    //top:6px;
+    a, button {
+      width:82px; height:28px;
+      min-width:0;
+      border-radius:14px;
+      font-size:12px;
+      > * {padding:0 2px;}
+      img {width:16px !important; height:16px !important;}
+    }
+    .ico-cart {
+      min-width:16px; min-height:16px;
+    }
+  }
+
+  .top-banner-fluid {
+    height:60px;
+  }
+
+  .bot-banner-fluid {height:auto;
+    img {
+      width:100% !important;
+      height:auto !important;
+    }
+  }
+
+  // 기존 custom.css 리셋
+  .h_r_icon a {display:flex;}
+}

@@ -1,0 +1,255 @@
+<!-- popup : video -->
+<div class="popup-area pop-video">
+    <div class="pop-dim"></div>
+    <div class="popup-wrap">
+        <div class="popup-header">
+            <button class="close"><!-- 닫기 버튼 --></button>
+        </div>
+        <div class="popup-content">
+            <video id="media" src="" playsinline autoplay="autoplay" controls="controls" ></video>
+            <iframe id="youtube" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- popup : common comment (이용권 팝업) -->
+<div class="popup-area pop-coupon" id="popKyoboCoupon">
+    <div class="pop-dim"></div>
+    <div class="popup-wrap size-full-md">
+        <div class="popup-header has-bot-line">
+            <h1>교보문고 sam 무제한 이용권</h1>
+            <button type="button" class="btn-close" onclick="setTabContents(); fnCloseThisPop('popKyoboCoupon');"><!-- 닫기 버튼 --></button>
+        </div>
+        <div class="tab-contents tab-contents-coupon">
+            <div class="form-item-wrap">
+                <select class="select" id="stuInfoSelect" onchange="fnGetSamCouponList(null, this.value)">
+                </select>
+            </div>
+            <div class="tab-btns-area btn-col-2">
+                <button type="button" class="btn-tab active" active-target="content-coupon">이용권 발급 이력</button>
+                <button type="button" class="btn-tab" active-target="content-use-to">이용권 사용방법</button>
+            </div>
+            <div class="tab-content-area popup-scroll-area">
+                <div class="tab-content content-coupon active">
+                    <ul class="info-dot-list">
+                        <li>이용권 등록기간 : 발급된 달의 익월 말일까지</li>
+                        <li>이용권 이용기간 : 등록일 기준 30일간 이용 가능</li>
+                        <li>이용권 중복 등록 : 이전 등록 이용권의 이용기간 연장이 아닌 각각의 이용권으로 사용 가능</li>
+                    </ul>
+                    <div class="tbl-item-wrap talign-center">
+                            <table id="couponListTable">
+
+                            </table>
+                        </div>
+                </div>
+                <div class="tab-content content-use-to">
+                    <div class="info-order-list-wrap">
+                        <em class="list-tit">교보문고 홈페이지</em>
+                        <ol class="info-order-list size-half size-full-md">
+                            <li>
+                                <div class="item-thumb">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_web_1.png" class="pc">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_web_1_m.png" class="mobile">
+                                </div>
+                                <p class="item-txt"><i class="order-num"></i>교보문고 sam홈페이지 접속 및 로그인</p>
+                            </li>
+                            <li>
+                                <div class="item-thumb">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_web_2.png" class="pc">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_web_2_m.png" class="mobile">
+                                </div>
+                                <p class="item-txt pc"><i class="order-num"></i>우측 상단 <strong>[이용권구매]</strong>메뉴 접속</p>
+                                <p class="item-txt mobile"><i class="order-num"></i><strong>[My이용권]</strong>메뉴 접속</p>
+                            </li>
+                            <li>
+                                <div class="item-thumb">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_web_3.png" class="pc">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_web_3_m.png" class="mobile">
+                                </div>
+                                <p class="item-txt"><i class="order-num"></i>[sam 교환번호 등록] 메뉴에서 매월 문자로 오는 이용권 교환번호 등록</p>
+                            </li>
+                            <li>
+                                <div class="item-thumb">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_web_4.png" class="pc">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_web_4_m.png" class="mobile">
+                                </div>
+                                <p class="item-txt"><i class="order-num"></i>[sam 무제한] 표시가 있는 eBook을 다운받아 무제한 독서</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="info-order-list-wrap">
+                        <em class="list-tit">교보문고 eBook 앱</em>
+                        <ol class="info-order-list size-half size-full-md">
+                            <li>
+                                <div class="item-thumb">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_app_1.png" class="pc">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_app_1_m.png" class="mobile">
+                                </div>
+                                <p class="item-txt"><i class="order-num"></i>교보문고 eBook 앱 다운 및 로그인</p>
+                            </li>
+                            <li>
+                                <div class="item-thumb">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_app_2.png" class="pc">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_app_2_m.png" class="mobile">
+                                </div>
+                                <p class="item-txt"><i class="order-num"></i>서점 > 줄세개버튼 <i class="ico ico-sam-menu"></i> > 교환번호 등록 메뉴 접속</p>
+                            </li>
+                            <li>
+                                <div class="item-thumb">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_app_3.png" class="pc">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_app_3_m.png" class="mobile">
+                                </div>
+                                <p class="item-txt"><i class="order-num"></i>[교환번호 등록] 메뉴에서 매월 문자로 오는 이용권 교환번호 등록</p>
+                            </li>
+                            <li>
+                                <div class="item-thumb">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_app_4.png" class="pc">
+                                    <img src="/assets/img/event_kyobo/popup_coupon_sam/img_use_to_app_4_m.png" class="mobile">
+                                </div>
+                                <p class="item-txt"><i class="order-num"></i>[sam 무제한] 표시가 있는 eBook을 다운받아 무제한 독서</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="use-to-notice-wrap">
+                        <em class="notice-tit">유의 사항</em>
+                        <ul class="notice-dot-list">
+                            <li>이용권은 발급된 달의 익월 말일까지 등록 가능하며, 등록일 기준 30일간 이용할 수 있습니다.</li>
+                            <li>이용권 중복 등록 시, 이전 등록 이용권의 이용기간의 연장이 아닌 각각의 이용권으로 사용 가능합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function fnGetSamCouponList(thisParentId, thisStudentId){
+                    const res = function(response) {
+
+                        if(response.code == "200"){
+                            let listHtml ='<colgroup><col width="20%"><col width="24%"><col width="56%"></colgroup><tbody><tr><th>회차</th><th>이용권 발급일</th><th>이용권 번호</th></tr>';
+                            if(!common.isNull(response.data.couponList ) &&response.data.couponList.length > 0 ){
+                                let couponList = response.data.couponList;
+                                $.each(couponList, function (index, item) {
+                                    listHtml+='<tr name="couponTr">'+
+                                        '<td>'+item.couponSession+'</td>'+
+                                        '<td>'+item.couponIssueDt+'</td>'+
+                                        '<td>'+item.couponNo+'</td>'+
+                                        '</tr>';
+                                })
+                            }else{
+                                listHtml +=
+                                    '<tr name="couponTr">'+
+                                    '<td colSpan="3" class="no-data">'+
+                                    '<i class="ico ico-nodata"></i>'+
+                                    '<span>발급된 이용권 이력이 없습니다.</span>'+
+                                    '</td>'+
+                                    '</tr>';
+                            }
+                            listHtml += '</tbody>';
+                            if(!common.isNull(response.data.studentId)){
+                                $('[data-id="'+response.data.studentId+'"]').attr("selected", "selected");
+                            }
+                            $("#couponListTable").html(listHtml);
+                            fnGetThisPop('popKyoboCoupon');
+                        }else{
+                            if(response.message != null){
+                                alert(response.message);
+                            }else{
+                                alert("시스템 오류가 발생했습니다. 관리자에게 문의하시기 바랍니다.");
+                            }
+                            return false;
+                        }
+                    }
+                    let data = {};
+                    if(!common.isNull(thisStudentId)){
+                        data.studentId = thisStudentId;
+                    }else if(!common.isNull(thisParentId)){
+                        data.parentId = thisParentId;
+                    }
+                    com_ajax.ajax('post', '/clientsvc/hpg/v1/svh/mypage/coupon/sam',  JSON.stringify(data), res);
+
+                }
+                function fnGetChildInfo(){
+                    $("[name='couponTr']").remove();
+                    let samParentId = null;
+                    let samJwtTokcen = jwt.getAllToken();
+                    var samUserInfo = JSON.parse(samJwtTokcen.getItem("vuex"));
+                    if (!common.isNull(samUserInfo) && !common.isNull(samUserInfo.parentId)) {
+                        samParentId = samUserInfo.parentId;
+                        let data = {};
+                        const res = function(response) {
+                            if(response.code == "200"){
+                                $("#stuInfoSelect").html('');
+                                let stuHtml ="";
+                                let stuList = response.data.items;
+                                $.each(stuList, function (index, item) {
+                                    if(index == 0){
+                                        stuHtml += '<option value="'+item.studentId+'" data-id="'+item.studentId+'" selected>'+item.studentNm+'</option>';
+                                    }else{
+                                        stuHtml += '<option value="'+item.studentId+'" data-id="'+item.studentId+'">'+item.studentNm+'</option>';
+                                    }
+                                });
+                                if(stuList.length == 1){
+                                    $("#stuInfoSelect").attr("disabled", true);
+                                }
+                                $("#stuInfoSelect").html(stuHtml);
+                                fnGetSamCouponList(samParentId,null);
+                            }else{
+                                if(response.message != null){
+                                    alert(response.message);
+                                }else{
+                                    alert("시스템 오류가 발생했습니다. 관리자에게 문의하시기 바랍니다.");
+                                }
+                                return false;
+                            }
+                        }
+                        com_ajax.ajax('get', '/clientsvc/hpg/v1/svh/user/students/info',  data, res);
+
+                    }else{
+                        alert("로그인 후 진행해주세요.");
+                        common.hrefFunction('/main/login');
+                        return;
+                    }
+                }
+
+                <!-- 231206 nature : 탭 컨텐츠 이벤트, active 셋팅 추가 -->
+                var tabEl = document.querySelector('.pop-coupon .tab-contents-coupon');
+                var tabBtns = tabEl.querySelectorAll('.btn-tab');
+                var tabContents = tabEl.querySelectorAll('.tab-content');
+
+                for(var i=0; i<tabBtns.length; i++) {
+                    tabBtns[i].addEventListener('click', toggleTabContents);
+                }
+                function toggleTabContents(e) {
+                    var activeTarget = e.currentTarget.getAttribute('active-target');
+                    tabContents.forEach(function (target, index) {
+                        if(target.classList.contains(activeTarget)) {
+                            target.classList.add('active');
+                            tabBtns[index].classList.add('active');
+                            if(tabEl.querySelector('.popup-scroll-area')) {
+                                tabEl.querySelector('.popup-scroll-area').scrollTop = 0;
+                            }
+                        } else {
+                            target.classList.remove('active');
+                            tabBtns[index].classList.remove('active');
+                        }
+                    });
+                }
+                function setTabContents() {
+                    tabBtns.forEach(function (target, index) {
+                        if(index!==0 && target.classList.contains('active')) {
+                            // 최초 액티브 객체(0)이 아닐 경우 active 클래스 제거
+                            target.classList.remove('active');
+                            tabContents[index].classList.remove('active');
+                            // 객체(0) active
+                            tabBtns[0].classList.add('active');
+                            tabContents[0].classList.add('active');
+                        }
+                    });
+                }
+            </script>
+        </div>
+    </div>
+</div>
+<!-- 231204 nature : GNB SAM 이용권 팝업 내 탭 컨텐츠 생성 -->
+<!--<script>-->
+<!--    readingUi.tabContents('.pop-coupon .tab-contents-coupon');-->
+<!--</script>-->

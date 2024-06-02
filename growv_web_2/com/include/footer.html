@@ -1,0 +1,70 @@
+<div class="ft">
+    <div class="ft_wrap">
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+            <div class="ft_l">
+                <div class="ft_l_head">
+
+                    <div class="fs_12 ft_left text-white">
+                        <div class="a_link">
+                            <a href="https://www.growv.com/" target="_blank">회사소개</a>
+                            <a href="/pages/terms.html">이용약관</a>
+                            <a href="/pages/privacy-policy.html" class="bold">개인정보처리방침</a>
+                        </div>
+                    </div>
+                    <div class="fs_14 fw_800 text-white mb-md-4 mb-2">(주) 그로비교육</div>
+                </div>
+
+                <div class="ft_info"><span>대표 : 박철우</span>
+                    <span>사업자등록번호 : 463-81-02469</span><br>
+                    <span>서울특별시 서초구 서초대로50길 35. 3-7층, B1층(서초동)</span>
+                    <span>통신판매업신고번호 : 제2022-서울서초-2468호
+                        <a href="javascript:void(0)" onclick="window.open('https://www.ftc.go.kr/bizCommPop.do?wrkr_no=4638102469&apv_perm_no=', '_blank', 'width=900,height=1000');"  class="ft_sell">
+                            [정보조회]
+                        </a>
+                    </span>
+                    <span> 신고기관명 : 서초구청</span>
+                    <span>전자출판물인증번호 : I410-ECN-0199-2023-080-001632352</span>
+                    <span><a href="mailto:contactus@growv.com" class="text_under">email : contactus@growv.com</a></span>
+                    <span class="text-white d-block d-lg-none">고객센터 : <a href="tel:1533-1777" class="text-white">1533 - 1777</a></span>
+                </div>
+
+                <p class="mt-4">Copyright 2022 by growV. All Rights Reserved.</p>
+            </div>
+
+            <div class="ft_custom">
+                <p class="text-white fs_14 fw_500">고객센터</p>
+                <p class="fs_14 fw_700 text-white">1533 - 1777</p>
+                <p>평일 10시~19시, 점심시간 12시~13시<br>
+                    주말/공휴일 휴무</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<span itemscope="" itemtype="http://schema.org/Organization">
+<link itemprop="url" href="https://reading.superv.com">
+<a itemprop="sameAs" href="https://www.instagram.com/superreading/"></a>
+<a itemprop="sameAs" href="https://blog.naver.com/super-reading"></a>
+<a itemprop="sameAs" href="https://www.youtube.com/@superv.youtube"></a>
+</span>
+
+
+<script>
+    // 로컬 확인 용 경로 재설정
+    if (location.hostname === "localhost") {
+        var hrefArr = document.querySelectorAll("footer a[href^='/']");
+        // console.log('========= header ===========', hrefArr);
+        for (var i = 0; i < hrefArr.length; i++) {
+            var getUrl = hrefArr[i].getAttribute("href").toString();
+            var localUrl = '/growv-reading-app'
+            // console.log(getUrl);
+
+            if(getUrl.indexOf(localUrl) < 0) {
+                localUrl += getUrl;
+                hrefArr[i].setAttribute('href', localUrl);
+                // console.log(localUrl);
+            }
+        }
+    }
+</script>

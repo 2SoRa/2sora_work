@@ -1,0 +1,700 @@
+@charset "UTF-8";
+
+// 공통 요소 스타일 : 커스텀 에러 메세지, 알럿 메시지, 타이머
+span.custom-error {
+  display:inline-block;
+  margin-top:4px;
+  font-size:12px;
+  line-height:1.63;
+  letter-spacing:-0.4px;
+  color:$color-text-danger;
+
+  &.hide {
+    display: none;
+  }
+
+  &.mo {
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: -0.55px;
+  }
+}
+.alert-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 104px;
+  padding-top: 34px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5em;
+  color: #303030;
+  overflow: hidden;
+}
+.timer {
+  position:absolute;
+  top:50%; right:20px;
+  font-size:15px;
+  color:$color-text-danger;
+  transform:translate3d(0,-50%,0);
+}
+
+// 체크박스, 라디오 공통 스타일
+.check-input,
+.radio-input {
+  position: relative;
+
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  label {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 24px;
+    padding-left: 30px;
+    line-height: 1;
+    font-size: 14px;
+
+    &:before,
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 50%;
+      left: 0;
+      margin-top: -12px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: 100% 100%;
+    }
+  }
+
+  // 인풋 체크 상태
+  input:checked ~ label:before {
+    opacity: 0;
+  }
+
+  input:checked ~ label:after {
+    opacity: 1;
+  }
+}
+.check-input {
+  label {
+    &:before {
+      background-image: url("/assets/img/common/ico_input_check_default.svg");
+      background-repeat: no-repeat;
+    }
+
+    &:after {
+      background-image: url("/assets/img/common/ico_input_check_active.svg");
+      opacity: 0;
+    }
+  }
+}
+.radio-input {
+  label {
+    padding-left: 26px;
+
+    &:before,
+    &:after {
+      width: 18px;
+      height: 18px;
+      margin-top: -9px;
+    }
+
+    &:before {
+      background-image: url("/assets/img/common/ico_input_radio_default.svg");
+    }
+
+    &:after {
+      background-image: url("/assets/img/common/ico_input_radio_active.svg");
+      opacity: 0;
+    }
+  }
+}
+
+// 라디오 캐릭터
+.char-radio-group {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  width:100%;
+  margin-bottom:30px;
+}
+.char-radio-input {
+  $thumbW : 72px;
+  position:relative;
+  min-width:$thumbW;
+  width:$thumbW;
+  margin:0 12px;
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &:checked + label {
+      &:before,
+      &:after {opacity:1;}
+    }
+  }
+  label {
+    display:block;
+    position:relative;
+    padding-top:$thumbW;
+    text-align:center;
+    cursor:pointer;
+
+    &:before,
+    &:after {
+      display:block;
+      content:'';
+      position:absolute;
+      top:0; left:0;
+      border-radius:50%;
+      background-repeat:no-repeat;
+      background-position:50% 50%;
+      background-size:100% 100%;
+      z-index:1;
+      opacity:0;
+    }
+    &:before {
+      width:$thumbW; height:$thumbW;
+      border:3px solid $color-active-purple;
+    }
+    &:after {
+      width:24px; height:24px;
+      left:50%; margin-left:-12px;
+      margin-top:-12px;
+      background-image: url("/assets/img/common/ico_check_active.png");
+    }
+    .img-char {
+      position:absolute;
+      top:0; left:0;
+      width:$thumbW; height:$thumbW;
+      border-radius:50%;
+      background-repeat:no-repeat;
+      background-position:50% 50%;
+      background-size:100% 100%;
+    }
+    .value {
+      display:block;
+      margin-top:16px;
+      font-size:15px;
+      font-weight:$font-bold;
+      text-align:center;
+    }
+
+    $charArr : 'sukey', 'wiz', 'dewy', 'evie', 'neo';
+    @each $char in $charArr {
+      &[for=#{$char}] .img-char {background-image: url("/assets/img/common/char/select_#{$char}.png");}
+    }
+  }
+}
+
+// 입력폼 추가, 삭제 버튼 (+, -)
+.btn-url {
+  width: 40px;
+  height: 46px;
+  border: 1px solid #CECECE;
+  font-size: 0;
+  color: #292929;
+
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    font-size: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  &.btn-add-input {
+    &:before {
+      content: '+';
+    }
+  }
+
+  &.btn-del-input {
+    &:before {
+      content: '-';
+    }
+  }
+}
+
+// 텍스트 필드 입력 폼
+.text-wrap {
+  position: relative;
+  width: 100%;
+  height: 184px;
+  padding: 15px 16px 33px;
+  border: 1px solid #DBDBDB;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+
+  textarea {
+    height: 121px;
+  }
+
+  /* 최대 300자 안내 */
+  span {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 10px 10px 0;
+    font-size: 14px;
+    text-align: right;
+    color: #888888;
+  }
+
+  /* 글자수 타이핑 (실시간, 최대글자수) */
+  .num-letter-holder {
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    bottom: 0;
+    right: 0;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    line-height: 1;
+    color: #a8a8a8;
+
+    i {
+      margin: 0 4px;
+      font-size: inherit;
+    }
+
+    span {
+      display: inline;
+      position: static;
+      margin: 0;
+      font-size: inherit;
+
+      &.current {
+        font-weight: 800;
+        color: #292929;
+      }
+    }
+  }
+}
+
+// 셀렉스 공통 스타일
+select {
+  background-image: url('../img/common/icon_arrow_d_18.svg');
+  background-repeat: no-repeat;
+  background-position: center right 8px;
+  background-size: 18px 18px;
+}
+
+// 인풋 URL 타입
+//input[type="url"] {
+//  width: 100%;
+//  height: $input-h;
+//  padding: 16px 14px;
+//  border: 1px solid #CECECE;
+//  border-radius: $border-rd;
+//  font-size: 14px;
+//  box-sizing: border-box;
+//}
+
+// 인풋 file 타입 (썸네일 포함)
+.file-upload-thumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  li {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .inputImageFile {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(219, 219, 219, 0.2);
+    z-index: 1;
+
+    img {
+      position: relative;
+      @extend .img-obj-fit-cover;
+      z-index: 1;
+    }
+  }
+
+  .btn-upload-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7;
+    z-index: -1;
+
+    &:before,
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 14px;
+      top: 50%;
+      left: 50%;
+      background-color: #acacac;
+    }
+
+    &:before {
+      transform: translate3d(-50%, -50%, 0);
+    }
+
+    &:after {
+      transform: translate3d(-50%, -50%, 0) rotate(90deg);
+    }
+  }
+
+  .btn-thumb-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 2;
+
+    img {
+      position: relative;
+      @extend .img-obj-fit-cover;
+      z-index: 1;
+    }
+  }
+}
+
+// 인풋 file 타입 (파일명 버전)
+.file-upload-list {
+  width: 100%;
+
+  li {
+    margin-top: 10px;
+    &:first-child {margin-top: 0;}
+  }
+}
+.inputFileCustom {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: $input-h;
+  padding: 8px 98px 8px 16px;
+  border: 1px solid $color-input-border;
+  border-radius: $border-rd;
+  font-size: 14px;
+  box-sizing: border-box;
+
+  .upload-name {
+    width: 100%;
+    height:auto;
+    padding:0;
+    border:0;
+    background:none;
+    caret-color: transparent;
+    @extend .ellips;
+  }
+
+  // 이미지 or 영상 업로드 버튼
+  .btn-upload {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:absolute;
+    width:81px; height:32px;
+    top:50%; right:8px;
+    border-radius:4px;
+    font-weight:500;
+    background-color:$color-active-purple;
+    color:#fff;
+    transform:translate3d(0, - 50%, 0);
+    cursor:pointer;
+  }
+}
+
+// 인풋 그룹
+.input-group {
+  display:flex;
+  width:100%;
+  align-items:flex-start;
+  flex-direction: column;
+  margin-top:30px;
+
+  &.flex-between-row {
+    align-items:center;
+    margin-top:10px;
+    input {width:400px; margin-top:0;}
+  }
+
+  .input-group-name {
+    font-size:16px;
+    font-weight:bold;
+  }
+  .input-items {
+    width:100%;
+    &.inline-flex-group {
+      .input-item {
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+        input {width:auto;}
+      }
+    }
+  }
+  .input-item,
+  .radio-group,
+  .file-upload-list {
+    margin-top:10px;
+    //&:first-child {margin-top:0;}
+  }
+  .input-items {
+    margin-top:10px;
+    .iunput-item:first-child {margin-top:0;}
+  }
+  // 인풋 파일 타입
+  input[type="file"] {
+    display: none;
+  }
+}
+
+// 폼 입력 컨테이너
+.form-area {
+  display: flex;
+  justify-content: center;
+
+  &.dir-col {
+    flex-direction: column;
+
+    legend {
+      font-size: 0;
+    }
+  }
+
+  legend {
+    font-size: 0;
+    color: #303030;
+    display: none;
+  }
+
+  fieldset {
+    position: relative;
+    width: 100%;
+  }
+
+  // 폼 안내, 알럿 문구
+  .emphasis {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #8B51E2;
+  }
+}
+
+// 폼 약관 동의
+.form-privacy-area {
+  width: auto; //width: 100%;
+  background-color: #F7F7F7;
+  padding: 30px $popup-pd-lr 40px;
+  margin-top: 30px;
+
+  legend {
+    font-size: 0;
+  }
+
+  p {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #303030;
+  }
+
+  .form-area {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    //border-radius: 10px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px solid #CECECE;
+    line-height: 1.29;
+    font-size: 14px;
+    letter-spacing: -0.18px;
+    color: #343434;
+
+    span {
+      color: #343434;
+    }
+  }
+
+  .check-input {
+    //margin: 12px 0 30px; //중복
+    label {
+      font-size: 18px;
+      line-height: 1.33;
+    }
+
+    &.all {
+      //padding-bottom: 30px;
+      //margin: 0  0 30px;
+      //border-bottom: 1px solid #DEDEDE;
+      //font-weight: bold;
+    }
+  }
+
+  .color-em {
+    color: $color-active-purple;
+  }
+}
+
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  span {
+    &.custom-error {
+      &.mo {
+        font-size: 2.9vw;
+        line-height: 3.7vw;
+      }
+    }
+  }
+  .timer {
+    font-size:14px;
+  }
+  .radio-input {
+    label {
+      &:before {
+        background-image: url("https://cdnfiles.superv.com/reading_img/input_radio_default@3x.png");
+      }
+
+      &:after {
+        background-image: url("https://cdnfiles.superv.com/reading_img/input_radio_active@3x.png");
+        opacity: 0;
+      }
+    }
+  }
+  .check-input {
+    label {
+      &:before {
+        background-image: url("https://cdnfiles.superv.com/reading_img/input_check_default@3x.png");
+      }
+
+      &:after {
+        background-image: url("https://cdnfiles.superv.com/reading_img/input_check_active@3x.png");
+        opacity: 0;
+      }
+    }
+  }
+
+  .char-radio-group {
+    padding:0 14px;
+  }
+  .char-radio-input {
+    margin:0 vw-cal-md(16px);
+  }
+
+  .btn-url {
+    width: 40px;
+    height: $input-h-mo;
+
+    &:before {
+      font-size: 16px;
+    }
+  }
+
+  .text-wrap {
+    height: 219px;
+    padding: 15px 16px 33px;
+
+    textarea {
+      min-height: 176px;
+      font-size: 14px;
+      line-height: 1.57;
+    }
+
+    /* 최대 150자 안내 */
+    span {
+      font-size: 14px;
+    }
+
+    /* 실시간 타이핑 안내 */
+    .num-letter-holder {
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+  }
+
+  input[type="url"] {
+    height: $input-h-mo;
+    padding: 16px 14px;
+    font-size: 14px;
+  }
+
+  .inputFileCustom {
+    height: $input-h-mo;
+    font-size: 14px;
+
+    .btn-upload {
+      width: 70px;
+      height: 32px;
+    }
+  }
+
+  .input-group {
+    gap:12px;
+
+    &.flex-between-row {
+      input {width:percentage(238/328);}
+    }
+    .input-group-name {
+      font-size:16px;
+    }
+    .input-items {
+      &.inline-flex-group {
+        .input-item {
+          gap:10px;
+          input {}
+        }
+      }
+    }
+    .input-item {
+      margin-top:10px;
+      &:first-child {margin-top:0;}
+    }
+  }
+
+  .form-area {
+    .emphasis {
+      display: inline-block;
+      width: 100%;
+      margin-top: 0;
+      padding: 8px 0 0 0;
+      font-size: 12px;
+    }
+  }
+
+  .form-privacy-area {
+    padding: 28px $popup-pd-lr-md 30px;
+  }
+}

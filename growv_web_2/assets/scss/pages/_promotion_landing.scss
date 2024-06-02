@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+// 웹 버전 없는 모바일로 720까지 대응하는 제휴 랜딩 무료체험 페이지 스타일
+.promotion-landing {
+  .sec {
+    width:100%;
+    //max-width:#{$psd-mo-2x}px;
+    max-width:1024px;
+    margin:0 auto;
+
+    .content-title {
+      height:auto;
+    }
+    .content-body {
+      padding:0;
+    }
+    picture {
+      width:100%; height:auto;
+      img {width:100%; height:auto;}
+    }
+  }
+
+  // main_reading_contents 모바일 스타일 오버라이딩
+  .sec-reading-kor,
+  .sec-reading-eng {
+    .btns-wrap.type-tab {
+      padding-top:percentage(20/360);
+      .btns-tab-area {
+        width:100%;
+        padding:0 percentage(10/360);
+        &:before {height:vw-cal-md(2px);}
+      }
+    }
+    .swiper-content {
+      .swiper {
+        height:auto; max-height:100%;
+        .swiper-slide {
+          background-color:transparent;
+        }
+      }
+      .swiper-pagination {
+        position:relative;
+        top:auto;
+        margin-top:vw-cal-md(20px);
+      }
+    }
+    .goto-btn-wrap {
+      position:absolute;
+      width:100%; max-width:100%;
+      //width:percentage(328/360);
+      left:50%; bottom:0;
+      padding:0 percentage(16/360);
+      margin:percentage(40/360) 0;
+      transform:translate3d(-50%,0,0);
+    }
+  }
+
+  .sec-reading-kor {
+    .area-3 {
+      $sec1-pic-3-width : $psd-mo;
+      $sec1-pic-3-height : 726;
+      .btn-play {
+        position: absolute;
+        width:percentage(292/$sec1-pic-3-width); padding-top:percentage(182/$sec1-pic-3-width);
+        max-width:100%; max-height:100%;
+        top:auto; bottom:0; margin-bottom:percentage(144/$sec1-pic-3-width);
+        left:percentage(36/$sec1-pic-3-width);
+        transform:translate3d(0,0,0);
+      }
+    }
+    .area-4 {padding-bottom:40px;
+      .swiper-content {
+        width:100%;
+        padding:0 percentage(30/360);
+        .swiper-pagination.type-dot {
+          .swiper-pagination-bullet-active {background-color:#000;}
+        }
+      }
+      .gif-wrap {position:relative; gap:20px;
+        .gif-item {
+          width:100%;
+          padding-left:percentage(60/300);
+          img {height:auto; border-radius:8px;}
+          &:before {
+            position:absolute;
+            width:vw-cal-md(84px); height:vw-cal-md(73px);
+            top:vw-cal-md(20px); left:0;
+          }
+        }
+      }
+      .area-4-1 {
+        .gif-wrap {
+          @for $i from 1 through 4 {
+            .gif-item.item-#{$i} {
+              &:before {background-image:url("../../assets/img/main/sec_1_slide_1_#{$i}_flag_m.png");}
+            }
+          }
+        }
+      }
+      .area-4-2 {
+        .gif-side-tit {height:vw-cal-md(244px);}
+        .gif-wrap {padding-top:vw-cal-md(29px); margin-bottom:0;
+          &:last-child {margin-bottom:0;}
+          @for $i from 1 through 6 {
+            .gif-item.item-#{$i} {
+              &:before {background-image:url("../../assets/img/main/sec_1_slide_2_#{$i}_flag_m.png");}
+            }
+          }
+        }
+      }
+    }
+    .area-5 {padding-bottom:percentage(124/360);
+      &:before {
+        display:block;
+        content:'';
+        position:absolute;
+        width:100%; height:calc(100% - 160px);
+        border-radius:0;
+        background-color:#e3f7ff;
+        bottom:0; left:0; right:0;
+        z-index:-1;
+      }
+      .swiper-content-card {margin-top:vw-cal-md(10px);
+        .swiper {padding:0 percentage(20/360);}
+      }
+    }
+  }
+
+  .sec-reading-eng {
+    .content-body {
+      .goto-btn-wrap {
+        position:relative;
+        padding-bottom:percentage(40/360);
+        margin:0;
+        background-color:$color-eng-bg;
+      }
+    }
+    .area-2 {
+      .gif-wrap {
+        position:absolute;
+        bottom:auto;
+        top:0; left:percentage(30/360);
+        width:percentage(160/360);
+        gap:0;
+        &.gif-wrap-2-1 {
+          margin-top:percentage(320/360);
+        }
+        &.gif-wrap-2-2 {
+          margin-top:percentage(795/360);
+        }
+        .gif-item {
+          width:100%; height:vw-cal-md(98px);
+          margin-bottom:percentage(10/160);
+          img {height:100%;}
+          &:last-child {margin-bottom:0;}
+        }
+      }
+    }
+    .area-3 {
+      .gif-wrap {
+        padding:0 percentage(30/360);
+        .gif-item {width:100%;}
+      }
+    }
+  }
+
+  // 한글 독서, 영어 원서 리딩 컨텐츠 예외 처리
+  .sec-reading-kor,
+  .sec-reading-eng {
+    .btns-wrap.type-tab {
+      .btns-tab-area:before {
+        max-height:5px;
+      }
+    }
+  }
+
+  .sec-reading-kor {
+    .area-4 {
+      .gif-wrap {
+        .gif-item:before {max-width:238px; top:6%;}
+      }
+      .area-4-2 {
+        .gif-side-tit {height:70%; max-height:580px;}
+      }
+    }
+    .area-5 {
+      padding-bottom:percentage(34/360);
+    }
+    .swiper-content {
+      .swiper-pagination {
+        &.type-dot {
+          .swiper-pagination-bullet {
+            width:vw-cal-md(6px); height:vw-cal-md(6px);
+            max-width:12px; max-height:12px;
+            margin:0 0.5%;
+          }
+        }
+      }
+      .swiper-btn {
+        &.type-blue-gray {
+          width:vw-cal-md(30px); height:vw-cal-md(38px);
+          max-width:60px; max-height:76px;
+        }
+      }
+    }
+  }
+  .sec-reading-eng {
+    .area-2 {
+      .gif-wrap {
+        .gif-item {max-height:282px;}
+      }
+    }
+  }
+}

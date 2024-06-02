@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+.pop-coupon {
+  .popup-wrap {
+    height:606px;
+
+    .popup-scroll-area {
+
+    }
+    .tab-contents {
+      height:calc(100% - 80px);
+    }
+    .tab-btns-area {
+      padding:0 32px;
+    }
+    .tab-content-area {
+      height:calc(100% - 130px);
+      max-height:calc(100% - 130px);
+      padding-top:18px;
+      padding-bottom:0;
+      //overflow:hidden;
+    }
+  }
+  @media (max-width: $media-lg) {
+    .popup-wrap {
+      .tab-contents {
+        height:calc(100% - 60px);
+        padding-bottom:0;
+      }
+      .tab-btns-area {
+        padding:0 16px;
+      }
+      .tab-content-area {
+        height:calc(100% - 150px);
+        max-height:calc(100% - 150px);
+        padding-top:20px;
+        padding-bottom:80px;
+      }
+    }
+  }
+}

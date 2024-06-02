@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+// (리딩/브이 공통 활용을 위한) 필수 최소 scss
+//@import "./common/variables";
+//@import "./common/mixin";
+
+.pop-expire-mall {
+  display:none;
+  position:absolute;
+  width:100%; height:auto;
+  max-width:1920px;
+  top:260px; left:50%;
+  transform:translate3d(-50%,0,0);
+  align-items:center;
+  justify-content:flex-start;
+  z-index:250;
+
+  .mobile {display:none;}
+
+  .popup-wrap {
+    width:310px; height:100%;
+    border-radius:0;
+    background-color:transparent;
+    box-sizing:border-box;
+    overflow:hidden;
+    z-index:10;
+
+    .inner-wrap {
+      position:relative;
+      min-height:310px;
+      border-radius: 12px;
+      overflow:hidden;
+      //border-radius:20px;
+    }
+    .popup {
+      width:100%; padding:0;
+      background-color:transparent;
+
+      .btn-wrap {position:relative;
+        .btn-goto-mall {
+          position:absolute;
+          bottom:2%; left:50%; transform:translate3d(-50%,0,0);
+          width:94%; padding-top:18.6%; margin-bottom:4%;
+        }
+      }
+    }
+    .popup-header {
+      position:absolute;
+      width:100%;
+      top:0; right:0;
+      background-color:transparent;
+
+      .btn-close {
+        width:46px; height:46px;
+        background-image:url("/assets/img/popup/icons/btn_pop_close_mall.svg");
+
+      }
+    }
+    .popup-footer {
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      width:100%;
+      padding:12px 24px;
+      font-size:11px;
+      font-weight:700;
+      color:#fff;
+      box-sizing:border-box;
+
+      .check-input {
+        position: relative;
+        margin:0;
+
+        input {
+          position:absolute;
+          z-index:-1;
+          opacity:0;
+        }
+        label {
+          display:flex;
+          position:relative;
+          align-items:center;
+          height:auto;
+          padding:0 0 0 24px;
+          font-size:inherit;
+          line-height:1;
+          background:none;
+
+          &:before,
+          &:after {
+            display:block;
+            content:'';
+            position:absolute;
+            width:20px; height:20px;
+            top:50%; left:0;
+            margin-top:-9px;
+            border-radius:50%;
+            background-repeat:no-repeat;
+            background-position:50% 50%;
+            background-size:100% 100%;
+          }
+        }
+
+        // 인풋 체크 상태
+        input:checked ~ label:before {opacity:0;}
+        input:checked ~ label:after {opacity:1;}
+      }
+      .check-input {
+        label {
+          &:before {
+            border:2px solid #fff;
+            background-image:none;
+          }
+
+          &:after {
+            background-image: url("/assets/img/common/icons/ico_check_active_bd.svg");
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width:$media-lg) {
+    justify-content:center;
+    position:fixed;
+    width:100%; height:100%;
+    top:0; left:0; right:0; bottom:0;
+    transform:translate3d(0,0,0);
+
+    .mobile {display:block;}
+
+    .pop-dim {
+      display:block;
+      position:fixed;
+      width:100%; height:100%;
+      top:0; right:0; bottom:0; left:0;
+      background-color:rgba(0, 0, 0, 0.7);
+    }
+    .popup-wrap {
+      position:absolute;
+      width:percentage(328/360); height:auto;
+      max-width:528px;
+      margin:auto;
+      .popup {line-height:0;}
+      .popup-header {
+        padding:0;
+        .btn-close {
+          width:vw-cal-md(46px);
+          height:vw-cal-md(46px);
+          max-width:46px; max-height:46px;
+          top:0; right:0;
+        }
+      }
+      .popup-footer {
+        padding:0;
+        font-size:14px;
+        .check-input {
+          margin-top:8px;
+          label {
+            height:20px;
+            padding-left:28px;
+            &:before,
+            &:after {
+              width:20px; height:20px;
+              margin-top:0; top:0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

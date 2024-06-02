@@ -1,0 +1,395 @@
+@charset "UTF-8";
+
+// 리뷰 탑, 리스트컨테이너 공통 스타일 (공통 스타일 수정이 아닐 경우 별도 정의)
+.review-list-top,
+.review-list-wrap {
+  max-width:1120px;
+  margin:0 auto;
+
+  // pagination
+  .list-pagination {
+    margin-top:80px;
+    margin-bottom:80px;
+  }
+
+  // 내가 쓴 글 보기 상태
+  &.sta-my-review {
+    .review-list {
+      @extend .flex-content-center;
+    }
+    .list-pagination {
+      button, a {display:none !important;}
+      p {margin:0 auto;
+        i, .total {display:none;}
+      }
+    }
+  }
+}
+
+// 리뷰 탑
+.review-list-top {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  padding-bottom:30px;
+  margin:80px auto 60px;
+
+  &:after {
+    display:block;
+    content:'';
+    position:absolute;
+    width:100%; height:1px;
+    bottom:0; left:0;
+    background-color:$color-list-border;
+  }
+  .review-list-tit {
+    height:48px;
+    text-align:center;
+    img {width:auto; height:100%;}
+  }
+  .btns-wrap {
+    display:flex;
+    position:absolute;
+    top:0; right:0;
+    gap:6px;
+  }
+}
+
+// 리뷰 리스트 스타일
+.review-list {
+  $itemPdnum : 20;
+  $itemPd : 20px;
+  $itemPd2x : $itemPd * 2;
+  $itemPd-minus : ($itemPd*-1);
+  $listMaxW : (1120px + ($itemPd*2));
+  $listMaxW2 : (1120 + ($itemPdnum*2));
+  display:flex;
+  flex-wrap:wrap;
+  width:calc(100% + $itemPd2x);
+  margin:$itemPd-minus;
+  .list-item {
+    width:33.33%;
+    padding:$itemPd;
+    overflow:hidden;
+  }
+  .item-inner {
+    position:relative;
+    height:425px;
+    padding-top:220px;
+    border-radius:20px;
+    border:1px solid #dbdbdb;
+    overflow:hidden;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+    .btn-thumb-more,
+    .item-thumb {
+      position:absolute;
+      width:100%; height:220px;
+      top:0; left:0; right:0;
+      background-color:#f5f5f5;
+      transform-origin:50% 50%;
+      transition:transform 0.25s ease-out;
+      img {
+        @extend .img-obj-fit-contain;
+      }
+    }
+    .btn-thumb-more {
+      overflow:hidden;
+      &:hover {
+        .item-thumb {
+          transform:scale(1.05);
+        }
+      }
+    }
+    .btns-wrap {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      width:100%;
+      margin-top:auto;
+    }
+  }
+  .review-items {
+    padding:20px;
+  }
+}
+
+// 리뷰 영역 내 텍스트 요소 공통 스타일
+.review-items {
+  display:flex;
+  flex-direction:column;
+  height:100%;
+
+  .item-text {
+    position:relative;
+    font-size:18px;
+    line-height:28px;
+    word-break:break-word;
+
+    &.line-clap-2 {
+      height:56px;
+    }
+    &.line-clap-8 {
+      height:auto;
+      max-height:224px;
+    }
+  }
+  .item-writer {
+    margin-top:20px;
+    font-size:18px;
+    line-height:1.33;
+    font-weight:700;
+    text-align:right;
+  }
+}
+
+// 썸네일 리스트 내 pagination 커스텀 스타일
+.list-pagination {
+  position:relative;
+  margin-top:60px;
+  padding-top:40px;
+  //border-top:1px solid $color-list-border;
+  &:before {
+    display:block;
+    content:'';
+    position:absolute;
+    width:100%; height:1px;
+    top:0; left:0;
+    background-color:$color-list-border;
+  }
+}
+
+// 결과값 없음
+.no-result {
+  width:100%;
+  padding:60px 0;
+  font-size:20px;
+  font-weight:700;
+  text-align:center;
+}
+
+
+@media (max-width: $media-lg) {
+  // 리뷰 탑, 리스트컨테이너 공통 스타일
+  .review-list-top,
+  .review-list-wrap {
+    padding-left:16px;
+    padding-right:16px;
+
+    .list-pagination {
+      margin-top:vw-cal-md(20px);
+      margin-bottom:vw-cal-md(40px);
+      &:before {
+        height:2px;
+      }
+    }
+  }
+  .review-list-top {
+    justify-content:space-between;
+    padding-bottom:vw-cal-md(30px);
+    margin:vw-cal-md(40px 0px 20px);
+    .review-list-tit {
+      height:vw-cal-md(30px);
+    }
+    &:after {
+      width:calc(100% - 32px);
+      height:2px;
+      left:16px;
+    }
+    .btns-wrap {
+      position:static;
+    }
+  }
+
+  // 리뷰 리스트 스타일
+  .review-list {
+    $itemPd : 4px;
+    $itemPd2x : $itemPd * 2;
+    $itemPd-minus : ($itemPd*-1);
+
+    width:calc(100% + $itemPd2x);
+    margin:-12px -4px;
+    .item-inner {
+      height:vw-cal-md(258px);
+      //max-height:500px;
+      padding-top:vw-cal-md(120px);
+      border:1px solid #dbdbdb;
+      box-shadow:none;
+
+      .btn-thumb-more,
+      .item-thumb {
+        height:vw-cal-md(120px);
+      }
+      .btns-wrap { }
+    }
+    .list-item {
+      padding:12px 4px;
+      width:50%;
+    }
+    .review-items {
+      padding:12px 16px;
+    }
+  }
+
+  .review-items {
+    .item-text {
+      font-size:vw-cal-md(14px);
+      line-height:1.5;
+      &.line-clap-2 {
+        height:vw-cal-md(40px);
+      }
+    }
+    .item-writer {
+      margin-top:vw-cal-md(12px);
+      font-size:vw-cal-md(14px);
+    }
+  }
+
+  .list-pagination {
+    margin-top:20px;
+    padding-top:30px;
+    &:before {
+      display:block;
+      content:'';
+      position:absolute;
+      width:100%; height:1px;
+      top:0; left:0;
+      background-color:$color-list-border;
+    }
+  }
+
+  // 결과값 없음
+  .no-result {
+    padding:vw-cal-md(40px 0px);
+    font-size:vw-cal-md(14px);
+  }
+}
+
+//******************************** 추가 구성 요소(버튼) 스타일 ********************************/
+.btn-regist {
+
+}
+.btn-view {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+  min-width:169px;
+  padding:0 18px;
+  height:45px;
+  border: 1px solid #d8d8d8;
+  border-radius:10px;
+  background-color:#fff;
+  font-size:18px;
+
+  &:after {
+    display:block;
+    content:'';
+    position:relative;
+    width:24px; height:24px;
+    right:-6px;
+    background: no-repeat 0 0 url("../img/common/icons/ico_btn_arrow_r.svg");
+    background-size:contain;
+  }
+  &.all {}
+  &.my {}
+}
+.btn-more,
+.btn-edit {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex:1 1 0;
+  min-width:60px; height:45px;
+  padding:0 10px;
+  border:1px solid #d8d8d8;
+  border-radius:10px;
+  font-size:18px;
+}
+.btn-more {
+  &:before {
+    display:block;
+    content:'+';
+    position:relative;
+    top:-2px;
+    margin-right:2px;
+  }
+}
+.btn-thumb-remove {
+  position:absolute;
+  width:100%; height:100%;
+  top:0; left:0; right:0; bottom:0;
+  font-size:0;
+  z-index:1;
+  .ico {
+    display:block;
+    position:absolute;
+    width:24px; height:24px;
+    top:8px; right:8px;
+    border-radius:50%;
+    background-color:rgba(41,41,41,0.7);
+
+    &:before {
+      display:block;
+      content:'';
+      position:absolute;
+      width:12px; height:12px;
+      top:50%; left:50%;
+      margin-top:-6px; margin-left:-6px;
+      background: no-repeat 0 0 url("/assets/img/common/icons/ico_close_w.svg");
+      background-size:100%;
+    }
+  }
+}
+
+// 내가 쓴 글보기 버튼 display 예외처리 (무체신청페이지 promotion)
+.promotion,
+.promotion-landing {
+  .btn-edit {
+    display:none !important;
+  }
+}
+
+@media (max-width: $media-lg) {
+  .btn-view {
+    min-width:0;
+    height:vw-cal-md(32px);
+    padding:vw-cal-md(0px 10px);
+    font-size:vw-cal-md(13px);
+    &:after {
+      width:vw-cal-md(16px);
+      height:vw-cal-md(16px);
+      right:vw-cal-md(-6px);
+    }
+  }
+  .btn-more {
+    width:100%;
+    min-width:0;
+    height:vw-cal-md(32px);
+    border-radius:8px;
+    font-size:vw-cal-md(14px);
+  }
+  .btn-edit {
+    position:absolute;
+    width:vw-cal-md(32px); height:vw-cal-md(32px);
+    min-width:0;
+    top:vw-cal-md(8px); right:vw-cal-md(8px);
+    padding:0;
+    border:0;
+    border-radius:50%;
+    background-color:rgba(41,41,41,0.7);
+    font-size:0;
+
+    &:before {
+      display:block;
+      content:'';
+      position:absolute;
+      width:vw-cal-md(20px); height:vw-cal-md(20px);
+      top:50%; left:50%;
+      margin-top:vw-cal-md(-10px); margin-left:vw-cal-md(-10px);
+      background: no-repeat 0 0 url("/assets/img/common/icons/ico_btn_edit.svg");
+      background-size:100%;
+    }
+  }
+}

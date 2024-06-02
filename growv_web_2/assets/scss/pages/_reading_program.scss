@@ -1,0 +1,462 @@
+@charset "UTF-8";
+
+/* 유아 독서 프로그램 */
+.reading-program {
+  .content-title {
+    picture {
+      img {
+        width:auto;
+        height:100%;
+      }
+    }
+  }
+  .inner-area-wrap {
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    text-align:center;
+
+    /* 231009 nature 추가 테스트 중 */
+    .step-list-wrap {
+      position:relative;
+      width:percentage(1120/1200);
+      max-width:1120px;
+      margin:0 auto;
+      .step-list {
+        position:absolute;
+        width:100%; height:100%;
+        top:0; left:0;
+      }
+    }
+
+    $listWidth : 1120;
+    $listPd : 22;
+    $listPdx2 : $listPd * 2;
+
+    $listInnerWidth : $listWidth - $listPdx2;
+    $listItemWidth : 254;
+
+    .step-list {
+      display:flex;
+      justify-content:space-between;
+      position:relative;
+      width:percentage(1120/1200); //height:352px;
+      max-width:1120px;
+      margin:0 auto;
+      padding:0 percentage($listPd/1200) percentage(44/1200);
+
+      &:before {
+        display:none;
+        content:'';
+        position:absolute;
+        width:100%; height:100%;
+        top:0; left:0;
+        background: no-repeat 0 0 url("../../assets/img/reading_program/sec_2_tb_bg.png");
+        background-size: 100% auto;
+      }
+      .list-item {
+        position:relative;
+        width:percentage($listItemWidth/$listInnerWidth); //1120
+        padding:0 percentage(30/1120);
+        margin:0;
+
+        //@for $i from 1 through 4 {
+        //  &:nth-child(#{$i}) {
+        //    $nthIdx : $i - 1;
+        //    left:(25%*$nthIdx);
+        //  }
+        //}
+      }
+      .list-item-tit {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        padding:percentage(10/$listItemWidth) 0;
+        height:percentage(96/310);
+        max-height:98px;
+        color:#fff;
+        span {
+          display:block;
+          margin-bottom:4px;
+          font-size:18px;
+          letter-spacing:-0.36px;
+        }
+        em {
+          font-size:28px;
+          font-weight:800;
+          line-height:1;
+          letter-spacing:-0.56px;
+        }
+      }
+      .list-item-body {
+        padding:percentage(20/$listItemWidth) 0;
+        text-align:left;
+        strong {
+          font-size:26px;
+          line-height:1.3;
+          font-weight:800;
+          letter-spacing:-0.52px;
+          color:#424242;
+        }
+        p {
+          margin-top:20px;
+          font-size:16px;
+          line-height:1.625;
+          color:#757575;
+        }
+      }
+    }
+  }
+
+  /* 메인 : 상단 키비주얼 */
+  .sec-kv {
+    height:vw-cal-lg(400px);
+    max-height:400px;
+    padding-top:60px;
+    background-color:#fffef4;
+    background-position: center center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, #fffef4 0%, #fff3e3 229%);
+
+    &:before {
+      display:block;
+      content:'';
+      position:absolute;
+      width:100%; height:100%;
+      top:0; right:0; bottom:0; left:0;
+      background-position: center center;
+      background-size: auto 100%;
+      background-repeat:repeat-x;
+      background-image: url("../../assets/img/reading_program/sec_kv_bg.png");
+    }
+    picture {
+      width:percentage(1117/1200);
+      max-width:1117px;
+    }
+  }
+
+  .sec-2 {
+    .content-title {
+      background-color:#ffbb3b;
+    }
+    .content-body {
+      padding:0;
+    }
+    .pic-area {
+      &.area-1 {
+        padding:40px 0 30px;
+        background-color:#f7f7f7;
+        picture {max-width:1203px;}
+      }
+      &.area-2 {
+        padding:70px 0;
+        background-color:#ccf3ff;
+      }
+      &.area-3 {
+        display:flex;
+        flex-direction:column;
+        gap:60px;
+        padding:70px 0 30px;
+        background-color:#fff5e1;
+        picture {
+          width:percentage(1080/1200);
+          max-width:1080px;
+          @extend .reset-width-md;
+        }
+        picture:nth-of-type(2) {
+          width:percentage(838/1200);
+          max-width:845px;
+        }
+        picture:nth-of-type(3) {
+          width:percentage(794/1200);
+          max-width:794px;
+        }
+      }
+      &.area-4 {
+        padding:0 0 80px;
+        background-color:#fff5e1;
+        picture {max-width:1080px;}
+        em {
+          display:block;
+          margin-top:20px;
+          font-size:30px;
+          line-height:1.2;
+          letter-spacing:-0.6px;
+          font-weight:800;
+          text-align:center;
+          &:nth-of-type(1) {margin-top:0;}
+          i {color:#ec3c00; font-style:normal;}
+        }
+      }
+    }
+    .btn-play{
+      $sec2-pic-4-width : 1080;
+      $sec2-pic-4-height : 575;
+      width:percentage(350/$sec2-pic-4-width); padding-top:percentage(252/$sec2-pic-4-width);
+      max-width:350px; max-height:252px;
+      top:auto; bottom:0; left:percentage(160/$sec2-pic-4-width);
+      margin-bottom:percentage(58/$sec2-pic-4-width);
+    }
+  }
+
+  .sec-3 {
+    .content-title {
+      background-color:#425bfd;
+    }
+    .content-body {
+      display:flex;
+      flex-direction:column;
+      gap:60px;
+      padding:70px 0;
+      background-color:#f2f9ff;
+    }
+    .pic-area {
+      &.area-1 {
+        picture {
+          width:percentage(1140/1200);
+          max-width:1140px;
+          left:percentage(30/1140);
+          @extend .reset-width-md;
+        }
+      }
+      &.area-2 {
+        picture {
+          width:percentage(1080/1200);
+          max-width:1080px;
+          @extend .reset-width-md;
+        }
+      }
+      &.area-3 {
+
+      }
+      &.area-4 {
+        picture {
+          width:percentage(1080/1200);
+          max-width:1080px;
+          @extend .reset-width-md;
+        }
+      }
+    }
+  }
+
+  .sec-4 {
+    .content-title {
+      background-color:#1e9a91;
+    }
+    .content-body {padding:0;}
+    .pic-area {
+      &.area-1 {
+        padding:70px 0;
+        background-color:#d4f0ea;
+        picture {
+          max-width:1400px; text-align: center; margin: auto;
+        }
+      }
+      &.area-2 {
+        padding:70px 0 80px;
+        background-color:#6f3fb6;
+        .content-sub-title {margin-bottom:30px;}
+        .col-list {
+          max-width:1220px;
+          margin:0 auto;
+          li {padding:0 0.82%;}
+        }
+      }
+    }
+  }
+}
+
+/*반응형 max 1200 xl*/
+@media (max-width: $media-xl) {
+  .reading-program {
+    .inner-area-wrap {
+      .step-list {
+        .list-item-tit {
+          max-height:98px;
+          span {
+            margin-bottom:vw-cal-lg(4px);
+            font-size:vw-cal-lg(18px);
+          }
+          em {
+            font-size:vw-cal-lg(28px);
+          }
+        }
+        .list-item-body {
+          strong {
+            font-size:vw-cal-lg(26px);
+          }
+          p {
+            margin-top:vw-cal-lg(20px);
+            font-size:vw-cal-lg(16px);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  .reading-program {
+    .sec {
+      .gif-wrap {
+        width:100%; padding:0 5.55% 6.8%;
+        bottom:0; gap:0;
+        justify-content:space-between;
+        flex-wrap:wrap;
+        &.col-wrap {flex-wrap: wrap;}
+        &.content-center {justify-content:center;}
+      }
+      .gif-item {
+        position:relative;
+        width: 47.5% !important;
+        height: auto !important;
+        border-radius: 4px;
+        overflow: hidden;
+        flex-shrink:0;
+      }
+    }
+
+    .content-title {
+      padding:0;
+      img {margin:0 auto;}
+    }
+    .inner-area-wrap {
+      .step-list {
+        flex-direction:column;
+        width:91.11%; //328px
+        height:auto;
+        margin:0 auto;
+        padding-top:173.88%;
+        &:before {
+          background-image: url("../../assets/img/reading_program/sec_2_tb_bg_m.png");
+          background-size:100% 100%;
+        }
+        .list-item {
+          position:absolute;
+          width:100%; height:auto;
+          top:0; left:0;
+
+          // 나중에 패딩 넣게 되면 패딩값만큼 margin-top 빼주기
+          &:first-child {top:0;}
+          &:nth-child(2) {top:23%;}
+          &:nth-child(3) {top:49.2%;}
+          &:nth-child(4) {top:75.6%;}
+        }
+        .list-item-tit {
+          padding:4.6% 0;
+          font-size:vw-cal-md(20px);
+          // pc style reset
+          display:block;
+          height:auto; max-height:100%;
+          span {
+            display:inline;
+            font-size:inherit;
+          }
+          em {
+            display:inline;
+            font-size:inherit;
+          }
+        }
+        .list-item-body {
+          padding:4.79% 0;
+          text-align:center;
+          strong {
+            font-size:vw-cal-md(18px);
+            letter-spacing:-0.72px;
+          }
+          p {
+            margin-top:vw-cal-md(6px);
+            font-size:vw-cal-md(14px);
+          }
+        }
+      }
+    }
+
+    .sec-kv {
+      position:relative;
+      width:auto; height:auto;
+      max-height:100%;
+      padding-top:0;
+      &:before {display:none;}
+      picture {
+        width:100%; max-width:100%;
+      }
+    }
+
+    .sec-2 {
+      .pic-area {
+        &.area-1 {padding:0;}
+        &.area-2 {
+          padding-top:vw-cal-md(40px);
+        }
+        &.area-3 {
+          display:block;
+        }
+        &.area-4 {
+          display:block;
+          padding-bottom:vw-cal-md(40px);
+          em {
+            margin-top:vw-cal-md(20px);
+            font-size:vw-cal-md(22px);
+            line-height:1.36;
+            letter-spacing:-0.44px;
+            &:nth-of-type(1) {margin-top:vw-cal-md(10px);}
+          }
+        }
+      }
+      $sec2-pic-4-width : $psd-mo;
+      $sec2-pic-4-height : 595;
+      .btn-play {
+        position: absolute;
+        width:percentage(288/$sec2-pic-4-width); padding-top:percentage(182/$sec2-pic-4-width);
+        max-width:100%; max-height:100%;
+        top:auto; margin-bottom:percentage(193/$sec2-pic-4-width);
+        left:percentage(36/$sec2-pic-4-width);
+      }
+    }
+
+    .sec-3 {
+      .content-body {
+        display:block;
+        padding:0;
+      }
+      .pic-area {
+        &.area-1 {
+          padding:0;
+          picture {left:0;}
+        }
+        &.area-2 {
+          .gif-wrap-custom {
+            position:absolute;
+            width:100%;
+            height:100%;
+            .gif-wrap {
+              position:relative;
+              height:14%;
+              &:first-child {top:29%;}
+              &:nth-child(2) {top:43.5%;}
+              &:nth-child(3) {top:58%;}
+            }
+          }
+        }
+      }
+    }
+
+    .sec-4 {
+      .content-title {
+        height:vw-cal-md(90px);
+      }
+      .pic-area {
+        &.area-2 {
+          padding:vw-cal-md(40px) vw-cal-md(8px) vw-cal-md(72px);
+          .col-list {
+            li {padding:vw-cal-md(8px);}
+          }
+        }
+      }
+    }
+  }
+}

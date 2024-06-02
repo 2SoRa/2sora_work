@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+//******************************** 후기 등록 & 후기 상세보기 팝업 공통 스타일 ********************************/
+.pop-comment {
+  .popup-wrap {
+    max-width:100%;
+    width:564px;
+  }
+  .popup-header {
+    h1 {width:100%;}
+  }
+  .btn-wrap {
+    display: flex;
+    gap:20px;
+    margin:13px 0 0;
+    button {
+      width:186px; height:$btn-default-h;
+      margin:auto;
+      border-radius:$border-rd;
+      color:#ffffff;
+      font-size:16px;
+      font-weight:700;
+      letter-spacing:-0.64px;
+    }
+  }
+
+  // 등록하기
+  .pop-content-info {
+    .form-area {
+      .text-wrap + .input-group {
+        margin-top:30px;
+      }
+      .emphasis {display:block;}
+    }
+  }
+  .input-item-view {
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+
+    .btn-thumb-more,
+    .item-thumb {
+      position:relative;
+      width:100px; height:100px;
+      border:1px solid #dedede;
+      overflow:hidden;
+      &:before,
+      &:after {
+        display:block;
+        content:'';
+        position:absolute;
+        width:1px; height:200%;
+        top:50%; left:50%;
+        background-color:#dedede;
+        transform-origin:50% 50%;
+      }
+      &:before {transform:translate3d(-50%,-50%,0) rotate(-45deg);}
+      &:after {transform:translate3d(-50%,-50%,0) rotate(45deg);}
+
+      img {
+        @extend .img-obj-fit-cover;
+      }
+    }
+  }
+
+  // 리뷰 상세보기
+  .review-text-area {
+    margin-top:30px;
+    .txt-content {
+      font-size:18px;
+      line-height:1.55;
+    }
+  }
+
+  @media (max-width: $media-lg) {
+    .pop-content-info {
+      .form-area {
+        legend {
+          position:static;
+          width:auto; height:auto;
+          margin-bottom:23px;
+          font-size:18px;
+          font-weight:$font-bold;
+          letter-spacing:-0.72px;
+          line-height:1.5;
+          text-align:center;
+          text-indent:0;
+        }
+        .emphasis {font-size:14px;}
+      }
+    }
+  }
+}

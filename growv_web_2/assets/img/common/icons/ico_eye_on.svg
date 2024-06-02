@@ -1,0 +1,9 @@
+<svg data-name="icon_ blind_24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g data-name="icon_ blind_show_24">
+        <path transform="rotate(90 12 12)" style="fill:none" d="M0 0h24v24H0z"/>
+        <g transform="translate(4 6.5)">
+            <path data-name="패스 83147" d="M.75 6.25s2.909-5.5 8-5.5 8 5.5 8 5.5-2.909 5.5-8 5.5-8-5.5-8-5.5z" transform="translate(-.75 -.75)" style="stroke:#5c5c5c;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+            <circle data-name="타원 2342" cx="2.25" cy="2.25" r="2.25" transform="translate(5.75 3.25)" style="stroke:#5c5c5c;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+        </g>
+    </g>
+</svg>

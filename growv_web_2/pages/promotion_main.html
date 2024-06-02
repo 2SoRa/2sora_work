@@ -1,0 +1,376 @@
+<!--
+  promotion page 간소화 버전 별도 페이지 : 멤버십 프로그램 삭제
+  진입 경로 : 슈퍼리딩 사이트 내의 하단 플로팅 버튼을 통해 진입
+-->
+<!doctype html>
+<html lang="ko">
+<head>
+  <!-- S : head 공통 내용 삽입 -->
+  <meta charset="UTF-8" />
+  <meta name="Generator" content="슈퍼브이 슈퍼리딩" />
+  <meta name="Author" content="슈퍼브이 슈퍼리딩" />
+  <meta name="Keywords" content="동화책, 영어동화책, 유아전집, 유아책, 책육아, 그림책, 동화책읽어주기, 전래동화, 팝업북, 슈퍼리딩" />
+  <meta name="Description" content="부모와 아이가 모두 행복한 독서육아! 무료체험 신청하면 그림책 5권 전원증정!" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <meta name="apple-mobile-web-app-title" content="슈퍼브이 슈퍼리딩" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="mask-icon" href="/mask-icon.svg" color="#fff" />
+  <link rel="manifest" href="/site.manifest.json">
+  <meta name="theme-color" content="#ffffff" />
+
+  <title>슈퍼리딩</title>
+
+  <!-- SNS Share ======================================= -->
+  <meta property="og:image" content="https://reading.superv.com/assets/img/share/share_thumb_1000x600.png" />
+  <meta property="og:image:width" content="1000" />
+  <meta property="og:image:height" content="600" />
+  <meta property="og:title" content="슈퍼리딩 - 글로벌리더로 크는 유아독서 프로그램" />
+  <meta property="og:description" content="무료체험 신청하면 그림책 5권 전원증정!" />
+  <meta property="og:url" content="https://reading.superv.com" />
+
+  <!-- FB -->
+  <meta property="og:site_name" content="슈퍼리딩 - 글로벌리더로 크는 유아독서 프로그램" />
+  <meta property="og:title" content="슈퍼리딩 - 글로벌리더로 크는 유아독서 프로그램" />
+  <meta property="og:description" content="무료체험 신청하면 그림책 5권 전원증정!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="kr" />
+  <meta property="og:url" content="https://reading.superv.com" />
+  <meta property="og:image" content="https://reading.superv.com/assets/img/share/share_thumb_1000x600.png" />
+  <meta property="og:image:width" content="1000" />
+  <meta property="og:image:height" content="600" />
+
+  <!-- TW -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="슈퍼리딩 - 글로벌리더로 크는 유아독서 프로그램" />
+  <meta name="twitter:description" content="무료체험 신청하면 그림책 5권 전원증정!" />
+  <meta name="twitter:url" content="https://reading.superv.com" />
+  <meta name="twitter:image" content="https://reading.superv.com/assets/img/share/share_thumb_300x300.png" />
+  <!-- //SNS Share ======================================= -->
+
+  <!-- 23.09.12 추가 Google Tag Manager -->
+  <script>
+    let readingUrl1 = new URL(location.href).host;
+    if(!(readingUrl1.indexOf("dev") > -1) && !(readingUrl1.indexOf("local") > -1)){
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PSGJQ26');
+    }
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- 23.09.12 GA4 추가 Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XHXE81G99"></script>
+  <script>
+    let readingUrl2 = new URL(location.href).host;
+    if((readingUrl2.indexOf("dev") == -1) && (readingUrl2.indexOf("local") == -1)) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-9XHXE81G99');
+    }
+
+  </script>
+  <!--네이버 사이트 확인 메타 태그-->
+  <meta name="naver-site-verification" content="e698123596b4ce3bd77ffc7b1e410236d97b438e" />
+  <!--캐시삭제관련-->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Pragma" content="no-cache">
+
+  <!-- 페이스북/인스타그 Meta Pixel Code -->
+  <script>
+    let readingUrl3 = new URL(location.href).host;
+    if((readingUrl3.indexOf("dev") == -1) && (readingUrl3.indexOf("local") == -1)) {
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ?
+                  n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1273932433393358');
+      fbq('track', 'PageView');
+    }
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+                 src="https://www.facebook.com/tr?id=1273932433393358&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- 구글 ｜구글 검색, GDN, 유튜브 Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11002778747"></script>
+  <script>
+    let readingUrl4 = new URL(location.href).host;
+    if((readingUrl4.indexOf("dev") == -1) && (readingUrl4.indexOf("local") == -1)) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'AW-11002778747');
+    }
+  </script>
+
+  <!-- 카카오｜카카오광고 -->
+  <script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/kas/static/kp.js"></script>
+  <script type="text/javascript">
+    let readingUrl5 = new URL(location.href).host;
+    if((readingUrl5.indexOf("dev") == -1) && (readingUrl5.indexOf("local") == -1)) {
+      kakaoPixel('834136065350125897').pageView();
+    }
+  </script>
+
+  <!-- Danggeun Market Code -->
+  <script src="https://karrot-pixel.business.daangn.com/0.0.3/karrot-pixel.umd.js"></script>
+  <script>
+    let readingUrl6 = new URL(location.href).host;
+    if((readingUrl6.indexOf("dev") == -1) && (readingUrl6.indexOf("local") == -1)) {
+      try {
+        window.karrotPixel.init('1687311895739500001');
+        window.karrotPixel.track('ViewPage');
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  </script>
+  <!-- End Danggeun Market Code -->
+  <!--네이버 키워드광고 매체 전환값-->
+  <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+  <script type="text/javascript">
+    let readingUrl7 = new URL(location.href).host;
+    if((readingUrl7.indexOf("dev") == -1) && (readingUrl7.indexOf("local") == -1)) {
+      try {
+        if (!wcs_add) var wcs_add = {};
+
+        wcs_add["wa"] = "s_35d07a29d298";
+        if (!_nasa) var _nasa = {};
+        if(window.wcs){
+          wcs.inflow();
+          wcs_do(_nasa);
+        }
+      }catch (e){
+        console.log(e);
+      }
+    }
+  </script>
+  <!-- E : head 공통 내용 삽입 -->
+
+  <!-- bootstrap, custom common only css -->
+  <link rel="stylesheet" href="../assets/css/libs/bootstrap.min.css"/>
+  <link rel="stylesheet" href="../assets/css/libs/boot_custom.css"/>
+  <link rel="stylesheet" href="../assets/css/libs/custom.css"/>
+  <link rel="stylesheet" href="../assets/css/libs/swiper-bundle.min.css"/>
+
+  <!-- 그로비 custom style -->
+  <link rel="stylesheet" href="../assets/css/style_brand.css?v=231025"/>
+
+  <!-- JQuery -->
+  <script src="../assets/js/vendor/jquery-3.4.1.min.js"></script>
+  <script src="../assets/js/vendor/swiper-bundle.min.js"></script>
+
+  <!-- JS-->
+  <script src="../assets/js/deviceDetect.js"></script>
+  <script src="../assets/js/superv/common.js?2"></script>
+  <script src="../assets/js/superv/eventPromotion.js?1"></script>
+</head>
+<body class="has-floating-bn promotion"> <!-- header 스타일 제어를 위해 body에 클래스 선언 -->
+<!--------------------------------------------------- 페이지 공통 헤더 인클루드 --------------------------------------------------->
+<header>
+  <script>
+    $("header").load('/com/include/header.html');
+  </script>
+</header>
+<!--------------------------------------------------- // 페이지 공통 헤더 인클루드 --------------------------------------------------->
+<div class="container-fluid">
+  <!-- 모바일 네비 인클루드 -->
+  <nav>
+    <script>
+      $("nav").load('/com/include/nav.html');
+    </script>
+  </nav>
+  <!-- // 모바일 네비 인클루드 -->
+  <div class="inner-wrap">
+    <!----------------------------------- S : Growv contents --------------------------------------------->
+    <section class="sec sec-kv">
+      <h1 class="blind">독서육아를 위한 읽기 혁명! 슈퍼리딩 5일 무료체험</h1>
+      <p class="blind">21개월부터 6세까지</p>
+      <picture>
+        <img src="../assets/img/promotion/sec_kv_img.png" class="pc">
+        <img src="../assets/img/promotion/sec_kv_img_m.png" class="mobile">
+      </picture>
+    </section>
+
+    <section class="sec sec-1" id="sec-benefit">
+      <div class="content-title size-md">
+        <h2 class="blind">지금, 신청시 드리는! 무료체험 특별혜택</h2>
+        <picture style="display:flex !important;">
+          <img src="../assets/img/promotion/sec_2_tit.png" class="pc">
+          <img src="../assets/img/promotion/sec_2_tit_m.png" class="mobile">
+        </picture>
+      </div>
+      <div class="content-body">
+        <div class="pic-area">
+          <p class="blind"><em class="txt-underline">21개월부터 6세(2019년생)</em>까지 신청가능합니다.</p>
+          <em class="blind">슈퍼리딩 전용 태블릿 + 도서 5권 전원 증정</em>
+          <picture>
+            <img src="../assets/img/promotion/sec_2_img.png" class="pc">
+            <img src="../assets/img/promotion/sec_2_img_m.png?v=20240118" class="mobile">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec sec-2">
+      <div class="content-body">
+        <div class="pic-area area-3">
+          <h4 class="blind">미리 경험해 본 아이들의 생생한 찐후기</h4>
+          <div class="blind">독서 육아 후기 이미지들</div>
+          <picture>
+            <img src="../assets/img/promotion/sec_6_img_3.png" class="pc">
+            <img src="../assets/img/promotion/sec_6_sub_tit_m.png" class="mobile">
+            <img src="../assets/img/promotion/sec_6_img_3_m.png" class="mobile">
+          </picture>
+        </div>
+        <div class="pic-area size-full area-4 pd-tb-0-md">
+          <h5 class="blind">슈퍼리딩 무료체험 진행 안내</h5>
+          <picture>
+            <img src="../assets/img/promotion/sec_6_img_4.png" class="pc">
+            <img src="../assets/img/promotion/sec_6_img_4_m.png" class="mobile">
+          </picture>
+          <div class="info-list-wrap pc">
+            <em class="info-list-tit">꼭 확인해주세요!</em>
+            <ul class="info-list">
+              <li>* 다른 광고 채널을 통한 체험 이력이 있는 경우, 무료체험 대상자에서 제외될 수 있습니다.</li>
+              <li>* 모든 혜택은 무료체험 진행자(태블릿 수령 후 로그인) 대상이며, 가구당 1회 지급됩니다.</li>
+              <li>* 슈퍼리딩 무료체험 신청 후 3일 이내에 해피콜이 이루어집니다.</li>
+              <li>* 체험 기기의 고의적인 미반납 시, 민형사상 책임을 질 수 있으며, 기기 분실 시 가격을 배상하셔야 합니다.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO : 20240102 제거 -->
+    <section class="sec sec-vscan-review d-none">
+      <div class="review-list-top">
+        <h2 class="review-list-tit">
+          <div class="tit-img">
+            <img src="../assets/img/event_vscan_review/sec_2_tit.png" class="pc" alt="슈퍼리딩 후기">
+            <img src="../assets/img/event_vscan_review/sec_2_tit_m.png" class="mobile">
+          </div>
+          <p class="tit-desc">슈퍼리딩으로 감탄한 부모님의 소감을 들어보세요</p>
+        </h2>
+        <div class="btns-wrap d-none">
+          <!-- 로그인 후, 게시글 1개 이상 등록 시 내가 쓴 글 보기 버튼 노출 (d-block, d-none) -->
+          <button type="button" class="btn-view my d-none" id="myReview" onclick="fnGetMyReviewList()">내가 쓴 글 보기</button>
+          <button type="button" class="btn-view all d-none" id="allReview" onclick="fnGetReviewEventList();">전체 글 보기</button>
+        </div>
+      </div>
+      <div class="review-list-wrap" id="listBodyDiv">
+        <ul class="review-list" id="listBody">
+        </ul>
+
+        <!-- 결과값 없을 경우 d-none 해제 -->
+        <div class="no-result d-none">작성된 게시글은 관리자 검수 후 노출됩니다.</div>
+
+        <!-- pagination -->
+        <div class="list-pagination" id="pagingul">
+          <a href="javascript:void(0);" id="prev" class="arrow prev" style="display:flex;"></a>
+          <p><span class="current">1</span> <i>/</i> <span class="total">1</span></p>
+          <a href="javascript:void(0);" id="next" class="arrow next" style="display:flex;"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 플로팅 배너 -->
+    <div class="floating">
+      <a href="javascript:void(0);" onclick="common.hrefFunction('/event.html')">
+        <picture>
+          <img src="../assets/img/promotion/btn_floating.png" class="pc">
+          <img src="../assets/img/promotion/btn_floating_m.png" class="mobile">
+        </picture>
+      </a>
+    </div>
+    <!----------------------------------- E : Growv contents --------------------------------------------->
+  </div>
+</div>
+
+<button class="top_btn pos-top-3"> <!-- 페이지 하단 floating 버튼 있는 경우에만 add class .pos-top-->
+  <img src="/assets/img/common/btn_top.svg" alt="">
+</button>
+
+<!--------------------------------------------------- 페이지 공통 푸터 인클루드 --------------------------------------------------->
+<footer>
+  <script>$("footer").load('/com/include/footer.html');</script>
+</footer>
+<!------------------------------------------------- // 페이지 공통 푸터 인클루드 -------------------------------------------------->
+<!--------------------------------------------------- 페이지 공통 팝업 인클루드 --------------------------------------------------->
+<div class="include-area-popup">
+  <script>$(".include-area-popup").load('/com/include/popup.html');</script>
+</div>
+<!------------------------------------------------- // 페이지 공통 팝업 인클루드 --------------------------------------------------->
+
+<!-- popup : common review -->
+<div class="popup-area pop-review-detail" id="popReviewDetail">
+  <div class="pop-dim"></div>
+  <div class="popup-wrap has-bot-mask">
+    <div class="popup-header box-shadow-none-md">
+      <!-- 닫기 버튼 -->
+      <button type="button" class="close btn-close" onclick="fnCloseReviewDetailPop();"></button>
+    </div>
+    <div class="popup-scroll-area pd-t-0">
+      <div class="swiper-content">
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper" id="fileBody">
+          </div>
+        </div>
+        <div class="swiper-pagination d-none"></div>
+        <button type="button" class="swiper-btn swiper-btn-prev"></button>
+        <button type="button" class="swiper-btn swiper-btn-next"></button>
+      </div>
+      <div class="review-items review-text-area">
+        <p class="item-text" id="ctBody">
+        </p>
+        <strong class="item-writer" id="nmBody"></strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- script -->
+<script>
+  let secBenefit = document.getElementById('sec-benefit');
+  if(!common.isNull(secBenefit)){
+    document.getElementById('sec-benefit').scrollIntoView();
+  }
+</script>
+
+<!-- JS -->
+<script src="../assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/vendor/custom.js"></script>
+<script src="../assets/js/swiperControlCustom.js"></script>
+<script src="../assets/js/reading.ui.js"></script>
+<script src="../assets/js/popup.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+.swiper-content {
+  position:relative;
+  padding:0;
+  line-height:1;
+
+  /* swiper style custom */
+  .swiper {
+    position:relative;
+    width:100%; height:280px;
+
+    .swiper-wrapper {
+      .swiper-slide {
+        background-color:#EBEBEB;
+
+        img {
+          @extend .img-obj-fit-contain;
+        }
+      }
+    }
+  }
+
+  /* swiper style custom */
+  .swiper-pagination {
+    padding-top:0;
+    bottom:auto; top:100%;
+    margin-top:10px;
+    font-size:1rem; line-height:1;
+    justify-content:center;
+    .swiper-pagination-bullet {
+      width:29px; height:6px;
+      margin:0 3px;
+      border-radius:50%;
+      background-color:#292929;
+      opacity:0.25;
+    }
+    .swiper-pagination-bullet-active {
+      opacity:1;
+    }
+
+    // 원형 도트 타입
+    &.type-dot {
+      .swiper-pagination-bullet {
+        width:6px; height:6px;
+        margin:0 2px;
+        opacity:0.2;
+        background-color:#000;
+      }
+      .swiper-pagination-bullet-active {
+        opacity:1;
+        background-color:#fff;
+      }
+
+      @media (min-width: $media-lg) {
+        &.dot-wide-lg {
+          width:auto;
+          top:auto; left:auto; right:percentage(15/480); bottom:0;
+          margin-bottom:percentage(15/480);
+          .swiper-pagination-bullet {
+            width:20px; height:20px;
+            margin:0 4px;
+            border:solid 6px #d0d0d0;
+            opacity:1;
+            background-color:#fff;
+          }
+          .swiper-pagination-bullet-active {
+            width:40px;
+            opacity:1;
+            border-radius:10px;
+            border:0;
+            background-color:$color-active-purple;
+          }
+        }
+      }
+    }
+  }
+  .swiper-btn {
+    position:absolute;
+    width:50px;
+    height:70px;
+    top:50%;
+    //margin-top:-35px;
+    transform:translate3d(0,-50%,0);
+    z-index:10;
+
+    &:before,
+    &:after {
+      display:block;
+      content:'';
+      position:absolute;
+      width:100%; height:100%;
+      top:0; left:0; right:0; bottom:0;
+      background-repeat:no-repeat;
+      background-size:100% 100%;
+      background-position:center center;
+    }
+    &:before {opacity:0;}
+    &:after {opacity:1;}
+
+    &.swiper-btn-prev {left:0;
+      &:before {background-image:url("/assets/img/common/btn_slide_prev_default.png");}
+      &:after {background-image:url("/assets/img/common/btn_slide_prev_active.png");}
+    }
+    &.swiper-btn-next {right:0;
+      &:before {background-image:url("/assets/img/common/btn_slide_next_default.png");}
+      &:after {background-image:url("/assets/img/common/btn_slide_next_active.png");}
+    }
+
+    // 비활성화
+    &.disabled,
+    &.swiper-button-disabled {
+      display:block;
+      background-color:transparent !important;
+      &:before {opacity:1;}
+      &:after {opacity:0;}
+    }
+
+    // 사이즈 커스텀 only size vw
+    &.size-md {
+      width:vw-cal-md(50px);
+      height:vw-cal-md(70px);
+      max-width:100px;
+      max-height:140px;
+    }
+
+    // 디자인 커스텀
+    &.type-blue-gray {
+      width:30px; height:38px;
+
+      &.swiper-btn-prev,
+      &.swiper-btn-next {
+        &:before {@extend .ico-arrow-r-gray; width:100%; height:100%;}
+        &:after {@extend .ico-arrow-r-blue; width:100%; height:100%;}
+      }
+
+      &.swiper-btn-prev {
+        &:before,
+        &:after {transform:rotate(180deg);}
+      }
+      &.swiper-btn-next {}
+    }
+  }
+
+  /* pagination type fraction */
+  .swiper-pagination-fraction {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:2px;
+    font-size:14px;
+    letter-spacing:-0.28px;
+    line-height:1;
+    color:#757575;
+    transform:translate3d(0,0,0);
+    .swiper-pagination-current {
+      font-weight:$font-bold;
+      color:#292929;
+    }
+    .swiper-pagination-total {}
+  }
+
+  /* pagination fraction, prev next btns group */
+  .swiper-pagination-btns-group {
+    display:block;
+    position:relative;
+    width:130px;
+    //left:50%; bottom:percentage(30/500);
+    margin:0 auto;
+    padding:0 30px;
+    //transform:translate3d(-50%,0,0);
+    .swiper-pagination-fraction {
+      position:relative;
+      width:auto;
+      top:auto; bottom:auto;
+      margin-top:0;
+    }
+    .swiper-btn {
+      width:30px; height:30px;
+      border-radius:50%;
+      background-color:#5c5c5c;
+      &.swiper-btn-prev,
+      &.swiper-btn-next {
+        &:before {display:none;}
+        &:after {
+          @extend .ico-arrow-r-w;
+          position:absolute;
+          width:18px; height:18px;
+          left:50%; top:50%;
+          margin-left:-9px; margin-top:-9px;
+        }
+      }
+      &.swiper-btn-prev {
+        &:after {transform:rotate(180deg);}
+      }
+    }
+  }
+
+  @media (max-width: $media-lg) {
+    .swiper {
+      height:vw-cal-md(200px);
+      max-height:300px;
+    }
+    .swiper-pagination {margin-top:vw-cal-md(10px);
+      &.type-dot {
+        .swiper-pagination-bullet {
+          width:vw-cal-md(6px); height:vw-cal-md(6px);
+          margin:vw-cal-md(0px 2px);
+        }
+      }
+    }
+    .swiper-btn {
+      // 디자인 커스텀
+      &.type-blue-gray {
+        width:vw-cal-md(30px);
+        height:vw-cal-md(30px);
+      }
+    }
+  }
+}

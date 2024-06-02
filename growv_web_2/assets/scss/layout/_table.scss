@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+
+.tbl-item-wrap {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  overflow-x: auto;
+
+  &.scroll-horizon-md {
+    table {min-width:700px;}
+  }
+
+  // 폰트 정렬
+  &.talign-center {
+    table {
+      th, td {text-align:center;}
+    }
+  }
+
+
+  table {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    table-layout: fixed;
+    border: 0;
+    border-collapse: collapse;
+    th {
+      background: #FCFCFC;
+      height: 30px;
+      border: 1px solid #CCCCCC;
+      text-align: center;
+      font-size: 14px;
+      color: #303030;
+      font-weight: 400;
+    }
+    td {
+      line-height: 1.5em;
+      background: #fff;
+      padding: 5px;
+      height: 40px;
+      border: 1px solid #CCCCCC;
+      font-size: 14px;
+      color: #303030;
+      text-align: left;
+      &.ac {
+        text-align: center;
+      }
+    }
+    .nlist02 li {
+      line-height: 1.2em;
+    }
+  }
+}
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  .tbl-item-wrap {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    overflow-x: auto;
+  }
+}

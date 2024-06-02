@@ -1,0 +1,203 @@
+@charset "UTF-8";
+
+// 기존 티저2차에서 사용되었던 스타일, 나중에는 제거 가능하게끔
+.popup-wrap {
+  /* 채널 추가 방법 */
+  &.add {
+    .popup {
+      padding: 30px 35px 40px;
+      background-color: #f5f5f5;
+      &.add {
+        img {
+          width: 630px;
+          margin: auto;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  /* 참여자 정보 입력 */
+  .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px 59px;
+    &.character {
+      gap: 0; margin-bottom: 13px;
+      .radio-input {
+        width: 20%;
+        label {
+          height: 117px;
+          flex-direction: column;
+          padding-left: 0;
+          &:after {
+            width: 24px; height: 24px;
+            background-image:url("/assets/img/common/ico_check_active.png");
+            background-size: 100% 100%;
+          }
+        }
+      }
+      input {
+        &:checked ~ label {
+          img {border-color: #8b51e2; box-sizing: border-box;}
+        }
+      }
+      label {
+        &:before,
+        &:after {
+          top:0; right:0; left:0;
+          margin:auto;
+        }
+
+        span {
+          display: inline-block;
+          margin-top: 16px;
+          color: #303030;
+          font-size: 15px;
+          font-weight: bold;
+        }
+      }
+    }
+    label {
+      &:before {
+        //background:none;
+      }
+      img {
+        width:75px;
+        height:75px;
+        margin-top:12px;
+        border-radius:50px;
+        border:3px solid transparent;
+      }
+    }
+  }
+  &.signup {
+    .popup-header {
+      h1 { width: 100%; text-align: left; }
+      &:after {
+        display: inline-block;
+        content: '';
+        width: calc(100% - 64px);
+        position: absolute;
+        bottom: 0;
+        border-bottom: 1px solid #DEDEDE;
+      }
+    }
+    /* 하단 버튼 영역 */
+    .btn-wrap {
+      display: flex;
+      gap: 20px;
+      padding: 13px 0 40px;
+    }
+    button {
+      width: 186px; height: 48px;
+      margin: auto;
+      border-radius: 4px;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.64px;
+    }
+
+    .complete { background-color: #8B51E2; }
+    .cancle { background-color: #8B8B8B; }
+
+    /* 개인정보 약관 동의 영역 */
+    .privacy {
+      width: 100%;
+      background-color: #F7F7F7;
+      padding: 30px 32px 15px;
+    }
+  }
+
+  /* 팝업 공통 */
+  $popKindArr : 'add', 'signup', 'share', 'play';
+  @for $i from 1 through length($popKindArr) {
+    $showPopKind : nth($popKindArr, $i);
+    &.#{$showPopKind} {
+      @for $b from 1 through length($popKindArr) {
+        $hidePopKind : nth($popKindArr, $b);
+
+        @if $hidePopKind == $showPopKind {
+          .popup.#{$hidePopKind} {
+            display:block;
+          }
+        } @else {
+          .popup.#{$hidePopKind} {
+            display:none;
+          }
+        }
+      }
+    }
+  }
+  // ==== 컴파일 ======== >
+  /*
+  .popup-wrap.add .popup.add,
+  .popup-wrap.signup .popup.signup,
+  .popup-wrap.share .popup.share,
+  .popup-wrap.play .popup.play {
+    display: block;
+  }
+  .popup-wrap.play .popup.share,
+  .popup-wrap.play .popup.add,
+  .popup-wrap.play .popup.signup,
+  .popup-wrap.share .popup.add,
+  .popup-wrap.share .popup.signup,
+  .popup-wrap.share .popup.play,
+  .popup-wrap.signup .popup.play,
+  .popup-wrap.signup .popup.add,
+  .popup-wrap.signup .popup.share,
+  .popup-wrap.add .popup.play,
+  .popup-wrap.add .popup.signup,
+  .popup-wrap.add .popup.signup,
+  .popup-wrap.add .popup.share {
+    display: none;
+  }
+  */
+}
+
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  .popup-wrap {
+    &.add {
+      .popup {
+        padding: 16px 16px 40px;
+        background-color: #f5f5f5;
+        &.add {
+          img {
+            width: 100%;
+            margin: auto;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    &.signup {
+      .popup-header {
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
+        h1 { font-size: 0;}
+        &:after {
+          display: none;
+          border: none;
+        }
+      }
+    }
+  }
+
+  /* 하단 버튼 영역 */
+  .popup{
+    &.signup {
+      .btn-wrap {
+        display: flex;
+        gap: 0;
+        padding: 0;
+      }
+      button {
+        width: 100%;
+        height: 56px;
+        border-radius: 4px;
+      }
+    }
+  }
+}

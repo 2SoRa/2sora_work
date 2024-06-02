@@ -1,0 +1,344 @@
+@charset "UTF-8";
+
+/* TODO 기존 슈퍼브이 포맷과 동일하게 사용됨, 이후 인풋 대통합 필요 */
+// custom 내용 대부분이 input 관련된 부분임. 이 부분은 _form.scss 로 통합 필요
+
+/* 인풋 커스텀 */
+input[type=checkbox] {
+  display: none;
+
+  & + label {
+    padding-left:30px;
+    padding-top:1px;
+    padding-bottom:2px;
+    background-repeat: no-repeat;
+    background-image: url("../img/common/ico_input_check_default.svg");
+    background-size:24px 24px;
+    background-position:left center;
+    cursor:pointer;
+    &.mo {
+      padding-left:60px;
+      display:inline-block;
+    }
+  }
+  &:checked {
+    & + label {
+      background-image: url("../img/common/ico_input_check_active.svg");
+    }
+  }
+}
+
+/* 인풋 래퍼 */
+.input-wrap {
+  width:100%;
+  position: relative;
+  /* 인풋 클리어 버튼 */
+  .input-clear-button,
+  .input-password-show-button {
+    width:24px;
+    height:24px;
+    position:absolute;
+    top:0; bottom:0;
+    right:12px;
+    margin:auto;
+    z-index:10;
+    cursor:pointer;
+
+    &.disabled,
+    &:disabled {display: none;}
+    &.mo {
+      width:$input-h-mo;
+      height:$input-h-mo;
+      top:16px; right:30px;
+    }
+  }
+}
+
+/* 인풋 커스텀 */
+.custom-input {
+  &.ac {
+    text-align: center;
+    font-weight: 700;
+    background-color: #f6f6f6;
+    text-indent: 0;
+  }
+}
+
+/* 셀렉트 커스텀 */
+.custom-select,
+select.h-48,
+select {}
+
+/* 버튼 커스텀 */
+.custom-button {
+  width: 100%;
+  max-width:$btn-big-w;
+  height:$btn-big-h;
+  border-radius:$border-rd;
+  font-size:20px;
+  font-weight:bold;
+  color:#ffffff;
+  letter-spacing:-0.48px;
+  text-align:center;
+  background-color:$color-btn-disabled;
+
+  &.send-message {background-color: #9389c8;}
+  &.disabled,
+  &:disabled {
+    background-color:$color-btn-disabled !important;
+    cursor:not-allowed;
+  }
+  &.gray {background-color:#828282;}
+  &.primary {background-color:$color-active-purple;}
+  &.primary.light {background-color:#9389c8;}
+
+  &:hover {
+    color:#fff;
+  }
+}
+
+/* 인풋 클래스 커스텀 */
+.inp {
+  width:100%;
+  flex:1;
+}
+
+@media (max-width: $media-lg) {
+  .custom-button {
+    font-size:18px;
+    height:$btn-big-h-mo;
+  }
+}
+
+
+/***************** payment ******************/
+/* payment, signup 내 요소 커스텀 (추후 클래스 통일 필요) */
+.checkbox_design_item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.radiobox_label {
+  background: #F7F7F7;
+  width: 100px;
+  height: 48px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 4px 0 0;
+  line-height: 1;
+  position: relative;
+  font-size: 14px;
+  color: #909090;
+  gap: 8px;
+  //border-radius: 10px;
+  border-radius:$border-box-rd;
+}
+input.radiobox_item {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  //background: url("../img/superv/icon/sel_btn_24_n@2x.webp") no-repeat 0 0/100% auto;
+  background: url("../img/common/ico_input_radio_default.svg") no-repeat 0 0/100% auto;
+  border-radius: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  &:checked {
+    //background: url("../img/superv/icon/rad_btn_24_s@2x.webp");
+    background-image: url("../img/common/ico_input_radio_active.svg");
+    background-size: 100% 100%;
+  }
+}
+
+.indent_para {
+  display: flex;
+  font-weight: normal;
+  text-indent: 52px;
+  //color: #703AE9;
+  color:#8b51e2;
+  margin-top: 1px;
+  padding-bottom: 12px;
+}
+.indent_text {
+  flex: 1;
+  min-width: 0;
+  line-height: normal;
+}
+
+.inline_flex_group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  > input.form_input {
+    flex: 1;
+    min-width: 0;
+  }
+  > *:last-child {
+    margin-right: 0;
+  }
+}
+.inline_flex_group,
+.inline_mb_group {
+  > .wid_30 {
+    flex: 0 0 30%;
+  }
+  > .wid_20 {
+    flex: 0 0 20%;
+  }
+  > .wid_15 {
+    flex: 0 0 15%;
+  }
+  > .wid_full {
+    flex: 1;
+    min-width: 0;
+  }
+  &.mb_break {
+    /*display: block;*/
+    display: flex;
+    flex-wrap: wrap;
+    > * {
+      margin-bottom: 6px;
+      gap: 4px;
+    }
+  }
+}
+.inline_mb_group {
+  > input.form_input {
+    flex: 1;
+    min-width: 0;
+  }
+  > *:last-child {
+    margin-right: 0;
+  }
+}
+.inline_block_row {
+  margin-top: 8px;
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.btn_inline_box {
+  min-width: 93px;
+  height:$input-h;
+  padding: 0 10px;
+  text-align: center;
+  border-radius:$border-rd;
+  //border: 1px solid #9F9F9F;
+  background:$color-active-purple;
+  font-size:16px;
+  line-height:29px;
+  white-space: nowrap;
+  color:#fff;
+  box-sizing: border-box;
+  &.disabled {
+    background-color:$color-input-bg-disable;
+    color:#fff;
+    pointer-events: none;
+    border: none;
+  }
+}
+
+.formbox_item_group {
+  font-size: 0;
+  line-height: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.warn_para_g {
+  margin: 4px 0 0 12px;
+  position: relative;
+  display: none;
+  &.d_red {
+    color:$color-text-danger;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  &.d_blue {
+    color: #0089FF;
+    font-weight: 700;
+    padding-left: 8px;
+    &:before {
+      display: block;
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 100%;
+      position: absolute;
+      top: 5px;
+      left: 0;
+      background: #0089FF;
+      border-radius: 100%;
+    }
+  }
+}
+.age_info {
+  width: max-content;
+  padding: 4px 0 0 12px;
+  font-size: 12px;
+  color: $color-active-purple;
+  line-height: normal;
+}
+.cha_choice {
+  flex: 1;
+  text-align: center;
+}
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  .btn_formsubmit {
+    height: 40px;
+    &:after {
+      width: 24px;
+      height: 24px;
+      flex-basis: 24px;
+      background-size: 8px auto;
+    }
+  }
+  .btn_inline_box {
+    min-width: 0;
+    &:disabled {
+      background-color:$color-input-bg-disable;
+    }
+  }
+  .inline_flex_group {
+    gap:8px;
+    > * {
+      margin-right: 0;
+    }
+    .form_inline_box + .btn_inline_box,
+    .form_input + .btn_inline_box {
+      position: relative;
+      z-index: 2;
+      margin-left: -1px;
+    }
+  }
+  .btn_inline_box {
+    //width:100px;
+    height:$input-h;
+    font-size: 14px;
+    box-sizing: border-box;
+    text-align: center;
+    background:$color-active-purple;
+    color:#FFFFFF;
+    white-space: nowrap;
+    min-width: 93px;
+    line-height: 29px;
+    padding: 0 10px;
+    //border-radius: 10px;
+    border-radius:4px;
+    border: none;
+  }
+
+  .formbox_item_group {
+    gap:6px;
+  }
+}

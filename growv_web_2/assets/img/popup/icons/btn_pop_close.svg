@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <clipPath id="3judmhyy5a">
+            <path data-name="사각형 3710" transform="translate(-.001 -.467)" style="fill:#fff;stroke:#b2b2b2" d="M0 0h16v16H0z"/>
+        </clipPath>
+    </defs>
+    <g transform="translate(.001 .467)" style="clip-path:url(#3judmhyy5a)">
+        <path data-name="사각형 3711" transform="translate(-.001 -.467)" style="fill:none" d="M0 0h16v16H0z"/>
+        <g data-name="합치기 434" style="fill:#b2b2b2">
+            <path d="M6.666 13.583a.784.784 0 0 1-.782-.783V7.45H.534a.784.784 0 0 1 0-1.566h5.35V.534a.784.784 0 0 1 1.566 0v5.35h5.35a.784.784 0 0 1 0 1.566H7.45v5.35a.785.785 0 0 1-.784.783z" style="stroke:none" transform="rotate(45 5.573 9.138)"/>
+            <path d="M6.666 13.333A.533.533 0 0 0 7.2 12.8V7.2h5.6a.533.533 0 1 0 0-1.066H7.2v-5.6a.533.533 0 1 0-1.066 0v5.6h-5.6a.533.533 0 1 0 0 1.066h5.6v5.6c0 .295.238.533.532.533m0 .5c-.57 0-1.032-.463-1.032-1.033V7.7h-5.1a1.034 1.034 0 0 1 0-2.066h5.1v-5.1a1.034 1.034 0 0 1 2.066 0v5.1h5.1a1.034 1.034 0 0 1 0 2.066H7.7v5.1c0 .57-.464 1.033-1.034 1.033z" style="fill:#b2b2b2;stroke:none" transform="rotate(45 5.573 9.138)"/>
+        </g>
+    </g>
+</svg>

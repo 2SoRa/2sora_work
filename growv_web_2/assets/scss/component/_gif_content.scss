@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+// gif 2개 이상을 포함한 레이아웃에 공통적으로 사용되는 스타일
+// 해당 gif 컨텐츠 컴포넌트는 오픈 초기 사이즈를 기준으로 작업되어 있으므로 운영하면서 달라질 수 있음
+.gif-wrap {
+  position:absolute;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  height:auto;
+  margin:0 auto;
+  gap:32px;
+  &.col-wrap {flex-wrap: wrap;}
+  &.content-center {justify-content:center;}
+
+  .gif-item {border-radius: 4px; overflow: hidden;}
+
+
+  // gif type custom
+  $gif-con-1-width : 1098;  // 독전활동 gif 컨테이너 width
+  $gif-con-2-width : 1200;  // 원서리딩 gif 컨테이너 width
+  $gif-con-3-width : 1200;  // 코칭가이드 gif 컨테이너 width
+
+  // reading flow
+  &.gif-type-reading-flow {
+    width:100%;
+    bottom:0; left:0; right:0;
+    padding:0 percentage(16/$gif-con-1-width) percentage(112/$gif-con-1-width);
+    gap:0;
+    .gif-item {
+      $gif-wrap-inner-width : $gif-con-1-width - 32;
+      width:percentage(330/$gif-wrap-inner-width); height:auto;
+      max-width:330px;
+
+      &.has-mt {margin-top:percentage(126/$gif-wrap-inner-width);}
+    }
+  }
+  &.gif-type-eng-flow {
+    width:100%;
+    bottom:0; left:0; right:0;
+    padding:0 percentage(341/$gif-con-2-width) percentage(45/$gif-con-2-width) percentage(66/$gif-con-2-width);
+    gap:0;
+
+    .gif-item {
+      $gif-wrap-inner-width : $gif-con-2-width - 341 - 66;
+      width:percentage(243/$gif-wrap-inner-width); height:auto;
+      max-width:243px;
+    }
+  }
+  &.gif-type-guide-app {
+    width:100%;
+    bottom:0; left:0; right:0;
+    padding:0 percentage(85/$gif-con-3-width) percentage(119/$gif-con-3-width);
+    gap:0;
+
+    .gif-item {
+      $gif-wrap-inner-width : $gif-con-3-width - (85*2);
+      width:percentage(480/$gif-wrap-inner-width); height:auto;
+      max-width:480px;
+    }
+  }
+}
+
+/*반응형 max 992px lg*/
+@media (max-width: $media-lg) {
+  .gif-wrap {
+    display:flex;
+    width:100%;
+    bottom:0; gap:0;
+
+    .gif-item {
+      position:relative;
+      //width: 47.5%;
+      width:percentage(152/$psd-mo);
+      height: auto;
+      border-radius: 4px;
+      overflow: hidden;
+      flex-shrink:0;
+    }
+    $gif-con-3-width : 360;
+
+    &.gif-type-reading-flow {
+      padding:0 percentage(20/$psd-mo) percentage(27/$psd-mo);
+      .gif-item {
+        width:vw-cal-md(152px);
+        height: auto;
+      }
+    }
+    &.gif-type-eng-flow {
+      width:100%; height:99%;
+      padding:0 percentage(20/$psd-mo) percentage(69/$psd-mo);
+      align-items:end;
+      .gif-item {
+        width:vw-cal-md(152px);
+        height: auto;
+      }
+    }
+    &.gif-type-guide-app {
+      //padding:0 percentage(33/$psd-mo) percentage(72/$psd-mo);
+      padding:0 0 percentage(72/$psd-mo);
+      justify-content:center;
+      .gif-item {
+        width:vw-cal-md(294px);
+        height: auto;
+      }
+
+      &.pd-type-2-mo {
+        padding-bottom:percentage(82/$gif-con-3-width);
+      }
+    }
+  }
+}

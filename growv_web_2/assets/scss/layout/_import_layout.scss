@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@import "gnb_custom";         // 웹, 모바일 1depth, 2depth GNB
+@import "footer";             // 푸터
+@import "nav";                // 모바일 전용 사이드 네비게이션
+@import "list";               // 공통 리스트 스타일
+@import "table";
+@import "component";          // 컴포넌트 구성을 위한 독립적 요소 스타일
+@import "form";               // 폼 요소
+@import "layout";             // 메인, 서브페이지 레이아웃
+@import "banner_layout";      // 웹, 모바일 최상단 띠배너
+@import "popup";              // 팝업 내 컨테이너, 스크롤 영역, 비디오 팝업, 개인정보처리방침
+@import "error";              // 404

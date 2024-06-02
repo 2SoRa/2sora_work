@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+/* footer */
+.ft {
+  .a_link {
+    a {
+      font-weight:400;
+      &.bold {font-weight:700;}
+    }
+  }
+}

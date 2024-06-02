@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <!-- S : head 공통 내용 삽입 -->
+  <meta charset="UTF-8" />
+  <meta name="Generator" content="슈퍼브이 슈퍼리딩" />
+  <meta name="Author" content="슈퍼브이 슈퍼리딩" />
+  <meta name="Keywords" content="동화책, 영어동화책, 유아전집, 유아책, 책육아, 그림책, 동화책읽어주기, 전래동화, 팝업북, 슈퍼리딩" />
+  <meta name="Description" content="부모와 아이가 모두 행복한 독서육아! 무료체험 신청하면 그림책 5권 전원증정!" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <meta name="apple-mobile-web-app-title" content="슈퍼브이 슈퍼리딩" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="mask-icon" href="/mask-icon.svg" color="#fff" />
+  <link rel="manifest" href="/site.manifest.json">
+  <meta name="theme-color" content="#ffffff" />
+
+  <title>슈퍼리딩</title>
+
+  <!-- SNS Share ======================================= -->
+  <!-- TODO : share 이미지 경로 서버 경로로 변경 -->
+  <meta property="og:image" content="https://reading.superv.com/assets/img/share/share_thumb_1000x600.png" />
+  <meta property="og:image:width" content="1000" />
+  <meta property="og:image:height" content="600" />
+  <meta property="og:title" content="슈퍼리딩 - 글로벌리더로 크는 유아독서 프로그램" />
+  <meta property="og:description" content="무료체험 신청하면 그림책 5권 전원증정!" />
+  <meta property="og:url" content="https://reading.superv.com" />
+
+  <!-- FB -->
+  <meta property="og:site_name" content="슈퍼리딩 - 글로벌리더로 크는 유아독서 프로그램" />
+  <meta property="og:title" content="슈퍼리딩 - 글로벌리더로 크는 유아독서 프로그램" />
+  <meta property="og:description" content="무료체험 신청하면 그림책 5권 전원증정!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="kr" />
+  <meta property="og:url" content="https://reading.superv.com" />
+  <!-- TODO : share 이미지 경로 서버 경로로 변경 -->
+  <meta property="og:image" content="https://reading.superv.com/assets/img/share/share_thumb_1000x600.png" />
+  <meta property="og:image:width" content="1000" />
+  <meta property="og:image:height" content="600" />
+
+  <!-- TW -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="슈퍼리딩 - 글로벌리더로 크는 유아독서 프로그램" />
+  <meta name="twitter:description" content="무료체험 신청하면 그림책 5권 전원증정!" />
+  <meta name="twitter:url" content="https://reading.superv.com" />
+  <meta name="twitter:image" content="https://reading.superv.com/assets/img/share/share_thumb_300x300.png" />
+  <!-- //SNS Share ======================================= -->
+
+  <!-- 23.09.12 추가 Google Tag Manager -->
+  <script>
+    let readingUrl1 = new URL(location.href).host;
+    if(!(readingUrl1.indexOf("dev") > -1) && !(readingUrl1.indexOf("local") > -1)){
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PSGJQ26');
+    }
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- 23.09.12 GA4 추가 Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XHXE81G99"></script>
+  <script>
+    let readingUrl2 = new URL(location.href).host;
+    if((readingUrl2.indexOf("dev") == -1) && (readingUrl2.indexOf("local") == -1)) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-9XHXE81G99');
+    }
+
+  </script>
+  <!--네이버 사이트 확인 메타 태그-->
+  <meta name="naver-site-verification" content="e698123596b4ce3bd77ffc7b1e410236d97b438e" />
+  <!--캐시삭제관련-->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Pragma" content="no-cache">
+
+  <!-- 페이스북/인스타그 Meta Pixel Code -->
+  <script>
+    let readingUrl3 = new URL(location.href).host;
+    if((readingUrl3.indexOf("dev") == -1) && (readingUrl3.indexOf("local") == -1)) {
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ?
+                  n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1273932433393358');
+      fbq('track', 'PageView');
+    }
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+                 src="https://www.facebook.com/tr?id=1273932433393358&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- 구글 ｜구글 검색, GDN, 유튜브 Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11002778747"></script>
+  <script>
+    let readingUrl4 = new URL(location.href).host;
+    if((readingUrl4.indexOf("dev") == -1) && (readingUrl4.indexOf("local") == -1)) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'AW-11002778747');
+    }
+  </script>
+
+  <!-- 카카오｜카카오광고 -->
+  <script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/kas/static/kp.js"></script>
+  <script type="text/javascript">
+    let readingUrl5 = new URL(location.href).host;
+    if((readingUrl5.indexOf("dev") == -1) && (readingUrl5.indexOf("local") == -1)) {
+      kakaoPixel('834136065350125897').pageView();
+    }
+  </script>
+
+  <!-- Danggeun Market Code -->
+  <script src="https://karrot-pixel.business.daangn.com/0.0.3/karrot-pixel.umd.js"></script>
+  <script>
+    let readingUrl6 = new URL(location.href).host;
+    if((readingUrl6.indexOf("dev") == -1) && (readingUrl6.indexOf("local") == -1)) {
+      try {
+        window.karrotPixel.init('1687311895739500001');
+        window.karrotPixel.track('ViewPage');
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  </script>
+  <!-- End Danggeun Market Code -->
+  <!--네이버 키워드광고 매체 전환값-->
+  <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+  <script type="text/javascript">
+    let readingUrl7 = new URL(location.href).host;
+    if((readingUrl7.indexOf("dev") == -1) && (readingUrl7.indexOf("local") == -1)) {
+      try {
+        if (!wcs_add) var wcs_add = {};
+
+        wcs_add["wa"] = "s_35d07a29d298";
+        if (!_nasa) var _nasa = {};
+        if(window.wcs){
+          wcs.inflow();
+          wcs_do(_nasa);
+        }
+      }catch (e){
+        console.log(e);
+      }
+    }
+  </script>
+  <!--2023.12.11 카울리 키워드광고 매체 전환값-->
+  <script type="text/javascript" src="//image.cauly.co.kr/tracker/caulytracker.js"></script>
+  <!-- E : head 공통 내용 삽입 -->
+
+  <!-- jQuery & JS -->
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="./assets/js/vendor/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/deviceDetect.js"></script>
+  <script src="./assets/js/superv/freeRequest.js?9"></script>
+  <script src="./assets/js/superv/common.js?5"></script>
+  <script src="./assets/js/superv/addrPop.js"></script>
+  <script src="./assets/js/superv/stuCarlendar.js"></script>
+
+  <!-- bootstrap, custom common only css -->
+  <link rel="stylesheet" href="assets/css/libs/bootstrap.min.css"/>
+  <link rel="stylesheet" href="assets/css/libs/boot_custom.css"/>
+  <link rel="stylesheet" href="assets/css/libs/custom.css"/>
+
+
+  <!-- 그로비 custom style -->
+  <link rel="stylesheet" href="./assets/css/style_brand.css"/>
+
+</head>
+<body class="event-free-experi sub-gnb-none"> <!-- header 스타일 제어를 위해 body에 클래스 선언 -->
+<!-- 23.09.12 Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSGJQ26" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!--------------------------------------------------- 페이지 공통 헤더 인클루드 --------------------------------------------------->
+<header>
+  <script>
+    $("header").load('com/include/header.html');
+  </script>
+</header>
+<!--------------------------------------------------- // 페이지 공통 헤더 인클루드 --------------------------------------------------->
+
+<div class="container-fluid sub_pg pd-b-0-md">
+  <div class="inner-wrap">
+    <div class="title"> <span>5일 무료체험</span> 신청하기 </div>
+<!--  추천 링크 영역 삭제
+    <div class="msg-wrap" name="recommendDiv">
+      <div class="msg-recommand">
+        <i class="ico-bb-msg"></i>추천코드가 적용되었습니다.
+      </div>
+    </div>  -->
+    <form onsubmit="return false;" class="form-area dir-col">
+      <fieldset>
+        <legend>학부모 정보</legend>
+        <p class="form-title">학부모 이름</p>
+        <input type="text" name="" id="parentNm" class="h-48" placeholder="한글 10자, 영문 20자 이내" style="ime-mode:active;">
+      </fieldset>
+      <fieldset>
+        <legend>자녀 정보</legend>
+        <p class="form-title">자녀정보</p>
+        <input type="text" id="studentNm" class="h-48" placeholder="자녀 이름 입력" style="ime-mode:active;">
+        <div class="child-info flex" id="childAgeSel"></div>
+        <p class="info">* 2024년 기준, 무료체험 신청은 6세(2019년생)까지만 가능합니다.</p>
+      </fieldset>
+      <fieldset>
+        <legend>학부모 휴대폰 번호</legend>
+        <p class="form-title">학부모 휴대폰 번호</p>
+        <div class="input-button">
+          <input type="number" name="" id="mdnNo" pattern="\d*" class="h-48" maxlength="11" placeholder="휴대폰 번호 (-없이 숫자만 입력)" oninput="common.inputLengthCheck(this)">
+          <button type="button" class="btn purple" id="certSnBtn" disabled>인증번호</button>
+        </div>
+        <div class="input-button">
+          <!-- TODO: disabled 속성 삭제해서 활성화 시켜야함 -->
+          <div>
+            <input type="number" name="" class="h-48" pattern="\d*" id="certInput" maxlength="4" placeholder="인증번호 입력" disabled oninput="common.inputLengthCheck(this)">
+            <span class="cert-count" id="restTime">03:00</span>
+          </div>
+          <button type="button" class="btn purple" id="certCheckBtn" disabled>인증확인</button>
+        </div>
+        <p class="vali" sendOk="인증번호가 발송되었습니다." certOk="인증되었습니다." certFail="인증번호 입력 시간이 만료되었습니다. 다시 요청해 주세요."></p>
+      </fieldset>
+      <fieldset>
+        <legend>형제 유무</legend>
+        <p class="form-title">형제 유무</p>
+        <div class="radio-group sibling">
+          <div class="radio-input">
+            <input type="radio" id="Yes" value="true" name="sibling">
+            <label for="Yes">있음</label>
+          </div>
+          <div class="radio-input">
+            <input type="radio" id="No" value="false" name="sibling">
+            <label for="No">없음</label>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>태블릿 케이스 선택</legend>
+        <div class="flex">
+          <p class="form-title">태블릿 케이스</p>
+          <p class="info">한번 선택한 케이스/거치대는 결제 후에도 변경이 불가하므로 신중하게 선택해 주세요.</p>
+        </div>
+        <div class="radio-group square">
+          <div class="flex">
+            <img src="assets/img/event/img_tablet_sukey@2x.png" alt="슈키 태블릿" class="pc"
+                 srcset="assets/img/event/img_tablet_sukey.png 1x, ../assets/img/event/img_tablet_sukey@2x.png 2x, ../assets/img/event/img_tablet_sukey@3x.png 3x">
+            <img src="assets/img/event/m_img_tablet_sukey@2x.png" alt="슈키 태블릿" class="mobile"
+                 srcset="assets/img/event/m_img_tablet_sukey.png 1x, ../assets/img/event/m_img_tablet_sukey@2x.png 2x, ../assets/img/event/m_img_tablet_sukey@3x.png 3x">
+            <div class="radio-input">
+              <input type="radio" id="sukey" value="1" name="deviceType">
+              <label for="sukey">슈키</label>
+            </div>
+          </div>
+          <div class="flex">
+            <img src="assets/img/event/img_tablet_evie@2x.png" alt="이비 태블릿" class="pc"
+                 srcset="assets/img/event/img_tablet_evie.png 1x, ../assets/img/event/img_tablet_evie@2x.png 2x, ../assets/img/event/img_tablet_evie@3x.png 3x">
+            <img src="assets/img/event/m_img_tablet_evie@2x.png" alt="이비 태블릿" class="mobile"
+                 srcset="assets/img/event/m_img_tablet_evie.png 1x, ../assets/img/event/m_img_tablet_evie@2x.png 2x, ../assets/img/event/m_img_tablet_evie@3x.png 3x">
+            <div class="radio-input">
+              <input type="radio" id="evie" value="2" name="deviceType">
+              <label for="evie">이비</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>배송주소</legend>
+        <p class="form-title">배송 주소</p>
+        <div class="flex dir-col">
+          <div class="input-button">
+            <input type="text" name="postcode" class="h-48" id="zipcode" placeholder="우편번호 검색" disabled>
+            <button type="button" class="btn purple" onclick="fnGetAddrPop();">우편번호</button>
+          </div>
+          <input type="text" name="address" class="h-48" id="address1" placeholder="우편번호 검색시 자동 입력" disabled>
+          <input type="text" name="address2" class="h-48" id="address2" placeholder="상세주소 입력" style="ime-mode:active;">
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>학습 상담 시간</legend>
+        <div class="flex">
+          <p class="form-title">학습 상담 시간</p>
+          <p class="info gray">상담이 편하신 시간을 선택해 주세요. (중복 체크 가능)</p>
+        </div>
+        <div class="flex counsel">
+          <div class="check-input">
+            <input type="checkbox" id="morning" name="consultTime" value="consultMorning">
+            <label for="morning">오전 (10시~12시)</label>
+          </div>
+          <div class="check-input">
+            <input type="checkbox" id="after" name="consultTime" value="consultAfter">
+            <label for="after">오후 (1시~5시)</label>
+          </div>
+          <div class="check-input">
+            <input type="checkbox" id="evening" name="consultTime" value="consultEven">
+            <label for="evening">저녁 (6시~8시)</label>
+          </div>
+        </div>
+        <div class="mobile line"></div>
+      </fieldset>
+      <fieldset>
+        <div class="check-input agreement">
+          <input type="checkbox" id="agreement" name="agreement" value="true">
+          <label for="agreement">
+            <span>[필수]</span> 개인정보 수집 및 이용 동의
+            <a href="javascript:void(0);" onclick="window.open('https://www.superv.com/page_term.html', '_blank', 'width=557,height=1000')";>
+              <img src="../assets/img/event/icon_right_arrow@2x.png" alt="">
+            </a>
+          </label>
+        </div>
+      </fieldset>
+    </form>
+    <!-- TODO: disabled 속성 삭제해서 활성화 시켜야함 -->
+    <div class="btn-wrap">
+      <button type="button" class="btn btn-big purple" id="submitBtn" disabled>무료체험 신청하기</button>
+    </div>
+    <div id="addrIfr" style="display:none;position:fixed;overflow:hidden;z-index:999;-webkit-overflow-scrolling:touch;">
+      <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1;width: 7%;" onclick="closeDaumPostcode()" alt="닫기 버튼">
+    </div>
+  </div>
+</div>
+
+<button class="top_btn">
+  <img src="assets/img/common/btn_top.svg" alt="">
+</button>
+
+<!--------------------------------------------------- 페이지 공통 푸터 인클루드 --------------------------------------------------->
+<footer>
+  <script>$("footer").load('/com/include/footer.html');</script>
+</footer>
+<!------------------------------------------------- // 페이지 공통 푸터 인클루드 -------------------------------------------------->
+<!--------------------------------------------------- 페이지 공통 팝업 인클루드 --------------------------------------------------->
+<div class="include-area-popup">
+  <script>$(".include-area-popup").load('/com/include/popup.html');</script>
+</div>
+<!------------------------------------------------- // 페이지 공통 팝업 인클루드 --------------------------------------------------->
+
+<!-- JS -->
+<script src="./assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/vendor/custom.js"></script>
+<!--sam 임시주석
+<script src="./assets/js/reading.ui.js"></script>
+-->
+
+</body>
+</html>

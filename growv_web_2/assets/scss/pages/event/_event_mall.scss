@@ -1,0 +1,212 @@
+@charset "UTF-8";
+
+/*
+event-mall 전용몰 프로모션 (새해이벤트)
+*/
+$kvImgWidth : 1200;
+$kvImgHeight : 1060;
+
+.event-mall {
+  // bg-wrap 공통
+  .bg-wrap {
+    position:absolute;
+    width:100%; height:100%;
+    top:0; right:0; bottom:0; left:0;
+
+    .bg-item {
+      display:block;
+      position:absolute;
+      width: 100%; height: 100%;
+      top:0; left:50%;
+      transform:translate3d(-50%,0,0);
+      background-repeat: no-repeat;
+      background-position:center center;
+      background-size: auto 100%;
+    }
+  }
+
+  .youtube-thumb {
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  .sec {
+    .content-body {
+      padding: 0;
+      .btn-wrap {
+        margin: 41px auto 20px;
+        .btn-link { max-width: 720px;  margin: auto; }
+      }
+
+      .notice-wrap {
+        width: max-content;
+        margin: 0 auto;
+      }
+    }
+
+    picture {
+      max-width:1200px;
+    }
+  }
+
+  .sec-kv {
+    position:relative;
+    overflow:visible;
+    z-index:1;
+
+    .content-body {
+      position:relative;
+      padding:0;
+    }
+
+    .kv-img-wrap {
+      position:relative;
+    }
+  }
+
+  .bottom-banner {
+    display: none;
+    position: fixed;
+    width: 100%; height: fit-content;
+    bottom: 0; z-index: 99;
+    .btn-wrap {
+      display: flex;
+      width: 100%;
+      .btn-item {
+        display: inline-block;
+        flex: 1;
+        img { width: 100%; }
+      }
+    }
+  }
+
+  .sec-2,
+  .sec-5 {
+    background-color: #eff0ff;
+    .btn-play {
+      display: inline-block;
+      position: absolute;
+      width: 720px; height: 405px;
+      top:160px; left:50%;
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .sec-3 {
+    padding-bottom: 80px;
+    .notice-wrap {
+      .star-list { color: #b7b6e6; }
+    }
+  }
+
+  .sec-4 { padding-bottom: 80px; }
+
+  // 24년 2월 이벤트
+  &.Feb-24 {
+    .sec {
+      .content-body {
+        .youtube-thumb {
+          width: 800px; height: 450px;
+          top: 180px;
+        }
+      }
+    }
+    .star-list {
+      font-size: 16px;
+      font-weight: 600;
+      li:before,
+      dt:before {
+        display: inline-block;
+        position: unset;
+        margin-right: 3px;
+        vertical-align: middle;
+      }
+    }
+    .sec-2,
+    .sec-5 {
+      background-color: transparent;
+    }
+
+    .sec-3 {
+      .notice-wrap {
+        .star-list {
+          color: #8e95a9;
+          text-align: center;
+        }
+      }
+    }
+
+    .sec-4 {
+      .notice-wrap {
+        .star-list{ color: #957676; }
+      }
+    }
+  }
+}
+
+@media (max-width: $media-lg) {
+  .event-mall {
+    .bg-wrap {
+      background-size:100% auto;
+    }
+
+    .sec {
+      .content-body {
+        padding: 0;
+        .btn-wrap {
+          margin: 0 auto 16px;
+          .btn-link { max-width: calc(100% - 32px);  margin: auto; }
+        }
+        .notice-wrap {
+          width: calc(100% - 32px);
+          margin: 0 auto;
+          .star-list {
+            font-size: 12px;
+            line-height: 16px;
+          }
+        }
+      }
+    }
+
+    .sec-kv {
+      position:relative;
+      overflow:visible;
+      z-index:1;
+      .content-body {
+        position:relative;
+        padding:0;
+      }
+      .kv-img-wrap {
+        position:relative;
+      }
+    }
+
+    .sec-2,
+    .sec-5 {
+      background-color: #eff0ff;
+      .btn-play {
+        display: inline-block;
+        position: absolute;
+        width: vw-cal-md(328px); height:vw-cal-md(184.5px);
+        top: vw-cal-md(96px); left:50%;
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    .sec-3 { padding-bottom: 40px; }
+
+    .sec-4 { padding-bottom: 40px; }
+
+    &.Feb-24 {
+      .sec {
+        .content-body {
+          .youtube-thumb {
+            width: 100%; height:vw-cal-md(202px);
+            top: vw-cal-md(116px);
+          }
+        }
+      }
+    }
+  }
+}
