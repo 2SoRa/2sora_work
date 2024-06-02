@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+    <g data-name="icon_close_28">
+        <path style="opacity:.3;fill:none" d="M0 0h28v28H0z"/>
+        <path data-name="선 25" transform="rotate(180 12 12)" style="stroke:#fff;stroke-linecap:round;stroke-width:1.5px;fill:none" d="M20 20 0 0"/>
+        <path data-name="선 26" transform="rotate(180 12 12)" style="stroke:#fff;stroke-linecap:round;stroke-width:1.5px;fill:none" d="M0 20 20 0"/>
+    </g>
+</svg>

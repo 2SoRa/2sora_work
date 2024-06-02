@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 50 40">
+    <g transform="translate(-14 -3)">
+        <rect data-name="사각형 11" width="50" height="40" rx="10" transform="translate(14 3)" style="fill:#fff"/>
+        <path data-name="패스 15" d="M1.726.3 9.7 8.275a1.011 1.011 0 0 1 0 1.43c-.014.014-.033.018-.048.031a.6.6 0 0 1-.059.075L1.813 17.6a1.011 1.011 0 0 1-1.43-1.429L7.56 8.99.3 1.726A1.011 1.011 0 1 1 1.726.3" transform="translate(34.998 14)" style="fill:#3b7f8d;fill-rule:evenodd"/>
+    </g>
+</svg>

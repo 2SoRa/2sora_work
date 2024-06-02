@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <g data-name="icon_nodata" transform="translate(-386.096 560.85)">
+        <circle cx="20" cy="20" r="20" transform="translate(386.096 -560.85)" style="fill:#dbdbdb"/>
+        <g transform="translate(402.774 -554.471)">
+            <rect data-name="2" width="4" height="20" rx="2" transform="translate(1.323 .617)" style="fill:#fff"/>
+            <circle data-name="1" cx="2" cy="2" r="2" transform="translate(1.322 22.623)" style="fill:#fff"/>
+        </g>
+    </g>
+</svg>

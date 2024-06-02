@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../css/style.css?v.20240304" />
+	<link rel="stylesheet" href="../css/custom.css" />
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<link rel="icon" href="../images/favicon.ico">
+	<title>슈퍼브이 - 글로벌리더로 크는 아이</title>
+	<meta name="description" content="4세부터 9세까지, 영어 수학 한글은 슈퍼브이! 1등 교육서비스를 만든 최고전문가들의 스마트러닝">
+	<meta property="og:title" content="네이버포인트 1만원 증정">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.superv.com">
+	<meta property="og:image" content="https://cdndata.superv.com/teaser/SuperV_og.jpg">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:site_name" content="슈퍼브이">
+	<meta property="og:description" content="최대 20만원 혜택 + BMW 미니 기회까지!">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-241422429-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-241422429-1');
+	</script>
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11002778747"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'AW-11002778747');
+	</script>
+
+	<script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/kas/static/kp.js"></script>
+	<script type="text/javascript">
+		kakaoPixel('834136065350125897').pageView();
+	</script>
+
+	<!-- Meta Pixel Code -->
+	<script>
+		!function(f,b,e,v,n,t,s)
+		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+						n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t,s)}(window, document,'script',
+						'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '1829423534071558');
+		fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+								 src="https://www.facebook.com/tr?id=1829423534071558&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- End Meta Pixel Code -->
+</head>
+
+<body>
+	<div class="wrapper">
+
+
+	</div>
+
+	<!--
+	<div class="dialog">
+	<div class="dialog ing on">
+	-->
+	<div class="dialog on">
+		<div class="pop-item-wrap">
+			<div class="pop-header-wrap">
+				<div class="ptit">필수입력 사항 미입력</div>
+				<button type="button"><img src="../images/icon/ico-header-close.svg" /></button>
+			</div>
+			<div class="pop-cont-wrap">
+
+				<div class="alert-msg">탈퇴 사유를 입력해주세요.,</div>
+
+				<button type="button">확인</button>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script>
+	$(function(){
+	    $("body").on("click", ".btn-add", function(){
+	        $(".dialog").addClass("on");
+		});
+        $("body").on("click", ".pop-cont-wrap button", function(){
+            $(".dialog").removeClass("on");
+        });
+	    $("body").on("click", ".pop-header-wrap button", function(){
+            $(".dialog").removeClass("on");
+        });
+        $("body").on("click", ".agree-item-wrap input", function(){
+            var ck = $(this).prop("checked");
+            if(ck){
+				$("html, body").stop().animate({ scrollTop : "10000px"},1500);
+                $(".agree-item-wrap button").prop("disabled", false);
+			}else{
+                $(".agree-item-wrap button").prop("disabled", true);
+            }
+        });
+        $("body").on("change", ".select", function(){
+            var ck = parseInt($(this).val());
+            if(ck == 0){
+                $(this).removeClass("selected");
+            }else{
+                $(this).addClass("selected");
+			}
+        });
+        //
+	    //.agree-item-wrap
+	});
+</script>
+
+</html>

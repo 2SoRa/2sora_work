@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <defs>
+        <clipPath id="uy8h6u90ba">
+            <path data-name="사각형 3860" style="fill:#be1515;opacity:.459" d="M0 0h48v48H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="마스크 그룹 94" style="clip-path:url(#uy8h6u90ba)">
+        <path data-name="합치기 51" d="m0 0 14.086 15.312zm28.981 0-14.9 15.312z" transform="rotate(-90 34.807 4.449)" style="fill:none;stroke:#cecece;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px"/>
+    </g>
+</svg>

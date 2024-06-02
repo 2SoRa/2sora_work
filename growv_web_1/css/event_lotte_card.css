@@ -1,0 +1,436 @@
+@charset "UTF-8";
+
+.event-lotte-card .pc {
+    display: block;
+}
+.event-lotte-card ._pc {
+    display: block;
+}
+.event-lotte-card .mobile {
+    display: none !important;
+}
+.event-lotte-card .blind {
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+}
+
+/*반응형 max 992px lg*/
+@media (max-width: 991.98px) {
+    .event-lotte-card .pc {
+        display: none !important;
+    }
+    .event-lotte-card ._pc {
+        display: none !important;
+    }
+    .event-lotte-card .pc-flex {
+        display: none !important;
+    }
+    .event-lotte-card .mobile {
+        display: flex !important;
+    }
+}
+
+/*
+event-lotte-card 롯데카드 이벤트 페이지 스타일
+슈퍼리딩, 슈퍼브이 동일한 레이아웃, 스타일 구조를 갖고 있어 리딩에서 작업 후 컴파일된 css 브이에서 커스텀
+*/
+.event-lotte-card .container-fluid .inner-wrap {
+    position: relative;
+    overflow: hidden;
+}
+.event-lotte-card .sec {
+    display: block;
+    position:relative;
+    width: 100%;
+    transform: none;
+}
+.event-lotte-card .sec.has-triangle:after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 50%;
+    border-style: solid;
+    border-width: 18px 20px 0 20px;
+    border-color: #FF4532 transparent transparent transparent;
+    transform: translate3d(-50%, 0, 0);
+}
+.event-lotte-card .content-body {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0;
+    margin: 0 auto;
+}
+.event-lotte-card .content-body .content-area-half-lg {
+    width: 50%;
+}
+.event-lotte-card .content-body picture {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+.event-lotte-card .sec-kv {
+    position: relative;
+    background-color: #dcdcfd;
+}
+.event-lotte-card .sec-kv:before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    background-image: url("../images/event/event_lotte_card/kv_bg.png");
+}
+.event-lotte-card .sec-kv .content-body {
+    position: relative;
+    padding: 0;
+}
+.event-lotte-card .sec-kv .kv-img-wrap {
+    position: relative;
+}
+.event-lotte-card .sec-1 {
+    background-color: #4a53c7;
+}
+.event-lotte-card .sec-1 .content-body {
+    max-width: 100%;
+    color: #fff;
+}
+.event-lotte-card .sec-1 .info-list-wrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding: 50px 0;
+}
+.event-lotte-card .sec-1 .info-list-wrap:before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 34.1666666667%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #595ec7;
+}
+.event-lotte-card .sec-1 .info-list-wrap > li {
+    position: relative;
+    margin-top: 16px;
+}
+.event-lotte-card .sec-1 .info-list-wrap > li:first-child {
+    margin-top: 0;
+}
+.event-lotte-card .sec-1 .info-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.36px;
+    font-weight: 500;
+    color: #fff;
+}
+.event-lotte-card .sec-1 .info-list dt {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: 34.1666666667%;
+    box-sizing: border-box;
+    opacity: 0.6;
+}
+.event-lotte-card .sec-1 .info-list dt .dt-tit {
+    display: block;
+    width: 100%;
+    max-width: 160px;
+    padding-right: 30px;
+}
+.event-lotte-card .sec-1 .info-list dt .dt-tit i.pc {
+    display: inline;
+    font-style:normal;
+}
+.event-lotte-card .sec-1 .info-list dd {
+    width: 65.8333333333%;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+.event-lotte-card .sec-1 .info-list small {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1;
+    color: #fff;
+    opacity: 0.6;
+}
+.event-lotte-card .sec-2 {padding-bottom:30px;}
+.event-lotte-card .sec-2.has-triangle:after {
+    border-color: #4a53c7 transparent transparent transparent;
+}
+.event-lotte-card .sec-2 .content-body {
+    display: flex;
+}
+.event-lotte-card .sec-2 .content-body .content-area-half-lg.area-r{
+    padding-top:70px;
+}
+.event-lotte-card .sec-2 .btn-card-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 56px;
+    margin-top: 30px;
+    border-radius: 4px;
+    background-color: #2c2852;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: -0.72px;
+    font-weight: 700;
+    color: #fff;
+}
+.event-lotte-card .sec-3 {
+    padding-bottom: 100px;
+    background-color: #ebeefd;
+}
+.event-lotte-card .sec-3.has-triangle:after {
+    border-color: #fff transparent transparent transparent;
+}
+.event-lotte-card .sec-3 .area-1 .txt-desc {
+    display: block;
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    color: #8f8f8f;
+}
+.event-lotte-card .sec-3 .area-1 .btn-event-enter {
+    display: block;
+    width: 62.5%;
+    height: auto;
+    margin: 63px auto 0;
+}
+.event-lotte-card .sec-3 .area-1 .btn-event-enter img {
+    width: 100%;
+}
+.event-lotte-card .sec-3 .area-2 {
+    width: 93.3333333333%;
+    max-width: 1120px;
+    padding: 40px 60px;
+    margin: 80px auto 0;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.48);
+    box-sizing: border-box;
+}
+.event-lotte-card .sec-3 .area-2 .dot-list-tit {
+    display: block;
+    margin-bottom: 13px;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    font-weight: 700;
+}
+.event-lotte-card .sec-3 .area-2 .dot-list {
+    display:block;
+    color: #8f8f8f;
+}
+.event-lotte-card .sec-3 .area-2 .dot-list li {
+    display:block;
+    position: relative;
+    padding-left: 7px;
+    margin: 5px 0;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -0.24px;
+}
+.event-lotte-card .sec-3 .area-2 .dot-list li:before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    top: 7px;
+    left: 0;
+    border-radius: 50%;
+    background-color: #8f8f8f;
+}
+.event-lotte-card .sec-3 .area-2 .dot-list li.has-bot-line {
+    text-decoration: underline;
+}
+.event-lotte-card .sec-3 .area-2 .dot-list li.txt-em {
+    margin-top: 16px;
+    font-weight: 700;
+    color: #424242;
+}
+.event-lotte-card .sec-3 .area-2 .dot-list li.txt-em:before {
+    background-color: #424242;
+}
+.event-lotte-card .sec-3 .area-2 .hyphen-list li {
+    padding-left: 0;
+}
+.event-lotte-card .sec-3 .area-2 .hyphen-list li:before {
+    display: none;
+}
+.event-lotte-card .sec-3 .area-2 .em-list {
+    margin-top: 4px;
+    font-weight: 700;
+    color: #424242;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -0.24px;
+}
+.event-lotte-card .sec-3 .area-2 .em-list li {
+    margin: 4px 0;
+}
+.event-lotte-card .sec-3 .area-2 .em-list + .dot-list {
+    margin-top: 16px;
+}
+
+
+@media (max-width: 991.98px) {
+    .event-lotte-card .sec {
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+    .event-lotte-card .sec.has-triangle:after {
+        border-width: 20px 20px 0 20px;
+    }
+    .event-lotte-card .content-body .content-area-half-lg {
+        width: 100%;
+    }
+    .event-lotte-card .content-body picture img {
+        width: 100%;
+        height: auto;
+    }
+    .event-lotte-card .sec-kv {
+        padding: 0;
+    }
+    .event-lotte-card .sec-kv:before {
+        display: none;
+    }
+    .event-lotte-card .sec-kv .content-body {
+        position: relative;
+        padding: 0;
+    }
+    .event-lotte-card .sec-kv .kv-img-wrap {
+        position: relative;
+    }
+    .event-lotte-card .sec-1 .content-body {
+        color: #fff;
+    }
+    .event-lotte-card .sec-1 .info-list-wrap {
+        padding: 10vw 0;
+    }
+    .event-lotte-card .sec-1 .info-list-wrap:before {
+        display: none;
+    }
+    .event-lotte-card .sec-1 .info-list-wrap > li {
+        margin-top: 2.7777777778vw;
+    }
+    .event-lotte-card .sec-1 .info-list-wrap > li:first-child {
+        margin-top: 0;
+    }
+    .event-lotte-card .sec-1 .info-list {
+        padding: 0;
+        font-size: 3.8888888889vw;
+    }
+    .event-lotte-card .sec-1 .info-list dt {
+        width: 27.4%;
+    }
+    .event-lotte-card .sec-1 .info-list dt .dt-tit {
+        max-width: 100%;
+        padding-left: 0;
+    }
+    .event-lotte-card .sec-1 .info-list dd {
+        width: 72.6%;
+        padding-left: 0;
+    }
+    .event-lotte-card .sec-1 .info-list small {
+        margin-top: 1.1111111111vw;
+        font-size: 3.3333333333vw;
+    }
+    .event-lotte-card .sec-2 {
+        padding: 0 0 11.1111111111vw;
+    }
+    .event-lotte-card .sec-2 .content-body {
+        display: block;
+    }
+    .event-lotte-card .sec-2 .content-body .content-area-half-lg.area-r{
+        padding-top:0;
+    }
+    .event-lotte-card .sec-2 .btn-card-view {
+        width: 91.1111111111%;
+        height: 13.3333333333vw;
+        margin: 6.6666666667vw auto 0;
+        border-radius: 1.1111111111vw;
+        font-size: 4.4444444444vw;
+        letter-spacing: -0.64px;
+    }
+    .event-lotte-card .sec-3 {
+        padding: 0;
+    }
+    .event-lotte-card .sec-3 .area-1 .txt-desc {
+        padding: 0 4.4444444444%;
+        margin-top: 4.4444444444vw;
+        font-size: 3.3333333333vw;
+        line-height: 1.33;
+    }
+    .event-lotte-card .sec-3 .area-1 .btn-event-enter {
+        width: 97.7777777778%;
+        height: auto;
+        margin-top: 9.4444444444vw;
+    }
+    .event-lotte-card .sec-3 .area-2 {
+        width: 100%;
+        padding: 8.3333333333vw 4.4444444444vw;
+        margin-top: 11.1111111111vw;
+        border-radius: 0;
+    }
+    .event-lotte-card .sec-3 .area-2 .dot-list-tit {
+        margin-bottom: 2.2222222222vw;
+        font-size: 3.3333333333vw;
+        letter-spacing: -0.24px;
+    }
+    .event-lotte-card .sec-3 .area-2 .dot-list li {
+        margin: 1.3888888889vw 0;
+        font-size: 3.3333333333vw;
+        line-height: 1.33;
+    }
+    .event-lotte-card .sec-3 .area-2 .dot-list li:before {
+        width: 3px;
+        height: 3px;
+        top: 1.9444444444vw;
+    }
+    .event-lotte-card .sec-3 .area-2 .dot-list li.txt-em {
+        margin-top: 5vw;
+    }
+    .event-lotte-card .sec-3 .area-2 .em-list {
+        margin-top: 1.1111111111vw;
+        font-size: 3.3333333333vw;
+        line-height: 1.33;
+    }
+    .event-lotte-card .sec-3 .area-2 .em-list li {
+        margin-top: 1.1111111111vw;
+    }
+    .event-lotte-card .sec-3 .area-2 .em-list + .dot-list {
+        margin-top: 5vw;
+    }
+}

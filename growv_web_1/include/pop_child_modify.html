@@ -1,0 +1,69 @@
+<!-- 배경 시작 -->
+<div class="pop_dim"></div>
+<!-- 배경 끝 -->
+<div class="pop_wrap">
+  <!-- 팝업 타이틀 -->
+  <div class="pop_title">
+    <!--  TODO: 모바일에서는 뒤로가기 기능 추가 -->
+    <div class="mb_item prev" onclick="childModifyClosePop()"></div>
+    <span class="title-text modify">자녀 정보 수정</span>
+    <button name="closePopComplete" class="child_pop_close pc_item" onclick="childModifyClosePop()"></button>
+  </div>
+  <!-- 팝업 내용 -->
+  <div class="pop_contents">
+    <div class="pop_contents_item">
+      <p class="title modify">수정할 자녀 정보를 입력해 주세요.</p>
+      <div class="form_app_tb">
+        <div class="form_app_tr value-type">
+          <div class="form_app_cell define_th">
+            <span class="form_app_label">자녀 이름</span>
+          </div>
+          <div class="form_app_cell define_td">
+            <div class="inline_block_row">
+              <input type="text" class="form_input" placeholder="자녀 이름 입력" name="thisStudentNm">
+            </div>
+            <!-- TODO: event 참고 event와 동일하게 클래스 적용 -->
+            <div class="warn_para_g d_red" name="thisStudentNmCheck">
+              <p class="warn_para">이름은 한글 10자, 영문 20자 이하로 입력해 주세요.</p>
+            </div>
+          </div>
+        </div>
+        <div class="form_app_tr value-type">
+          <div class="form_app_cell define_th">
+            <span class="form_app_label">생년월일</span>
+          </div>
+          <div class="form_app_cell define_td">
+            <div class="inline_block_row">
+              <div class="inline_flex_group mb_break">
+                <div class="inline_mb_group" name="calHtmlPart"></div>
+                <input type="text" class="form_input wid_full" name="calAgeInput" disabled placeholder="자녀 나이">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form_app_tr value-type flx-row">
+          <div class="form_app_cell define_th">
+            <span class="form_app_label">성별</span>
+          </div>
+          <div class="form_app_cell define_td">
+            <div class="radio-wrap">
+              <label>
+                <input type="radio" name="thisStudentGender" value="M">
+                <span>남자</span>
+              </label>
+              <label>
+                <input type="radio" name="thisStudentGender" value="F">
+                <span>여자</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="btn_wrap">
+    <!-- TODO: disabled 삭제하면 활성화 됨       -->
+    <button class="custom-button primary w-m confirm disabled" name="updateMemberStu" disabled>확인</button>
+  </div>
+</div>

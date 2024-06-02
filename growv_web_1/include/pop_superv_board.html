@@ -1,0 +1,64 @@
+<script src="../js/script_cusReq_v.0.1.js?v.230808"></script>
+<div class="pop_dim"></div>
+<div class="pop_wrap superv_board">
+  <div class="pop_title">
+    <span class="title-text">슈퍼브이에 바란다</span>
+    <button name="closePopComplete" id="cusReqClosePop" class="btn_layerclose" onclick=""></button>
+  </div>
+  <div class="pop_contents">
+    <div class="pop_contents_item">
+      <section>
+        <div class="flex-column">
+          <p class="contents_title">슈퍼브이에 바라는 것이 있으시면 의견을 남겨주세요.</p>
+          <div class="contents_info">
+            <p class="pc_item">
+              즉시 반영할 수 있도록 노력하겠습니다.<br>
+              바로 반영이 어렵더라도 최선을 다해 반영을 하겠습니다.<br>
+              의견 채택 및 반영되면 감사의 선물을 드립니다.
+            </p>
+            <p class="mb_item">
+              바로 반영이 어렵더라도 최선을 다해 반영을<br>
+              하겠습니다. 의견 채택 및 반영되면<br>
+              감사의 선물을 드립니다.
+            </p>
+          </div>
+          <span class="sub_info">* 문화상품권 3만원 증정 <br class="mb_item">(동일한 의견 접수 시 최초 등록자에게만 증정)</span>
+        </div>
+      </section>
+      <section class="board_contents">
+        <div>
+          <div class="sub_title">의견 채택 시 안내받을 연락처를 등록해 주세요.</div>
+          <input type="number" pattern="\d*" class="form_input" id="superVboard_inp_num" placeholder="휴대폰 번호 (숫자만 입력)" autocomplete="off" maxlength="11">
+        </div>
+        <div>
+          <div class="sub_title">슈퍼브이에 바라는 내용을 등록해 주세요. <p><span>0</span>/500자</p></div>
+          <textarea maxlength="510" class="form_input" id="superVboard_inp_txt" placeholder="구체적으로 작성해 주시면 고객의 의견을 파악하는데 큰 도움이 됩니다." onkeydown="replaceTag('superVboard_inp_txt')" onkeyup="replaceTag('superVboard_inp_txt')"></textarea>
+        </div>
+      </section>
+    </div>
+  </div>
+  <button class="custom-button submit disabled" id="superVcusReqSubmitBtn"  disabled="disabled" onclick="submitCusReq()">등록하기</button>
+</div>
+
+<!-- TODO: 등록 완료시 얼럿으로 처리 필요 -->
+
+<!-- 슈퍼브이에 바란다 팝업 화면-->
+<script>
+  $(function () {
+    $('.pop_board').on('click', function () {
+      const superv = $('#superVboard');
+      superv.addClass('active');
+
+      if (superv.hasClass('active') == true) {
+        document.querySelector('body').style.overflow = 'hidden';
+        document.querySelector('body').style.height = 'calc(var(--vh, 1vh) * 100';
+        document.querySelector('body').style.height = '100vh';
+        document.querySelector('body').style.touchAction = 'none';
+      } else {
+        document.querySelector('body').style.overflow = 'auto';
+        document.querySelector('body').style.height = 'auto';
+        document.querySelector('body').style.touchAction = 'auto';
+      }
+    });
+  });
+</script>

@@ -1,0 +1,165 @@
+<!-- TODO : id(cookie)명 리딩, 브이 다르게 선언 -->
+<!-- popup : delivery expire popup day 00:00 for pc -->
+<div class="popup-area pop-expire-delivery" id="popExpireDeliveryV">
+    <!--<div class="pop-dim"></div>-->
+    <div class="popup-wrap">
+        <div class="popup">
+            <img src="/images/popup/pop_expire_delivery.png" class="pc">
+        </div>
+        <div class="popup-footer">
+            <div class="check-input">
+                <input type="checkbox" name="expireDayTime" id="checkExpire">
+                <label for="checkExpire">오늘 하루 보지 않기</label>
+            </div>
+            <button type="button" class="btn-close" onclick="fnCloseExpirePop('popExpireDeliveryV');"><span>닫기</span></button>
+        </div>
+    </div>
+</div>
+
+<!-- popup : delivery popup for mobile -->
+<div class="popup-area pop-delivery" id="popDelivery">
+    <div class="pop-dim"></div>
+    <div class="popup-wrap">
+        <div class="popup">
+            <img src="/images/popup/pop_expire_delivery_m.png" class="mobile">
+        </div>
+        <div class="popup-footer">
+            <button type="button" class="btn-close" popup-target="popDelivery"><span>닫기</span></button>
+        </div>
+    </div>
+</div>
+
+<script>
+    var BtnPopDelivery = $('.btn-pop-delivery');
+    var BtnClosePopDelivery = $('.pop-delivery .btn-close')
+    var popExpire = $('#popExpireDeliveryV');
+    var popDeliveryMo = $('#popDelivery');
+    var isPopExpire;
+    var isMobileCheck;
+
+    $(document).ready(function() {
+        getMobileCheck();
+
+        // id = 쿠키 이름 동일하게 설정
+        var popupDelivery = getCookie('popExpireDeliveryV');
+        if(!popupDelivery) {
+            isPopExpire = true;
+            if(!isMobileCheck) {
+                openExpirePop('popExpireDeliveryV');
+            } else {
+                closeExpirePop('popExpireDeliveryV');
+            }
+        }
+
+        // for mobile
+        BtnPopDelivery.on('click', function(e){
+            var targetId =  $(e.currentTarget).attr('popup-target');
+            var popupTarget =  $('body').find('#'+targetId);
+
+            popupTarget.addClass('active');
+            $("body").css("overflow","hidden");
+            $("body").addClass("disabled");
+        });
+        BtnClosePopDelivery.on('click', function(e){
+            var targetId =  $(e.currentTarget).attr('popup-target');
+            var popupTarget =  $('body').find('#'+targetId);
+
+            popupTarget.removeClass('active');
+            $("body").css("overflow","auto");
+            $("body").removeClass("disabled");
+        });
+    });
+
+
+    $(window).resize(function(){
+        getMobileCheck();
+    });
+
+    function getMobileCheck() {
+        if($(window).width() >= 992) {  // pc
+            isMobileCheck = false;
+            popDeliveryMo.removeClass('active');
+        } else {                        // mobile
+            isMobileCheck = true;
+        }
+        // setActiveExpirePop('popExpireDeliveryV');
+    }
+
+    function setActiveExpirePop(thisId) {
+        if(isPopExpire) { // popExpire 캐시가 없는 경우 (팝업이 활성화 되어 있는 경우)
+            if(isMobileCheck) {
+                closeExpirePop('popExpireDeliveryV');
+                popDeliveryMo.removeClass('active');
+            } else {
+                openExpirePop('popExpireDeliveryV');
+            }
+        }
+    }
+    function getCookie(name) {
+        var nameOfCookie = name + "=";
+        var x = 0;
+        while (x <= document.cookie.length) {
+            var y = (x + nameOfCookie.length);
+            if (document.cookie.substring(x, y) == nameOfCookie) {
+                if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+                    endOfCookie = document.cookie.length;
+                return unescape(document.cookie.substring(y, endOfCookie));
+            }
+            x = document.cookie.indexOf(" ", x) + 1;
+            if (x == 0) break;
+        }
+        return "";
+    }
+
+    // 쿠키 셋팅 : day (day * 24)
+    function setCookieDays(name, value, expiredays) {
+        var todayDate = new Date();
+        todayDate.setDate(todayDate.getDate() + expiredays);
+        document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+    }
+
+    // 쿠키 셋팅 : 00시 갱신
+    function setCookie00(name, value, expiredays) {
+        var todayDate = new Date();
+        todayDate = new Date(parseInt(todayDate.getTime() / 86400000) * 86400000 + 54000000);
+
+        if (todayDate > new Date()) {
+            expiredays = expiredays - 1;
+        }
+        todayDate.setDate(todayDate.getDate() + expiredays);
+        document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+
+        // console.log(name + ' 쿠키 설정 ===> ', todayDate, expiredays);
+    }
+
+    function openExpirePop(thisId) {
+        // console.log('팝업 활성화, 오픈 ===> ', thisId);
+
+        $("#"+thisId).addClass('active');
+        if(isMobileCheck) {
+            $("body").css("overflow","hidden");
+            $("body").addClass("disabled");
+        } else {
+            $("body").css("overflow","auto");
+            $("body").removeClass("disabled");
+        }
+    }
+
+    function closeExpirePop(thisId) {
+        // console.log(' mobile! expire popup close');
+        $("#"+thisId).removeClass("active");
+        $("body").css("overflow","auto");
+        $("body").removeClass("disabled");
+    }
+
+    function fnCloseExpirePop(thisId) {
+        closeExpirePop(thisId);
+
+        var chkExpire = $("#"+thisId).find('#checkExpire');
+        if(chkExpire.is(':checked')) {
+            // console.log('체크박스 true, 쿠키 설정 ===> ', thisId);
+            isPopExpire = false;
+            setCookie00(thisId, "done", 1);
+        }
+    }
+</script>

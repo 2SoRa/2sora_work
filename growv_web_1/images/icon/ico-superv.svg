@@ -1,0 +1,24 @@
+<svg id="event_list_title" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38" height="38" viewBox="0 0 38 38">
+  <defs>
+    <filter id="타원_4">
+      <feOffset dy="-20" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feFlood flood-opacity="0.102" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="그룹_20" data-name="그룹 20">
+    <g data-type="innerShadowGroup">
+      <circle id="타원_4-2" data-name="타원 4" cx="19" cy="19" r="19" fill="#fff"/>
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#타원_4)">
+        <circle id="타원_4-3" data-name="타원 4" cx="19" cy="19" r="19" fill="#fff"/>
+      </g>
+    </g>
+    <g id="그룹_10" data-name="그룹 10" transform="translate(7 7)">
+      <path id="패스_6" data-name="패스 6" d="M0,0,8.69,23.072H15.3L6.784,0Z" transform="translate(0 0)" fill="#fc861d"/>
+      <path id="패스_7" data-name="패스 7" d="M18.013,0,9.5,23.072h6.607L24.8,0Z" transform="translate(-0.808 0)" fill="#e51f3f"/>
+    </g>
+  </g>
+</svg>

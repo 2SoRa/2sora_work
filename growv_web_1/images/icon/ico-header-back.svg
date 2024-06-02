@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="G-24" width="24" height="24" fill="rgba(255,82,82,0)"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="_18_18" data-name="18*18" width="18" height="18" transform="translate(2 3)" fill="#ff4848" opacity="0.158"/>
+    </clipPath>
+  </defs>
+  <g id="ico_gnb_arrow_r" clip-path="url(#clip-path)">
+    <g id="ico" transform="translate(1)" clip-path="url(#clip-path-2)">
+      <path id="Path2" d="M8,0,0,7.8l8,7.8" transform="translate(4.5 4)" fill="none" stroke="rgba(0,0,0,0.87)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

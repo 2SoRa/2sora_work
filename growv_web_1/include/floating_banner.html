@@ -1,0 +1,68 @@
+<!-- 사이드 배너, 전용몰 바로가기(원복으로 삭제)
+<li class="bn-comp-wrap pc">
+  <em>도서 정가의</em>
+  <strong>최대 40%</strong>
+  <em>포인트사용</em>
+  <a href="https://reading.superv.com/main/item?tab=한글 도서몰" target="_blank" title="한글 도서몰 페이지로 이동" class="btn-lib-kor">
+    <img src="../images/main/floating_banner/main_bnr_mall_kor.png">
+  </a>
+  <a href="https://reading.superv.com/main/item?tab=영어 도서몰" target="_blank" title="영어 도서몰 페이지로 이동" class="btn-lib-eng">
+    <img src="../images/main/floating_banner/main_bnr_mall_eng.png">
+  </a>
+</li>
+<li class="event-mall">
+  <a href="https://reading.superv.com/pages/event-mall.html" target="_blank">
+    <img class="pc" src="../images/banner/main_bnr_mall.png" alt="전용몰 바로가기">
+    <img class="mobile" src="../images/banner/main_bnr_mall_m.png" alt="전용몰 바로가기">
+  </a>
+</li>
+-->
+<li class="lotte-card">
+  <!-- WEB : 슈퍼브이 X 롯데카드 제휴 프로모션 -->
+  <div class="pc_item">
+    <a href="javascript:void(0)" onclick="common.hrefFunction('./event/event-lotte-card.html');">
+      <img src="./images/main/floating_banner/main_bnr_flo_5.png" alt="event banner">
+    </a>
+  </div>
+  <div class="mb_item">
+    <a href="javascript:void(0)" onclick="common.hrefFunction('./event/event-lotte-card.html');">
+      <img src="./images/main/floating_banner/main_bnr_flo_5_m.webp" alt="mobile event banner">
+    </a>
+  </div>
+</li>
+<li class="board">
+  <!-- 슈퍼브이에 바란다 -->
+  <div class="pc_item">
+    <button class="pop_board">
+      <img src="./images/main/floating_banner/main_bnr_flo_4.webp" alt="board">
+    </button>
+  </div>
+  <div class="mb_item pop_board">
+    <a href="javascript:void(0)">
+      <img src="./images/m_main_bnr_flo_4@3x.webp" alt="mobile event banner">
+    </a>
+  </div>
+</li>
+
+<script>
+  // 플로팅 배너 위치 관련
+  $(function(){
+    $(window).scroll(function() {
+      // var eventBanner = $(".event_banner").offset().top;
+      var win = $(window).scrollTop();
+      var winWidth = $(window).innerWidth();
+      var sectionOffset = document.getElementById('section02');
+      if(!common.isNull(sectionOffset)){
+        var section = sectionOffset.offsetTop;
+
+        if ( winWidth > 1023){
+          if (win > section/2 ) {
+            $('.event_banner').addClass('fixed');
+          } else {
+            $('.event_banner').removeClass('fixed');
+          }
+        }
+      }
+    });
+  });
+</script>

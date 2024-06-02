@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../css/style.css?v.20240304-1" />
+	<link rel="stylesheet" href="../css/custom.css?v.20230217" />
+	<link rel="stylesheet" href="../css/popup.css" />
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<title></title>
+</head>
+
+<body class="front_body member">
+	<div class="page_wrap">
+		<div class="multi_top_zone"></div>
+		<!-- 페이지 시작 -->
+		<section class="find-id">
+			<!-- 로고 -->
+			<div class="logo">
+				<a href="javascript:void(0);" onclick="common.hrefFunction('/main.html')"; class="toplogo_item"></a>
+			</div>
+
+			<!-- 컨텐츠 -->
+			<div class="contents  t01">
+				<div class="tab">
+					<div class="active">
+						<a href="javascript:void(0);" onclick="common.hrefFunction('find_id.html');"> 아이디 찾기 </a>
+					</div>
+					<div>
+						<a href="javascript:void(0);" onclick="common.hrefFunction('find_password.html');"> 비밀번호 찾기 </a>
+					</div>
+				</div>
+
+
+				<!-- 결과 창 -->
+				<div class="find-result-box">
+					<span class="title">
+						<span class="name"> 홍길동</span>님 아이디 찾기가 완료되었습니다.
+					</span>
+
+					<div class="inner-box">
+						<div>
+							<span> 아이디 </span>
+							<span class="email"> growv@gmail.com </span>
+						</div>
+						<div>
+							<span> 가입일 </span>
+							<span class="date"> 2022-10-25 </span>
+						</div>
+					</div>
+
+					<button type="button" onclick="location.href='./login.html';" class="custom-button h-60 w-m primary">
+						로그인
+					</button>
+				</div>
+			</div>
+
+		</section>
+		<!-- 페이지 끝 -->
+
+		<footer class="footer_wrap">
+			<script>$(".footer_wrap").load('../include/footer.html?v.20230322');</script>
+		</footer>
+	</div>
+
+
+
+</body>
+<script>
+	/* 인증하기 버틍 클릭 */
+	const sendMessage = () => {
+		/* 인증하기 버튼 */
+		const $sendButton = $(".custom-button.send-message");
+		/* 인증번호 입력폼 */
+		const $authItem = $(".item.auth");
+
+		$sendButton.addClass("clicked");
+		$sendButton.text("재전송");
+		$authItem.removeClass("disabled");
+	};
+
+	/* 인증확인 */
+	const confirmMessage = () => {
+		const $messageInput = $(".custom-input.contact.message");
+		/* 인증번호가 있으면 버튼 활성화 */
+		if (!!$messageInput.val()) {
+			$(".custom-button.confirm-message").removeClass("disabled");
+		} else {
+			$(".custom-button.confirm-message").addClass("disabled");
+		}
+	};
+</script>
+
+</html>

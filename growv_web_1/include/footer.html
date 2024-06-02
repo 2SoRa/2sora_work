@@ -1,0 +1,118 @@
+<div class="pc">
+				<!-- 왼쪽 시작 -->
+				<div class="footer_main">
+					<div class="rela">
+						<p class="footer_text_sub">(주)그로비 교육</p>
+						<div class="fnb-list-wrap">
+							<ul>
+								<li class="company"><a href="https://growv.com/" target="_blank">회사소개</a></li>
+								<!-- // 240103 nature : 모바일 사이드 네비로 링크 이동
+								<li class="login" name="loginOutPart"><a href="javascript:void(0);" onclick="common.hrefFunction('/member/login.html')"; class="btn-login">로그인</a></li>
+								<li class="login" name="loginPart" style="display: none;"><a href="javascript:void(0);" onclick="fnLogoutBtnFooter();" class="btn-login">로그아웃</a></li>
+								-->
+								<li><a href="javascript:void(0);" onclick="common.hrefFunction('./etc/terms.html');">이용약관</a></li>
+								<li><a href="javascript:void(0);" onclick="common.hrefFunction('./etc/privacy.html');">개인정보처리방침</a></li>
+							</ul>
+						</div>
+					</div>
+					<p class="footer_address">
+						<span class="address_initem">대표 : 박철우</span>
+						<span class="address_initem">사업자등록번호: 463-81-02469</span><br>
+						<span class="address_initem">
+							서울특별시 서초구 서초대로50길 35. 3-7층, B1층(서초동)
+						</span>
+						<span class="address_initem">
+							통신판매업신고번호 : 제2022-서울서초-2468호
+							<a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=4638102469&amp;apv_perm_no=" target="_blank" class="link_address">
+								[정보조회]
+							</a>
+						</span>
+						<span class="address_initem">신고기관명 : 서초구청</span>
+						<br>
+						<span class="address_initem">전자출판물인증번호 : I410-ECN-0199-2022-375-001716482</span>
+						<a href="mailto:contactus@growv.com" class="address_initem type2 m_email">
+							email : contactus@growv.com
+						</a>
+					</p>
+					<p class="footer_copyright">
+						Copyright 2022 by growV. All Rights Reserved.
+					</p>
+				</div>
+				<!-- 왼쪽 끝 -->
+				<!-- 오른쪽 시작 -->
+				<div class="footer_sub">
+					<div class="footer_customer_item">
+						<p class="footer_customer_label">고객센터</p>
+						<p class="footer_customer_main">1533 - 1777</p>
+						<p class="footer_customer_sub">
+							평일 10시~19시, 점심시간 12시~13시 <br>주말/공휴일 휴무
+						</p>
+					</div>
+				</div>
+				<!-- 오른쪽 끝 -->
+			</div>
+<span itemscope="" itemtype="//schema.org/Organization">
+<link itemprop="url" href="https://www.superv.com/">
+<a itemprop="sameAs" href="https://www.instagram.com/superv.gram/"></a>
+<a itemprop="sameAs" href="https://blog.naver.com/superv_log"></a>
+<a itemprop="sameAs" href="https://www.youtube.com/@superv.youtube"></a>
+</span>
+<script>
+	$(window).on("load", function (){
+		fnSetLoginCheckFooter();
+		const urlParams = new URL(location.href).searchParams;
+		const name = urlParams.get('recommendCd');
+		if(!common.isNull(name)){
+			sessionStorage.setItem("recommendCd", name);
+		}
+		const name2 = urlParams.get('salesRecommCd');
+		if(!common.isNull(name2)){
+			sessionStorage.setItem("salesRecommCd", name2);
+		}
+	})
+	function fnSetLoginCheckFooter(){
+		var jwtTokcen = jwt.getAllToken();
+		if(!common.isNull(jwtTokcen.getItem(ACCESS_TOKEN_NAME)) && !common.isNull(jwtTokcen.getItem(EXPIRED_TIME_NAME)) && !common.isNull(jwtTokcen.getItem(REFRESH_TOKEN_NAME))){
+			$("[name='loginPart']").show();
+			$("[name='loginOutPart']").hide();
+			var userInfo = JSON.parse(jwtTokcen.getItem("vuex"));
+			var thisUserName = $("[name='loginUserName']").html();
+			if(common.isNull(thisUserName)){
+				// $("[name='loginUserName']").html(userInfo.parentName + "님");
+				$("[name='loginUserName']").html("<em class='txt-name'>" + userInfo.parentName + "</em>님");
+			}
+		}else{
+			jwt.destroyAll();
+			$("[name='loginUserName']").html();
+			$("[name='loginPart']").hide();
+			$("[name='loginOutPart']").show();
+		}
+	}
+	// 로그아웃
+	function fnLogoutBtnFooter(){
+		jwt.destroyAll();
+		alert("정상적으로 로그아웃 되었습니다.");
+		$("[name='loginUserName']").html();
+		$("[name='loginPart']").hide();
+		$("[name='loginOutPart']").show();
+		common.hrefFunction('/main.html');
+	}
+	$(function(){
+		var jwtTokcen = jwt.getAllToken();
+		if(!common.isNull(jwtTokcen.getItem("accessToken")) && !common.isNull(jwtTokcen.getItem("expiredTime")) && !common.isNull(jwtTokcen.getItem("refreshToken"))){
+			$("[name='loginPart']").show();
+			$("[name='loginOutPart']").hide();
+			var userInfo = JSON.parse(jwtTokcen.getItem("vuex"));
+			var thisUserName = $("[name='loginUserName']").html();
+			if(common.isNull(thisUserName)){
+				// $("[name='loginUserName']").html(userInfo.parentName + "님");
+				$("[name='loginUserName']").html("<em class='txt-name'>" + userInfo.parentName + "</em>님");
+			}
+		}else{
+			jwt.destroyAll();
+			$("[name='loginUserName']").html();
+			$("[name='loginPart']").hide();
+			$("[name='loginOutPart']").show();
+		}
+	});
+</script>

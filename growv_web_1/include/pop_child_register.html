@@ -1,0 +1,42 @@
+<div class="pop_dim"></div>
+<div class="pop_wrap">
+  <div class="pop_title">
+    <!--  TODO: 모바일에서는 뒤로가기 기능 추가 -->
+    <div class="mb_item prev" onclick="childClosePop()"></div>
+    <span class="title-text">자녀 추가 등록</span>
+    <button name="closePopComplete" class="child_pop_close pc_item" onclick="childClosePop()"></button>
+  </div>
+  <div class="fullpop_contlow pop_contents">
+    <div class="fullpop_contlow_in pop_contents_item">
+      <div class="text">자녀는 3명까지 추가 가능합니다.</div>
+      <div class="form_app_tb">
+        <div class="form_app_tr">
+          <div class="form_app_cell define_th"><span class="form_app_label">자녀 이름</span></div>
+          <div class="form_app_cell define_td">
+            <div class="inline_block_row">
+              <input type="text" class="form_input" id="stuNamePop" placeholder="자녀 이름 입력">
+            </div>
+            <!-- TODO: 이름 미입력시 나오도록 -->
+            <div class="warn_para_g d_red" name="addStuNameCheck">
+              <p class="warn_para">이름은 한글 10자, 영문 20자 이하로 입력해 주세요.</p>
+            </div>
+          </div>
+        </div>
+        <div class="form_app_tr">
+          <div class="form_app_cell define_th"><span class="form_app_label">생년월일</span></div>
+          <div class="form_app_cell define_td">
+            <div class="inline_flex_group mb_break">
+              <!--  TODO: 공통으로 뺴서, 적용하는 부분 다시 체크필요 -->
+              <div class="inline_mb_group" name="calHtmlPartN"></div>
+              <input type="text" class="form_input wid_full disabled" name="calAgeInputN" placeholder="">
+            </div>
+            <div class="age_info">
+              <p>* 2024년 기준, 무료체험 신청은 7세(2018년생)까지만 가능합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <button class="custom-button disabled" name="addStuBtn" onclick="fnAddStuInfo();">확인</button>
+  </div>
+</div>

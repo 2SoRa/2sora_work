@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+    <g style="fill:#fff;stroke:#a8d0ff;stroke-width:2px">
+        <rect width="30" height="30" rx="8" style="stroke:none"/>
+        <rect x="1" y="1" width="28" height="28" rx="7" style="fill:none"/>
+    </g>
+    <text transform="translate(15 21)" style="fill:#a8d0ff;font-size:16px;font-family:Pretendard-Black,Pretendard;font-weight:800"><tspan x="-6.917" y="0">가</tspan></text>
+</svg>

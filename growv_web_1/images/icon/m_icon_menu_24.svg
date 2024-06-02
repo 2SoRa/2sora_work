@@ -1,0 +1,10 @@
+<svg id="m_icon_menu_24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="m_icon_menu_24-2" data-name="m_icon_menu_24">
+    <rect id="Icon_box" width="24" height="24" fill="none" opacity="0.3"/>
+    <g id="menu" transform="translate(-413.5 -70.25)">
+      <line id="선_1" data-name="선 1" x2="18" transform="translate(417 76.25)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+      <line id="선_2" data-name="선 2" x2="18" transform="translate(417 82.25)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+      <line id="선_3" data-name="선 3" x2="18" transform="translate(417 88.25)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

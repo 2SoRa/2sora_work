@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+    <g style="fill:#fff;stroke:#fed4a8;stroke-width:2px">
+        <rect width="30" height="30" rx="8" style="stroke:none"/>
+        <rect x="1" y="1" width="28" height="28" rx="7" style="fill:none"/>
+    </g>
+    <text data-name="1" transform="translate(15 21)" style="fill:#fed4a8;font-size:16px;font-family:Pretendard-Black,Pretendard;font-weight:800"><tspan x="-3.909" y="0">1</tspan></text>
+</svg>

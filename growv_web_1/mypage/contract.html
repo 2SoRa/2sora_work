@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../css/style.css?v.20240304" />
+  <link rel="stylesheet" href="../css/custom.css?v.20221206" />
+  <link rel="stylesheet" href="../css/popup.css?v.20240129" />
+  <link rel="stylesheet" href="../css/my_info.css?v.20230621" />
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/script_myInfo_v.0.1.js?v.230822"></script>
+  <script src="../js/common.js?v.230830"></script>
+  <script src="../js/ui.js?v.230720"></script>
+  <link rel="icon" href="../images/favicon.ico">
+  <title>슈퍼브이 - 글로벌리더로 크는 아이</title>
+  <meta name="description" content="36개월부터 8세까지, 영어 수학 한글은 슈퍼브이! 총 제작비 330억 유아동 교육 사상 최대 프로젝트">
+  <meta property="og:title" content="4~8세, 슈퍼브이 0원 무료체험">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.superv.com">
+  <meta property="og:image" content="https://cdndata.superv.com/teaser/free_ex.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:site_name" content="슈퍼브이">
+  <meta property="og:description" content="글로벌 리더로 크는 아이">
+  <meta name="naver-site-verification" content="e1b5df9322bb433c10f00df22f70acc00565aa48" />
+</head>
+
+<body>
+<div>
+  <iframe id="mainContractFrame" src="" style="height:100%;width:100%;" frameborder="0" scrolling="no"></iframe>
+</div>
+</body>
+
+<script>
+  /*도메인 설정*/
+  var contractUrl = 'http://localhost:4000';
+  var thisUrlCheck = new URL(location.href).host;
+  if(thisUrlCheck.indexOf('dev') != -1){
+    contractUrl = 'https://dev-admin.superv.com';
+  }else if(thisUrlCheck.indexOf('www.superv.com') != -1){
+    contractUrl = 'https://admin.superv.com';
+  }
+  let params = (new URL(document.location)).searchParams;
+  const contractNo = params.get("contractNo");
+  if(!common.isNull(contractNo)){
+    let thisNewDate = new Date().getMilliseconds();
+    let params = (new URL(document.location)).searchParams;
+    const thisDevice = params.get("pageDc");
+
+    $("#mainContractFrame").attr("src",  contractUrl+"/contract.html?contractNo="+contractNo+ "&pageDc="+thisDevice);
+  }
+  window.addEventListener('message', function(e) {
+    if (!common.isNull(e.data)) {
+      document.getElementById('mainContractFrame').style.height = parseInt(e.data)+"px";
+    }
+  })
+</script>
+</html>

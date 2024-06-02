@@ -1,0 +1,63 @@
+<!-- 배경 시작 -->
+<div class="pop_dim"></div>
+<!-- 배경 끝 -->
+<div class="pop_wrap">
+  <!-- 팝업 타이틀 -->
+  <div class="pop_title">
+    <div class="mb_item prev" onclick="$('body').css('overflow','auto');$('.myinfo').removeClass('active');"></div>
+    <span class="title-text">주소 수정</span>
+    <!-- 팝업 닫기 버튼 -->
+    <button class="btn_layerclose pc_item"></button>
+  </div>
+
+
+  <!-- 팝업 내용 -->
+  <div class="pop_contents">
+    <div class="pop_contents_item">
+      <p class="title">변경할 주소를 입력해 주세요.</p>
+      <div class="form_app_tb">
+        <div class="form_app_tr value-type">
+          <div class="form_app_cell define_td">
+            <div class="inline_block_row">
+              <div class="inline_flex_group">
+                <div class="form_inline_box">
+                  <input type="text" id="zipcode" class="form_input" disabled>
+                </div>
+                <!-- TODO: 클릭 시 우편번호 검색 -->
+                <button class="btn_inline_box" onclick="fnGetDaumZipCode()">우편번호</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form_app_tr value-type">
+          <div class="form_app_cell define_td">
+            <div class="inline_block_row">
+              <div class="inline_flex_group">
+                <div class="form_inline_box">
+                  <input type="text" id="address1" class="form_input" disabled>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form_app_tr value-type">
+          <div class="form_app_cell define_td">
+            <div class="inline_block_row">
+              <input type="text" id="address2" class="form_input" onkeydown="replaceTag('address2');"  onkeyup="replaceTag('address2');">
+            </div>
+            <!-- TODO: event 참고 event와 동일하게 클래스 적용 -->
+            <div class="warn_para_g d_red">
+              <p class="warn_para">상세주소를 입력해 주세요.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="btn_wrap">
+    <!-- TODO: disabled 삭제하면 활성화 됨 -->
+    <button class="custom-button primary w-m confirm disabled" name="addrBtn" onclick="fnUpdateParentAddr()">확인</button>
+  </div>
+</div>
+

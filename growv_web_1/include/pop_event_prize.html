@@ -1,0 +1,58 @@
+<div class="event_wrap">
+  <div class="pc_item">
+    <img src="../images/main_pop_230922@3x.webp" alt="추석배송 팝업">
+  </div>
+  <div class="mb_item">
+    <img src="../images/m_main_pop_230922@3x.webp" alt="추석배송 팝업">
+  </div>
+  <div class="btn_area">
+    <label class="oneday checkbox" onclick="javascript:layerClose79();">오늘 하루 안보기
+      <input type="checkbox" name="" id="">
+      <span class="checkmark"></span>
+    </label>
+    <button class="close"><img src="../images/main/btn_pop_close@2x.webp" alt=""> 닫기</button>
+  </div>
+</div>
+<script>
+  var mainEvent = $('.main_event_prize');
+  cookiedata = document.cookie;
+  $(document).ready(function () {
+    if ($(window).width() > 1024) {
+    if (cookiedata.indexOf("maindiv=done") < 0) {
+      $('.main_event_prize').addClass('active');
+    } else {
+      $('.main_event_prize').removeClass('active');
+    }
+    // mainEvent.addClass('active');
+    } else {
+      mainEvent.removeClass('active');
+    }
+  });
+
+  // Mobie popup
+  $('.mb_line_banner.text').on("click", function () {
+    mainEvent.addClass('active');
+    document.querySelector('body').style.overflow = 'hidden';
+  });
+
+  // close
+  $('.event_wrap .close').on("click", function () {
+    mainEvent.removeClass('active');
+    document.querySelector('body').style.overflow = 'auto';
+  });
+
+</script>
+
+<script>
+  function layerClose79() {
+    setCookie("maindiv", "done", 1);
+    mainEvent.removeClass('active');
+    document.querySelector('body').style.overflow = 'auto';
+  }
+
+  function setCookie(name, value, expiredays) {
+    var todayDate = new Date();
+    todayDate.setDate(todayDate.getDate() + expiredays);
+    document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+  }
+</script>

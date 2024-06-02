@@ -1,0 +1,65 @@
+<!-- 배경 시작 -->
+<div class="pop_dim"></div>
+<!-- 배경 끝 -->
+<div class="pop_wrap">
+  <!-- 팝업 타이틀 -->
+  <div class="pop_title">
+    <div class="mb_item prev" onclick="$('body').css('overflow','auto');$('.myinfo').removeClass('active');"></div>
+    <span class="title-text">비밀번호 재설정</span>
+    <!-- 팝업 닫기 버튼 -->
+    <button class="btn_layerclose pc_item"></button>
+  </div>
+
+
+  <!-- 팝업 내용 -->
+  <div class="pop_contents">
+    <div class="pop_contents_item">
+      <p class="title">사용할 비밀번호를 입력해주세요.</p>
+      <div class="form_app_tb">
+        <div class="form_app_tr value-type">
+          <div class="form_app_cell define_th">
+            <span class="form_app_label">현재 비밀번호</span>
+          </div>
+          <div class="form_app_cell define_td">
+            <div class="inline_block_row">
+              <input type="password" name="nowPassWord" class="form_input inputInit" placeholder="현재 비밀번호 입력">
+            </div>
+          </div>
+        </div>
+        <div class="form_app_tr value-type">
+          <div class="form_app_cell define_th">
+            <span class="form_app_label">새 비밀번호</span>
+          </div>
+          <div class="form_app_cell define_td">
+            <div class="inline_block_row">
+              <input type="password" name="newPassWord1" class="form_input inputInit" placeholder="영문/숫자/특수문자 중 2가지 이상 포함, 8~18자">
+            </div>
+            <!-- TODO: event 참고 event와 동일하게 클래스 적용 -->
+            <div class="warn_para_g d_red" name="pwCheck">
+              <p class="warn_para">영문/숫자/특수문자 중 2가지 이상을 포함한 8~18자 여야 합니다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="form_app_tr value-type">
+          <div class="form_app_cell define_th">
+            <span class="form_app_label">비밀번호 확인</span>
+          </div>
+          <div class="form_app_cell define_td">
+            <div class="inline_block_row">
+              <input type="password" name="newPassWord2" class="form_input inputInit" placeholder="비밀번호 재입력">
+            </div>
+            <!-- TODO: event 참고 event와 동일하게 클래스 적용 -->
+            <div class="warn_para_g d_red" name="pwCheck">
+              <p class="warn_para">비밀번호가 일치하지 않습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="btn_wrap">
+    <!-- TODO: disabled 삭제하면 활성화 됨       -->
+    <button class="custom-button primary w-m confirm disabled" name="pwBtn" onclick="fnUpdateParentPwCheck();">확인</button>
+  </div>
+</div>

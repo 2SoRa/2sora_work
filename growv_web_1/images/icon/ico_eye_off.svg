@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <defs>
+        <clipPath id="7zb5naux7a">
+            <path data-name="사각형 3856" style="fill:#be1515;opacity:.459" d="M0 0h48v48H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="마스크 그룹 90" style="clip-path:url(#7zb5naux7a)">
+        <g data-name="그룹 34308">
+            <path data-name="선 81" transform="translate(10.148 9.704)" style="fill:none;stroke:#cecece;stroke-linecap:round;stroke-width:4px" d="M26.534 0 0 28.191"/>
+            <path d="M787.157 423.64c-8.849 0-16.874 4.8-22.8 12.595a1.8 1.8 0 0 0 0 2.169c5.921 7.8 13.946 12.6 22.8 12.6s16.874-4.8 22.8-12.595a1.8 1.8 0 0 0 0-2.17c-5.921-7.8-13.946-12.6-22.8-12.6zm.635 23.32a9.657 9.657 0 1 1 9.086-9.007 9.705 9.705 0 0 1-9.086 9.007zm-.135-2.007a7.65 7.65 0 1 1 7.206-7.144 7.672 7.672 0 0 1-7.206 7.144zm-.158-2.445" transform="translate(-763.743 -413.114)" style="fill:#cecece"/>
+        </g>
+    </g>
+</svg>

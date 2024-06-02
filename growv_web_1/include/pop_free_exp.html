@@ -1,0 +1,276 @@
+<div class="pop_dim"></div>
+<div class="pop_wrap">
+  <div class="pop_title">
+    <!--					<div class="fullpop_title_fxwrap">-->
+    <!--						<div class="cha_cell"><img src="./images/obj_popup_cha.png" alt=""></div>-->
+    <!--						<div class="title_cell">-->
+    <!--							<h2 class="fullpop_title">무료체험 신청하기</h2>-->
+    <!--						</div>-->
+    <!--						<div class="btn_cell"><button type="button" class="btn_layerclose"></button></div>-->
+    <!--						<button type="button" class="btn_mobile_popup_close"></button>-->
+    <span class="title-text">무료체험 신청하기</span>
+    <button name="closePopComplete" class="btn_layerclose closePopComplete" onclick="gtag_report_conversion()"></button>
+  </div>
+<!-- TODO: 재체험시 member 클래스 추가 -->
+  <div class="pop_contents">
+    <div class="pop_contents_item">
+      <div class="form_app_tb">
+        <div class="form_app_tr value-type" name="recommendDiv" style="display: none;">
+          <div class="form_app_cell define_th"><span class="form_app_label">추천코드</span></div>
+          <div class="form_app_cell define_td">
+            <div class="inline_flex_group">
+              <div class="value">추천코드가 적용되었어요! 친구추천 혜택을 받으세요.</div>
+            </div>
+          </div>
+        </div>
+        <div class="form_app_tr">
+          <div class="form_app_cell define_th"><span class="form_app_label">학부모 이름</span></div>
+          <div class="form_app_cell define_td">
+            <div class="inline_flex_group new_info">
+              <input type="text" class="form_input" placeholder="학부모 이름 입력" id="parentName">
+            </div>
+            <!-- TODO: 재체험시 이름 불러오기 -->
+            <div class="inline_flex_group experience_info">
+              <input type="text" class="form_input disabled" value="학부모 이름" id="getParentName">
+            </div>
+            <div class="warn_para_g d_red" name="checkParentName">
+              <p class="warn_para">학부모 이름을 입력해 주세요.</p>
+            </div>
+          </div>
+        </div>
+        <div class="form_app_tr">
+          <div class="form_app_cell define_th"><span class="form_app_label">학부모 <br>휴대폰 번호</span></div>
+          <div class="form_app_cell define_td">
+            <div class="inline_block_row new_info">
+              <div class="inline_flex_group">
+                <input type="number" pattern="\d*" name="mdnNo" class="form_input" id="mdnNo" placeholder="휴대폰 번호(-없이 숫자만 입력)" maxlength="11">
+                <!--2023.06.26 중복체크 시, 임시회원,정회원 구분에 따른 분기 추가.
+                <button type="button" class="btn_inline_box disabled" onclick="fnDuplicateCheckParentByMdnNo();" name="getMdnBtn">인증번호</button>
+                -->
+                <button type="button" class="btn_inline_box disabled" onclick="fnCheckParentStateByMdnNo();" name="getMdnBtn">인증번호</button>
+                <!--
+                2023.06.16 회원의 체험신청 공통시 사용
+                <button type="button" class="btn_inline_box disabled" onclick="fnGetCert($('#mdnNo').val());" name="getMdnBtn">인증번호</button>-->
+              </div>
+            </div>
+            <div class="inline_block_row m0 new_info">
+              <div class="inline_flex_group">
+                <div class="form_inline_box phone disabled">
+                  <input type="number" pattern="\d*" class="form_input" id="certNo" placeholder="인증번호 입력" autocomplete="off">
+                  <div class="form_inline_control_group" style="display: none;">
+                    <span class="check_emp_text" name="restTime">03:00</span>
+                    <button type="button" class="btn_form_reset" onclick="fnInitPhoneForm();" name="phoneResetBtn" disabled><span class="hdtext">리셋</span></button>
+                  </div>
+                </div>
+                <button type="button" class="btn_inline_box  disabled" name="certBtn">인증확인</button>
+              </div>
+              <div class="warn_para_g d_blue" style="display: none;" name="certMsg">
+                <p class="warn_para">인증번호가 발송되었습니다</p>
+                <!--<p class="warn_para">인증되었습니다.</p>-->
+              </div>
+              <div class="warn_para_g d_red" name="checkMdnNo">
+                <!--<p class="warn_para">인증번호 입력시간이 만료되었습니다. 다시 요청해 주세요.</p>-->
+                <p class="warn_para">인증번호가 일치하지 않습니다. 다시 인증해 주세요.</p>
+              </div>
+            </div>
+            <!-- TODO: 재체험시 전화번호 불러오기 -->
+            <div class="inline_flex_group experience_info"><input type="text" class="form_input disabled" value="전화번호" id="getParentMdnNo"></div>
+          </div>
+        </div>
+        <div class="form_app_tr new_info">
+          <div class="form_app_cell define_th"><span class="form_app_label">자녀정보</span></div>
+          <div class="form_app_cell define_td">
+            <div class="inline_block_row_group">
+              <div class="inline_block_row">
+                <input type="text" class="form_input" id="stuName" placeholder="자녀 이름 입력">
+              </div>
+              <div class="inline_block_row">
+                <div class="inline_flex_group">
+                  <div class="inline_mb_group" name="calHtmlPart"></div>
+                  <input type="text" class="form_input wid_full disabled" name="calAgeInput" placeholder="">
+                </div>
+              </div>
+            </div>
+            <div class="age_info">
+              <p>* 2024년 기준, 무료체험 신청은 7세(2018년생)까지만 가능합니다.</p>
+            </div>
+            <div class="warn_para_g d_red" name="checkStuName">
+              <p class="warn_para">자녀 이름을 입력해 주세요.</p>
+            </div>
+          </div>
+        </div>
+        <div class="form_app_tr flex-row">
+          <div class="form_app_cell define_th">
+            <span class="form_app_label new_info">형제 유무</span>
+            <span class="form_app_label experience_info">체험자녀</span>
+          </div>
+          <div class="form_app_cell define_td new_info">
+            <div class="formbox_item_group">
+              <label for="stand_yes" class="radiobox_label">
+                <input type="radio" name="brotherYn" class="radiobox_item" id="stand_yes" value="true">
+                <span class="pc_item">있음</span>
+                <span class="mb_item">있어요</span>
+              </label>
+              <label for="stand_no" class="radiobox_label">
+                <input type="radio" name="brotherYn" class="radiobox_item" id="stand_no" value="false">
+                <span class="pc_item">없음</span>
+                <span class="mb_item">없어요</span>
+              </label>
+            </div>
+            <div class="warn_para_g d_red" name="checkBrotherYn">
+              <p class="warn_para">형제 유무를 선택해 주세요.</p>
+            </div>
+          </div>
+          <div class="form_app_cell define_td experience_info">
+            <!--자녀정보출력-->
+            <div class="formbox_item_group child_group">
+            </div>
+          </div>
+        </div>
+        <div class="form_app_tr">
+          <div class="form_app_cell define_th align2"><span class="form_app_label">태블릿<br>케이스/거치대</span></div>
+          <div class="form_app_cell define_td">
+            <div class="choice_product">
+              <div class="choice_product_fxwrap">
+                <div class="choice_product_fxcell">
+                  <div class="choice_product_item">
+                    <div class="choice_form">
+                      <div class="checkbox_design_item">
+                        <label for="product_01" class="checkbox_label">
+                          <span class="item01"></span>
+                          <span class="item_check">
+                            <input type="radio" id="product_01" name="deviceCaseDiv" value="1" class="radiobox_item">
+                            슈키
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="choice_product_fxcell">
+                  <div class="choice_product_item">
+                    <div class="choice_form">
+                      <div class="checkbox_design_item">
+                        <label for="product_02" class="checkbox_label">
+                          <span class="item02"></span>
+                          <span class="item_check">
+                            <input type="radio" id="product_02" name="deviceCaseDiv" value="2" class="radiobox_item">
+                            이비
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="indent_para">
+  <!--              <div class="indent_bullet">※</div>-->
+                <div class="indent_text">한번 선택한 케이스/거치대는 결제 후에도 변경이 불가하므로 신중하게 선택해 주세요.</div>
+              </div>
+            </div>
+            <div class="warn_para_g d_red" name="checkDeviceCaseDiv">
+              <p class="warn_para">태블릿 케이스를 선택해 주세요.</p>
+            </div>
+          </div>
+        </div>
+        <div class="form_app_tr">
+          <div class="form_app_cell define_th"><span class="form_app_label">배송 주소</span></div>
+          <div class="form_app_cell define_td">
+            <div class="inline_block_row_group">
+              <div class="inline_block_row">
+                <!-- TODO: 재체험시 주소 불러오기 -->
+                <div class="inline_flex_group">
+                  <input type="text" class="form_input disabled" id="zipcode" placeholder="우편번호 검색">
+                  <button type="button" class="btn_inline_box" onclick="fnGetAddrPop()" >우편번호</button>
+                </div>
+              </div>
+              <div class="inline_block_row">
+                <div class="inline_flex_group">
+                  <input type="text" class="form_input disabled" id="address1" placeholder="우편번호 검색시 자동 입력">
+                </div>
+              </div>
+              <div class="inline_block_row">
+                <div class="inline_flex_group">
+                  <input type="text" class="form_input" id="address2" placeholder="상세주소 입력" maxlength="40" onkeydown="replaceTag('address2');" onkeyup="replaceTag('address2');">
+                </div>
+              </div>
+            </div>
+            <div class="warn_para_g d_red" name="checkAddress">
+              <p class="warn_para">배송 주소를 입력해 주세요.</p>
+            </div>
+          </div>
+        </div>
+        <div class="form_app_tr new_info" name="inviteRecommMdnNoPart">
+          <div class="form_app_cell define_th"><span class="form_app_label">추천인 정보</span></div>
+          <div class="form_app_cell define_td">
+            <div class="inline_flex_group">
+              <input type="number" class="form_input" placeholder="추천인 휴대폰 번호(-없이 숫자만 입력)" name="inviteRecommMdnNo"  maxlength="11">
+            </div>
+          </div>
+        </div>
+        <!--	TODO: 상담시간 선택	-->
+        <div class="form_app_tr counsel">
+          <div class="form_app_tr info">
+            <div class="form_app_cell define_th"><span class="form_app_label">학습 상담 시간</span></div>
+            <div class="form_app_cell define_td">
+              <div class="inline_flex_group">
+                <div class="value">상담이 편하신 시간을 선택해주세요. (중복체크가능)</div>
+              </div>
+            </div>
+          </div>
+          <div class="form_app_tr">
+            <div class="form_app_cell define_th"></div>
+            <div class="form_app_cell define_td">
+              <div class="inline_flex_group checkbox_wrap">
+                <label for="AM" class="checkbox_label">
+                  <input type="checkbox" name="consultTime" class="formbox_element" id="AM" value="consultMorning">
+                  오전 (10시~12시)</label>
+                <label for="AfterNoon" class="checkbox_label">
+                  <input type="checkbox" name="consultTime" class="formbox_element" id="AfterNoon" value="consultAfter">
+                  오후 (1시~5시)</label>
+                <label for="Dinner" class="checkbox_label">
+                  <input type="checkbox" name="consultTime" class="formbox_element" id="Dinner" value="consultEven">
+                  저녁 (6시~8시)</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form_agree_group new_info">
+        <div class="form_agree_item">
+          <div class="form_agree_row">
+            <div class="form_agree_props_cell">
+              <div class="stand_form_item">
+                <label for="isServiceUseAgreed" class="agree-chk-wrap">
+                  <input type="checkbox" name="isServiceUseAgreed" id="isServiceUseAgreed" value= "true" class="stand_element">
+                  <span><span class="emp_blue">[필수]</span>개인정보 수집 및 이용에 동의 합니다.</span>
+                </label>
+              </div>
+            </div>
+            <div class="form_agree_else_cell">
+              <a href="javascript:void(0);" onclick="window.open('page_term.html', '_blank', 'width=900,height=1000');" class="btn_box small">
+                <img src="../images/icon/arrow_right.svg" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="warn_para_g d_red" name="checkIsServiceUseAgreed">
+            <p class="warn_para">개인정보 수집 및 이용에 동의해 주세요.</p>
+          </div>
+          <div class="form_agree_toggle_cont" id="toggle_cont_01">
+            내용이 들어갑니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--						<div class="btn_formsubmit_wrap">-->
+  <!--							<a href="javascript:void(0);" class="btn_formsubmit" onclick="gtag_report_conversion();fnSubmitTrialForm();"><span class="formsubmit_intext">무료체험 신청하기</span></a>-->
+  <button class="custom-button submit" onclick="gtag_report_conversion();fnCheckBeforeSubmit();">무료체험 신청하기</button>
+  <!--						</div>-->
+  <div id="addrIfr" style="display:none;position:fixed;overflow:hidden;z-index:999;-webkit-overflow-scrolling:touch;">
+    <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1;width: 7%;" onclick="closeDaumPostcode()" alt="닫기 버튼">
+  </div>
+  <div class="dimlayer_z fulltype" id="child_pop">
+    <script>$("#child_pop").load('../include/pop_child_register.html?v.20231221');</script>
+  </div>
+</div>

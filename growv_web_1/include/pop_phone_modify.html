@@ -1,0 +1,74 @@
+<!-- 배경 시작 -->
+<div class="pop_dim"></div>
+<!-- 배경 끝 -->
+<div class="pop_wrap">
+  <!-- 팝업 타이틀 -->
+  <div class="pop_title">
+    <div class="mb_item prev" onclick="$('body').css('overflow','auto');$('.myinfo').removeClass('active');"></div>
+    <span class="title-text">휴대폰 번호 수정</span>
+    <!-- 팝업 닫기 버튼 -->
+    <button class="btn_layerclose pc_item"></button>
+  </div>
+
+  <!-- 팝업 내용 -->
+  <div class="pop_contents">
+    <div class="pop_contents_item">
+      <p class="title">변경할 휴대폰 번호를 입력하고 인증해 주세요.</p>
+      <div class="form_app_tb">
+        <div class="form_app_tr value-type">
+          <div class="form_app_cell define_th">
+            <span class="form_app_label">휴대폰 번호</span>
+          </div>
+          <div class="form_app_cell define_td">
+            <div class="inline_block_row">
+              <div class="inline_flex_group">
+                <div class="form_inline_box">
+                  <input type="number" class="form_input inputInit" name="thisMdnNo" placeholder="휴대폰 번호(-없이 숫자만 입력)">
+                </div>
+              <!-- TODO: 인증번호 노출 후 재전송 노출 필요 // disabled 삭제하면 활성화 됨 -->
+                <button class="btn_inline_box disabled" disabled name="thisGetCertBtn" onclick="fnGetCert();">인증번호</button>
+              </div>
+            </div>
+            <!-- TODO: event 참고 event와 동일하게 클래스 적용 -->
+            <div class="warn_para_g d_purple" name="afterCertBtn">
+              <p class="warn_para">인증번호가 발송되었습니다.</p>
+            </div>
+            <div class="warn_para_g d_red" name="phoneFormCheck">
+              <p class="warn_para">휴대폰 번호를 올바르게 입력해 주세요.</p>
+            </div>
+          </div>
+        </div>
+        <div class="form_app_tr value-type">
+          <div class="form_app_cell define_th">
+            <span class="form_app_label">인증번호</span>
+          </div>
+          <div class="form_app_cell define_td">
+            <div class="inline_block_row">
+              <div class="inline_flex_group">
+                <div class="form_inline_box">
+                  <input type="number" name="thisCertInput" class="form_input inputInit" disabled placeholder="인증번호 입력">
+                  <div class="form_inline_control_group">
+                    <span class="check_emp_text" name="restTime">03:00</span>
+                  </div>
+                </div>
+                <!-- TODO: disabled 삭제하면 활성화 됨 -->
+                <button class="btn_inline_box disabled" name="thisCertBtn" disabled>인증확인</button>
+              </div>
+            </div>
+            <!-- TODO: event 참고 event와 동일하게 클래스 적용 -->
+            <div class="warn_para_g d_purple" name="certMsg">
+              <p class="warn_para">인증되었습니다.</p>
+            </div>
+            <div class="warn_para_g d_red" name="checkMdnNo">
+              <p class="warn_para"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn_wrap">
+    <!-- TODO: disabled 삭제하면 활성화 됨 -->
+    <button class="custom-button primary w-m confirm disabled" disabled name="updatePhoneBtn">확인</button>
+  </div>
+</div>
