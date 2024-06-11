@@ -1,0 +1,130 @@
+/* Header GNB */
+.auth {
+  width: 1920px;
+  height: 1200px;
+  position: relative;
+}
+
+/* Header */
+.auth .gnb {
+  width: 1920px;
+  background-color: transparent;
+  justify-content: right;
+  position: absolute;
+  display: none;
+}
+
+.auth .gnb .gnb-right {
+  width: 96px;
+  height: 96px;
+  background: url("@/assets/img/launcher/login/cmm_gnb_ico_set_01.png") no-repeat;
+}
+
+/* Login 용 Button */
+.btn-410 {
+  width: 410px;
+  height: 112px;
+  background: url("@/assets/img/launcher/login/log_btn_410_n.png") no-repeat;
+}
+
+.btn-410.gray {
+  background: url("@/assets/img/launcher/login/log_btn_410_g.png") no-repeat;
+}
+
+.btn-410.disable {
+  background: url("@/assets/img/launcher/login/log_btn_410_d.png") no-repeat;
+  color: #a3a3a3;
+}
+
+.btn-460 {
+  width: 460px;
+  height: 112px;
+  background: url("@/assets/img/launcher/login/log_btn_460_n.png") no-repeat;
+  /*margin: auto;*/
+}
+
+.btn-460.disable {
+  color: #a3a3a3;
+  background: url("@/assets/img/launcher/login/log_btn_460_d.png") no-repeat;
+  /*margin: auto;*/
+}
+
+.btn-466 {
+  width: 466px;
+  height: 100px;
+  background: url("@/assets/img/launcher/login/log_btn_466_on.png") no-repeat;
+  font-size: 35px;
+}
+
+.btn-466.gray {
+  background: url("@/assets/img/launcher/login/log_btn_466_off.png") no-repeat;
+  color: #a3a3a3;
+}
+
+.btn-760.disable {
+  width: 760px;
+  height: 112px;
+  background: url("@/assets/img/launcher/login/log_btn_760_d.png") no-repeat;
+  color: #a3a3a3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.btn-760 {
+  width: 760px;
+  height: 112px;
+  background: url("@/assets/img/launcher/login/log_btn_760_n.png") no-repeat;
+  color: #ffffff;
+  margin: 40px auto;
+}
+
+/* Checkbox */
+.checkbox input:checked ~ .checkmark  {
+  background: url("@/assets/img/launcher/login/log_extfield_ico_checkbox_circle_48_a.png") no-repeat;
+  background-size: 100%;
+}
+
+/* Footer */
+.auth .footer {
+  display: flex;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.auth .guide-footer {
+  width: fit-content;
+  justify-content: flex-start;
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+  left: -30px;
+  margin: auto;
+  color: #2d185d;
+}
+
+.auth .footer p {
+  margin-right: 60px;
+}
+
+.auth .footer p:nth-child(2) {
+  margin-right: 0;
+}
+
+.auth .footer p:nth-child(2)::after {
+  content: '|';
+  margin: 0 10px;
+  color: #9e9aa7;
+}
+
+.auth .footer p:last-child {
+  margin-right: 0;
+}
+
+.auth .footer p span {
+  margin-left: 20px;
+  color: inherit;
+}
+
+.auth .footer p span.call {
+  color: #fc2044;
+}

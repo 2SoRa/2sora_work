@@ -1,0 +1,210 @@
+/* 기본 시간표 등록,수정 */
+.modal-reg-modi {
+  height: 754px;
+}
+
+.modal-reg-modi.choice {
+  /*height: 872px;*/
+  height: fit-content;
+}
+
+.modal-reg-modi .content {
+  padding: 43px 44px 54px;
+}
+
+.modal-reg-modi .schedule-info {
+  display: flex;
+}
+
+.modal-reg-modi .schedule-info > div {
+  width: 100%;
+  height: 124px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #999999;
+}
+
+/* dropdown */
+.modal-reg-modi .dropdown {
+  width: 260px;
+}
+
+.modal-reg-modi .vs--searchable .vs__dropdown-toggle {
+  width: 240px;
+  height: 60px;
+  border-radius: 50px;
+  background-color: #763df4;
+  display: flex;
+  align-items: center;
+  padding: 10px 45px;
+  border: none;
+  box-shadow: inset 0 -5px 2px 0 #6b28fc;
+}
+
+.modal-reg-modi .vs--searchable.vs--open .vs__dropdown-toggle {
+  border-radius: 30px 30px 0 0;
+  box-shadow: none;
+  border: none;
+}
+
+.modal-reg-modi .vs__selected-options,
+.modal-reg-modi .vs__search,
+.modal-reg-modi .vs__search:focus,
+.modal-reg-modi .vs__search::placeholder,
+.modal-reg-modi .vs__selected {
+  color: #ffffff;
+  margin: 0 5px 0 0;
+  display: flex;
+  align-items: center;
+  font-size: 28px !important;
+  padding: 0;
+}
+
+.modal-reg-modi .vs__dropdown-menu {
+  width: 100%;
+  max-width: 260px;
+  max-height: 428px;
+  background-color: #763df4;
+  padding: 10px 18px 20px 14px;
+  border-radius: 0 0 30px 30px;
+  border: none;
+  /*box-sizing: border-box;*/
+}
+
+.modal-reg-modi .vs__dropdown-option {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  color: #4c1db5;
+  background-color: #fffcfe;
+  border-radius: 0;
+  padding: 29px 17px 27px;
+  font-size: 28px;
+  margin: 0;
+  position: relative;
+}
+
+.modal-reg-modi .vs__dropdown-option:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-reg-modi .vs__dropdown-option:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+/* 레벨 앞 동그라미 */
+.modal-reg-modi .vs__dropdown-option:before {
+  content: '';
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 50px;
+  box-sizing: border-box;
+  border: 9px solid #cc75ed;
+  background-color: #ffffff;
+  box-shadow: inset 1px 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* 하단 밑줄 */
+.modal-reg-modi .vs__dropdown-option:after {
+  content: '';
+  width: 80%;
+/*  display: block;*/
+/*  position: absolute;*/
+/*  bottom: 0;*/
+/*  z-index: 10;*/
+/*  !*border-bottom: 5px dashed #c3a9fd;*!*/
+}
+
+.modal-reg-modi .vs__dropdown-option:last-child:after {
+  border-bottom: none;
+}
+
+.week-plan {
+  padding: 22px 0 0;
+  text-align: left;
+}
+
+.week-plan .info {
+  font-size: 22px;
+  color: #763df4;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+/* 스케쥴 변경 요일 테이블 */
+.modal-reg-modi table {
+  table-layout: fixed;
+}
+
+.modal-reg-modi tr td {
+  height: 110px;
+}
+
+/* 선택학습 기간 선택구간 */
+.study-choice {
+  display: none;
+}
+
+.modal-reg-modi.choice .study-choice {
+  height: 97px;
+  display: flex;
+  margin-top: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: 27px;
+}
+
+.modal-reg-modi input[type="date"] {
+  width: 248px;
+  letter-spacing: 0;
+  word-spacing: -8px;
+  padding: 20px 10px 20px 20px;
+  background: #fff8e2 center right 10% url("@/assets/img/launcher/common/icobtn_ttable_calendar_56.png") no-repeat;
+}
+
+/*.modal-reg-modi input[type="date" i]::-webkit-calendar-picker-indicator {*/
+/*  width: 56px;*/
+/*  height: 56px;*/
+/*  padding: 0;*/
+/*}*/
+
+/*.modal-reg-modi input[type="date"]::before {*/
+/*  content: attr(data-placeholder);*/
+/*  width: 80%;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
+
+.modal-reg-modi .choice-data {
+  width: 192px;
+  height: 87px;
+  background-color: #fff8e2;
+  border: 1px solid #ffe488;
+  border-radius: 20px;
+  font-size: 27px;
+  line-height: 36px;
+  color: #f3356d;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px 0 30px;
+}
+
+.modal-reg-modi .choice-data:first-child {
+  margin-left: 0;
+  width: 258px;
+  justify-content: flex-start;
+  padding: 16px 10px 15px 20px;
+  background: #fff8e2 right 10px center url("@/assets/img/launcher/common/icobtn_ttable_choice_56.png") no-repeat;
+}
+
+.modal-reg-modi .info.choice {
+  display: none;
+}
+
+.modal-reg-modi.choice .info.choice {
+  display: inline-block;
+}

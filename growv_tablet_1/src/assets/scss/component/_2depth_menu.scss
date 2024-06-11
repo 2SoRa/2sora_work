@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+// 2depth 메뉴
+.menu-area {
+  width: 100%;
+  border-bottom: 1px solid $color-border-gray;
+  .depth-2 {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    .menu-item {
+      font-size: 33px;
+      font-weight: 700;
+      color: $color-default-fonts;
+    }
+  }
+
+  // active시 라인만 생기는 버전
+  &.bottom-line {
+    .depth-2 {
+      .menu-item {
+        margin: 0 6px;
+        padding: 27px 16px 26px 17px;
+        color: $color-btn-2depth-default;
+        border-bottom: 9px solid transparent;
+        font-weight: 600;
+        font-size: 28px;
+        &.active {
+          position: relative;
+          border-color: $color-default-fonts;
+          font-weight: 700;
+        }
+      }
+    }
+    // 고정 사이즈 일 때
+    &.static-size {
+      .depth-2 {
+        .menu-item { width: 171px; }
+      }
+    }
+  }
+
+  //  active 하단 아래 역삼각형
+  &.bottom-triangle {
+    position: relative;
+    //border-bottom: 3px solid $color-border-gray;
+    &::after {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 100%; height: 3px;
+      bottom: 0;
+      background-color: $color-border-gray;
+      z-index: $depth-0;
+    }
+    .depth-2 {
+       padding: 35px 0 0;
+       .menu-item {
+         margin: 0 6px; //간격 12px
+         padding: 0 59px 35px;
+         border-bottom: 10px solid transparent;
+         &.active {
+           position: relative;
+           border-color: $color-border-gray-3;
+           z-index: $depth-1;
+           span {
+             display: block;
+             position: absolute;
+             width: 13px; height: 13px;
+             border-top-right-radius: 40%;
+             bottom: -27px;
+             left:0; right:0;
+             margin: auto;
+             background-color: $color-border-gray-3;
+             transform: rotate(120deg) skewX(-30deg) scale(1,.866);
+
+             &::before,
+             &::after {
+               display: block;
+               position: absolute;
+               content: '';
+               width: 13px; height: 13px;
+               border-top-right-radius: 0%;
+               background-color: inherit;
+             }
+             &::before { transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%); }
+             &::after { transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%); }
+           }
+         }
+       }
+    }
+    // 고정사이즈 일 때
+    &.static-size {
+      .depth-2 {
+        .menu-item { width: 210px; padding: 0 0 35px; text-align: center; }
+      }
+    }
+    // 초록색 일 때
+    &.type-green {
+      &::after {background-color: $color-toggle-bg-green; }
+      .menu-item {
+        &.active {
+          border-color: $color-2depth-green;
+          color: $color-2depth-green;
+          span { background-color: $color-2depth-green; }
+        }
+      }
+    }
+    // 보라색 일 때
+    &.type-purple {
+      &::after{ background-color: $color-toggle-bg-purple; }
+      .menu-item {
+        &.active {
+          border-color: $color-2depth-purple;
+          color: $color-2depth-purple;
+          span { background-color: $color-2depth-purple; }
+        }
+      }
+    }
+  }
+}

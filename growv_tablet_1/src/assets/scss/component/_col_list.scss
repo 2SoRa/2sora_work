@@ -1,0 +1,41 @@
+@charset 'UTF-8';
+
+/* 도서관 서브페이지(종류별) */
+.col-list {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  li {
+    > button {width:100%;}
+    img {width: 100%;}
+  }
+
+  @for $i from 2 through 9 {
+    $per : 100%/$i;
+    &.col-#{$i} {
+      li {width:$per;}
+    }
+  }
+}
+
+.row-list {                           // 부모 컨테이너에 높이값 명시
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  width:100%;
+
+  li {
+    position:relative;
+    width:100%;
+  }
+
+  @for $i from 2 through 9 {
+    $per : 100%/$i;
+    &.row-#{$i} {
+      li {height:$per;}
+    }
+  }
+}

@@ -1,0 +1,648 @@
+/* GNB */
+.gnb {
+  width: 1920px;
+  height: var(--gnb-height);
+  display: flex;
+  padding: 0 40px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(251,252,207,1);
+  position: fixed;
+  z-index: 15;
+}
+
+.gnb .back {
+  width: 96px;
+  height: 96px;
+  border:none;
+  position: absolute;
+  left: 40px;
+  background: url("@/assets/img/launcher/common/cmm_gnb_ico_before_01.png") no-repeat;
+}
+
+.gnb .gnb-title {
+  width: auto;
+  display: flex;
+  align-items: center;
+  font-size: 50px;
+  font-weight: bold;
+  /*margin: 0 353px 0 595px;*/
+  margin: 0 auto 0 auto;
+}
+
+.gnb .gnb-title img {
+  width: auto;
+}
+
+.gnb-right {
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+  pointer-events: auto;
+  display: flex;
+  position: absolute;
+  right: 40px;
+}
+
+.gnb-right span a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.gnb-left {
+  width: 288px;
+  height: fit-content;
+  pointer-events: auto;
+  position: absolute;
+  left: 135px;
+}
+.gnb-left img {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------- */
+/* dropdown // selectbox */
+.dropdown-wrap {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dropdown {
+  width: 0;
+  margin-right: 60px;
+}
+
+.dropdown:nth-last-child(1) {
+  width: 40%;
+  margin-right: 0;
+}
+
+/* 셀렉박스 두 개일 때 */
+.dropdown-wrap .dropdown:first-child:nth-last-child(2),
+.dropdown-wrap .dropdown:first-child:nth-last-child(2) ~ .dropdown {
+  width: 50%;
+}
+
+/* 셀렉박스 세 개일 때 */
+.dropdown-wrap .dropdown:first-child:nth-last-child(3),
+.dropdown-wrap .dropdown:first-child:nth-last-child(3) ~ .dropdown {
+  width: 33.3%;
+}
+
+/* 셀렉박스 네 개일 때 */
+.dropdown-wrap .dropdown:first-child:nth-last-child(4),
+.dropdown-wrap .dropdown:first-child:nth-last-child(4) ~ .dropdown {
+  width: 25%;
+}
+
+/* 셀렉박스 다섯 개일 때 */
+.dropdown-wrap .dropdown:first-child:nth-last-child(5),
+.dropdown-wrap .dropdown:first-child:nth-last-child(5) ~ .dropdown {
+  width: 20%;
+}
+
+/* 셀렉박스 다섯 개일 때 */
+.dropdown-wrap .dropdown:first-child:nth-last-child(6),
+.dropdown-wrap .dropdown:first-child:nth-last-child(6) ~ .dropdown {
+  width: 16%;
+}
+
+/* select - vue select */
+/* 셀렉박스 영역 */
+.vs--searchable .vs__dropdown-toggle {
+  max-width: 536px;
+  height: 80px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 25px 40px;
+  border: 3px solid #cccccc;
+}
+
+.vs--searchable.vs--open .vs__dropdown-toggle {
+  border-radius: 20px 20px 0 0;
+  box-shadow: none;
+  border-bottom: 3px solid transparent;
+}
+
+/* 셀렉박스 옵션 묶음 */
+.vs__dropdown-menu {
+  max-width: 536px;
+  /*padding: 10px 30px 38px;*/
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 40px;
+  border-radius: 0 0 20px 20px;
+  border: 3px solid #cccccc;
+  border-top: transparent;
+  margin-right: 10px;
+}
+
+/* 셀렉박스 다 보여주기 */
+.dropdown.full-select .vs__dropdown-menu {
+  max-height: fit-content;
+}
+
+/* 셀렉박스 옵션 항목 */
+.vs__dropdown-option {
+    height: 74px;
+    display: flex;
+    align-items: center;
+    color: #292929;
+    font-size: 30px;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 22px 0 23px;
+    margin: 0;
+    position: relative;
+}
+
+/* 하단 밑줄 */
+.vs__dropdown-option:after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  background: transparent url("@/assets/img/launcher/common/dropdown_line_01.png") repeat-x;
+}
+
+.vs__dropdown-option:last-child:after {
+  background: none;
+}
+
+/* 선택된 값 */
+.vs__selected-options {
+  color: #292929;
+  flex-wrap: initial;
+  align-items: center;
+  margin: 0;
+  text-align: left;
+  border-radius: 8px;
+}
+
+/* 셀렉박스 검색 시, 결과가 없을 때 */
+.vs__no-options {
+  padding: 10px;
+}
+
+.vs__selected {
+  align-items: baseline;
+  line-height: initial;
+  margin: 0;
+  padding: 0 3px;
+  white-space: nowrap;
+  /*font-size: 34px;*/
+  font-size: 30px;
+  color: #292929;
+}
+
+.vs--single.vs--loading .vs__selected,
+.vs--single.vs--open .vs__selected {
+  position: relative;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+}
+
+.vs__search,
+.vs__search:focus,
+.vs__search::placeholder {
+  /*height: 48px !important;*/
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  line-height: initial;
+  font-size: 30px;
+  background-color: transparent !important;
+}
+
+.vs__search:focus {
+  /*color: transparent;*/
+  text-shadow: 0 0 0 #ffffff;
+}
+
+.vs__actions {
+  padding: 0;
+}
+
+.vs__selected ~ .vs__search {
+  padding: 0;
+  height: 0;
+}
+
+.vs__clear {
+  display: none;
+}
+
+.vs__no-options {
+  font-size: 20px;
+  padding: 0;
+}
+/* --------------------------------------------------------------------- */
+/* 묶음 */
+.input-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrap li {
+  margin-bottom: 30px;
+}
+
+.input-wrap li:last-child {
+  margin-bottom: 0;
+}
+
+.input-wrap li > div {
+  display: flex;
+  height: 100px;
+  background-color: transparent;
+  border-radius: 26px;
+  position: relative;
+}
+
+.input-wrap input {
+  width:  100%;
+  font-size: 32px;
+  padding: 26px 120px 26px 40px;
+  border-radius: 20px;
+}
+
+.input-wrap input[type="password"] {
+  padding: 26px 160px 26px 40px;
+}
+
+.input-wrap .certify {
+  background-color: transparent;
+}
+
+.input-wrap input::placeholder {
+  font-size: 27px;
+}
+
+.input-wrap input[type="password"]::-webkit-input-placeholder {
+  /*line-height: 50px;*/
+  /*font-size: 32px;*/
+}
+
+
+
+/* input에서 사용되는 서브 */
+.input-sub {
+  width: fit-content;
+  display: flex;
+  position: absolute;
+  justify-content: flex-end;
+  align-items: center;
+  right: 40px;
+  top: 0;
+  bottom: 0;
+}
+
+.input-sub * {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+}
+
+.input-sub *:last-child {
+  margin-right: 0;
+}
+
+.form-content {
+  display: flex;
+  align-items: baseline;
+}
+
+.form-content p.info-sub {
+  display: none !important;
+}
+
+.form-content.error p.info-sub {
+  width: 100%;
+  display: inline-block !important;
+  color: #f52114 !important;
+  font-size: 22px;
+  font-weight: 400;
+  position: initial;
+  margin-top: 20px;
+  text-align: left !important;
+}
+
+/* 인풋 초기화 버튼 */
+.btn-clear {
+  background: transparent url("@/assets/img/launcher/common/log_ico_close_x.png") no-repeat;
+  display: none;
+}
+
+/* 인풋초기화 버튼 보여주기 */
+.btn-clear.show {
+  display: block;
+  margin-right: 0;
+}
+
+.hidden.show ~ .btn-clear.show,
+.hidden.show ~ .btn-clear {
+  margin-right: 0;
+}
+/* 비번 숨기기 */
+.input-sub .hidden {
+  background: url("@/assets/img/launcher/common/log_ico_eye_off.png") no-repeat;
+}
+
+.input-sub .hidden.disable {
+  display: none;
+}
+
+/* 비번 보여주기*/
+.input-sub .hidden.show {
+  background: url("@/assets/img/launcher/common/log_ico_eye_on.png") no-repeat;
+}
+
+/* 확인완료(체크) */
+.input-sub .check {
+  display: none;
+  background: transparent url("@/assets/img/launcher/login/log_ico_check.png") no-repeat;
+}
+
+.input-sub .check.show {
+  display: block;
+}
+
+/* --------------------------------------------------------------------- */
+/* 버튼 묶음 */
+.btn-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto 0;
+}
+
+.btn-wrap.btn-wrap-01 {
+  justify-content: center;
+}
+
+.btn-wrap.btn-wrap-01 .btn {
+  margin-left: 30px;
+}
+
+.btn-wrap.btn-wrap-01 .btn:first-child {
+  margin-left: 0;
+}
+
+.title {
+  display: flex;
+  font-size: 42px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+
+/* 버튼 포함된 인풋 */
+.certify > div {
+  width: calc(100% - 182px);
+  display: flex;
+  position: relative;
+}
+
+/* 인증번호, 재전송 버튼 */
+.certify button {
+  margin-left: 10px;
+}
+
+p.time {
+  width: max-content;
+  color: #086df7;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: 48px;
+  word-spacing: 5px;
+  position: absolute;
+  display: none;
+}
+
+p.time.show {
+  display: block;
+}
+
+/* 입력시간 마감시 폰트컬러 변경 */
+p.time.hurry {
+  color: #f52114;
+}
+
+/* 인증번호 입력 칸 여백 조정 */
+.certify-number input {
+  padding: 37px 170px 36px 0;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.dotbadge {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  display: inline-block;
+  background: center center url("@/assets/img/launcher/common/ttable_ico_dotbadge_32_p.png") no-repeat;
+}
+
+.essential {
+  width: 16px;
+  height: 32px;
+  display: inline-block;
+  margin-left: 8px;
+  background: top center url("@/assets/img/launcher/mypage/mp_icon_essential.png") no-repeat;
+}
+
+/* 날짜 선택 */
+.period-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+}
+
+.period-wrap * {
+  margin-right: 20px;
+}
+
+.period-wrap *:last-child {
+  margin-right: 0;
+}
+
+input[type="date"] {
+  width: 323px;
+  letter-spacing: 0;
+  /*padding: 27px 40px;*/
+  padding: 27px 80px 26px 40px;
+  background: #ffffff center right 10% url("@/assets/img/launcher/common/icobtn_ttable_calendar_56.png") no-repeat;
+}
+
+/*input[type="date" i]::-webkit-calendar-picker-indicator {*/
+/*  width: 56px;*/
+/*  height: 56px;*/
+/*  padding: 0;*/
+/*  opacity: 0;*/
+/*  background: url("@/assets/img/launcher/common/icobtn_ttable_calendar_56.png") no-repeat;*/
+/*}*/
+
+/*input[type="date"]::before {*/
+/*  !*content: attr(data-placeholder);*!*/
+/*  !*width: 80%;*!*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
+
+.input {
+  background-color: #ffffff;
+}
+
+.input.disable {
+  background-color: #ebebeb !important;
+  color: #a3a3a3;
+  pointer-events: none;
+}
+
+button.disable {
+  pointer-events: none;
+}
+
+.choice-data {
+  width: 192px;
+  height: 87px;
+  background-color: #ffffff;
+  border: 3px solid #cccccc;
+  border-radius: 20px;
+  font-size: 27px;
+  line-height: 36px;
+  color: #292929;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.period-wrap span {
+  font-size: 29px;
+  color: #292929;
+}
+
+.table-top.flex {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+
+/* 테이블 */
+.table-wrap {
+  margin-top: 32px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tr {
+  border-bottom: 2px solid #dfdfdf;
+}
+
+table th,
+table td {
+  height: 79px;
+  display: table-cell;
+  font-size: 24px;
+  vertical-align: middle;
+  padding: 10px;
+  line-height: 1.5;
+}
+
+table th {
+  background-color: #f2f2f2;
+  border-top: 2px solid #999999;
+  font-weight: 700;
+}
+
+table td {
+  font-weight: 400;
+}
+
+td.number {
+  width: 81px;
+  color: #848484;
+}
+
+td.detail {
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 테이블 문구 */
+.no-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+  /*padding: 75px;*/
+  font-size: 30px;
+}
+
+.no-list .no-list-content {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-list img {
+  width: 200px;
+}
+
+.no-list-content p {
+  font-size: 28px;
+  margin-top: 30px;
+}
+
+.more-list {
+  margin-top: 30px;
+}
+
+/* 이연재: top버튼 */
+.btn-top{position:fixed;bottom:0;right:0; width:5.8333vw;height:5.8333vw; text-indent:-9999px; background:url('@/assets/img/launcher/superbox/sup_btn_top.png') 0 0 no-repeat;background-size:100%; display: none;}
+.btn-top.show {display: block; z-index: 10; }
+
+
+/* serial 노출 */
+.serial {
+  width: auto;
+  height: 50px;
+  padding: 17px 20px 14px;
+  background-color: #FFFFFF;
+  border-radius: 6px 0 0 6px;
+  position: absolute;
+  right: 0;
+  /*bottom: 2.08vw;*/
+  bottom: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  color: #0A418D;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+.serial span {
+  color: #292929;
+}

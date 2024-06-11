@@ -1,0 +1,281 @@
+@charset "UTF-8";
+
+.viewer-bridge {
+  background-color:$color-reading-bg;
+
+  .thumb-info-lr {
+    padding:90px 88px 225px;
+    min-height:100vh;
+    overflow:hidden;
+  }
+  .thumb-info-lr {
+    padding-top:90px + $gnb-height;
+  }
+  .side-area.left {
+    display:flex;
+    width:606px; height: 690px;
+    align-items:center;
+    justify-content:center;
+    img {
+      width: 100%; height: 100%;
+      object-fit: scale-down;
+      object-position: center center;
+    }
+  }
+  .btn-wrap {
+    gap:30px;
+    margin-top:50px;
+  }
+  .btn-book-kind {
+    position:relative;
+    width:417px;
+    height:458px;
+    padding:27px 0 0 45px;
+    &:before {
+      display:block;
+      content:'';
+      position:absolute;
+      width:372px;
+      height:390px;
+      right:0; bottom:0;
+      border-radius:37px;
+      background-color:#03acc9;
+      opacity:0;
+    }
+    &:after {
+      content:'';
+      display:block;
+      position:absolute;
+      width:129px; height:129px;
+      top:0; left:0;
+      background-repeat:no-repeat;
+      background-position: 0 0;
+      background-size:100% 100%;
+      background-image: url("#{$img-url}/viewer-bridge/btn_ico_check.webp");
+      opacity:0;
+    }
+    img {
+      position:relative;
+      width:258px; height:387px;
+    }
+
+    // 활성화 효과
+    &.active{
+      &:before {opacity:0.63;}
+      &:after {opacity:1;}
+    }
+  }
+
+
+  // 모션북 or 이북 선택 페이지
+  &.kind {
+    .thumb-info-lr {
+      padding-top:240px;
+      padding-bottom:180px;
+      background-image: url("#{$img-url}/viewer-bridge/bg_select.webp");
+    }
+    .side-area.right {
+      width:1080px;
+      margin-top:-42px;
+    }
+    .view-title {
+      //margin-top:16px;
+      font-size:69px;
+      color:#fff;
+      text-shadow: 0 0 8px #039cb5;
+      -webkit-text-stroke: 1px #fff;
+      img {
+        width:750px;
+      }
+    }
+    .btn-wrap {      // 모션북, 이북이 갖고 있는 여백만큼 margin으로 이동
+      margin-top:8px;
+      gap:30px;
+      margin-left:-45px;
+    }
+  }
+
+  // 독서 성장 리포트 페이지
+  &.report {
+    .thumb-info-lr {
+      padding-left:154px;
+      padding-right:145px;
+      background-color:#7ce1fe;
+      background-image: url("#{$img-url}/viewer-bridge/bg_report_02.webp");
+    }
+    .view-title {
+      width:312px; height: 54px;
+      margin: 0 auto 76px;
+      background-image: url("#{$img-url}/viewer-bridge/img_txt_report_02.webp");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+    .side-area.left {
+      width:420px; height: 458px;
+      margin-top:-108px;
+    }
+    .side-area.right {
+      width:1042px;
+      margin-top:-156px;
+    }
+    .graph-wrap {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:672px;
+      gap:48px;
+      .graph-item {
+        position:relative;
+        width:150px; height:100%;
+        background-repeat:no-repeat;
+        background-position: 0 0;
+        background-size:auto 100%;
+
+        .graph-item-category {
+          position:absolute;
+          bottom:0; left:0;
+          width:100%; height:174px;
+          background-repeat:no-repeat;
+          background-position: 0 0;
+          background-size:auto 100%;
+        }
+        .char {
+          display:block;
+          position:absolute;
+          width:174px; height:204px;
+          top:-3px; left:50%; margin-left:-87px;
+          background-repeat:no-repeat;
+          background-position: 0 0;
+          background-size:contain;
+          transform:translate3d(0, 187%, 0) scale(0.85);
+          transform-origin:center bottom;
+          opacity:0;
+        }
+        .mask-graph{
+          position:absolute;
+          width:107px; height:435px;
+          left:50%; bottom:69px;
+          margin-left:-53px;
+          overflow:hidden;
+
+          // 막대 그래프
+          &:before {
+            display:block;
+            content:'';
+            width:100%; height:100%;
+            background-repeat:no-repeat;
+            background-position: 0 0;
+            background-size:auto 100%;
+            transform:translate3d(0,88%,0);
+          }
+        }
+
+        /* 카테고리 별 그래프  */
+        $graphGroup : "language", "emotion", "sociality", "recognition", "creativity";
+        @for $i from 1 through length($graphGroup) {
+          $graphName : nth($graphGroup, $i);
+          &.#{$graphName} {
+            .mask-graph {
+              &:before {
+                background-image: url("#{$img-url}/viewer-bridge/img_graph_#{$graphName}.webp");
+              }
+            }
+            .graph-item-category {
+              background-image: url("#{$img-url}/viewer-bridge/img_report_#{$graphName}.webp");
+            }
+          }
+        }
+      }
+
+      // 애니메이션 효과
+      &.onShow {
+        $delay: 0.15s;
+        $default-du : 0.8s;
+        .mask-graph {
+          &:before {
+            transform:translate3d(0,50%,0);
+            transition:transform #{$default-du} #{$delay} ease-in-out;
+          }
+        }
+        .char {
+          transition:transform #{$default-du} #{$delay} ease-in-out;
+        }
+        .graph-item.mid {
+          $easing : cubic-bezier(0.49, 0.12, 0.36, 1);
+          $du : 1.25s;
+          $alphaDelay : $du - 0.8s;
+          .mask-graph:before {
+            transition-timing-function:$easing;
+            transition-duration:$du;
+            transform:translate3d(0,22%,0);
+          }
+          .char {
+            opacity:1;
+            transform:translate3d(0,52%,0) scale(1);
+            transition:transform #{$du} #{$delay} #{$easing}, opacity 0.25s #{$alphaDelay};
+          }
+        }
+        .graph-item.high {
+          $easing : cubic-bezier(0.71, 0.04, 0.36, 1);
+          $du : 1.5s;
+          $du : 1.25s;
+          $alphaDelay : $du - 0.65s;
+          .mask-graph:before {
+            transition-timing-function:$easing;
+            transition-duration:$du;
+            transform:translate3d(0,0,0);
+          }
+          .char {
+            opacity:1;
+            transform:translate3d(0,0,0) scale(1);
+            transition-timing-function:cubic-bezier(0.45, 0, 0.13, 0.99);
+            transition:transform #{$du} #{$delay} #{$easing}, opacity 0.25s #{$alphaDelay};
+          }
+        }
+      }
+
+      .high {
+        //animation: report-high 0.8s steps(27) forwards;
+        .char {background-image: url("#{$img-url}/viewer-bridge/img_high_char.webp");}
+        .mask-graph {
+
+        }
+      }
+      .mid {
+        //animation: report-mid 0.4s steps(12) forwards;
+        .char {background-image: url("#{$img-url}/viewer-bridge/img_mid_char.webp");}
+        .mask-graph {
+
+        }
+      }
+    }
+
+    // 오늘의 책을 통해 진입 시 닫기 버튼 노출 X, 독서퀴즈로가기 버튼 노출 O
+    .go-quiz { display: none; }
+    &.today-book {
+      .sub-gnb {
+        button {display: none;}
+      }
+      .e {
+        display: block;
+        position: absolute;
+        right: 407px; bottom: 18px;
+        img { width: 540px; }
+      }
+    }
+  }
+
+  // 다시 읽기 & 독서 퀴즈 페이지 thumb-info-lr 레이아웃 커스텀
+  &.read,
+  &.quiz {
+    .view-title {
+      img {width:708px;}
+    }
+    .thumb-info-lr {
+      padding-left:258px;
+      padding-right:250px;
+      background-position:center bottom;
+      background-image: url("#{$img-url}/viewer-bridge/bg_read.webp");
+    }
+  }
+}

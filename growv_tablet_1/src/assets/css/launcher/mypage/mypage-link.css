@@ -1,0 +1,418 @@
+
+/* 쪽지 보내기 / 게시판 등 공통 */
+.mypage-link {
+  width: 1920px;
+  /*height: 1200px;*/
+}
+
+.mypage-link .gnb {
+  background-color: #fae76c;
+  position: fixed;
+  z-index: 15;
+}
+
+.mypage-link.reading-club .gnb {
+  background-color:#bff1f9;
+}
+
+.mypage-link .gnb .title {
+  flex: none;
+  margin: auto;
+  font-size: 50px;
+  color: #292929;
+}
+
+.mypage-content {
+  width: 100%;
+  min-height: 1066px;
+  padding: 194px 80px 60px;
+  background-color: #f2f2f2;
+}
+
+.mypage-content .content {
+  width: 1760px;
+  min-height: 774px;
+  margin: auto;
+  padding: 60px;
+  background-color: #ffffff;
+  border-radius: 60px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.08);
+  background-size: contain;
+}
+
+.mypage-content .content > ul > li {
+  width: 100%;
+  display: flex;
+  margin-bottom: 40px;
+  align-items: baseline;
+  box-sizing: border-box;
+}
+
+.mypage-content .content > ul > li:last-child {
+  margin-bottom: 0;
+}
+
+.mypage-content .form-title {
+  /*width: 7%;*/
+  width: 134px;
+  text-align: left;
+  font-size: 30px;
+}
+
+.mypage-content .content li.align {
+  height: fit-content;
+  align-items: initial;
+}
+
+.mypage-content .content li.align .form-title {
+  padding-top: 29px;
+}
+
+.mypage-content .content li > div {
+  /*width: 93%;*/
+  width: 1516px;
+  position: relative;
+  text-align: left;
+  display: block;
+}
+
+.mypage-content .content li > div.div-radio {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mypage-content .content li .info {
+  align-items: flex-start;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.mypage-content .content li .info .essential {
+  margin-right: 8px;
+}
+
+.mypage-content .content .radio-wrap {
+  display: flex;
+  height: 60px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mypage-content .content .radio-wrap .radio {
+  margin: 0 80px 0 0;
+  font-size: 30px;
+}
+
+.mypage-content .content .input-area {
+  width: 100%;
+  height: 90px;
+  border: 3px solid #cccccc;
+  border-radius: 20px;
+  padding: 25px 40px;
+  box-sizing: border-box;
+}
+
+.mypage-content .content .input-area.textarea {
+  height: 380px;
+  padding: 40px;
+}
+
+.mypage-content .content .input-area input {
+  width: 100%;
+  font-size: 30px;
+  padding: 0;
+}
+
+.mypage-content .content textarea:empty {
+  /*background-color: rgba(247, 209, 208, 1);*/
+}
+
+.mypage-content .content  textarea {
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  line-height: 1.6;
+  border: none;
+  resize: none;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.mypage-content .content .input-area input::placeholder,
+.mypage-content .content .input-area textarea::placeholder {
+  color: #c1c1c1;
+}
+
+.mypage-content .form-content.error .input-area {
+  border: 3px solid #f52114;
+}
+
+.form-content.error .vs--searchable.vs--open .vs__dropdown-toggle {
+  border-bottom: 3px solid transparent;
+}
+
+.form-content.error .vs__dropdown-menu {
+  border-top: 3px solid transparent;
+}
+
+.mypage-content .align .form-content .input-area ~ p {
+  width: 100%;
+  display: block;
+  text-align: right;
+  color: #999999;
+  font-size: 24px;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+.mypage-content .align .form-content.error .input-area ~ p {
+  width: 50%;
+  display: inline-block;
+}
+
+.mypage-content .content .align .input-area ~ p span {
+  color: #999999;
+  font-weight: 400;
+}
+
+/* 쪽지 및 게시물 보기 */
+.mypage-link.show  .head {
+  text-align: left;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.mypage-link.show .head::after {
+  content: '';
+  width: 100%;
+  height: 10px;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: url("@/assets/img/launcher/mypage/mp_msg_line.png") no-repeat;
+  background-size: 100%;
+}
+
+.mypage-link.show .head .title {
+  color: #292929;
+  display: inline-block;
+  font-size: 36px;
+  text-align: left;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.mypage-link.show .head .info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  font-size: 30px;
+  color: #a8a8a8;
+}
+
+.mypage-link.show .head .info .name {
+  color: #270a67;
+}
+
+.mypage-link.show .head .info .name ~ .date {
+  width: auto;
+}
+
+.mypage-link.show .head .info .date {
+  width: 100%;
+  text-align: right;
+}
+
+.mypage-link.show .text {
+  width: 100%;
+  margin-top: 40px;
+  /*min-height: 452px;*/
+  min-height: 430px;
+  text-align: left;
+}
+
+.mypage-link.show .text,
+.mypage-link.show .text p,
+.mypage-link.show .text p span,
+.mypage-link.show .text p font,
+.mypage-link.show .text div span,
+.mypage-link.show .text div font {
+  font-size: 30px !important;
+  line-height: 1.6 !important;
+  color: #292929 !important;
+  font-family: sdGothicNR, Avenir, Helvetica, Arial, sans-serif !important;
+}
+
+.mypage-link .btn-wrap {
+  margin: 60px auto 0;
+}
+
+
+.mypage-link.consult .mypage-content .content {
+  padding: 0;
+}
+
+.mypage-link.consult .mypage-content .content .head {
+  padding: 60px 60px 50px;
+}
+
+.mypage-link.consult .mypage-content .content .head .info {
+  height: 80px;
+  font-size: 36px;
+  color: #292929;
+  margin-top: 0;
+}
+
+.mypage-link.consult.show .head::after {
+  width: calc(100% - 120px);
+  right: 0;
+  margin: auto;
+}
+
+.mypage-link .text div {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 0 60px;
+}
+
+.mypage-link .text .question {
+  min-height: 300px;
+  padding: 0 60px;
+}
+
+.mypage-link .text .answer {
+  width: 100%;
+  min-height: 233px;
+  padding: 60px;
+  background-color: #f5f5f5;
+  border: 8px solid #ffffff;
+  border-radius: 0 0 60px 60px;
+}
+
+.mypage-link .text div > p:first-child {
+  min-width: 69px;
+  height: 69px;
+  margin: 0 74px 0 25px;
+}
+
+.mypage-link .text .question > p:first-child {
+  background: url("@/assets/img/launcher/mypage/mp_ico_q.png") no-repeat;
+}
+
+.mypage-link .text .answer > p:first-child {
+  margin: 0 74px 0 13px;
+  background: url("@/assets/img/launcher/mypage/mp_ico_a.png") no-repeat;
+}
+
+.mypage-link .text p:last-child {
+  width: 100%;
+  line-height: 1.5;
+}
+
+/* 1:1 일대일문의 */
+.mypage-link.consult-write .form-title {
+  width: 13%;
+}
+
+.consult-write .mypage-content .content li:last-child .form-title {
+  padding-top: 0;
+}
+
+.mypage-link.consult-write .form-content.select {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  height: fit-content;
+}
+
+.mypage-link.consult-write .form-content.select .dropdown-wrap {
+  flex-direction: column;
+}
+
+.mypage-link.consult-write .form-content.select .dropdown,
+.mypage-link.consult-write .form-content.alarm .input-wrap {
+  width: 646px;
+}
+
+.consult-write .form-content.alarm {
+  display: flex;
+  align-items: baseline;
+}
+
+.consult-write .form-content.alarm > div {
+  margin-right: 40px;
+}
+
+.form-content .phone-wrap {
+  position: relative;
+}
+
+.form-content .input-wrap .input {
+  background-color: #ffffff;
+  border: 3px solid #cccccc;
+}
+
+.checkbox-wrap  {
+  width: max-content;
+  height: 10px;
+  position: relative;
+}
+
+.consult-write .mypage-content .checkbox-wrap {
+  width: 229px;
+}
+
+.consult-write .mypage-content .checkbox-wrap .checkbox {
+  width: max-content;
+  height: 40px;
+  padding: 0 0 0 50px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  right: auto;
+  font-weight: 400;
+}
+
+.consult-write .mypage-content .checkbox-wrap .checkmark {
+  width: 40px;
+  height: 40px;
+  right: auto;
+}
+
+.consult-write .mypage-content .checkbox-wrap .checkbox input:checked ~ .checkmark {
+  background: no-repeat url('@/assets/img/launcher/common/mp_ico_check_s.png');
+  background-size: 100%;
+}
+
+.consult-write .alarm .info {
+  color: #8f8f8f;
+  font-size: 22px;
+}
+
+
+/* 쪽지 답장하기 */
+.mypage-link.message .message-box {
+  margin-top: 60px;
+  position: relative;
+}
+
+.mypage-link.message .message-box .text::before {
+  content: '';
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('@/assets/img/launcher/mypage/mp_msg_line.png') no-repeat;
+}
+
+.mypage-link.message .message-box .text {
+  width: 100%;
+  min-height: 502px;
+  font-size: 30px;
+  line-height: 1.6;
+  position: relative;
+  padding-top: 50px;
+  text-align: left;
+}

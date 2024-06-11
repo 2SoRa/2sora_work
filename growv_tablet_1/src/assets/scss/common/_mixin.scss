@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+/* Default Transition */
+@mixin transition($speed:0.3s, $easing:ease-out, $delay:0s) {
+	-webkit-transition:all $speed $easing $delay;
+	transition:all $speed $easing $delay;
+}
+/* Clearfix */
+@mixin clearfix {
+	&:after {
+		content:"";
+		display:block;
+		clear:both;
+	}
+}
+/* Table-cell */
+@mixin tablecell {
+	display:table-cell;
+	vertical-align:middle;
+}
+/* spritesheet (애니메이션이름, 시퀀스갯수, 이동방향, 너비(높이)사이즈), 이동시간 */
+@mixin spr-set($name, $length, $isX, $val, $du, $isLoop) {
+	$step : $length;
+	$loop : if($isLoop == true, infinite, null);
+	$aniName : spr-#{$name}-ani;
+
+	background-position:0 0;
+	background-repeat:no-repeat;
+
+	@if $isX == true {
+		background-size:auto 100%;
+	} @else {
+		background-size:100% auto;
+	}
+
+	animation: #{$aniName} #{$du} steps($step) #{$loop};
+
+	@include spr-ani-create-set($aniName, $length, $isX, $val);
+	//@keyframes spr-#{$name}-ani {
+	//	0% {
+	//		background-position:0 0;
+	//	}
+	//	100% {
+	//		@if $isX == true {
+	//			background-position-x: $movePos;
+	//		} @else {
+	//			background-position-Y: $movePos;
+	//		}
+	//	}
+	//}
+}
+
+@mixin spr-ani-create-set($aniName, $length, $isX, $val) {
+	$movePos : ($val * $length) * -1;
+
+	@keyframes #{$aniName} {
+		0% {
+			background-position:0 0;
+		}
+		100% {
+			@if $isX == true {
+				background-position-x: $movePos;
+				//background-position-x: 100%; // 이동 지점이 다른 애니메이션이 있어서 일단 주석
+			} @else {
+				background-position-Y: $movePos;
+				//background-position-Y: 100%;
+			}
+		}
+	}
+}

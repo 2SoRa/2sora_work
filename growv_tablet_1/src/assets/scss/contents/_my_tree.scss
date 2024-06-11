@@ -1,0 +1,352 @@
+@charset "UTF-8";
+
+.my-tree {
+  min-height:100vh;
+  background-color:#9fe5ff;
+  background-repeat:no-repeat;
+  background-position: 0 0;
+  background-size:100% auto;
+
+  $btnAreaH : 146px;
+  $topPd : $gnb-height + $btnAreaH;
+
+  // 상단
+  .sub-gnb {
+    background-size:100% auto;
+    background-position:0 0;
+    background-repeat:no-repeat;
+    h1 {
+      font-family:'oneMobile';
+      font-size:72px;
+      font-weight:normal;
+      color:$color-title-blue;
+    }
+  }
+  .sub-title {
+    .text, span {
+      font-family:'oneMobile';
+      font-size:36px;
+      font-weight:normal;
+      color:$color-title-sub-blue;
+    }
+    .period {margin-top:20px;}
+  }
+  .btns-area {
+    position:relative;
+    height:$btnAreaH;
+
+    .btn-calendar {
+      margin:0 auto;
+    }
+    .btn-wrap {
+      display:block;
+      position:absolute;
+      top:0; right:36px;
+      margin-top:0;
+
+      button {
+        width:144px;
+        height:100%;
+        padding:0;
+        img {width:100%; height:100%;}
+      }
+    }
+  }
+
+  // 배경
+  .sub-bg {
+    position:relative;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    background-size:100% auto;
+    padding-top:$topPd;
+    margin-top:$topPd*-1;
+  }
+  .contents-bg-area {
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    background-size:100% auto;
+  }
+
+  // 컨텐츠 영역
+  .content-top-fixed-area {
+    position:fixed;
+    top:0; left:0; right:0;
+    background-size:100% auto;
+    background-position:0 0;
+    background-repeat:no-repeat;
+    overflow:hidden;
+    z-index:$depth-1;
+  }
+  .content-scroll-area {
+    position:relative;
+    height:calc(100vh - #{$topPd});
+    //top:$topPd;
+    background-color:#9fe5ff;
+  }
+
+  // 메인 페이지 : 월별 자람나무 리스트
+  .jaram-list {
+    display:flex;
+    flex-direction: column;
+    margin-left:138px; //90px;
+    padding-bottom:142px;
+    gap:150px 0;
+    .list-item-group {
+      display:flex;
+      flex-wrap:wrap;
+      flex-wrap:wrap;
+      &:nth-child(even) {
+        flex-direction:row-reverse;
+        margin-right: 81px;
+      }
+      &:nth-child(odd) {
+        flex-direction:row;
+      }
+    }
+    .list-item {
+      position:relative;
+      width:567px;
+      height:768px;
+      a {
+        display:flex;
+        width:100%; height:100%;
+        align-items:flex-end;
+      }
+      img {
+        //position:relative;
+        position: absolute;
+        width:100%;
+        display: block;
+        height:630px;
+        bottom:0;
+      }
+    }
+    .sta-ico-group{
+      position:absolute;
+      width:100%; height:100%;
+      top:0; right:0;
+      z-index: 100;
+      pointer-events: none;
+
+      .sta-ico,
+      .ico,
+      .spr {
+        display:block;
+        position:absolute;
+        width:100%; height:100%;
+        top:0; left:0;
+        background-size:contain;
+        background-repeat:no-repeat;
+        background-position:center center;
+      }
+      .sta-ico {
+        // 자람나무 상태 별 아이콘 기본 display:none;
+        display:none;
+      }
+
+      // 자람나무 상태별 아이콘 이미지 설정
+      $jaramStaGroup : "ing", "end", "success", "lock";
+      @for $i from 1 through length($jaramStaGroup) {
+        $sta : nth($jaramStaGroup, $i);
+        @if $sta == "ing" {
+          .ico {
+            background-image: url("#{$img-url}/my-tree/tree_sta_#{$sta}.webp");
+          }
+        } @else {
+          .#{$sta} {
+            background-image: url("#{$img-url}/my-tree/tree_sta_#{$sta}.webp");
+          }
+        }
+      }
+
+      // 자람나무 상태별 아이콘 & 스프라이트 이미지 사이즈, 애니메이션 설정
+      .end {width:156px; height:195px; top:461px; left:0;}
+      .ing {
+        .ico {
+          width:168px; height:213px; top:21px; left:155px;
+          animation: ico-ing-ani 0.4s 0s alternate infinite ease-in-out;
+          @keyframes ico-ing-ani {
+            0% {transform:translate3d(0, -5%, 0);}
+            100% {transform:translate3d(0, 0, 0);}
+          }
+        }
+        .evie {
+          width:207px; height:269px;
+          top:459px; left:357px;
+          background-image: url("#{$img-url}/my-tree/spr_evie.png");
+          @include spr-set('tree-evie', 20, true, 207px, 1.2s, true);
+        }
+      }
+      .success {width:225px; height:265px; top:383px; left:0;}
+      .lock {width:147px; height:165px; top:276px; left:167px;}
+    }
+
+    // 상태별 아이콘 none, block
+    .sta-end {
+      .sta-ico-group .end {display:block;}
+    }
+    .sta-ing {
+      .sta-ico-group .ing {display:block;}
+    }
+    .sta-success {
+      .sta-ico-group .success {display:block;}
+    }
+    .sta-lock {
+      a {
+        pointer-events:none;
+      }
+      .sta-ico-group .lock {display:block;}
+    }
+  }
+
+  // 상세 페이지 : 자람나무 월별 미션
+  &.sub {
+    .content-scroll-area {
+      height:1065px;
+    }
+    .sub-bg {
+      height:2170px;
+      background-size:100% 100%;
+      padding-top:$gnb-height;
+      margin-top:(-$gnb-height);
+    }
+    .gauge-bar {
+      position: relative;
+      width:960px; height:39px;
+      top:21px; left:50%; // absolute top 248
+      margin-left:-480px;
+      .mask {
+        display:block;
+        width:auto; height:100%;
+        background: no-repeat 0 0 url("#{$img-url}/my-tree/bg_gauge.webp");
+        background-size:auto 100%;
+      }
+    }
+    .side-info {
+      position:absolute;
+      width:300px; height:236px;
+      top:210px; left:42px;
+      .box-num-list{
+        display:flex;
+        align-items:flex-end;
+        height:100%;
+        padding-bottom:14px;
+        .list-item {
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          width:99px; height:48px;
+          margin: 0 25px;
+          border-radius:19px;
+          border: solid 3px #fff;
+          background-color:#1aabf3;
+          font-family:'oneMobile';
+          font-size:36px;
+          font-weight:normal;
+          color:#fff;
+        }
+      }
+    }
+    .report-list-wrap {
+      .col-list {
+        li {
+          img {width:100%; height:100%; opacity:0;}
+          &.active {
+            img {opacity:1;}
+          }
+        }
+      }
+      &.attend {
+        position:absolute;
+        top:515px; left:494px; //top:380
+        .col-list {
+          gap:62px;
+        }
+      }
+      &.normal {
+        position:absolute;
+        //width:1500px;
+        width:1510px;
+        top:784px; left:217px; //top:649
+        margin-top:-26px;
+        .col-list {
+          display:block;
+          gap:52px 10px;
+          font-size:0;
+          text-align:left;
+          li{
+            display:inline-block;
+            margin:26px 5px;
+            vertical-align:top;
+            &:first-child,
+            &:nth-child(30) {margin-left:78px;}
+            //&:nth-child(39) {margin-left:225px;}
+            &:nth-child(39) {margin-left:230px;}
+          }
+        }
+      }
+      li {
+        width:141px; height:159px;
+      }
+    }
+    .flag-success {
+      position:absolute;
+      width:321px; height:324px;
+      top:0; right:111px;
+      transform:scale(2);
+      opacity:0;
+      pointer-events:none;
+      &:before {
+        display:block;
+        content:'';
+        width:100%; height:100%;
+        background: no-repeat url("#{$img-url}/my-tree/tree_sta_success.webp") 0 0;
+        background-size:100% 100%;
+      }
+
+      &.onShow {
+        transform:scale(1);
+        opacity:1;
+        transition:transform 0.25s cubic-bezier(0, 0.47, 0.15, 1.33), opacity 0.08s ease-out;
+      }
+    }
+  }
+
+  // 커스텀 테마 mixin, include class 생성
+  // @mixin myTreeTheme(년도, 배경컬러, 타이틀폰트컬러, 캘린더년도폰트컬러, 캘린더좌우버튼이미지경로)
+  @mixin myTreeTheme($year, $bg, $gnb, $calendar, $btnUrl) {
+    &.theme-#{$year} {background-color:$bg;
+      .sub-gnb {
+        h1 {color:$gnb;}
+      }
+      .sub-title {
+        .text,
+        span {color:$calendar;}
+      }
+      .btns-area {
+        .txt-year {color:$calendar;}
+        .btn-calendar {
+          .btn-next,
+          .btn-prev {
+            &:before {background-image: url("#{$ico-url}/#{$btnUrl}.svg");}
+          }
+        }
+      }
+      .content-scroll-area {background-color:$bg;}
+    }
+  }
+
+  @include myTreeTheme('2023', #9fe5ff, #0384a4, #109ed4, 'btn_ico_calendar_next_blue');
+  @include myTreeTheme('2024', #fcf7a0, #ff8b02, #ffa902, 'btn_ico_calendar_next_or');
+
+  // 년도 별 자람나무 위치 커스텀 (23년도의 경우만 좌측 여백이 좁음)
+  &.theme-2023 {
+   .jaram-list {
+     margin-left:90px;
+   }
+  }
+}

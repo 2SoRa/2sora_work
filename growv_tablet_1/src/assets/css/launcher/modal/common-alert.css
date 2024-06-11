@@ -1,0 +1,27 @@
+.modal-03 .header-bg {
+  width: 240px;
+  height: 224px;
+  margin: auto;
+}
+
+.modal-03.certify .header-bg {
+  background: url("@/assets/img/launcher/common/cmm_pop_alarmi_cha_wiz_04.png") no-repeat;
+}
+
+.modal-03.enter .header-bg {
+  background: url("@/assets/img/launcher/common/cmm_pop_alarmi_cha_wiz_01.png") no-repeat;
+}
+
+.modal-03.study-info .header-bg,
+.modal-03.message .header-bg {
+  background: url("@/assets/img/launcher/common/cmm_pop_alarmi_cha_wiz_02.png") no-repeat;
+}
+
+.modal-03.storage .header-bg {
+  background: url("@/assets/img/launcher/common/cmm_pop_alarmi_cha_wiz_03.png") no-repeat;
+}
+
+/* 나만의 보관함 오늘의 학습 얼럿 */
+.modal-03.study-info .btn-wrap .btn {
+  margin: auto;
+}

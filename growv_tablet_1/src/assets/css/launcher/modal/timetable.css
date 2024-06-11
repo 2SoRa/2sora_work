@@ -1,0 +1,248 @@
+.schedule-detail {
+  width: 1200px;
+}
+
+.schedule-detail .title {
+  width: 100%;
+  height: 268px;
+  position: relative;
+  background: url("@/assets/img/launcher/schedule/schedule-popup/ttable_pop_top_stu_bg.png") no-repeat;
+}
+
+.schedule-detail.status .title {
+  background: url("@/assets/img/launcher/schedule/schedule-popup/ttable_pop_top_study_bg.png") no-repeat;
+}
+
+.schedule-detail .month {
+  min-width: 632px;
+  width: fit-content;
+  height: 96px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /*left: 50px;*/
+  left: 95px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 18px 30px;
+  background: url("@/assets/img/launcher/schedule/schedule-popup/ttable_month_box.webp") no-repeat;
+}
+
+.schedule-detail .month span {
+  color: inherit;
+}
+
+.schedule-detail .month button {
+  width: 58px;
+  height: 59px;
+}
+
+.schedule-detail .month .btn-left {
+  background: url("@/assets/img/launcher/common/ttable_month_black_arr_l.webp") no-repeat;
+}
+
+.schedule-detail .month .btn-left.disable {
+  background: url("@/assets/img/launcher/common/ttable_month_black_arr_l_d.webp") no-repeat;
+}
+
+.schedule-detail .month .btn-right {
+  background: url("@/assets/img/launcher/common/ttable_month_black_arr_r.webp") no-repeat;
+}
+
+.schedule-detail .month .btn-right.disable {
+  background: url("@/assets/img/launcher/common/ttable_month_black_arr_r_d.webp") no-repeat;
+}
+
+.schedule-detail .title > p {
+  width: fit-content;
+  position: absolute;
+  /*top: 208px;*/
+  top: 198px;
+  right: 0;
+  left: 0;
+  bottom: 40px;
+  margin: auto;
+  color: #290084;
+  /*font-size: 22px;*/
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.36;
+}
+
+.schedule-detail .info span {
+  color: inherit;
+  font-weight: inherit;
+}
+
+.ttable-content {
+  /*height: fit-content;*/
+  height: 588px;
+  background-color: #ffffff;
+  margin-top: -10px;
+  border-radius: 0 0 40px 40px;
+  box-shadow: inset 0 -10px 0 0 rgba(0, 0, 0, 0.16);
+  padding: 30px 40px 60px 60px;
+}
+
+.ttable-content ul {
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 26px;
+  margin-bottom: 40px;
+}
+
+.ttable-content ul li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0 42px;
+  border-bottom: 2px solid #ebebeb;
+}
+
+/* 학습 완료시 체크표시 */
+.ttable-content li.study .study-check {
+  height: 32px;
+  display: block;
+}
+
+/* 학습현황 버튼 보이게*/
+.status .ttable-content li .btn-default .btn.pink {
+  display: block;
+}
+
+.status .ttable-content li .btn-default button {
+  font-size: 27px;
+  width: 168px;
+  height: 72px;
+  background-size: 100% 100%;
+}
+
+.ttable-content li.study .btn-default {
+  display: flex;
+}
+.ttable-content li.study .btn-default .btn.pink {
+  display: block;
+}
+
+.ttable-content li.study .study-info {
+  color: #f3356d;
+}
+  /* 학부모 타이틀 정보 */
+.parent-title,
+/* 수정,삭제 버튼 묶음 */
+.btn-parent-modify,
+/* 학습 완료시 체크표시 */
+.ttable-content .study-check,
+/* 계획추가 버튼 */
+.add-schedule,
+/* 복습하기 버튼 */
+.ttable-content li .btn-default .btn.pink,
+/* 학습완료 버튼 */
+.ttable-content li.study .btn-default .btn.green,
+/* 학습하기 버튼 */
+.ttable-content li.study .btn-default .btn {
+  display: none;
+}
+
+.ttable-content li.study .btn-default .study-complete {
+  width: 168px;
+  height: 116px;
+  font-size: 27px;
+  display: flex;
+  padding-bottom: 20px;
+  background: url("@/assets/img/launcher/schedule/schedule-popup/ttable_com_bg.webp") no-repeat;
+}
+
+/* ------------------------------------------------------------------ */
+/* 학부모 수정 */
+.schedule-detail.parent .title {
+  background: url("@/assets/img/launcher/schedule/schedule-popup/ttable_pop_top_par_bg.webp") no-repeat;
+}
+
+.schedule-detail.parent .parent-title {
+  display: block;
+  /*left: 250px;*/
+  left: 233px;
+  right: 82px;
+}
+
+.schedule-detail.parent .ttable-content {
+  /* 계획추가 버튼 추가하면 743으로 변경 */
+  /*height: 743px;*/
+  height: 588px;
+}
+
+.schedule-detail.parent .ttable-content ul {
+  height: 508px;
+}
+
+/* 수정, 삭제 버튼 */
+.schedule-detail.parent .ttable-content li.study .btn-default,
+.schedule-detail.parent .default-title ,
+.schedule-detail.parent .btn-default {
+  display: none;
+}
+
+.schedule-detail.parent .btn-parent-modify {
+  display: flex;
+}
+
+.schedule-detail.parent .btn-parent-modify .btn {
+  /*padding: 13px 32px;*/
+  margin-right: 20px;
+  display: flex;
+}
+
+.schedule-detail.parent .btn-parent-modify .btn:last-child {
+  margin-right: 0;
+}
+
+.schedule-detail.parent .add-schedule {
+  display: block;
+  margin: auto;
+}
+
+/* 강좌 상세 소개 */
+.modal-01.detail {
+  max-height: 1055px;
+}
+
+.detail-course {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 41px;
+  border-bottom: 2px solid #999999;
+}
+
+.detail-course .level-info {
+  width: 240px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #763df4;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 60px;
+  box-shadow: inset 0 -5px 2px 0 #6b28fc;
+}
+
+.detail-course ~ .table-wrap {
+  margin-top: 30px;
+  height: fit-content;
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+.detail-course ~ .table-wrap .preview {
+  display: none;
+}
+
+.schedule-detail .title .modal-default-button {
+  width: 50px;
+  height: 50px;
+  top: 168px;
+  right: 40px;
+  background-size: 100%;
+}

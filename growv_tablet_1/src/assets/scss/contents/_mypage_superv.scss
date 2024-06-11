@@ -1,0 +1,824 @@
+@charset "UTF-8";
+
+/* 슈퍼브이 mypage.css 와 동일, 변경 시 같이 적용 필요 */
+.btn-01-mp {
+  width: 184px;
+  height: 80px;
+  font-size: 29px;
+  background: url('@/assets/img/launcher/mypage/mp_btn_type_01_n.png') no-repeat;
+}
+
+.btn-02-mp {
+  width: 280px;
+  height: 112px;
+  background: url('@/assets/img/launcher/mypage/mp_btn_type_02_n.png') no-repeat;
+}
+
+.btn-02-mp.gray {
+  background: url('@/assets/img/launcher/mypage/mp_btn_type_02_n_g.png') no-repeat;
+}
+
+.btn-02-mp.disable {
+  color: #a3a3a3;
+  background: url('@/assets/img/launcher/mypage/mp_btn_type_02_d.png') no-repeat;
+}
+
+.btn-03-mp {
+  width: 260px;
+  height: 100px;
+  font-size: 34px;
+  background: url("@/assets/img/launcher/mypage/mp_btn_03_n.png") no-repeat;
+}
+
+/* 마이페이지 공통 */
+.mypage {
+  width: 1920px;
+  margin-top: var(--gnb-height);
+}
+
+.mypage,
+.mypage .gnb {
+  background-color: #fae76c;
+}
+
+.mypage .gnb {
+  width: 100%;
+  padding: 0 40px;
+  top: 0;
+}
+
+.mypage .gnb .gnb-title {
+  margin: 0 auto;
+}
+
+.mypage .content {
+  width: 1840px;
+  height: 1066px;
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 60px 60px 0 0;
+  margin: auto;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.14), inset 0 -5px 13px 0 rgba(0, 0, 0, 0);
+}
+
+.mypage .mp-side {
+  width: 363px;
+  height: 100%;
+  /*padding: 60px 46px 60px 37px;*/
+  padding: 60px 46px 25px 37px;
+}
+
+.mypage .profile {
+  white-space: nowrap;
+}
+
+.mypage .profile .profile-img {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mypage .profile .name {
+  font-size: 32px;
+  color: #292929;
+  margin: 20px auto;
+}
+
+.mypage .profile .period {
+  font-size: 23px;
+  margin-top: 10px;
+}
+
+.mypage .mp-side .btn-wrap {
+  height: 180px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mypage .mp-side .menu {
+  margin-top: 60px;
+  text-align: left;
+  padding-left: 23px;
+  font-size: 30px;
+}
+
+.mypage .mp-side .menu li {
+  margin-top: 40px;
+}
+
+.mypage .mp-side .menu li.active a {
+  color: #591deb;
+}
+
+.btn.normal-mode {
+  width: 279px;
+  height: 74px;
+  position: absolute;
+  top: 0;
+  background: url("@/assets/img/launcher/mypage/mp_btn_normalmode.png") no-repeat;
+}
+
+.mypage .mp-side .btn.logout {
+  width: 279px;
+  height: 74px;
+  background-color: #5918eb;
+  border-radius: 12px;
+  font-size: 28px;
+  padding: 0 40px;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.mypage .mp-side .btn-wrap.temp {
+  height: 170px;
+  position: relative;
+}
+/* 리딩클럽 마이페이지 */
+.mypage.reading-club {margin-top:0;}
+/*.mypage.reading-club .mp-side .btn-wrap.temp { height: 100px; }*/
+.mypage .mp-side .btn.logout a {
+  justify-content: flex-start;
+}
+
+.mypage .content-main {
+  width: 1477px;
+  /*height: 100%;*/
+  /*max-height: 100%;*/
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  border-radius: 0 60px 0 0;
+  padding: 60px;
+}
+
+.mypage .content-main::-webkit-scrollbar {
+  display: none;
+}
+
+/* 마이페이지 공통 */
+.form-title {
+  height: fit-content;
+  font-size: 30px;
+  line-height: 1.8;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+/* 마이페이지 회원정보수정 비밀번호 변경팝업 에러표시 */
+.form-content.pwError1 p.input-sub1 {
+  width: 100%;
+  display: inline-block !important;
+  color: #f52114;
+  font-size: 22px;
+  font-weight: 400;
+  position: initial;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.form-content.pwError2 p.input-sub2 {
+  width: 100%;
+  display: inline-block !important;
+  color: #f52114;
+  font-size: 22px;
+  font-weight: 400;
+  position: initial;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.form-content.error .input-area ~ p.input-sub  {
+  width: 50%;
+  text-align: left;
+  position: initial;
+}
+
+/* 마이페이지 인풋 */
+.member-info .form-content.error input,
+.form-content.error .vs--searchable .vs__dropdown-toggle,
+.form-content.error .vs__dropdown-menu,
+.form-content.error .input-wrap .input,
+.form-content.pwError1 .input-wrap .input,
+.form-content.pwError2 .input-wrap .input{
+  border: 3px solid #f52114;
+}
+
+.form-content.error .vs--searchable.vs--open .vs__dropdown-toggle {
+  border-bottom: 3px solid transparent;
+}
+
+.form-content.error .vs__dropdown-menu {
+  border-top: 3px solid transparent;
+}
+
+/* 비타민 내역 */
+.vitamin-view {
+  width: 100%;
+  height: 141px;
+  display: flex;
+  border-radius: 40px;
+  color: #292929;
+  padding: 26px 60px;
+  background-color: #ede6fb;
+  justify-content: space-between;
+}
+
+.vitamin-view li {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vitamin-view p {
+  display: inline-flex;
+  align-items: center;
+  font-size: 27px;
+  font-weight: 400;
+}
+
+.vitamin-view p img {
+  margin-right: 20px;
+}
+
+.vitamin-view .emphasis {
+  width: 52%;
+}
+
+.vitamin-view .emphasis p {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.point.plus {
+  color: #5917eb;
+}
+
+.point.minus {
+  color: #f52114;
+}
+
+/* +, - 컬러 설정 */
+.point span {
+  color: inherit;
+}
+
+.mypage .info {
+  color: #8f8f8f;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+
+/* Vitamin Table width 너비지정*/
+.vitamin th.div {
+  width: 170px;
+}
+
+.vitamin .div {
+  color: #270a67;
+}
+
+.vitamin th.detail {
+  width: 710px;
+  text-align: center;
+}
+
+.vitamin .detail {
+  max-width: 690px;
+  text-align: left;
+  @extend .txt-ellipsis;
+}
+
+.vitamin th.point {
+  width: 160px;
+}
+
+.vitamin .point {
+  font-weight: 700;
+}
+
+.vitamin .date {
+  width: 236px;
+}
+
+.vitamin .date {
+  white-space: nowrap;
+}
+
+/* 쪽지함 */
+.menu-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-menu p {
+  display: inline-block;
+  font-size: 30px;
+  margin-right: 60px;
+  padding-bottom: 21px;
+  position: relative;
+}
+
+.content-menu .active {
+  color: #5917eb;
+}
+
+.content-menu p span {
+  display: inline-block;
+  width: 100%;
+  border-radius: 3px;
+  border-bottom: 6px solid #dfdfdf;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.content-menu .active span {
+  border-color: #763df4;
+}
+
+.table-top {
+  display: flex;
+  margin: 60px auto 30px;
+  justify-content: space-between;
+}
+
+.table-top > div {
+  display: flex;
+  align-items: center;
+}
+
+button.send-message {
+  width: 267px;
+  height: 87px;
+  background: url("@/assets/img/launcher/mypage/mp_btn_send.png") no-repeat;
+  margin-right: 30px;
+}
+
+.message .table-top .checkbox {
+  width: 155px;
+  font-size: 24px;
+  line-height: 60px;
+  margin: initial;
+  padding: 0 0 0 50px;
+}
+
+.message .table-top .checkmark {
+  width: 40px;
+  height: 40px;
+  right: auto;
+  background: url("@/assets/img/launcher/mypage/mp_ico_check_square_n.png") no-repeat;
+}
+
+.message .table-top input:checked ~ .checkmark {
+  background: url("@/assets/img/launcher/mypage/mp_ico_check_square_s.png") no-repeat;
+  background-size: 100%;
+}
+
+.message .check-all {
+  width: 138px;
+  height: 60px;
+  position: relative;
+}
+
+.message .btn-delete {
+  margin-left: 30px;
+}
+
+.message .table-wrap .checkmark {
+  width: 48px;
+  height: 48px;
+  background: url("@/assets/img/launcher/mypage/mp_ico_check_non_n.png") no-repeat;
+}
+
+.message .table-wrap input:checked ~ .checkmark {
+  background: url("@/assets/img/launcher/mypage/mp_ico_check_non_s.png") no-repeat;
+  background-size: 100%;
+}
+
+.message .div,
+.message .check {
+  width: 100px;
+  position: relative;
+}
+
+.message .detail {
+  width: 630px;
+  max-width: 630px;
+}
+
+.message .name {
+  width: 190px;
+  color: #270a67;
+}
+
+.message .date {
+  width: 236px;
+}
+
+.new {
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  background: url("@/assets/img/launcher/mypage/mp_ico_new.png") no-repeat;
+}
+
+/* 공지사항 */
+.notice .table-top .dropdown {
+  width: 323px;
+}
+
+.notice .table-top .vs--searchable .vs__dropdown-toggle {
+  width: 323px;
+  max-width: 323px;
+}
+
+.notice .table-top .input-wrap input {
+  width: 810px;
+  height: 80px;
+  border: 3px solid #cccccc;
+  background-color: #ffffff;
+}
+
+.notice .table-top .title-wrap {
+  position: relative;
+}
+
+.notice .table-wrap .number {
+  width: 81px
+}
+
+.notice .table-wrap .div,
+.notice .table-wrap .date {
+  width: 200px;
+}
+
+.notice .table-wrap .detail {
+  max-width: 876px;
+}
+
+.notice .table-wrap td.div {
+  color: #270a67;
+  font-weight: 700;
+}
+
+.notice .table-wrap td.detail {
+  display: flex;
+  align-items: center;
+}
+
+.notice .table-wrap .detail a {
+  max-width:730px;
+  @extend .txt-ellipsis;
+}
+
+/* 자주 묻는 질문 */
+.notice.faq .table-wrap .detail,
+.notice.faq .table-wrap .detail a {
+  width: 1076px;
+  max-width: 1076px;
+}
+
+.notice.faq .table-wrap .div {
+  width: 200px;
+}
+
+/* 1:1 일대일 문의 */
+.notice.consult .table-top {
+  justify-content: flex-end;
+}
+
+.notice.consult .btn.inquire {
+  width: 267px;
+  height: 87px;
+  background: url("@/assets/img/launcher/mypage/mp_btn_inquire.png") no-repeat;
+}
+
+.notice.consult .table-wrap .status {
+  width: 181px;
+}
+
+.notice.consult .table-wrap .detail {
+  width: 776px;
+}
+
+.notice.consult .table-wrap .detail a {
+  width: 770px;
+  /*width: 776px;*/
+  /*max-width: 776px;*/
+  max-width: 770px;
+  display: inline-block;
+  @extend .txt-ellipsis;
+}
+
+.table-wrap img {
+  vertical-align: middle;
+}
+
+/* 출석부 달력 커스텀 */
+.mypage.attend-book {
+  margin: 0;
+  height: 2040px;
+}
+
+.mypage.attend-book .content {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.mypage.attend-book .schedule-area {
+  width: auto;
+  background-color: transparent;
+}
+
+.mypage.attend-book .learning-status .fc .fc-toolbar.fc-header-toolbar {
+  background: url("@/assets/img/launcher/mypage/mp_att_top_bg.png") no-repeat;
+}
+
+.mypage.attend-book .schedule-area .fc-toolbar-chunk:nth-child(2) {
+  background-color: #1157e6;
+  box-shadow: inset 0 -3px 8px 0 rgba(1, 64, 191, 0.52);
+}
+
+
+.mypage.attend-book .learning-status .schedule-bottom {
+  background: url("@/assets/img/launcher/mypage/mp_att_bottom_bg.png") no-repeat;
+}
+
+/* 이달의 출석정보 / 비타민정보 */
+.mypage.attend-book .attend-info {
+  width: 624px;
+  height: 240px;
+  padding: 50px 56px 38px 0;
+  position: absolute;
+  top: 135px;
+  background: url("@/assets/img/launcher/mypage/mp_att_itamin.png") no-repeat;
+}
+
+.attend-info ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.attend-info ul li {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 34px;
+  color: #5917eb;
+}
+
+.mypage.attend-book .attend-info .coin {
+  width: 48px;
+  height: 48px;
+  margin-left: 10px;
+  background: url("@/assets/img/launcher/mypage/mp_ico_vitamin_m.png") no-repeat;
+}
+
+/* 오늘날짜 컬러 수정 */
+.attend-book .fc .fc-daygrid-day.fc-day-today {
+  background-color: transparent !important;
+}
+
+/* 평일 배경 이미지 */
+.attend-book .fc .fc-daygrid-body-natural .fc-daygrid-day-events {
+  background: transparent center 70% url("@/assets/img/launcher/mypage/mp_img_notattendance.png") no-repeat;
+}
+/* 평일 배경 출석 이미지 */
+.attend-book .fc .fc-daygrid-body-natural .fc-daygrid-day-events.attend {
+  background: transparent center 70% url("@/assets/img/launcher/mypage/mp_img_attendance.png") no-repeat;
+}
+/* 주말 배경이미지 */
+.attend-book .fc-daygrid-day.fc-day-sat .fc-daygrid-day-events {
+  background: transparent center 70% url("@/assets/img/launcher/mypage/mp_ing_saturday.png") no-repeat;
+}
+
+.attend-book .fc-daygrid-day.fc-day-sun .fc-daygrid-day-events {
+  background: transparent center 70% url("@/assets/img/launcher/mypage/mp_ing_sunday.png") no-repeat;
+}
+
+/* 회원정보 수정 */
+.mypage .member-info {
+  padding: 60px 100px 60px 69px;
+  /*padding: 0;*/
+}
+
+.member-info .info-content {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+.member-info .title {
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32px;
+  color: #292929;
+}
+
+.member-info .title p {
+  display: flex;
+  align-items: center;
+}
+
+.member-info .title .info {
+  font-size: 22px;
+  line-height: 1.73;
+  color: #292929;
+}
+
+.member-info .title .info .essential {
+  height: 16px;
+  margin-right: 8px;
+}
+
+.member-info .form {
+  margin-top: 60px;
+}
+
+.member-info .form li {
+  height: fit-content;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 30px;
+}
+
+.member-info .form-title {
+  width: 342px;
+  padding-left: 42px;
+  box-sizing: border-box;
+}
+
+.member-info .form-content {
+  width: 975px;
+  display: flex;
+  align-items: center;
+}
+
+.member-info .input-wrap {
+  width: 100%;
+}
+
+.member-info .wrap {
+  position: relative;
+}
+
+.member-info .input {
+  border:3px solid #cccccc;
+  height: 100px;
+}
+
+.member-info .input-wrap ~ button {
+  margin-left: 30px;
+  min-width: 182px;
+}
+
+.member-info .input-wrap ~ button.btn-03-mp {
+  min-width: 260px;
+}
+
+/* 회원정보 수정, 비밀번호 확인 화면 */
+.member-info .certify.password {
+  width: 1009px;
+  height: 487px;
+  position: absolute;
+  /*top: 170px;*/
+  top: 8.85vw;
+  left: 7.81vw;
+  /*right: 0;*/
+  /*bottom: 30%;*/
+  /*left: 150px;*/
+  margin: auto;
+  background: url("@/assets/img/launcher/mypage/mp_myinfo_img.png");
+}
+
+.member-info .certify.password > div {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 40%;
+  right: 0;
+  left: 36.5%;
+  margin: auto;
+  display: block;
+}
+
+.member-info .certify.password .input-wrap input {
+  width: 640px;
+  margin: auto;
+}
+
+.member-info .certify.password .form-content {
+  width: 100%;
+  flex-direction: column;
+}
+
+.member-info .certify.password .form-content p.input-sub {
+  width: 100%;
+  text-align: left;
+}
+
+
+.member-info .form li.address {
+  align-items: baseline;
+}
+
+.member-info .address .form-content {
+  align-items: baseline;
+}
+
+.member-info .address input {
+  margin-bottom: 20px;
+  color: #292929;
+}
+
+.member-info .address input:last-child {
+  margin-bottom: 0;
+}
+
+.member-info .address input:nth-child(2),
+.member-info .address input:last-child {
+  width: 128.5%
+}
+
+/* 우편번호 찾기 팝업 관련 */
+#post-layer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 15;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+#post-layer.show {
+  display: block;
+}
+
+#post-layer > div {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+#post-layer iframe {
+  width: 800px !important;
+  height: 780px !important;
+  top: 15% !important;
+  right: 0;
+  bottom: 0;
+  left: 10% !important;
+  margin: auto !important;
+}
+
+#btnCloseLayer {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 21%;
+  right: 21.5%;
+  z-index: 20;
+  border-radius: 30px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.member-info .info-content.modify .form-content.radio {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.member-info .info-content.modify .radio-wrap {
+  height: 50px;
+  display: flex;
+}
+
+.member-info .info-content.modify .radio {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin-right: 30px;
+}
+
+.member-info .info-content.modify .radio-chcek {
+  bottom: 0;
+}
+
+.member-info .info-content.modify .btn-wrap {
+  margin: 60px auto 0;
+}

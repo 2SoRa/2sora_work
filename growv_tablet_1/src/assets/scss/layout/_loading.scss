@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+.reading-loading-wrap {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(206,238,245,0.8);
+  z-index: $depth-modal;
+}
+
+.reading-loading-list {
+  $charWidh : 162px;
+  width:$charWidh; height:$charWidh;
+  position:absolute;
+  top:50%; left:50%;
+  margin-left:-($charWidh/2); margin-top:-($charWidh/2);
+  border-radius:50%;
+  overflow:hidden;
+
+  &:before {
+    display:block;
+    content:'';
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0; right:0; bottom:0;
+    background-color:#5916ea;
+  }
+
+  li {
+    position:absolute;
+    width:100%; height:100%;
+    opacity:0;
+    transform:translate3d(0, 150%, 0);
+  }
+  @for $i from 1 through 5 {
+    li:nth-child(#{$i}) {
+      $du : 2s;
+      $delay : ($du/4) * ($i - 1);
+      animation:charFadeLoopAni $du $delay forwards infinite ease-in;
+    }
+  }
+
+  @keyframes charFadeLoopAni {
+    0% {opacity:0}
+    2% {opacity:0; transform:translate3d(0, 100%, 0);}
+    10% {opacity:1; transform:translate3d(0, 0, 0);}
+    30% {opacity:1; transform:translate3d(0, 0, 0);}
+    35% {opacity:0; transform:translate3d(0, -100%, 0);}
+    50% {opacity:0;}
+    60% {opacity:0;}
+    100% {opacity:0;}
+  }
+}

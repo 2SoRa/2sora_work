@@ -1,0 +1,247 @@
+/* 시간표 등록 페이지 */
+.schedule-reg .gnb {
+  background: url("@/assets/img/launcher/schedule/ttable_sub_navi_bg.png") no-repeat;
+}
+
+.schedule-reg .gnb .gnb-title {
+  flex: none;
+  margin: 0 auto;
+}
+
+.schedule-reg-area {
+  background-image: url("@/assets/img/launcher/schedule/schedule-reg/ttable_top_img.webp"), url("@/assets/img/launcher/schedule/schedule-reg/ttable_cont_bg.png");
+  background-color: transparent;
+  background-repeat: no-repeat, repeat-y;
+  background-position: 0 var(--gnb-height), 0 bottom;
+  position: relative;
+}
+
+.schedule-reg-area .schedule-select {
+  width: 60%;
+  padding: 372px 0 0 110px;
+}
+
+.study-list-wrap {
+  width: 100%;
+  height: fit-content;
+  background: url("@/assets/img/launcher/schedule/schedule-reg/ttable_cont_bg.png") repeat-y;
+}
+
+.study-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 96%;
+  margin: 46px auto 0;
+}
+
+.study-list .study-item {
+  width: 584px;
+  height: 418px;
+  background: center bottom url("@/assets/img/launcher/schedule/schedule-reg/ttable_selbox_bg.webp") no-repeat;
+  position: relative;
+  background-size: 100%;
+  margin: 0 28px 40px 0;
+}
+
+.study-list .study-item.already-plan {
+  background: center bottom url("@/assets/img/launcher/schedule/schedule-reg/ttable_selbox_bg_s.webp") no-repeat;
+}
+
+.study-list .study-item:last-child {
+  margin-right: 0;
+}
+
+.study-item .btn-curri {
+  /*width: 160px;*/
+  /*height: 136px;*/
+  width: 110px;
+  height: 84px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /*background: url("@/assets/img/launcher/schedule/schedule-reg/ttable_btn_curri.png") no-repeat;*/
+  background: url("@/assets/img/launcher/schedule/schedule-reg/ttable_btn_curri.webp") no-repeat;
+}
+
+.study-item .step-title {
+  width: 320px;
+  height: 75px;
+  display: flex;
+  margin: auto;
+  font-size: 30px;
+  color: #fce9a8;
+  line-height: 36px;
+  align-items: center;
+  justify-content: center;
+  background-size: 100% 100%;
+  background: url("@/assets/img/launcher/schedule/schedule-reg/ttable_selbox_title.webp") no-repeat;
+}
+
+.study-item .study-item-content {
+  height: 178px;
+  color: #0f0f0f;
+  font-size: 32px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.study-item .lecture-title {
+  height: 46px;
+  font-size: 36px;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.study-item .lecture-content {
+  height: 39px;
+  font-weight: 500;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.study-item .level {
+  height: 39px;
+  color: #a14ec1;
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 24px;
+}
+
+.study-item-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.study-item-btn button {
+  color: #ffffff;
+  font-size: 29px;
+  margin-right: 30px;
+}
+
+.study-item-btn button:last-child {
+  margin-right: 0;
+}
+
+.study-item-btn .modi-btn-wrap,
+.study-item.already-plan .study-item-btn .plan-reg-button {
+  display: none;
+}
+
+.study-item.already-plan .study-item-btn .modi-btn-wrap {
+  display: flex;
+}
+
+/* 셀렉박스 영역 */
+.schedule-reg .vs--searchable .vs__dropdown-toggle {
+  max-width: 536px;
+  height: 104px;
+  background-color: #ffffff;
+  padding: 33px 45px;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), inset -1px -3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.schedule-reg .vs--searchable.vs--open .vs__dropdown-toggle {
+  border-radius: 50px 50px 0 0;
+  box-shadow: none;
+}
+
+/* 셀렉박스 초기화 */
+.schedule-reg .vs__clear {
+  width: inherit;
+  height: inherit;
+  margin: -1px 8px 0 0;
+}
+
+/* 셀렉박스 옵션 묶음 */
+.schedule-reg .vs__dropdown-menu {
+  max-width: 536px;
+  /*max-height: 200px;*/
+  border-radius: 0 0 50px 50px;
+  padding: 10px 30px 38px;
+  box-sizing: border-box;
+  border: none;
+}
+
+/* 셀렉박스 옵션 항목 */
+.schedule-reg .vs__dropdown-option {
+  padding: 5px 20px;
+  margin: 0 0 24px 0;
+  font-size: 34px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+.schedule-reg .vs__dropdown-option::after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  background: none;
+}
+
+.schedule-reg .vs__dropdown-option--highlight {
+  background-color: #f9e3fd;
+  color: #763df4;
+}
+
+/* 선택된 값 */
+.schedule-reg .vs__selected-options {
+  color: #292929;
+  margin-top: -3px;
+  border-radius: 8px;
+}
+
+.schedule-reg .vs__selected {
+  align-items: baseline;
+  line-height: initial;
+  margin: 0;
+  padding: 0 3px;
+  white-space: nowrap;
+  font-size: 34px !important;
+  color: #292929;
+}
+
+.schedule-reg .vs--single.vs--loading .vs__selected,
+.schedule-reg .vs--single.vs--open .vs__selected {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.schedule-reg .vs__search,
+.schedule-reg .vs__search:focus,
+.schedule-reg .vs__search::placeholder {
+  /*height: 48px !important;*/
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  line-height: initial;
+  font-size: 34px;
+  background-color: transparent !important;
+}
+
+.schedule-reg .vs__search:focus {
+  /*color: transparent;*/
+  text-shadow: 0 0 0 #ffffff;
+}
+
+.schedule-reg .vs__actions {
+  padding: 0;
+}
+
+.schedule-reg .vs__selected ~ .vs__search {
+  padding: 0;
+  height: 0;
+}
+
+.schedule-reg .vs__clear {
+  display: none;
+}

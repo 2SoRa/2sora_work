@@ -1,0 +1,45 @@
+.schedule-choice {
+  height: 911px;
+}
+
+.schedule-choice .table-wrap {
+  height: 547px;
+  padding-right: 20px;
+  overflow-y: auto;
+}
+
+.schedule-choice tr td {
+  height: 80px;
+}
+
+.schedule-choice .checkmark {
+  width: 48px;
+  height: 48px;
+}
+
+.schedule-choice .name {
+  width: 600px;
+  max-width: 600px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.schedule-choice .btn span {
+  color: inherit;
+  margin-left: 10px;
+}
+
+/* 수정/ 등록에 따른 구성 보이기 숨기기 */
+.schedule-choice .title.reg,
+.schedule-choice .btn-wrap.reg,
+.schedule-choice.reg .title,
+.schedule-choice.reg .btn-wrap {
+  display: none;
+}
+
+.schedule-choice.reg .title.reg,
+.schedule-choice.reg .btn-wrap.reg {
+  display: flex;
+}
+

@@ -1,0 +1,112 @@
+.superbox-wrap{position:relative;min-height:100vh; background:url('@/assets/img/launcher/superbox/bg_superbox.png') 0 0 repeat;background-size:4.6875vw .2604vw}
+header{position:fixed;top:0;left:0;right:0;z-index:1; box-shadow:0 10px 10px 0 rgba(0, 0, 0, 0.08);background-color:#fccc02;}
+header .btn-close{position:absolute;top:1.25vw;right:2.0833vw; width:4.2709vw;height:4.2709vw; text-indent:-9999px; background:url('@/assets/img/launcher/superbox/sup_btn_close_g.png') 0 0 no-repeat;background-size:100%;}
+.list .noti{margin:1.0416vw 2.0833vw .2604vw 0; text-align:right;}
+/* main */
+.main.superbox-wrap{padding-top:16.0417vw;}
+.main header::before{content:'';position:absolute;top:0;left:0;z-index:-1; width:29.6875vw;height:18.5416vw; background:url('@/assets/img/launcher/superbox/sup_main_top_img_l.png') 0 0 no-repeat;background-size:100%;animation:bgtop 2s ease-in-out infinite alternate}
+.main header::after{content:'';position:absolute;top:0;right:0;z-index:-1; width:23.5416vw;height:9.375vw; background:url('@/assets/img/launcher/superbox/sup_main_top_img_r.png') 0 0 no-repeat;background-size:100%}
+@keyframes bgtop{
+  0%{top:-20px;}
+  100%{top:0;}
+}
+.main header{height:16.0417vw;padding:3.02vw 0 0;}
+.main header h1 >img{width:31.0417vw;}
+.main header h1 >p{margin-top:.7292vw; font-size:1.5625vw;color:#be6600;}
+.main header .btn-superbox{position:absolute;top:1.25vw;right:8.9583vw; width:8.0208vw;height:8.125vw; text-indent:-9999px; background:url('@/assets/img/launcher/superbox/sup_main_btnv.png') 0 0 no-repeat;background-size:100%;}
+header nav >button{width:8.3333vw;height:4.6875vw;  text-indent:-9999px;}
+header nav >button +button{margin-left:.4687vw;}
+header nav >button:nth-child(1){background:url('@/assets/img/launcher/superbox/sup_selbtn00_n.png') 0 0 no-repeat;background-size:100% !important;}
+header nav >button:nth-child(2){background:url('@/assets/img/launcher/superbox/sup_selbtn01_n.png') 0 0 no-repeat;background-size:100% !important;}
+header nav >button:nth-child(3){background:url('@/assets/img/launcher/superbox/sup_selbtn02_n.png') 0 0 no-repeat;background-size:100% !important;}
+header nav >button:nth-child(4){background:url('@/assets/img/launcher/superbox/sup_selbtn03_n.png') 0 0 no-repeat;background-size:100% !important;}
+header nav >button:nth-child(5){background:url('@/assets/img/launcher/superbox/sup_selbtn04_n.png') 0 0 no-repeat;background-size:100% !important;}
+header nav >button:nth-child(6){background:url('@/assets/img/launcher/superbox/sup_selbtn05_n.png') 0 0 no-repeat;background-size:100% !important;}
+header nav >button:nth-child(7){background:url('@/assets/img/launcher/superbox/sup_selbtn06_n.png') 0 0 no-repeat;background-size:100% !important;}
+header nav >button.active:nth-child(1){background:url('@/assets/img/launcher/superbox/sup_selbtn00_s.png') 0 0 no-repeat}
+header nav >button.active:nth-child(2){background:url('@/assets/img/launcher/superbox/sup_selbtn01_s.png') 0 0 no-repeat}
+header nav >button.active:nth-child(3){background:url('@/assets/img/launcher/superbox/sup_selbtn02_s.png') 0 0 no-repeat}
+header nav >button.active:nth-child(4){background:url('@/assets/img/launcher/superbox/sup_selbtn03_s.png') 0 0 no-repeat}
+header nav >button.active:nth-child(5){background:url('@/assets/img/launcher/superbox/sup_selbtn04_s.png') 0 0 no-repeat}
+header nav >button.active:nth-child(6){background:url('@/assets/img/launcher/superbox/sup_selbtn05_s.png') 0 0 no-repeat}
+header nav >button.active:nth-child(7){background:url('@/assets/img/launcher/superbox/sup_selbtn06_s.png') 0 0 no-repeat}
+header .control{margin-top:1.0416vw; margin-left: -3.52vw;}
+header .control .v-select{position:absolute;top:11.40625vw;right:2.0833vw; width:17.56vw;height:3.125vw;}
+header .control .vs__dropdown-toggle{height:auto;padding:.4687vw 2.0833vw .3645vw; border:0;border-radius:1.5625vw;box-shadow:inset 0 -5px 2px 0 rgba(4, 62, 142, 0.54);background-color:#007fff;}
+header .control .vs__selected-options *{font-size:1.4583vw;color:#fff;}
+header .control .vs__selected-options >input,
+header .control .vs__selected-options >input::placeholder,
+header .control .vs__selected-options >input:focus{font-size:1.4583vw;line-height:1.2;text-shadow:none;}
+header .control .vs__open-indicator >img{width:2.0833vw;height:2.0833vw;}
+header .control .vs--open .vs__selected-options .vs__selected{font-size:1.4583vw;}
+header .control .vs--open .vs__dropdown-toggle{border-radius:1.5625vw 1.5625vw 0 0}
+header .control .vs--open .vs__dropdown-menu{padding:0 .8333vw .8333vw; border:0;border-radius:0 0 1.5625vw 1.5625vw;box-shadow:inset 0 -5px 2px 0 rgba(4, 62, 142, 0.54);background-color:#007fff; }
+header .control .vs--open .vs__dropdown-menu li{font-size:1.4583vw;color:#3b65b2; border-color:#2ec0d3; background-color:#fff;}
+header .control .vs--open .vs__dropdown-menu li::before{content:'';display:inline-block; width:1.6667vw;height:1.6667vw;margin:0 .4167vw 0 .9375vw;  vertical-align:middle;background:url('@/assets/img/launcher/superbox/sup_drdown_ico_bu.png') 0 0 no-repeat;background-size:100%;}
+header .control .vs--open .vs__dropdown-menu li::after{left:10%;width:80%; background-image:url('@/assets/img/launcher/superbox/sup_drdown_line.png');background-size:.8334vw .2083vw;}
+header .control .vs--open .vs__dropdown-menu li:first-child{border-radius:.8333vw .8333vw 0 0}
+header .control .vs--open .vs__dropdown-menu li:last-child{border-radius:0 0 .8333vw .8333vw}
+header .control .vs--open .vs__dropdown-menu li:last-child::after{display:none;}
+.main .list .noti{font-size:1.1458vw;color:#009a91;}
+.main .list ul{display:flex;flex-wrap:wrap; margin:0 6.875vw;}
+.main .list ul li{margin-left:3.75vw;}
+.main .list ul li:nth-child(4n+1){margin-left:0;}
+.main .list ul li a{display:block;position:relative;}
+.main .list ul li a >img{width:18.75vw;height:21.9792vw;}
+.main .list ul li a >span{position:absolute;top:3.2291vw;left:13.802vw; width:3.3334vw;height:2.0834vw; text-indent:-9999px; background-size:100% !important;}
+.main .list ul li a >span:nth-child(2){top:5.5208vw;}
+.main .list ul li a >span.tag-new{background:url('@/assets/img/launcher/superbox/sup_ico_new.png') 0 0 no-repeat;}
+.main .list ul li a >span.tag-reading{background:url('@/assets/img/launcher/superbox/sup_ico_subscri.png') 0 0 no-repeat;}
+/* sub */
+.sub.superbox-wrap{padding-top:8.5417vw;}
+.sub header{height:8.5417vw;padding:1.875vw 0 0;}
+.sub header h1{width:60.9375vw;margin:0 auto 0 15.4167vw;overflow:hidden;}
+.sub header h1 >em{display:inline-block;margin-top:3px;font-size:2.3958vw;color:#1824c8;font-style:normal;white-space:nowrap;}
+.sub header h1 >em img{width:3.75vw;height:1.979vw;margin-right:.9375vw; vertical-align:middle;}
+.sub header h1 >p{margin-top:1.1458vw; font-size:1.3542vw;color:#7d3a01;font-weight:500;}
+.sub header .btn-home{position:absolute;top:1.25vw;left:2.0833vw; width:3.0208vw;height:5vw; text-indent:-9999px; background:url('@/assets/img/launcher/superbox/cmm_gnb_ico_before_01.png') 0 0 no-repeat;background-size:100%;}
+.sub header .curator{position:absolute;top:1.25vw;left:5.355vw; min-width:9.5834vw;padding-top:5.3645vw; font-size:1.09375vw;color:#7343de; background:url('@/assets/img/launcher/superbox/sup_ico_curator.png') center 0 no-repeat;background-size:5.4167vw 4.8958vw;}
+.sub header .btn-subscribe{position:absolute;top:1.4583vw;right:7.6042vw; width:14.6875vw;height:5.46875vw; text-indent:-9999px; background:url('@/assets/img/launcher/superbox/sup_sb_btn_subscribe.png') 0 0 no-repeat;background-size:100%;}
+.sub .list .noti >img{width:7.1875vw;height:2.96875vw;}
+.sub .list ul{display:flex;flex-wrap:wrap; margin:0 2.0833vw;padding:0 3.90625vw; background:url('@/assets/img/launcher/superbox/sup_thumb_shelf.png') 0 0 repeat;background-size:95.8334vw 24.375vw;}
+.sub .list ul li{position:relative; padding:2.6042vw .5208vw 5.3125vw 2.0834vw; margin-left:1.5625vw;}
+.sub .list ul li:nth-child(5n+1){margin-left:0;}
+.sub .list ul li >div{display:flex;align-items:flex-end;justify-content:center; width:13.75vw;height:16.4583vw;padding-bottom:.8334vw; background:url('@/assets/img/launcher/superbox/sup_thumb_book_shadow.png') 0 100% no-repeat;background-size:100% auto;}
+.sub .list ul li >div >img{max-width:13.75vw;max-height:15.625vw;}
+.sub .list ul li >div .motion{position:absolute;top:16.25vw;left:1.8229vw; width:2.2917vw;height:2.6042vw; text-indent:-9999px; background:url('@/assets/img/launcher/superbox/sup_ico_mbook.png') 0 0 repeat;background-size:100%;}
+.sub .list ul li >div .check-read{position:absolute;top:9.0625vw;left:6.6145vw; width:4.6875vw;height:4.6875vw; text-indent:-9999px; background:url('@/assets/img/launcher/superbox/sup_ico_reading_ok.png') 0 0 repeat;background-size:100%;}
+.sub .list ul li .checkbox{top:2.6042vw;left:2.0834vw;bottom:2.5vw;right:.5208vw; padding:17.1875vw 0 0 0;}
+.sub .list ul li .checkbox p{padding:0 1.5625vw 0 3.125vw; font-size:1.3542vw;line-height:2.3958vw;color:#fff; background:url('@/assets/img/launcher/superbox/sup_ico_checkbox_n.png') 0 0 no-repeat;background-size:2.0833vw;}
+.sub .list ul li .checkbox input:checked +p{background-image:url('@/assets/img/launcher/superbox/sup_ico_checkbox_s.png');}
+
+/* 이연재: 정보 팝업(1일 1권 슈퍼박스) */
+.modal-full.superbox-pop {background:#fafcca;}
+.superbox-pop .title { background: url("@/assets/img/launcher/superbox/sup_pop_top_bg.png") no-repeat; margin:0; position: relative;}
+
+/* 이연재: 구독하기 팝업 */
+.superbox-pop .study-choice {display:block;}
+.superbox-pop.modal-reg-modi .schedule-info > div {height:unset;border-bottom:none;}
+.superbox-pop.modal-reg-modi .schedule-info .schedule-list-wrap {height:unset;}
+.superbox-pop.modal-reg-modi .schedule-info .schedule-list-wrap .study-info {margin-bottom: 0;}
+.superbox-pop .week-plan {padding: 0;}
+.superbox-pop.modal-reg-modi.choice .study-choice {justify-content: center;}
+
+/* 이연재: sub */
+.sub header .btn-subscribe.ing {
+  background: url('@/assets/img/launcher/superbox/sup_sb_btn_subscribing.png') 0 0 no-repeat; background-size: 100%;
+  pointer-events: none;
+}
+
+/* 이연재: v-select */
+header .control .vs--single.vs--open .vs__selected {opacity: 1;}
+
+/* 슈퍼박스 팝업 - 슈퍼박스란? */
+.modal-full.superbox-pop {
+  overflow: hidden;
+}
+.modal-full.superbox-pop h1.title {
+  margin: 0 auto;
+}
+.superbox-pop .info-sup img {
+  width: 100%;
+}

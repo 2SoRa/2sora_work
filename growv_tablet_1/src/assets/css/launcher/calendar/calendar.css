@@ -1,0 +1,533 @@
+/*.status .gnb .gnb-title {*/
+/*  margin: 0 18% 0 auto;*/
+/*}*/
+
+/* 태블릿 사이즈 지정 */
+.schedule-area {
+  width: 1920px;
+  height: auto;
+  min-height: 1200px;
+  box-shadow: none;
+  padding: var(--gnb-height) 0 40px;
+  background-color: rgba(251,252,207,1);
+}
+
+/* 캘린더 사이즈 맞춤 */
+.schedule-area .calendar-area {
+  width: var(--schedule-width);
+  margin: auto;
+  border-radius: 60px 60px 0 0;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.schedule-area .fc .fc-scrollgrid {
+  border: none;
+}
+
+.schedule-area .fc .fc-scrollgrid-section table {
+  margin-bottom: 21px;
+}
+
+.schedule-area .fc .fc-scrollgrid-section .fc-scrollgrid-sync-table {
+  border-bottom: 1px solid #dddddd;
+}
+
+/* 달력 상단 */
+/* 학습현황 */
+.study-plan .fc-toolbar-chunk {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 월 이동 */
+.schedule-area .fc-toolbar-chunk:nth-child(2) {
+  width: 464px;
+  height: 96px;
+  object-fit: contain;
+  border-radius: 48px;
+  box-shadow: inset 0 -3px 8px 0 rgba(64, 22, 157, 0.52);
+  background-color: #672ee6;
+  color: #ffffff;
+}
+
+.study-plan .fc-toolbar-chunk:nth-child(2) {
+  margin: 0 144px 60px 64px;
+}
+
+.study-plan .weekly {
+  /*width: 464px;*/
+  width: fit-content;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+  top: 170px;
+  /*right: 0;*/
+  right: 4%;
+  left: 4.3%;
+  margin: auto;
+  font-size: 32px;
+  color: #3e10a7;
+}
+
+.study-plan .progress-area {
+  width: 328px;
+  height: 40px;
+  position: absolute;
+  top: 130px;
+  left: 13%;
+  display: flex;
+  align-items: center;
+}
+
+.study-plan .progress-area #progress,
+.study-plan .progress-area #progress::-webkit-progress-bar,
+.study-plan .progress-area #progressL::-webkit-progress-inner-element {
+  width: 238px;
+  height: 40px;
+}
+
+.study-plan .progress-area #progress {
+  appearance: none;
+}
+
+.study-plan .progress-area #progress::-webkit-progress-bar {
+  padding: 4px;
+  background: url("@/assets/img/launcher/schedule/ttable_month_graph.png") no-repeat;
+}
+
+.study-plan .progress-area #progress::-webkit-progress-value {
+  background-color: #ffb91d;
+  border-radius: 16px 0 0 16px;
+}
+
+.study-plan.max .progress-area #progress::-webkit-progress-value {
+  border-radius: 16px 16px;
+}
+
+.study-plan .progress-area p {
+  font-size: 27px;
+  color: #741498;
+  margin-left: 16px;
+}
+
+.study-plan .progress-area p span {
+  color: #fed41c;
+}
+
+/* 학습현황 */
+.learning-status .fc-toolbar-chunk:nth-child(2) {
+  margin: auto;
+}
+
+/* 시간표 변경, 시간표 관리 */
+.study-plan .fc-toolbar-chunk:nth-child(3) {
+  flex-direction: column;
+}
+
+/* 월 */
+.schedule-area .fc .fc-toolbar-title {
+  height: 40px;
+  font-size: 42px;
+  margin: 0 37px;
+  cursor: default;
+}
+
+/* 전체 버튼 설정 */
+.study-plan .fc .fc-button-primary,
+.study-plan .fc .fc-button-primary:hover,
+.study-plan .fc .fc-button-primary:not(:disabled):active,
+.study-plan .fc .fc-button-primary:focus,
+.study-plan .fc .fc-button-primary:not(:disabled):active:focus,
+.study-plan .fc .fc-button-primary:not(:disabled).fc-button-active:focus,
+.study-plan .fc .fc-button:not(:disabled) {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  margin-left: 0;
+}
+
+/* 전 월 버튼 */
+.schedule-area .fc .fc-prev-button,
+.schedule-area .fc .fc-prev-button:hover,
+.schedule-area .fc .fc-prev-button-primary:not(:disabled):active,
+.schedule-area .fc .fc-prev-button:focus {
+  box-shadow: none;
+  background: transparent url("@/assets/img/launcher/common/ttable_month_black_arr_l.webp");
+  background-size: 100% 100%;
+  margin: 0;
+}
+.schedule-area .fc .fc-prev-button.disable {
+  pointer-events: none;
+  background: transparent url("@/assets/img/launcher/common/ttable_month_black_arr_l_d.webp");
+  background-size: 100% 100%;
+}
+
+/* 다음 월 버튼 */
+.schedule-area .fc .fc-next-button,
+.schedule-area .fc .fc-next-button:hover,
+.schedule-area .fc .fc-next-button-primary:not(:disabled):active,
+.schedule-area .fc .fc-next-button:focus {
+  box-shadow: none;
+  background: transparent url("@/assets/img/launcher/common/ttable_month_black_arr_r.webp");
+  background-size: 100% 100%;
+}
+
+.schedule-area .fc .fc-next-button.disable {
+  pointer-events: none;
+  background: transparent url("@/assets/img/launcher/common/ttable_month_black_arr_r_d.webp");
+  background-size: 100% 100%;
+}
+
+/* 기존 화살표 숨김 */
+.schedule-area .fc-icon-chevron-left:before,
+.schedule-area .fc-icon-chevron-right:before {
+  opacity: 0;
+}
+
+/* 커스텀 버튼 */
+/* 학습 현황 */
+.study-plan .fc .fc-processSchedule-button,
+.study-plan .fc .fc-processSchedule-button:hover,
+.study-plan .fc .fc-processSchedule-button:not(:disabled):active,
+.study-plan .fc .fc-processSchedule-button:focus {
+  width: 624px;
+  height: 240px;
+  background: url("@/assets/img/launcher/schedule/ttable_month_learning.webp") no-repeat;
+}
+
+/* 시간표/상담시간 변경요청 버튼 */
+.study-plan .fc .fc-modiSchedule-button,
+.study-plan .fc .fc-modiSchedule-button:hover,
+.study-plan .fc .fc-modiSchedule-button:not(:disabled):active,
+.study-plan .fc .fc-modiSchedule-button:focus {
+  width: 544px;
+  height: 128px;
+  background: left center url("@/assets/img/launcher/schedule/ttable_btn_changerequest.png");
+}
+
+/* 시간표 관리 버튼 비노출 */
+.study-plan .fc .fc-manageSchedule-button,
+.study-plan .fc .fc-manageSchedule-button:hover,
+.study-plan .fc .fc-manageSchedule-button:not(:disabled):active,
+.study-plan .fc .fc-manageSchedule-button:focus {
+  /*visibility: hidden; !* TODO: 학습계획 오픈시 제거 *!*/
+  width: 544px;
+  height: 112px;
+  background: left center url("@/assets/img/launcher/schedule/ttable_btn_management.webp");
+}
+
+/* 시간표 관리 종료 버튼 */
+.study-plan .fc .fc-manageSchedule-button.end-schedule,
+.study-plan .fc .fc-manageSchedule-button.end-schedule:hover,
+.study-plan .fc .fc-manageSchedule-button.end-schedule:not(:disabled):active,
+.study-plan .fc .fc-manageSchedule-button.end-schedule:focus {
+  background: left center url("@/assets/img/launcher/schedule/ttable_btn_end.webp");
+}
+
+/* 달력 한칸 사이즈 */
+.schedule-area .fc .fc-daygrid-body-natural .fc-daygrid-day-events {
+  max-height: 216px;
+  height: 216px;
+  /*padding: 30px 10px 19px;*/
+  padding: 12px 10px 19px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+/* 달력 이벤트(학습 계획) 내용 */
+/* 기본 - 미학습 */
+.schedule-area .fc-h-event {
+  background: none;
+  border: none;
+  font-size: 24px;
+}
+
+/* 달력 이벤트(학습 계획) 줄바꿈 설정 */
+.schedule-area .fc-daygrid-event {
+  white-space: break-spaces;
+}
+
+/* 상단 달력 헤더 */
+.study-plan .fc .fc-toolbar.fc-header-toolbar {
+  width: var(--schedule-width);
+  height: 240px;
+  background: transparent url("@/assets/img/launcher/schedule/ttable_top_bg.png") no-repeat;
+}
+
+.learning-status .fc .fc-toolbar.fc-header-toolbar {
+  width: var(--schedule-width);
+  height: 240px;
+  background: transparent url("@/assets/img/launcher/schedule/ttable_top_study_bg.png") no-repeat;
+}
+
+.schedule.status .fc-daygrid-day.fc-day-sat .fc-daygrid-day-events,
+.schedule.status .fc-daygrid-day.fc-day-sun .fc-daygrid-day-events {
+  background: none !important;
+}
+
+.schedule-area .fc .fc-view-harness {
+  width: 1793px;
+  margin: auto;
+}
+
+.schedule-area thead tr {
+  border-bottom: none;
+}
+
+.schedule-area thead th {
+  background-color: transparent;
+}
+
+/* 달력 스크롤 구간 */
+/*.schedule-area .fc .fc-scroller-harness {*/
+/*  max-height: 600px;*/
+/*  overflow-y: auto;*/
+/*}*/
+
+/* 일 - 상세보기 - 이벤트카운트 */
+/* 날짜 표시 상단 */
+.schedule-area .fc .fc-daygrid-day-top {
+  height: 40px;
+  font-size: 24px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #ebebeb;
+}
+
+/* 이벤트카운트 */
+.schedule-area .fc-daygrid-day-counseling {
+  position: relative;
+}
+
+.schedule-area .fc-daygrid-day-counseling.counsel {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent url("@/assets/img/launcher/schedule/ttable_ico_counseling.png") no-repeat;
+  background-size: contain;
+}
+
+/* 과목 색깔 표시 */
+/*.schedule-area .fc-event-title.fc-sticky::before {*/
+/*  content: '\25CF';*/
+/*  display: inline-block;*/
+/*  font-size: 12px;*/
+/*  margin-right: 10px;*/
+/*  vertical-align: middle;*/
+/*  color: inherit;*/
+/*}*/
+
+.schedule-area .fc-event-title.fc-sticky {
+  max-width: 228px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  display: inline-block;
+  align-items: center;
+  padding: 0.52vw 0.73vw;
+}
+
+.schedule-area .fc-event-title {
+  line-height: normal;
+  font-size: 24px;
+}
+
+.schedule-area .fc-h-event {
+  color: #a7a7a7;
+}
+
+.schedule-area .fc-h-event.study {
+  max-height: 2.34vw;
+  background-color: #ffeeb5;
+  border-radius: 1.17vw;
+  box-sizing: border-box;
+}
+.schedule-area .fc-h-event.study.korean {
+  color: #086df7;
+}
+
+.schedule-area .fc-h-event.study.math {
+  color: #fc840d;
+}
+
+.schedule-area .fc-h-event.study.english {
+  color: #882de5;
+}
+
+.schedule-area .fc-h-event.study.superbox {
+  color: #009f9f;
+}
+
+.schedule-area .fc-h-event.study.special {
+  color: #ff3b75;
+}
+
+.schedule-area .fc-h-event.korean *,
+.schedule-area .fc-h-event.math *,
+.schedule-area .fc-h-event.english *,
+.schedule-area .fc-h-event.superbox *,
+.schedule-area .fc-h-event.special *,
+.schedule-area .fc-h-event.other * {
+  color: inherit;
+}
+
+/* 오늘날짜 컬러 변경*/
+.schedule-area .fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-top {
+  background-color: #06f7ef;
+}
+
+.schedule-area .fc .fc-daygrid-day.fc-day-today {
+  background-color: #cbfffd;
+}
+.schedule-area .fc-day-today .fc-h-event.study {
+  background-color: #9df8f5;
+}
+
+  /* 요일 배경이미지 */
+.schedule-area .fc-theme-standard th {
+  border: none;
+}
+
+.schedule-area .fc th .fc-scrollgrid-sync-inner {
+  width: 98%;
+  height: 80px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  background: center center url("@/assets/img/launcher/schedule/ttable_daybox.png") no-repeat;
+  position: sticky;
+}
+
+.schedule-area .fc .fc-col-header-cell-cushion {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  color: #865526;
+  cursor: default;
+}
+
+  /* 주말 배경이미지 */
+.schedule .fc-daygrid-day.fc-day-sat .fc-daygrid-day-events,
+.schedule .fc-daygrid-day.fc-day-sun .fc-daygrid-day-events {
+  background: center center url("@/assets/img/launcher/schedule/ttable_weekend_default@3x.webp") no-repeat;
+  background-size: 184px;
+}
+
+/* 일요일 컬러 다르게 */
+.schedule-area th.fc-col-header-cell.fc-day.fc-day-sun a,
+.schedule-area .fc-daygrid-day.fc-day-sun .fc-daygrid-day-number{
+  color: #fb1d00;
+}
+
+.schedule-area .fc-day-other .fc-daygrid-day-events,
+.schedule-area .fc-day-other.fc-daygrid-day.fc-day-sat .fc-daygrid-day-events,
+.schedule-area .fc-day-other.fc-daygrid-day.fc-day-sun .fc-daygrid-day-events {
+  visibility: hidden !important;
+  background: none !important;
+  pointer-events: none;
+}
+
+.schedule-area .fc-day-other .fc-daygrid-day-top .fc-daygrid-day-number {
+  display: none;
+}
+
+
+/* 일정 더보기 배경 */
+.schedule-area .fc .fc-daygrid-more-link {
+  min-width: 64px;
+  height: 32px;
+  font-size: 22px;
+  color: #ffffff;
+  display: inline-block;
+  /*margin: 10px 0 0 0.94vw;*/
+  margin: 6px 0 0 0.94vw;
+  padding: 0 20px 0 36px;
+  background: #b9b9b9 url("@/assets/img/launcher/schedule/ttable_ico_plus_front.webp") no-repeat;
+  border-radius: 6px 18px 18px 18px;
+}
+
+/* 달력 하단 배경 */
+.schedule-area .schedule-bottom {
+  width: var(--schedule-width);
+  height: 64px;
+  margin: auto;
+  border-radius: 0 0 60px 60px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.study-plan .schedule-bottom {
+  background: transparent url("@/assets/img/launcher/schedule/ttable_bottom_bg.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.learning-status .schedule-bottom {
+  background: transparent url("@/assets/img/launcher/schedule/ttablestudy_bottom_bg.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.schedule-area .fc-theme-standard tbody tr:last-child {
+  border-bottom: 1px solid #dddddd;
+}
+
+.schedule-area .fc-theme-standard td:last-child {
+  border-right: none;
+}
+
+
+.schedule-area .fc-theme-standard .fc-popover {
+  width: 500px;
+  height: auto;
+  background: url("@/assets/img/launcher/common/timetable_pop_box_03.png") no-repeat;
+  background-size: 100% 100%;
+  border: none;
+  box-shadow: none;
+  margin-left: -30px;
+  margin-top: -30px;
+  padding: 20px;
+}
+
+.schedule-area .fc-theme-standard .fc-popover-header {
+  background-color: transparent;
+  padding: 20px 30px;
+  font-size: 22px;
+}
+
+/* 스케쥴 날짜영역 */
+.schedule-area .fc-daygrid-day-events:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: transparent;
+}
+/* 스케쥴 날짜영역 안 더보기 버튼 */
+.schedule-area .fc .fc-daygrid-more-link {
+  z-index: 20;
+}
+
+/* 달력 더보기 클릭시 나오는 영역 스크롤 추가 */
+.fc .fc-more-popover .fc-popover-body {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+/* 학습현황에서는 달력 더보기 클릭해도 안나타나게 처리 */
+.status .schedule-area .fc-theme-standard .fc-popover {
+  display: none;
+}
+
+.fc-daygrid-day-events {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

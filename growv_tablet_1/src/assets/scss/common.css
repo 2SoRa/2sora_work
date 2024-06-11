@@ -1,0 +1,1006 @@
+@charset "UTF-8";
+/* common */
+@font-face {
+  font-family: sdGothicNR;
+  src: url("@/assets/font/SDGothicNeoRoundTTF-fSb.woff") format("woff"), url("@/assets/font/SDGothicNeoRoundTTF-fSb.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: sdGothicNR;
+  src: url("@/assets/font/SDGothicNeoRoundTTF-eMd.woff") format("woff"), url("@/assets/font/SDGothicNeoRoundTTF-eMd.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: sdGothicNR;
+  src: url("@/assets/font/SDGothicNeoRoundTTF-gBd.woff") format("woff"), url("@/assets/font/SDGothicNeoRoundTTF-gBd.ttf") format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: oneMobile;
+  src: url("@/assets/font/ONEMobilePOP.woff") format("woff"), url("@/assets/font/ONEMobilePOP.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: Pretendard;
+  font-weight: 900;
+  font-display: swap;
+  src: local("Pretendard Black"), url("@/assets/font/Pretendard-Black.woff2") format("woff2"), url("@/assets/font/Pretendard-Black.woff") format("woff");
+}
+@font-face {
+  font-family: Pretendard;
+  font-weight: 800;
+  font-display: swap;
+  src: local("Pretendard ExtraBold"), url("@/assets/font/Pretendard-ExtraBold.woff2") format("woff2"), url("@/assets/font/Pretendard-ExtraBold.woff") format("woff");
+}
+@font-face {
+  font-family: Pretendard;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Pretendard Bold"), url("@/assets/font/Pretendard-Bold.woff2") format("woff2"), url("@/assets/font/Pretendard-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: Pretendard;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Pretendard SemiBold"), url("@/assets/font/Pretendard-SemiBold.woff2") format("woff2"), url("@/assets/font/Pretendard-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: Pretendard;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Pretendard Medium"), url("@/assets/font/Pretendard-Medium.woff2") format("woff2"), url("@/assets/font/Pretendard-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: Pretendard;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Pretendard Regular"), url("@/assets/font/Pretendard-Regular.woff2") format("woff2"), url("@/assets/font/Pretendard-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: Pretendard;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Pretendard Light"), url("@/assets/font/Pretendard-Light.woff2") format("woff2"), url("@/assets/font/Pretendard-Light.woff") format("woff");
+}
+@font-face {
+  font-family: Pretendard;
+  font-weight: 200;
+  font-display: swap;
+  src: local("Pretendard ExtraLight"), url("@/assets/font/Pretendard-ExtraLight.woff2") format("woff2"), url("@/assets/font/Pretendard-ExtraLight.woff") format("woff");
+}
+@font-face {
+  font-family: Pretendard;
+  font-weight: 100;
+  font-display: swap;
+  src: local("Pretendard Thin"), url("@/assets/font/Pretendard-Thin.woff2") format("woff2"), url("@/assets/font/Pretendard-Thin.woff") format("woff");
+}
+:root {
+  --schedule-width: 1840px;
+  --gnb-height: 134px;
+}
+
+html {
+  -ms-content-zooming: none;
+  touch-action: pan-x pan-y;
+}
+
+* {
+  font-family: sdGothicNR, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 14px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: #9b9a9a;
+}
+
+::-webkit-scrollbar-track {
+  width: 14px;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #efefef;
+}
+
+::-webkit-clear-button,
+::-webkit-inner-spin-button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+::-webkit-date-and-time-value {
+  margin: 0 auto 0 0;
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 35px 100px 34px 40px;
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+input::-moz-placeholder {
+  width: 100%;
+  font-size: 30px;
+  color: #cccccc;
+  letter-spacing: normal;
+}
+
+input::placeholder {
+  width: 100%;
+  font-size: 30px;
+  color: #cccccc;
+  letter-spacing: normal;
+}
+
+input:focus-visible,
+input:focus {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input[type=password] {
+  /*font-size: 50px;*/
+  letter-spacing: -10px;
+  padding: 37px 160px 36px 40px;
+}
+
+input[type=password]::-moz-placeholder {
+  /*font-size: 30px;*/
+}
+
+input[type=password]::placeholder {
+  /*font-size: 30px;*/
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  background: transparent;
+}
+
+input[type=date i] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+input:last-child {
+  margin-bottom: 0;
+}
+
+.input.disable-01 {
+  background-color: #ebebeb !important;
+  color: #a3a3a3;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/* button */
+button {
+  padding: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+button a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: #ffffff;
+}
+
+.disable {
+  pointer-events: none;
+  cursor: default;
+}
+
+/* secondary button */
+.btn-type-01-sec {
+  width: 384px;
+  height: 112px;
+  background: url("@/assets/img/launcher/common/btn_sec_type_01_n.png") no-repeat;
+}
+
+.btn-type-01-sec.disable {
+  background: url("@/assets/img/launcher/common/btn_sec_type_01_d.png") no-repeat;
+}
+
+.btn-type-02-sec {
+  width: 280px;
+  height: 112px;
+  background: url("@/assets/img/launcher/common/btn_sec_type_02_n.png") no-repeat;
+}
+
+.btn-type-02-sec.gray {
+  background: url("@/assets/img/launcher/common/btn_sec_type_02_n_g.png") no-repeat;
+}
+
+.btn-type-02-sec.disable {
+  background: url("@/assets/img/launcher/common/btn_sec_type_02_d.png") no-repeat;
+}
+
+.btn-type-03-sec {
+  width: 240px;
+  height: 96px;
+  font-size: 34px;
+  background: url("@/assets/img/launcher/common/btn_sec_type_03_n.png") no-repeat;
+}
+
+.btn-type-03-sec.gray {
+  background: url("@/assets/img/launcher/common/btn_sec_type_03_n_g.png") no-repeat;
+}
+
+.btn-type-03-sec.disable {
+  background: url("@/assets/img/launcher/common/btn_sec_type_03_d.png") no-repeat;
+}
+
+/* Teritiary button */
+/* 빨간 버튼 */
+.btn-type-02 {
+  width: 104px;
+  height: 48px;
+  font-size: 22px;
+  color: #ffffff;
+  background: url("@/assets/img/launcher/common/btn_ter_type_02_n.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.btn-type-02.gray {
+  color: #777777;
+  background: url("@/assets/img/launcher/common/btn_ter_type_02_n_g.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.btn-type-02.gray-02 {
+  background: url("@/assets/img/launcher/common/btn_ter_type_02_n_g_2.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.btn-type-02.disable {
+  background: url("@/assets/img/launcher/common/btn_ter_type_02_n_d.png") no-repeat;
+  color: #a3a3a3;
+  background-size: 100% 100%;
+}
+
+.btn-type-05 {
+  width: 182px;
+  height: 100px;
+  font-size: 34px;
+  color: #ffffff;
+  background: url("@/assets/img/launcher/common/btn_ter_type_05_n_p.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.btn-type-05.disable {
+  background: url("@/assets/img/launcher/common/btn_ter_type_05_d.png") no-repeat;
+  color: #a3a3a3;
+  background-size: 100% 100%;
+}
+
+.btn-type-06 {
+  width: 168px;
+  height: 72px;
+  font-size: 27px;
+  background: url("@/assets/img/launcher/common/btn_ter_type_06_n_p.png") no-repeat;
+}
+
+.btn-type-06.pink {
+  background: url("@/assets/img/launcher/common/btn_ter_type_06_n_r.png") no-repeat;
+}
+
+.btn-type-06.green {
+  background: url("@/assets/img/launcher/common/btn_ter_type_06_n_m.png") no-repeat;
+}
+
+.btn-type-07 {
+  width: 184px;
+  height: 80px;
+  background: url("@/assets/img/launcher/schedule/schedule-reg/btn_ter_type_07_n.png") no-repeat;
+}
+
+.btn-type-07.gray {
+  background: url("@/assets/img/launcher/schedule/schedule-reg/btn_ter_type_07_n_g.png") no-repeat;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------- */
+/* checkbox */
+.checkbox {
+  width: auto;
+  display: inline-block;
+  position: absolute;
+  padding: 3px 0 0 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  /*margin-right: 10px;*/
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.checkbox:last-child {
+  margin-right: 0;
+}
+
+/* 기존 checkbox 숨김 */
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* new checkbox */
+.checkmark {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: transparent no-repeat url("@/assets/img/launcher/schedule/schedule-popup/ico_check_48_d.png");
+  background-size: 100%;
+}
+
+/* 체크되었을 때 */
+.checkbox input:checked ~ .checkmark {
+  background: no-repeat url("@/assets/img/launcher/schedule/schedule-popup/ico_check_48_s.png");
+  background-size: 100%;
+}
+
+/* radio */
+.radio {
+  width: auto;
+  /*display: inline-block;*/
+  position: relative;
+  padding: 6px 0 0 55px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  /*margin-right: 10px;*/
+  top: 0;
+  /*right: 0;*/
+  /*bottom: 0;*/
+  left: 0;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+}
+
+.radio:last-child {
+  margin-right: 0;
+}
+
+/* 기존 checkbox 숨김 */
+.radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* new checkbox */
+.radio-check {
+  width: 40px;
+  height: 40px;
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*right: 0;*/
+  /*bottom: 0;*/
+  /*left: 0;*/
+  /*margin: auto;*/
+  background: transparent no-repeat url("@/assets/img/launcher/common/mp_ico_check_n.png");
+  background-size: 100%;
+}
+
+/* 체크되었을 때 */
+.radio input:checked ~ .radio-check {
+  background: no-repeat url("@/assets/img/launcher/common/mp_ico_check_s.png");
+  background-size: 100%;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-style: normal;
+  text-transform: none;
+  text-decoration: none;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button a {
+  color: inherit !important;
+}
+
+.checkbox {
+  position: unset;
+  display: flex;
+  padding: 0;
+}
+
+:root {
+  --vs-colors--lightest:rgba(60,60,60,0.26);
+  --vs-colors--light:rgba(60,60,60,0.5);
+  --vs-colors--dark:#333;
+  --vs-colors--darkest:rgba(0,0,0,0.15);
+  --vs-search-input-color:inherit;
+  --vs-search-input-placeholder-color:inherit;
+  --vs-font-size:1rem;
+  --vs-line-height:1.4;
+  --vs-state-disabled-bg:#f8f8f8;
+  --vs-state-disabled-color:var(--vs-colors--light);
+  --vs-state-disabled-controls-color:var(--vs-colors--light);
+  --vs-state-disabled-cursor:not-allowed;
+  --vs-border-color:var(--vs-colors--lightest);
+  --vs-border-width:1px;
+  --vs-border-style:solid;
+  --vs-border-radius:4px;
+  --vs-actions-padding:4px 6px 0 3px;
+  --vs-controls-color:var(--vs-colors--light);
+  --vs-controls-size:1;
+  --vs-controls--deselect-text-shadow:0 1px 0 #fff;
+  --vs-selected-bg:#f0f0f0;
+  --vs-selected-color:var(--vs-colors--dark);
+  --vs-selected-border-color:var(--vs-border-color);
+  --vs-selected-border-style:var(--vs-border-style);
+  --vs-selected-border-width:var(--vs-border-width);
+  --vs-dropdown-bg:#fff;
+  --vs-dropdown-color:inherit;
+  --vs-dropdown-z-index:1000;
+  --vs-dropdown-min-width:160px;
+  --vs-dropdown-max-height:350px;
+  --vs-dropdown-box-shadow:0px 3px 6px 0px var(--vs-colors--darkest);
+  --vs-dropdown-option-bg:#000;
+  --vs-dropdown-option-color:var(--vs-dropdown-color);
+  --vs-dropdown-option-padding:3px 20px;
+  --vs-dropdown-option--active-bg:#5897fb;
+  --vs-dropdown-option--active-color:#fff;
+  --vs-dropdown-option--deselect-bg:#fb5858;
+  --vs-dropdown-option--deselect-color:#fff;
+  --vs-transition-timing-function:cubic-bezier(1,-0.115,0.975,0.855);
+  --vs-transition-duration:150ms;
+}
+
+.v-select {
+  font-family: inherit;
+  position: relative;
+}
+
+.v-select, .v-select * {
+  box-sizing: border-box;
+}
+
+:root {
+  --vs-transition-timing-function:cubic-bezier(1,0.5,0.8,1);
+  --vs-transition-duration:0.15s;
+}
+@keyframes vSelectSpinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.vs__fade-enter-active, .vs__fade-leave-active {
+  pointer-events: none;
+  transition: opacity var(--vs-transition-duration) var(--vs-transition-timing-function);
+}
+
+.vs__fade-enter, .vs__fade-leave-to {
+  opacity: 0;
+}
+
+:root {
+  --vs-disabled-bg:var(--vs-state-disabled-bg);
+  --vs-disabled-color:var(--vs-state-disabled-color);
+  --vs-disabled-cursor:var(--vs-state-disabled-cursor);
+}
+
+.vs--disabled .vs__clear, .vs--disabled .vs__dropdown-toggle, .vs--disabled .vs__open-indicator, .vs--disabled .vs__search, .vs--disabled .vs__selected {
+  background-color: var(--vs-disabled-bg);
+  cursor: var(--vs-disabled-cursor);
+}
+
+.v-select[dir=rtl] .vs__actions {
+  padding: 0 3px 0 6px;
+}
+
+.v-select[dir=rtl] .vs__clear {
+  margin-left: 6px;
+  margin-right: 0;
+}
+
+.v-select[dir=rtl] .vs__deselect {
+  margin-left: 0;
+  margin-right: 2px;
+}
+
+.v-select[dir=rtl] .vs__dropdown-menu {
+  text-align: right;
+}
+
+.vs__dropdown-toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: var(--vs-border-width) var(--vs-border-style) var(--vs-border-color);
+  border-radius: var(--vs-border-radius);
+  display: flex;
+  padding: 0 0 4px;
+  white-space: normal;
+}
+
+.vs__selected-options {
+  display: flex;
+  flex-basis: 100%;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  padding: 0 2px;
+  position: relative;
+}
+
+.vs__actions {
+  align-items: center;
+  display: flex;
+  padding: var(--vs-actions-padding);
+}
+
+.vs--searchable .vs__dropdown-toggle {
+  cursor: text;
+}
+
+.vs--unsearchable .vs__dropdown-toggle {
+  cursor: pointer;
+}
+
+.vs--open .vs__dropdown-toggle {
+  border-bottom-color: transparent;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.vs__open-indicator {
+  fill: var(--vs-controls-color);
+  transform: scale(var(--vs-controls-size));
+  transition: transform var(--vs-transition-duration) var(--vs-transition-timing-function);
+  transition-timing-function: var(--vs-transition-timing-function);
+}
+
+.vs--open .vs__open-indicator {
+  transform: rotate(180deg) scale(var(--vs-controls-size));
+}
+
+.vs--loading .vs__open-indicator {
+  opacity: 0;
+}
+
+.vs__clear {
+  fill: var(--vs-controls-color);
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  margin-right: 8px;
+  padding: 0;
+}
+
+.vs__dropdown-menu {
+  background: var(--vs-dropdown-bg);
+  border: var(--vs-border-width) var(--vs-border-style) var(--vs-border-color);
+  border-radius: 0 0 var(--vs-border-radius) var(--vs-border-radius);
+  border-top-style: none;
+  box-shadow: var(--vs-dropdown-box-shadow);
+  box-sizing: border-box;
+  color: var(--vs-dropdown-color);
+  display: block;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  max-height: var(--vs-dropdown-max-height);
+  min-width: var(--vs-dropdown-min-width);
+  overflow-y: auto;
+  padding: 5px 0;
+  position: absolute;
+  text-align: left;
+  top: calc(100% - var(--vs-border-width));
+  width: 100%;
+  z-index: var(--vs-dropdown-z-index);
+}
+
+.vs__no-options {
+  text-align: center;
+}
+
+.vs__dropdown-option {
+  clear: both;
+  color: var(--vs-dropdown-option-color);
+  cursor: pointer;
+  display: block;
+  line-height: 1.42857143;
+  padding: var(--vs-dropdown-option-padding);
+  white-space: nowrap;
+}
+
+.vs__dropdown-option--highlight {
+  background: var(--vs-dropdown-option--active-bg);
+  color: var(--vs-dropdown-option--active-color);
+}
+
+.vs__dropdown-option--deselect {
+  background: var(--vs-dropdown-option--deselect-bg);
+  color: var(--vs-dropdown-option--deselect-color);
+}
+
+.vs__dropdown-option--disabled {
+  background: var(--vs-state-disabled-bg);
+  color: var(--vs-state-disabled-color);
+  cursor: var(--vs-state-disabled-cursor);
+}
+
+.vs__selected {
+  align-items: center;
+  background-color: var(--vs-selected-bg);
+  border: var(--vs-selected-border-width) var(--vs-selected-border-style) var(--vs-selected-border-color);
+  border-radius: var(--vs-border-radius);
+  color: var(--vs-selected-color);
+  display: flex;
+  line-height: var(--vs-line-height);
+  margin: 4px 2px 0;
+  padding: 0 0.25em;
+  z-index: 0;
+}
+
+.vs__deselect {
+  fill: var(--vs-controls-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  margin-left: 4px;
+  padding: 0;
+  text-shadow: var(--vs-controls--deselect-text-shadow);
+}
+
+.vs--single .vs__selected {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.vs--single.vs--loading .vs__selected, .vs--single.vs--open .vs__selected {
+  opacity: 0.4;
+  position: absolute;
+}
+
+.vs--single.vs--searching .vs__selected {
+  display: none;
+}
+
+.vs__search::-webkit-search-cancel-button {
+  display: none;
+}
+
+.vs__search::-ms-clear, .vs__search::-webkit-search-decoration, .vs__search::-webkit-search-results-button, .vs__search::-webkit-search-results-decoration {
+  display: none;
+}
+
+.vs__search, .vs__search:focus {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: 1px solid transparent;
+  border-left: none;
+  box-shadow: none;
+  color: var(--vs-search-input-color);
+  flex-grow: 1;
+  font-size: var(--vs-font-size);
+  line-height: var(--vs-line-height);
+  margin: 4px 0 0;
+  max-width: 100%;
+  outline: none;
+  padding: 0 7px;
+  width: 0;
+  z-index: 1;
+}
+
+.vs__search::-moz-placeholder {
+  color: var(--vs-search-input-placeholder-color);
+}
+
+.vs__search::placeholder {
+  color: var(--vs-search-input-placeholder-color);
+}
+
+.vs--unsearchable .vs__search {
+  opacity: 1;
+}
+
+.vs--unsearchable:not(.vs--disabled) .vs__search {
+  cursor: pointer;
+}
+
+.vs--single.vs--searching:not(.vs--open):not(.vs--loading) .vs__search {
+  opacity: 0.2;
+}
+
+.vs__spinner {
+  align-self: center;
+  animation: vSelectSpinner 1.1s linear infinite;
+  border: 0.9em solid hsla(0, 0%, 39%, 0.1);
+  border-left-color: rgba(60, 60, 60, 0.45);
+  font-size: 5px;
+  opacity: 0;
+  overflow: hidden;
+  text-indent: -9999em;
+  transform: translateZ(0) scale(var(--vs-controls--spinner-size, var(--vs-controls-size)));
+  transition: opacity 0.1s;
+}
+
+.vs__spinner, .vs__spinner:after {
+  border-radius: 50%;
+  height: 5em;
+  transform: scale(var(--vs-controls--spinner-size, var(--vs-controls-size)));
+  width: 5em;
+}
+
+.vs--loading .vs__spinner {
+  opacity: 1;
+}
+
+/* select - vue select */
+/* 셀렉박스 영역 */
+.dropdown-wrap {
+  display: flex;
+  justify-content: flex-start;
+}
+.dropdown-wrap .dropdown {
+  width: 0;
+  /* 셀렉박스 두 개일 때 */
+  /* 셀렉박스 3 개일 때 */
+  /* 셀렉박스 4 개일 때 */
+  /* 셀렉박스 5 개일 때 */
+  /* 셀렉박스 6 개일 때 */
+  /* 셀렉박스 옵션 묶음 */
+  /* 셀렉박스 다 보여주기 */
+}
+.dropdown-wrap .dropdown.mr {
+  margin-right: 60px;
+}
+.dropdown-wrap .dropdown:first-child:nth-last-child(2), .dropdown-wrap .dropdown:first-child:nth-last-child(2) ~ .dropdown {
+  width: 50%;
+}
+.dropdown-wrap .dropdown:first-child:nth-last-child(3), .dropdown-wrap .dropdown:first-child:nth-last-child(3) ~ .dropdown {
+  width: 33.3%;
+}
+.dropdown-wrap .dropdown:first-child:nth-last-child(4), .dropdown-wrap .dropdown:first-child:nth-last-child(4) ~ .dropdown {
+  width: 25%;
+}
+.dropdown-wrap .dropdown:first-child:nth-last-child(5), .dropdown-wrap .dropdown:first-child:nth-last-child(5) ~ .dropdown {
+  width: 20%;
+}
+.dropdown-wrap .dropdown:first-child:nth-last-child(6), .dropdown-wrap .dropdown:first-child:nth-last-child(6) ~ .dropdown {
+  width: 16%;
+}
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle {
+  display: flex;
+  max-width: 536px;
+  height: 80px;
+  padding: 25px 40px;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 3px solid #cccccc;
+}
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle .vs__selected {
+  align-items: baseline;
+  margin: 0;
+  padding: 0 3px;
+  white-space: nowrap;
+  font-size: 30px;
+  line-height: initial;
+  color: #292929;
+  /* 선택된 값 */
+}
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle .vs__selected-options {
+  margin: 0;
+  flex-wrap: initial;
+  align-items: center;
+  border-radius: 8px;
+  text-align: left;
+  color: #292929;
+}
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle .vs__selected .vs__search::-moz-placeholder {
+  /*height: 48px !important;*/
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  line-height: initial;
+  font-size: 30px;
+  background-color: transparent !important;
+}
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle .vs__selected .vs__search,
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle .vs__selected .vs__search:focus,
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle .vs__selected .vs__search::placeholder {
+  /*height: 48px !important;*/
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  line-height: initial;
+  font-size: 30px;
+  background-color: transparent !important;
+}
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle .vs__selected .vs__search::-moz-placeholder:focus {
+  text-shadow: 0 0 0 #ffffff;
+}
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle .vs__selected .vs__search:focus,
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle .vs__selected .vs__search:focus:focus,
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle .vs__selected .vs__search::placeholder:focus {
+  text-shadow: 0 0 0 #ffffff;
+}
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle .vs__selected ~ .vs__search {
+  padding: 0;
+  height: 0;
+}
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle .vs__actions {
+  padding: 0;
+}
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle .vs__actions .vs__clear {
+  display: none;
+}
+.dropdown-wrap .dropdown .vs--searchable .vs__dropdown-toggle .vs__actions .vs__open-indicator img {
+  width: 100%;
+}
+.dropdown-wrap .dropdown .vs--searchable.vs--open .vs__dropdown-toggle {
+  border-radius: 20px 20px 0 0;
+  box-shadow: none;
+  border-bottom: 3px solid transparent;
+}
+.dropdown-wrap .dropdown .vs__dropdown-menu {
+  max-width: 536px;
+  width: 100%;
+  padding: 0 40px;
+  margin-right: 10px;
+  border-radius: 0 0 20px 20px;
+  border: 3px solid #cccccc;
+  border-top: transparent;
+  /* 셀렉박스 옵션 항목 */
+  /* 셀렉박스 검색 시, 결과가 없을 때 */
+}
+.dropdown-wrap .dropdown .vs__dropdown-menu .vs__dropdown-option {
+  position: relative;
+  display: flex;
+  height: 74px;
+  padding: 22px 0 23px;
+  margin: 0;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 0;
+  color: #292929;
+  font-size: 30px;
+  /* 하단 밑줄 */
+}
+.dropdown-wrap .dropdown .vs__dropdown-menu .vs__dropdown-option:after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  z-index: 10;
+  background: transparent url("@/assets/img/launcher/common/dropdown_line_01.png") repeat-x;
+}
+.dropdown-wrap .dropdown .vs__dropdown-menu .vs__dropdown-option:last-child:after {
+  background: none;
+}
+.dropdown-wrap .dropdown .vs__dropdown-menu .vs__no-options {
+  padding: 10px;
+  font-size: 20px;
+}
+.dropdown-wrap .dropdown.full-select .vs__dropdown-menu {
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+.dropdown-wrap .vs--single.vs--loading .vs__selected,
+.dropdown-wrap .vs--single.vs--open .vs__selected {
+  position: relative;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+}
+
+
+/* layout */
+/* @import 'layout/_gnb.scss'; *//*# sourceMappingURL=common.css.map */

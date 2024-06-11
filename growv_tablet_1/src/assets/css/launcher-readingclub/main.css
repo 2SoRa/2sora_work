@@ -1,0 +1,407 @@
+/* TODO : 임시 구성 및 스타일 */
+.rc-main-contents {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.rc-main-contents .main-contents {
+  height: 1065px;
+  display: flex;
+  background: #BFF1FA url("@/assets/img/launcher-readingclub/main/bg_waterdrop.webp") no-repeat;
+  background-size: 100%;
+}
+.rc-main-contents .main-contents > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 컨텐츠 왼쪽 영역 - 자연 관찰 & 내서재 & 브이스캔 & 쇼핑몰 도서찾기*/
+.rc-main-contents .contents-left {
+  width: max-content;
+  margin-top: 98px;
+  gap: 30px;
+}
+.rc-main-contents .contents-left button,
+.rc-main-contents .contents-left a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  color: transparent !important;
+}
+.rc-main-contents .contents-left .link-book {
+  width: max-content;
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: revert;
+  padding: 0 24px 0 42px;
+}
+/* 메인 좌측 영역 - 내 서재 & 자연 관찰*/
+.rc-main-contents .contents-left .link-book .my-lib {
+  width: 248px;
+  height: 280px;
+  background: url("@/assets/img/launcher-readingclub/main/btn_mylib.webp") no-repeat;
+  background-size: 100% 100%;
+  z-index: 10;
+}
+.rc-main-contents .contents-left .link-book .nature {
+  width: 234px;
+  height: 280px;
+  margin-left: -30px;
+  background: url("@/assets/img/launcher-readingclub/main/btn_nature.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 메인 좌측 영역 - V스캔, 도서찾기 */
+.rc-main-contents .contents-left .link-search {
+  width: 516px;
+  height: 237px;
+  background: url("@/assets/img/launcher-readingclub/main/btn_bg_vscan_search.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.rc-main-contents .contents-left .link-search button {
+  width: 252px;
+  height: 222px;
+}
+/* V-scan 브이스캔 영역 */
+.rc-main-contents .contents-left .link-search button:first-child {
+  background: url("@/assets/img/launcher-readingclub/main/btn_vscan.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 쇼핑몰 도서찾기 영역 */
+.rc-main-contents .contents-left .link-search button:last-child {
+  background: url("@/assets/img/launcher-readingclub/main/btn_vscan-search.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 메인 좌측 하단 슈퍼픽으로 가기 영역 */
+.rc-main-contents .contents-left .link-superpick {
+  width: 660px;
+  height: 420px;
+  background: url("@/assets/img/launcher-readingclub/main/superpick_bn_2310_01.webp") no-repeat;
+  background-size: 100% 100%;
+}
+
+/* 컨텐츠 가운데 영역 */
+.rc-main-contents .contents {
+  align-items: center;
+  margin: 51px 0 0 -90px;
+}
+/* 학습현황 바로 가기 & 날짜 표시 */
+.rc-main-contents .contents .date {
+  width: fit-content;
+  height: 81px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.rc-main-contents .contents .date .link-schedule {
+  width: 228px;
+  height: 81px;
+  font-size: 0;
+  padding: 0;
+  background: url("@/assets/img/launcher-readingclub/main/btn_status.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.rc-main-contents .contents .date span {
+  width: 318px;
+  height: 45px;
+  display: inline-block;
+  text-align: left;
+  font-size: 42px;
+  letter-spacing: -0.3px;
+  color: #0C80F8;
+  margin: 20px 0 16px;
+}
+
+/* 1일 1권 책읽기 & 오늘의 책 */
+.rc-main-contents .contents .daily {
+  width: 774px;
+  /*height: 80vh;*/
+  scroll-behavior: unset;
+  position: relative;
+}
+/* 메인 컨텐츠 타이틀 (이름 & 오늘의 책) 영역 */
+.rc-main-contents .contents .daily .title {
+  width: 774px;
+  height: 168px;
+  font-size: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 0 57px;
+  position: relative;
+  z-index: 10;
+  background: transparent url("@/assets/img/launcher-readingclub/main/bg_today_tit.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.rc-main-contents .contents .daily .title div {
+  display: flex;
+  gap: 15px;
+}
+.rc-main-contents .contents .daily .title img {
+  width: 180px;
+  height: 39px;
+}
+/* 메인 컨텐츠 오늘의 책 책리스트 영역 */
+.rc-main-contents .contents .daily .daily-book {
+  height: 100%;
+}
+.rc-main-contents .contents .daily .daily-book .no-data {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rc-main-contents .contents .daily .list::-webkit-scrollbar { display: none; }
+.rc-main-contents .contents .daily .list {
+  max-height: 783px;
+  padding: 40px 0 60px;
+  margin-top: -15px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  position: relative;
+}
+.rc-main-contents .contents .daily .list li {
+  max-width: 516px;
+  max-height: 612px;
+  min-width: 200px;
+  min-height: 200px;
+  text-align: center;
+  flex-shrink: 0;
+  margin: -5px auto 0;
+  position: relative;
+}
+/* 책 움직이는 효과 */
+.rc-main-contents .contents .daily .list li.study-no {
+  /*z-index: 100;*/
+  animation: bounce 5s linear 0s infinite alternate;
+}
+@keyframes bounce {
+  0% { transform: translateY(2%); animation-timing-function: ease-out; }
+  10% { transform: translateY(-2%); animation-timing-function: ease-in; }
+  20% { transform: translateY(2%); animation-timing-function: ease-out; }
+  30% { transform: translateY(-2%); animation-timing-function: ease-in; }
+  40% {transform: translateY(0%); animation-timing-function: ease-in; }
+}
+.rc-main-contents .contents .daily .list li:first-child {
+  z-index: 10;
+}
+.rc-main-contents .contents .daily .list li:nth-child(2) {
+  z-index: 5;
+}
+/* 디자인 요소 - 라인 */
+.rc-main-contents .contents .daily .list .line {
+  content: '';
+  width: 10px;
+  /*height: 40px;*/
+  height: 80px;
+  position: absolute;
+  top: -80px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  /*z-index: 1;*/
+  background-image: linear-gradient(to right, #7595b7 22%, #83a7ce 62%, #7595b7 100%);
+}
+/* 썸네일 */
+.rc-main-contents .contents .daily .list .thumb {
+  max-width: 516px;
+  max-height: 600px;
+  margin-top: 21px;
+}
+/* 디자인요소 - 핀 */
+.rc-main-contents .contents .daily .list .pin {
+  content: '';
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: absolute;
+  top: -1px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background: url("@/assets/img/launcher-readingclub/main/img_bookclip.webp") no-repeat;
+  background-size: 100% 100%;
+  z-index: 10;
+}
+/* 완료 체크 */
+.rc-main-contents .contents .daily .list li span {
+  width: 134px;
+  height: 158px;
+  position: absolute;
+  top: 8px;
+  left: 60px;
+  background: url("@/assets/img/launcher-readingclub/common/icons/ico_today_book_comp.webp") no-repeat;
+  background-size: 100% 100%;
+}
+
+/* 컨텐츠 오른쪽 영역 */
+.rc-main-contents .contents-right {
+  gap: 22px;
+}
+/* 자람 나무 */
+.rc-main-contents .contents-right .reading-tree {
+  width: 500px;
+  height: 506px;
+  position: relative;
+  margin-top: 25px;
+}
+.rc-main-contents .contents-right .reading-tree > a {
+  width: 395px;
+  height: 379px;
+  position: absolute;
+  top: 72px;
+  right: 0;
+}
+.rc-main-contents .contents-right .reading-tree img {
+  width: 100%;
+}
+.rc-main-contents .contents-right .reading-tree p {
+  width: fit-content;
+  height: 75px;
+  padding: 23px 36px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  left: 0;
+  margin: auto;
+  font-size: 30px;
+  color: #FFFFFF;
+  background-color: #00cbea;
+  border: 3px solid #ADF4FF;
+  border-radius: 37.5px;
+  z-index: 10;
+}
+.rc-main-contents .contents-right .reading-tree p img {
+  width: 9px;
+  height: 9px;
+  margin: 0 12px;
+  vertical-align: middle;
+}
+.rc-main-contents .contents-right .reading-tree span {
+  display: inline-block;
+  position: absolute;
+}
+.rc-main-contents .contents-right .reading-tree span.bg-title {
+  width: 270px;
+  height: 108px;
+  top: 0;
+  right: 62px;
+  left: 168px;
+  background: url("@/assets/img/launcher-readingclub/main/tit_jaram.webp") no-repeat;
+  background-size: 100% 100%;
+}
+
+.rc-main-contents .contents-right .reading-tree span.bg-evie {
+  width: 150px;
+  height: 180px;
+  bottom: 0;
+  left: 0;
+  background: url("@/assets/img/launcher-readingclub/main/img_jaram_evie.webp") no-repeat;
+  background-size: 100% 100%;
+}
+
+/* 한글&영어 책 추천 */
+.rc-main-contents .contents-right .slide-wrap {
+  width: 1530px;
+  height: 534px;
+  padding: 27px 85px;
+  right: -1008px;
+  position: absolute;
+  bottom: 0;
+  background: url("@/assets/img/launcher-readingclub/main/bg_list_slide.webp") no-repeat;
+  background-size: 100% 100%;
+  transition: right ease-in .5s;
+  z-index: 100;
+}
+.rc-main-contents .contents-right .slide-wrap.move {
+  position: absolute;
+  /*margin-right: 0;*/
+  right: 0;
+  bottom: 0;
+}
+.rc-main-contents .contents-right .slide-wrap.move::before {
+  content: '';
+  width: 1920px;
+  height: 1200px;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.rc-main-contents .contents-right .slide-wrap .slide {
+  position: relative;
+}
+/* 한글&영어 책 추천 과목 구분 탭 */
+.rc-main-contents .contents-right .slide-wrap .slide-tab {
+  display: flex;
+  align-items: flex-end;
+}
+/* 한글&영어 탭 기본 사이즈 설정 */
+.rc-main-contents .contents-right .slide-wrap .slide-tab button {
+  width: 210px;
+  height: 84px;
+}
+/* 한글 탭 기본 이미지*/
+.rc-main-contents .contents-right .slide-wrap .slide-tab .kor {
+  background: url("@/assets/img/launcher-readingclub/main/tab_kr.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 영어 탭 기본 이미지*/
+.rc-main-contents .contents-right .slide-wrap .slide-tab .eng {
+  margin-bottom: 1px;
+  background: url("@/assets/img/launcher-readingclub/main/tab_en.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 한글&영어 탭 활성화 사이즈 설정*/
+.rc-main-contents .contents-right .slide-wrap .slide-tab button.active {
+  height: 97px;
+}
+/* 한글 탭 활성화 이미지*/
+.rc-main-contents .contents-right .slide-wrap .slide-tab .kor.active {
+  background: url("@/assets/img/launcher-readingclub/main/tab_kr_active.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 영어 탭 활성화 이미지*/
+.rc-main-contents .contents-right .slide-wrap .slide-tab .eng.active {
+  background: url("@/assets/img/launcher-readingclub/main/tab_en_active.webp") no-repeat;
+  background-size: 100% 100%;
+}
+
+/* 한글&영어 책 리스트 */
+.rc-main-contents .contents-right .slide-wrap .slide-list {
+  width: 1445px;
+  height: 380px;
+  display: flex;
+  gap: 24px;
+  padding: 30px 32px 30px 42px;
+  /*background-color: blue;*/
+  box-sizing: border-box;
+}
+.rc-main-contents .contents-right .slide-wrap .slide-list li {
+  width: 255px;
+  height: 294px;
+  display: flex;
+  align-items: flex-end;
+  background-color: yellow;
+  opacity: 0.5;
+  border-radius: 10px;
+}
+.rc-main-contents .contents-right .slide-wrap .slide-list li img {
+
+}
+/* 슬라이드 오픈 버튼 */
+.rc-main-contents .contents-right .slide-wrap .btn-open {
+  width: 80px;
+  height: 120px;
+  border-radius: 70px 0 0 70px;
+  color: #FFFFFF;
+  position: absolute;
+  left: 0;
+  bottom: 100px;
+}

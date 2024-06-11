@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+.search-mall {
+  * { font-family: Pretendard !important;}
+  height: 100vh;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  font-weight:$font-weight-pretend-md;
+
+  .sub-gnb {
+    height: $mall-gnb-height;
+    border-bottom: 2px solid $color-border-light-gray;
+  }
+  .btn-top {
+    @extend .type-cc-w;
+  }
+  .tag-wrap {
+    .tag {
+      .tag-item { font-weight: 500;}
+    }
+    &.size-big {
+      .tag {
+        .tag-item {font-size:27px;}
+      }
+    }
+  }
+
+  // 한글 도서몰 & 영어 도서몰 탭
+    .contents-area {
+      position: relative;
+      height: calc( 100vh - 214px - 42px);
+      margin-top: 42px;
+      &.cateShow {
+        padding-top: 256px;
+        transition: all .3s linear;
+      }
+      &:has(.hide) {
+        padding-top: 0;
+        transition: all .3s linear;
+      }
+      &.small-height {
+        //height: calc( 100vh - 510px );
+        height: calc( 100vh - 526px);
+        margin-top: 26px;
+      }
+      // 배너 영역
+      .menu-banner {
+        display: none;
+        padding: 0 69px 36px;
+        &.active { display: block; }
+        img { width: 100%; }
+      }
+      .mall-div-book {
+        position: fixed;
+        width: 100%; height: 262px;
+        //top: 268px;
+        top: 255px;
+        opacity: 1;
+        background-color: #FFFFFF;
+        z-index: $depth-fixed;
+        &.hide {
+          opacity: 0;
+          pointer-events: none;
+          //transition: opacity .2s ease,
+          //            height .3s linear;
+        }
+        // 한글 도서몰 & 영어 도서몰 탭
+        //.contents-area {
+        //  height: calc( 100vh - 226px - 42px);
+        //  margin-top: 42px;
+        //  padding-top:262px;
+        //  &.small-height {
+        //    //height: calc( 100vh - 510px );
+        //    height: calc( 100vh - 526px);
+        //    margin-top: 26px;
+        //  }
+        //  // 배너 영역
+        //  .menu-banner {
+        //    display: none;
+        //    padding: 0 69px 36px;
+        //    &.active { display: block; }
+        //    img { width: 100%; }
+        //  }
+        //  .mall-div-book {
+        //    position:absolute;
+        //    top:-1px; left:0; right:0;
+        //    height: 262px;
+        //    background-color:#fff;
+        //    z-index:$depth-1;
+        //    opacity: 1;
+        //    transition: opacity .1s ease-out;
+        //
+        //    &.hide {
+        //      opacity: 0;
+        //      pointer-events: none;
+        //    }
+        //    &.show {
+        //      opacity:1;
+        //    }
+        //    &.fixed {
+        //      position:fixed;
+        //      top:266px;
+        //    }
+        .tag-wrap {
+          display: none;
+          width: 100%;
+          padding: 0 69px;
+          overflow-x: auto;
+          &::-webkit-scrollbar { display: none; }
+          &.active { display: inline-block; }
+          .tag {
+            width: max-content; height: 100%;
+            flex-wrap: nowrap;
+            .tag-item {
+              white-space: nowrap;
+            }
+          }
+        }
+        .dropdown-wrap {
+          justify-content: flex-end;
+          margin: 20px 69px 0 0;
+          .type-gray {
+            .vs--searchable {
+              .vs__dropdown-toggle {
+                .vs__selected { font-weight: $font-weight-pretend-md; }
+              }
+            }
+            .vs__dropdown-menu {
+              .vs__dropdown-option {
+                font-weight: $font-weight-pretend-md;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.eng {
+      .menu {
+        .menu-area  {
+          .depth-2 {
+            .menu-item {
+              padding: 27px 0 26px;
+              &:nth-child(5),
+              &:last-child { width: 192px; }
+            }
+          }
+        }
+      }
+      .contents-area {
+        &.autoHeight {
+          //height: calc( 100vh - 249px - 42px);
+          //margin-top: 42px;
+          height: calc( 100vh - 249px);
+          padding-top: 43px;
+        }
+        .product-items-list {
+          .book-card-item {
+            height: 626px;
+          }
+        }
+      }
+    }
+}

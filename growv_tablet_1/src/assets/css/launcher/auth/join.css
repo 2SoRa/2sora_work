@@ -1,0 +1,438 @@
+.join {
+  width: 1920px;
+  height: 1200px;
+}
+
+.join-guide {
+  width: 100%;
+  /*height: 1579px;*/
+  height: 1200px;
+  overflow: hidden;
+  background: top center url("@/assets/img/launcher/login/log_bg_04.jpg") no-repeat;
+  background-size: 100%;
+}
+
+.join .content {
+  width: 1200px;
+  height: auto;
+  border-radius: 60px;
+  margin: auto;
+  padding: 244px 60px;
+}
+
+.join .content-title {
+  font-size: 35px;
+  color: #292929;
+  line-height: 44px;
+  text-align: center;
+}
+
+.join-guide .check-all {
+  width: 100%;
+  height: 120px;
+  position: relative;
+  border-radius: 26px;
+  background-color: #f5f5f5;
+  margin-top: 60px;
+  font-weight: 700;
+}
+
+.join-guide .checkbox {
+  height: fit-content;
+  padding: 0 0 0 65px;
+  left: 40px;
+  right: auto;
+  font-size: 35px;
+}
+
+.join-guide .checkmark {
+  background: url("@/assets/img/launcher/login/log_ico_checkbox_40_n.png") no-repeat;
+  background-size: 100%;
+}
+
+.join-guide .checkbox input:checked ~ .checkmark {
+  background: url("@/assets/img/launcher/login/log_extfield_ico_checkbox_circle_48_a.png") no-repeat;
+  background-size: 100%;
+}
+
+.join-guide .check-all .checkmark {
+  width: 48px;
+  height: 48px;
+  right: auto;
+}
+
+.join-guide .content .info {
+  text-align: left;
+  /*font-size: 22px;*/
+  font-size: 20px;
+  color: #999999;
+  padding: 20px 50px 30px 40px;
+  line-height: 1.64;
+  font-weight: 400;
+}
+
+.join-guide .agree-check-wrap li {
+  width: 100%;
+  height: 72px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.join-guide .agree-check-wrap li .checkbox {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.join-guide .agree-check-wrap li .checkbox span {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.join-guide .agree-check-wrap li .checkmark {
+  width: 40px;
+  height: 40px;
+  right: auto;
+}
+
+.join-guide .agree-check-wrap li.agree-info {
+  margin-bottom: 52px;
+}
+
+.join-guide .agree-check-wrap li.agree-info .info {
+  display: block;
+  flex: none;
+  color: #999999;
+  width: 100%;
+  /*font-size: 22px;*/
+  font-size: 20px;
+  font-weight: 400;
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: 60px;
+  left: 105px;
+}
+
+.join-guide .btn-wrap {
+  justify-content: center;
+}
+
+.join-guide .btn-wrap button {
+  margin-right: 30px;
+}
+
+.join-guide .btn-wrap button:last-child {
+  margin-right: 0;
+}
+
+
+/* 회원가입 완료 */
+.join-success {
+  width: 100%;
+  height: 100%;
+  background: url("@/assets/img/launcher/login/log_bg_06.png") no-repeat;
+  padding: 204px 0 0;
+}
+
+.join-success .title {
+  font-size: 60px;
+  color: #330f83;
+  text-shadow: 0 4px 6px rgba(248, 253, 255, 0.4);
+  /*margin: 0 auto 65px;*/
+  margin: 0 auto 33px;
+}
+
+.join-success .success-info {
+  width: 900px;
+  height: auto;
+  background-color: #ffffff;
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: auto;
+  padding: 70px 70px 80px;
+}
+
+.join-success ul {
+  margin-bottom:  40px;
+}
+
+.join-success ul li {
+  display: flex;
+  justify-content: flex-start;
+  margin: auto;
+  align-items: center;
+  font-size: 34px;
+  line-height: 1.67;
+  position: relative;
+  padding: 30px 0;
+}
+.join-success ul li.success-title {
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.29;
+  padding: 0 0 41px;
+  display: inline-block;
+}
+.join-success ul li:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+  background: url("@/assets/img/launcher/login/log_dotline_01.webp") repeat-x;
+}
+
+.join-success ul li p {
+  font-size: 34px;
+  font-weight: 500;
+  min-width: 28%;
+}
+.join-success ul li p:before {
+  display: inline-block;
+  content: '';
+  width: 32px;
+  height: 32px;
+  margin-right: 15px;
+  vertical-align: text-top;
+  background: url("@/assets/img/launcher/common/ttable_ico_dotbadge_32_p.png") no-repeat;
+}
+
+.join-success ul li span {
+  font-size: 36px;
+  font-weight: 700;
+  color: #763df4;
+  min-width: 72%;
+  width: fit-content;
+  display: inline-block;
+  word-break: break-word;
+  line-height: 1;
+}
+.join-success ul li.success-title span {
+  min-width: fit-content;
+  font-weight: 500;
+}
+
+.join-success .btn-wrap {
+  justify-content: center;
+}
+
+/* 회원가입 정보 입력 */
+.join-reg {
+  height: 1598px;
+  padding: 184px 0 60px;
+  background: top center url("@/assets/img/launcher/login/log_bg_05.png") no-repeat;
+  background-size: 100%;
+}
+
+.join-reg .content {
+  width: 1200px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 60px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.24);
+  margin: 0 auto;
+  padding: 60px;
+}
+
+.join-reg .input {
+  background-color: #f5f5f5;
+}
+
+.join-reg ul.input-wrap {
+  margin-top: 10px;
+}
+.join-reg ul li {
+  margin-bottom: 20px;
+}
+
+.join-reg .content ul li .info {
+  border:none;
+  padding: 0;
+  font-size: 28px;
+  margin: 50px 0 30px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.join-reg .join-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/*.join-reg .join-input label {*/
+/*  width: 20%;*/
+/*  height: auto;*/
+/*  display: block;*/
+/*  font-size: 30px;*/
+/*  color: #292929;*/
+/*  text-align: left;*/
+/*  font-weight: 400;*/
+/*  padding-left: 0;*/
+/*}*/
+
+.join-reg .join-input input {
+  width: 100%;
+  height: 100px;
+  border-radius: 26px;
+  /*background-color: transparent;*/
+  /*background-color: #f5f5f5;*/
+  font-size: 30px;
+}
+
+.join-reg .join-input input[type="password"] {
+  font-size: 30px;
+}
+
+.join-input.input-select {
+  padding: 0 0 0 40px;
+  font-size: 32px;
+  justify-content: space-between;
+}
+
+.join-input.input-select .dropdown {
+  margin-right: 15px;
+}
+
+.join-input.input-select .dropdown:last-child {
+  margin-right: 0;
+}
+
+/* dropdown */
+.join-reg .join-input.input-select input {
+  border-radius: 0;
+  padding: 0;
+}
+
+.join-input.input-select .dropdown {
+  /*width: 260px;*/
+  width: 254px;
+}
+
+.join-input.input-select .vs--searchable .vs__dropdown-toggle {
+  max-width: 254px;
+  height: 100px;
+  border-radius: 26px;
+  display: flex;
+  box-shadow: none;
+  align-items: center;
+  padding: 26px 20px;
+  border: 3px solid #cccccc;
+}
+
+
+.join-input.input-select .vs--searchable.vs--open .vs__dropdown-toggle {
+  border-radius: 20px 20px 0 0;
+  box-shadow: none;
+  border-bottom: transparent;
+}
+
+.join-input.input-select .vs__selected-options {
+  flex-wrap: initial;
+  align-items: center;
+  margin-top: 0;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.join-input.input-select .vs--open .vs__selected-options .vs__selected,
+.join-input.input-select .vs__selected-options .vs__selected {
+  height: 48px;
+  line-height: 48px;
+  font-size: 30px;
+  position: absolute;
+  right: 0;
+  left: auto;
+}
+
+/*.join-input.input-select .vs__selected-options .vs__search {*/
+/*  width: auto;*/
+/*}*/
+
+.join-input.input-select .vs__selected-options .vs__search::placeholder {
+  font-size: 30px;
+  text-align: right;
+}
+
+/*.join-input.input-select .vs__selected-options,*/
+/*.join-input.input-select .vs__search,*/
+/*.join-input.input-select .vs__search:focus,*/
+/*.join-input.input-select .vs__search::placeholder,*/
+/*.join-input.input-select .vs__selected {*/
+/*  color: #ffffff;*/
+/*  margin: 0 5px 0 0;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  font-size: 30px;*/
+/*  padding: 0;*/
+/*  justify-content: flex-end;*/
+/*}*/
+
+.join-input.input-select .vs__dropdown-menu {
+  width: 100%;
+  max-width: 254px;
+  max-height: 312px;
+  padding: 0 20px 20px;
+  border-radius: 0 0 20px 20px;
+  border: 3px solid #cccccc;
+  border-top: transparent;
+  overflow-y: auto;
+}
+
+.join-input.input-select .vs__dropdown-option {
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #292929;
+  font-size: 30px;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 22px 14px 17px;
+  margin: 0;
+  position: relative;
+}
+
+.join-input.input-select .vs__dropdown-option:first-child {
+  /*height: 57px;*/
+  padding: 0 0 17px;
+}
+
+.join-input.input-select .vs__dropdown-option:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+/* 하단 밑줄 */
+.join-input.input-select .vs__dropdown-option:after {
+  content: '';
+  width: 80%;
+  height: 4px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  background: transparent url("@/assets/img/launcher/login/dropdown_line.png") no-repeat;
+}
+
+.join-input.input-select .vs__dropdown-option:last-child:after {
+  background: none;
+}
+
+.join-input.input-select .vs__no-options {
+  font-size: 20px;
+  padding: 0;
+}
+
+.join-reg .short-input {
+  width: 73%;
+  float: right;
+}
+
+.join-reg .short-input {
+  color: #292929 !important;
+}

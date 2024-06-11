@@ -1,0 +1,431 @@
+/* 나만의 보관함 */
+.mystorage-wrap {
+  --size-20 : 1.56vw;
+  --size-18 : 1.41vw;
+}
+.mystorage-wrap {
+  width: 100%;
+  min-height: 100vh;
+  background: url("@/assets/img/launcher/storage/stg_bg@2x.webp") no-repeat;
+  background-size: 100%;
+  overflow: hidden;
+}
+
+/* 나만의 보관함 상단 GNB */
+.mystorage-wrap .gnb {
+  background-color: transparent;
+  font-size: 2.5vw;
+  color: #FFFFFF;
+  position: initial;
+}
+/* GNB 데코 이미지 설정 */
+.mystorage-wrap .gnb .gnb-title img {
+  width: 104px;
+}
+/* GNB close 이미지 설정 */
+.gnb-right .btn img {
+  width: 56px;
+  height: 56px;
+}
+
+/* 최근학습 & 보관함 탭 */
+.mystorage-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*padding: 7.03vw 0 1.25vw;*/
+  padding: 0 0 1.25vw;
+}
+.mystorage-div > button {
+  width: 17.19vw;
+  height: 7.19vw;
+  background: url("@/assets/img/launcher/storage/stg_tap_02_n@2x.webp") no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 2vw;
+  font-size: 1.72vw;
+  line-height: 2.27vw;
+  color: #7CAAFF;
+}
+/* 버튼 활성화 스타일 설정 */
+.mystorage-div > button.active {
+  background: url("@/assets/img/launcher/storage/stg_tap_01_s@2x.webp") no-repeat;
+  background-size: 100% 100%;
+  color: #FFFFFF;
+}
+
+/* 과목별 탭 */
+.subject-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4.84vw;
+  margin-bottom: 1.25vw;
+}
+.subject-list > button {
+  width: fit-content;
+  height: 4.22vw;
+  padding: 1.33vw 2.34vw;
+  color: #B54D00;
+  font-size: var(--size-20);
+}
+/* 영어&수학&한글 활성화 */
+.subject-list > button.active {
+  background: url("@/assets/img/launcher/storage/stg_tap_2_depth_01_s@2x.webp") no-repeat;
+  background-size: 100% 100%;
+  color: #B53F00;
+}
+/* 특별학습&영어도서관 활성화 */
+.subject-list > button.active02 {
+  background: url("@/assets/img/launcher/storage/stg_tap_2_depth_02_s@2x.webp") no-repeat;
+  background-size: 100% 100%;
+  color: #B53F00;
+}
+/* 한글도서관 활성화 */
+.subject-list > button.active03 {
+  background: url("@/assets/img/launcher/storage/stg_tap_2_depth_03_s@2x.webp") no-repeat;
+  background-size: 100% 100%;
+  color: #B53F00;
+}
+
+/* 나만의 보관함 리스트 영역 */
+.mystorage-wrap .contents-wrap {
+  /*height: 100%;*/
+  max-height: 41.56vw;
+  /*height: 42.81vw;*/
+  position: relative;
+}
+.mystorage-wrap .contents {
+  width: calc( 100% - 15.72vw);
+  max-height: 41.56vw;
+  /*height: 41.56vw;*/
+  margin: auto;
+  padding: 1.88vw 0 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.contents::-webkit-scrollbar {
+  display: none;
+}
+/* 모션북 & 월 이동 영역 */
+.mystorage-wrap .contents-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+/* 모션북 안내 */
+.left-info {
+  width: 8.13vw;
+  height: 3.13vw;
+  background: url("@/assets/img/launcher/storage/eglb_icon_info_mbook@2x.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 최근학습 월 이동 */
+.month-box {
+  width: 16.41vw;
+  height: 3.13vw;
+  background: url("@/assets/img/launcher/storage/month_eglb_box@2x.webp") no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55vw 0.78vw;
+  font-size: var(--size-18);
+  font-weight: bold;
+  color: #FFFFFF;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.prev-month {
+  width: 2.03vw;
+  height: 2.03vw;
+  background: url("@/assets/img/launcher/storage/month_eglb_arr_left_s@2x.webp") no-repeat;
+  background-size: 100% auto;
+}
+.prev-month.disable {
+  background: url("@/assets/img/launcher/storage/month_eglb_arr_left_d@2x.webp") no-repeat;
+  background-size: 100% auto;
+}
+.next-month {
+  width: 2.03vw;
+  height: 2.03vw;
+  background: url("@/assets/img/launcher/storage/month_eglb_arr_right_s@2x.webp") no-repeat;
+  background-size: 100% auto;
+}
+.next-month.disable {
+  background: url("@/assets/img/launcher/storage/month_eglb_arr_right_d@2x.webp") no-repeat;
+  background-size: 100% auto;
+ }
+
+/* 책 리스트 영역*/
+.contents .contents-list{
+  width: 100%;
+  height: calc(100% - 1.88vw);
+  margin-top: 1.88vw;
+}
+.contents .contents-list ul {
+  margin: 0;
+  padding: 0 0 0 3.90625vw;
+  display: flex;
+  flex-wrap: wrap;
+  background: url("@/assets/img/launcher/storage/eglb_thumb_shelf@2x.webp") 0 0 repeat;
+  /*background-size: 100% 22.5vw;*/
+  background-size: 100% 22.473vw;
+}
+.contents .contents-list ul li {
+  padding: 0 0 3.7vw;
+  width: 16.48vw;
+  margin-left: 4.3vw;
+}
+.contents .contents-list ul li:nth-child(4n+1) {
+  margin-left: 0;
+}
+
+/* 책 디테일 */
+.contents .contents-list ul li > .thumb {
+  width: 13.75vw;
+  height: 16.41vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  margin: 0 2.19vw 0 0.55vw;
+  box-sizing: content-box;
+  background: url("@/assets/img/launcher/storage/eglb_thumb_book_shadow@2x.webp") 0 110% no-repeat;
+  background-size: 100% auto;
+}
+/* 책 썸네일 */
+.contents .contents-list ul li > div > img {
+  max-width: 13.75vw;
+  max-height: 15.63vw;
+  margin-bottom: 0.78vw;
+}
+.contents .contents-list .re-view {
+  width: 13.75vw;
+  height: 15.65vw;
+  border-radius: 0 0 100px 0;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+/* 책 읽기 완료 표시 */
+.contents .thumb > .check-read {
+  width: 4.69vw;
+  height: 4.69vw;
+  top: 7vw;
+  right: 0;
+  bottom: 3.91vw;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  background: url("@/assets/img/launcher/common/cmm_ico_reading_ok@2x.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 책 모션북 표시*/
+.contents .contents-list ul li > .thumb > .motion {
+  width: 2.27vw;
+  height: 2.58vw;
+  left: -0.5vw;
+  bottom: 0.5vw;
+  position: absolute;
+  background: url("@/assets/img/launcher/superbox/sup_ico_mbook.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.thumb-bottom-right {
+  display: flex;
+  position: absolute;
+  /*right: 18px; bottom: 0;*/
+  right: 0; bottom: 3.98vw;
+  align-items: flex-end;
+}
+.thumb-bottom-right .ico-guide {
+  display: inline-block;
+  width: 4.6875vw; height: 3.0469vw;
+  margin-right: -0.7813vw;
+  background-image: url("@/assets/img/launcher/storage/ico_guide.webp");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* 책 보관함 담기 */
+.contents ul li .thumb .thumb-bottom-right .save {
+  width: 5vw;
+  height: 4.38vw;
+  background-image: url("@/assets/img/launcher/common/cmm_thumb_storage_s@2x.webp");
+  background-size: 100% 100%;
+}
+/* 책 보관함 담기 취소 */
+.contents ul li .thumb .thumb-bottom-right .save.save-off {
+  background-image: url("@/assets/img/launcher/common/cmm_thumb_storage_d@2x.webp");
+}
+/* 책 정보 */
+.contents .book-info {
+  width: 13.75vw;
+  /*margin-left: 1.48vw;*/
+  margin-left: 1vw;
+  margin-top: 0.8vw;
+}
+.contents .book-info span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 1.25vw;
+  line-height: 1.25;
+}
+.contents .book-info .en {
+  gap: 0.86vw;
+}
+.contents .book-info .en .bar {
+  content: '';
+  display: inline-block;
+  width: 0.23vw;
+  height: 1.09vw;
+  background: url("@/assets/img/launcher/storage/eglb_icon_bar@2x.webp") center bottom no-repeat;
+  background-size: 100% 100%;
+}
+
+/* 강의 리스트 */
+.contents .study-list {
+  width: 100%;
+  height: calc(100% - 1.88vw);
+  margin-top: 1.88vw;
+}
+.contents .study-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 1.5vw 0;
+  gap: var(--size-20);
+}
+.study-list .list-item {
+  /*width: 254px;*/
+  /*height: 226px;*/
+  width: 19.84vw;
+  height: 17.66vw;
+  padding: 0.63vw 0.78vw 0;
+  background: url("@/assets/img/launcher/storage/cmm_thumb_01_box_hm@2x.webp") no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+.study-list .list-item .thumb {
+  /*width: 234px;*/
+  /*height: 152px;*/
+  width: 18.28vw;
+  height: 11.88vw;
+  border-radius: 2.27vw 2.27vw 0.7vw 0.7vw;
+  overflow: hidden;
+}
+.study-list .list-item .thumb > img {
+  width: 100%;
+}
+
+/* 학습번호 */
+.study-list .num {
+  width: 5.86vw;
+  height: 4.69vw;
+  position: absolute;
+  /*bottom: 4.3vw;*/
+  bottom: 3.98vw;
+  left: 0;
+  color: #F44B3D;
+  font-size: var(--size-20);
+  padding: 1.7vw 0 var(--size-20) var(--size-18);
+  text-align: left;
+  background: url("@/assets/img/launcher/storage/cmm_thumb_01_nb_n@2x.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 학습 완료 */
+.study-list .num.complete {
+  font-size: 1.33vw;
+  padding: 1.95vw 0 var(--size-18) var(--size-18);
+  color: #FFFFFF;
+}
+.study-list.eng .num.complete {
+  background: url("@/assets/img/launcher/storage/cmm_thumb_01_nb_sukey@2x.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.study-list.math .num.complete {
+  background: url("@/assets/img/launcher/storage/cmm_thumb_01_nb_evie@2x.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.study-list.ko .num.complete {
+  background: url("@/assets/img/launcher/storage/cmm_thumb_01_nb_wiz@2x.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.study-list.spe .num.complete {
+  background: url("@/assets/img/launcher/storage/cmm_thumb_01_nb_neo@2x.webp") no-repeat;
+  background-size: 100% 100%;
+}
+
+/* 학습 저장 */
+.contents .study-list .thumb .save {
+  bottom: 4.3vw;
+  right: 0;
+}
+
+.study-list .list-item .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /*width: calc(100% - 1.1vw);*/
+  /*height: 3.59vw;*/
+  height: 2.66vw;
+  margin: 1.4vw auto 0;
+  /*margin-top: 0.54vw;*/
+}
+.title span {
+  /*font-size: var(--size-18);*/
+  font-size: 1.17vw;
+  color: #292929;
+  word-break: break-word;
+  /*line-height: 2.03vw;*/
+  line-height: 1.4;
+}
+.study-list .list-item .title.story {
+  margin: 1.09vw auto 0;
+}
+.story span {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* story 일때만 작가 나타나게함 */
+.story .author {
+  display: inline-block;
+  /*font-size: 0.78vw;*/
+  font-size: 0.9vw;
+  font-weight: 500;
+  color: #A6A6A6;
+  margin-top: 0.55vw;
+}
+
+/* 리스트 없을 때 */
+.mystorage-wrap .no-data  {
+  /*width: 100%;*/
+  height: 41.56vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.no-data img {
+  width: 50vw;
+  margin-top: 2vw;
+}
+
+.study .no-data .storage-no-data,
+.storage .no-data .study-no-data,
+/*.storage .month-box,*/
+.author {
+  display: none;
+}

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// 인풋, 버튼, 검색창 등
+.table-top {
+  display: flex;
+  margin: 60px auto 30px;
+  justify-content: space-between;
+  align-items:center;
+  > div {
+    display: flex;
+    align-items: center;
+  }
+  .table-title {
+    font-size:30px;
+    line-height:32px;
+    font-weight:700;
+  }
+}
+

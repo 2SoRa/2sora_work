@@ -1,0 +1,338 @@
+/* 로그인 */
+.login {
+  width: 1920px;
+  height: 1200px;
+}
+
+/* contents */
+.login .login-guide {
+  height: 100%;
+  background: url("@/assets/img/launcher/login/log_bg_01.webp") no-repeat;
+}
+
+/* 로그인 전 확인하세요 */
+.login-guide .title {
+  font-size: 55px;
+  padding-top: 250px;
+  margin: 0 auto 49px;
+  color: #292929;
+}
+
+.login-guide .guide-content {
+  font-size: 30px;
+  line-height: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.login-guide .btn-wrap {
+  justify-content: center;
+}
+
+/* Login Main */
+.login .login-main {
+  width: 100%;
+  height: 100%;
+  background: url("@/assets/img/launcher/login/log_bg_02.webp") no-repeat;
+  position: relative;
+}
+
+.login-main .login-area {
+  padding-top: 175px;
+  margin-bottom: 40px;
+}
+
+.login-area {
+  width: 760px;
+  margin: auto;
+}
+
+.login-main .input-wrap li > div {
+  background-color: #ffffff;
+}
+
+.login-main .input-wrap input {
+  width: 100%;
+  height: 100px;
+  border-radius: 26px;
+  padding: 40px;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.login-main .input-wrap input::placeholder {
+  text-align: left;
+  right: 0;
+  font-size: 32px;
+  /*color: #292929;*/
+  line-height: 1.19;
+  color: #c1c1c1;
+  position: initial;
+  font-weight: 400;
+}
+
+.login-main .input-wrap div:last-child input {
+  margin-bottom: 0;
+}
+
+.account-search {
+  text-align: center;
+}
+
+.account-search a {
+  color:#0a418d;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.account-search a:first-child::after {
+  content: '|';
+  margin: 0 20px;
+  opacity: 20%;
+}
+
+.login-main .guide-footer {
+  color: #2d185d;
+}
+
+/* 원격지원 버튼 추가 */
+.login-main .remote {
+  position: absolute;
+  width: 112px;
+  top: 30px;
+  right: 30px;
+}
+
+.login-main .remote img {
+  width: 100%;
+}
+
+/* 로그인정보 */
+.login-main .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.login-main .info li {
+  line-height: 32px;
+  font-size: 22px;
+  font-weight: 500;
+  color: #5c5c5c;
+  text-align: left;
+  /*list-style: inside disc;*/
+  margin-bottom: 12px;
+}
+.login-main .info li::before {
+  content: '\00b7';
+  font-size: 1.5em;
+  vertical-align: middle;
+  margin: 0  10px 0 26px;
+}
+.login-main .info li:last-child {
+  margin-bottom: 0;
+}
+.login-main .info li span {
+  font-weight: 500;
+}
+
+.login-main .btn {
+  margin: 40px auto;
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* 아이디.비번 찾기 */
+.search {
+  height: 100%;
+  background: url("@/assets/img/launcher/login/log_bg_03.png") no-repeat;
+}
+
+.search-area {
+  width: 850px;
+  height: 1015px;
+  margin: 0 200px 0 auto;
+}
+
+/* 아이디찾기 비밀번호찾기 */
+.search-title {
+  padding-top: 150px;
+  text-align: left;
+  color: #000000;
+  margin-bottom: 51px;
+}
+
+.search-title .title {
+  font-size: 55px;
+  margin-bottom: 27px;
+  color: #000000;
+  justify-content: flex-start;
+}
+
+.search-title .content {
+  font-size: 35px;
+}
+
+.search .input-wrap li {
+  margin-bottom: 20px;
+}
+
+.search .input-wrap .input {
+  background-color: #f5f5f5;
+}
+
+.search .input-wrap li:last-child {
+  margin-bottom: 0;
+}
+
+.search .input-wrap > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 26px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.search .input-wrap > div:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------- */
+/* 아이디 찾기 성공 */
+.success-info {
+  width: 100%;
+  background-color: #f5f5f5;
+  border-radius: 60px;
+  padding: 70px 70px 51px 76px;
+  text-align: left;
+}
+
+.success-info > .title {
+  font-size: 40px;
+  line-height: 60px;
+  color: #292929;
+  font-weight: 900;
+  margin-bottom: 50px;
+  justify-content: flex-start;
+}
+
+.success-info span {
+  color: inherit;
+}
+
+.search-info {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.search-info div {
+  display: flex;
+  justify-content: space-between;
+  line-height: 60px;
+  margin-bottom: 10px;
+}
+
+.search-info .title {
+  font-size: 30px;
+  color: #292929;
+}
+
+.search-info .info {
+  font-size: 34px;
+  font-weight: 700;
+  color: #763df4;
+}
+
+/* --------------------------------------------------------- */
+/* 고객센터 */
+.login .footer.search-footer {
+  width: fit-content;
+  height: 84px;
+  margin: 0 auto 0 852px;
+  flex-direction: column;
+  color: #2d185d;
+  text-align: left;
+}
+
+.login .footer.search-footer div {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+.login .footer.search-footer div p:first-child {
+  display: none;
+}
+
+/* 접속 중지 */
+.login-fail {
+  width: 100%;
+  height: 100%;
+  background: url("@/assets/img/launcher/login/log_bg_07.png") no-repeat;
+}
+
+.login-fail .content {
+  width: 940px;
+  height: 536px;
+  border-radius: 60px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 11%;
+  right: 0;
+  bottom: 0;
+  left: 18%;
+  margin: auto;
+  font-weight: 400;
+  padding: 30px 60px 70px;
+}
+
+.login-fail .content ul li {
+  height: 116px;
+  box-sizing: border-box;
+  padding: 40px 0;
+  font-size: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-fail .content ul li.help {
+  height: auto;
+  font-size: 22px;
+  color: #5c5c5c;
+  padding: 20px 0;
+}
+
+.login-fail .content ul li::after {
+  content: '';
+  display: inline-block;
+  width: 820px;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+  background: url('@/assets/img/launcher/login/log_unable_line.png') no-repeat;
+}
+
+.login-fail .content ul li:last-child::after {
+  background: none;
+}
+
+.login-fail .content ul li .info {
+  min-width: 8.33vw;
+}
+
+.login-fail .content ul li .info ~ p {
+  max-width: 80%;
+  font-size: 30px;
+  line-height: 1.41;
+  color: #4614b5;
+  /*margin-left: 1.56vw;*/
+  margin-left: 1.3vw;
+  text-align: left;
+  font-weight: 400;
+}
+.login-fail .content ul li .info ~ p span {
+  font-weight: 400;
+  color: #4614b5;
+}

@@ -1,0 +1,205 @@
+/* TODO : 임시 구성 및 스타일 */
+.rc-main-gnb {
+  width: 100%;
+  height: 135px;
+  padding: 24px 36px 21px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  color: #FFFFFF !important;
+  background-color: #BFF1FA;
+  font-size: 27px !important;
+}
+.rc-main-gnb button a {
+  color: #FFFFFF !important;
+}
+
+/* gnb 좌측 영역 */
+.rc-main-gnb .gnb-left {
+  width: max-content;
+  display: flex;
+  gap: 20px;
+  position: unset;
+}
+/* 전체메뉴 보기 버튼 */
+.rc-main-gnb .all-menu {
+  width: 60px;
+  height: 90px;
+  background: url("@/assets/img/launcher-readingclub/main/gnb_btn_burger.webp") no-repeat;
+  background-size: 100% 100%;
+}
+
+
+/* logo */
+.rc-main-gnb .logo {
+  width: 144px;
+  height: 90px;
+}
+
+/* 스터디&리딩클럽 전환 탭(버튼) */
+.rc-main-gnb .main-gnb-tab {
+  width: 330px;
+  height: 90px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #9ED8E0;
+  border-radius: 50px;
+}
+.rc-main-gnb .main-gnb-tab button {
+  font-size: 27px;
+}
+.rc-main-gnb .main-gnb-tab button:first-child {
+  width: 144px;
+  height: 90px;
+  color: #388686;
+}
+.rc-main-gnb .main-gnb-tab button:last-child {
+  width: 174px;
+  height: 78px;
+  color: #FFFFFF;
+  background: url("@/assets/img/launcher-readingclub/main/btn_toggle_active.webp") no-repeat;
+  background-size: 100% 100%;
+}
+
+/* 중앙 메인 메뉴 */
+.rc-main-gnb .menu {
+  width: 1014px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0F84FF;
+  padding: 0 46px 0 0;
+  border-radius: 50px;
+}
+/* 중앙 메인 메뉴 항목 */
+/* 중앙 메인 메뉴 항목 활성화 */
+.rc-main-gnb .menu .active {
+  width: 216px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #581DEB;
+  border-radius: 50px;
+}
+.rc-main-gnb .menu .active::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -3px;
+  right: 15px;
+  display: inline-block;
+  background: url("@/assets/img/launcher-readingclub/common/icons/ico_gnb_today.webp") no-repeat;
+  background-size: 100%;
+}
+.rc-main-gnb .menu ul {
+  width: calc(100% - 216px);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 0 38px;
+}
+.rc-main-gnb .menu li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*font-size: 27px;*/
+  /*flex: 1;*/
+}
+
+/* gnb 우측 영역 */
+.rc-main-gnb .gnb-right {
+  align-items: center;
+  gap: 30px;
+}
+.rc-main-gnb .gnb-right button {
+  width: 81px;
+  height: 81px;
+  color: transparent;
+}
+.rc-main-gnb .gnb-right button a img {
+  width: 100%;
+}
+.rc-main-gnb .gnb-right button.setting {
+  width: 60px;
+  height: 90px;
+  background: url("@/assets/img/launcher-readingclub/common/icons/ico_setting.webp") no-repeat;
+  background-size: 100% 100%;
+}
+
+
+/* PopUp Gnb 팝업 */
+.pop-gnb {
+  width: 100%;
+  padding: 24px 36px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.pop-gnb .pop-close {
+  width: 84px;
+  height: 84px;
+  /*position: absolute;*/
+  background: url("@/assets/img/launcher-readingclub/common/btn_ico_close.webp") no-repeat;
+  background-size: 100% 100%;
+}
+
+/* 서브 페이지 Gnb Sub */
+.sub-gnb {
+  width: 100%;
+  height: 135px;
+  padding: 0 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.sub-gnb button a { color: transparent !important; }
+.sub-gnb .back {
+  width: 60px;
+  height: 90px;
+  font-size: 0;
+  background: url("@/assets/img/launcher-readingclub/common/gnb_btn_before.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.sub-gnb h1 {
+  width: fit-content;
+  font-size: 48px;
+  color: #292929;
+  line-height: 1.13;
+  letter-spacing: -0.3px;
+  margin: auto;
+}
+.sub-gnb .close {
+  width: 81px;
+  height: 81px;
+  background: url("@/assets/img/launcher-readingclub/common/btn_ico_close.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 도서관 서브페이지 내서재 & 검색 */
+.library.sub .sub-gnb > div  {
+  position: absolute;
+  right: 121px;
+}
+.library.sub .sub-gnb > div button {
+  height: 90px;
+  padding: 0;
+}
+.library.sub .sub-gnb > div .my-book {
+  width: 168px;
+  background: url("@/assets/img/launcher-readingclub/common/btn_mybook.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library.sub .sub-gnb > div .search-link {
+  width: 159px;
+  background: url("@/assets/img/launcher-readingclub/common/btn_search.webp") no-repeat;
+  background-size: 100% 100%;
+}

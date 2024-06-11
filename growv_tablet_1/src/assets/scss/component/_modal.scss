@@ -1,0 +1,1057 @@
+@charset "UTF-8";
+
+.modal-container {
+  .modal-body {
+    //height: 725px;        // 마이페이지 슈퍼브이 컴포넌트, 모달 호출 시 스타일 영향으로 인한 주석
+    //padding: 40px;
+    //background-color: #F8F8F8;
+    border-radius: 0 0 40px 40px;
+    box-shadow: inset 0 -10px 0 0 rgba(0, 0, 0, 0.16);
+    overflow: hidden;
+
+    // 학습 모달하고 같은 바디 스타일일떄만 사용
+    .pop-body.content-scroll-area {
+      position: relative;
+      height: 645px;
+      padding-right: 40px;
+      overflow-x: hidden;
+
+    &::-webkit-scrollbar { display: flex; }
+    }
+  }
+}
+
+// 학습 현황 모달 스타일 영역
+.schedule {
+  .modal-container {
+    //header
+    .modal-header {
+      .pop-header {
+        width: 1200px; height: 240px;
+        background: url("#{$img-url}/schedule/bg_modal_header.webp");
+        background-size: 100% 100%;
+
+        .modal-default-button {
+          top: 141px; right: 40px;
+          opacity: 0.6;
+        }
+        .btn-calendar {
+          width: 632px; height: 96px;
+          top: 52px; right: 224px; bottom: 92px; left: 324px;
+
+          h2 { font-size: 42px;}
+        }
+
+        .header-info {
+          position: absolute;
+          right: 0; bottom: 21px; left: 9%;
+          color: #153465;
+          font-size: 22px;
+          font-weight: 500;
+          line-height: 1.36;
+          letter-spacing: -0.3px;
+        }
+      }
+    }
+    //body
+    .modal-body {
+      height: 725px;
+      padding: 40px;
+      background-color: #F8F8F8;
+      .pop-body {
+       > div {
+          display: flex;
+          flex-direction: column;
+
+          .title {
+            gap: 10px;
+            justify-content: flex-start;
+            margin: 0 0 24px;
+            font-size: 32px;
+            color: #292929;
+
+            &:before {
+              display: inline-block;
+              content: '';
+              width: 32px; height: 32px;
+              border: 9px solid #1A84FF;
+              border-radius: 30px;
+              box-sizing: border-box;
+            }
+          }
+          .list-box {
+            display: flex;
+            height: 225px;
+            padding: 30px 45px 30px 40px;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid #EBEBEB;
+            border-radius: 40px;
+            box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.04);
+            // TODO: 클릭확인용
+            cursor: pointer;
+
+            .book-info {
+              display: flex;
+              gap: 42px;
+
+              .img-wrap {
+                display: flex;
+                width: 165px; height: 165px;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                  width: 100%; height: 100%;
+                  object-fit: scale-down;
+                  border-radius: 12px;
+                }
+              }
+              .info-wrap {
+                display: flex;
+                width: 589px;
+                text-align:left;
+                justify-content: center;
+                flex-direction: column;
+
+                .tag-wrap { margin-bottom:15px;
+                  .tag {
+                    padding:0; height:auto;
+                    justify-content:flex-start;
+                    .tag-item {margin-bottom:0;
+                      &:first-child {margin-left:0;}
+                    }
+                  }
+                }
+                .book-title {
+                  width: 100%;
+                  color: #292929;
+                  font-size: 32px;
+                  line-height: 45px;
+                }
+                .reading-count {
+                  width: 100%;
+                  margin-top:20px;
+                  color: #1871FF;
+                  font-size: 30px;
+                  text-align: left;
+                }
+              }
+            }
+            // 독서상태 구분
+            .reading-status {
+              width: 120px; height: 135px;
+              text-align: center;
+
+              &::before,
+              &::after {
+                display: inline-block;
+                content: '';
+                color: #878788;
+                font-size: 24px;
+              }
+              &:before {
+                width: 90px; height: 90px;
+                background-size: 100% 100%;
+                margin-bottom: 18px;
+              }
+              // 책 읽기
+              &.before {
+                &::before { background-image: url("#{$img-url}/schedule/img_reading_before.webp"); }
+                &::after { content: '책 읽기'; }
+              }
+              // 독서 중
+              &.ing {
+                &::before { background-image: url("#{$img-url}/schedule/img_reading_ing.webp"); }
+                &::after { content: '독서 중'; }
+              }
+              // 독서 완료
+              &.comp {
+                &::before { background-image: url("#{$img-url}/schedule/img_reading_complete.webp"); }
+                &::after { content: '독서 완료'; color: #086DF7; }
+              }
+            }
+
+            &.no-data {
+              justify-content: center;
+              gap: 42px;
+              font-size: 32px;
+              line-height: 1.5;
+              letter-spacing: -0.3px;
+
+              .img {
+                width: 140px; height: 140px;
+                background-size: 100% 100%;
+              }
+              p { font-weight: 500; }
+            }
+            & ~ .list-box {
+              margin-top: 12px;
+            }
+          }
+          &.list-todayplan {
+            .no-data {
+              .img { background-image: url("#{$img-url}/common/cha_pop_good_wiz.webp"); }
+            }
+          }
+          &.list-today {
+            .title { margin: 60px 0 24px; }
+            .no-data {
+              .img { background-image: url("#{$img-url}/common/cha_pop_smile_wiz.webp"); }
+            }
+          }
+        }
+
+        // 미래일 때, 책영역 클릭되면 안됨. 오늘의 학습 내역 보여지면 안됨.
+        &.future {
+          .list-box {
+            pointer-events: none;
+          }
+          .list-today {
+            position: relative;
+            padding: 0;
+
+            .title, p { display: none; }
+            .list-box {
+              border: none; box-shadow: none;
+              height: 205px;
+
+              &.no-data {
+                .img {
+                  position: absolute;
+                  width: 1200px; height: 300px;
+                  //TODO: 디자인 대로 넣은 여백. 적용 되어있는 내용은 2권일때 이비 머리 보이는 정도로 수정한 여백.
+                  //bottom: -159px;
+                  bottom: -104px;
+                  background-image: url("#{$img-url}/schedule/bg_nostudy_ev.webp");
+                }
+                &.hide { display: none;}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// e-학습 현황 모달 스타일 영역
+
+// 무료체험신청 & 상담신청 영역
+.free-experi {
+  .modal-container {
+    width: 798px;
+
+    &::after {
+      display: block;
+      content: '';
+      position: fixed;
+      width: 1250px; height: 541px;
+      right: 0; bottom: 220px; left: 0;
+      margin: auto;
+      background-image: url("#{$img-url}/common/bg_modal_free.webp");
+      background-size: 100% 100%;
+      z-index:$depth-1-m;
+    }
+
+    .modal-header {
+      display: flex;
+      height: 108px;
+      align-items: center;
+      justify-content: center;
+      background-color: #7D69F0;
+      border-radius: 51px 51px 0 0;
+
+      h1 {
+        font-size: 39px;
+        color: #FFFFFF;
+        span {
+          color: #F9FF74;
+        }
+      }
+
+      .modal-default-button {
+        position: absolute;
+        width: 54px; height: 54px;
+        right: 27px;
+        opacity: 0.6;
+        background-size: 100% 100%;
+      }
+    }
+
+    .modal-body {
+      height: 754px;
+      padding: 57px 64px;
+      box-shadow: none;
+      background-color: #FFFFFF;
+
+      .sub-title {
+        width: 100%;
+        font-size: 33px;
+        text-align: center;
+        line-height: 1.36;;
+
+        span { color: #763DF4; }
+      }
+
+      .form-area {
+        padding: 45px 17px;
+
+        fieldset {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          gap: 18px;
+
+          .input-wrap {
+            align-items: center;
+            flex-direction: row;
+            gap: 34px;
+
+            p {
+              min-width: 131px;
+              font-size: 30px;
+              line-height: 1.8;
+              letter-spacing: -0.3px;
+              text-align: left;
+
+              span { color: #EA4DFF; }
+            }
+            input {
+              border: 3px solid #CECECE;
+              border-radius: 24px;
+              padding: 30px;
+              font-size: 30px;
+
+              &:disabled {
+                color: #A3A3A3;
+                background-color: #F6F6F6;
+              }
+            }
+          }
+          .info {
+            width: 100%;
+            margin-top: -6px;
+            color: #8F8F8F;
+            font-size: 21px;
+            font-weight: 500;
+            text-indent: 165px;
+
+            &::after {
+              display: inline-block;
+              content: '회원정보에 등록된 휴대 전화번호를 입력해 주세요.'
+            }
+
+            &.error {
+              color: #F52114;
+              &::after { content: attr(error-text); }
+              &.blank::after { content: attr(input-text); }
+            }
+          }
+        }
+      }
+
+      .btn {
+        width: calc( 100% - 34px); height: 108px;
+        margin: auto;
+        background-color: #763DF4;
+        border-radius: 24px;
+        box-shadow: inset 0 -10px 0 0 rgba(0, 0, 0, 0.2);
+        color: #FFFFFF;
+      }
+    }
+  }
+  &.reading {
+    .modal-container {
+      .modal-header,
+      .btn {
+        background-color: #1E9AF7;
+      }
+      .modal-body {
+        padding: 57px 81px 0;
+
+        .pop-body {
+          height: 697px;
+          padding: 0 0 64px 0;
+
+          &::-webkit-scrollbar { display: none; }
+          span { color: #1E9AF7; }
+         .form-area {
+           padding: 45px 0;
+          .reading-level {
+            margin: 25.5px 0;
+            padding: 55.5px 0 43.5px;
+            border-top: 3px solid rgba(196, 192, 192, 0.4);
+            border-bottom: 3px solid rgba(196, 192, 192, 0.4);
+            text-align: left;
+
+            ul {
+              margin-top: 46px;
+              padding: 36px;
+              background-color: #D6F1FF;
+              border-radius: 47px;
+
+              li {
+                margin-bottom: 36px;
+                p {
+                  font-size: 27px;
+                  font-weight: 500;
+                  text-indent: 26px;
+
+                  &:first-of-type {
+                    display: inline-block;
+                    margin-bottom: 15px;
+                    text-indent: 0;
+                    font-size: 30px;
+                    font-weight: 700;
+
+                    &:before {
+                      display: inline-block;
+                      content: '';
+                      width: 9px; height: 9px;
+                      margin-right: 15px;
+                      background-color: #292929;
+                      border-radius: 9px;
+                      vertical-align: middle;
+                    }
+                    span {
+                      color: #EA4DFF;
+                    }
+                  }
+                }
+                &:last-of-type { margin-bottom: 0; }
+
+                .form-area {
+                  padding: 0;
+                }
+              }
+            }
+          }
+          }
+        }
+      }
+    }
+  }
+  &.buy {
+    .modal-container {
+      .modal-body {
+        .pop-body {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+// e-무료체험신청 & 상담신청 영역
+
+// 뷰어즈릿지 클로즈 영역
+.viewr-close {
+  .modal-container {
+    .modal-header {
+      display:none;
+    }
+    .modal-body {
+      background-color:transparent;
+
+      .view-title {
+        width:708px;
+      }
+    }
+  }
+}
+
+// 좌측 상단 라운드형 모달
+.modal-lt-round {
+  position: relative;
+  width: 840px;
+  height:400px;
+  font-size: 42px !important;
+  justify-content: center !important;
+  top:0; left:0;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 16px solid #f0f0f0;
+  border-radius: 128px 24px 40px 40px;
+
+  .modal-default-button {
+    top: 20px;
+    right: 20px;
+  }
+  .title {
+    width:426px;
+    height:105px;
+    color: #ffffff;
+    font-size:42px;
+    justify-content:center;
+    position:relative;
+    margin: -17px auto 0;
+    background:no-repeat 0 0 url("#{$img-url}/common/bg_pop_modal_title.webp");
+    background-size:100% 100%;
+  }
+  .content {
+    //padding: 43px 40px 60px 60px;
+    width:600px;
+    margin:0 auto;
+  }
+  .txt-guide-wrap {
+    display:flex;
+    align-items:flex-end;
+    justify-content:flex-start;
+    margin:61px auto 40px;
+
+    .txt-guide {
+      font-size:36px;
+    }
+    .txt-try-num {
+      position:relative;
+      top:-4px;
+      margin-left:10px;
+      font-size:24px;
+      color:#270a67;
+      em {color:#763df4;}
+    }
+  }
+  .btn-wrap {
+    margin-top: 50px;
+  }
+  .txt-info {
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    position:relative;
+    width:100%;
+    margin:18px 0 36px;
+    span {
+      text-align: left;
+      color:$color-modal-info-fonts;
+      font-size:24px;
+      font-weight:400;
+      &.em,
+      &.error {
+        display:none;
+        color:$color-reading-red;
+      }
+      &.type-red {
+        color:$color-reading-red;
+      }
+    }
+  }
+
+  // 학부모 인증
+  &.parent-certify {
+    height: 645px;
+    background-size: 100% 100%;
+    padding-bottom: 30px;
+    position: relative;
+    .input-wrap {
+      padding: 0 86px;
+    }
+    .certify {
+      > div {
+        width: 100%;
+        padding:0;
+        justify-content: space-between;
+      }
+      .btn-wrap {
+        margin: 0 auto;
+      }
+      button {
+        width: 160px;
+        height: 88px;
+        font-size: 30px;
+        margin-left: 0;
+      }
+      .input-wrap {
+        padding: 0;
+        position: relative;
+      }
+      input {
+        width: 412px;
+        height: 88px;
+        font-size: 30px;
+        background-color: #ebebeb;
+        border: 3px solid $color-modal-input-stroke;
+        border-radius: 18px;
+        font-weight: 400;
+        color: $color-inactive-fonts;
+        padding: 22px;
+        letter-spacing: 0;
+        pointer-events: none;
+      }
+
+      // 인증번호 입력
+      &.certify-number {
+        input {
+          background-color:#ffffff;
+          pointer-events: auto;
+        }
+        input::placeholder {
+          color:#c1c1c1;
+          position: initial;
+          text-align: left;
+        }
+
+        // 인증번호 재요청 상태
+        &.sta-reAuth {
+          input[type="number"] {
+            border-color:$color-reading-red;
+          }
+          .txt-info {
+            .error {display:block;}
+          }
+          p.time {display:block;}
+        }
+      }
+    }
+    .input-sub {
+      position: absolute;
+      width: auto;
+      height: auto;
+      right: 22px;
+    }
+
+    p.time {
+      display:none;
+      height: fit-content;
+      font-size: 30px;
+      font-weight: 400;
+      color:$color-reading-red;
+    }
+    p.time.active { display: block;}
+    p.time span {
+      color: inherit;
+      margin: 0 5px;
+    }
+    .certify.retry .txt-info span.default ,
+    .txt-info span.cert-click {
+      display: none;
+    }
+    .certify.retry .txt-info span.cert-click {
+      display: block;
+    }
+  }
+
+  // 구매 요청
+  &.buy-request {
+    height:879px;
+    .content {
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .txt-info {
+      margin-bottom:0;
+      justify-content:center;
+      span {font-size:27px; line-height:1.518; text-align:center;}
+    }
+    .info-list-wrap {
+      margin-bottom:50px;
+    }
+    .btn-wrap {
+      gap:30px;
+      .btn.disable {
+        color:$color-inactive-fonts;
+      }
+    }
+    .input-circle-chk {
+      display:flex;
+      justify-content:center;
+    }
+  }
+}
+
+// 뷰어브릿지
+.viewer-bridge.select,
+.modal-viewer .modal-container {
+  width: 100%; height: 100%;
+  border-radius: 0;
+}
+
+// 전역 모달
+.whole-modal {
+  position: fixed;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  z-index:$depth-critical;
+
+  &.modal-attend,
+  &.modal-birthday {
+    z-index:$depth-critical;
+  }
+
+  & > div {
+    width: 100%; height: 100%;
+  }
+  .whole-modal-dim {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .whole-modal-content {
+    position: absolute;
+    top: 0; left: 0;
+
+    .attend {
+      width: 963px; height: 927px;
+      margin: 137px auto 0;
+      background-image: url("#{$img-url}/common/bg_attend_pop.webp");
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      //animation: imgAni 2s steps(35) infinite;
+
+      //@keyframes imgAni {
+      //  0% { background-position-x: 0; }
+      //  100% { background-position-x: 100%; }
+      //}
+    }
+  }
+  .close {
+    position: absolute;
+    width: 84px; height: 84px;
+    top: 150px; right: 342px;
+    background-image: url("#{$img-url}/common/btn_whole_close.webp");
+    background-size: 100% 100%;
+
+    &.type-alpha {
+      background-image: url("#{$img-url}/common/btn_whole_close_alpha.webp");
+    }
+  }
+
+  &.consult {
+    background-color: #BFF1FA;
+
+    img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+    }
+    .close {
+      top: 25px; right: 36px;
+      opacity: 0.6;
+    }
+    .submit {
+      position: absolute;
+      width: 612px; height: 135px;
+      right: 298px; bottom: 76px;
+      background-image: url("#{$img-url}/main/btn_reading_exp_231020.webp");
+      background-size: 100% 100%;
+    }
+
+    &.study {
+      background-color: #8EEEFF;
+      .submit {
+        width: 614px; height: 138px;
+        right: 136px; bottom: 87px;
+        background-image: url("#{$img-url}/main/btn_study_exp_231020.webp");
+      }
+    }
+  }
+}
+
+// 안내화면
+.info-pop-wrap {
+  width: 1920px; height: 1200px;
+  top:0; left:0;
+  z-index:$depth-modal;
+
+  // 가이드 컨테이너 공통
+  .guide-content {
+    display: none;
+
+    .sub-gnb {
+      &.has-wave-bg {
+        background-image: url("#{$img-url}/common/gnb_bg_wave_default.webp");
+        background-size: 100% 100%;
+      }
+    }
+
+    .contents {margin:0;
+      .content-title {
+        width: 1284px;
+        margin: auto;
+
+        img { width: 100%; }
+      }
+
+      .col-list {
+        li {
+          flex: 1;
+          background-size: 100% 100%;
+        }
+      }
+    }
+
+    &.active {
+      display: block;
+      width: 100%; height: 100%;
+    }
+  }
+
+  // 가이드 컨테이너 커스텀
+  .guide-superpick {
+    padding: 0;
+    background-color: #C6EFFE;
+    background-image: url("#{$img-url}/guide/guide_superpick.webp");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .guide-library {
+    .sub-gnb {
+      &.has-wave-bg {background-image: url("#{$img-url}/common/gnb_bg_wave_yg.webp");}
+    }
+    .col-list {
+      width: calc(100% - 180px); height: 573px;
+      gap: 36px;
+      margin: 64px auto 0;
+      // 출판사 포함
+      @for $i from 1 through 4 {
+        li:nth-child(#{$i}) {
+          background-image: url("#{$img-url}/guide/guide_library_0#{$i}.webp");
+        }
+      }
+      &.no-pub {
+        height: 717px;
+        @for $i from 1 through 3 {
+          li:nth-child(#{$i}) {
+            background-image: url("#{$img-url}/guide/guide_library_0#{$i}_3menu.webp");
+          }
+        }
+      }
+    }
+
+    &.eng {
+      .sub-gnb {
+        &.has-wave-bg {background-image: url("#{$img-url}/common/gnb_bg_wave_pp.webp");}
+      }
+      .col-list {
+
+        @for $i from 1 through 4 {
+          li:nth-child(#{$i}) {
+            background-image: url("#{$img-url}/guide/guide_library_eng_0#{$i}.webp");
+          }
+        }
+      }
+    }
+  }
+  .guide-mylibrary {
+    .col-list {
+      width: calc( 100% - 100px );
+      gap: 25px;
+      margin: 115px auto 0;
+
+      @for $i from 1 through 3 {
+        li:nth-child(#{$i}) {
+          height: 850px;
+          background-image: url("#{$img-url}/guide/guide_mylibrary_0#{$i}.webp");
+        }
+      }
+    }
+  }
+  .guide-status {
+    .col-list {
+      width: calc( 100% - 100px );
+      gap: 25px;
+      margin: 159px auto 0;
+
+      @for $i from 1 through 3 {
+        li:nth-child(#{$i}) {
+          height: 760px;
+          background-image: url("#{$img-url}/guide/guide_status_0#{$i}.webp");
+        }
+      }
+    }
+  }
+  .guide-mysuperbook {
+    .col-list {
+      width: calc( 100% - 160px );
+      gap: 40px;
+      margin: 145px auto 0;
+
+      @for $i from 1 through 2 {
+        li:nth-child(#{$i}) {
+          height: 780px;
+          background-image: url("#{$img-url}/guide/guide_mysuperbook_0#{$i}.webp");
+        }
+      }
+    }
+  }
+  .guide-jaram.active {
+    .sub-gnb {
+      &.has-wave-bg {background-image: url("#{$img-url}/common/gnb_bg_wave_sky.webp");}
+    }
+    .contents {
+      padding: 93px 90px 0;
+      text-align: left;
+
+      .content-title {
+        display: inline-block;
+        width: 1532px;
+        margin: auto;
+      }
+      .col-list {
+        gap: 81px;
+        margin: 90px auto 0;
+
+        @for $i from 1 through 2 {
+          li:nth-child(#{$i}) {
+            flex: auto;
+            width: 886px; height: 320px;
+            background-image: url("#{$img-url}/guide/guide_jaram_0#{$i}.webp");
+
+            &:first-child {
+              width: 723px; height: 638px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // V모드 (특정 사이즈 커스텀)
+  .guide-vmode {
+    display:block;
+    position:absolute;
+    width:1002px; height:759px;
+    left:50%; top:50%;
+    margin-top:calc(-380px - 60px);
+    margin-left:-501px;
+    .btn-close {
+      position:absolute;
+      width:54px; height:54px;
+      top:43px; right:43px;
+      background: no-repeat 50% 50% url("#{$img-url}/common/btn_tooltip_close.webp");
+      background-size:100%;
+      z-index:$depth-1;
+    }
+    .contents {
+      width:100%; height:100%;
+      img {width:100%;}
+    }
+  }
+}
+
+// 전용몰 안내 팝업
+.modal-mall-promotion {
+  .whole-modal-content {
+    width:1800px; height:1060px;
+    top:50%; left:50%;
+    margin-top:-530px; //-550px; //7일간 다시보지 않기 있을 경우
+    margin-left:-900px;
+    .contents {
+      display:flex;
+      position:relative;
+      width:100%; height:100%;
+      padding:0 60px 45px;
+      background: no-repeat #000 50% 50% url("#{$img-url}/search-mall/popup/mall_pop_bg.webp");
+      background-size:cover;
+      border-radius:12px;
+      overflow:hidden;
+      .col-list {
+        gap:39px;
+        flex-wrap:unset;
+        margin-top:auto;
+      }
+    }
+    &.week-event {
+      width: 1400px; height: 770px;
+      margin-top: -365px; // -335px 체크박스 없을경우
+      margin-left: -700px;
+      .contents {
+        background: no-repeat top center url("#{$img-url}/search-mall/popup/mall_week_event_bg.webp");
+        background-size: contain;
+
+        .link-mall {
+          position: absolute;
+          width: 760px; height: 130px;
+          right: 0; bottom: 76px; left: 0;
+          margin: auto;
+        }
+      }
+    }
+
+    .btn-goto-mall {
+      position:absolute;
+      width:200px; height:auto;
+      top:36px; left:20px;
+      img {width:100%;}
+    }
+    .input-circle-chk {
+      display:flex;
+      justify-content:flex-end;
+      margin-top:20px; margin-right:10px;
+      label {color:#fff;}
+      input:checked + label {background-color:transparent;}
+    }
+    .close {
+      bottom:auto; left:auto;
+      top:15px; right:15px;
+    }
+  }
+}
+
+// 상세 보기 (비디오, 텍스트)
+.modal-detail-view {
+  .whole-modal-content {
+    position:absolute;
+    width:1500px; height:900px;
+    top:50%; left:50%;
+    margin-left:-750px; margin-top:-450px;;
+  }
+  .inner-wrap {
+    position:relative;
+    width:100%; height:100%;
+    border-radius:$popup-bd-radius;
+    background-color:#fff;
+    overflow:hidden;
+
+    &.video {
+      .video-wrap {
+        width:100%; height:100%;
+      }
+    }
+    &.text {
+      padding:90px;
+      font-size:27px; line-height:48px;
+      text-align:left;
+      color:$color-info-detail-fonts;
+      .text-wrap {}
+    }
+  }
+  .content-scroll-area {
+    width:100%; height:100%;
+  }
+  .close {
+    top:auto; right:auto;
+    bottom:100%; left:100%;
+  }
+}
+
+// 장바구니 > 구매하기 클릭시 알림톡
+.modal-alarm {
+  .modal-container {
+    background-color: #FFFFFF;
+    padding: 42px 39px;
+    .modal-body {
+      margin: 16px auto 47px;
+      box-shadow: none;
+      border-radius: 0;
+      .row-list {
+        li {
+          width: auto;
+          margin-top: 33px;
+          font-size: 27px;
+          font-weight: 600;
+          line-height: 1.56;
+          color: $color-info-detail-fonts;
+          &:first-child { margin-top: 0; }
+          span {
+            color: $color-2depth-purple;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    .btn-blue {
+      width: 562px; height: 90px;
+      background-color: $color-chart-text-blue;
+      font-size: 30px;
+      font-weight: 700;
+    }
+  }
+}

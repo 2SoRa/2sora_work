@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+/* size */
+$launcher-width : 1920px;
+$launcher-height: 1200px;
+$gnb-height : 135px;
+$mall-gnb-height: 123px;
+
+/* size image */
+$bookThumb-width : 342px;
+$bookThumb-height : 390px;
+
+/* size font */
+$sub-menu-font-size : 33px;
+
+/* font-weight */
+$font-weight-smbold : 500;
+$font-weight-bold    : 700;
+$font-weight-pretend-md : 500;
+$font-weight-pretend-smbold : 600;
+$font-weight-pretend-bold : 700;
+
+/* border */
+$popup-bd-radius : 30px;
+
+/* url */
+$img-url : '@/assets/img/launcher-readingclub';
+$ico-url : '#{$img-url}/common/icons';
+
+/* color */
+$color-reading-bg          : #bff1fa;
+$color-reading-kor-bg      : #ccf8d3;
+$color-reading-eng-bg      : #E7D8FF;
+$color-reading-mall-bg     : #f2f2f2;
+$color-reading-red         : #f52114;
+$color-shortage-red        : #ff2f2f;
+$color-info-red            : #EC1B30;
+$color-btn-2depth-fonts    : #484848;
+$color-btn-2depth-default  : #505050;
+$color-nodata-fonts        : #9b9b9b;
+$color-nodata-fonts-2      : #656565;
+$color-result-fonts        : #0c80f8;   // = $color-chart-text-blue, $color-btn-blue
+$color-select-info-fonts   : #5392DB;
+
+$color-strong-red-fonts        : #fc3d44;
+$color-default-fonts           : #292929;
+$color-inactive-fonts          : #a3a3a3;
+$color-list-fonts              : #575757;
+$color-list-sm-gray            : #656565;
+$color-refer-fonts             : #827b90;
+$color-info-detail-fonts       : #585858;  // = $color-tooltip-gray
+$color-info-desc-fonts         : #919191;
+$color-info-desc-fonts-2       : #838383;
+$color-normal-purple           : #ede6fb;
+$color-bold-purple-2           : #7941f4;
+$color-active-purple           : #763df4;
+$color-bold-purple             : #5918eb;
+$color-em-purple               : #270a67;
+$color-em-purple-2             : #8550fa;  // = $color-flag-purple 동일
+$color-em-green                : #09cbad;
+$color-emp-red                 : #EA3333;
+$color-flag-purple             : #8550fa;
+$color-title-blue              : #0384a4;
+$color-title-sub-blue          : #109ed4;
+$color-active-blue             : #109ed4;
+$color-tooltip-gray            : #585858;
+$color-list-dot-purple         : #bab0d0;
+$color-border-gray             : #dfdfdf;
+$color-border-gray-2           : #e8e8e8;
+$color-border-gray-3           : #e6e6e6;
+$color-border-gray-4           : #e3e3e3;
+$color-border-gray-5           : #d0d0d0;
+$color-border-gray-6           : #d9d9d9;
+$color-border-gray-7           : #e5e5e5; // = $color-list-bg-gray-2
+$color-border-gray-8           : #bfbfc0;
+$color-border-light-gray       : #dbdbdb;
+$color-modal-info-fonts        : #8f8f8f;
+$color-modal-input-stroke      : #cccccc;
+$color-info-flag-gray          : #909090;
+$color-list-bg-gray            : #f4f4f4;
+$color-list-bg-gray-2          : #e5e5e5;
+$color-list-bg-gray-3          : #ededed;
+$color-indent-list-fonts       : #898989;
+$color-red-fonts               : #e33d3d;
+$color-list-bg-skyblue         : #e4fafd;
+$color-list-border-skyblue     : #9dd2d9;
+$color-list-border-gray        : #d3d3d3;
+$color-list-border-gray-3      : #efefef;
+$color-list-bg-purple          : #eee3ff;
+$color-tag-bg-deep-gray        : #464646;   // = $color-chart-deep-gray
+$color-tag-bg-yellow           : #fcba06;
+$color-tag-bg-deep-pink        : #fd5279;
+$color-tag-bg-yellow-green     : #90be2d;   // = $color-chart-green
+$color-tag-bg-blue             : #145fe1;
+$color-tag-bg-purple           : #7a4ec7;   // = $color-chart-purple
+$color-tag-bg-deep-gray-light  : #ffffff;   // = $color-chart-deep-gray
+$color-tag-bg-yellow-light     : #fff8e6;
+$color-tag-bg-deep-pink-light  : #fff4f6;
+$color-tag-bg-yellow-green-light : #f8ffea;   // = $color-chart-green
+$color-tag-bg-blue-light       : #f2f7fd;
+$color-tag-bg-purple-light     : #f6f0ff;   // = $color-chart-purple
+
+$color-chart-fonts-gray        : #5c5c5c;
+$color-chart-deep-gray         : #464646;
+$color-chart-yellow            : #ffc014;
+$color-chart-yellow-2          : #fec014;
+$color-chart-green             : #90be2d;
+$color-chart-green-2           : #00d3a2;
+$color-chart-green-3           : #00ad85;
+$color-chart-blue              : #1f8dff;
+$color-chart-pink              : #fc5f83;
+$color-chart-purple            : #7a4ec7;
+$color-chart-purple-2          : #bc1dd9;
+$color-chart-blue-2            : #319ae4;
+$color-chart-pink-2            : #fd5879;
+$color-btn-bg-aqua             : #5adeef;
+$color-btn-aqua-fonts          : #04464e;
+$color-btn-bg-turquoise        : #009db9;
+$color-btn-bg-edit             : #bebebe;
+$color-btn-bg-remove           : #989898;
+$color-chart-text-blue         : #0c80f8;
+$color-chart-text-purple       : #5917eb;
+
+$color-tit-bg-blue             : #15afff;
+$color-tit-bg-purple           : #9486ff;
+$color-interest-sub-purple     : #f2E8FA;
+$color-btn-disabled-gray       : #aaaaaa;   // = $color-btn-gray
+$color-btn-gray                : #aaaaaa;
+$color-btn-bg-gray             : #c6c6c6;
+$color-btn-blue                : #0c80f8;   // = $color-chart-text-blue
+$color-btn-stroke-sky          : #cbebf2;
+
+$color-toggle-bg-green         : #9be2a6;
+$color-toggle-bg-purple        : #bc9cf0;
+
+$color-radio-btn-default-green : #7dc789;
+$color-radio-btn-active-sky    : #1ac7eb;
+$color-search-bar-bg-blue      : #1a83ff;
+
+$color-2depth-border-green     : #ccf8d3;
+$color-2depth-green            : #00adad;
+$color-2depth-border-purple    : #e7d8ff;
+$color-2depth-purple           : #8043db;
+
+$color-thumb-bg                : #f7f7f7;
+$color-superpick-blue          : #0056af;
+$color-superpick-blue-rgb      : rgba(0, 86, 175, 0.7);
+
+$color-switch-gray             : #525252;
+$color-mall-search-gray        : #f2f2f2;
+
+/* easing */
+$slide-easing : cubic-bezier(0.41, 0.04, 0.25, 1);
+
+/* z-index */
+$depth-1-m : -1;
+$depth-0 : 0;
+$depth-1 : 1;
+$depth-fixed : 10;
+$depth-popup : 99;
+$depth-modal : 199;
+$depth-important : 499;
+$depth-critical : 999;

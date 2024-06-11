@@ -1,0 +1,52 @@
+.modal-e.parent {
+  width: 1128px;
+  height: 800px;
+  background: #ffffff;
+  border-radius: 128px 24px 40px 40px;
+  padding: 63px 40px 60px 60px;
+}
+
+.modal-e.parent .title {
+  font-size: 42px;
+  color: #292929;
+  padding-bottom: 50px;
+  border-bottom: 2px solid #999999;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.modal-e.parent .info {
+  font-size: 22px;
+  color: #8f8f8f;
+  text-align: left;
+  margin: 22px 0 32px;
+}
+
+.modal-e.parent .table-wrap {
+  max-height: 505px;
+  overflow-y: auto;
+  padding-right: 20px;
+}
+
+.modal-e.parent tr {
+  height: 64px;
+  box-sizing: border-box;
+}
+
+.modal-e.parent tr th,
+.modal-e.parent tr td {
+  height: 100%;
+}
+
+/* TODO: 임시스타일 */
+.modal-01.parent {
+  height: 500px;
+}
+
+.modal-e.parent .modal-default-button {
+  width: 50px;
+  height: 50px;
+  top: -20px;
+  right: 0;
+  background-size: 100%;
+}

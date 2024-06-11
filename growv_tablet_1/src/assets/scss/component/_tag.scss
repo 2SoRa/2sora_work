@@ -1,0 +1,289 @@
+@charset "UTF-8";
+
+.tag-wrap {
+  width:100%;
+
+  .tag {
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    height:65px; // 태그 높이 33 + 여백 32px
+    margin:0; padding:16px 0;
+    justify-content:center;
+
+    // 태그 이미지 최대 너비 보장
+    img {
+      width:auto;
+      height:100%;
+      margin:0 6px;
+    }
+
+    .tag-item {
+      display:flex;
+      align-items:center;
+      position:relative;
+      font-size:19px;
+      line-height:1;
+    }
+
+    // 영어 도서 & 도서관 전용 AR지수
+    &.ar {
+      justify-content: center;
+
+      .tag-item {
+        font-size: 19px;
+        color: #665886;
+
+        // dot
+        &:before {
+          display: inline-block;
+          content: '';
+          width:18px; height:18px;
+          margin-right:9px;
+          border-radius:50%;
+          vertical-align: text-top;
+        }
+
+        // line
+        &:after {
+          display: inline-block;
+          content: '';
+          width:3px; height:18px;
+          margin: 0 12px;
+          border-radius: 18px;
+          vertical-align: text-top;
+          background-color: #D3D3E5;
+        }
+
+        &:last-child {
+          &:after {display:none;}
+        }
+
+        // 요소 커스텀 : STEP & LEVEL
+        &.step {
+          &.basic:before { background-color: #FF93D0; }
+          &.intermediate:before { background-color: #FFA85B; }
+          &.advanced:before { background-color: #4BF3D5; }
+        }
+        &.level {
+          &:before {display:none;}
+        }
+      }
+    }
+  }
+
+  // 디자인 커스텀 : 박스 그림자 타입 (태그 이미지 타입)
+  &.shadow-box {
+    padding:15px 27px 0;
+    background-size:auto 100%;
+    justify-content:space-between;
+
+    .tag {
+      height:72px;
+      padding:0;
+      background-color:rgba(255, 255, 255, 0.16);
+      box-shadow:0 5px 2px 0 rgba(0, 0, 0, 0.05);
+      border-radius:10px;
+      img {
+        width:auto;
+        height:100%;
+        margin:0;
+      }
+    }
+  }
+
+
+  $tagGroup : "general", "language", "recognition", "emotion", "sociality", "creativity";
+  //$tagColorGroup : "deep-gray", "yellow", "deep-pink", "yellow-green", "blue", "purple";
+  $tagColorGroup : $color-tag-bg-deep-gray, $color-tag-bg-yellow, $color-tag-bg-deep-pink,
+                    $color-tag-bg-yellow-green, $color-tag-bg-blue, $color-tag-bg-purple;
+  $tagColorBgGroup : $color-tag-bg-deep-gray-light, $color-tag-bg-yellow-light, $color-tag-bg-deep-pink-light,
+                    $color-tag-bg-yellow-green-light, $color-tag-bg-blue-light, $color-tag-bg-purple-light;
+
+  // 디자인 커스텀 :라운드 타입
+  &.rounded,
+  &.rounded-tail {
+    .tag {height:auto; margin-top:-7px; //margin-left:-4px;
+      .tag-item {
+        height:40px;
+        padding:0 21px;
+        margin:7px 4px;
+        border-radius:20px;
+        background-color:#ccc;
+        font-size:21px;
+        font-weight:700;
+        &:before,
+        &:after {display:none;}
+      }
+
+      &.develop {
+        .tag-item {color:#fff;
+          @for $i from 1 through length($tagGroup) {
+            $tagName : nth($tagGroup, $i);
+            $tagColor : nth($tagColorGroup, $i);
+            &.#{$tagName} {
+              background-color:$tagColor;
+            }
+          }
+        }
+      }
+      &.ar {
+        .tag-item {
+          &.step {
+            &.basic {background-color:#ffe8f5; color:#f70061;}
+            &.intermediate {background-color:#ffe9d5; color:#ff6300;}
+            &.advanced {background-color:#CCFAF3; color: #0A81BA; }
+          }
+          &.level {background-color:#ece2ff; color:#8043db;}
+        }
+      }
+    }
+  }
+
+  // 디자인 커스텀 : 라운드 아웃라인 타입 (developer, ar 클래스 분리)
+  &.rounded-outline {
+    &-developer {
+      .tag {height:auto; margin-top:-7px;
+        .tag-item {
+          height:40px;
+          padding:0 16px;
+          margin:7px 4px;
+          border-radius:20px;
+          background-color:transparent;
+          font-size:18px;
+        }
+        &.develop {
+          .tag-item {border-width:1px; border-style:solid;
+
+            @for $i from 1 through length($tagGroup) {
+              $tagName : nth($tagGroup, $i);
+              $tagColor : nth($tagColorGroup, $i);
+              $tagColorBg : nth($tagColorBgGroup, $i);
+              &.#{$tagName} {
+                color:$tagColor;
+                border-color:$tagColor;
+                background-color:$tagColorBg;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.rounded-vertical {
+    &-developer {
+      .tag {
+        .tag-item {
+          width:62px; height:174px; // 태그 최대 높이값으로 고정
+          padding:0;
+          border-radius:0;
+          background-repeat:no-repeat;
+          background-position:0 0;
+          background-size:100% auto;
+          background-color:transparent !important;
+          font-size:0;
+          &:before, &:after {display:none;}
+        }
+        &.develop {
+          .tag-item {
+            @for $i from 1 through length($tagGroup) {
+              $tagName : nth($tagGroup, $i);
+              @if $i != 1 {
+                &.#{$tagName} {background-image: url("#{$ico-url}/ico_tag_bmark_#{$tagName}.webp");}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.rounded-tail-shadow {
+    &-ar {
+      .tag {height:auto; padding:0;}
+      .tag-item {
+        &.step {
+          width:202px; // 최대 길이 태그 사이즈로 고정
+          height:47px;
+          padding:0; margin:0;
+          background-repeat:no-repeat;
+          background-position:0 0;
+          background-size:auto 100%;
+          background-color:transparent !important;
+          font-size:0;
+          &:before, &:after {display:none;}
+          &.basic {background-image: url("#{$ico-url}/ico_tag_back_shadow_basic.webp");}
+          &.intermediate {background-image: url("#{$ico-url}/ico_tag_back_shadow_intermediate.webp")}
+          &.advanced {background-image: url("#{$ico-url}/ico_tag_back_shadow_advanced.webp")}
+        }
+      }
+    }
+  }
+
+  // 사이즈 커스텀
+  &.size-small {
+    .tag {
+      .tag-item {
+        height:34px;
+        padding:0 16px;
+        border-radius:17px;
+        font-size:18px;
+      }
+    }
+  }
+  &.size-big {
+    .tag {
+      .tag-item {
+        height:50px;
+        padding:0 24px;
+        border-radius:25px;
+        font-size:21px;
+      }
+    }
+  }
+  &.rounded-tail {
+    .tag {
+      .tag-item {
+        border-top-left-radius:0;
+        border-bottom-left-radius:8.4px;
+      }
+    }
+  }
+
+  // 사이즈 커스텀 : 라운드 타입 3depth 에서 사용
+  &.rounded-more-big {
+     .tag {height:auto;
+       .tag-item {
+          padding: 24px 48px 23px;
+          margin: 0 7.5px;
+          background-color: $color-radio-btn-default-green;
+          border-radius: 40px;
+          color: #FFFFFF;
+          font-size: 30px;
+          &.active { background-color: $color-radio-btn-active-sky;}
+       }
+     }
+  }
+
+  &.rounded-outline-bk {
+    .tag {
+      .tag-item {
+        border:3px solid $color-default-fonts;
+        background-color:#fff;
+        color:$color-default-fonts;
+        &.active {
+          color:#fff;
+          background-color:$color-default-fonts;
+        }
+      }
+    }
+  }
+}
+
+// 몰 이미지 상단 뱃지 영역
+.badge-wrap {
+  position:absolute;
+  width:auto; height:82px;
+  top:18px; right:19px;
+  margin-right:-3px;
+  img {width:auto; height:100%; margin:0 3px;}
+}

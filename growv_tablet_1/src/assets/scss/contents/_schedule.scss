@@ -1,0 +1,410 @@
+:root {
+  --fc-button-active-bg-color: transperant;
+}
+
+/* 태블릿 사이즈 지정 */
+.schedule-wrap {
+  height: 100vh;
+  overflow: hidden;
+  background-color: $color-reading-bg;
+
+  .sub-menu-category-wrap {
+    content: '';
+    width: 100%; height: 138px;
+    padding: 0 42px;
+    background-image: url("#{$img-url}/schedule/bg_calendar.webp");
+    background-size: auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .schedule {
+    padding: 0 42px 40px;
+
+    /* 캘린더 사이즈 맞춤 */
+    .calendar-area {
+      height: calc(100vh - 273px);
+      position: relative;
+      margin: 0 auto;
+      border-radius: 60px 60px 0 0;
+      overflow-y: auto;
+      //box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+
+      &::-webkit-scrollbar { display: none; }
+      .fc {
+        position: relative;
+        background-color: #FFFFFF;
+
+        .fc-view-harness {
+          width: 1793px;
+          margin: auto;
+        }
+
+        .fc-button,
+        .fc-button:active,
+        .fc-button:focus {
+          border: none;
+          outline: none;
+          box-shadow: none;
+          background: none;
+
+          &.btn-prev.disabled,
+          &.btn-next.disabled {
+            opacity: 0.4;
+            pointer-events: none;
+          }
+        }
+        .fc-header-toolbar {
+          position: sticky;
+          height: 150px;
+          top: 0;
+          margin-bottom: 1.5em;
+          background: transparent url("#{$img-url}/schedule/bg_attend_top.webp") no-repeat;
+          background-size: 100% 100%;
+          z-index: 10;
+          & > * > :not(:first-child) { margin-left: 0;}
+          .fc-toolbar-chunk:first-child,
+          .fc-toolbar-chunk:last-child {
+
+            .fc-button {
+              position: absolute;
+              display: flex;
+              width: 570px; height: 150px;
+              align-items: center;
+              font-size: 34px;
+              color: #1871FF;
+            }
+          }
+
+          .fc-toolbar-chunk:first-child {
+            .fc-button {
+              top: 0; left: 0;
+              justify-content: flex-end;
+
+              // 커스텀 버튼 이번달 출석
+              &.fc-attendSchedule-button {
+                padding-right: 158px;
+                background: url("#{$img-url}/schedule/bg_attend_title.webp") no-repeat;
+                background-size: 100% 100%;
+              }
+
+              // 커스텀 버튼 월별 독서량
+              &.fc-readingSchedule-button {
+                padding-right: 65px;
+                background: url("#{$img-url}/schedule/bg_reading_title.webp") no-repeat;
+                background-size: 100% 100%;
+              }
+            }
+          }
+          .fc-toolbar-chunk:last-child {
+            .fc-button {
+              top:0; right: 0; left: auto;
+              background-size: 100% 100%;
+
+              a {
+                display: block;
+                width: 100%; height: 100%;
+              }
+
+              // 커스텀 버튼 이번달 출석
+              &.fc-listToggle-button {
+                background: url("#{$img-url}/schedule/btn_reading_list.webp") no-repeat;
+                background-size: 100% 100%;
+
+                &.calendar {
+                  background: url("#{$img-url}/schedule/btn_reading_calendar.webp") no-repeat;
+                  background-size: 100% 100%;
+                }
+              }
+            }
+          }
+        }
+        .fc-scrollgrid {
+          border: none;
+
+          &-section {
+            table { margin-bottom: 30px; }
+            .fc-scrollgrid-sync-table { border-bottom: 1px solid #dddddd; }
+          }
+          tr {
+            border: none;
+
+            th {
+              background-color: transparent;
+              border: none;
+
+              .fc-col-header-cell {
+                width: 98%; height: 80px;
+                margin: auto;
+                text-align: center;
+                vertical-align: middle;
+                border: none;
+                background: center center url("@/assets/img/launcher/schedule/ttable_daybox.png") no-repeat;
+
+                a {
+                  font-size: 32px;
+                  color: #865526;
+                  cursor: default;
+                  border: none;
+                }
+                &.fc-day-sun * { color: red; }
+              }
+            }
+            td {
+              &:last-child { border-right: none; }
+            }
+          }
+
+          .fc-daygrid-day {
+            // 날짜 표기 영역
+            &-top {
+              height: 40px;
+              flex-direction: row;
+              justify-content: flex-start;
+              align-items: center;
+              background-color: rgba(235, 235, 235, 0.38);
+              font-size: 24px;
+            }
+            /* 오늘날짜 컬러 수정 */
+            &.fc-day-today {
+              background-color: #cbfffd;
+              .fc-daygrid-day-top { background-color: #06f7ef; }
+            }
+            // 토요일 배경
+            &.fc-day-sat {
+              .fc-daygrid-day-events { background: transparent center 70% url("@/assets/img/launcher/mypage/mp_ing_saturday.png") no-repeat; }
+              &:has(.study) .fc-daygrid-day-events { background: none; }
+            }
+            // 일요일 배경
+            &.fc-day-sun {
+              .fc-daygrid-day-events { background: transparent center 70% url("@/assets/img/launcher/mypage/mp_ing_sunday.png") no-repeat; }
+              &:has(.study) .fc-daygrid-day-events { background: none; }
+            }
+            /* 평일 배경 이미지 */
+            &-events {
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+              max-height: 216px; height: 216px;
+              margin-bottom: 0;
+              padding: 14px 15px 13px;
+              box-sizing: border-box;
+              background-image: url("#{$ico-url}/ico_attend_default.webp");
+              background-size: 228px 188px;
+
+              .fc-h-event {
+                /* 기본 - 미학습 */
+                background: none;
+                border: none;
+                font-size: 24px;
+
+                &.study {
+                  display: flex;
+                  width: 228px; height: 45px;
+                  padding: 10px 14px;
+                  border-radius: 1.17vw;
+                  box-sizing: border-box;
+                  background-color: #ffeeb5;
+                  line-height: 1;
+
+                  * { color: inherit; }
+                  &.korean { color: #086df7; }
+                  &.english { color: #882de5; }
+                }
+              }
+
+              &.today-book {
+                background: url("#{$img-url}/schedule/bg_todaybook.webp") center center no-repeat;
+                background-size: 120px 135px;
+              }
+
+              /* 배경 출석 이미지 */
+              &.attend {
+                background-image: url("#{$ico-url}/ico_attend_active.webp") !important;
+                background-size: 228px 188px !important;
+              }
+              /* 배경 출석 이미지 1day ~ 5day */
+              $attendActiveLength : 5;
+              @for $i from 1 through $attendActiveLength {
+                &.attend-0#{$i} {
+                  @extend .ico-attend-active-0#{$i};
+                }
+              }
+              &:before {
+                width: 100%; height: 100%;
+                position: absolute;
+                top: 0; left: 0;
+                z-index: 10;
+                background: transparent;
+              }
+            }
+            &.fc-day-other {
+              .fc-daygrid-day-events,
+              &.fc-day-past .fc-daygrid-day-events,
+              &.fc-day-future .fc-daygrid-day-events { background-image: none !important; }
+              .fc-daygrid-day-top { background-color: rgba(235, 235, 235, 1); }
+            }
+            &-bottom { display: none; }
+          }
+        }
+        }
+
+      /* 월 이동 */
+      .btn-calendar {
+        position: absolute;
+        width: 420px; height: 90px;
+        border-radius: 45px;
+        top: 0; right: 0; bottom: 0; left: 0;
+        margin: auto;
+        background: url("#{$img-url}/common/bg_calendar_blue.webp") center center no-repeat;
+
+        h2 {
+          font-size: 33px;
+          height: auto;
+          margin: 0;
+          color: #FFFFFF;
+        }
+      }
+
+      // 캘린더 하단 디자인 영역
+      .schedule-bottom {
+        position: sticky;
+        width: 100%; height: 64px;
+        border-radius: 0 0 60px 60px;
+        background: transparent url("#{$img-url}/schedule/bg_attend_bottom.webp") no-repeat;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        background-size: 100% 100%;
+
+        &::after {
+          display: block;
+          content: '';
+          width: 100%; height: 104px;
+        }
+      }
+
+    }
+    .count-text {
+      position: fixed;
+      top: 330px;
+      left: 324px;
+      width: 130px;
+      //background-color: yellow;
+      font-size: 34px;
+      color: #1871FF;
+      text-align: right;
+      z-index: 10;
+    }
+
+    // 독서활동 캘린더 설정
+    &.reading {
+      .calendar-area {
+        .fc{
+          height: fit-content;
+
+          .fc-daygrid-day {
+            &.fc-day-sat .fc-daygrid-day-events,
+            &.fc-day-sun .fc-daygrid-day-events {
+              background: center center url("#{$img-url}/schedule/bg_weekend_default.webp") no-repeat;
+              background-size: 184px;
+            }
+
+            &-events {
+              background: none;
+              white-space: break-spaces;
+              // 학습이력이 있으면 주말 배경 없앰.
+              &.study .fc-day-sat,
+              &.study .fc-day-sun { background: none !important; }
+            }
+            &.fc-day-other { background-color: #F8F8F8; }
+          }
+
+          .list-area {
+            height: 100%;
+            min-height: 673px;
+            padding: 16px 58px 40px;
+          }
+        }
+        .form-area {
+          justify-content: space-between;
+
+          .dropdown {
+            width: 319px;
+
+            .vs--searchable {
+              .vs__dropdown-toggle {
+                padding: 25px 36px;
+
+                .vs__selected {
+                  font-size: 27px;
+                  font-weight: 400;
+                }
+                .vs__open-indicator { width: 48px; height: 48px; }
+              }
+              .vs__dropdown-option {
+                font-size: 27px;
+                font-weight: 400;
+                &.vs__dropdown-option--highlight {
+                  color: #5917EB;
+                  font-weight: 700;
+                }
+              }
+            }
+          }
+        }
+
+        .popup-tooltip {
+          width: 589px; height: auto;
+          top: 130px; right: auto; left: 77px;
+          padding: 48px;
+          z-index: 15;
+
+          .dot-list li {
+            font-weight: 500;
+
+            span {
+              font-weight: 600;
+              color: #5917EB;
+            }
+          }
+        }
+        .table-wrap {
+          th, td {
+            display: table-cell;
+            font-size: 24px;
+            vertical-align: middle;
+            color: #292929;
+
+            .title {
+              font-size: 24px;
+              color: #292929;
+            }
+          }
+
+          th {
+            &.number { width: 201px; }
+            &.title { width: 804px; height: 80px; }
+            &.date { width: 375px; }
+            &.detail { width: 340px; }
+          }
+          td {
+            font-weight: 500;
+            &.number { color: #848484; }
+            &.title { text-align: left; font-weight: 400; }
+            &.detail { text-align: center; }
+            &.no-data {
+              padding: 60px 0 50px;
+
+              img { width: 900px; }
+            }
+          }
+        }
+      }
+
+      .count-text {
+        top: 332px;
+        left: 367px;
+        width: 180px;
+      }
+    }
+  }
+}

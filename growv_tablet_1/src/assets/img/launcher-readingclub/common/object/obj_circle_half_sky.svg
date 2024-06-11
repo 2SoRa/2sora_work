@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="141" height="21" viewBox="0 0 141 21">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #707070;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        clip-path: url(#clip-path-2);
+      }
+
+      .cls-5 {
+        fill: #a9eff8;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="G" class="cls-1" width="141" height="21" transform="translate(1140 2229)"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect class="cls-2" width="142" height="41"/>
+    </clipPath>
+  </defs>
+  <g id="report_img_ring" class="cls-3" transform="translate(-1140 -2229)">
+    <g id="ring" class="cls-4" transform="translate(1140 2229)">
+      <g transform="translate(-1706 -681)">
+        <circle id="ring-2" data-name="ring" class="cls-5" cx="20.5" cy="20.5" r="20.5" transform="translate(1706 681)"/>
+      </g>
+      <g transform="translate(-1656 -681)">
+        <circle id="ring-3" data-name="ring" class="cls-5" cx="20.5" cy="20.5" r="20.5" transform="translate(1706 681)"/>
+      </g>
+      <g transform="translate(-1606 -681)">
+        <circle id="ring-4" data-name="ring" class="cls-5" cx="20.5" cy="20.5" r="20.5" transform="translate(1706 681)"/>
+      </g>
+    </g>
+  </g>
+</svg>

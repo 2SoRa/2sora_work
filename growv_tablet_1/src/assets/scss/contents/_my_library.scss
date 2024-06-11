@@ -1,0 +1,256 @@
+@charset 'UTF-8';
+
+$apge-pd-bot : 40px;
+$row-thumb-length : 5;
+$booklist-pd-h : 72px;
+$formarea-h : 136px;
+
+$gnbH : $gnb-height;
+$depth-1-btnH : 126px;
+$depth-2-btnH : 125px;
+$headerH : $gnbH + $depth-1-btnH + $depth-2-btnH;
+$scroll-areaH : calc(100vh - #{$headerH});
+
+// 내 도서관 페이지
+.my-library {
+    min-height:100vh;
+    background: url("#{$img-url}/my-library/bg.webp") center bottom no-repeat;
+    background-size:100% auto;
+    background-color:#c7f1f9;
+
+    /* 오늘의 책, 보관함, V스캔 구매 페이지 공통 */
+    .contents {
+        height: calc(100vh - #{$gnb-height});
+    }
+    .category-select-wrap {
+        height:90px;
+        margin:15px 0 20px;
+    }
+    .content-scroll-area {
+        height:$scroll-areaH;
+        padding: 0 72px;
+    }
+    .tab-list {
+        margin:15px auto 20px;
+    }
+    .form-area {
+        padding:32px 0;
+        margin-bottom:$formarea-h * -1;
+        z-index:1; 
+
+        .desc { right:65px; line-height: 27px; }
+
+        & + .book-list-wrap {
+            .row-group:first-child {
+                padding-top:146px;
+            }
+        }
+    }
+    .desc-area {
+        position: absolute;
+        width: calc(100% - 144px);
+        top:0; right:0; left: 0;
+        margin: auto;
+        .float-desc {
+            &.left {
+                left: 80px;
+                img {
+                    width: 50px;
+                    vertical-align: middle;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    //  form, float-desc 있는 경우 book-list 높이값 조정
+    .form-area,
+    .desc-area {
+        & + .book-list-wrap {
+            padding-top:80px;
+
+            /* no-data 높이값 조정 */
+            .no-data {
+                height:calc(100vh - #{$headerH} - 80px);
+                margin-bottom:0;
+
+                span {margin: 90px auto auto;}
+            }
+        }
+    }
+
+    .book-list-wrap {
+        width:100%;
+
+        .row-group {
+            position:relative;
+            padding:$booklist-pd-h 0 0;
+            //margin-bottom:12px;
+            margin-bottom:20px;
+            background: url("#{$img-url}/my-library/bg_booklist_top.webp") 0 0 no-repeat;
+            background-size:100% auto;
+            &:before {
+                display:block;
+                content:'';
+                position:absolute;
+                width:100%; height: calc(100% - 200px);
+                top:$booklist-pd-h; left:0; right:0;
+                background: url("#{$img-url}/my-library/bg_booklist_mid.webp") 0 0 repeat-y;
+                background-size:100% auto;
+            }
+            &:after {
+                display:block;
+                content:'';
+                position:absolute;
+                width:100%; height:100px;
+                left:0; right:0; bottom:46px;
+                background-repeat:no-repeat;
+                background-position:50% 50%;
+                background-size:100% 100%;
+                background-color:#ffebab;
+                background-image: url("#{$img-url}/my-library/bg_booklist_bot.webp");
+            }
+        }
+
+        /* row-group 제거 버전 */
+        $patternH : 501px;
+        $pdTop : 72px;
+        $pdTopMinus : $pdTop * -1;
+
+        position:relative;
+        min-height:500px;
+        padding-top:2px;
+
+        &:before {
+            display:block;
+            content:'';
+            position:absolute;
+            width:100%; height:100px;
+            top:0; left:0; right:0;
+            background: url("#{$img-url}/my-library/bg_booklist_top.webp") 0 0 no-repeat;
+            background-size:100% auto;
+        }
+        &:after {
+            display:block;
+            content:'';
+            position:absolute;
+            width:100%; height:calc(100% - 100px);
+            top:100px; left:0; right:0;
+            background: url("#{$img-url}/my-library/bg_booklist_mid.webp") 0 0 repeat-y;
+            background-size:100% auto;
+        }
+        .book-list {
+            width:100% !important;
+            padding:0 33px;
+            //gap:78px 0;
+            li {
+                display:flex;
+                flex-direction:column;
+                justify-content:flex-end;
+                position:relative;
+                height:$patternH !important;
+            }
+            .thumb-wrap {
+                //margin:0;
+                margin-bottom: -20px;
+            }
+            .tag-wrap {
+                .tag.ar {
+                    .tag-item {
+                        &:after {background-color: #e5ba75;}
+                    }
+                }
+            }
+
+            &:before {
+                display:block;
+                position:absolute;
+                content:'';
+                width:100%; height:calc(100% - #{$pdTop});
+                left:0; right:100%; top:$pdTop;
+                background: url("#{$img-url}/my-library/img_booklist_bot.webp") 0 0 repeat-y;
+                background-size:1776px $patternH;
+            }
+        }
+        /* row-group 제거 버전 */
+
+        .book-list {
+            position:relative;
+            width:$bookThumb-width * $row-thumb-length;
+            margin:0 auto;
+            z-index:1;
+
+            .list-item {
+                height:auto;
+            }
+        }
+
+        /* 책 리스트 - 결과 없음*/
+        .no-data {
+            //height:$scroll-areaH;
+            height: calc(100vh - #{$headerH} - 5px);
+            margin-bottom:0;
+            overflow:hidden;
+            z-index:1;
+
+            &:before {
+                display:block;
+                content:'';
+                position:absolute;
+                width:100%; height:100%;
+                top:0; left:0; right:0;
+            }
+            &:after {display:none;}
+            span {
+                width:960px;
+                height:600px;
+                margin:172px auto auto;
+                background: url("#{$img-url}/my-library/mylib_search_noresult.webp") 30% center no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+    }
+
+    /* V스캔 구매 페이지 커스텀 스타일 */
+    .storage {
+        .book-list-wrap {
+            /* 책 리스트 - 결과 없음*/
+            .no-data {
+                span {background-image: url("#{$img-url}/my-library/mylib_storage_empty.webp");}
+            }
+        }
+    }
+
+    /* V스캔 구매 페이지 커스텀 스타일 */
+    .vscan {
+        .book-list-wrap {
+            /* 책 리스트 - 결과 없음*/
+            .no-data {
+                span {background-image: url("#{$img-url}/my-library/mylib_vscan_search_noresult.webp");}
+            }
+        }
+    }
+
+    /* 버튼 스타일 정의*/
+    .btn-vscan-go {
+        position:absolute;
+        width:366px;
+        height:96px;
+        bottom:0;
+        left:105px;
+        margin-bottom:-6px;
+        font-size:0;
+        background: url("#{$img-url}/common/btn_vscan_go.webp") 0 0 no-repeat;
+        background-size: 100% 100%;
+    }
+    .btn-vscan-schedule {
+        position:absolute;
+        width:270px;
+        height:60px;
+        right:96px;
+        bottom:0;
+        font-size:0;
+        background: url("#{$img-url}/common/btn_vscan_schedule.webp") 0 0 no-repeat;
+        background-size: 100% 100%;
+    }
+}

@@ -1,0 +1,136 @@
+/* TODO : 임시 구성 및 스타일 */
+button a {
+  color : inherit !important;
+}
+.checkbox {
+  position: unset;
+  display: flex;
+  padding: 0;
+}
+
+
+/* 책 리스트 공통 설정 */
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+/* 책 항목 */
+.book-list .list-item {
+  width: 342px;
+  height: 537px;
+}
+/* 썸네일*책영역 묶기 */
+.book-list .list-item .thumb-wrap {
+  width: 342px;
+  height: 390px;
+  position: relative;
+  display: flex;
+  align-items: end;
+  margin: auto;
+}
+/* 완료 표시 */
+.book-list .list-item .thumb-wrap .check-read {
+  /*width: 4.69vw;*/
+  /*height: 4.69vw;*/
+  width: 90px;
+  height: 90px;
+  /*top: 7vw;*/
+  right: 0;
+  bottom: 125px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  background: url("@/assets/img/launcher/common/cmm_ico_reading_ok@2x.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 썸네일 이미지 */
+.book-list .list-item .thumb-wrap .thumbnail {
+  width: 267px;
+  height: 336px;
+  display: flex;
+  align-items: end;
+  margin: 0 auto auto;
+}
+.book-list .list-item .thumb-wrap .thumbnail img {
+  width: 100%;
+}
+/* 책 리스트 - 아이콘 묶음(모션북&이북&저장) */
+.book-list .list-item .thumb-wrap .thumb-info {
+  width: 100%;
+  height: 78px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 18px;
+  position: absolute;
+  right: 0;
+  bottom: 33px;
+  left: 0;
+  margin: auto;
+}
+/* 책리스트 - 아이콘 묶음 */
+.book-list .list-item .book-kind { display: flex; }
+/* 책리스트 - 아이콘 기본 숨김 설정 */
+.book-list .list-item .book-kind span { display: none; }
+/* 책리스트 - 아이콘 보여주기 */
+.book-list .list-item .book-kind span.show {
+  width: 39px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+}
+/* 책리스트 - 모션북 아이콘 */
+.book-list .list-item .book-kind span.motion-book {
+  background: url("@/assets/img/launcher-readingclub/common/icons/ico_book_m.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 책리스트 - 이북아이콘 */
+.book-list .list-item .book-kind span.e-book {
+  background: url("@/assets/img/launcher-readingclub/common/icons/ico_book_e.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 내 서재에 저장 - 해제 */
+.book-list .list-item .save {
+  width: 78px;
+  height: 78px;
+  background: url("@/assets/img/launcher/common/cmm_thumb_storage_s@2x.webp");
+  background-size: 100% 100%;
+  z-index: 10;
+}
+/* 내 서재에 담기 취소 */
+.book-list .list-item .save.save-off {
+  background: url("@/assets/img/launcher/common/cmm_thumb_storage_d@2x.webp");
+  background-size: 100% 100%;
+}
+/* 다시 보기 영역 (버튼X) */
+.book-list .list-item .view {
+  width: 267px;
+  height: 335px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+/* 책 리스트 - 결과 없음*/
+.book-list-wrap .no-data {
+  width: 100%;
+  height: 831px;
+  position: relative;
+}
+.book-list-wrap .no-data span {
+  width: 681px;
+  height: 393px;
+  margin: auto;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 10%;
+  left: 0;
+  background: url("@/assets/img/launcher-readingclub/library/lib_search_noresult.webp") 30% center no-repeat;
+  background-size: 100% 100%;
+}

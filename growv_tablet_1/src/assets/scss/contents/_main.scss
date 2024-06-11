@@ -1,0 +1,573 @@
+@charset "UTF-8";
+
+/* TODO : 임시 구성 및 스타일 */
+.rc-main-contents {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  
+  .main-contents {
+    display: flex;
+    position: relative;
+    height: 1065px;
+    justify-content: space-between;
+    background: $color-reading-bg url("#{$img-url}/main/bg_waterdrop.webp") no-repeat;
+    background-size: 100%;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+
+      /* 컨텐츠 왼쪽 영역 - 자연 관찰 & 내서재 & 브이스캔 & 쇼핑몰 도서찾기*/
+      &.contents-left {
+        position: absolute;
+        width: max-content; height: calc(100% - 98px);
+        justify-content: space-between;
+        margin-top: 98px;
+        gap: 30px;
+
+        /* V스캔, 내서재 버튼만 있는 버전 */
+        .btns-wrap {
+          &.only-btns-big {
+            display:flex;
+            flex-direction:column-reverse;
+            gap:21px;
+            padding-left:42px;
+            margin-top: 64px;
+
+            button, a {
+              &.find-book,
+              &.nature {display:none;}
+            }
+            .link-search,
+            .link-book {
+              padding:0;
+            }
+            .link-search {
+              height:auto;
+              background:none;
+              .vscan {
+                width:450px; height:210px;
+                background-image: url("#{$img-url}/main/btn_vscan_big.webp");
+              }
+            }
+            .link-book {
+              .mylib {
+                width:450px; height:192px;
+                background-image: url("#{$img-url}/main/btn_mylib_big.webp");
+              }
+            }
+          }
+        /* E : V스캔, 내서재 버튼만 있는 버전 */
+          /* V스캔 안내 및 설정 버튼 있는 버전*/
+          &.v-scan-div {
+            display:flex;
+            flex-direction:column-reverse;
+            padding-left:42px;
+            margin-top: -53px;
+
+            button, a {
+              &.find-book,
+              &.nature {display:none;}
+            }
+            .link-search,
+            .link-book {
+              padding:0;
+            }
+            .link-search {
+              display: flex;
+              justify-content:center;
+              width:480px; height:390px; //height:312px;
+              //gap: 21px 0;
+              padding: 30px 30px 112px;
+              background-image: url("#{$img-url}/main/bg_main_vscan_long.webp");
+              flex-wrap: wrap;
+              button {
+                display: inline-block;
+                position:relative;
+                width: 195px; height: 78px;
+                background-size: 100% 100%;
+                &.vscan {
+                  width: 390px; height: 145px;
+                  margin-bottom:20px;
+                  background-image: url("#{$img-url}/main/btn_main_vscan.webp");
+                  &-set { background-image: url("#{$img-url}/main/btn_vscan_setting.webp"); }
+                  &-guide { background-image: url("#{$img-url}/main/btn_vscan_guide.webp"); }
+                }
+                &.vscan-search {
+                  width:100%; height:78px;
+                  margin-top:4px;
+                  background-image: url("#{$img-url}/main/btn_vscan_search.webp");
+
+                  // new icon (new 아이콘 제거 시 아래 dispaly none 처리)
+                  &:before {
+                    display:block;
+                    content:'';
+                    position:absolute;
+                    top:50%; left:40px; margin-top:-16px;
+                    @extend .ico;
+                    @extend .ico-new-red;
+                  }
+                }
+              }
+            }
+            .link-book {
+              .mylib {
+                width:450px; height:192px;
+                background-image: url("#{$img-url}/main/btn_mylib_middle.webp");
+              }
+            }
+
+          }
+        }
+
+        button, a {
+          width: 100%;
+          height: 100%;
+          display: inline-block;
+          color: transparent !important;
+        }
+
+        .link-book {
+          width: max-content;
+          display: flex;
+          justify-content: flex-end;
+          flex-basis: revert;
+          padding: 0 24px 0 42px;
+          margin:0 auto;
+
+          $btnGroupTop : "mylib" 246px 280px "mylib",
+          "nature" 234px 280px "nature";
+          @each $btnName, $width, $height, $fileName in $btnGroupTop {
+            .#{$btnName} {
+              width:$width;
+              height:$height;
+              background: url("#{$img-url}/main/btn_#{$fileName}.webp") no-repeat;
+              background-size: 100% 100%;
+
+              @if $btnName == "mylib" {
+                z-index: 10;
+              } @else {
+                margin-left: -30px;
+              }
+            }
+          }
+        }
+
+        /* 메인 좌측 영역 - V스캔, 도서찾기 */
+        .link-search {
+          display: flex;
+          width: 516px; height: 237px;
+          background: url("#{$img-url}/main/btn_bg_vscan_search.webp") center center no-repeat;
+          background-size: 100% auto;
+          /* 이슈 : button 으로 정의 시 스타일이 아예 안먹고있음 */
+          button {
+            width: 252px; height: 222px;
+
+            /* V-scan 브이스캔 영역 */
+            &.btn-vscan-go {
+              background: url("#{$img-url}/main/btn_vscan.webp") no-repeat;
+              background-size: 100% 100%;
+            }
+            /* 쇼핑몰 도서찾기 영역 */
+            &.btn-serach-go {
+              background: url("#{$img-url}/main/btn_book_search.webp") no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+        }
+
+        /* 메인 좌측 하단 슈퍼픽으로 가기 영역 */
+        .link-superpick {
+          position: absolute;
+          width: 660px;
+          height: 420px;
+          bottom:0; left: 0;
+          background: url("#{$img-url}/temp/main_superpick_bn_2310_01.webp") bottom center no-repeat;
+          background-size: 100% auto;
+        }
+      }
+
+      /* 컨텐츠 가운데 영역 */
+      &.contents {
+        align-items: center;
+        //justify-content: center;
+        //margin: 51px 0 0 -90px;
+        //margin: 47px 0 0 -111px;
+        margin: 47px auto 0;
+
+        /* 학습현황 바로 가기 & 날짜 표시 */
+        .date {
+          display: flex;
+          width: fit-content; height: 81px;
+          align-items: center;
+          gap: 18px;
+
+          span {
+            display: inline-block;
+            width: 318px; height: 45px;
+            text-align: left;
+            font-size: 42px;
+            letter-spacing: -0.3px;
+            color: #0C80F8;
+            margin: 20px 0 16px;
+          }
+          .link-schedule {
+            width: 228px;
+            height: 81px;
+            font-size: 0;
+            padding: 0;
+            background: url("#{$img-url}/main/btn_status.webp") no-repeat;
+            background-size: 100% 100%;
+          }
+        }
+
+        /* 1일 1권 책읽기 & 오늘의 책 */
+        .daily {
+          width: 774px;
+          /*height: 80vh;*/
+          scroll-behavior: unset;
+          position: relative;
+
+          /* 메인 컨텐츠 타이틀 (이름 & 오늘의 책) 영역 */
+          .title {
+            display: flex;
+            position: relative;
+            width: 774px; height: 168px;
+            align-items: center;
+            justify-content: center;
+            padding: 72px 0 57px;
+            z-index: 40;
+            font-size: 42px;
+            background: transparent url("#{$img-url}/main/bg_today_tit.webp") no-repeat;
+            background-size: 100% 100%;
+
+            div {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content:center;
+              gap: 15px;
+            }
+
+            .title-name {
+              max-width:59%;
+              color:#591deb;
+            }
+
+            img { width: 180px; height: 39px; }
+          }
+          /* 컨텐츠 오늘의 책 책리스트 영역 */
+          .daily-book {
+            //height: 100%;
+            //max-height: 783px;
+            //height: 783px;
+            height: 788px;
+            //padding: 60px 0;
+            margin-top: -20px;
+
+            .no-data {
+              display: inline-block;
+              width: 590px; height: 600px;
+              margin: 75px auto 0 -4%;
+              background-image: url("#{$img-url}/main/img_todaybook_no.webp");
+              background-repeat: no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+          // .list::-webkit-scrollbar { display: none; }
+          .list {
+            width: auto; height: fit-content;
+            padding-bottom: 80px;
+            position: relative;
+
+            .swiper-slide, .list-item  {
+              width: fit-content;
+              text-align: center;
+              margin: 55px auto 0;
+              position: relative;
+
+              &:first-child { z-index: 30; }
+              &:nth-child(2) { z-index: 25; }
+              &:nth-child(3) { z-index: 20; }
+              &:nth-child(4) { z-index: 15; }
+              &:nth-child(5) { z-index: 10; }
+              &:nth-child(6) { z-index: 5; }
+              &:last-child { z-index: 0; }
+
+              /* transition */
+              &.study-no {
+                animation: bounce 3s linear 0s infinite alternate;
+                @keyframes bounce {
+                  0% { transform: translateY(3%); animation-timing-function: ease-out; }
+                  10% { transform: translateY(-3%); animation-timing-function: ease-in; }
+                  20% { transform: translateY(3%); animation-timing-function: ease-out; }
+                  30% { transform: translateY(-3%); animation-timing-function: ease-in; }
+                  40% {transform: translateY(0%); animation-timing-function: ease-in; }
+                }
+                // study-no 끼리 있는 애들은 안움직이도록
+                & ~ .study-no {
+                  animation: none;
+                }
+              }
+
+              /* 썸네일 */
+              .thumb {
+                padding-top: 15px;
+
+                img {
+                  min-width: 200px; min-height: 200px;
+                  max-width: 516px; max-height: 600px;
+                  width: 100%; height: 100%;
+                  object-fit: scale-down;
+                  object-position: top center;
+                }
+              }
+            }
+
+            /* 디자인 요소 - 라인 */
+            .line {
+              content: '';
+              width: 10px; /*height: 40px;*/ height: 80px;
+              position: absolute;
+              top: -80px; right: 0; left: 0;
+              margin: auto;
+              /*z-index: 1;*/
+              background-image: linear-gradient(to right, #7595b7 22%, #83a7ce 62%, #7595b7 100%);
+            }
+            /* 디자인요소 - 핀 */
+            .pin {
+              content: '';
+              display: inline-block;
+              width: 48px; height: 48px;
+              position: absolute;
+              top: -1px; right: 0; left: 0;
+              margin: auto;
+              background: url("#{$img-url}/main/img_bookclip.webp") no-repeat;
+              background-size: 100% 100%;
+              z-index: 10;
+            }
+            /* 상태 스타일 : 완료 */
+            .complete {
+              .flag-complete {
+                width: 134px;
+                height: 158px;
+                position: absolute;
+                top: 3px;
+                left: 60px;
+                background: url("#{$ico-url}/ico_today_book_comp.webp") no-repeat;
+                background-size: 100% 100%;
+              }
+            }
+            // 영어 책에만 표기
+            .flag.size-big {
+              position: absolute;
+              right: -12px; bottom: 4px;
+            }
+            // tag : ENG
+            .tag-wrap {
+              position:absolute;
+              width:auto;
+              left:0; bottom:30px;
+              //.tag {
+              //  padding:0;
+              //  margin-bottom:-7px; margin-left:-4px;
+              //  justify-content:flex-start;
+              //}
+              // tag : KOR
+              &.rounded-vertical-developer {
+                top:66px;
+                left:auto; right:-30px;
+              }
+            }
+            // 다시보기
+            .re-view {
+              position: absolute;
+              width: 100%; height: 100%;
+              top: 21px; left: 0;
+            }
+          }
+        }
+
+      }
+
+      /* 컨텐츠 오른쪽 영역 */
+      &.contents-right {
+        position: absolute;
+        gap: 22px;
+        right: 0;
+        //margin-right: 46px;
+
+        /* 자람 나무 */
+        .reading-tree {
+          position: relative;
+          width: 500px; height: 506px;
+          margin: 25px 46px 0 0;
+
+          a {
+            position: absolute;
+            width: 395px; height: 379px;
+            top: 72px; right: 0;
+          }
+
+          img { width: 100%; }
+
+          p {
+            display: flex;
+            position: absolute;
+            width: fit-content; height: 75px;
+            padding: 23px 36px 20px;
+            right: 0; bottom: -50px; left: 0;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: #FFFFFF;
+            background-color: #00cbea;
+            border: 3px solid #ADF4FF;
+            border-radius: 37.5px;
+            z-index: 10;
+
+            img {
+              width: 9px; height: 9px;
+              margin: 0 12px;
+              vertical-align: middle;
+            }
+          }
+
+          span {
+            display: inline-block;
+            position: absolute;
+
+            &.bg-title {
+              width: 270px; height: 108px;
+              top: 0; right: 62px; left: 168px;
+              background: url("#{$img-url}/main/tit_jaram.webp") no-repeat;
+              background-size: 100% 100%;
+            }
+            &.bg-evie {
+              width: 150px; height: 180px;
+              bottom: 0; left: 0;
+              background: url("#{$img-url}/main/img_jaram_evie.webp") no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+
+
+        }
+      }
+
+      /* 한글&영어 책 추천 */
+      .slide-wrap {
+        width: 1530px; height: 534px;
+        padding: 27px 85px;
+        // right: -1008px;
+        position: absolute;
+        right: 0; bottom: 0;
+        background: url("#{$img-url}/main/bg_list_slide.webp") no-repeat;
+        background-size: 100% 100%;
+        transform:translate3d(65.88%, 0, 0);
+        transition: transform 0.5s $slide-easing;
+        //overflow:hidden;
+        z-index: 100;
+
+        .slide {
+          position: relative;
+        }
+        /* 한글&영어 책 추천 과목 구분 탭 */
+        .slide-tab {
+          display: flex;
+          align-items: flex-end;
+
+          /* 한글&영어 탭 기본 사이즈 설정 */
+          button {
+            width: 210px; height: 84px;
+
+            /* 한글&영어 탭 활성화 사이즈 설정*/
+            &.active {
+              height: 97px;
+            }
+          }
+
+          /* 한글 탭 기본 이미지*/
+          .kor {
+            background: url("#{$img-url}/main/tab_kor.webp") no-repeat;
+            background-size: 100% 100%;
+            /* 한글 탭 활성화 이미지*/
+            &.active {
+              background: url("#{$img-url}/main/tab_kor_active.webp") no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+
+          /* 영어 탭 기본 이미지*/
+          .eng {
+            margin-bottom: 1px;
+            background: url("#{$img-url}/main/tab_en.webp") no-repeat;
+            background-size: 100% 100%;
+            /* 영어 탭 활성화 이미지*/
+            &.active {
+              background: url("#{$img-url}/main/tab_en_active.webp") no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+        }
+
+        /* 한글&영어 책 리스트 */
+        .slide-list {
+          display: flex;
+          width: 1445px; height: 380px;
+          gap: 24px;
+          padding: 30px 32px 30px 42px;
+          box-sizing: border-box;
+
+          .list-item {
+            position: relative;
+            display: flex;
+            width: 255px; height: 292px;
+            align-items: flex-end;
+            border-radius: 10px;
+
+            .re-view {
+              width: 100%; height: 100%;
+              position: absolute;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: bottom center;
+              }
+            }
+          }
+        }
+
+        /* 슬라이드 오픈 버튼 */
+        .btn-open {
+          width: 80px; height: 120px;
+          border-radius: 70px 0 0 70px;
+          color: #FFFFFF;
+          position: absolute;
+          left: 0; bottom: 100px;
+        }
+
+        /* onShow Transition */
+        &.move { transform:translate3d(0,0,0); }
+      }
+
+      .move-bg {
+        display: none;
+        position: fixed;
+        content: '';
+        width: 1920px; height: 1200px;
+        background-color: rgba(0, 0, 0, 0.4);
+        top: 0; left: 0;
+        z-index: $depth-popup;
+
+        &.active { display: block; }
+      }
+    }
+  }
+
+}

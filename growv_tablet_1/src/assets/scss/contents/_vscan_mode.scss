@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+.vscan-mode {
+  background-color:$color-reading-bg;
+
+  .contents {
+    height: calc(100vh - #{$gnb-height});
+    overflow:hidden;
+  }
+
+  // V스캔 도서 확인 thumb-info-lr 커스텀
+  &.check {
+    .thumb-info-lr {
+      padding-left:258px;
+      padding-right:250px;
+      background-position:center bottom;
+      background-image: url("#{$img-url}/viewer-bridge/bg_read.webp");
+
+      .view-title {
+        padding-top:72px;
+        img {width:708px;}
+      }
+    }
+  }
+
+  &.rescan {
+    .contents {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:42px 0;
+    }
+    .img-wrap {
+      width:1680px;
+      img {width:100%;}
+      img.text {height:240px; margin-bottom:-14px;}
+      img.guide {height:521px;}
+    }
+    .btn-wrap {
+      gap:30px;
+    }
+  }
+
+  &.fail {
+    .contents {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:92px 0 42px;
+    }
+    .img-wrap {
+      width:720px; height:570px;
+      img {width:100%;}
+    }
+    .btn-wrap {
+      margin-top:56px;
+    }
+    .info-wrap {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:absolute;
+      width:1344px; height:135px;
+      left:50%; bottom:0;
+      margin-left:-672px;
+      //padding:0 78px;
+      border-top-left-radius:60px;
+      border-top-right-radius:60px;
+      background-color:#9fe9f6;
+      font-size:27px;
+
+      li {
+        position:relative;
+        padding:0 22px;
+        &:first-child {
+          font-size:29px;
+          padding-right:63px; margin-right:60px;
+          strong {margin-right:33px;}
+          span {color:#1184eb;}
+          &:after {
+            display:block;
+            position:absolute;
+            content:'';
+            width:3px; height:42px;
+            top:50%; right:0;
+            margin-top:-21px;
+            background-color:#93c6d0;
+          }
+        }
+        &.pl-0 {padding-left:0;}
+        &.pr-0 {padding-right:0;}
+      }
+      strong {color:$color-default-fonts; margin-right:5px;}
+      span {color:#2c7cc4;}
+    }
+  }
+
+  &.buy {
+    background: $color-reading-bg no-repeat 0 0 url("#{$img-url}/vscan-mode/bg_buy.webp");
+    background-size:100% auto;
+    .contents {
+      display:flex;
+      align-items:center;
+      flex-direction:column;
+      position:relative;
+      //max-width:1200px;
+      width:100%;
+      margin:0 auto;
+      padding:0 360px;  // padding:0 100px;
+
+      &:after {
+        display:block;
+        position:absolute;
+        content:'';
+        width:320px; height:360px;
+        top:645px; right:142px;
+        margin-left:-108px;
+        background: no-repeat 0 0 url("#{$img-url}/vscan-mode/img_buy_evie.webp");
+        background-size:contain;
+      }
+    }
+
+    .info-tit {
+      margin-top:75px;
+      margin-bottom:60px;
+      font-size:36px;
+      line-height:1.38;
+      color:$color-default-fonts;
+
+      span {
+        display:block;
+        margin-top:44px;
+        &:first-child {margin-top:0;}
+      }
+      strong {color:$color-bold-purple-2;}
+    }
+    .info-btns-wrap {
+      width:735px;
+
+      .guide-txt {
+        margin-top:60px;
+        font-size:30px;
+
+        &.sta-shortage {
+          color:$color-shortage-red;
+        }
+      }
+      .btn-wrap {
+        margin-top:60px;
+        justify-content:center;
+        gap:30px;
+      }
+    }
+    .info-list-wrap {
+      position:relative;
+      width:100%;
+      height:259px;
+      border-radius:30px;
+      background-color:#f5f5f5;
+      padding:36px 51px 44px;
+
+      .info-list {
+        em {
+          &:after {
+            content:'P';
+            display:inline;
+            padding-left:6px;
+          }
+        }
+      }
+    }
+    .info-book-wrap {
+      .img-wrap {
+        height:156px; margin:13px auto 0;
+        img {height:100%;}
+      }
+      .btn-wrap {
+        margin-top:108px;
+        justify-content:center;
+        gap:30px;
+      }
+    }
+
+  }
+}

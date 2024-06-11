@@ -1,0 +1,833 @@
+@charset "UTF-8";
+
+.my-superbook {
+  background: $color-reading-bg url("#{$img-url}/my-superbook/bg.webp") center bottom no-repeat;
+  background-size:100% auto;
+
+  .contents {
+    position:relative;
+    height: calc(100vh - #{$gnb-height});
+    padding:87px 72px 0;
+    overflow:hidden;
+  }
+
+  .content-scroll-area {
+    height:771px;
+    margin-top:45px;
+    border-top:4px solid $color-border-gray;
+
+    > .no-data {
+      width:960px;
+      margin:193px auto 0;
+      font-size:30px;
+      line-height:1.6;
+      img {width:100%; margin-top:47px;}
+    }
+  }
+  .name-holder {
+    display:flex;
+    align-items:center;
+    position:absolute;
+    //max-width:372px;
+    height:87px;
+    top:63px; left:90px;
+    padding:0 36px 0 30px;
+    background-color:$color-flag-purple;
+    font-size:39px;
+    color:#fff;
+    .ico-heart {
+      width:39px; height:39px;
+    }
+    .name {
+      display:block;
+      max-width:255px;
+      margin-left:16px;
+      text-align:left;
+      @extend .txt-ellipsis;
+    }
+  }
+  .period-top { margin-top:41px;
+    .btn-calendar {
+      margin:0 auto;
+    }
+  }
+  .sec-analysis {
+    padding:70px 18px;
+    text-align:left;
+    border-bottom:1px solid $color-border-gray;
+    &:last-child {border-bottom:0;}
+
+    // 컬럼 스타일
+    &.col-2,
+    &.col-3 {
+      display:flex;
+      justify-content:space-between;
+    }
+
+    // 요소 스타일
+    .sec-title {
+      margin-bottom:40px;
+      font-size:36px;
+    }
+    .side-area {
+      &.left {
+        width:25.6%; //width:465px;
+        padding:0 18px;
+      }
+      &.left + .right {
+        width:74.4%;
+      }
+    }
+    &.col-3 .side-area.left { padding: 0 0 0 18px; }
+
+    // 공통 스타일
+    .flag-round {
+      position:relative;
+      min-width:186px;
+      height:60px;
+      padding:0 40px;
+      border-radius:30px;
+      font-size:27px;
+      line-height:60px;
+      font-weight:400;
+      text-align:center;
+      color:#fff;
+    }
+
+    // 리스트 스타일
+    .dot-list {
+      padding-right:10px;
+      font-size:24px;
+      line-height:1.416;
+      li {
+        margin-top:25px;
+        &:first-child {margin-top:0;}
+        &:before {
+          top:10px;
+          background-color:$color-list-sm-gray;
+        }
+      }
+      .ico-vbook-on {
+        display:inline-block;
+        position:relative;
+        width:34px; height:30px;
+        top:2px;
+        margin-right:3px;
+        vertical-align:top;
+      }
+    }
+    .indent-list {
+      margin-top:30px;
+      font-size:21px;
+      line-height:1.619;
+      color:$color-indent-list-fonts;
+
+      li {
+        text-indent: -100px;
+        padding-left: 100px;
+      }
+    }
+    .attend-list {
+      justify-content:center;
+      width:100%; height:270px;
+      padding:30px 0 15px;
+      border-radius:24px;
+      background-color:$color-list-bg-gray;
+      gap:22px;
+      li {
+        display:flex;
+        flex-direction:column;
+        position:relative;
+        width:228px;
+        text-align:center;
+        font-size:27px;
+
+        &:after {
+          display:block;
+          content:'';
+          position:absolute;
+          width:2px; height:252px;
+          top:50%; right:-11px;
+          margin-top:-126px;
+          background-color:$color-border-gray-2;
+        }
+        &:last-child {
+          color:$color-red-fonts;
+          &:after {display:none;}
+        }
+
+        // 요일 별 출석 아이콘 커스텀 (5개 기준 루핑)
+        $attendIcoLength : 5;
+        @for $i from 1 through $attendIcoLength {
+          &:nth-child(#{$attendIcoLength}n+#{$i}) {
+            .ico-attend-active {
+              @extend .ico-attend-active-0#{$i};
+            }
+          }
+        }
+      }
+      .ico-attend-default {
+        display:block;
+        width:100%;
+        height:188px;
+        margin-top:auto;
+      }
+      .ico-attend-active {background-image:none;}
+    }
+    .doughnut-chart-list {
+      $chartColorArr : $color-chart-deep-gray, $color-chart-yellow, $color-chart-green,
+                       $color-chart-blue, $color-chart-pink, $color-chart-purple;
+      @for $i from 1 through length($chartColorArr) {
+        $chartColor : nth($chartColorArr, $i);
+        li:nth-child(#{$i}) {
+          .chart-title {
+            background-color:$chartColor;
+          }
+          .txt-chart-per {
+            color:$chartColor;
+          }
+        }
+      }
+      li {
+        display:flex;
+        align-items:center;
+        flex-direction:column;
+        height:435px;
+        padding-top:48px;
+        border-radius:60px;
+        &.has-bg {
+          background-color:$color-list-bg-gray;
+        }
+      }
+      .chart-title {
+        &:after {
+          display:block;
+          position:absolute;
+          content:'';
+          width:6px; height:16px;
+          top:100%; left:50%;
+          margin-left:-3px;
+          background-color:#aaa;
+        }
+      }
+      .chart-wrap {
+        position:relative;
+        width:216px;
+        height:216px;
+        margin-top:16px;
+        .txt-chart-per {
+          position:absolute;
+          font-size:42px;
+          top:50%; left:50%;
+          font-weight:600;
+          transform:translate3d(-50%,-50%,0);
+        }
+        &:after {
+          display:block;
+          content:'';
+          position:absolute;
+          width:80px; height:75px;
+          right:-51px; bottom:-11px;
+          background: no-repeat 0 0 url("#{$ico-url}/ico_vbook_off.webp");
+          background-size: 100% 100%;
+        }
+
+        &.sta-per-100 {
+          &:after {
+            background-image: url("#{$ico-url}/ico_vbook_on.webp");
+          }
+        }
+      }
+      .txt-chart-info {
+        display:flex;
+        align-items:flex-end;
+        gap:10px;
+        margin-top:32px;
+        font-size:24px;
+        color:$color-chart-fonts-gray;
+        em {font-size:33px; color:$color-default-fonts;}
+      }
+    }
+
+    // 타이틀을 포함한 독서 분석 정보 테이블
+    .result-list-wrap {
+      width:100%;
+      padding:40px 42px;
+      border-radius:30px;
+      background-color:$color-list-bg-skyblue;
+
+      // 너비 정의
+      &.amount-reading {
+        width:780px;
+      }
+      &.reading-mode {
+        width:672px;
+        height:522px;
+      }
+      &.reading-time {
+        width:552px;
+        height:522px;
+        .thumb-wrap {
+          width:300px;
+          height:auto;
+          padding:0;
+          margin:-5px auto 0;
+        }
+      }
+
+      // 요소 정의
+      .result-top {
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        position:relative;
+        padding-bottom:20px;
+        margin-bottom:40px;
+        font-size:27px;
+        &:after {
+          display:block;
+          content:'';
+          position:absolute;
+          width:100%; height:2px;
+          bottom:0; left:0;
+          background-color:$color-list-border-skyblue;
+        }
+      }
+
+      // 컬러 커스텀
+      &.type-gray {
+        background-color:$color-list-bg-gray;
+        .result-top {
+          &:after {background-color:$color-list-border-gray;}
+        }
+      }
+
+      // 리스트 정의
+      .col-list.reading-info {
+        font-size:33px;
+        li {
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          position:relative;
+
+          &:first-child:before {
+            display:block;
+            content:'';
+            position:absolute;
+            width:6px; height:39px;
+            top:50%; right:-2px;
+            margin-top:-20px;
+            border-radius:3px;
+            background-color:$color-list-border-skyblue;
+          }
+        }
+        .ico {margin-right:22px;}
+        span {margin-left:27px;}
+      }
+      .col-list.book-info {
+        width:696px;
+        margin-top:50px;
+        border-radius:21px;
+        padding:20px 33px;
+        background-color:#fff;
+
+        &:before {
+          display:block;
+          position:absolute;
+          content:'';
+          width:630px; height:2px;
+          top:73px; left:50%; margin-left:-315px;
+          background-color:$color-list-border-gray;
+        }
+        &:after {
+          display:block;
+          position:absolute;
+          content:'';
+          width:141px; height:21px;
+          bottom:100%; right:21px;
+          background: url("#{$img-url}/common/object/obj_circle_half_sky.svg") no-repeat;
+          background-size:contain;
+        }
+        li {
+          padding-bottom:14px;
+          border-right:2px solid $color-list-border-gray;
+          font-size:30px;
+          text-align:center;
+          &:last-child {border:none;}
+        }
+        em {
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          padding:2px 0 25px;
+          margin-bottom:26px;
+        }
+        p {
+          display:flex;
+          justify-content:space-between;
+          padding:0 70px;
+          margin-bottom:30px;
+          &:last-child {margin-bottom:0;}
+          > span {
+            //width:88px;
+            text-align:right;
+          }
+        }
+        //.ico-vbook-on {width:40px; height:36px; margin-right:9px;}
+        .ico-vbook-on {width:40px; height:30px; margin-right:9px;}
+        .type-green {color:$color-em-green;}
+        .type-purple {color:$color-em-purple-2;}
+      }
+      .col-list.reading-mode-info {
+        height:320px;
+        justify-content:flex-start;
+        padding:0 15px;
+        font-size:24px;
+
+        li:first-child {
+          width:215px;
+        }
+        li:last-child {
+          width:318px;
+        }
+        .mode-per-info {
+          gap:42px;
+          li {
+            padding-left:27px;
+            &:before {
+              display:block;
+              content:'';
+              position:absolute;
+              width:15px;
+              height:78px;
+              top:-4px; left:0;
+              border-radius:30px;
+            }
+          }
+
+          $chartColorArr : $color-chart-blue-2, $color-chart-pink-2, $color-chart-yellow-2;
+          @for $i from 1 through length($chartColorArr) {
+            $chartColor : nth($chartColorArr, $i);
+            li:nth-child(#{$i}) {
+              color:$chartColor;
+              &:before {background-color:$chartColor;}
+            }
+          }
+        }
+        .txt-per {
+          display:block;
+          margin-top:10px;
+          font-size:42px;
+        }
+      }
+    }
+    .thumb-wrap {
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      position:relative;
+      width:412px; height:100%;
+      padding:12px 0 20px;
+
+      &.has-float-flag {
+        padding-right:58px;
+
+        .flag-number {
+          position:absolute;
+          width:120px; height:120px;
+          right:0; bottom:0;
+          border-radius:50%;
+          font-size:36px; line-height:120px;
+        }
+      }
+      .shadow-wrap {
+        width: 100%; height: 100%;
+        max-width: 352px; max-height: 352px;
+        text-align: center;
+      }
+      img {
+        @extend .img-obj-fit-scaledown;
+        @extend .obj-pos-center-bottom;
+      }
+      .flag-round {
+        font-weight:600;
+        background-color:$color-chart-deep-gray;
+      }
+      .flag-number {
+        width:300px; height:78px;
+        border-radius:39px;
+        background-color:$color-flag-purple;
+        font-size:33px; line-height:78px;
+        font-weight:600;
+        text-align:center;
+        color:#fff;
+        z-index:1;
+      }
+
+      &.no-data {
+        height:366px;
+      }
+    }
+
+    // 데이터 없을 경우
+    .no-data {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:100%; // 354px
+      padding-top:100%;
+      font-size:24px;
+      line-height:1.5;
+      color:$color-nodata-fonts;
+
+      &:before {
+        display:block;
+        content:'';
+        position:absolute;;
+        width:100%; height:100%;
+        top:0; left:0;
+        border-radius:27px;
+        background-color:$color-list-bg-gray;
+        z-index:1;
+      }
+      span {
+        position:absolute;
+        width:100%;
+        top:50%; left:50%;
+        text-align:center;
+        transform:translate3d(-50%,-50%,-0);
+      }
+      &.type-circle {
+        &:before {border-radius:50%; background-color:$color-list-bg-gray-2;}
+      }
+    }
+  }
+
+  .monthly {
+    .side-area.right { max-width: 1260px;}
+    .period-top {
+      .btn-calendar { width: 700px; }
+    }
+    .attend-count {
+      display: flex;
+      width: 100%; height: 100%;
+      align-items: center;
+      justify-content: space-between;
+      padding: 21px 54px 21px 27px;
+      background-color:$color-list-bg-skyblue;
+      border-radius: 24px;
+
+      li {
+        font-size: 36px;
+        width: fit-content;
+
+        > * { display: inline-block; }
+
+        span {
+          width: 274px; height: 102px;
+          padding: 33px 0;
+          margin-left: 42px;
+          background-color: #FFFFFF;
+          border-radius: 21px;
+          text-align: center;
+
+          &.type-blue { color: $color-chart-text-blue; }
+          &.type-purple { color: $color-chart-text-purple; }
+        }
+
+        &::before {
+          display: inline-block;
+          content: '∙ ';
+          margin-right: 2px;
+        }
+        &:first-child {
+          width: fit-content;
+          i { width: 120px; height: 120px; }
+          &::before { display: none;}
+        }
+        //&:nth-child(2) { margin: 0 109px 0 74px; }
+      }
+    }
+
+
+    .analysis-kor {
+      .dot-list { padding-right: 0; }
+
+      .radar-chart-wrap {
+        position: relative;
+        width: 100%; height: 817px;
+        padding: 72px 203px 68px 54px;
+        background-color: $color-list-bg-gray;
+        border-radius: 30px;
+        .color-list {
+          li {
+            &:before {
+              width: 66px; height: 9px;
+              margin-right: 15px;
+            }
+          }
+        }
+        .radar-chart {
+          width: 520px; height: 507px;
+          position: absolute;
+          top: 214px; right: 0; bottom: 96px; left: 0;
+          margin: auto;
+
+          .radar-label-wrap {
+            position: absolute;
+            width: 160%; height: 135%;
+            top: -30%; left: -33%;
+
+            li {
+              display: flex;
+              position: absolute;
+              width: fit-content;
+              height: fit-content;
+              flex-direction: column;
+              width: fit-content;
+              gap: 12px;
+
+              p {
+                padding: 12px 30px;
+                border-radius: 30px;
+                color: #FFFFFF;
+                font-size: 24px;
+              }
+              &:nth-child(1) { right: 0; left: 10px; margin: auto; }
+              &:nth-child(2) { top: 0; right: 0; bottom: 110px; margin: auto; }
+              &:nth-child(3) { right: 63px; bottom: 50px; }
+              &:nth-child(4) { bottom: 50px; left: 100px; }
+              &:nth-child(5) { top: 0; left: 0; bottom: 110px; margin: auto; }
+            }
+            // 배경 컬러 색상 조정
+            $radarColorItem : $color-chart-yellow-2, $color-chart-pink, $color-chart-blue,
+                         $color-chart-green, $color-chart-purple;
+            @for $i from 1 through length($radarColorItem) {
+              $chartColor : nth($radarColorItem, $i);
+              li:nth-child(#{$i}) {
+                .chart-title {
+                  background-color:$chartColor;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .sec-analysis {
+      // 들여쓰기 조정
+      .indent-list.size-half {
+         li {
+          text-indent: -50px;
+          padding-left: 50px;
+           white-space: nowrap;
+        }
+      }
+      // 결과 값
+      .result-list-wrap {
+        // 독서 시간
+        &.reading-time {
+          .thumb-wrap { width: auto; }
+          .shadow-wrap {
+            width: 490px; height: 386px;
+            padding: 109px 92px 114px 94px;
+            background-image: url("#{$img-url}/my-superbook/img_book_clock_full.webp");
+            background-size: 100% 100%;
+            &::after { display: none; }
+
+            // 독서 시간 이번달 & 지난달 구ㅌ
+            .col-list {
+              justify-content: space-between;
+              li {
+                display: flex;
+                width: 108px; height: 100%;
+                flex-direction: column;
+                text-align: center;
+                font-weight: bold;
+
+                em {
+                  padding-bottom: 13px;
+                  font-size: 27px;
+                  border-bottom: 1px solid #f8ae66;
+                }
+                span {
+                  display: flex;
+                  height: calc(100% - 41px);
+                  align-items: center;
+                  justify-content: center;
+                  margin-top: 33px;
+                  font-size: 36px;
+                  line-height: 51px;
+                  word-break: keep-all;
+                }
+                &.type-purple { color: $color-chart-purple-2; }
+                &.type-green { color: $color-chart-green-2; }
+              }
+            }
+          }
+        }
+        // 레벨 분석
+        &.analysis-level {
+          margin-top: 30px;
+
+          .col-list {
+            justify-content: space-between;
+
+            li {
+              width: 767px;
+              font-size: 27px;
+              line-height: 43px;
+
+              span { color: $color-chart-text-purple; }
+              strong { font-weight: bold; }
+
+              &:last-child {
+                width: 384px; height: 264px;
+                //padding: 30px 52px 42px;
+                padding: 30px 0 42px;
+                background-color: #FFFFFF;
+                border-radius: 21px;
+                text-align: center;
+
+                .flag-round {
+                  width: calc( 100% - 104px);
+                  margin: 0 auto;
+                }
+                > span {
+                  display: inline-block;
+                  margin: 36px auto 31px;
+                  font-size: 36px;
+                }
+                p {
+                  span { color: $color-emp-red; }
+                }
+              }
+
+              &.no-data {
+                padding-top: 0;
+                align-items: center;
+                &::before { display: none; }
+              }
+            }
+          }
+          .flag-round {
+            background-color: $color-chart-deep-gray;
+          }
+        }
+      }
+    }
+    // 관심주제
+    .interest-subject {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+
+      li {
+        padding: 37px 66px 33px;
+        border-radius: 50px;
+        font-size: 30px;
+        font-weight: bold;
+        white-space: nowrap;
+
+        &:nth-child(odd) {
+          background-color: $color-list-bg-skyblue;
+          color: $color-chart-text-blue;
+        }
+        &:nth-child(even) {
+          background-color: $color-interest-sub-purple;
+          color: $color-chart-text-purple;
+        }
+      }
+    }
+
+    // bar-chart
+    .bar-chart-wrap {
+      canvas {
+        padding: 40px 63px 43px 46px;
+        border: 6px solid $color-list-bg-skyblue;
+        border-radius: 0 30px 30px;
+      }
+      .level-div {
+        position: relative;
+        .tab {
+          button {
+            width: 300px; height: 90px;
+            margin-right: 3px;
+            border-radius: 30px 30px 0 0;
+            background-color: $color-border-gray-3;
+            color: $color-btn-gray;
+            font-size: 27px;
+            line-height: 90px;
+            font-weight: bold;
+
+            &.active {
+              background-color: $color-list-bg-skyblue;
+              color: $color-chart-text-blue;
+            }
+            &:last-child { margin-right: 0; }
+          }
+        }
+        .color-list {
+          position: absolute;
+          width: 241px; height: fit-content;
+          right: 24px; bottom: 33px;
+          margin: auto;
+          gap: 30px;
+
+          li {
+            width: fit-content;
+            &::before {
+              width: 24px; height: 24px;
+              margin-right: 12px;
+            }
+          }
+        }
+      }
+    }
+
+    // 비교 텍스 트
+    .book-info ~ .comparison {
+      margin-top: 30px;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+
+      span { color: $color-emp-red; }
+    }
+    // 총평
+    .total-comment {
+      padding: 42px;
+      border: 3px solid $color-border-gray-3;
+      border-radius: 30px;
+      font-size: 27px;
+      line-height: 43px;
+      letter-spacing: -0.3px;
+      color: $color-default-fonts;
+    }
+
+    .color-list {
+      gap: 21px;
+
+      li {
+        font-size: 24px;
+        font-weight: bold;
+
+        &:before {
+          display: inline-block;
+          content: '';
+          vertical-align: middle;
+        }
+
+        &.type-green {
+          color: $color-chart-green-3;
+          &:before { background-color: $color-chart-green-2}
+        }
+        &.type-purple {
+          color: $color-chart-purple-2;
+          &:before { background-color: $color-chart-purple-2}
+        }
+      }
+    }
+  }
+}

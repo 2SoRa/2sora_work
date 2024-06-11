@@ -1,0 +1,160 @@
+/* TODO : 임시 구성 및 스타일 */
+/* SuperPick 슈퍼픽 */
+.superpick {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 132px 36px;
+}
+
+/* 슈퍼픽 셀렉박스 설정 */
+.superpick .dropdown-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  z-index: 100;
+}
+.superpick .dropdown { width: 510px; }
+.superpick .vs--searchable .vs__dropdown-toggle {
+  max-width: 510px;
+  height: 78px;
+  padding: 25px 30px;
+  font-size: 27px;
+  border-radius: 50px;
+  border: 1px solid #CBCBCB;
+}
+/* 셀렉박스 옵션 묶음 */
+.superpick .vs__dropdown-menu {
+  max-width: 510px;
+  width: 100%;
+  height: max-content;
+  max-height: max-content;
+  padding: 15px 30px;
+  font-size: 27px;
+  border-radius: 39px;
+  margin: 12px 0 0;
+  border: 1px solid #CBCBCB;
+  box-shadow: none;
+}
+.superpick .vs__dropdown-option {
+  height: 78px;
+  letter-spacing: -1.08px;
+  color: #4D4D4D;
+  padding: 0;
+}
+.superpick .vs__dropdown-option:focus {
+  color: #0C80F8;
+}
+.superpick .vs__dropdown-option:after {
+  display: none;
+}
+/* 슈퍼픽 셀렉박스 화살표 설정 */
+.superpick .vs__open-indicator {
+  width: 30px;
+  height: 30px;
+}
+.superpick .vs__open-indicator img { width: 100%; }
+
+
+.superpick .background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* 슈퍼픽 책 리스트 묶음 */
+.superpick .list-wrap {
+}
+.superpick .list-wrap div {
+  width: calc( 100% - 64px);
+  height: 974px;
+  position: absolute;
+}
+/* 템플릿 공토 요소 */
+.superpick .list-wrap ul {
+  display: flex;
+  position: absolute;
+}
+.superpick .list-wrap ul li {
+  width: 360px;
+  height: 318px;
+  position: relative;
+  background-color: deepskyblue;
+  opacity: 0.5;
+}
+.superpick .list-wrap ul li a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+/* 슈퍼픽 완료 책 표시(숨김) */
+.superpick .list-wrap ul li .check {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  right: 0;
+  bottom: 78px;
+  left: 0;
+  margin: auto;
+  background: url("@/assets/img/launcher-readingclub/common/icons/ico_check_circle.webp") no-repeat;
+  background-size: 100% 100%;
+  display: none;
+}
+/* 슈퍼픽 완료 책 표시(나타냄) */
+.superpick .list-wrap ul li.complete .check {
+  display: block;
+}
+/* 템플릿 1 */
+.superpick .list-wrap div.template1 {
+  /*background-color: yellow;*/
+}
+.superpick .list-wrap div.template1 ul {
+  width: 1212px;
+  height: 721px;
+  /*right: 72px;*/
+  right: 43px;
+  bottom: 91px;
+  gap: 86px 66px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.superpick .list-wrap div.template1 ul::before {
+  content: '';
+  width: 360px;
+  height: 318px;
+  display: inline-block;
+}
+/* 템플릿 2 */
+.superpick .list-wrap div.template2 {
+  /*bottom: 326px;*/
+}
+.superpick .list-wrap div.template2 ul {
+  width: 1824px;
+  gap: 6px;
+  top: 330px;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+/* 템플릿 3 */
+.superpick .list-wrap div.template3 {
+  /*background-color: rgba(0,0,0,0.4);*/
+}
+.superpick .list-wrap div.template3 ul {
+  width: fit-content;
+  height: 110%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /*gap: 37px 678px;*/
+  gap: 37px 638px;
+  top: -128px;
+  left: 134px;
+  margin: auto;
+}
+.superpick .list-wrap div.template3 ul li:nth-child(2) { margin: 9px 0 0 202px; }
+.superpick .list-wrap div.template3 ul li:nth-child(3) { margin: 0 0 0 82px; }
+.superpick .list-wrap div.template3 ul li:nth-child(4) { margin: 244px 0 0 0; }
+.superpick .list-wrap div.template3 ul li:nth-child(5) { margin: 39px 0 0 90px; }

@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+// 공통 & important 클래스
+// display
+.d-inline {
+  display: inline !important;
+}
+.d-block {
+  display: block !important;
+}
+.d-none {
+  display: none !important;
+}
+.d-flex {
+  display: flex !important;
+}
+
+// position
+.pos-absolute {position:absolute !important;}
+.pos-fixed {position:fixed !important;}
+.pos-relative {position:relative !important;}
+.pos-static {position:static !important;}
+
+// align
+.flex-content-start {display:flex; justify-content:flex-start !important;}
+.flex-content-center {display:flex; justify-content:center !important;}
+.flex-content-end {display:flex; justify-content:flex-end !important;}
+.flex-items-start {display:flex; align-items:flex-start !important;}
+.flex-items-center {display:flex; align-items:center !important;}
+
+// gap
+.gap-0 {gap:0 !important;}
+
+// border
+.border-none {border-width:0 !important;}
+.border-top-none {border-top-width: 0 !important;}
+.border-bot-none {border-bottom-width: 0 !important;}
+
+// image
+.img-obj-fit-contain {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+  &.obj-pos-center-bottom {object-position:center bottom;}  // 중앙 하단
+}
+.img-obj-fit-scaledown {
+  width:100%;
+  height:100%;
+  object-fit:scale-down;
+  object-position:center center;
+  &.obj-pos-center-bottom {object-position:center bottom;}  // 중앙 하단
+}
+.img-obj-fit-fill {
+  width:100%;
+  height:100%;
+  object-fit:fill;
+  object-position:center center;
+}
+.img-obj-fit-cover {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+}
+
+// text
+.text-blind {
+  font-size:0 !important;
+}
+.txt-ellipsis { // width, max-width 별도 정의
+  text-overflow:ellipsis;
+  overflow:hidden;
+
+  &.single-line { /* width:100%; */ max-width:100%; white-space: nowrap; }
+  &[class*='multi-line'] {
+    display: -webkit-box;
+    height: fit-content;
+    -webkit-box-orient: vertical;
+      &.multi-line-4 {-webkit-line-clamp:4;}
+      &.multi-line-2 {-webkit-line-clamp:2;}
+  }
+}
+
+// title (no-list type)
+.dot-title {
+  position:relative;
+  &:before {
+    position:absolute;
+    content:'';
+    display:block;
+    width:6px; height:6px;
+    top:50%; left:0; margin-top:-3px;
+    border-radius:50%;
+    background-color:$color-default-fonts;
+  }
+}
+
+.korean-only {
+  .hide-eng {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

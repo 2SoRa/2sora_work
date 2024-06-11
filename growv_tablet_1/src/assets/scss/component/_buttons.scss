@@ -1,0 +1,611 @@
+@charset 'UTF-8';
+
+// 탑버튼
+.btn-top {
+    display:none;
+    position:fixed;
+    bottom:0; right:0;
+    width:108px; height:108px;
+    text-indent:-9999px;
+    background:url('#{$img-url}/common/btn_top_sub.webp') 0 0 no-repeat;
+    background-size:100%;
+    &.show {
+        display:block;
+        z-index:$depth-fixed;
+    }
+
+    // 디자인 커스텀
+    &.type-cc-w {
+        width:138px; height:138px;
+        background-image:url('#{$img-url}/common/btn_top_mall.webp');
+    }
+}
+
+
+// 버튼 커스텀 : 쉐도우
+[class^='btn'] {
+    &.has-shadow {
+        box-shadow:0 6px 6px 0 rgba(0, 0, 0, 0.3);
+    }
+}
+
+// 페이지 별 안내
+.btn-info {
+    display: flex;
+    padding: 18px 36px 18px 21px;
+    margin-right: 15px;
+    align-items: center;
+    border-radius: 42px;
+    background-color: #2CA6FF;
+    box-shadow: inset 0 -3px 3px 0 rgba(0, 0, 0, 0.16);
+    color: #FFFFFF;
+    font-size: 26px;
+
+    span {
+        display: inline-block;
+        width: 49px; height: 49px;
+        background-image: url("#{$img-url}/common/icons/ico_info.webp");
+        background-size: 100% 100%;
+        margin-right: 13px;
+    }
+}
+
+// 직사각형의 글로시 디자인 박스 타입 버튼
+.btn-glossy-box {
+    position:relative;
+    width:342px;
+    height:312px;
+    padding:0;
+    img {width:100%; height:100%;}
+
+    &:after {
+        display:block;
+        content:'';
+        position:absolute;
+        width:366px; height:340px;
+        top:50%; left:50%;
+        margin-top:-176px; margin-left:-183px;
+        pointer-events:none;
+        background: url("#{$img-url}/common/btn_answer_focus.webp") center center no-repeat;
+        background-size:100%;
+        opacity:0;
+    }
+
+    &.focus {
+        &:after {
+            animation:lightingFocusBtnAni 1s forwards ease-in-out;
+            @keyframes lightingFocusBtnAni {
+                0% {opacity:0;}
+                10% {opacity:1;}
+                14% {opacity:1;}
+                20% {opacity:0.4;}
+                30% {opacity:0.4;}
+                40% {opacity:1;}
+                80% {opacity:1;}
+                100% {opacity:0;}
+            }
+        }
+    }
+}
+
+// 캘린더 버튼
+.btn-calendar {
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:336px;
+    height:72px;
+    // margin:0 27px;
+    background: url("#{$img-url}/common/bg_calendar_or.webp") center center no-repeat;
+    background-size:100%;
+
+    button {
+        position:absolute;
+        width:72px; height:100%;
+        top:50%;
+        transform:translate3d(0,-50%,0);
+        font-size:0;
+
+        &:before,
+        &:after {
+            content:'';
+            display:block;
+            position:absolute;
+            width:100%; height:100%;
+            top:0; right:0; bottom:0; left:0;
+            background-repeat:no-repeat;
+            background-size:contain;
+            background-position:center center;
+        }
+
+        &.btn-prev {
+            left:0;
+            &:before {background-image: url("#{$img-url}/common/btn_ico_arr_l.webp");}
+        }
+        &.btn-next {
+            right:0;
+            &:before {background-image: url("#{$img-url}/common/btn_ico_arr_r.webp");}
+        }
+
+        // 비활성화 상태
+        &:disabled,
+        &.disabled {
+            pointer-events:none;
+            opacity:0.4;
+        }
+    }
+    .txt-month {
+        font-size:30px;
+        color:#fff;
+    }
+    .info-period {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:10px;
+        width:313px; height:48px;
+        margin-left:15px;
+        border-radius:24px;
+        background-color:$color-info-flag-gray;
+        color:#fff;
+        span {font-size:27px; font-weight:normal;}
+    }
+
+    // 커스텀 스타일 
+    &.type-trans-purple {
+        width:350px;
+        background-image:none;
+
+        .txt-month {color:$color-default-fonts;}
+        button {
+            width:54px;
+            height:54px;
+
+            &.btn-prev {
+                &:before {background-image: url("#{$img-url}/common/btn_arr_purple_disable_l.webp");}
+                &:after {background-image: url("#{$img-url}/common/btn_arr_purple_active_l.webp");}
+            }
+            &.btn-next {
+                &:before {background-image: url("#{$img-url}/common/btn_arr_purple_disable_r.webp");}
+                &:after {background-image: url("#{$img-url}/common/btn_arr_purple_active_r.webp");}
+            }
+
+            &:before {
+                opacity:0;
+            }
+
+            // 비활성화 상태
+            &:disabled {
+                opacity:1;
+                &:before {opacity:1;}
+                &:after {opacity:0;}
+            }
+        }
+    }
+
+    &.type-w-blue {
+        width:546px;
+        height:102px;
+        border-radius:51px;
+        background-image:none;
+        background-color:#fff;
+
+        button {width:102px;
+            &.btn-prev,
+            &.btn-next {
+                &:before {background-image: url("#{$img-url}/common/btn_arr_blue_r.webp");}
+            }
+            &.btn-prev {
+                &:before {transform:rotateY(-180deg);}
+            }
+        }
+        .txt-year {
+            font-family:'oneMobile';
+            font-weight:normal;
+            font-size:48px;
+            color:$color-active-blue;
+        }
+    }
+
+    // 기간이 포함된 와이드형
+    &.size-wide {
+        width:786px;
+        height:54px;
+    }
+}
+
+// 너비 별 라운드 버튼
+.btn-round-96 {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:96px;
+    height:48px;
+    border-radius:24px;
+    background-color:$color-btn-bg-gray;
+    font-size:21px; line-height:1px;
+    color:#fff;
+}
+.btn-round-360 {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:360px;
+    height:114px;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center center;
+    gap:18px;
+
+    &.type-blue {
+        background-image: url('#{$img-url}/common/btn_type02_n.webp');
+    }
+    &.type-yellow {
+        background-image: url('#{$img-url}/common/btn_type01_n.webp');
+    }
+    // 버튼 내 요소 스타일
+    .txt {
+        position:relative;
+        top:1px;
+        font-size:39px;
+        font-weight:700;
+        color:#fff;
+        text-shadow: 0px 4px 5px rgba(26, 76, 151, 0.22);
+    }
+
+    .ico-x {width:51px; height:51px;}
+    .ico-o {width:55px; height:55px;}
+}
+.btn-round-321 {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:321px;
+    height:114px;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center center;
+    gap:18px;
+
+    &.type-purple {
+        background-image: url('#{$img-url}/common/btn_type03_n.webp');
+    }
+    &.type-gray {
+        background-image: url('#{$img-url}/common/btn_type04_n.webp');
+    }
+    &.disabled,
+    &:disabled {
+        pointer-events:none;
+        background-image: url('#{$img-url}/common/btn_type05_n.webp');
+        .txt {
+            color:$color-inactive-fonts;
+        }
+    }
+
+    // 버튼 내 요소 스타일
+    .txt {
+        position:relative;
+        font-size:39px;
+        font-weight:700;
+        color:#fff;
+    }
+}
+.btn-round-450 {
+    width:450px;
+    height:120px;
+    border-radius:60px;
+    background-color:$color-btn-blue;
+    font-size:36px; line-height:1;
+    color:#fff;
+
+    &:disabled,
+    &.disabled {
+        pointer-events:none;
+        background-color:$color-btn-gray;
+    }
+}
+.btn-round-full {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%; height:120px;
+    max-width:600px; // 장바구니 담기 버튼용
+    border-radius:12px;
+    background-color:$color-btn-blue;
+    font-size:36px; line-height:1;
+    color:#fff;
+
+    &:disabled,
+    &.disabled {
+        background-color:$color-btn-disabled-gray;
+        pointer-events:none;
+        .ico-cart {display:none;}
+    }
+}
+
+// top
+.btn-top-round-420 {
+    width:420px;
+    height:150px;
+    border-top-left-radius:24px;
+    border-top-right-radius:24px;
+    background-color:$color-btn-blue;
+    font-size:36px; line-height:1;
+    color:#fff;
+
+    &:disabled,
+    &.disabled {
+        pointer-events:none;
+        background-color:$color-btn-gray;
+    }
+}
+
+// 라운드가 들어간 박스 형태의 버튼
+.btn-box-rounded {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-width:163px;
+    height:70px;
+    border-radius:18px;
+    background-color:$color-btn-bg-turquoise;
+    font-size:27px;
+    color:#fff;
+
+    // 사이즈 별 커스텀
+    &.size-big {
+        min-width:270px;
+        height:96px;
+    }
+    &.size-mid {
+        min-width:143px;
+        height:60px;
+        border-radius:12px;
+        font-size:24px;
+    }
+    &.size-small {
+        min-width:90px;
+        height:60px;
+        border-radius:8px;
+        font-size:24px;
+    }
+    &.size-mall {
+        min-width: 201px;
+        height: 84px;
+    }
+
+    // 이너 쉐도우
+    &.has-shadow-inset {
+        box-shadow: inset 0 -6px 6px 0 rgba(0, 0, 0, 0.16);
+    }
+
+    // 컬러 타입
+    &.type-gray {
+        background-color:$color-btn-bg-remove;
+    }
+}
+
+// 마이슈퍼북에 사용되는 아쿠아 컬러의 라운드 버튼
+.btn-aqua {
+    position:relative;
+    width:211px;
+    height:48px;
+    padding:0 26px;
+    border-radius:24px;
+    background-color:$color-btn-bg-aqua;
+    color:$color-btn-aqua-fonts;
+    font-size:21px;
+    text-align:left;
+    &:after {
+        display:block;
+        content:'';
+        position:absolute;
+        width:32px; height:32px;
+        top:50%; right:9px;
+        margin-top:-16px;
+        background: url("#{$img-url}/common/btn_ico_r_aqua.webp") no-repeat;
+        background-size: 100% 100%;
+    }
+    a {
+        justify-content: flex-start;
+    }
+}
+
+// 마이페이지 버튼 커스텀 : 사각 박스 타입 버튼 : 모서리 약간 라운딩
+// 나중에 공통 스타일로 변경 필요할 듯
+.btn.btn-01-mp {
+    width: 184px;
+    height: 80px;
+    font-size: 29px;
+    background: url('#{$img-url}/mypage/mp_btn_type_01_n.png') no-repeat;
+}
+.btn.btn-02-mp {
+    width: 280px;
+    height: 112px;
+    background: url('#{$img-url}/mypage/mp_btn_type_02_n.png') no-repeat;
+}
+.btn.btn-02-mp.gray {
+    background: url('#{$img-url}/mypage/mp_btn_type_02_n_g.png') no-repeat;
+}
+.btn.btn-02-mp.disable {
+    color: #a3a3a3;
+    background: url('#{$img-url}/mypage/mp_btn_type_02_d.png') no-repeat;
+}
+.btn.btn-03-mp {
+    width: 260px;
+    height: 100px;
+    font-size: 34px;
+    background: url("#{$img-url}/mypage/mp_btn_03_n.png") no-repeat;
+}
+
+// 리스트 더보기
+.btn-more-list,
+.more-list {
+    button {
+        width: 129px; height: 48px;
+        padding: 0;
+        background-image: url("#{$img-url}/mypage/mp_btn_txtbtn_more.png");
+        background-size: 100%;
+    }
+}
+
+// 미리보기
+.btn-preview {
+    position:absolute;
+    width:262px; height:84px;
+    right:0; bottom:-42px;
+    padding:0;
+    background: no-repeat 50% 50% url("#{$img-url}/common/btn_preview.webp");
+    background-size:contain;
+}
+.btn-preview-play {
+    width:142px; height:142px;
+    background: no-repeat 50% 50% url("#{$img-url}/common/btn_preview_play.webp");
+    background-size:contain;
+}
+
+// 장바구니 아이템 삭제
+.btn-item-delete {
+    .ico {
+        @extend .ico-delete;
+    }
+}
+
+// 비디오 플레이
+.btn-video-play {
+    position:absolute;
+    width:222px; height:222px;
+    top:50%; left:50%;
+    margin-top:-111px; margin-left:-111px;
+    background: no-repeat 50% 50% url("#{$img-url}/common/btn_video_play.webp");
+    background-size:contain;
+}
+
+// 탭 버튼 그룹 (디폴트 좌우 라운드형, 언더라인)
+.tab-menu-list {
+    display:flex;
+    justify-content:center;
+    //margin:15px 0 20px;
+
+    .list-item {
+        width:240px;
+        height:100%;
+        button,
+        .item-btn {
+            display:block;
+            position:relative;
+            width:100%;
+            height:90px;
+            font-size:$sub-menu-font-size;
+            &:before,
+            &:after {
+                display:block;
+                content:'';
+                position:absolute;
+                width:100%; height:100%;
+                top:0; left:0; right:0; bottom:0;
+                background-repeat:no-repeat;
+                background-size:contain;
+                background-position:center center;
+            }
+            &:after {opacity:0;}
+
+            .txt {
+                display:block;
+                position:relative;
+                color:#fff;
+                opacity:0.8;
+                z-index:$depth-1;
+            }
+
+            // 활성화 상태
+            &.active,
+            &.router-link-exact-active {
+                &:before {opacity:0;}
+                &:after {opacity:1;}
+                .txt {opacity:1;}
+            }
+        }
+
+        // 버튼 활성화 비활성화 디자인 스타일
+        // 좌측 끝
+        &:first-child {
+            button {
+                &:before {background-image: url("#{$img-url}/common/tab_default_aqua_l.webp");}
+                &:after {background-image: url("#{$img-url}/common/tab_active_or_l.webp");}
+            }
+        }
+        // 우측 끝
+        &:last-child {
+            button {
+                &:before {background-image: url("#{$img-url}/common/tab_default_aqua_r.webp");}
+                &:after {background-image: url("#{$img-url}/common/tab_active_or_r.webp");}
+            }
+        }
+    }
+
+    // 언더라인 탭 버튼 그룹
+    &.type-underline {gap:90px;
+        .list-item {
+            width:auto;
+            a {height:60px; font-size:42px; color:$color-btn-2depth-fonts;
+                &:before {display:none}
+                &:after {
+                    width:210px; height:10px;
+                    top:auto; bottom:0; left:50%;
+                    margin-left:-105px;
+                    background-image: url("#{$img-url}/common/btn_underline_active.webp");
+                    opacity:0;
+                }
+                &.active,
+                &.router-link-exact-active {
+                    color:$color-flag-purple;
+                    &:after {opacity:1;}
+                }
+            }
+        }
+    }
+}
+
+.switch {
+    display: flex;
+    width: 712px; height: 108px;
+    margin: auto;
+    padding: 6px;
+    background-color: $color-btn-gray;
+    border-radius: 50px;
+    button {
+        padding: 0 49px 0 55px;
+        &.switch-item {
+        //width: calc( 50% + 12px);
+        color: #FFFFFF;
+            &.active {
+                //width: calc( 50% - 6px);
+                //height: calc( 100% - 12px);
+                //margin: auto 6px;
+                background-color: #FFFFFF;
+                border-radius: 50px;
+            }
+        }
+        &:first-child { padding: 0 52px; }
+        img { width: 246px; }
+    }
+    &.type-green { background-color: $color-toggle-bg-green; }
+    &.type-purple { background-color: $color-toggle-bg-purple; }
+    &.type-text {
+        width: fit-content; height: fit-content;
+        background-color: transparent;
+        .switch-item {
+            padding: 23px 40px 18px 41px;
+            color: $color-switch-gray;
+            font-size: 33px;
+            font-weight: 600;
+            a { font-size: inherit; font-weight: inherit; }
+            &.active {
+              color: $color-2depth-purple;
+              font-weight: 800;
+            }
+        }
+    }
+}

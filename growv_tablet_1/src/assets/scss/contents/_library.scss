@@ -1,0 +1,913 @@
+@charset 'UTF-8';
+
+/* TODO : 임시 구성 및 스타일 */
+/* 도서관 메인 영역 */
+.library {
+    width: 100%;
+    height: 100vh;
+    background-color:$color-reading-kor-bg;
+
+  &.sub-main {
+    background: url("#{$img-url}/library/kor/part_bg.webp") no-repeat;
+    background-size: 100% 100%;
+  }
+  .contents {
+    position: relative;
+    height: calc(100vh - #{$gnb-height});
+    margin: auto;
+    overflow: hidden;
+
+    /* 책 아이콘 영역 */
+    .book-icon {
+      width: 288px;
+      height: 78px;
+      background: url("#{$img-url}/library/kor/img_book_icon_guide.webp") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+    }
+    .keyword-info {
+      //position: absolute;
+      text-align: right;
+      margin: 54px 60px 0 0;
+      color: $color-nodata-fonts-2;
+      line-height: 1.55;
+      font-size: 22px;
+    }
+  }
+
+  /* 상단 읽은 책 카운팅 */
+  .reading-total {
+    width: 1257px;
+    display: flex;
+    gap: 18px;
+    margin: 0 209px 0 auto;
+
+    ul {
+      display: flex;
+      width: 921px; height: 102px;
+      padding: 43px 32px 30px 0;
+      //margin: 0 28.5% 0 auto;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 197px;
+      background: url("#{$img-url}/library/kor/bg_mybook.webp") no-repeat;
+      background-size: 100% 100%;
+
+      li {
+        width: 140px;
+        text-align: right;
+        color: #187BFA;
+        font-size: 28px;
+        line-height: 1.29;
+      }
+    }
+    .btn-info {
+      width: 318px; height: 105px;
+      margin-right: 0;
+      background-color: transparent;
+      background-image: url("#{$img-url}/library/kor/btn_info.webp");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      box-shadow: none;
+    }
+  }
+
+  /* 메뉴 영역 */
+  .condition .search-wrap {
+    display: flex;
+    position: relative;
+    width: 100%; height: 132px;
+    padding: 0 122px 0 124px;
+    align-items: flex-end;
+    justify-content: center;
+
+    /* 한글 메인 메뉴 항목 */
+    .condition-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        display: flex;
+        width: 240px; height: 132px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0;
+        a {
+          width: 100%; height: 100%;
+          display: inline-block;
+        }
+      }
+    }
+
+    .sub-menu-category-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        display: flex;
+        width: 300px; height: 132px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0;
+        // 출판사별 메뉴만 가로 길이재설정
+        &.pub { width: 339px; }
+
+        /* 카테고리 별 버튼 활성화 변경 */
+        $menuGroup : "kind", "develop", "keyword", "pub";
+        @for $i from 1 through length($menuGroup) {
+          $menuName : nth($menuGroup, $i);
+          &.#{$menuName} {
+            background: url("#{$img-url}/library/kor/temp_btn_menu_0#{$i}.webp") no-repeat;
+            background-size: 100% 100%;
+
+              &.active {
+                background-image: url("#{$img-url}/library/kor/temp_btn_menu_0#{$i}_active.webp");
+              }
+            }
+          }
+          a {
+            width: 100%; height: 100%;
+            display: inline-block;
+          }
+        }
+        // 출판사 없는 버전
+        &.no-pub {
+          li {
+            width: 400px; height: 132px;
+            //키워드만 너비 다름
+            &.keyword { width: 439px;}
+            /* 카테고리 별 버튼 활성화 변경 */
+            $menuGroup : "develop", "kind", "keyword";
+            @for $i from 1 through length($menuGroup) {
+              $menuName : nth($menuGroup, $i);
+              &.#{$menuName} {
+                background: url("#{$img-url}/library/kor/temp_btn_menu1_0#{$i}.webp") no-repeat;
+                background-size: 100% 100%;
+
+              &.active {
+                background-image: url("#{$img-url}/library/kor/temp_btn_menu1_0#{$i}_active.webp");
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* 책 검색 버튼 */
+    .book-search {
+      width: 228px; height: 111px;
+      background: url("#{$img-url}/library/kor/btn_search_book.webp") no-repeat;
+      background-size: 100% 100%;
+
+      a {
+        font-size: 0;
+      }
+    }
+
+    // 디자인 요소
+    .bubble-bg {
+      position: absolute;
+      width: 36px; height: 86px;
+      top: -73px; left: 189px;
+      background: url("#{$img-url}/library/kor/img_waterdrop.webp") no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+
+  .col-list {
+    margin: 53px auto;
+
+    &.content-scroll-area {
+      position: relative;
+      justify-content: flex-start;
+      max-height: 777px;
+      padding-bottom: 60px;
+      padding-left: 60px;
+
+
+      .keyword-info {
+        position: absolute;
+        top: 0;
+      }
+    }
+    /* 갈래별 영역 */
+    &.kind {
+      height: 831px;
+      margin: 0 auto;
+      padding: 0 93px 0 90px;
+      //width: 1713px; height: 831px;
+      flex-direction: column;
+      justify-content: space-between;
+
+        li {
+          list-style: none;
+          display: flex;
+          align-items: center;
+
+          /* 1, 4, 7번째 하나씩 위치하도록 설정 */
+          &:nth-child(3n+1) { height: 100%; }
+          &:nth-child(5), &:nth-child(6) { height: 50%;}
+
+          $kindGroup: "traditional", "social", "science", "art", "history", "refinement", "personality";
+          @for $i from 1 through length($kindGroup) {
+            $kindName : nth($kindGroup, $i);
+            &.#{$kindName} button {
+              width: 348px;
+              background-image: url("#{$img-url}/library/kor/btn_kind_0#{$i}.png");
+              background-size: auto 100%;
+              background-repeat: no-repeat;
+              animation: kindAni 1s infinite steps(19);
+              @keyframes kindAni {
+                0% { background-position-x: 0;}
+                100% { background-position-x: 100%;}
+              }
+            }
+          }
+          &.traditional button { height: 363px; }
+          &.social button { height: 330px; }
+          &.science button { height: 357px; }
+          &.art button { height: 438px; }
+          &.history {
+            margin-top: -30px;
+            button { width: 345px; height: 399px; }
+          }
+          &.refinement {
+            margin-top: -64px;
+            button { width: 345px; height: 357px; }}
+          &.personality button { width: 351px; height: 393px; }
+      }
+    }
+    /* 영역별 영역 */
+    &.develop {
+      padding:0 45px;
+      li {
+        padding:0 12px;
+      }
+      button {
+        //width: 342px;
+        height: 700px;
+
+        /* 영역 별 버튼 변경 */
+        $developGroup : "language", "emotion", "sociality", "recognition", "creativity";
+        @for $i from 1 through length($developGroup) {
+          $developName : nth($developGroup, $i);
+          &.#{$developName} {
+            background: url("#{$img-url}/library/kor/btn_develop_0#{$i}.webp") no-repeat;
+            background-size: 100% 100%;
+          }
+        }
+      }
+    }
+    /* 키워드별 영역*/
+    &.keyword {
+      padding:0 51px 60px;
+      margin: 12px auto 0;
+      li {
+        padding: 12px 9px;
+      }
+      button {
+        //width: 285px;
+        height: 318px;
+      }
+    }
+    /* 연령별 */
+    &.age {
+      padding:0 54px;
+      li {
+        padding: 0 6px;
+        //width: 894px; height: 360px;
+
+        @for $i from 1 through 4 {
+          &:nth-child(#{$i}) {
+            button {
+              height:360px;
+              background: url("#{$img-url}/library/kor/age_btn_0#{$i}.webp") no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+        }
+      }
+    }
+    /* 출판사별 영역 */
+    &.pub {
+      //gap: 12px 19px;
+      padding:0 51px;
+
+      li {
+        padding:6px 9px;
+      }
+      button {
+        width:345px; height:231px;
+        background-image: url("#{$img-url}/library/company_box.webp");
+        background-size: 100% 100%;
+
+        img { max-width: 240px; }
+      }
+    }
+  }
+
+  // 영어 도서관
+  &.eng {
+    background-color:$color-reading-eng-bg;
+
+    // V모드 적용 도서 체크 박스
+    .input-box-chk {
+      display:flex;
+      align-items:center;
+      position:absolute;
+      bottom:26px; left:90px;
+      z-index:$depth-1;
+      .btn-question {margin-top:-2px; margin-left:15px;}
+    }
+
+    &.sub-main {
+      background: url("#{$img-url}/library/eng/bg_step.webp") no-repeat;
+      background-size: 100% 100%;
+
+      &.theme {
+        background: $color-reading-eng-bg url("#{$img-url}/library/eng/bg_theme.webp") no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+    .reading-total {
+      width: 1553px;
+      margin: auto;
+
+      .motion-link {
+        width: 255px; height: 102px;
+        background: url("#{$img-url}/library/eng/btn_motion_link.webp") no-repeat;
+        background-size: 100% 100%;
+      }
+      ul {
+        margin: 0 0 0 6px;
+        background-image: url("#{$img-url}/library/eng/bg_mybook.webp");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+      .btn-info {
+        background-image: url("#{$img-url}/library/eng/btn_info.webp");
+      }
+    }
+
+    /* 메뉴 영역 */
+    .condition .search-wrap {
+      /* 영어 메인 메뉴 항목 */
+      .condition-list {
+        li {
+          width: 300px;
+
+          // 출판사별 메뉴만 가로 길이재설정
+          &.pub { width: 339px; }
+
+          /* 카테고리 별 버튼 활성화 변경 */
+          $menuGroup : "step", "theme", "keyword", "pub";
+          @for $i from 1 through length($menuGroup) {
+            $menuName : nth($menuGroup, $i);
+            &.#{$menuName} {
+              background: url("#{$img-url}/library/eng/btn_menu_0#{$i}.webp") no-repeat;
+              background-size: 100% 100%;
+
+              &.active {
+                background-image: url("#{$img-url}/library/eng/btn_menu_0#{$i}_active.webp");
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .col-list {
+      &.content-scroll-area {
+        justify-content: flex-start;
+        //height: 777px;
+        //padding-bottom: 60px;
+        //padding-left: 60px;
+      }
+      /* 단계별 영역 */
+      &.step {
+      padding: 0 110px;
+        button {
+          width: 567px; height: 618px;
+          position: relative;
+          /* 단계 별 버튼 변경 */
+          $stepGroup : "basic", "intermediate", "advanced";
+          @for $i from 1 through length($stepGroup) {
+            $stepName : nth($stepGroup, $i);
+            &.#{$stepName} {
+              padding: 0;
+              background: url("#{$img-url}/library/eng/btn_step_0#{$i}.webp") no-repeat;
+              background-size: 100% 100%;
+
+              .motion-bg {
+                display: inline-block;
+                position: absolute;
+                width: 317px; height: 251px;
+                top:0; left: 0;
+                background-image: url("#{$img-url}/library/eng/bg_menu_step_motion_0#{$i}.png");
+                background-repeat: no-repeat;
+                background-size: auto 100%;
+                animation: playMotion 1s infinite steps(19);
+
+                @keyframes playMotion {
+                  0% { background-position-x: 0; }
+                  100% { background-position-x: 100%; }
+                }
+              }
+              .title {
+                position: absolute;
+                height: 90px;
+                top: 159px;
+                margin: auto;
+                background: url("#{$img-url}/library/eng/btn_step_title_0#{$i}.webp") no-repeat;
+                background-size: 100% 100%;
+              }
+            }
+          }
+
+          &.basic {
+            .motion-bg { width: 290px;}
+            .title { width: 252px; right: 67px; left: 248px;}
+          }
+          &.intermediate {
+            .title { width: 543px; right: 10px; left: 14px; }
+          }
+          &.advanced {
+            .title { width: 429px; right: 37px; left: 101px; }
+          }
+        }
+      }
+
+      /* 테마별 영역 */
+      &.theme {
+        //flex-wrap: wrap;
+        //gap: 31px 60px;
+        padding:0 199px;
+
+        li {
+          padding: 15px 30px 16px;
+
+
+          /* 단계 별 버튼 변경 */
+          @for $i from 1 through 6 {
+            &:nth-child(#{$i}) button {
+              background: url("#{$img-url}/library/eng/btn_theme_0#{$i}.webp") no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+        }
+        button {
+          //width: 447px;
+          height: 336px;
+        }
+      }
+      &.pub {
+        //gap: 12px 20px;
+        padding:0 69px;
+        gap: 42px 38px;
+
+        li {
+          padding: 0;
+          width: fit-content; height: fit-content;
+        }
+        button {
+          //width: 435px; height: 252px;
+          width: 417px; height: 228px;
+          background-image: url("#{$img-url}/library/eng/bg_publish.webp");
+          box-shadow: 0 6px 8px 0 rgba(89, 67, 118, 0.3), inset 0 -3px 4px 0 rgba(0, 0, 0, 0.19);
+
+          img {
+            max-width: 100%;
+            width: 100%; height: 100%;
+          }
+        }
+      }
+    }
+
+    .info {
+      position: absolute;
+      right: 60px; bottom: 60px;
+      justify-content: flex-end;
+      font-size: 25px;
+      font-weight: 500;
+      color: $color-info-red;
+    }
+  }
+}
+
+.library .contents-item::-webkit-scrollbar { display: none; }
+  
+/* 도서관 서브 영역 */
+.library.sub {
+  .contents {
+    /* 서브페이지 - 서브메뉴 */
+    .select-tab-menu-wrap {
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-bottom: 27px;
+
+      &.no-sub {
+        height: 93px;
+        padding-bottom: 15px;
+      }
+
+      .select-tab-list {
+        display: flex;
+        width: 1320px; height: 94px;
+        margin: auto;
+        padding: 0 120px;
+        background-image: url("#{$img-url}/library/kor/btn_age_bg.webp");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        li {
+          width: 216px;
+          height: 94px;
+          font-size: 0;
+
+          /* 서브메뉴 활성화 */
+          @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+              &.active{
+                background-image: url("#{$img-url}/library/kor/btn_age_0#{$i}_active.webp");
+                background-size: 100% 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.eng {
+    .contents {
+      .select-tab-menu-wrap {
+        // TODO : Vmode 없는 경우 주석
+        padding-bottom:127px;
+        .select-tab-list {
+          width: max-content;
+          background-image: none;
+          margin: 0 288px 0 auto;
+          padding: 0;
+
+          &.pd-left {
+            li:last-of-type {
+              padding-left: 52px;
+            }
+          }
+
+          li {
+            display: flex;
+            width: 228px; height: 94px;
+            align-items: center;
+            justify-content: center;
+            background-image: url("#{$img-url}/library/bg_submenu_step_default.webp");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            font-size: 33px;
+            letter-spacing: -0.3px;
+            color: rgba(255, 255, 255, 0.3);
+
+            &.active {
+              background-image: url("#{$img-url}/library/bg_submenu_step_active.webp");
+              background-repeat: no-repeat;
+              background-size: 100% 100%;
+              color: #094D53;
+            }
+
+            &:first-of-type {
+              width: 285px;
+              justify-content: flex-end;
+              padding-right: 48px;
+              background-image: url("#{$img-url}/library/bg_submenu_first_default.webp");
+
+              &.active {
+                background-image: url("#{$img-url}/library/bg_submenu_first_active.webp");
+              }
+            }
+            &:last-of-type {
+              width: 351px;
+              justify-content: flex-start;
+              padding-left: 28px;
+              background-image: url("#{$img-url}/library/bg_submenu_last_default.webp");
+
+              &.active {
+                background-image: url("#{$img-url}/library/bg_submenu_last_active.webp");
+              }
+            }
+          }
+          &.sel {
+            padding: 0;
+            margin: 0 339px 0 auto;
+            background-image: url("#{$img-url}/library/eng/btn_eng_sub_bg.webp");
+
+            li {
+              width: 186px;
+              background-image: none;
+
+              &:first-of-type,
+              &:last-of-type { background-image: none; padding: 0; }
+
+              /* 서브메뉴 활성화 */
+              @for $i from 1 through 7 {
+                &:nth-child(#{$i}) {
+                  &.active{
+                    background-image: url("#{$img-url}/library/eng/btn_eng_sub_0#{$i}_active.webp");
+                  }
+                }
+              }
+            }
+
+            &.no-high {
+              background-image: none;
+              margin: auto;
+
+              li {
+                width: 240px; height: 94px;
+
+                @for $i from 1 through 4 {
+                  &:nth-child(#{$i}) {
+                    background-image: url("#{$img-url}/library/eng/btn_eng_motion_sub_0#{$i}.webp");
+
+                    &.active {
+                      background-image: url("#{$img-url}/library/eng/btn_eng_motion_sub_0#{$i}_active.webp");
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .book-list-wrap {height:844px;}  // TODO : Vmode 없는 경우 주석
+    }
+  }
+}
+
+
+/* 모션북 이북 안내*/
+.library.sub .select-tab-menu-wrap .book-icon { right: 0; }
+.library.sub .select-tab-menu-wrap.no-sub ~ .book-list-wrap { padding-top: 15px; height: 983px; }
+/* 도서목록 */
+.library .book-list-wrap {
+  //height: 1011px;
+  height: 971px;
+  padding-top: 27px;
+
+  .book-list {
+    height: fit-content;  /*height: 537px;*/
+    padding: 0 105px;
+    background: url("#{$img-url}/library/kor/img_booklist_shelf.webp") repeat-y;
+    background-size: 100% 537px;
+  }
+}
+
+/* 도서관 상세검색 페이지 */
+.library-search {
+  .contents {
+    height: calc( 100% - 111px);
+    position: relative;
+    margin: -24px auto 0;
+
+    &.content-scroll-area {
+      overflow-y: auto;
+
+      //&.mg0 {
+      //  height: calc( 100% - 135px);
+      //  margin: 0 auto;
+      //}
+    }
+    /* 도서관 상세검색 검색조건 */
+    .search-wrap {
+      position: relative;
+      width: fit-content; height: max-content;
+      margin: auto;
+
+      .search-title {
+        position: relative;
+        width: 1288px; height: 126px;
+        background: url("@/assets/img/launcher-readingclub/library/kor/bg_detail_search.webp") no-repeat;
+        background-size: 100% 100%;
+
+        /* 도서관 상세검색 검색조건 토글버튼 접기/보이기 버튼 */
+        .toggle {
+          position: absolute;
+          width: 190px; height: 90px;
+          right: 51px; bottom: 0;
+        }
+        img { width: 100%; }
+      }
+
+      /* 도서관 상세검색 라디오박스 */
+      .form-area {
+        width: 1185px; height: fit-content;
+        flex-direction: column;
+        margin: 7px auto 0;
+        padding: 37px 48px 37px 60px;
+        background-color: #FFFFFF;
+        border-radius: 47px;
+        box-shadow: 0 6px 8px 0 rgba(67, 118, 83, 0.16);
+
+        fieldset {
+          position:relative;
+          display: flex;
+          align-items: baseline;
+          gap: 40px;
+        }
+        .border {
+           display: block;
+           width: calc(100% - 12px); height: 6px;
+           background-image: url("#{$img-url}/library/line_dotted.webp");
+           background-repeat: repeat-x;
+           background-size: auto 100%;
+         }
+        // 도서 형태 & 권장 연령
+        .form-title {
+          min-width: 118px;
+          font-size: 30px;
+          color: #0C80F8;
+          letter-spacing: -0.3px;
+          line-height: 1.17;
+        }
+        // 라디오 박스 영역
+        .radio-round-group {
+
+          .radio-input { margin: 0; }
+          label { width: 177px; height: 45px; }
+        }
+      }
+    }
+
+    /* 도서관 상세검색 검색 화면 */
+    .search {
+      width: fit-content;
+      margin: 0 auto 30px;
+      text-align: center;
+
+      /* 검색화면 검색창 영역 */
+      $searchBarW : 1288px;
+      $btnDelW : 72px;
+      $btnSearchW : 99px;
+      .search-bar {
+        width:$searchBarW; height: 132px;
+        padding: 18px 51px 0 52px;
+        // s : 네이처 커스텀 230923
+        //background-image: url("#{$img-url}/library/input_text_search.webp");
+        //background-repeat: no-repeat;
+        //background-size: 100% 100%;
+
+        .form-area {
+          fieldset {
+            display: flex;
+            width: 100%; height: auto;
+            justify-content: space-between;
+            gap: 12px;
+
+            input {
+              flex: 1;
+              font-size: 37px;
+              padding-left: 24px;
+              background-color: transparent;
+
+              &::placeholder { color: #38555A; opacity: 0.5; }
+            }
+            // 텍스트 삭제 & 검색 버튼 영역
+            .btn-wrap {
+              margin: 0;
+
+              button {
+                width:$btnSearchW; //height: 114px;
+                background-size: auto 100%;
+
+                &.delete {
+                  opacity: 0;
+                  width:$btnDelW;
+                  background-image: url("#{$img-url}/common/btn_textfield_delete.webp");
+
+                  &.active { opacity: 1; }
+                }
+                &.glass { background-image: url("#{$img-url}/common/btn_glass_blue.webp");}
+              }
+            }
+          }
+
+          // s : 네이처 커스텀 230923
+          height:100%;
+          fieldset {
+            position:relative;
+            input {
+              padding-right:$btnDelW + $btnSearchW;
+              background: no-repeat center bottom url("#{$img-url}/library/input_text_search.webp");
+              background-size:$searchBarW auto;
+            }
+            .btn-wrap {
+              position:absolute;
+              right:0; bottom:0;
+              height:100%;
+              button {height:auto}
+            }
+          }
+          // e : 네이처 커스텀
+        }
+      }
+
+      /* 검색화면 최근검색어 */
+      .recent-word {
+        display: flex;
+        justify-content: center;
+        margin: 30px auto 0;
+        gap: 18px;
+
+        li {
+          display: flex;
+          position: relative;
+          padding: 23px 23px 22px 36px;
+          gap: 18px;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50px;
+          background-color: #E4FDE8;
+
+          p { font-size: $sub-menu-font-size; color: #1A84FF; }
+          button {
+            width: 36px; height: 36px;
+            background-image: url("#{$img-url}/common/btn_delete_blue.webp");
+            background-size: 100% 100%;
+            font-size:0;
+          }
+        }
+      }
+    }
+
+    /* 검색결과 영역 */
+    .search-result {position:relative;
+      .vscan-chk-group {
+        position:absolute;
+        bottom:auto; top:80px; left:60px;
+      }
+      p {
+        font-size: $sub-menu-font-size;
+        color: #0C80F8;
+
+        span { color: #FC3D44; }
+      }
+      fieldset {
+        display: flex;
+        width: 100%;
+        padding: 0 60px;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 30px 0;
+
+        .input-box-chk {
+          position:static;
+          margin-right:auto;
+        }
+        .book-icon {
+          position: unset;
+          background-image: url("#{$img-url}/library/kor/img_book_icon_guide_trans.webp");
+          background-size: auto 100%;
+        }
+
+        /* 검색결과 셀렉박스 영역 */
+        .dropdown { width: 282px; height: 75px; border-radius: 30px; margin-right: 0; }
+      }
+
+      // 검색 후 책 리스트
+      .book-list-wrap { padding-top: 0; }
+    }
+  }
+
+  // 영어 도서관
+  &.eng {
+    .contents {
+      .search-wrap {
+        .form-area {
+          .radio-round-group.circle {
+            .radio-input {
+              &:first-child {
+                label { width: 147px; }
+              }
+              label { width: 193px; }
+            }
+            &.flex-end {
+              justify-content: flex-end;
+              gap: 30px 0;
+            }
+
+            p {
+              position: absolute;
+              top:0; right: 0; bottom: 0;
+              margin: auto;
+              height: 18px;
+              font-size: 18px;
+              color: #5392DB;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

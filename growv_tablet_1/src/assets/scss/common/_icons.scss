@@ -1,0 +1,97 @@
+@charset 'UTF-8';
+
+.ico {
+    display:inline-block;
+    height:66px;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center center;
+    vertical-align:middle;
+    &-create {background-image: url("#{$ico-url}/ico_tag_creativity.webp");}
+    &-emotion {background-image: url("#{$ico-url}/ico_tag_emotion.webp");}
+    &-lang {background-image: url("#{$ico-url}/ico_tag_language.webp");}
+    &-recognition {background-image: url("#{$ico-url}/ico_tag_recognition.webp");}
+    &-society {background-image: url("#{$ico-url}/ico_tag_society.webp");}
+    &-heart {background-image: url("#{$ico-url}/ico_heart.webp");}
+    &-vbook-off {background-image: url("#{$ico-url}/ico_vbook_off.webp");}
+    &-vbook-on {background-image: url("#{$ico-url}/ico_vbook_on.webp");}
+    &-attend-default {background-image: url("#{$ico-url}/ico_attend_default.webp");}
+    &-attend-active {background-image: url("#{$ico-url}/ico_attend_active.webp");}
+    &-attend-report {background-image: url("#{$ico-url}/ico_attend_report.webp");}
+    &-book {width:42px; height:42px; background-image: url("#{$ico-url}/ico_book.webp");}
+    &-book-comp {width:42px; height:42px; background-image: url("#{$ico-url}/ico_book_comp.webp");}
+    &-exclam-mark {width:39px; height:39px; background-image: url("#{$ico-url}/ico_exclam_mark.webp");}
+    &-cart {width:54px; height:54px; background-image: url("#{$ico-url}/ico_cart.webp");}
+    &-send-talk {width:63px; height:50px; background-image: url("#{$ico-url}/ico_send_talk.webp");}
+    &-toggle-arr-up {
+        width:40px; height:40px; background-image: url("#{$ico-url}/ico_toggle_arr_up.webp");
+        transition:transform 0.15s ease-in-out;
+        &.down {transform:rotate(180deg);}
+    }
+    &-question-pp {width:45px; height:45px; background-image: url("#{$ico-url}/ico_question.webp");}
+    &-new-red {width:52px; height:32px; background-image: url("#{$ico-url}/ico_new_red.webp");}
+
+    &-delete {width:84px; height:84px; background-image: url("#{$img-url}/common/btn_ico_delete.webp");}
+    &-quantity-minus {width:60px; height:90px; background-image: url("#{$img-url}/common/btn_ico_quantity_minus.webp");}
+    &-quantity-plus {width:60px; height:90px; background-image: url("#{$img-url}/common/btn_ico_quantity_plus.webp");}
+
+    // 출석 아이콘 1day ~ 5day
+    $attendActiveLength : 5;
+    @for $i from 1 through $attendActiveLength {
+        &-attend-active-0#{$i} {
+            background-image: url("#{$ico-url}/ico_attend_active_0#{$i}.webp") !important;
+            background-size: 228px 188px !important;
+        }
+    }
+}
+
+
+.flag {
+    &.expire-date {
+        display:flex;
+        align-items:center;
+        height:36px;
+        padding:0 12px;
+        margin-bottom: 7px;
+        border:1px solid #d99c39;
+        border-radius:12px;;
+        background-color:#ffeec6;
+        span,
+        .txt-data {
+            position:relative;
+            top:1px;
+            font-size:19px;
+            line-height:1;
+            color:#cb7b37;
+        }
+    }
+
+    &.day {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:108px;
+        height:54px;
+        padding-left:4px;
+        border-radius: 27px 10px 10px 27px;
+        background-color:#8352fc;
+        span,
+        .txt-data {
+            font-size:24px;
+            font-weight:normal;
+            line-height:1;
+            color:#fff;
+        }
+        &.size-big {
+            width: 182px;
+            height: 100px;
+            border-radius: 50px 20px 20px 50px;
+            box-shadow: inset 0 -9px 0 0 rgba(0, 0, 0, 0.2);
+            span,
+            .txt-data {
+                font-size: 33px;
+                font-weight: bolder;
+            }
+        }
+    }
+}

@@ -1,0 +1,280 @@
+@charset "UTF-8";
+
+/*
+  도서 검색 용 셀렉트, 서치 폼
+*/
+.select-search-form {
+  $innerWidth : 1185px;
+  $pd-lr : ($launcher-width - $innerWidth)/2;
+  width:100%;
+  flex-direction:column;
+  padding:0 $pd-lr;
+  gap:18px;
+
+  // 상세 검색 조건
+  .select-toggle-wrap {
+    position:relative;
+    width:$innerWidth; max-width:$innerWidth;
+    margin:0 auto;
+    padding-top:36px;
+
+    &:before {
+      display:block;
+      position:absolute;
+      content:'';
+      background-repeat:no-repeat;
+      background-position:50% 50%;
+      background-size: 100% 100%;
+      width:141px; height:21px;
+      top:23px; left:42px;
+      background-image:url("@/assets/img/launcher-readingclub/common/object/obj_circle_half_cyan.svg");
+    }
+    .title-btn-wrap {
+      position: relative;
+      width:100%; height:90px;
+
+      // 장식요소
+      &:before,
+      &:after {
+        display:block;
+        position:absolute;
+        content:'';
+        background-repeat:no-repeat;
+        background-position:50% 50%;
+        background-size: 100% 100%;
+      }
+      //&:before {
+      //  width:141px; height:21px;
+      //  bottom:82px; left:42px;
+      //  background-image:url("@/assets/img/launcher-readingclub/common/object/obj_circle_half_cyan.svg");
+      //}
+      &:after {
+        width:36px; height:82px;
+        right:-51px; bottom:44px;
+        background-image:url("@/assets/img/launcher-readingclub/common/object/obj_bubble_r.png");
+      }
+
+      .toggle-title{
+        display:flex;
+        align-items:center;
+        position:relative;
+        width:100%; height:100%;
+        padding:0 40px;
+        border-radius:45px;
+        background-color:$color-search-bar-bg-blue;
+        font-size:32px;
+        color:#fff;
+        .tit-search-terms-w {
+          width:196px; height:33px;
+        }
+      }
+
+      /* 도서관 상세검색 검색조건 토글버튼 접기/보이기 버튼 */
+      .btn-toggle {
+        position: absolute;
+        width: 190px; height: 90px;
+        right:0; bottom: 0;
+      }
+      .btn-toggle {
+        display:flex;
+        align-items:center;
+        position:absolute;
+        width:auto; height:100%;
+        top:0; right:30px;
+        font-size:28px;
+        font-weight:$font-weight-bold;
+        color:#fff;
+        .ico {margin-left:12px;}
+      }
+    }
+
+    .select-rdo-group {
+      display:flex;
+      flex-direction: column;
+      gap:27px;
+      position:relative;
+      width:100%; height:100%;
+      margin: 7px auto 0;
+      padding: 37px 48px 37px 60px;
+      background-color: #FFFFFF;
+      border-radius: 47px;
+      box-shadow: 0 6px 8px 0 rgba(67, 118, 83, 0.16);
+
+      fieldset {
+        position:relative;
+        display: flex;
+        align-items: baseline;
+        gap: 40px;
+      }
+      .border {
+        display: block;
+        width: calc(100% - 12px); height: 6px;
+        background-image: url("#{$img-url}/library/line_dotted.webp");
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+      }
+
+      // 도서 형태 & 권장 연령
+      .form-title {
+        min-width: 118px;
+        font-size: 30px;
+        color: #0C80F8;
+        letter-spacing: -0.3px;
+        line-height: 1.17;
+      }
+
+      // 라디오 박스 영역
+      $gapY : 30px;
+
+      .radio-round-group {
+        gap:$gapY 0;
+        &.gap-15 {gap:$gapY 15px;}
+        &.gap-30 {gap:$gapY 30px;}
+
+        .radio-input {margin:0;}
+        label {width:177px; height:45px;}
+
+        &.radio-row-2 {   // 라디오버튼 2줄 이상이면서 좌측 여백이 있는 경우
+          $allLabelW : 146px;
+          $inputIndent : $allLabelW + 15px;  //+gap이 15일 경우
+          padding-left:$inputIndent;
+          .radio-input {
+            &:first-child {margin-left:$inputIndent*-1;}
+          }
+          label {
+            &[for*=all] {width:$allLabelW;}
+          }
+
+        }
+      }
+    }
+
+    .select-info {
+      position:absolute;
+      top:14px; right:0;
+      margin:auto;
+      font-size:18px;
+      color:$color-select-info-fonts;
+    }
+  }
+
+  // 검색 바, 최근 검색한 단어
+  $btnDelW : 72px;
+  $btnSearchW : 99px;
+  .search-recent-wrap {
+    width:100%;
+    max-width:$innerWidth;
+    margin:0 auto;
+    text-align: center;
+  }
+  .search-bar {
+    width:100%;
+    margin-bottom:30px;
+    fieldset {
+      display: flex;
+      justify-content: space-between;
+      position:relative;
+      width:100%; height: auto;
+      gap: 12px;
+
+      .search-btn-group {
+        position:relative;
+        width:100%;
+
+        &:before {
+          display:block;
+          position:absolute;
+          content:'';
+          width:100%;
+          height:10px;
+          left:0; bottom:0; right:0;
+          border-radius:5px;
+          background-color:$color-search-bar-bg-blue;
+        }
+        input[type="text"] {
+          position:relative;
+          width:100%; height:114px;
+          flex: 1;
+          padding-left:24px;
+          padding-right:$btnDelW + $btnSearchW;
+          background-color: transparent;
+          font-size:37px;
+          //background: no-repeat center bottom url("#{$img-url}/library/input_text_search.webp");
+          //background-size:100% auto;
+          &::placeholder { color: #38555A; opacity: 0.5; }
+        }
+        .btn-wrap {
+          position:absolute;
+          right:0; bottom:0;
+          height:100%;
+          margin: 0;
+
+          button {
+            width:$btnSearchW; //height: 114px;
+            background-size: auto 100%;
+
+            &.delete {
+              opacity: 0;
+              width:$btnDelW;
+              background-image: url("#{$img-url}/common/btn_textfield_delete.webp");
+
+              &.active { opacity: 1; }
+            }
+            &.glass { background-image: url("#{$img-url}/common/btn_glass_blue.webp");}
+          }
+        }
+      }
+    }
+  }
+  .recent-word {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto 0;
+    gap: 18px;
+
+    li {
+      display: flex;
+      position: relative;
+      padding: 23px 23px 22px 36px;
+      gap: 18px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50px;
+      background-color: #E4FDE8;
+
+      p { font-size: $sub-menu-font-size; color: #1A84FF; }
+      button {
+        width: 36px; height: 36px;
+        background-image: url("#{$img-url}/common/btn_delete_blue.webp");
+        background-size: 100% 100%;
+        font-size:0;
+      }
+    }
+  }
+
+
+  // row 타입 (같은 행에 셀렉트와 검색바가 있을 경우)
+  &.type-row {
+    flex-direction:row;
+    justify-content:space-between;
+    padding:0 120px;
+
+    .select-toggle-wrap {
+      width:456px; height:auto;
+      .select-rdo-group {
+        height:102px;
+        margin-top:0;
+        padding:29px 50px;
+        border-radius:51px;
+        box-shadow:none;
+      }
+    }
+    .search-recent-wrap {
+      width:1185px;
+      margin-top:23px;
+    }
+    .recent-word {
+      justify-content:flex-start;
+    }
+  }
+}

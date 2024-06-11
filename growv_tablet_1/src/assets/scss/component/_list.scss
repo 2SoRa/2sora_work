@@ -1,0 +1,284 @@
+@charset "UTF-8";
+
+// info-list-wrap : info-list를 포함한 회색 라운드 박스 컨테이너
+// info-list : 좌,우 정보를 포함한 100% 너비의 리스트
+.info-list-wrap {
+  position: relative;
+  width:100%;
+  border-radius:30px;
+  background-color:#f5f5f5;
+  padding:36px 51px 44px;
+
+  .has-top-bd {
+    margin-top:35px;
+    padding-top:32px;
+    &:before {
+      content:'';
+      display:block;
+      position:absolute;
+      width:100%; height:3px;
+      top:0; left:0; right:0;
+      background-color:$color-border-light-gray;
+    }
+  }
+  .has-bot-bd {
+    padding-bottom:30px;
+    margin-bottom:20px;
+    &:after {
+      content:'';
+      display:block;
+      position:absolute;
+      width:100%; height:3px;
+      left:0; right:0; bottom:0;
+      border-radius:50%;
+      background-color:$color-border-light-gray;
+    }
+  }
+}
+// 좌,우 정보를 포함한 100% 너비의 리스트
+.info-list {
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+  width:100%;
+  font-size:24px;
+  li {
+    display:flex;
+    width:100%;
+    justify-content:space-between;
+    padding:0 8px;
+    margin:7px 0;
+    font-size:30px;
+    line-height:34px;
+    //width:50%;
+    &.list-item-tit {
+      padding-left:0;
+      font-size:30px;
+      line-height:30px;
+      &:before {display:none;}
+      small {margin-left:4px; font-size:24px;}
+    }
+  }
+  p {flex-shrink:0; padding-right:12px;}
+  em {
+    font-weight:600;
+    @extend .txt-ellipsis;
+  }
+  small {
+    margin-left:6px;
+    color:$color-list-sm-gray;
+    font-size:21px;
+    line-height:inherit;
+    letter-spacing:-0.3px;
+    b {font-weight:700;}
+  }
+
+  // 포인트 개별 커스텀 스타일
+  .off-point {
+    em {color:$color-reading-red;}
+  }
+}
+
+// 좌,우 정보를 포함한 50% 너비의 하프 타입 리스트
+.info-half-list {
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+  width:100%;
+  font-size:24px;
+  li {
+    display:flex;
+    width:50%;
+    flex-basis:50%;
+    justify-content:space-between;
+    padding:0 30px 0 12px;
+    margin:7px 0;
+    font-size:24px;
+    line-height:24px;
+    //width:50%;
+    &.list-item-tit {
+      padding-left:0;
+      font-size:30px;
+      line-height:30px;
+      &:before {display:none;}
+      small {margin-left:4px; font-size:24px;}
+    }
+  }
+  p {flex-shrink:0; padding-right:12px;}
+  em {
+    @extend .txt-ellipsis;
+  }
+  small {
+    margin-left:6px;
+    color:$color-refer-fonts;
+    font-size:21px;
+    line-height:inherit;
+    letter-spacing:-0.3px;
+    b {font-weight:700;}
+  }
+}
+
+// 도트 스타일을 포함한 리스트
+.dot-list {
+  li {
+    position:relative;
+    padding-left:12px;
+    &:before {
+      content:'';
+      display:block;
+      position:absolute;
+      width:6px; height:6px;
+      top:6px; left:0;
+      border-radius:50%;
+      background-color:$color-list-dot-purple;
+    }
+  }
+}
+
+// 라운드형 타이틀을 포함한 리스트 타입
+.rounded-tit-list {
+  //margin:15px 0;
+
+  &:last-child {
+    margin-bottom:0;
+  }
+
+  .list-tit {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%; height:66px;
+    //margin:15px 0;
+    //padding:0 20px;
+    font-size:27px;
+    font-weight:600;
+    letter-spacing:-0.54px;
+    text-shadow:0 1px 2px rgba(89, 23, 235, 0.34);
+    overflow:hidden;
+
+    &[class*="type-"] {color:#fff;}
+    &.type-blue .item {background-color:$color-tit-bg-blue;}
+    &.type-purple .item {background-color:$color-tit-bg-purple;}
+  }
+  .list-item {
+    margin-top:5px;
+    padding:0 12px;
+  }
+  .item {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%; height:100%;
+    border-radius:33px;
+  }
+
+  // 하프 타입 여백 커스텀
+  &.col-2 {
+    .list-tit,
+    .list-item {
+      //margin:15px 0;
+      padding:0;
+
+      &:nth-child(odd) {padding-right:6px;}
+      &:nth-child(even) {padding-left:6px;}
+    }
+  }
+}
+
+// border-top을 갖고 있는 리스트 타입
+.border-bot-list {
+  justify-content:flex-start;
+  font-size:24px;
+  font-weight:600;
+  text-align:left;
+  color:$color-list-fonts;
+
+  li {
+    position:relative;
+    &:first-child {
+      &:before {display:none;}
+    }
+  }
+  .item {
+    display:block;
+    position:relative;
+    width:100%;
+    height: 66px;
+    padding:16px 6px 17px;
+    line-height: 1.3;
+    &:after {
+      display:block;
+      position:absolute;
+      content:'';
+      width:100%; height:3px;
+      bottom:0; right:0; left:0;
+      background-color:$color-list-border-gray-3;
+    }
+
+    // border none 케이스
+    &.border-none {
+      &:after {display:none;}
+    }
+  }
+
+  li:nth-child(odd) {padding-right:18px;}
+  li:nth-child(even) {padding-left:18px;}
+
+  &.col-2,
+  &.type-half {
+    li:nth-child(2) {
+      &:before {display:none;}
+    }
+  }
+
+}
+
+// 임시
+.box-rounded-list {
+  display:flex;
+  width:100%;
+  height:280px;
+  justify-content:space-between;
+  position:relative;
+  margin-top:30px;
+  color:$color-default-fonts;
+
+  .box-rounded {
+    padding:30px;
+    border-radius:12px;
+    border:3px solid $color-border-gray-4;
+    text-align:center;
+
+    &.border-sky {
+      border-color:$color-btn-stroke-sky;
+    }
+
+    // 요소 스타일
+    .txt {
+      display:block;
+      margin-bottom:27px;
+      font-size:27px; line-height:1;
+      font-weight:$font-weight-bold;
+    }
+    .item-qr {
+      display:block;
+      width:200px; height:auto;
+      margin: -30px auto 0;
+      img {width:100%; height:auto;}
+    }
+  }
+
+  &.type-half {
+    gap:20px;
+    .box-rounded {
+      width:50%;
+      flex-grow:1;
+    }
+  }
+}

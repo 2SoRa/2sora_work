@@ -1,0 +1,87 @@
+@charset 'UTF-8';
+
+/* 출석부 달력 커스텀 */
+.mypage.attend-book {
+  margin: 0;
+  height: 2040px;
+}
+
+.mypage.attend-book .content {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.mypage.attend-book .schedule-area {
+  width: auto;
+  background-color: transparent;
+}
+
+.mypage.attend-book .learning-status .fc .fc-toolbar.fc-header-toolbar {
+  background: url("#{$img-url}/mypage/mp_att_top_bg.png") no-repeat;
+}
+
+.mypage.attend-book .schedule-area .fc-toolbar-chunk:nth-child(2) {
+  background-color: #1157e6;
+  box-shadow: inset 0 -3px 8px 0 rgba(1, 64, 191, 0.52);
+}
+
+
+.mypage.attend-book .learning-status .schedule-bottom {
+  background: url("#{$img-url}/mypage/mp_att_bottom_bg.png") no-repeat;
+}
+
+/* 이달의 출석정보 / 비타민정보 */
+.mypage.attend-book .attend-info {
+  width: 624px;
+  height: 240px;
+  padding: 50px 56px 38px 0;
+  position: absolute;
+  top: 135px;
+  background: url("#{$img-url}/mypage/mp_att_itamin.png") no-repeat;
+}
+
+.attend-info ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.attend-info ul li {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 34px;
+  color: #5917eb;
+}
+
+//.mypage.attend-book .attend-info .coin {
+//  width: 48px;
+//  height: 48px;
+//  margin-left: 10px;
+//  background: url("#{$img-url}/mypage/mp_ico_vitamin_m.png") no-repeat;
+//}
+
+/* 오늘날짜 컬러 수정 */
+.attend-book .fc .fc-daygrid-day.fc-day-today {
+  background-color: transparent !important;
+}
+
+/* 평일 배경 이미지 */
+.attend-book .fc .fc-daygrid-body-natural .fc-daygrid-day-events {
+  background: transparent center 70% url("#{$img-url}/mypage/mp_img_notattendance.png") no-repeat;
+}
+/* 평일 배경 출석 이미지 */
+.attend-book .fc .fc-daygrid-body-natural .fc-daygrid-day-events.attend {
+  background: transparent center 70% url("#{$img-url}/mypage/mp_img_attendance.png") no-repeat;
+}
+/* 주말 배경이미지 */
+.attend-book .fc-daygrid-day.fc-day-sat .fc-daygrid-day-events {
+  background: transparent center 70% url("#{$img-url}/mypage/mp_ing_saturday.png") no-repeat;
+}
+
+.attend-book .fc-daygrid-day.fc-day-sun .fc-daygrid-day-events {
+  background: transparent center 70% url("#{$img-url}/mypage/mp_ing_sunday.png") no-repeat;
+}

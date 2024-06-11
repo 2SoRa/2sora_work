@@ -1,0 +1,499 @@
+/* TODO : 임시 구성 및 스타일 */
+/* 도서관 메인 영역 */
+.library {
+  width: 100%;
+  height: 100vh;
+  background-color: #CCF8D3;
+}
+.library.sub-main {
+  background: url("@/assets/img/launcher-readingclub/library/kor/part_bg.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .contents {
+  /*width: 1713px;*/
+  height: calc(100vh - 135px);
+  margin: auto;
+}
+/* 책 아이콘 영역 */
+.library .book-icon {
+  width: 288px;
+  height: 78px;
+  background: url("@/assets/img/launcher-readingclub/library/kor/img_book_icon_guide.webp") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+}
+
+/* 상단 읽은 책 카운팅 */
+.library .reading-total {
+  width: 100%;
+  display: flex;
+}
+.library .reading-total ul {
+  width: 921px;
+  height: 102px;
+  margin: 0 28.5% 0 auto;
+  background: url("@/assets/img/launcher-readingclub/library/kor/bg_mybook.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .reading-total ul {
+  height: 102px;
+  padding: 43px 32px 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 197px;
+}
+.library .reading-total ul li {
+  width: 140px;
+  text-align: right;
+  color: #187BFA;
+  font-size: 28px;
+  line-height: 1.29;
+}
+
+/* 검색 조건 영역 */
+.library .condition .search-wrap {
+  width: 100%;
+  height: 132px;
+  padding: 0 122px 0 124px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+.library .condition .search-wrap .bubble-bg {
+  width: 36px;
+  height: 86px;
+  position: absolute;
+  top: -70px;
+  left: 90px;
+  background: url("@/assets/img/launcher-readingclub/library/kor/img_waterdrop.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 한글 메인 메뉴 */
+.library .condition .condition-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 한글 메인 메뉴 항목 */
+.library .condition .condition-list li {
+  width: 240px;
+  height: 132px;
+  display: flex;
+  color: transparent;
+  align-items: center;
+  justify-content: center;
+}
+.library .condition .condition-list li a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+/* 카테고리 별 버튼 활성화 변경 */
+.library .condition .condition-list .kind {
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_menu_01.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .condition .condition-list .kind.active {
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_menu_01_active.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .condition .condition-list .develop {
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_menu_02.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .condition .condition-list .develop.active {
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_menu_02_active.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .condition .condition-list .keyword {
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_menu_03.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .condition .condition-list .keyword.active {
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_menu_03_active.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .condition .condition-list .age {
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_menu_04.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .condition .condition-list .age.active {
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_menu_04_active.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .condition .condition-list .pub {
+  width: 279px;
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_menu_05.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .condition .condition-list .pub.active {
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_menu_05_active.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 책 검색 버튼 */
+.library .condition .search-wrap button {
+  width: 228px;
+  height: 111px;
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_search_book.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .condition .search-wrap button a {
+  color: transparent !important;
+}
+
+/* 도서관 서브페이지(종류별) */
+.library .contents-item {
+  width: 100%;
+  position: relative;
+  margin-top: 53px;
+}
+/* 갈래별 영역 */
+.library .contents-item.kind {
+  width: 1713px;
+  height: 831px;
+  margin: auto;
+}
+.library .contents-item.kind div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.library .contents-item.kind div button {
+  width: fit-content;
+  padding: 0;
+}
+.library .contents-item.kind div button a {
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
+}
+/* 1, 4, 7번째 하나씩 위치하도록 설정 */
+.library .contents-item.kind div button:nth-child(3n+1) {
+  height: 100%;
+}
+/* 사회경제 & 과학환경 위치 수정 */
+.library .contents-item.kind div .social,
+.library .contents-item.kind div .science {
+  margin-left: -40px;
+}
+.library .contents-item.kind div .art {
+  /*margin-top: -65px;*/
+  height: calc( 100% - 125px) !important;
+}
+/* 영역별 영역 */
+.library .contents-item.develop div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.library .contents-item.develop div button {
+  width: 342px;
+  height: 700px;
+  color: transparent !important;
+}
+.library .contents-item.develop div button:first-child {
+  background: url("@/assets/img/launcher-readingclub/library/kor/develop_bn_language.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .contents-item.develop div button:nth-child(2) {
+  background: url("@/assets/img/launcher-readingclub/library/kor/develop_bn_emotion.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .contents-item.develop div button:nth-child(3) {
+  background: url("@/assets/img/launcher-readingclub/library/kor/develop_bn_sociality.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .contents-item.develop div button:nth-child(4) {
+  background: url("@/assets/img/launcher-readingclub/library/kor/develop_bn_recognition.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .contents-item.develop div button:last-child {
+  background: url("@/assets/img/launcher-readingclub/library/kor/develop_bn_creativity.webp") no-repeat;
+  background-size: 100% 100%;
+}
+
+/* 키워드별 영역 */
+.library .contents-item.keyword {
+  height: calc( 100vh - 135px - 234px - 53px);
+  overflow-y: auto;
+}
+.library .contents-item::-webkit-scrollbar { display: none; }
+.library .contents-item.keyword div {
+  width: 1804px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 0;
+  margin: auto;
+  padding-bottom: 60px;
+}
+.library .contents-item.keyword div button {
+  width: 285px;
+  height: 318px;
+  margin-right: 19px;
+  padding: 0;
+}
+.library .contents-item.keyword div button:nth-child(5n) {
+  margin-right: 18px;
+}
+.library .contents-item.keyword div button:nth-child(6n) {
+  margin-right: 0;
+}
+.library .contents-item.keyword div button img {
+  width: 100%;
+}
+
+/* 연령별 영역 */
+.library .contents-item.age {
+  height: calc( 100vh - 135px - 234px - 53px);
+  overflow-y: auto;
+}
+.library .contents-item.age div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.library .contents-item.age div button {
+  width: 894px;
+  height: 360px;
+  color: transparent;
+}
+.library .contents-item.age div button:first-child {
+  background: url("@/assets/img/launcher-readingclub/library/kor/age_btn_01.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .contents-item.age div button:nth-child(2) {
+  background: url("@/assets/img/launcher-readingclub/library/kor/age_btn_02.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .contents-item.age div button:nth-child(3) {
+  background: url("@/assets/img/launcher-readingclub/library/kor/age_btn_03.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .contents-item.age div button:last-child {
+  background: url("@/assets/img/launcher-readingclub/library/kor/age_btn_04.webp") no-repeat;
+  background-size: 100% 100%;
+}
+
+/* 연령별 영역 */
+.library .contents-item.pub {
+  height: calc( 100vh - 135px - 234px - 53px);
+  overflow-y: auto;
+}
+.library .contents-item.pub div {
+  width: 1818px;;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 19px;
+  margin: auto;
+  padding-bottom: 60px;
+}
+.library .contents-item.pub div button {
+  width: 345px;
+  height: 231px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("@/assets/img/launcher-readingclub/library/company_box.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library .contents-item.pub div button a {
+  font-weight: 500;
+  font-size: 33px;
+}
+
+/* 서브페이지 */
+.library.sub .contents {
+  width: 100%;
+}
+/* 서브페이지 - 서브메뉴 */
+.library.sub .sub-menu-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.library.sub .sub-menu-wrap .sub-menu {
+  width: 1320px;
+  height: 94px;
+  display: flex;
+  margin: auto;
+  padding: 0 120px;
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_age_bg.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.library.sub .sub-menu-wrap .sub-menu li {
+  width: 216px;
+  height: 94px;
+  color: transparent;
+}
+/* 전체 */
+.library.sub .sub-menu-wrap .sub-menu li:first-child.active {
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_age_01_active.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 3세 */
+.library.sub .sub-menu-wrap .sub-menu li:nth-child(2).active {
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_age_02_active.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 4세 */
+.library.sub .sub-menu-wrap .sub-menu li:nth-child(3).active {
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_age_03_active.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 5세 */
+.library.sub .sub-menu-wrap .sub-menu li:nth-child(4).active {
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_age_04_active.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 6세 이상 */
+.library.sub .sub-menu-wrap .sub-menu li:nth-child(5).active {
+  background: url("@/assets/img/launcher-readingclub/library/kor/btn_age_05_active.webp") no-repeat;
+  background-size: 100% 100%;
+}
+
+/* 모션북 이북 안내*/
+.library.sub .sub-menu-wrap .book-icon {
+  right: 0;
+}
+
+/* 서재 - 도서목록 */
+.library.sub .book-list-wrap {
+  width: 100%;
+  height: calc( 100vh - 135px - 94px - 54px);
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 54px;
+  overflow-y: auto;
+}
+.library.sub .book-list-wrap::-webkit-scrollbar { display: none; }
+/* 도서관 상세검색 페이지 */
+.library-search .contents {
+  height: calc(100vh - 135px);
+  overflow: hidden;
+  position: relative;
+}
+/* 도서관 상세검색 검색조건 */
+.library-search .contents .search-wrap {
+  width: 1288px;
+  height: max-content;
+  margin: auto;
+  position: relative;
+}
+/* 도서관 상세검색 검색조건 타이틀 */
+.library-search .search-wrap .search-title {
+  width: 1288px;
+  height: 126px;
+  position: relative;
+  background: url("@/assets/img/launcher-readingclub/library/kor/bg_detail_search.webp") no-repeat;
+  background-size: 100% 100%;
+}
+/* 도서관 상세검색 검색조건 토글버튼 접기/보이기 버튼 */
+.library-search .search-wrap .toggle {
+  width: 190px;
+  height: 90px;
+  position: absolute;
+  right: 51px;
+  bottom: 0;
+}
+.library-search .search-wrap .toggle img {
+  width: 100%;
+}
+/* 검색 체크박스 */
+.library-search .contents .search-wrap ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.library-search .contents .search-wrap ul li {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+/* 도서관 상세검색 체크박스 */
+.library-search .contents .search-wrap .check-wrap {
+  display: flex;
+  gap: 10px;
+}
+.library-search .contents .search-wrap .check-wrap .checkbox .label {
+  padding: 20px;
+  background-color: pink;
+  border-radius: 20px;
+}
+.library-search .contents .search-wrap .check-wrap .checkbox input:checked ~ .label {
+  background-color: coral;
+}
+
+/* 도서관 상세검색 검색 화면 */
+.library-search .search {
+  width: 70%;
+  margin: 80px auto 30px;
+  padding: 30px 0;
+  background-color: rgba(252, 132, 13, 0.6);
+}
+.library-search .search .search-bar {
+  width: 100%;
+  background-color: pink;
+  position: relative;
+  border-bottom: 5px solid black;
+}
+/* 검색화면 검색창 영역 */
+.library-search .search .search-bar input {
+  width: 90%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+}
+/* 검색화면 돋보기 버튼 영역 */
+.library-search .search .search-bar button {
+  width: 10%;
+}
+/* 검색화면 최근검색어 */
+.library-search .search .recent-word {
+  width: 60%;
+  display: flex;
+  margin: 20px auto;
+  background-color: #9df8f5;
+}
+.library-search .search .recent-word li {
+  width: 150px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 30px;
+  border: 1px solid black;
+}
+.library-search .search .recent-word li button {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  margin: auto;
+}
+
+/* 검색결과 영역 */
+.library-search .search-result > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+/* 검색결과 셀렉박스 영역 */
+.library-search .search-result .dropdown {
+  width: 300px;
+}
+.library-search .search-result .vs__open-indicator {
+  width: 30px;
+  height: 30px;
+}
+.library-search .search-result .vs__open-indicator img { width: 100%; }

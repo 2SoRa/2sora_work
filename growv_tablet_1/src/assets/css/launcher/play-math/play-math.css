@@ -1,0 +1,219 @@
+.math-main {
+  width: 100%;
+  height: 100%;
+  min-height: 1200px;
+  background: url("@/assets/img/launcher/play-math/playtype-bg@3x.webp") no-repeat;
+  background-size: 100%;
+}
+
+.math-main .main-top {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+}
+
+.math-main .main-title {
+  color: #FFFFFF;
+  font-size: 70px;
+  font-family: oneMobile;
+  position: absolute;
+  top: 79px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  font-weight: normal;
+}
+.math-main .main-top .top-btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+.math-main .main-top .top-btn-wrap button {
+  width: 82px;
+  height: 82px;
+  padding: 0;
+  margin: 0;
+}
+.math-main .main-top .top-btn-wrap button img { width: 100%; }
+
+.math-main .class-wrap {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px 11px;
+  padding-top: 222px;
+}
+
+.math-main .class-wrap li {
+  width: 451px;
+  height: 459px;
+}
+.math-main .class-wrap li button {
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+}
+.math-main .class-wrap li.puzzle button {
+  background: url("@/assets/img/launcher/play-math/playtype-01@3x.webp") no-repeat;
+  background-size: 100%;
+}
+.math-main .class-wrap li.quiz button {
+  background: url("@/assets/img/launcher/play-math/playtype-02@3x.webp") no-repeat;
+  background-size: 100%;
+}
+.math-main .class-wrap li.match button {
+  background: url("@/assets/img/launcher/play-math/playtype-03@3x.webp") no-repeat;
+  background-size: 100%;
+}
+.math-main .class-wrap li.comparison button {
+  background: url("@/assets/img/launcher/play-math/playtype-04@3x.webp") no-repeat;
+  background-size: 100%;
+}
+.math-main .class-wrap li.miro button {
+  background: url("@/assets/img/launcher/play-math/playtype-05@3x.webp") no-repeat;
+  background-size: 100%;
+}
+.math-main .class-wrap li.addition button {
+  background: url("@/assets/img/launcher/play-math/playtype-06@3x.webp") no-repeat;
+  background-size: 100%;
+}
+.math-main .class-wrap li.subtraction button {
+  background: url("@/assets/img/launcher/play-math/playtype-07@3x.webp") no-repeat;
+  background-size: 100%;
+}
+
+/* math modal */
+.math-modal {
+  width: 1261px;
+  height: 1065px;
+  position: relative;
+  background: url("@/assets/img/launcher/play-math/playtype-pop-bg@3x.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.math-modal .title {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  font-family: oneMobile;
+  font-weight: normal;
+  font-size: 56px;
+}
+.math-modal-close {
+  width: 82px;
+  height: 82px;
+  background: url("@/assets/img/launcher/common/btn-close@3x.webp") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 73px;
+  right: 10px;
+}
+
+/* 팝업 내용 */
+.math-modal .contents {
+  width: 100%;
+  height: fit-content;
+  padding-top: 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 47px;
+}
+/* 놀이 화면 */
+.math-modal .play-img {
+  width: 835px;
+  height: 522px;
+  margin: auto;
+}
+.math-modal .play-img img {
+  width: 100%;
+}
+
+/* 팝업 하단 레벨 & 연령 정보 */
+.math-modal .contents .choice-level {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: auto;
+}
+.math-modal .contents .choice-level.total4 {
+  width: calc(100% - 340px);
+}
+.math-modal .contents .choice-level.total3 {
+  width: calc(100% - 581px);
+}
+.math-modal .contents .choice-level.total2 {
+  width: calc(100% - 822px);
+}
+
+/* 레벨 버튼 */
+.math-modal .choice-level .level-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.math-modal .choice-level .level-btn button {
+  width: 198px;
+  height: 200px;
+}
+.math-modal .choice-level .level-btn button.level1 {
+  background: url("@/assets/img/launcher/play-math/btn-level-01@3x.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.math-modal .choice-level .level-btn button.level2 {
+  background: url("@/assets/img/launcher/play-math/btn-level-02@3x.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.math-modal .choice-level .level-btn button.level3 {
+  background: url("@/assets/img/launcher/play-math/btn-level-03@3x.webp") no-repeat;
+  background-size: 100% 100%;
+}
+.math-modal .choice-level .level-btn button.level4 {
+  background: url("@/assets/img/launcher/play-math/btn-level-04@3x.webp") no-repeat;
+  background-size: 100% 100%;
+}
+
+/* 레벨별 연령정보 */
+.math-modal .choice-level .level-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.math-modal .choice-level .level-info li {
+  width: 193px;
+  height: 57px;
+  text-align: center;
+  font-family: oneMobile;
+  font-size: 29px;
+  line-height: 57px;
+  font-weight: normal;
+  /*color: #FFFFFF;*/
+  color: #C06601;
+  background: url("@/assets/img/launcher/play-math/age-info-bg-block-1@3x.webp") no-repeat;
+  background-size: 100%;
+}
+.math-modal .choice-level .level-info li.age2 {
+  width: 434px;
+  height: 57px;
+  background: url("@/assets/img/launcher/play-math/age-info-bg-block-2@3x.webp") no-repeat;
+  background-size: 100%;
+}
+
+/* 숫자놀이 정보 팝업 스타일 */
+.math-modal.info {
+  width: 1920px;
+  height: 1200px;
+  background: url("@/assets/img/launcher/play-math/game-info-pop@3x.webp") no-repeat;
+  background-size: 100%;
+}
+.math-modal.info .math-modal-close {
+  top: 20px;
+  right: 50px;
+}

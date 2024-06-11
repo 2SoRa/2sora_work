@@ -1,0 +1,27 @@
+@font-face {
+  font-family: sdGothicNR;
+  src: url("@/assets/font/SDGothicNeoRoundTTF-fSb.woff") format('woff'),
+       url("@/assets/font/SDGothicNeoRoundTTF-fSb.ttf") format('ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: sdGothicNR;
+  src: url("@/assets/font/SDGothicNeoRoundTTF-eMd.woff") format('woff'),
+       url("@/assets/font/SDGothicNeoRoundTTF-eMd.ttf") format('ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: sdGothicNR;
+  src: url("@/assets/font/SDGothicNeoRoundTTF-gBd.woff") format('woff'),
+       url("@/assets/font/SDGothicNeoRoundTTF-gBd.ttf") format('ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: oneMobile;
+  src: url("@/assets/font/ONEMobilePOP.woff") format('woff'),
+       url("@/assets/font/ONEMobilePOP.ttf") format('ttf');
+  font-weight: normal;
+}
